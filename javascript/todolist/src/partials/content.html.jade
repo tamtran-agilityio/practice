@@ -1,0 +1,23 @@
+section.todo-wrapper
+	.add-todo
+		input#toggle-all.toggle-all(type='checkbox')
+		input#input-todo.input-todo(type='text', placeholder='What needs to be done?')
+	// End input enter
+	.todo-list-wrap
+		ul#todo-list.todo-list
+			li.todo-item.add-todo
+				#todo-view.todo-view
+				input#todo-edit.todo-edit(type='text', name='todo')
+	// End .todo-list-warp
+	.todo-action
+		span#total.item-left items left
+		ul.list-action
+			li
+				a#all-todo.button.btn-active All
+			li
+				a#active-todo.button Active
+			li
+				a#completed-todo.button Completed
+			li
+				a#clear-button.clear-button Clear completed
+	// End list action

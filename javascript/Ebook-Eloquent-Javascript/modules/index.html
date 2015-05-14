@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example modules</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function map(func, array) {
+			var len = array.length, result = new Array(len);
+			for (var i = 0; i < len; i++)
+			result[i] = func(array[i]);
+			return result;
+		}
+
+		var names = ["January", "February", "March", "April", "May", "June", "July", "August", "September","October", "November", "December"];
+		function getMonthName(number) {return names[number];}
+		function getMonthNumber(name) {
+			for (var number = 0; number < names.length; number++) {
+				if (names[number] == name) return number;
+			}
+		}
+		//execute
+		console.log(getMonthNumber("February"));
+		// resulf --> 1
+		function buildMonthNameModule() {
+			var names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			function getMonthName(number) {return names[number];}
+			function getMonthNumber(name) {
+				for (var number = 0; number < names.length; number++) {
+					if (names[number] == name) return number;
+				}
+			}
+			window.getMonthName = getMonthName;
+			window.getMonthNumber = getMonthNumber;	
+		}
+
+		// execute
+		buildMonthNameModule();
+		// resufl --> undefined
+	</script>
+	
+</body>
+</html>

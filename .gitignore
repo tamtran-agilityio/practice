@@ -1,0 +1,28 @@
+
+# Vagrant files
+#######################
+__MACOSX/
+cookbooks/
+vagrant/
+
+# Docpad compiled files
+########################
+out/
+vendor/
+
+# NPM packages
+########################
+node_modules/
+
+#Grunt files
+######################
+grunt/node_modules
+grunt/.sass-cache
+
+# temp files
+#########################
+*.*~
+*.log
+*.git
+*.vagrant
+*.map
