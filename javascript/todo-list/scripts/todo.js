@@ -8,6 +8,7 @@ function Todo() {
 	addHandler(this.todoInputNode, 'keydown', method(this, 'addNewTodo'));
 	addHandler(this.todoToggleAll, 'click', method(this, 'selectAllItem'));
 	this.id = 0;
+	TodoList(todoListObj);
 }
 
 Todo.prototype.addNewTodo = function addNewTodo(event) {
@@ -49,13 +50,13 @@ function addTodo(todo, type, id, value) {
 	todo.todoListNode.appendChild(createTodoHtml(value, type, id));
 }
 
-function TodoList() {
+function TodoList(listObject) {
 	this.todoListObj = [];
 	var todoListNode = document.getElementById('todo-list');
 	var lastTodo = todo.todoListNode.lastChild;
 	var del = lastTodo.firstChild.getElementsByClassName('delete')[0];
-	addHandler(lastTodo, 'mouseover', method(todo, 'showObject'));
-  	addHandler(lastTodo, 'mouseout', method(todo, 'hiddenObject'));
+	addHandler(lastTodo, 'mouseover', method(todoList, 'showObject'));
+  	addHandler(lastTodo, 'mouseout', method(todoList, 'hiddenObject'));
 
 }
 
