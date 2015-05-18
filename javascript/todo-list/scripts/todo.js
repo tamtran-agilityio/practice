@@ -1,7 +1,8 @@
 // object add todo
 function Todo() {
 	// body...
-	this.todoListObj = [];
+	this.todoAction = new TodoActive(this);
+	this.todoListItem = [];
 	this.todoListNode = document.getElementById('todo-list');
 	this.todoInputNode = document.getElementById('input-todo');
 	this.todoToggleAll = document.getElementById('toggle-all');
@@ -14,31 +15,22 @@ function Todo() {
 Todo.prototype.addNewTodo = function addNewTodo(event) {
 	// body...
 	var nodeValue = this.todoInputNode.value;
+	var filterCompletedButton = document.getElementById('complete-todo');
+	var todoToggleAll = document.getElementById('toggle-all');
+
 	if (event.keyCode === 13 && nodeValue !== '') {
+		var todoItem = new TodoItem(this.id++, 'active', nodeValue);
 		if (completedTodoButton.getAttribute('class').indexOf('btn-active') === -1) {
-			addTodo(this, 'active', this.id, nodeValue);
+			todoItem.addItem(this.todoListNode);
 		}
-		// add item to list
-		var todoObj = {
-			id: this.id++,
-			type: 'active',
-			value: nodeValue
-		};
-		this.todoListObj.push(todoObj);
-		countItem(this.todoListObj);
 		this.todoInputNode.value = ' ';
+		todoToggleAll.checked = false;
 	}
 };
 
-function addTodo(todo, type, id, value) {
-	// body...
-	var todoListNode = document.getElementById('todo-list');
-	todo.todoListNode.appendChild(createTodoHtml(value, type, id));
-}
-
 // set checkbox value
 Todo.prototype.selectAllItem = function selectAllItem(event) {
-	// body...
+	// body ...
 	var checkBox = document.getElementsByClassName('checkbox'),
 		node = event.target;
 

@@ -6,21 +6,19 @@ function TodoItem(id, type, value) {
 	this.value = value;
 }
 
-TodoItem.prototype.addItem = function addItem(todo, id, type, value) {
+TodoItem.prototype.addItem = function addItem(todoListNode) {
 	// body...
-	var todoItem = createTodoHTML(this.value, this.type, this.value);
-	var checkItem = todoItem.getElementByClassName('todo-view')[0].getElementByClassName('checkbox');
-	var del = todoItem.firstChild.getElementByClassName('label')[0];
+	var todoItem = createTodoHtml(this.value, this.type, this.id);
+	//var checkbox = todoItem.getElementsByClassName('todo-view')[0].getElementsByClassName('checkbox')[0];	var del = todoItem.firstChild.getElementByClassName('label')[0];
 	var label = todoItem.getElementsByTagName('label')[0];
-	var edit = todoItem.getElementByClassName('todo-edit');
+	//var edit = todoItem.getElementByClassName('todo-edit');
 
-	addHandler(checkbox, 'change', method(this, 'checkItemTodo'));
-	addHandler(del, 'click', method(this, 'deleteItem'));
-	addHandler(label, 'dblclick', method(this, 'editItem'));
+	// addHandler(checkbox, 'change', method(this, 'checkItemTodo'));
+	// addHandler(del, 'click', method(this, 'deleteItem'));
+	// addHandler(label, 'dblclick', method(this, 'editItem'));
 
 	todoListNode.appendChild(todoItem);
-	todo.setStatusToggle(todo.todoListObj);
-	todo.setStatusToggle(todo.todoListObj);
+	todo.todoAction.setLeftItem(todo.todoListItem);
 };
 
 // set when checkbox earch Item
