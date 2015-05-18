@@ -31,7 +31,7 @@ function createTodoHtml(todoName, type, id) {
   }
 
   var todoItem =
-  dom('LI', {class: 'todo-item', 'data-id': id},
+  dom('LI', {class: 'todo-item', 'item-id': id},
     dom('DIV', {class: 'todo-view'},
       dom('INPUT', checkboxProperties),
       dom('LABEL', null, todoName),
