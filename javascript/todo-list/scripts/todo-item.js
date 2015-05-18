@@ -58,8 +58,20 @@ TodoItem.prototype.deleteItem = function deleteItem(event) {
 	var item = event.target.parentNode.parentNode;
 	var id = item.getAttribute('item-id');
 	var parent = item.parentNode;
-	var arrayObject =this.findObject(todo.todoListObj, parseInt(id));
+	var arrayObject = this.findObject(todo.todoListObj, parseInt(id));
 	todo.todoListObj.splice(arrayObject, 1);
 	parent.removeChild(item);
 	todo.setStatusToggle(todo.todoListObj);
+};
+
+TodoItem.prototype.editItem = function editItem(event) {
+	// body...
+	var item = event.target.parentNode.parentNode;
+	var todoView = item.getElementByClassName('todo-view')[0];
+	var todoEdit = item.getElementByClassName('todo-edit')[0];
+
+	todoEdit.value = view.textContent.substring(0, todoView.textContent.length - 1);
+	todoView.style.display = 'none';
+	todoEdit.style.display = 'block';
+	todoEdit.focus();
 };
