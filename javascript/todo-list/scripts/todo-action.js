@@ -41,7 +41,7 @@ TodoActive.prototype.setLeftItem = function setLeftItem(listObj) {
 };
 
 // set event filter of button all  
-TodoControl.prototype.filterAllTodo = function filterAllTodo(event) {
+TodoActive.prototype.filterAllTodo = function filterAllTodo(event) {
 	var node = event.target;
 
 	this.rerenderAllTodoItem('all');
@@ -50,7 +50,7 @@ TodoControl.prototype.filterAllTodo = function filterAllTodo(event) {
 };
 
 // set event filter of button actice
-TodoControl.prototype.filterActiveTodo = function filterActiveTodo(event) {
+TodoActive.prototype.filterActiveTodo = function filterActiveTodo(event) {
 	var node = event.target;
 
 	this.rerenderAllTodoItem('active');
@@ -59,7 +59,7 @@ TodoControl.prototype.filterActiveTodo = function filterActiveTodo(event) {
 };
 
 // set event filter of button complete
-TodoControl.prototype.filterCompletedTodo = function filterCompletedTodo() {
+TodoActive.prototype.filterCompletedTodo = function filterCompletedTodo() {
 	var node = event.target;
 
 	this.rerenderAllTodoItem('completed');
@@ -67,7 +67,7 @@ TodoControl.prototype.filterCompletedTodo = function filterCompletedTodo() {
 	addClass(node, 'btn-active');
 };
 
-TodoControl.prototype.rerenderAllTodoItem = function rerenderAllTodoItem(type) {
+TodoActive.prototype.rerenderAllTodoItem = function rerenderAllTodoItem(type) {
 	var todoItemObj;
 
 	this.todoListObj.todoListNode.innerHTML = '';
@@ -81,7 +81,7 @@ TodoControl.prototype.rerenderAllTodoItem = function rerenderAllTodoItem(type) {
 	}
 };
 
-TodoControl.prototype.removeClassOfAllChildNode = function removeClassOfAllChildNode(parent, className) {
+TodoActive.prototype.removeClassOfAllChildNode = function removeClassOfAllChildNode(parent, className) {
 	var childNodeList = parent.getElementsByClassName('button');
 
 	for (var i = 0; i < childNodeList.length; i++) {
@@ -90,7 +90,7 @@ TodoControl.prototype.removeClassOfAllChildNode = function removeClassOfAllChild
 };
 
 
-TodoControl.prototype.removeClassOfAllChildNode = function removeClassOfAllChildNode(parent, className) {
+TodoActive.prototype.removeClassOfAllChildNode = function removeClassOfAllChildNode(parent, className) {
 	var childNodeList = parent.getElementsByClassName('button');
 
 	for (var i = 0; i < childNodeList.length; i++) {
@@ -98,7 +98,7 @@ TodoControl.prototype.removeClassOfAllChildNode = function removeClassOfAllChild
 	}
 };
 
-TodoControl.prototype.removeCompletedTodo = function removeCompletedTodo() {
+TodoActive.prototype.removeCompletedTodo = function removeCompletedTodo() {
 	var status;
 
 	for (var i = 0; i < this.todoListObj.todoListItem.length; i++) {
@@ -113,7 +113,7 @@ TodoControl.prototype.removeCompletedTodo = function removeCompletedTodo() {
 	this.setLeftItem(this.todoListObj.todoListItem);
 };
 
-TodoControl.prototype.fakeFilterEvent = function fakeFilterEvent() {
+TodoActive.prototype.fakeFilterEvent = function fakeFilterEvent() {
 	var filterAllTodoButton = document.getElementById('all-todo');
 	var filterActiveTodoButton = document.getElementById('active-todo');
 	var filterCompletedTodoButton = document.getElementById('completed-todo');
