@@ -19,7 +19,8 @@ TodoItem.prototype.addItem = function addItem(todo, id, type, value) {
 	addHandler(label, 'dblclick', method(this, 'editItem'));
 
 	todoListNode.appendChild(todoItem);
-	todo.setStatusToggle(todoList.todoListObj);
+	todo.setStatusToggle(todo.todoListObj);
+	todo.setStatusToggle(todo.todoListObj);
 };
 
 // set when checkbox earch Item
@@ -40,4 +41,25 @@ TodoItem.prototype.checkItemTodo = function checkItemTodo(event) {
 			this.type = 'active';
 		}
 	}
+	todo.setStatusToggle(todo.todoListObj);
+};
+
+TodoItem.prototype.findObject = function findObject(todoListObj, id) {
+	// body...
+	for (var i = 0; i < todoListObj.length; i++) {
+		if (todoListObj[i].id === id) {
+			return i;
+		}
+	};
+};
+
+TodoItem.prototype.deleteItem = function deleteItem(event) {
+	// body...
+	var item = event.target.parentNode.parentNode;
+	var id = item.getAttribute('item-id');
+	var parent = item.parentNode;
+	var arrayObject =this.findObject(todo.todoListObj, parseInt(id));
+	todo.todoListObj.splice(arrayObject, 1);
+	parent.removeChild(item);
+	todo.setStatusToggle(todo.todoListObj);
 };
