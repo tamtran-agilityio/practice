@@ -1,13 +1,14 @@
 // object add todo
 function Todo() {
 	// body...
-	this.todoAction = new TodoActive(this);
+	this.todoActive = new TodoActive(this);
 	this.todoListItem = [];
 	this.todoListNode = document.getElementById('todo-list');
+	var toggleAllButton = document.getElementById('toggle-all');
+
 	this.todoInputNode = document.getElementById('input-todo');
-	this.todoToggleAll = document.getElementById('toggle-all');
 	addHandler(this.todoInputNode, 'keydown', method(this, 'addNewTodo'));
-	addHandler(this.todoToggleAll, 'click', method(this, 'selectAllItem'));
+	addHandler(toggleAllButton, 'click', method(this, 'toggleAllCheckbox'));
 	this.id = 0;
 }
 
@@ -15,33 +16,37 @@ function Todo() {
 Todo.prototype.addNewTodo = function addNewTodo(event) {
 	// body...
 	var nodeValue = this.todoInputNode.value;
-	var filterCompletedButton = document.getElementById('complete-todo');
+	var filterCompletedTodoButton = document.getElementById('completed-todo');
 	var todoToggleAll = document.getElementById('toggle-all');
 
 	if (event.keyCode === 13 && nodeValue !== '') {
 		var todoItem = new TodoItem(this.id++, 'active', nodeValue);
-		if (completedTodoButton.getAttribute('class').indexOf('btn-active') === -1) {
+		this.todoListItem.push(todoItem);
+		if (filterCompletedTodoButton.getAttribute('class').indexOf('btn-active') === -1) {
+			// if current panel is not completed
 			todoItem.addItem(this.todoListNode);
 		}
-		this.todoInputNode.value = ' ';
-		todoToggleAll.checked = false;
 	}
+	this.todoInputNode.value = ' ';
+	todoToggleAll.checked = false;
 };
 
 // set checkbox value
-Todo.prototype.selectAllItem = function selectAllItem(event) {
-	// body ...
-	var checkBox = document.getElementsByClassName('checkbox'),
-		node = event.target;
-
-	for (var i = 0; i < checkBox.length; i++) {
-		if (node.checked) {
-			checkBox[i].checked = true;
-		} else {
-			checkBox[i].checked = false;
-		}
+Todo.prototype.toggleAllCheckbox = function toggleAllCheckbox() {
+	var status;
+	var toggleAllButton = document.getElementById('toggle-all');
+	if (toggleAllButton.checked) {
+		status = 'completed';
+	} else {
+		status = 'active';
 	}
-}
+
+	for (var i = 0; i < this.todoListItem.length; i++) {
+		this.todoListItem[i].type = status;
+	}
+
+	this.todoActive.fakeFilterEvent();
+};
 
 // set status toggle when checked one or all item
 Todo.prototype.setStatusToggle = function setStatusToggle(listObj) {

@@ -24,9 +24,13 @@ function unregisterEventHandler(node, event, handler) {
 
 function normalizeEvent(event) {
   if (!event.stopPropagation) {
-    event.stopPropagation = function() {this.cancelBubble = true;};
+    event.stopPropagation = function() {
+      this.cancelBubble = true;
+    };
 
-    event.preventDefault = function() {this.returnValue = false;};
+    event.preventDefault = function() {
+      this.returnValue = false;
+    };
   }
 
   if (!event.stop)
@@ -58,7 +62,11 @@ function addHandler(node, type, handler) {
   }
 
   registerEventHandler(node, type, wrapHandler);
-  return {node: node, type: type, handler: wrapHandler};
+  return {
+    node: node,
+    type: type,
+    handler: wrapHandler
+  };
 }
 
 function removeHandler(object) {

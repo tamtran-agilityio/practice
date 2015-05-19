@@ -2,7 +2,6 @@
 function TodoActive(todoListObj) {
 	// body...
 	this.todoListObj = todoListObj;
-	this.todoListObj = todoListObj;
 	var clearButton = document.getElementById('clear-button');
 	var filterAllTodoButton = document.getElementById('all-todo');
 	var filterActiveTodoButton = document.getElementById('active-todo');
@@ -50,7 +49,7 @@ TodoActive.prototype.filterAllTodo = function filterAllTodo(event) {
 };
 
 // set event filter of button actice
-TodoActive.prototype.filterActiveTodo = function filterActiveTodo(event) {
+TodoActive.prototype.filterActiveTodo = function filterActiveTodo() {
 	var node = event.target;
 
 	this.rerenderAllTodoItem('active');
@@ -74,9 +73,9 @@ TodoActive.prototype.rerenderAllTodoItem = function rerenderAllTodoItem(type) {
 	for (var i = 0; i < this.todoListObj.todoListItem.length; i++) {
 		todoItemObj = this.todoListObj.todoListItem[i];
 		if (todoItemObj.type === type) {
-			todoItemObj.addTodo(this.todoListObj.todoListNode);
+			todoItemObj.addItem(this.todoListObj.todoListNode);
 		} else if (type === 'all') {
-			todoItemObj.addTodo(this.todoListObj.todoListNode);
+			todoItemObj.addItem(this.todoListObj.todoListNode);
 		}
 	}
 };
