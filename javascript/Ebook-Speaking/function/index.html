@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//func.apply(thisValue, argArray)
+		Math.max(23, 34,90);
+		Math.max.apply(null,[23,25,20]);
+		//func.bind(thisValue, arg1, ..., argN)
+		function add(x, y) {
+			return x + y;
+		}
+		
+		var plus1 = add.bind(null, 1);
+		console.log(plus1(5));
+		function plus1(y) {
+			return add(1,y);
+		}
+		function logArgs () {
+			// body...
+			for (var i = 0; i < arguments.length; i++) {
+				console.log(i +'. ' + arguments[i]);
+			};
+		}
+		
+		logArgs('Tran', 'Van');
+
+		function sloppyFunc(param) {
+			param = 'changed';
+			return arguments[0];
+		}
+
+		console.log(sloppyFunc('value'));
+		// changed
+
+		function strictFunc(param) {
+			'use strict';
+			param = 'changed';
+			return arguments[0];
+		}
+		
+		console.log(strictFunc('value')); 
+		// value
+
+		function foo(mandatory, optional) {
+
+			if (mandatory === undefined) {
+				throw new Error('Missing parameter: mandatory');
+			}
+			if (!mandatory) {
+				throw new Error('Missing parameter: mandatory');
+			}
+			if (arguments.length < 1) {
+				throw new Error('You need to provide at least 1 argument');
+			}
+		}
+
+		//scope nesting
+		function foo(arg) {
+			function bar() {
+				console.log('arg:' + arg);
+			}
+			bar();
+		}
+
+		console.log(foo('hello'));
+
+		var x = 'global';
+		function f() {
+			var x = 'local';
+			console.log(x); //local
+		}
+		f();
+		console.log(x) //global
+
+		function main() {
+			{ // block starts
+				var foo = 4;
+			} // block ends
+			console.log(foo); // 4
+		}
+
+		var globalVariable = 'xyz';
+		function h() {
+		var localVariable = true;
+			function g() {
+			var anotherLocalVariable = 123;
+			localVariable = false;
+			globalVariable = 'abc';
+			}
+		}
+		// Dot operator
+		var jane = {
+			name : 'Tom',
+			discribe : function () {
+				return 'Person named ' + this.name;
+			}
+		};
+		
+		//getting properties 
+		jane.name; // Tom
+		//call properties
+		jane.discribe(); // Person named Tom
+		// setting properties
+		jane.name = 'Cat';
+		jane.discribe(); //Person named Cat
+		// delete properties
+		var obj = {foo : 'a', bar : 'b'};
+		obj.foo = undefined;
+		Object.keys(obj); // [foo, bar]
+		delete obj.foo; 
+		Object.keys(obj);// [bar]
+
+		// the return value of delete 
+		var obj = {};
+		Object.defineProperty(obj, 'canBeDeleted', {
+			value: 123,
+			configurable: true
+		});
+		Object.defineProperty(obj, 'cannotDelete', {
+			value : 456 ,
+			configurable: false 
+		});
+
+		//share data object via a property
+
+		var PersonProto = {
+			describe: function() {
+				return 'Person named ' +this.name;
+			}
+		};
+		var jane = {
+			[[Prototype]]: PersonProto,
+			name: 'Jane'
+		};
+		var tarzar = {
+			[[Prototype]]: PersonProto,
+			name: 'Math'
+		};
+
+	</script>
+</body>
+</html>
