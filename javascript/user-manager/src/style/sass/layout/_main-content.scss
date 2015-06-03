@@ -1,0 +1,10 @@
+@media (min-width: 768px)
+{
+    .main {
+        position: fixed;
+        z-index: 1000;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+    }
+}

@@ -8,8 +8,8 @@ vagrant/
 # Docpad compiled files
 ########################
 out/
-vendor/
-user-manager/src/files/vender/
+vender/
+**/vender/
 
 # NPM packages
 ########################

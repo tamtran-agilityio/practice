@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            all: ['../javascript/todo/script/*.js']
+            all: ['../javascript/todo-list/script/*.js']
         }
     });
 

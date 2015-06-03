@@ -63,7 +63,7 @@ gulp.task('serve', [], function() {
 		server: {
 			baseDir: './out'
 		},
-		port: 9000
+		port: 9778
 	});
 
 	gulp.watch(['out/*.html'], browserSync.reload);
