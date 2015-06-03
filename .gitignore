@@ -9,8 +9,7 @@ vagrant/
 ########################
 out/
 vendor/
-**/out/
-**/vendor/
+user-manager/src/files/vender/
 
 # NPM packages
 ########################
