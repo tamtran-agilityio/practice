@@ -9,10 +9,12 @@ vagrant/
 ########################
 out/
 vendor/
+**/out/
+**/vendor/
 
 # NPM packages
 ########################
-node_modules/
+**/node_modules/
 
 #Grunt files
 ######################
