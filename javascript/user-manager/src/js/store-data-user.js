@@ -21,6 +21,7 @@ var Application = Application || {};
 					email: faker.internet.email()
 				};
 			});
+			this.saveUser(users, ++amount);
 		}
 	};
 
@@ -33,7 +34,7 @@ var Application = Application || {};
 	};
 
 	// get user current from local
-	UserStore.prototype.setCurrentId = function setCurrentId() {
+	UserStore.prototype.getCurrentId = function setCurrentId() {
 		// body...
 		var currentId = localStorage.getItem('currentId');
 		if (!currentId) {
@@ -41,5 +42,22 @@ var Application = Application || {};
 		}
 	};
 
+	// save user into localstorage
+	UserStore.prototype.saveUser = function saveUser(listUser, currentId) {
+		// body...
+		var users = _.map(listUser, function(user) {
+			return {
+				id: user.id === undefined ? users.getId(): user.id,
+				name: user.name,
+				address: user.address,
+				email: user.email
+			};
+		});
+		localStorage.setItem('user', JSON.stringify(users));
+		if (arguments[1]) {
+			localStorage.setItem('currentId', currentId);
+		}
+	};
+ 
 	App.UserStore = UserStore;
 })(Application);
