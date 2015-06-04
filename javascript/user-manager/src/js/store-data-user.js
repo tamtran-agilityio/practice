@@ -1,3 +1,4 @@
+/*global _,faker */
 var Application = Application || {};
 
 ;(function(App) {
@@ -5,39 +6,40 @@ var Application = Application || {};
 	'use strict';
 
 	function UserStore() {
-		this.userdata = JSON.parse(localStorage.getItem('userdata'));
+		this.users = JSON.parse(localStorage.getItem('users'));
 	}
 
 	// create random 50 users anf save to localStorage
-	UserStore.prototype.CreateUserData = function(amount) {
+	UserStore.prototype.createUsers = function createUsers(amount) {
 		// body...
-		if (!localStorage.getItem('userdata')) {
-			var userdata = _range(amount).map(function(count)) {
+		if (!localStorage.getItem('users')) {
+			var users = _.range(amount).map(function(count) {
 				return {
 					id: ++count,
 					name: faker.name.findName(),
 					address: faker.name.streetAddress(),
 					email: faker.internet.email()
 				};
-			};
+			});
 		}
 	};
 
 	// get all user from local
 	UserStore.prototype.getAllUser = function getAllUser() {
 		// body...
-		return _.map(this.userdata), function(userdata) {
-			// return list data
-			return new App.User(userdata.id, userdata.name, userdata.address, userdata.email);
-		};
+		return _.map(this.users, function(user) {
+			return new App.User(user.id, user.name, user.address, user.email);
+		});
 	};
 
 	// get user current from local
-	UserStore.prototype.currentId = function currentId() {
-	// body...
-		var currentId = localStorage(.getItem('currentId'));
+	UserStore.prototype.setCurrentId = function setCurrentId() {
+		// body...
+		var currentId = localStorage.getItem('currentId');
 		if (!currentId) {
 			return currentId;
-		};
+		}
 	};
+
+	App.UserStore = UserStore;
 })(Application);
