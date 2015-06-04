@@ -50,6 +50,7 @@ html(lang='en')
 										th Email
 										th Exit
 										th Delete
+								tbody(id="view-all-user")
 						forn.col-md-4(method= 'post')
 							.form-group
 								label User ID
@@ -64,4 +65,7 @@ html(lang='en')
 								label Email
 								input(id="userEmail" type="email" placeholder="Enter Email" class="form-control")
 							button.btn.btn-default(id="add-user" type="submit") Submit
+		script(type="text/javascript" src="js/library.js")
+		script(type="text/javascript" src="js/app-manager.js")
+
 							
