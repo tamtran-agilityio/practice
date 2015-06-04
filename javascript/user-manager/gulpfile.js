@@ -24,21 +24,21 @@ var config = {
 	assetImages: 'src/images/*.*',
 	assetImagesOut: 'out/images',
 
-	vendor: 'src/files/vendor/'
+	vender: 'src/files/vender/'
 };
 
 var jsLibraryConcatList = [
-	config.vendor + 'jquery/dist/jquery.js',
-	config.vendor + 'lodash/lodash.js',
-	config.vendor + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
-	config.vendor + 'Faker/build/build/faker.js'
+	config.vender + 'jquery/dist/jquery.js',
+	config.vender + 'lodash/lodash.js',
+	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
+	config.vender + 'Faker/build/build/faker.js'
 ];
 
 var jsCodeConcatList = [
-	'src/js/user-model.js',
-	'src/js/user-storage.js',
-	'src/js/user-manager.js',
-	'src/js/app-manager.js',
+	'src/js/store-data-user.js',
+	'src/js/model-user.js',
+	'src/js/manager-user.js',
+	'src/js/manager-app.js',
 	'src/js/main.js'
 ];
 
@@ -99,7 +99,7 @@ gulp.task('jshint:watch', function() {
 // concat all js file to one file
 gulp.task('concatJsLibrary', function() {
 	return gulp.src(jsLibraryConcatList)
-		.pipe(concat('libraries.js'))
+		.pipe(concat('library.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('out/js/'))
 		.on('error', gutil.log);
@@ -107,7 +107,7 @@ gulp.task('concatJsLibrary', function() {
 
 gulp.task('concatJsCode', function() {
 	return gulp.src(jsCodeConcatList)
-		.pipe(concat('main.js'))
+		.pipe(concat('app-manager.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('out/js/'))
 		.on('error', gutil.log);
