@@ -42,6 +42,14 @@ var Application = Application || {};
 		this.store.saveUser(this.listUsers);
 	};
 
+	// find element need edit 
+	UserManager.prototype.findIdCurrent = function findIdCurrent(nodeId) {
+		// body...
+		var index = _.findIndex(this.listUsers, function(user) {
+			return parseInt(user.getId()) === parseInt(nodeId);
+		});
+		return index;
+	};
 	App.UserManager = UserManager;
 
 })(Application);
