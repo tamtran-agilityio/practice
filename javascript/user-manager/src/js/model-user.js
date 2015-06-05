@@ -23,7 +23,7 @@ var Application = Application || {};
 			'<td class = "user-id">', this.getId(), '</td>',
 			'<td class = "user-name">', this.name, '</td>',
 			'<td class = "user-address">', this.address, '</td>',
-			'<td class = "user-name">', this.email, '</td>',
+			'<td class = "user-email">', this.email, '</td>',
 			'<td><a class="user-edit" href="#">Edit</a></td>',
 			'<td><a class ="user-delete" href ="#">X</a></td>',
 			'</tr>'
