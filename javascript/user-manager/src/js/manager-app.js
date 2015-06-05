@@ -6,7 +6,6 @@ var Application = Application || {};
 
 	function AppManager() {
 		this.userManager = {};
-		this.userManager = new App.UserManager();
 	}
 
 	// load web on browser
@@ -29,13 +28,18 @@ var Application = Application || {};
 		// body...
 		$('#view-all-user').on('click', 'a', function(event) {
 			event.preventDefault();
-			var clickDel = $(event.target);
+			this.userManager = new App.UserManager();
+			var clickNode = $(event.target);
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
-			if (clickDel.hasClass('user-delete')) {
+			if (clickNode.hasClass('user-delete')) {
 				if (window.confirm('Use sure delete the user')) {
 					obj.userManager.delUser(userNode, nodeId);
 				}
+			}
+			if (clickNode.hasClass('user-edit')) {
+				var index = obj.userManager.findIdCurrent(nodeId);
+				obj.userManager.listUsers[index].viewInputEdit();
 			}
 		});
 		$('#add-user').click(function(event) {
@@ -52,6 +56,7 @@ var Application = Application || {};
 		$('#userName').val('');
 		$('#userAddress').val('');
 		$('#userEmail').val('');
+		$('#add-user').text('Add user');
 	};
 
 	App.AppManager = AppManager;
