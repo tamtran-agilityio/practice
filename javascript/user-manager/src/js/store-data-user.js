@@ -17,7 +17,7 @@ var Application = Application || {};
 				return {
 					id: ++count,
 					name: faker.name.findName(),
-					address: faker.name.streetAddress(),
+					address: faker.address.streetAddress(),
 					email: faker.internet.email()
 				};
 			});
@@ -37,7 +37,7 @@ var Application = Application || {};
 	UserStore.prototype.getCurrentId = function setCurrentId() {
 		// body...
 		var currentId = localStorage.getItem('currentId');
-		if (!currentId) {
+		if (currentId) {
 			return currentId;
 		}
 	};
@@ -47,17 +47,18 @@ var Application = Application || {};
 		// body...
 		var users = _.map(listUser, function(user) {
 			return {
-				id: user.id === undefined ? users.getId(): user.id,
+				id: user.id === undefined ? user.getId(): user.id,
 				name: user.name,
 				address: user.address,
 				email: user.email
 			};
 		});
-		localStorage.setItem('user', JSON.stringify(users));
+		localStorage.setItem('users', JSON.stringify(users));
+		
 		if (arguments[1]) {
 			localStorage.setItem('currentId', currentId);
 		}
 	};
- 
+
 	App.UserStore = UserStore;
 })(Application);
