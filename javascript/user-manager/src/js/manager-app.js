@@ -14,7 +14,7 @@ var Application = Application || {};
 		// checking localstorage create 50 users
 		if (!localStorage.getItem('users')) {
 			var userStore = new Application.UserStore();
-			userStore.createUsers(50);
+			userStore.createUsers(10);
 		}
 
 		this.userManager = new App.UserManager();
@@ -28,7 +28,7 @@ var Application = Application || {};
 		// body...
 		$('#view-all-user').on('click', 'a', function(event) {
 			event.preventDefault();
-			this.userManager = new App.UserManager();
+
 			var clickNode = $(event.target);
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
@@ -39,12 +39,17 @@ var Application = Application || {};
 			}
 			if (clickNode.hasClass('user-edit')) {
 				var index = obj.userManager.findIdCurrent(nodeId);
-				obj.userManager.listUsers[index].viewInputEdit();
+				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
 			}
 		});
 		$('#add-user').click(function(event) {
 			event.preventDefault();
-			obj.userManager.addUser();
+			var id = $('#userId').val();
+			if (!isNaN(parseInt(id))) {
+				obj.userManager.editUser(id);
+			} else {
+				obj.userManager.addUser();
+			}
 			obj.resetForm();
 		});
 	};
