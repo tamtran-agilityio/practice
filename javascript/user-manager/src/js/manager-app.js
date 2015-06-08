@@ -14,11 +14,10 @@ var Application = Application || {};
 		// checking localstorage create 50 users
 		if (!localStorage.getItem('users')) {
 			var userStore = new Application.UserStore();
-			userStore.createUsers(10);
+			userStore.createUsers(50);
 		}
 
 		this.userManager = new App.UserManager();
-
 		this.userManager.viewAllUser(this.userManager);
 		this.handlerEvent(this);
 	};
@@ -26,6 +25,7 @@ var Application = Application || {};
 	// execute event click button submit
 	AppManager.prototype.handlerEvent = function handlerEvent(obj) {
 		// body...
+		// handler view all user
 		$('#view-all-user').on('click', 'a', function(event) {
 			event.preventDefault();
 
@@ -42,9 +42,12 @@ var Application = Application || {};
 				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
 			}
 		});
+
+		// handler event edit and add
 		$('#add-user').click(function(event) {
 			event.preventDefault();
 			var id = $('#userId').val();
+			
 			if (!isNaN(parseInt(id))) {
 				obj.userManager.editUser(id);
 			} else {
@@ -53,6 +56,21 @@ var Application = Application || {};
 				}
 			}
 			obj.resetForm();
+		});
+		// handler form search
+		$('#searchform').submit(function(event) {
+			event.preventDefault();
+			var keySearch = $('#keysearch').val();
+			var resultSearch = obj.userManager.searchUser(keySearch);
+			obj.resultSearchShow(resultSearch);
+		});
+	};
+
+	AppManager.prototype.resultSearchShow = function resultSearchShow(resultSearch) {
+		// body...
+		$('#view-all-user').empty();
+		_.forEach(resultSearch, function(user) {
+			var useNode = user.viewUser();
 		});
 	};
 
