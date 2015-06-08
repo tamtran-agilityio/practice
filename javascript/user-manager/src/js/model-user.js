@@ -32,14 +32,13 @@ var Application = Application || {};
 		userNode.appendTo($("#view-all-user"));
 	};
 
-	// sync value object user and input text
-	User.prototype.viewInputEdit = function viewInputEdit() {
+	// change the value of an element in DOM
+	User.prototype.editUser = function editUser(name, address, email) {
 		// body...
-		$('#userId').val(this.getId());
-		$('#userName').val(this.name);
-		$('#userAddress').val(this.address);
-		$('#userEmail').val(this.email);
-		$('#add-user').text('Update');
+		this.name = name;
+		this.address = address;
+		this.email = email;
+
 	};
 
 	App.User = User;
