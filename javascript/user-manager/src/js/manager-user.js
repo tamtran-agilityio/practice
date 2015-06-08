@@ -42,6 +42,34 @@ var Application = Application || {};
 		this.store.saveUser(this.listUsers);
 	};
 
+ 	// sync value object user and input text
+ 	UserManager.prototype.viewInputEdit = function viewInputEdit(user) {
+ 		// body...
+		$('#userId').val(user.getId());
+		$('#userName').val(user.name);
+		$('#userAddress').val(user.address);
+		$('#userEmail').val(user.email);
+		$('#add-user').text('Update');
+ 	};
+
+	// edit a user
+	UserManager.prototype.editUser = function editUser(id) {
+		// body...
+		var index = this.findIdCurrent(id);
+
+		var user = this.listUsers[index];
+		var name = $('#userName').val();
+		var address = $('#userAddress').val();
+		var email = $('#userEmail').val();
+		user.editUser(name, address, email);
+
+		var listNodeChild = $('tr[data-id=' + user.getId() + ']');
+		listNodeChild.children('.user-name').text(user.name);
+		listNodeChild.children('.user-address').text(user.address);
+		listNodeChild.children('.user-email').text(user.email);
+
+		this.store.saveUser(this.listUsers);
+	};
 	// find element need edit 
 	UserManager.prototype.findIdCurrent = function findIdCurrent(nodeId) {
 		// body...
