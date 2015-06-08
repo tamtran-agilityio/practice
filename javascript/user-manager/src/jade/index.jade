@@ -31,9 +31,10 @@ html(lang='en')
 				.col-xs-3.col-md-2.sidebar
 					ul
 						li
-							a(href='#') View All User
-						li
-							a(href='#') Add New User
+							form(action='#' id="searchform")
+								.form-group
+									label Search 
+									input(id="keysearch" type="text" placeholder="Enter input search" class="form-control")
 				.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
 					h1 Dashboard
 					img.img-responsive(data-src='holder.js/200x200/auto/sky', alt='200x200', src='images/user.jpg', data-holder-rendered='true')
@@ -51,7 +52,7 @@ html(lang='en')
 										th Exit
 										th Delete
 								tbody(id="view-all-user")
-						forn.col-md-4(method= 'post')
+						form.col-md-4(method= 'post')
 							.form-group
 								label User ID
 								input(id="userId" type="text" placeholder="UserId" disabled="" class="form-control")
