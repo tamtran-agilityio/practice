@@ -56,7 +56,6 @@ var Application = Application || {};
 	UserManager.prototype.editUser = function editUser(id) {
 		// body...
 		var index = this.findIdCurrent(id);
-
 		var user = this.listUsers[index];
 		var name = $('#userName').val();
 		var address = $('#userAddress').val();
@@ -77,6 +76,14 @@ var Application = Application || {};
 			return parseInt(user.getId()) === parseInt(nodeId);
 		});
 		return index;
+	};
+
+	// search user follow key name 
+	UserManager.prototype.searchUser = function searchUser(keySearch) {
+		// body...
+		return _.filter(this.listUsers, function(user) {
+			return _.includes(user.name.toLowerCase(), keySearch.toLowerCase());
+		});
 	};
 	App.UserManager = UserManager;
 
