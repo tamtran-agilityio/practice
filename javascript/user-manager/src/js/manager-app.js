@@ -48,7 +48,9 @@ var Application = Application || {};
 			if (!isNaN(parseInt(id))) {
 				obj.userManager.editUser(id);
 			} else {
-				obj.userManager.addUser();
+				if (obj.checkInfo() !== true ) {
+					obj.userManager.addUser();
+				}
 			}
 			obj.resetForm();
 		});
@@ -78,6 +80,6 @@ var Application = Application || {};
 			return false;
 		}
 	};
-	
+
 	App.AppManager = AppManager;
 })(Application);
