@@ -64,5 +64,20 @@ var Application = Application || {};
 		$('#add-user').text('Add user');
 	};
 
+	// checking infor user before add
+	AppManager.prototype.checkInfo = function checkInfo() {
+		// body...
+		var name = $('#userName').val();
+		var address = $('#userAddress').val();
+		var email = $('#userEmail').val();
+
+		if ((name === '') || (address === "") || (email === "")) {
+			window.confirm('Please enter infor user');
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
 	App.AppManager = AppManager;
 })(Application);
