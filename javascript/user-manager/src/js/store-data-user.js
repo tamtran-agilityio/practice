@@ -12,9 +12,6 @@ var Application = Application || {};
 	// create random 50 users anf save to localStorage
 	UserStore.prototype.createUsers = function createUsers(amount) {
 		// body...
-		if(typeof(localStorage.getItem("username"))=='undefined'){
-    alert('no');
-		};
 		if (!localStorage.getItem('users')) {
 			var users = _.range(amount).map(function(count) {
 				return {

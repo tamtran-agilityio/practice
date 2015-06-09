@@ -36,10 +36,11 @@ var Application = Application || {};
 		this.store.saveUser(this.listUsers, id);
 	};
 
-	// remove a user
+	// remove a user follow id user
 	UserManager.prototype.delUser = function delUser(userNode, nodeId) {
 		// body...
 		userNode.remove();
+		user.delUser(nodeId);
 		_.remove(this.listUsers, function(user) {
 			return parseInt(user.getId()) === parseInt(nodeId);
 		});
@@ -55,6 +56,8 @@ var Application = Application || {};
 		$(userName).val(user.name);
 		$(userAddress).val(user.address);
 		$(userEmail).val(user.email);
+
+		// add value of button
 		$(addUser).text('Update');
  	};
 

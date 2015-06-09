@@ -4,9 +4,9 @@ var Application = Application || {};
 	'use strict';
 	var viewAll = '#view-all-user';
 	function User(userId, name, address, email) {
-		this.name = name || [];
-		this.address = address || [];
-		this.email = email || [];
+		this.name = name;
+		this.address = address;
+		this.email = email;
 		var id = userId;
 
 		this.getId = function() {
@@ -39,6 +39,12 @@ var Application = Application || {};
 		this.address = address;
 		this.email = email;
 
+	};
+
+	// delete user follow id
+	User.prototype.delUser = function delUser(id) {
+		// body...
+		this.id = id;
 	};
 
 	App.User = User;
