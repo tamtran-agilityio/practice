@@ -29,7 +29,7 @@ var Application = Application || {};
 		var name = $(userName).val();
 		var address = $(userAddress).val();
 		var email = $(userEmail).val();
-		var user = new App.User(id++, name, address, email);
+		var user = new App.User(id++, _.trim(name), _.trim(address), _.trim(email));
 
 		this.listUsers.push(user);
 		user.viewUser();
@@ -63,10 +63,10 @@ var Application = Application || {};
 		// body...
 		var index = this.findIdCurrent(id);
 		var user = this.listUsers[index];
-		var name = _.trim($(userName).val());
-		var address = _.trim($(userAddress).val());
-		var email = _.trim($(userEmail).val());
-		user.editUser(name, address, email);
+		var name = $(userName).val();
+		var address = $(userAddress).val();
+		var email = $(userEmail).val();
+		user.editUser(_.trim(name), _.trim(address), _.trim(email));
 
 		var listNodeChild = $('tr[data-id=' + user.getId() + ']');
 		listNodeChild.children('.user-name').text(user.name);
@@ -75,7 +75,7 @@ var Application = Application || {};
 
 		this.store.saveUser(this.listUsers);
 	};
-	// find element need edit 
+	// find id element need edit 
 	UserManager.prototype.findIdCurrent = function findIdCurrent(nodeId) {
 		// body...
 		var index = _.findIndex(this.listUsers, function(user) {

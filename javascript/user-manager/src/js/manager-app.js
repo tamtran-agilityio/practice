@@ -29,7 +29,7 @@ var Application = Application || {};
 			this.handlerEvent(this);
 		}
 		catch (err) {
-			window.confirm("Input is " + err);
+			window.confirm("Error input:" + err);
 		}
 	};
 
@@ -114,7 +114,6 @@ var Application = Application || {};
 				email.focus();
 			}
 			window.confirm('Add an user success');
-			return false;
 		}
 		catch (err) {
 			window.confirm('Add an user not success');
