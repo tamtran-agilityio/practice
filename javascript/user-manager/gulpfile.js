@@ -36,8 +36,8 @@ var jsLibraryConcatList = [
 
 var jsCodeConcatList = [
 	'src/js/store-data-user.js',
-	'src/js/model-user.js',
-	'src/js/manager-user.js',
+	'src/js/user.js',
+	'src/js/control-user.js',
 	'src/js/manager-app.js',
 	'src/js/main.js'
 ];

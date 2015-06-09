@@ -3,6 +3,12 @@ var Application = Application || {};
 ;(function(App) {
 	'use strict';
 
+	var addUser = '#add-user';
+	var userId = '#userId';
+	var userName = '#userName';
+	var userAddress = '#userAddress';
+	var userEmail = '#userEmail';
+
 	function UserManager() {
 		this.id = localStorage.getItem('currentId');
 		this.store = new App.UserStore();
@@ -20,9 +26,9 @@ var Application = Application || {};
 	UserManager.prototype.addUser = function addUser() {
 		// body...
 		var id = this.store.getCurrentId();
-		var name = $('#userName').val();
-		var address = $('#userAddress').val();
-		var email = $('#userEmail').val();
+		var name = $(userName).val();
+		var address = $(userAddress).val();
+		var email = $(userEmail).val();
 		var user = new App.User(id++, name, address, email);
 
 		this.listUsers.push(user);
@@ -45,11 +51,11 @@ var Application = Application || {};
  	// sync value object user and input text
  	UserManager.prototype.viewInputEdit = function viewInputEdit(user) {
  		// body...
-		$('#userId').val(user.getId());
-		$('#userName').val(user.name);
-		$('#userAddress').val(user.address);
-		$('#userEmail').val(user.email);
-		$('#add-user').text('Update');
+		$(userId).val(user.getId());
+		$(userName).val(user.name);
+		$(userAddress).val(user.address);
+		$(userEmail).val(user.email);
+		$(addUser).text('Update');
  	};
 
 	// edit a user
@@ -57,9 +63,9 @@ var Application = Application || {};
 		// body...
 		var index = this.findIdCurrent(id);
 		var user = this.listUsers[index];
-		var name = $('#userName').val();
-		var address = $('#userAddress').val();
-		var email = $('#userEmail').val();
+		var name = _.trim($(userName).val());
+		var address = _.trim($(userAddress).val());
+		var email = _.trim($(userEmail).val());
 		user.editUser(name, address, email);
 
 		var listNodeChild = $('tr[data-id=' + user.getId() + ']');

@@ -11,7 +11,7 @@ var Application = Application || {};
 	var userEmail = '#userEmail';
 
 	function AppManager() {
-		this.userManager = {};
+		this.userManager = [];
 	}
 
 	// load web on browser
@@ -29,7 +29,7 @@ var Application = Application || {};
 			this.handlerEvent(this);
 		}
 		catch (err) {
-			message.innerHTML = "Input is " + err;
+			window.confirm("Input is " + err);
 		}
 	};
 
@@ -82,7 +82,7 @@ var Application = Application || {};
 		if (_.isString($(viewAll)) === false) {
 			$(viewAll).empty();
 			_.forEach(resultSearch, function(user) {
-				var useNode = user.viewUser();
+				user.viewUser();
 			});
 		}
 	};
@@ -103,12 +103,22 @@ var Application = Application || {};
 		var name = $(userName).val();
 		var address = $(userAddress).val();
 		var email = $(userEmail).val();
-
-		if ((name === '') || (address === "") || (email === "")) {
-			window.confirm('Please enter infor user');
-			return true;
-		} else {
+		var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+		try {
+			if ((name === '') || (address === "")) {
+				window.confirm('Please enter infor user');
+				name.focus();
+			}
+			if (!testEmail.test(email)) {
+				window.confirm('Please enter infor email example abc@gmail.com');
+				email.focus();
+			}
+			window.confirm('Add an user success');
 			return false;
+		}
+		catch (err) {
+			window.confirm('Add an user not success');
+			return true;
 		}
 	};
 

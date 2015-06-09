@@ -37,7 +37,7 @@ var Application = Application || {};
 	UserStore.prototype.getCurrentId = function setCurrentId() {
 		// body...
 		var currentId = localStorage.getItem('currentId');
-		if (currentId) {
+		if (!_.isNull(currentId)) {
 			return currentId;
 		}
 	};
