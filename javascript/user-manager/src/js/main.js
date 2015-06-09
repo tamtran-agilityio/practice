@@ -11,7 +11,7 @@ var Application = Application || {};
 	        throw new Error('Sorry! No Web Storage Support!');
 	      }
 	    }
-	  }
+	  };
 	}
 	  App.CheckingStorage = CheckingStorage;
 })(Application); 

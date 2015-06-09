@@ -40,7 +40,6 @@ var Application = Application || {};
 	UserManager.prototype.delUser = function delUser(userNode, nodeId) {
 		// body...
 		userNode.remove();
-		user.delUser(nodeId);
 		_.remove(this.listUsers, function(user) {
 			return parseInt(user.getId()) === parseInt(nodeId);
 		});
