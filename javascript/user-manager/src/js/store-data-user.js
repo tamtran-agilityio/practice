@@ -49,6 +49,13 @@ var Application = Application || {};
 		}
 	};
 
+// count number user have search
+	UserStore.prototype.countSearch = function countSearch() {
+		// body...
+		return _.map(this.users, function(user) {
+			return _.size(this.listUsers)
+		})
+	};
 	/**
 	 * save user into localstorage
 	 * @param  {[user]}
