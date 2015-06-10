@@ -21,11 +21,15 @@ var Application = Application || {};
 					email: faker.internet.email()
 				};
 			});
+
 			this.saveUser(users, ++amount);
 		}
 	};
 
-	// get all user from local
+	/**
+	 * get all user from local
+	 * return [id, name, address, email]
+	 */
 	UserStore.prototype.getAllUser = function getAllUser() {
 		// body...
 		return _.map(this.users, function(user) {
@@ -33,7 +37,10 @@ var Application = Application || {};
 		});
 	};
 
-	// get user current from local
+	/**
+	 * get value id current
+	 * return {value id}
+	 */
 	UserStore.prototype.getCurrentId = function setCurrentId() {
 		// body...
 		var currentId = localStorage.getItem('currentId');
@@ -42,19 +49,24 @@ var Application = Application || {};
 		}
 	};
 
-	// save user into localstorage
+	/**
+	 * save user into localstorage
+	 * @param  {[user]}
+	 * @param  {[id]}
+	 */
 	UserStore.prototype.saveUser = function saveUser(listUser, currentId) {
 		// body...
 		var users = _.map(listUser, function(user) {
 			return {
-				id: user.id === undefined ? user.getId(): user.id,
+				id: user.id === undefined ? user.getId() : user.id,
 				name: user.name,
 				address: user.address,
 				email: user.email
 			};
 		});
+
 		localStorage.setItem('users', JSON.stringify(users));
-		
+
 		if (arguments[1]) {
 			localStorage.setItem('currentId', currentId);
 		}

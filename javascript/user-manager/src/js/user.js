@@ -19,7 +19,7 @@ var Application = Application || {};
 	User.prototype.viewUser = function viewUser() {
 		// body...
 		var userNode = $([
-			'<tr data-id="', this.getId(),'">',
+			'<tr data-id="', this.getId(), '">',
 			'<td class = "user-id">', this.getId(), '</td>',
 			'<td class = "user-name">', this.name, '</td>',
 			'<td class = "user-address">', this.address, '</td>',

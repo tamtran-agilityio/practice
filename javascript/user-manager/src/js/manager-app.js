@@ -29,7 +29,7 @@ var Application = Application || {};
 			this.handlerEvent(this);
 		}
 		catch (err) {
-			window.confirm("Error input:" + err);
+			window.confirm('Error input:' + err);
 		}
 	};
 
@@ -48,6 +48,7 @@ var Application = Application || {};
 					obj.userManager.delUser(userNode, nodeId);
 				}
 			}
+
 			if (clickNode.hasClass('user-edit')) {
 				var index = obj.userManager.findIdCurrent(nodeId);
 				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
@@ -62,12 +63,14 @@ var Application = Application || {};
 			if (!isNaN(parseInt(id))) {
 				obj.userManager.editUser(id);
 			} else {
-				if (obj.checkInfo() !== true ) {
+				if (obj.checkInfo() !== true) {
 					obj.userManager.addUser();
 				}
 			}
+
 			obj.resetForm();
 		});
+
 		// handler form search
 		$('#searchform').submit(function(event) {
 			event.preventDefault();
@@ -105,15 +108,17 @@ var Application = Application || {};
 		var email = $(userEmail).val();
 		var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 		try {
-			if ((name === '') || (address === "")) {
+			if ((name === '') || (address === '')) {
 				window.confirm('Please enter infor user');
 				name.focus();
 			}
+
 			if (!testEmail.test(email)) {
 				window.confirm('Please enter infor email example abc@gmail.com');
 				email.focus();
 			}
-			window.confirm('Add an user success');
+
+			window.alert('Add an user success');
 		}
 		catch (err) {
 			window.confirm('Add an user not success');
