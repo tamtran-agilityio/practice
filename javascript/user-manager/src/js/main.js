@@ -1,3 +1,4 @@
+/*global*/
 var Application = Application || {};
 
 // checking support of storage of webserver

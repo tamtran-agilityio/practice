@@ -1,3 +1,4 @@
+/*global*/
 var Application = Application || {};
 
 ;(function(App) {
@@ -9,31 +10,33 @@ var Application = Application || {};
 	var userName = '#userName';
 	var userAddress = '#userAddress';
 	var userEmail = '#userEmail';
+	var keyFind = '#keysearch';
 
 	function AppManager() {
-		this.userManager = [];
+		this.userManager = new App.UserList();
 	}
 
-	// load web on browser
+	/**
+	 * load web on browser 50 user
+	 * invoke handles event when execute
+	 */
 	AppManager.prototype.startApp = function startApp() {
 		// body...
-		// checking localstorage create 50 users
-		try {
-			if (!localStorage.getItem('users')) {
-				var userStore = new Application.UserStore();
-				userStore.createUsers(50);
-			}
+		// show 50 users form localstorage
+		var userStore = new Application.UserStore();
 
-			this.userManager = new App.UserManager();
+		try {
+			userStore.createUsers();
 			this.userManager.viewAllUser(this.userManager);
 			this.handlerEvent(this);
-		}
-		catch (err) {
+		} catch (err) {
 			window.confirm('Error input:' + err);
 		}
 	};
 
-	// execute event click button submit
+	/**
+	 * execute event click button add user, update , delete, edit
+	 */
 	AppManager.prototype.handlerEvent = function handlerEvent(obj) {
 		// body...
 		// handler view all user
@@ -43,12 +46,15 @@ var Application = Application || {};
 			var clickNode = $(event.target);
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
+
+			// handler event click button delete 
 			if (clickNode.hasClass('user-delete')) {
 				if (window.confirm('Use sure delete the user')) {
 					obj.userManager.delUser(userNode, nodeId);
 				}
 			}
 
+			// handler event click button edit
 			if (clickNode.hasClass('user-edit')) {
 				var index = obj.userManager.findIdCurrent(nodeId);
 				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
@@ -60,10 +66,10 @@ var Application = Application || {};
 			event.preventDefault();
 			var id = $(userId).val();
 
-			if (!isNaN(parseInt(id))) {
+			if (!_.isNaN(parseInt(id))) {
 				obj.userManager.editUser(id);
 			} else {
-				if (obj.checkInfo() !== true) {
+				if (obj.checkInfo() === true) {
 					obj.userManager.addUser();
 				}
 			}
@@ -74,15 +80,16 @@ var Application = Application || {};
 		// handler form search
 		$('#searchform').submit(function(event) {
 			event.preventDefault();
-			var keySearch = $('#keysearch').val();
+			var keySearch = $(keyFind).val();
 			var resultSearch = obj.userManager.searchUser(keySearch);
 			obj.resultSearchShow(resultSearch);
 		});
 	};
 
+	// find user in list users
 	AppManager.prototype.resultSearchShow = function resultSearchShow(resultSearch) {
 		// body...
-		if (_.isString($(viewAll)) === false) {
+		if (_.isString($(keyFind)) === false) {
 			$(viewAll).empty();
 			_.forEach(resultSearch, function(user) {
 				user.viewUser();
@@ -98,6 +105,7 @@ var Application = Application || {};
 		$(userAddress).val('');
 		$(userEmail).val('');
 		$(addUser).text('Add user');
+		$('h3.text-danger').remove();
 	};
 
 	// checking infor user before add
@@ -109,20 +117,22 @@ var Application = Application || {};
 		var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 		try {
 			if ((name === '') || (address === '')) {
-				window.confirm('Please enter infor user');
+				$('<h3 class="text-danger">Please enter infor user</h3>').insertAfter($('#add-user'));
+
 				name.focus();
 			}
 
 			if (!testEmail.test(email)) {
-				window.confirm('Please enter infor email example abc@gmail.com');
+				$('<h3 class="text-danger">Please enter infor email example abc@gmail.com</h3>').insertAfter($('#add-user'));
+
 				email.focus();
 			}
 
-			window.alert('Add an user success');
-		}
-		catch (err) {
-			window.confirm('Add an user not success');
+			window.confirm('Add an user success');
 			return true;
+		} catch (err) {
+			window.confirm('Add an user not success');
+			return false;
 		}
 	};
 

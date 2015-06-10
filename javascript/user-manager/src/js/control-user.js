@@ -8,22 +8,38 @@ var Application = Application || {};
 	var userName = '#userName';
 	var userAddress = '#userAddress';
 	var userEmail = '#userEmail';
+	var className = '.user-name';
+	var classAddress = '.user-address';
+	var classEmail = '.user-email';
 
-	function UserManager() {
+	function UserList() {
 		this.id = localStorage.getItem('currentId');
+		this.users = JSON.parse(localStorage.getItem('users'));
 		this.store = new App.UserStore();
-		this.listUsers = this.store.getAllUser();
+		this.listUsers = this.getAllUser();
 	}
 
+	/**
+	 * get all user from local
+	 * @return {[type]} [description]
+	 */
+	UserList.prototype.getAllUser = function getAllUser() {
+		// body...
+		return _.map(this.users, function(user) {
+			return new App.User(user.id, user.name, user.address, user.email);
+		});
+	};
+
 	// view all users to id #view-all-user
-	UserManager.prototype.viewAllUser = function viewAllUser(thisObj) {
+	UserList.prototype.viewAllUser = function viewAllUser(thisObj) {
+
 		_.forEach(thisObj.listUsers, function(user) {
 			user.viewUser();
 		});
 	};
 
 	// add a new user
-	UserManager.prototype.addUser = function addUser() {
+	UserList.prototype.addUser = function addUser() {
 		// body...
 		var id = this.store.getCurrentId();
 		var name = $(userName).val();
@@ -37,10 +53,9 @@ var Application = Application || {};
 	};
 
 	// remove a user follow id user
-	UserManager.prototype.delUser = function delUser(userNode, nodeId) {
+	UserList.prototype.delUser = function delUser(userNode, nodeId) {
 		// body...
 		userNode.remove();
-		user.delUser(nodeId);
 		_.remove(this.listUsers, function(user) {
 			return parseInt(user.getId()) === parseInt(nodeId);
 		});
@@ -49,8 +64,8 @@ var Application = Application || {};
 		this.store.saveUser(this.listUsers);
 	};
 
- 	// sync value object user and input text
- 	UserManager.prototype.viewInputEdit = function viewInputEdit(user) {
+ 	// sync value object user and input text when click button edit
+ 	UserList.prototype.viewInputEdit = function viewInputEdit(user) {
  		// body...
 		$(userId).val(user.getId());
 		$(userName).val(user.name);
@@ -62,7 +77,7 @@ var Application = Application || {};
  	};
 
 	// edit a user
-	UserManager.prototype.editUser = function editUser(id) {
+	UserList.prototype.editUser = function editUser(id) {
 		// body...
 		var index = this.findIdCurrent(id);
 		var user = this.listUsers[index];
@@ -72,28 +87,41 @@ var Application = Application || {};
 		user.editUser(_.trim(name), _.trim(address), _.trim(email));
 
 		var listNodeChild = $('tr[data-id=' + user.getId() + ']');
-		listNodeChild.children('.user-name').text(user.name);
-		listNodeChild.children('.user-address').text(user.address);
-		listNodeChild.children('.user-email').text(user.email);
+		listNodeChild.children(className).text(user.name);
+		listNodeChild.children(classAddress).text(user.address);
+		listNodeChild.children(classEmail).text(user.email);
 
 		this.store.saveUser(this.listUsers);
 	};
 	// find id element need edit 
-	UserManager.prototype.findIdCurrent = function findIdCurrent(nodeId) {
-		// body...
-		var index = _.findIndex(this.listUsers, function(user) {
-			return parseInt(user.getId()) === parseInt(nodeId);
-		});
-		return index;
+	UserList.prototype.findIdCurrent = function findIdCurrent(nodeId) {
+		// body..
+		if (localStorage.getItem('users')) {
+			var index = _.findLastIndex(this.listUsers, function(user) {
+				return parseInt(user.getId()) === parseInt(nodeId);
+			});
+			return index;
+		}
 	};
 
 	// search user follow key name 
-	UserManager.prototype.searchUser = function searchUser(keySearch) {
+	UserList.prototype.searchUser = function searchUser(keySearch) {
 		// body...
-		return _.filter(this.listUsers, function(user) {
-			return _.includes(user.name.toLowerCase(), keySearch.toLowerCase());
+		if (localStorage.getItem('users')) {
+			return _.filter(this.listUsers, function(user) {
+				return _.includes(user.name.toLowerCase(), keySearch.toLowerCase());
+			});
+		}
+	};
+
+	// count number user have search
+	UserList.prototype.countSearch = function countSearch() {
+		// body...
+		return _.map(this.users, function(user) {
+			return _.size(this.listUsers);
 		});
 	};
-	App.UserManager = UserManager;
+
+	App.UserList = UserList;
 
 })(Application);

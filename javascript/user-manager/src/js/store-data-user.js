@@ -10,8 +10,9 @@ var Application = Application || {};
 	}
 
 	// create random 50 users anf save to localStorage
-	UserStore.prototype.createUsers = function createUsers(amount) {
+	UserStore.prototype.createUsers = function createUsers() {
 		// body...
+		var amount = parseInt(50);
 		if (!localStorage.getItem('users')) {
 			var users = _.range(amount).map(function(count) {
 				return {
@@ -27,17 +28,6 @@ var Application = Application || {};
 	};
 
 	/**
-	 * get all user from local
-	 * return [id, name, address, email]
-	 */
-	UserStore.prototype.getAllUser = function getAllUser() {
-		// body...
-		return _.map(this.users, function(user) {
-			return new App.User(user.id, user.name, user.address, user.email);
-		});
-	};
-
-	/**
 	 * get value id current
 	 * return {value id}
 	 */
@@ -49,13 +39,6 @@ var Application = Application || {};
 		}
 	};
 
-// count number user have search
-	UserStore.prototype.countSearch = function countSearch() {
-		// body...
-		return _.map(this.users, function(user) {
-			return _.size(this.listUsers)
-		})
-	};
 	/**
 	 * save user into localstorage
 	 * @param  {[user]}
