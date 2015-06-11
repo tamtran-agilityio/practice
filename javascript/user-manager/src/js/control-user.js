@@ -44,7 +44,7 @@ var Application = Application || {};
 		var name = $(userName).val();
 		var address = $(userAddress).val();
 		var email = $(userEmail).val();
-		var user = new App.User(id++, _.trim(name), _.trim(address), _.trim(email));
+		var user = new App.User(id++,_.capitalize(_.trim(name)), _.trim(address), _.trim(email));
 
 		this.listUsers.push(user);
 		user.viewUser();
@@ -118,9 +118,11 @@ var Application = Application || {};
 	// count number user have search
 	UserList.prototype.countSearch = function countSearch() {
 		// body...
-		return _.map(this.users, function(user) {
-			return _.size(this.listUsers);
+		var sum = 0;
+		_.map(this.users, function(user) {
+			return sum++;
 		});
+		return sum;
 	};
 
 	App.UserList = UserList;

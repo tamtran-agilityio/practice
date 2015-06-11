@@ -42,7 +42,6 @@ var Application = Application || {};
 		// handler view all user
 		$(viewAll).on('click', 'button', function(event) {
 			event.preventDefault();
-
 			var clickNode = $(event.target);
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
@@ -51,6 +50,8 @@ var Application = Application || {};
 			if (clickNode.hasClass('user-delete')) {
 				if (window.confirm('Use sure delete the user')) {
 					obj.userManager.delUser(userNode, nodeId);
+					this.userManager = new App.UserList();
+					$('<h3 class="text-danger">The number user ' + this.userManager.countSearch() + '</h3>').insertAfter($('#searchform'));
 				}
 			}
 
@@ -83,6 +84,8 @@ var Application = Application || {};
 			var keySearch = $(keyFind).val();
 			var resultSearch = obj.userManager.searchUser(keySearch);
 			obj.resultSearchShow(resultSearch);
+			this.userManager = new App.UserList();
+					$('<h3 class="text-danger">The number user ' + this.userManager.countSearch() + '</h3>').insertAfter($('#searchform'));
 		});
 	};
 
