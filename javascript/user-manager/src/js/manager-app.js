@@ -47,7 +47,7 @@ var Application = Application || {};
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
 
-			// handler event click button delete 
+			// handler event click button delete
 			if (clickNode.hasClass('user-delete')) {
 				if (window.confirm('Use sure delete the user')) {
 					obj.userManager.delUser(userNode, nodeId);

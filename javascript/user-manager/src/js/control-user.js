@@ -13,7 +13,6 @@ var Application = Application || {};
 	var classEmail = '.user-email';
 
 	function UserList() {
-		this.id = localStorage.getItem('currentId');
 		this.users = JSON.parse(localStorage.getItem('users'));
 		this.store = new App.UserStore();
 		this.listUsers = this.getAllUser();
@@ -64,9 +63,9 @@ var Application = Application || {};
 		this.store.saveUser(this.listUsers);
 	};
 
- 	// sync value object user and input text when click button edit
- 	UserList.prototype.viewInputEdit = function viewInputEdit(user) {
- 		// body...
+	// sync value object user and input text when click button edit
+	UserList.prototype.viewInputEdit = function viewInputEdit(user) {
+		// body...
 		$(userId).val(user.getId());
 		$(userName).val(user.name);
 		$(userAddress).val(user.address);
@@ -74,7 +73,7 @@ var Application = Application || {};
 
 		// add value of button
 		$(addUser).text('Update');
- 	};
+	};
 
 	// edit a user
 	UserList.prototype.editUser = function editUser(id) {
@@ -93,18 +92,20 @@ var Application = Application || {};
 
 		this.store.saveUser(this.listUsers);
 	};
-	// find id element need edit 
+
+	// find id element need edit
 	UserList.prototype.findIdCurrent = function findIdCurrent(nodeId) {
 		// body..
 		if (localStorage.getItem('users')) {
 			var index = _.findLastIndex(this.listUsers, function(user) {
 				return parseInt(user.getId()) === parseInt(nodeId);
 			});
+
 			return index;
 		}
 	};
 
-	// search user follow key name 
+	// search user follow key name
 	UserList.prototype.searchUser = function searchUser(keySearch) {
 		// body...
 		if (localStorage.getItem('users')) {
