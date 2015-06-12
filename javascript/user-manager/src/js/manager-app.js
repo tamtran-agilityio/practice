@@ -1,9 +1,10 @@
-/*global*/
+/*global */
 var Application = Application || {};
 
 ;(function(App) {
 	// body...
 	'use strict';
+
 	var viewAll = '#view-all-user';
 	var addUser = '#add-user';
 	var userId = '#userId';
@@ -39,7 +40,36 @@ var Application = Application || {};
 	 */
 	AppManager.prototype.handlerEvent = function handlerEvent(obj) {
 		// body...
-		// handler view all user
+
+		var clickNode = $(event.target);
+		var userNode = $(this).parentsUntil('tr').parent();
+		var nodeId = userNode.attr('data-id');
+		
+		// handler event when click button add user
+		$('#add-user').click(function(event) {
+			event.preventDefault();
+
+			if (obj.checkInfo()) {
+				obj.userManager.addUser();
+			}
+
+			obj.resetForm();
+
+		});
+
+		// handler event when click button edit user
+		$('#edit-user').click(function(event) {
+			event.preventDefault();
+
+			var id = $(userId).val();
+
+			if (!_.isNaN(parseInt(id))) {
+				obj.userManager.editUser(id);
+			}
+
+			obj.resetForm();
+
+		});
 		$(viewAll).on('click', 'button', function(event) {
 			event.preventDefault();
 			var clickNode = $(event.target);
@@ -62,23 +92,7 @@ var Application = Application || {};
 			}
 		});
 
-		// handler event edit and add
-		$(addUser).click(function(event) {
-			event.preventDefault();
-			var id = $(userId).val();
-
-			if (!_.isNaN(parseInt(id))) {
-				obj.userManager.editUser(id);
-			} else {
-				if (obj.checkInfo() === true) {
-					obj.userManager.addUser();
-				}
-			}
-
-			obj.resetForm();
-		});
-
-		// handler form search
+	// handler form search
 		$('#searchform').submit(function(event) {
 			event.preventDefault();
 			var keySearch = $(keyFind).val();
@@ -118,6 +132,7 @@ var Application = Application || {};
 		var address = $(userAddress).val();
 		var email = $(userEmail).val();
 		var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
 		try {
 			if ((name === '') || (address === '')) {
 				$('<h3 class="text-danger">Please enter infor user</h3>').insertAfter($('#add-user'));
