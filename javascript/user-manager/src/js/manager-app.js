@@ -33,7 +33,6 @@ var Application = Application || {};
 			this.userManager = new App.UserList();
 			var count = this.userManager.countSearch();
 			$('.count-user').text(count);
-			$('.count-user').text(count);
 		} catch (err) {
 			window.confirm('Error input:' + err);
 		}
@@ -45,16 +44,20 @@ var Application = Application || {};
 	AppManager.prototype.handlerEvent = function handlerEvent(obj) {
 		// body...
 
+		$('#edit-user').hide();
+
 		// handler event when click button add user
 		$('#add-user').click(function(event) {
 			event.preventDefault();
 
 			if (obj.checkInfo()) {
 				obj.userManager.addUser();
+				this.userManager = new App.UserList();
+				var count = this.userManager.countSearch();
+				$('.count-user').text(count);
 			}
 
 			obj.resetForm();
-
 		});
 
 		// handler event when click button update user
@@ -67,29 +70,35 @@ var Application = Application || {};
 			}
 
 			obj.resetForm();
-
+			$('#add-user').show();
+			$('#edit-user').hide();
 		});
 
-		// handler event click button delete
-		$('.user-delete').click(function(event) {
-			event.preventDefault();
+		$(viewAll).on('click', function(event) {
+			// handler event click button delete
+			$('.user-delete').click(function(event) {
+				event.preventDefault();
 
-			var userNode = $(this).parentsUntil('tr').parent();
-			var nodeId = userNode.attr('data-id');
-			if (window.confirm('Use sure delete the user')) {
+				var userNode = $(this).parentsUntil('tr').parent();
+				var nodeId = userNode.attr('data-id');
 				obj.userManager.delUser(userNode, nodeId);
+				obj.resetForm();
 				this.userManager = new App.UserList();
 				var count = this.userManager.countSearch();
 				$('.count-user').text(count);
-			}
-		});
+			});
 
-		$('.user-edit').click(function(event) {
-			var userNode = $(this).parentsUntil('tr').parent();
-			var nodeId = userNode.attr('data-id');
-			var index = obj.userManager.findIdCurrent(nodeId);
+			$('.user-edit').click(function(event) {
+				event.preventDefault();
 
-			obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
+				var userNode = $(this).parentsUntil('tr').parent();
+				var nodeId = userNode.attr('data-id');
+				var index = obj.userManager.findIdCurrent(nodeId);
+
+				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
+				$('#add-user').hide();
+				$('#edit-user').show();
+			});
 		});
 
 		// handler form search
