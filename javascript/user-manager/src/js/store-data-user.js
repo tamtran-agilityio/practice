@@ -13,6 +13,7 @@ var Application = Application || {};
 	UserStore.prototype.createUsers = function createUsers() {
 		// body...
 		var amount = parseInt(50);
+
 		if (!localStorage.getItem('users')) {
 			var users = _.range(amount).map(function(count) {
 				return {

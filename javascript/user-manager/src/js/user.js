@@ -1,8 +1,18 @@
+/*global */
 var Application = Application || {};
 
 ;(function(App) {
 	'use strict';
+
 	var viewAll = '#view-all-user';
+
+	/**
+	 * point manager user
+	 * {int} userId
+	 * {character} name
+	 * {character} address
+	 * [A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i {character} email
+	 */
 	function User(userId, name, address, email) {
 		this.name = name ;
 		this.address = address;
@@ -49,4 +59,4 @@ var Application = Application || {};
 
 	App.User = User;
 
-}) (Application);
+})(Application);

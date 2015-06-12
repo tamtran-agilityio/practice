@@ -30,6 +30,10 @@ var Application = Application || {};
 			userStore.createUsers();
 			this.userManager.viewAllUser(this.userManager);
 			this.handlerEvent(this);
+			this.userManager = new App.UserList();
+			var count = this.userManager.countSearch();
+			$('.count-user').text(count);
+			$('.count-user').text(count);
 		} catch (err) {
 			window.confirm('Error input:' + err);
 		}
@@ -41,10 +45,6 @@ var Application = Application || {};
 	AppManager.prototype.handlerEvent = function handlerEvent(obj) {
 		// body...
 
-		var clickNode = $(event.target);
-		var userNode = $(this).parentsUntil('tr').parent();
-		var nodeId = userNode.attr('data-id');
-		
 		// handler event when click button add user
 		$('#add-user').click(function(event) {
 			event.preventDefault();
@@ -57,12 +57,11 @@ var Application = Application || {};
 
 		});
 
-		// handler event when click button edit user
+		// handler event when click button update user
 		$('#edit-user').click(function(event) {
 			event.preventDefault();
 
 			var id = $(userId).val();
-
 			if (!_.isNaN(parseInt(id))) {
 				obj.userManager.editUser(id);
 			}
@@ -70,36 +69,35 @@ var Application = Application || {};
 			obj.resetForm();
 
 		});
-		$(viewAll).on('click', 'button', function(event) {
+
+		// handler event click button delete
+		$('.user-delete').click(function(event) {
 			event.preventDefault();
-			var clickNode = $(event.target);
+
 			var userNode = $(this).parentsUntil('tr').parent();
 			var nodeId = userNode.attr('data-id');
-
-			// handler event click button delete
-			if (clickNode.hasClass('user-delete')) {
-				if (window.confirm('Use sure delete the user')) {
-					obj.userManager.delUser(userNode, nodeId);
-					this.userManager = new App.UserList();
-					$('<h3 class="text-danger">The number user ' + this.userManager.countSearch() + '</h3>').insertAfter($('#searchform'));
-				}
-			}
-
-			// handler event click button edit
-			if (clickNode.hasClass('user-edit')) {
-				var index = obj.userManager.findIdCurrent(nodeId);
-				obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
+			if (window.confirm('Use sure delete the user')) {
+				obj.userManager.delUser(userNode, nodeId);
+				this.userManager = new App.UserList();
+				var count = this.userManager.countSearch();
+				$('.count-user').text(count);
 			}
 		});
 
-	// handler form search
+		$('.user-edit').click(function(event) {
+			var userNode = $(this).parentsUntil('tr').parent();
+			var nodeId = userNode.attr('data-id');
+			var index = obj.userManager.findIdCurrent(nodeId);
+
+			obj.userManager.viewInputEdit(obj.userManager.listUsers[index]);
+		});
+
+		// handler form search
 		$('#searchform').submit(function(event) {
 			event.preventDefault();
 			var keySearch = $(keyFind).val();
 			var resultSearch = obj.userManager.searchUser(keySearch);
 			obj.resultSearchShow(resultSearch);
-			this.userManager = new App.UserList();
-					$('<h3 class="text-danger">The number user ' + this.userManager.countSearch() + '</h3>').insertAfter($('#searchform'));
 		});
 	};
 
@@ -121,7 +119,6 @@ var Application = Application || {};
 		$(userName).val('');
 		$(userAddress).val('');
 		$(userEmail).val('');
-		$(addUser).text('Add user');
 		$('h3.text-danger').remove();
 	};
 

@@ -1,3 +1,4 @@
+/*global */
 var Application = Application || {};
 
 ;(function(App) {
@@ -44,7 +45,7 @@ var Application = Application || {};
 		var name = $(userName).val();
 		var address = $(userAddress).val();
 		var email = $(userEmail).val();
-		var user = new App.User(id++,_.capitalize(_.trim(name)), _.trim(address), _.trim(email));
+		var user = new App.User(id++, _.capitalize(_.trim(name)), _.trim(address), _.trim(email));
 
 		this.listUsers.push(user);
 		user.viewUser();
@@ -70,9 +71,6 @@ var Application = Application || {};
 		$(userName).val(user.name);
 		$(userAddress).val(user.address);
 		$(userEmail).val(user.email);
-
-		// add value of button
-		$(addUser).text('Update');
 	};
 
 	// edit a user
@@ -122,6 +120,7 @@ var Application = Application || {};
 		_.map(this.users, function(user) {
 			return sum++;
 		});
+
 		return sum;
 	};
 
