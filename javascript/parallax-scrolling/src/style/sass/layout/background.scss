@@ -1,0 +1,53 @@
+.parallax-window, .parallax-container, .parallax-mirror{
+	min-height: 500px;
+	background: transparent;
+}
+
+.skrollable {
+	position: fixed;
+	z-index: 100;
+}
+
+#intro {
+	position: absolute;
+	width: 80%;
+	left: 50%;
+	top: 1em;
+	margin-left: -40%;
+	padding: 2em;
+	background: #88DC23;
+	text-align: center;
+	border-radius: 1em;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	transform-origin: 0 0;
+	box-sizing: border-box;
+}
+
+#transform {
+	position: absolute;
+	z-index: 100;
+	width: 70%;
+	left: 50%;
+	top: 40%;
+	margin-left: -35%;
+	text-align: center;
+	font-size: 150%;
+	h2 {
+		color: inherit;
+		font-size: 1.91em;
+		margin: 2em 0 1em 0;
+		display: block;
+		font-size: 1.5em;
+		-webkit-margin-before: 0.83em;
+		-webkit-margin-after: 0.83em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		font-weight: bold;
+	}
+	h2:first-child {
+		margin-top:0;
+	}
+}

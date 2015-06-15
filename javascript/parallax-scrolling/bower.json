@@ -1,0 +1,27 @@
+{
+  "name": "user-manager",
+  "version": "0.0.0",
+  "description": "Manage libraries for User manager",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Tam Tran"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~3.9.3",
+    "bootstrap-sass-official": "~3.3.4"
+  },
+  "devDependencies": {
+    "Faker": "~2.1.3"
+  }
+}
