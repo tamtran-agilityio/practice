@@ -1,10 +1,29 @@
+div.band .columns {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+h1, h2, h3 {
+	font-family: 'PT Serif', serif;
+	font-weight: 700;
+	text-align: center;
+}
+header.band {
+	background-image:url(../images/background.jpg);
+	background-size: 100%;
+	min-height: 400px;
+	h1 {
+	font-size: 3.25em; /*52 / 16*/
+	color: #fff;
+	margin-top: 10%;
+	}
+}
+
 .parallax-window, .parallax-container, .parallax-mirror{
 	min-height: 500px;
 	background: transparent;
 }
 
 .skrollable {
-	position: fixed;
 	z-index: 100;
 }
 
