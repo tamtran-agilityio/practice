@@ -7,14 +7,18 @@ html(lang='en')
 		title Parallax Example
 		link(href='styles/styles.css', rel='stylesheet')
 	body
+		header.band(data-0='background-position:0px 0px;', data-500='background-position:0px -250px;')
+			.container-fluid
+				.columns.sixteen(data-0='opacity: 1', data-180='opacity: 0')
+						h1 Meaningless Pap
+		//- used parallax.js
 		.container-fluid
-			//- used parallax.js
 			.parallax-window(data-parallax="scroll" data-image-src="/images/stellar-spire-eagle-nebula.jpg")
 			//- .parallax-window(data-parallax="scroll" data-position=" 1000 50")
 			.parallax-container(data-parallax="scroll" data-image-src="/images/spiral-galaxy.jpg")
 			.parallax-mirror(data-parallax="scroll" data-image-src="/images/helix-nebula.jpg")
 				//- used skroll.js
-			#intro.skrollable.skrollable-between(data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;", data-500="opacity:0;top:-10%;transform:rotate(-90deg);", style="opacity: 1; top: 3%; transform: rotate(0deg); transform-origin: 0px 0px 0px;")
+			#intro.skrollable.skrollable-between(data-0="opacity:1;top:50%;transform:rotate(0deg);transform-origin:0 0;", data-500="opacity:0;top:-10%;transform:rotate(-90deg);", style="opacity: 1; top: 3%; transform: rotate(0deg); transform-origin: 0px 0px 0px;")
 				h1
 					a(href="#") skrollr example
 				h2 parallax scrolling for the masses
@@ -26,3 +30,4 @@ html(lang='en')
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
 		script(type="text/javascript") var s = skrollr.init();
+		script(type="text/javascript") skrollr.init({forceHeight: false});
