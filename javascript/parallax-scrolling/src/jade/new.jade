@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title Parallax Example
+		link(href='styles/styles.css', rel='stylesheet')
+	body
+		.container-fluid
+			#slide-first.start-day.skrollable.skrollable-first(data-0="background-position: 0px 0px;" data-300="background-position: 0px -145px;" style="background-position: 0px 0px;")
+				.columns.sixteen(data-0='opacity: 1', data-180='opacity: 0')
+					h1 Start your day
+		script(type="text/javascript" src="js/library.js")
+		script(type="text/javascript" src="js/main.js")
+		script(type="text/javascript") var s = skrollr.init();
+		script(type="text/javascript") skrollr.init({forceHeight: false});
