@@ -46,11 +46,12 @@ header.band {
 }
 
 #transform {
+	background: transparent;
 	position: absolute;
 	z-index: 100;
 	width: 70%;
 	left: 50%;
-	top: 40%;
+	top: 120%;
 	margin-left: -35%;
 	text-align: center;
 	font-size: 150%;
@@ -69,4 +70,16 @@ header.band {
 	h2:first-child {
 		margin-top:0;
 	}
+}
+.scrollme {
+	overflow: hidden;
+	-webkit-perspective: 500px;
+	transform-style: preserve-3d;
+}
+.footer_block {
+	padding: 5% 1.5em;
+	transform-origin: center bottom;
+	background: #606060;
+	color: #b0b0b0;
+	margin-top: 20%;
 }
