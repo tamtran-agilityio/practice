@@ -5,5 +5,3 @@ $('.parallax-container').parallax({imageSrc: '/images/spiral-galaxy.jpg'});
 $('.parallax-mirror').parallax({imageSrc: '/images/helix-nebula.jpg'});
 
 jQuery(window).trigger('resize').trigger('scroll');
-
-var s = skrollr.init();
