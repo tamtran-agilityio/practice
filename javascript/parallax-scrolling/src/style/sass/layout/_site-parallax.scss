@@ -1,0 +1,77 @@
+.start-day {
+	background-image:url(../images/bcg_slide-1.jpg);
+	height: 923px;
+	width: 100%;
+	h1 {
+		margin: 0 auto;
+		position: absolute;
+		top: 20%;
+		left: 50%;
+	}
+}
+
+.start-next-time {
+	background-image:url(../images/bcg_slide-2.jpg);
+	height: 923px;
+	width: 100%;
+}
+
+.contert-two {
+	position: absolute;
+	h1 {
+		margin: 0 auto;
+		position: absolute;
+		top: 70%;
+		left: 50%;
+	}
+}
+
+.start-end-time {
+	background-image:url(../images/bcg_slide-3.jpg);
+	height: 923px;
+	width: 100%;
+}
+
+#slide-first {
+	height: 923px;
+}
+
+#transform {
+	background: transparent;
+	position: absolute;
+	z-index: 100;
+	width: 70%;
+	left: 50%;
+	top: 120%;
+	margin-left: -35%;
+	text-align: center;
+	font-size: 150%;
+
+	h2 {
+		color: inherit;
+		font-size: 1.91em;
+		margin: 2em 0 1em 0;
+		display: block;
+		font-size: 1.5em;
+		-webkit-margin-before: 0.83em;
+		-webkit-margin-after: 0.83em;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		font-weight: bold;
+	}
+
+	h2:first-child {
+		margin-top:0;
+	}
+}
+
+#easing_wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+#easing {
+	top: 10%;
+	width: 50%;
+	z-index: 101;
+}
