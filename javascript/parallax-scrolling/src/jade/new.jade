@@ -11,9 +11,10 @@ html(lang='en')
 			.row
 				section#slide-first.homeSlide(style='height: 980px;')
 					.bcg.skrollable.skrollr-body.skrollable-between(data-0-start='background-position: 50% 0px;', data-100-top-bottom='background-position: 50% -100px;', data-anchor-target='#slide-first', style='background-position: 50% 0px; cursor: inherit;')
-						.hsContainer
-							.hsContent.skrollable.skrollr-body.skrollable-before(data-center='bottom: 200px; opacity: 1', data-top='bottom: 1200px; opacity: 0', data-anchor-target='#slide-first h2', style='bottom: 200px; opacity: 1;')
-								h2 Simple parallax scrolling is...
+						.bcg-move.skrollable.skrollr-body.skrollable-between(data-0="background-image:url('../images/emoticon.png');" data-100="background-image:url('../images/fun.jpg');")
+							.hsContainer
+								.hsContent.skrollable.skrollr-body.skrollable-before(data-center='bottom: 200px; opacity: 1', data-top='bottom: 1200px; opacity: 0', data-anchor-target='#slide-first h2', style='bottom: 200px; opacity: 1;')
+									h2 Simple parallax scrolling is...
 				section#slide-second.homeSlide(style='height: 980px;')
 					.bcg.skrollable.skrollr-body.skrollable-between(data-center='background-position: 50% 0px;', data-top-bottom='background-position: 50% -100px;', data-bottom-top='background-position: 50% 100px;', data-anchor-target='#slide-second', style='background-position: 50% 0px; cursor: inherit;')
 						.hsContainer
