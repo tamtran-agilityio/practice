@@ -31,12 +31,12 @@ var jsLibraryConcatList = [
 	config.vender + 'jquery/dist/jquery.js',
 	config.vender + 'lodash/lodash.js',
 	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
-	config.vender + 'parallax/parallax.js',
-	config.vender + 'parallax/skrollr.js'
+	config.vender + 'parallax/parallax.js'
 ];
 
 var jsCodeConcatList = [
-	'src/js/main.js'
+	'src/js/main.js',
+	'src/js/skrollr.js'
 ];
 
 gulp.task('default', function() {
