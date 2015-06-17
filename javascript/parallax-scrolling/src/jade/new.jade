@@ -8,13 +8,22 @@ html(lang='en')
 		link(href='styles/styles.css', rel='stylesheet')
 	body
 		.container-fluid
-			#slide-first.start-day.skrollable.skrollable-first(data-0="background-position: 0px 0px;" data-300="background-position: 0px -145px;" style="background-position: 0px 0px;")
-				.columns.sixteen(data-0='opacity: 1', data-180='opacity: 0')
-					h1 Start your day
-			#slide-first.start-next-time.skrollable.skrollable-between(data-0="background-position: 0px -500px;" data-300="background-position: 0px -300px;" data-400="background-position: 0px 0px;" style="background-position: 0px 0px;")
-			#transform.skrollable.skrollable-between(data-0="transform:scale(0) rotate(0deg);", data-1000="transform:scale(1) rotate(1440deg);opacity:1;", data-1600="transform:scale(3) rotate(2400deg)", data-1700="transform:scale(5) rotate(3240deg);opacity:0;", style="transform: scale(7) rotate(3600deg); opacity: 1;")
-				h2 transform
-				p scale, skew and rotate
+			.row
+				section#slide-first.homeSlide(style='height: 980px;')
+					.bcg.skrollable.skrollable-between(data-start='background-position: 50% 0px;', data-top-bottom='background-position: 50% -100px;', data-anchor-target='#slide-first', style='background-position: 50% 0px;')
+						.hsContainer
+							.hsContent.skrollable.skrollable-before(data-center='bottom: 200px; opacity: 1', data-top='bottom: 1200px; opacity: 0', data-anchor-target='#slide-first h2', style='bottom: 200px; opacity: 1;')
+								h2 Simple parallax scrolling is...
+				section#slide-second.homeSlide(style='height: 980px;')
+					.bcg.skrollable.skrollable-between(data-center='background-position: 50% 0px;', data-top-bottom='background-position: 50% -100px;', data-bottom-top='background-position: 50% 100px;', data-anchor-target='#slide-second', style='background-position: 50% 0px;')
+						.hsContainer
+							.hsContent.skrollable.skrollable-between(data-center='opacity: 1', data-center-top='opacity: 0', data--100-bottom='opacity: 0;', data-anchor-target='#slide-third', style='opacity: 0.99390243902439;')
+								h2 great for story telling websites.
+				section#slide-third.homeSlide(style='height: 980px;')
+					.bcg.skrollable.skrollable-between(data-center='background-position: 50% 0px;', data-top-bottom='background-position: 50% -100px;', data-bottom-top='background-position: 50% 100px;', data-anchor-target='#slide-third', style='background-position: 50% 0px;')
+						.hsContainer
+							.hsContent.skrollable.skrollable-between(data--50-bottom='opacity: 0;', data--200-bottom='opacity: 1;', data-center='opacity: 1', data-200-top='opacity: 0', data-anchor-target='#slide-third h2', style='opacity: 1;')
+								h2 Now go and create your own story
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
 		script(type="text/javascript") var s = skrollr.init();
