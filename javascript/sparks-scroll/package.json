@@ -1,0 +1,24 @@
+{
+  "name": "sparks-scroll",
+  "version": "1.0.0",
+  "description": "Practice user manager of Tam Tran",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "browser-sync": "~2.7.12",
+    "gulp-sass": "~2.0.1",
+    "gulp-jshint": "~1.11.0",
+    "jshint-stylish": "~2.0.0",
+    "gulp-jade": "~1.0.1",
+    "gulp-concat": "~2.5.2",
+    "gulp-uglify": "~1.2.0",
+    "gulp-util": "~3.0.5",
+    "gulp-minify-css": "~1.1.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}

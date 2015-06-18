@@ -1,0 +1,25 @@
+{
+  "name": "sparks-scroll",
+  "version": "0.0.0",
+  "description": "Manage libraries for User manager",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Tam Tran"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  	"bootstrap-sass-official": "~3.3.4"
+  },
+  "devDependencies": {
+  }
+}
