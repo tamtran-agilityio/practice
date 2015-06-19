@@ -1,5 +1,5 @@
 #slide-basket-pitch {
-	background-size: cover;
+	// background-size: cover;
 	width: 100%;
 	.basket-pitch {
 		background-position: center center;
@@ -65,15 +65,37 @@
 			height: 100%;
 			width: 100%;
 		}
-	}
-	.txt-wapper {
-		width: 100%;
-		opacity: absolute;
-	}
+}
 
-	.backgroung-basket {
+	.background-basket {
 		background-image: url("../images/basket-pitch.png");
 		height: 700px;
 		width: 100%;
 	}
+}
+
+.txt-wapper {
+		position: absolute;
+		top: 30%;
+		left: 60%;
+		z-index: 100;
+		color: #fff;
+}
+.radio-text {
+	font-size: 22px;
+	color: #fff;
+}
+.forums-text {
+	margin-top: 60px;
+	font-size: 26px;
+	color: #fff;
+}
+.sparks-text {
+	margin-top: 75px
+	font-size: 50px;
+	color: #fff;
+}
+.discuss-text {
+	font-size: 20px;
+	color: #fff;
 }
