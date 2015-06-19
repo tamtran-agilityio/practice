@@ -68,9 +68,9 @@ gulp.task('serve', [], function() {
 gulp.task('sass', function() {
 	gulp.src(config.css)
 		.pipe(sass().on('error', sass.logError))
-		.pipe(minifyCss({
-			compatibility: 'ie8'
-		}))
+		// .pipe(minifyCss({
+		// 	compatibility: 'ie8'
+		// }))
 		.pipe(gulp.dest(config.cssOut));
 });
 
