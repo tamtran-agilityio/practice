@@ -1,10 +1,6 @@
 #slide-basket-pitch {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-size: cover;
 	width: 100%;
-
 	.basket-pitch {
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -12,25 +8,72 @@
 	}
 	
 	.basket-iponhe {
+		background-position: 25% 25%;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
+		position: absolute;
 		height: 100%;
 		width: 100%
-		position: absolute;
-		left: 20%;
-		top: 10%;
-		z-index: 100;
 	}
-	.basket-line-long {
+
+	.active {
 		background-position: center center;
 		background-repeat: no-repeat;
-		background-attachment: fixed;
+		// background-attachment: fixed;
+		position: absolute;
 		height: 100%;
-		width: 100%
+		width: 100%;
+
+		.basket-line-long {
+			background-position: center 2%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.basket-line-short {
+			background-position: center 35%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.basket-line-short-last {
+			background-position: center 47%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.basket-radio {
+			background-position: center 30%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.basket-globes {
+			background-position: center 41%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
+
+		.basket-cloud {
+			background-position: center 57%;
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+		}
 	}
+	.txt-wapper {
+		width: 100%;
+		opacity: absolute;
+	}
+
 	.backgroung-basket {
 		background-image: url("../images/basket-pitch.png");
 		height: 700px;
-		width: 100%
+		width: 100%;
 	}
 }

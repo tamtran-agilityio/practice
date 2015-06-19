@@ -28,10 +28,9 @@ var config = {
 };
 
 var jsLibraryConcatList = [
-	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
-	config.vender + 'jquery/dist/jquery.js'
+	config.vender + 'jquery/dist/jquery.js',
+	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js'
 ];
-
 var jsCodeConcatList = [
 	'src/js/skrollr.js'
 ];
