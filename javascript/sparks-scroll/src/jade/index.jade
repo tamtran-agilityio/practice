@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+	head
+		meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title Parallax Example
+		link(href='styles/styles.css', rel='stylesheet')
+	body
+		.container-fluid
+			.row
+				#slide-basket-pitch.basket-pitch(styles='height=700px')
+					.backgroung-basket.skrollable.skrollr-body.skrollable-between(data-0-start='background-position: 50% 0px;', data-100-top-bottom='background-position: 50% -100px;', data-anchor-target='#slide-basket-pitch', style='background-position: 50% 0px; cursor: inherit;')
+		script(type="text/javascript" src="js/library.js")
+		script(type="text/javascript" src="js/main.js")
+		script(type="text/javascript") var s = skrollr.init();
+		script(type="text/javascript") skrollr.init({forceHeight: false});
