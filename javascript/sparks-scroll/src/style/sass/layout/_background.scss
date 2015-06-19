@@ -1,0 +1,36 @@
+#slide-basket-pitch {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	width: 100%;
+
+	.basket-pitch {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	
+	.basket-iponhe {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 100%;
+		width: 100%
+		position: absolute;
+		left: 20%;
+		top: 10%;
+		z-index: 100;
+	}
+	.basket-line-long {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height: 100%;
+		width: 100%
+	}
+	.backgroung-basket {
+		background-image: url("../images/basket-pitch.png");
+		height: 700px;
+		width: 100%
+	}
+}
