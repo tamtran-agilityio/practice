@@ -1,6 +1,7 @@
 #slide-basket-pitch {
 	width: 100%;
 	height: 700px;
+
 	.basket-pitch {
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -198,7 +199,6 @@
 		}
 
 	}
-
 	.content-user {
 		background-image: url('http://localhost:9000/images/content-user.png');
 		background-repeat: no-repeat;
@@ -215,7 +215,6 @@
 	background-color: #FFF;
 	width: 100%;
 	height: 750px;
-	position: absolute;
 	z-index: 100;
 
 	.topic-tweet {
@@ -226,6 +225,7 @@
 		width: 100%;
 		left: 20%;
 	}
+
 
 	.background-ipad {
 		background-image: url('../images/ipad.png');
@@ -244,5 +244,18 @@
 		width: 100%;
 		left: 50%;
 		z-index: 100;
+	}
+}
+
+#slide-football-pitch {
+	width: 100%;
+	height: 480px;
+
+	.football-pitch {
+		background-image: url('../images/football-pitch.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		height: 480px;
+		width: 100%;
 	}
 }
