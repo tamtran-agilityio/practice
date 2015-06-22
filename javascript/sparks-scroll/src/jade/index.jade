@@ -7,11 +7,11 @@ html(lang='en')
 		title Parallax Example
 		link(href='styles/styles.css', rel='stylesheet')
 	body
-		.container-fluid
-			.row
-				section#slide-basket-pitch.basket-pitch
+		header#slide-basket-pitch.basket-pitch
+			.container-fluid
+				.row
 					.background-basket.skrollable.skrollr-body.skrollable-between(data-0-start='background-position: 50% 0px;', data-100-top-bottom='background-position: 50% -100px;', data-anchor-target='#slide-basket-pitch', style='background-position: 50% 0px; cursor: inherit;')
-						.basket-iponhe(data-0="background-image:!url('../images/iPhone-5S-Black.png'); " )
+						.basket-iphone(data-0="background-image:!url('../images/iPhone-5S-Black.png'); " )
 						.active.skrollable.skrollr-body.skrollable-between
 							.basket-line-long(data-0="background-image:!url('../images/line-long.png');",data-100='opacity:1;')
 								.basket-radio.skrollable.skrollr-body.skrollable-between(data-0="background-image:!url('../images/radio.png');")
@@ -26,17 +26,34 @@ html(lang='en')
 								p.skrollable.forums-text(data-50='opacity:0;', data-200='opacity:1;;', data-400='0', style='opacity: 0;') Online forums on the web 
 								p.skrollable.sparks-text(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Sparks on mobile
 								p.skrollable.discuss-text(data-50='opacity:0;', data-400='opacity:1;;', data-600='0', style='opacity: 0;') We’re inventing a new way  to discuss what you’re into.
-				section#slide-what-spark
-					.wapper-content.skrollable.skrollr-body.skrollable-between
-						p.skrollable(data-50='opacity:0;', data-100='opacity:1;', data-300='0', style='opacity: 0;') What is Sparks?
-						p.skrollable(data-50='opacity:0;', data-200='opacity:1;;', data-400='0', style='opacity: 0;') An iPhone app for fans to:
-						p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Participate in the discussion with visual sparks that they create in seconds
-						p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Follow the latest pregame breakdown, game threads postgame recaps
-						p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Discover and engage with influencers and pernalities
-						p.skrollable(data-50='opacity:0;', data-400='opacity:1;;', data-600='0', style='opacity: 0;') Launching first with NBA, MLB and  World Cup channels in early 2014
+		.container-fluid
+			.row
+				section#slide-what-spark.wapper-content.skrollable.skrollr-body.skrollable-between
+					p.skrollable(data-50='opacity:0;', data-100='opacity:1;', data-300='0', style='opacity: 0;') What is Sparks?
+					p.skrollable(data-50='opacity:0;', data-200='opacity:1;;', data-400='0', style='opacity: 0;') An iPhone app for fans to:
+					p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Participate in the discussion with visual sparks that they create in seconds
+					p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Follow the latest pregame breakdown, game threads postgame recaps
+					p.skrollable(data-50='opacity:0;', data-300='opacity:1;;', data-500='0', style='opacity: 0;') Discover and engage with influencers and pernalities
+					p.skrollable(data-50='opacity:0;', data-400='opacity:1;;', data-600='0', style='opacity: 0;') Launching first with NBA, MLB and  World Cup channels in early 2014
 					.background-sparks.skrollable.skrollr-body.skrollable-between
 						.skrollable.sparks-iphone-4
 						.skrollable.sparks-iphone-5
+				section#slide-drive.skrollable.skrollr-body.skrollable-between
+					.comment-visual 
+						p Drive 120%  more engagement  through visual posts*
+					.arrow-left
+					.arrow-right
+					.background-tweet-wall
+						.tweet-wall
+						.content-comment
+						.comment-list
+						.content-user
+				section#slide-ipad
+					.topic-tweet
+					.arrow-horizontal
+					.background-ipad
+		footer#slide-football-pitch.skrollable.skrollr-body.skrollable-between
+			.football-pitch
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
 		script(type="text/javascript") var s = skrollr.init();
