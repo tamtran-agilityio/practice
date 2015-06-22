@@ -9,6 +9,7 @@
 	}
 	
 	.basket-iphone {
+		background-image: url('../images/iPhone-5S-Black.png');
 		background-position: 25% 25%;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -25,45 +26,63 @@
 		width: 100%;
 
 		.basket-line-long {
+			background-image: url('../images/line-long.png');
 			background-position: center 2%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 
 		.basket-line-short {
+			background-image: url('../images/line-short.png');
 			background-position: center 35%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 
 		.basket-line-short-last {
+			background-image: url('../images/line-short.png');
 			background-position: center 47%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 
 		.basket-radio {
+			background-image: url('../images/radio.png');
 			background-position: center 30%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 
 		.basket-globes {
+			background-image: url('../images/globes.png');
 			background-position: center 41%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 
 		.basket-cloud {
+			background-image: url('../images/images-end.png');
 			background-position: center 57%;
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			position: absolute;
+			z-index: 100;
 		}
 }
 

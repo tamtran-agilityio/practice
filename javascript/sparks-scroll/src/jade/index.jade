@@ -11,15 +11,14 @@ html(lang='en')
 			.container-fluid
 				.row
 					.background-basket.skrollable.skrollr-body.skrollable-between(data-0-start='background-position: 50% 0px;', data-100-top-bottom='background-position: 50% -100px;', data-anchor-target='#slide-basket-pitch', style='background-position: 50% 0px; cursor: inherit;')
-						.basket-iphone(data-0="background-image:!url('../images/iPhone-5S-Black.png'); " )
+						.basket-iphone(data-100='opacity:1;',data-200='opacity:0;')
 						.active.skrollable.skrollr-body.skrollable-between
-							.basket-line-long(data-0="background-image:!url('../images/line-long.png');",data-100='opacity:1;')
-								.basket-radio.skrollable.skrollr-body.skrollable-between(data-0="background-image:!url('../images/radio.png');")
-									.basket-line-short(data-0="background-image:!url('../images/line-short.png');")
-										.basket-globes(data-0="background-image:!url('../images/globes.png');")
-											.basket-line-short-last(data-0="background-image:!url('../images/line-short.png');")
-												.basket-line-short-last(data-0="background-image:!url('../images/line-short.png');")
-													.basket-cloud(data-0="background-image:!url('../images/images-end.png');")
+							.basket-line-long(data-0-start='opacity:0;',data-10='opacity:1;')
+							.basket-radio(data-50='opacity:0;',data-60='opacity:1;')
+							.basket-line-short(data-70='opacity:0;',data-100='opacity:1;')
+							.basket-globes(data-110='opacity:0;',data-120='opacity:1;')
+							.basket-line-short-last(data-130='opacity:0;',data-140='opacity:1;')
+							.basket-cloud(data-150='opacity:0;',data-160='opacity:1;')
 						.active.skrollable.skrollr-body.skrollable-between
 							.txt-wrapper.skrollable(style='position:absolute; top:30%; left:60%')
 								p.skrollable.radio-text(data-50='opacity:0;', data-100='opacity:1;', data-300='0', style='opacity: 0;') Talk radio on the airwaves 
