@@ -1,5 +1,6 @@
 #slide-basket-pitch {
 	width: 100%;
+	height: 700px;
 	.basket-pitch {
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -18,7 +19,6 @@
 	.active {
 		background-position: center center;
 		background-repeat: no-repeat;
-		// background-attachment: fixed;
 		position: absolute;
 		height: 100%;
 		width: 100%;
@@ -68,6 +68,7 @@
 
 	.background-basket {
 		background-image: url("../images/basket-pitch.png");
+		background-repeat: no-repeat;
 		height: 700px;
 		width: 100%;
 	}
@@ -101,19 +102,66 @@
 
 #slide-what-spark {
 	width: 100%;
-	height: 100%;
+	height: 750px;
 	position: absolute;
 	background: #fff;
 	background-repeat: no-repeat;
-	.sparks-iphone-4{
+	.sparks-iphone-4 {
+		background-position: 60% 0;
 		background-attachment: fixed;
 		width: 100%;
 		height: 100%;
+		display: block;
+		background-image: url(http://localhost:9000/images/iPhone-5S.png);
+		position: absolute;
+		background-repeat: no-repeat;
 	}
 
-	.sparks-iphone-5{
+	.sparks-iphone-5 {
+		background-position: 85% 55%;
 		background-attachment: fixed;
 		width: 100%;
 		height: 100%;
+		display: block;
+		background-image: url(http://localhost:9000/images/iPhone-4S.png);
+		position: absolute;
+		background-repeat: no-repeat;
+	}
+}
+
+#slide-drive {
+	background-color: #242424;
+	width: 100%;
+	height: 2000px;
+	position: inherit;
+	.comment-visual {
+		background-color: #FFF;
+		border-radius: 10px;
+		width: 200px;
+		height: 100px;
+		position: absolute;
+		top: 200%;
+		left: 35%;
+		p {
+			text-align: center;
+			font-size: 20px;
+			color: #ca0000;
+		}
+	}
+	.arrow-left {
+		background-position: 50% 0;
+		background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+		background-image: url('http://localhost:9000/images/arrow-left.png');
+		background-repeat: no-repeat;
+	}
+	.arrow-right {
+		background-position: 60% 0;
+		background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+		background-image: url('http://localhost:9000/images/arrow-right.png');
+		background-repeat: no-repeat;
 	}
 }
