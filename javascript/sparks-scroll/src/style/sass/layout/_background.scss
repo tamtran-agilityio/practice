@@ -195,7 +195,7 @@
 #slide-drive {
 	background-color: #242424;
 	width: 100%;
-	height: 1200px;
+	height: 1350px;
 	position: inherit;
 
 	.comment-visual {
@@ -229,26 +229,26 @@
 	.arrow-right {
 		background-image: url('../images/arrow-right.png');
 		background-repeat: no-repeat;
+		position: absolute;
 		height: 100%;
 		width: 100%;
-		position: absolute;
 		left: 42%;
 		top: 220%;
 		z-index: 152;
 	}
 
 	.background-tweet-wall {
+		position: absolute;
 		height: 100%;
 		width: 100%;
-		position: absolute;
 		z-index: 100;
 
 		.tweet-wall {
 			background-image: url('../images/tweet-wall.png');	
 			background-repeat: no-repeat;
+			position: absolute;
 			height: 30%;
 			width: 42%;
-			position: absolute;
 			top: 20%;
 			left: 13%;
 		}
@@ -256,9 +256,9 @@
 		.content-comment {
 			background-image: url('../images/content-comment.png');
 			background-repeat: no-repeat;
+			position: absolute;
 			height: 30%;
 			width: 42%;
-			position: absolute;
 			top: 52%;
 			left: 13%;
 		}
@@ -299,6 +299,7 @@
 		height: 100%;
 		width: 25%;
 		left: 20%;
+		top: 275%;
 	}
 
 
@@ -308,7 +309,8 @@
 		position: absolute;
 		height: 100%;
 		width: 50%;
-		left: 50%
+		left: 45%;
+		top: 260%;
 	}
 
 	.arrow-horizontal {
@@ -317,7 +319,8 @@
 		position: absolute;
 		height: 100%;
 		width: 20%;
-		left: 50%;
+		left: 42%;
+		top: 290%;
 		z-index: 100;
 	}
 }
