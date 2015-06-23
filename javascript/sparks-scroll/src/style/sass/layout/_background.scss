@@ -3,19 +3,26 @@
 	height: 700px;
 
 	.basket-pitch {
-		background-position: center center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
 		background-repeat: no-repeat;
-		background-attachment: fixed;
+		background-position: center center;
+		background-size: 100%;
+
 	}
 	
 	.basket-iphone {
 		background-image: url('../images/iPhone-5S-Black.png');
-		background-position: 25% 25%;
-		background-repeat: no-repeat;
-		background-attachment: fixed;
 		position: absolute;
-		height: 100%;
 		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-repeat: no-repeat;
+		background-position: 22% 25%;;
 	}
 
 	.active {
@@ -31,16 +38,18 @@
 			background-repeat: no-repeat;
 			height: 100%;
 			width: 100%;
+			top: 0;
+			left: 0;
 			position: absolute;
-			z-index: 100;
 		}
 
 		.basket-line-short {
 			background-image: url('../images/line-short.png');
 			background-position: center 35%;
 			background-repeat: no-repeat;
-			height: 100%;
+			height: 10%;
 			width: 100%;
+			top: 32%;
 			position: absolute;
 			z-index: 100;
 		}
@@ -49,8 +58,9 @@
 			background-image: url('../images/line-short.png');
 			background-position: center 47%;
 			background-repeat: no-repeat;
-			height: 100%;
+			height: 10%;
 			width: 100%;
+			top: 45%;
 			position: absolute;
 			z-index: 100;
 		}
@@ -59,8 +69,9 @@
 			background-image: url('../images/radio.png');
 			background-position: center 30%;
 			background-repeat: no-repeat;
-			height: 100%;
+			height: 10%;
 			width: 100%;
+			top: 28%;
 			position: absolute;
 			z-index: 100;
 		}
@@ -69,8 +80,9 @@
 			background-image: url('../images/globes.png');
 			background-position: center 41%;
 			background-repeat: no-repeat;
-			height: 100%;
+			height: 10%;
 			width: 100%;
+			top: 40%;
 			position: absolute;
 			z-index: 100;
 		}
@@ -79,10 +91,10 @@
 			background-image: url('../images/images-end.png');
 			background-position: center 57%;
 			background-repeat: no-repeat;
-			height: 100%;
+			height: 20%;
 			width: 100%;
+			top: 50%;
 			position: absolute;
-			z-index: 100;
 		}
 }
 
@@ -100,6 +112,7 @@
 		left: 60%;
 		z-index: 100;
 		color: #fff;
+
 }
 
 .radio-text {
@@ -126,8 +139,8 @@
 
 #slide-what-spark {
 	width: 100%;
-	height: 750px;
-	background: #fff;
+	height: 730px;
+	background: #FFF;
 
 	.sparks-iphone-4 {
 		background-position: 60% 0;
@@ -149,6 +162,35 @@
 		background-image: url('../images/iPhone-4S.png');
 		position: absolute;
 		background-repeat: no-repeat;
+	}
+	.wapper-content {
+		position: absolute;
+
+		.sparks-what-text {
+			font-size: 20px;
+		}
+
+		.fan-iphone {
+			font-size: 24px;
+		}
+
+		.app-iphone {
+			width: 450px;
+			height: 250px;	
+			li {
+				font-size: 24px;
+				list-style: none;
+			}
+		}
+
+		.channels-text {
+			font-size: 24px;
+		}
+
+		.icon-flash {
+			background-image: url('../images/spark.png');
+			background-repeat: no-repeat;
+		}
 	}
 }
 
@@ -224,7 +266,7 @@
 		background-position: 60% 20%;
 		position: absolute;
 		height: 100%;
-		width: 100%;
+		width: 70%;
 		top: 10%;
 		left: 30%;
 	}
@@ -241,7 +283,7 @@
 		background-repeat: no-repeat;
 		position: absolute;
 		height: 100%;
-		width: 100%;
+		width: 25%;
 		left: 20%;
 	}
 
@@ -251,7 +293,7 @@
 		background-repeat: no-repeat;
 		position: absolute;
 		height: 100%;
-		width: 100%;
+		width: 50%;
 		left: 50%
 	}
 
@@ -260,7 +302,7 @@
 		background-repeat: no-repeat;
 		position: absolute;
 		height: 100%;
-		width: 100%;
+		width: 20%;
 		left: 50%;
 		z-index: 100;
 	}
