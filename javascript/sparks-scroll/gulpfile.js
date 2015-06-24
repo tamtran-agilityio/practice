@@ -24,15 +24,19 @@ var config = {
 	assetImages: 'src/images/*.*',
 	assetImagesOut: 'out/images',
 
+	assetFont: 'src/fonts/roboto/*.*',
+	assetFontOut: 'out/fonts',
+
 	vender: 'src/files/vender/'
 };
 
 var jsLibraryConcatList = [
 	config.vender + 'jquery/dist/jquery.js',
-	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js'
+	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
+	config.vender + 'bower-skrollr/skrollr.js'
 ];
 var jsCodeConcatList = [
-	'src/js/skrollr.js'
+	'src/js/main.js'
 ];
 
 gulp.task('default', function() {
@@ -44,6 +48,7 @@ gulp.task('default', function() {
 		'jade',
 		'jade:watch',
 		'assets',
+		'assetsfont',
 		'assets:watch',
 		'concatJsLibrary',
 		'concatJsCode'
@@ -61,6 +66,7 @@ gulp.task('serve', [], function() {
 
 	gulp.watch(['out/*.html'], browserSync.reload);
 	gulp.watch(['out/js/*.js'], browserSync.reload);
+	gulp.watch(['out/fonts/roboto/*.*'], browserSync.reload);
 	gulp.watch(['out/styles/*.css'], browserSync.reload);
 });
 
@@ -68,9 +74,9 @@ gulp.task('serve', [], function() {
 gulp.task('sass', function() {
 	gulp.src(config.css)
 		.pipe(sass().on('error', sass.logError))
-		// .pipe(minifyCss({
-		// 	compatibility: 'ie8'
-		// }))
+		.pipe(minifyCss({
+			compatibility: 'ie8'
+		}))
 		.pipe(gulp.dest(config.cssOut));
 });
 
@@ -101,7 +107,7 @@ gulp.task('concatJsLibrary', function() {
 gulp.task('concatJsCode', function() {
 	return gulp.src(jsCodeConcatList)
 		.pipe(concat('main.js'))
-		//.pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest('out/js/'))
 		.on('error', gutil.log);
 });
@@ -126,6 +132,11 @@ gulp.task('jade:watch', function() {
 gulp.task('assets', function() {
 	gulp.src(config.assetImages)
 		.pipe(gulp.dest(config.assetImagesOut));
+});
+
+gulp.task('assetsfont', function() {
+	gulp.src(config.assetFont)
+		.pipe(gulp.dest(config.assetFontOut));
 });
 
 gulp.task('assets:watch', function() {
