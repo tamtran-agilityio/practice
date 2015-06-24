@@ -8,7 +8,6 @@ vagrant/
 # Docpad compiled files
 ########################
 out/
-vender/
 **/vender/
 
 # NPM packages
