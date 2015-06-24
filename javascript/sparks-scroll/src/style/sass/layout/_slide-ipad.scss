@@ -1,0 +1,31 @@
+.slide-ipad {
+	background-color: #FFF;
+	height: 750px;
+	z-index: 100;
+
+	.background-slide-ipad {
+		background-repeat: no-repeat;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.topic-tweet {
+		background-image: url('../images/topic-tweet.png');
+		@extend .background-slide-ipad;
+	}
+
+
+	.background-ipad {
+		background-image: url('../images/ipad.png');
+		@extend .background-slide-ipad;
+	}
+
+	.arrow-horizontal {
+		background-image: url('../images/arrow-horizontal.png');
+		z-index: 100;
+		@extend .background-slide-ipad;
+	}
+}

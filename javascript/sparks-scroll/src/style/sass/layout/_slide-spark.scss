@@ -1,0 +1,60 @@
+
+.slide-what-sparks {
+	width: 100%;
+	height: 680px;
+	background: #FFF;
+
+	.sparks-background {
+		background-repeat: no-repeat;
+		background-size: 100%;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.sparks-iphone-4 {
+		background-position: 60% 0;
+		background-image: url('../images/iPhone-5S.png');
+		@extend .sparks-background;
+	}
+
+	.sparks-iphone-5 {
+		background-image: url('../images/iPhone-4S.png');
+		background-position: 85% 55%;
+		@extend .sparks-background;
+	}
+	.wapper-content {
+		position: absolute;
+
+		.sparks-what-text {
+			font-size: 20px;
+		}
+
+		.fan-iphone {
+			font-size: 24px;
+		}
+
+		.app-iphone {
+			width: 450px;
+			height: 250px;	
+			li {
+				font-size: 24px;
+				list-style: none;
+				display: inline-block;
+			}
+		}
+
+		.channels-text {
+			font-size: 24px;
+		}
+
+		.icon-flash {
+			background-image: url('../images/spark.png');
+			width: 12px;
+			height: 16px;
+			background-repeat: no-repeat;
+			display: inline-block;
+		}
+	}
+}
