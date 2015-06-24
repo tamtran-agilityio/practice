@@ -1,0 +1,39 @@
+@mixin gradient($color-top,$color-bottom) {
+	background: -webkit-linear-gradient($color-top,$color-bottom); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($color-top,$color-bottom); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($color-top,$color-bottom); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($color-top,$color-bottom); /* Standard syntax (must be last) */
+}
+
+@mixin font-text($font-size,$font-weight,$color) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+@mixin button($border,$border-radius,$padding) {
+	border: $border;
+	border-radius: $border-radius;
+	padding: $padding;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow-inset($size,$color) {
+	-webkit-box-shadow: $size $color inset;
+	   -moz-box-shadow: $size $color inset;
+	    -ms-box-shadow: $size $color inset;
+	    	box-shadow: $size $color inset;
+}
+
+@mixin box-shadow($size,$color) {
+	-webkit-box-shadow: $size $color;
+	   -moz-box-shadow: $size $color;
+	    -ms-box-shadow: $size $color;
+	    	box-shadow: $size $color;
+}
