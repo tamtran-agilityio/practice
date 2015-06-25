@@ -1,7 +1,9 @@
-
+/**
+ * Styles of section what spark
+ */
 .slide-what-sparks {
 	width: 100%;
-	height: 680px;
+	height: rem(680px);
 	background: #FFF;
 
 	.sparks-background {
@@ -28,33 +30,96 @@
 		position: absolute;
 
 		.sparks-what-text {
-			font-size: 20px;
+			font-size: rem(20px);
 		}
 
 		.fan-iphone {
-			font-size: 24px;
+			font-size: rem(24px);
 		}
 
 		.app-iphone {
-			width: 450px;
-			height: 250px;	
+			li:before {
+				content: "";
+				display: block;
+				background: url('../images/spark.png') no-repeat;
+				width: rem(20px);
+				height: rem(20px);
+				float: left;
+				// margin: 0 6px 0 0;
+			}
 			li {
-				font-size: 24px;
+				font-size: rem(24px);
 				list-style: none;
 				display: inline-block;
 			}
 		}
 
 		.channels-text {
-			font-size: 24px;
+			font-size: rem(24px);
 		}
 
 		.icon-flash {
 			background-image: url('../images/spark.png');
-			width: 12px;
-			height: 16px;
+			width: rem(12px);
+			height: rem(16px);
 			background-repeat: no-repeat;
 			display: inline-block;
+		}
+	}
+}
+
+/**
+ * Styles with mobile 
+ * max-width: 480px
+ */
+@media (max-width: 480px) {
+
+	.slide-what-sparks {
+		.wapper-content {
+			position: absolute;
+			top: 40%;
+			left: 8%;
+			margin-right: rem(190px);
+			.sparks-what-text {
+				font-size: rem(10px);
+			}
+
+			.fan-iphone {
+				font-size: rem(12px);
+			}
+
+			.app-iphone {
+				padding-left: 0;
+
+				li:before {
+					width: rem(15px);
+					height: rem(15px);
+					background-size: 50%;
+					margin-right: rem(-5px);
+					margin-top: rem(5px);
+				}
+				li {
+					font-size: rem(12px);
+					list-style: none;
+					display: inline-block;
+				}
+			}
+
+			.channels-text {
+				font-size: rem(12px);
+			}
+		}
+
+		.sparks-iphone-4 {
+			background-size: 37%;
+			top: 37%;
+			left: 10%;
+		}
+
+		.sparks-iphone-5 {
+			background-size: 50%;
+			top: 18%;
+			left: 6%;
 		}
 	}
 }
