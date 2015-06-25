@@ -59,8 +59,6 @@
 	.background-basket {
 		background-image: url('../images/basket-pitch.png');
 		@extend .basket-background;
-		// background-size: 100% auto;
-		// height: 100%;
 		position: relative;
 	}
 }
@@ -78,24 +76,24 @@
 }
 
 .radio-text {
-	font-size: 22px;
+	font-size: rem(22px);
 	@extend .text-default;
 }
 
 .forums-text {
-	margin-top: 60px;
-	font-size: 26px;
+	margin-top: rem(60px);
+	font-size: rem(26px);
 	@extend .text-default;
 }
 
 .sparks-text {
-	margin-top: 75px;
-	font-size: 50px;
+	margin-top: rem(75px);
+	font-size: rem(50px);
 	@extend .text-default;
 }
 
 .discuss-text {
-	font-size: 20px;
+	font-size: rem(20px);
 	@extend .text-default;
 }
 
@@ -127,8 +125,8 @@
 			.basket-line-short {
 				background-position: center 0;
 				background-size: 10% auto;
-				height: 3%;
-				top: 17%;
+				height: 2%;
+				top: 15%;
 				width: 6%;
 				left: 46%;
 			}
@@ -136,35 +134,58 @@
 			.basket-line-short-last {
 				background-position: center 0;
 				background-size: 10% auto;
-				height: 3%;
-				top: 25%;
+				height: 2%;
+				top: 22%;
 				width: 6%;
 				left: 46%;
 			}
 
 			.basket-radio {
-				background-size: 60% auto;
+				background-size: 55% auto;
 				height: 3%;
-				top: 13%;
+				top: 12%;
 				left: 46%;
 				width: 10%;
 			}
 
 			.basket-globes {
 				height: 5%;
-				top: 20%;
-				background-size: 75% auto;
+				top: 18%;
+				background-size: 65% auto;
 				width: 11%;
-				left: 45%;
+				left: 45.5%;
 			}
 		
 			.basket-cloud {
 				height: 6%;
-				top: 28%;
-				background-size: 100% auto;
+				top: 25%;
+				background-size: 90% auto;
 				width: 9%;
-				left: 44%;
+				left: 45%;
 			}
 		}
 	}
+	.txt-wapper {
+		position: absolute;
+		top: 13%;
+		left: 60%;
+		.radio-text {
+			font-size: rem(11px);
+		}
+
+		.forums-text {
+			margin-top: rem(20px);
+			font-size: rem(12px);
+		}
+
+		.sparks-text {
+			margin-top: rem(26px);
+			font-size: rem(16px);
+		}
+
+		.discuss-text {
+			font-size: rem(10px); 
+		}
+	}
 }
+

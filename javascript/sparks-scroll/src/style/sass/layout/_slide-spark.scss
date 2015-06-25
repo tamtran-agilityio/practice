@@ -4,7 +4,7 @@
 .slide-what-sparks {
 	width: 100%;
 	height: rem(680px);
-	background: #FFF;
+	background: $white;
 
 	.sparks-background {
 		background-repeat: no-repeat;
@@ -30,11 +30,11 @@
 		position: absolute;
 
 		.sparks-what-text {
-			font-size: rem(20px);
+			font-size: rem(24px);
 		}
 
 		.fan-iphone {
-			font-size: rem(24px);
+			font-size: rem(20px);
 		}
 
 		.app-iphone {
@@ -45,7 +45,6 @@
 				width: rem(20px);
 				height: rem(20px);
 				float: left;
-				// margin: 0 6px 0 0;
 			}
 			li {
 				font-size: rem(24px);
@@ -81,15 +80,16 @@
 			left: 8%;
 			margin-right: rem(190px);
 			.sparks-what-text {
-				font-size: rem(10px);
+				font-size: rem(12px);
 			}
 
 			.fan-iphone {
-				font-size: rem(12px);
+				font-size: rem(10px);
 			}
 
 			.app-iphone {
 				padding-left: 0;
+				font-size: rem(10px);
 
 				li:before {
 					width: rem(15px);
@@ -99,27 +99,28 @@
 					margin-top: rem(5px);
 				}
 				li {
-					font-size: rem(12px);
+					font-size: rem(10px);
 					list-style: none;
 					display: inline-block;
 				}
 			}
-
+	
 			.channels-text {
-				font-size: rem(12px);
+				font-size: rem(10px);
 			}
 		}
 
 		.sparks-iphone-4 {
-			background-size: 37%;
+			background-size: 34%;
 			top: 37%;
 			left: 10%;
 		}
 
 		.sparks-iphone-5 {
-			background-size: 50%;
-			top: 18%;
+			background-size: 46%;
+			top: 14%;
 			left: 6%;
+			z-index: 1;
 		}
 	}
 }
