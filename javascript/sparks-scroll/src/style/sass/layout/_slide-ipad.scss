@@ -29,3 +29,25 @@
 		@extend .background-slide-ipad;
 	}
 }
+
+@media (max-width: 480px) {
+	.slide-ipad {
+		.topic-tweet {
+			top: 150%;
+			left: 5%;
+			background-size: 32%;
+		}
+
+		.background-ipad {
+			top: 140%;
+			left: 42%;
+			background-size: 50%;
+		}
+
+		.arrow-horizontal {
+			top: 160%;
+			left: 34%;
+			background-size: 16%;
+		}
+	}
+}
