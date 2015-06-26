@@ -71,21 +71,77 @@
  * Styles with mobile 
  * max-width: 480px
  */
-@media (max-width: 480px) {
+// @media (max-width: 480px) {
+
+// 	.slide-what-sparks {
+// 		height: 280px;
+// 		.wapper-content {
+// 			position: absolute;
+// 			top: 40%;
+// 			left: 8%;
+// 			margin-right: rem(190px);
+// 			.sparks-what-text {
+// 				font-size: rem(12px);
+// 			}
+
+// 			.fan-iphone {
+// 				font-size: rem(10px);
+// 			}
+
+// 			.app-iphone {
+// 				padding-left: 0;
+// 				font-size: rem(10px);
+
+// 				li:before {
+// 					width: rem(15px);
+// 					height: rem(15px);
+// 					background-size: 50%;
+// 					margin-right: rem(-5px);
+// 					margin-top: rem(5px);
+// 				}
+// 				li {
+// 					font-size: rem(10px);
+// 					list-style: none;
+// 					display: inline-block;
+// 				}
+// 			}
+	
+// 			.channels-text {
+// 				font-size: rem(10px);
+// 			}
+// 		}
+
+// 		.sparks-iphone-4 {
+// 			background-size: 34%;
+// 			top: 37%;
+// 			left: 10%;
+// 			height: 30%;
+// 		}
+
+// 		.sparks-iphone-5 {
+// 			background-size: 46%;
+// 			top: 54%;
+// 			left: 6%;
+// 			height: 25%;
+// 			z-index: 1;
+// 		}
+// 	}
+// }
+
+
+@media (max-width: 768px) {
 
 	.slide-what-sparks {
 		height: 280px;
 		.wapper-content {
-			position: absolute;
-			top: 40%;
-			left: 8%;
-			margin-right: rem(190px);
+			left: 6%;
+			width: 34%;
 			.sparks-what-text {
-				font-size: rem(12px);
+				font-size: rem(30px);
 			}
 
 			.fan-iphone {
-				font-size: rem(10px);
+				font-size: rem(19px);
 			}
 
 			.app-iphone {
@@ -96,33 +152,31 @@
 					width: rem(15px);
 					height: rem(15px);
 					background-size: 50%;
-					margin-right: rem(-5px);
-					margin-top: rem(5px);
 				}
 				li {
-					font-size: rem(10px);
+					margin: rem(5px -5px 5px 0);
+					font-size: rem(14px);
 					list-style: none;
 					display: inline-block;
 				}
 			}
 	
 			.channels-text {
-				font-size: rem(10px);
+				font-size: rem(17px);
 			}
 		}
 
 		.sparks-iphone-4 {
 			background-size: 34%;
-			top: 37%;
-			left: 10%;
-			height: 30%;
+			top: 94%;
+			height: 62%;
 		}
 
 		.sparks-iphone-5 {
 			background-size: 46%;
-			top: 54%;
-			left: 6%;
-			height: 25%;
+			top: 115%;
+			left: 3%;
+			height: 59%;
 			z-index: 1;
 		}
 	}
