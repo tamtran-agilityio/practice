@@ -97,100 +97,189 @@
 	@extend .text-default;
 }
 
-@media (max-width: 480px) {
-	.slide-basket-pitch {
-		height: 223px;
-		.basket-iphone {
-			background-position: 20% 8%;
-			background-size: 30% auto;
-			height: 100%;
-			width: 100%;
-			z-index: 1;
-		}
-		.background-basket {
-			background-size: 145% 100%;
-			position: relative;
-			background-position: center center;
-			height: 100%;
-			width: 100%;
-		}
-		.active {
-			.basket-line-long {
-				background-position: center 0;
-				background-size: 10% auto;
-				height: 12%;
-				width: 6%;
-				left: 46%
-			}
+// @media (max-width: 480px) {
+// 	.slide-basket-pitch {
+// 		height: 223px;
+// 		.basket-iphone {
+// 			background-position: 20% 8%;
+// 			background-size: 30% auto;
+// 			height: 100%;
+// 			width: 100%;
+// 			z-index: 1;
+// 		}
+// 		.background-basket {
+// 			background-size: 145% 100%;
+// 			position: relative;
+// 			background-position: center center;
+// 			height: 100%;
+// 			width: 100%;
+// 		}
+// 		.active {
+// 			.basket-line-long {
+// 				background-position: center 0;
+// 				background-size: 10% auto;
+// 				height: 12%;
+// 				width: 6%;
+// 				left: 46%
+// 			}
 
-			.basket-line-short {
-				background-position: center 0;
-				background-size: 10% auto;
-				height: 2%;
-				top: 15%;
-				width: 6%;
-				left: 46%;
-			}
+// 			.basket-line-short {
+// 				background-position: center 0;
+// 				background-size: 10% auto;
+// 				height: 2%;
+// 				top: 15%;
+// 				width: 6%;
+// 				left: 46%;
+// 			}
 
-			.basket-line-short-last {
-				background-position: center 0;
-				background-size: 10% auto;
-				height: 2%;
-				top: 22%;
-				width: 6%;
-				left: 46%;
-			}
+// 			.basket-line-short-last {
+// 				background-position: center 0;
+// 				background-size: 10% auto;
+// 				height: 2%;
+// 				top: 22%;
+// 				width: 6%;
+// 				left: 46%;
+// 			}
 
-			.basket-radio {
-				background-size: 55% auto;
-				height: 3%;
-				top: 12%;
-				left: 46%;
-				width: 10%;
-			}
+// 			.basket-radio {
+// 				background-size: 55% auto;
+// 				height: 3%;
+// 				top: 12%;
+// 				left: 46%;
+// 				width: 10%;
+// 			}
 
-			.basket-globes {
-				height: 5%;
-				top: 18%;
-				background-size: 65% auto;
-				width: 11%;
-				left: 45.5%;
-			}
+// 			.basket-globes {
+// 				height: 5%;
+// 				top: 18%;
+// 				background-size: 65% auto;
+// 				width: 11%;
+// 				left: 45.5%;
+// 			}
 		
-			.basket-cloud {
-				height: 6%;
-				top: 25%;
-				background-size: 90% auto;
-				width: 9%;
-				left: 45%;
-			}
-		}
-	}
-	.txt-wapper {
-		position: absolute;
-		top: 13%;
-		left: 60%;
-		.radio-text {
-			font-size: rem(11px);
-		}
+// 			.basket-cloud {
+// 				height: 6%;
+// 				top: 25%;
+// 				background-size: 90% auto;
+// 				width: 9%;
+// 				left: 45%;
+// 			}
+// 		}
+// 	}
+// 	.txt-wapper {
+// 		position: absolute;
+// 		top: 13%;
+// 		left: 60%;
+// 		.radio-text {
+// 			font-size: rem(11px);
+// 		}
 
-		.forums-text {
-			margin-top: rem(20px);
-			font-size: rem(12px);
-		}
+// 		.forums-text {
+// 			margin-top: rem(20px);
+// 			font-size: rem(12px);
+// 		}
 
-		.sparks-text {
-			margin-top: rem(26px);
-			font-size: rem(16px);
-		}
+// 		.sparks-text {
+// 			margin-top: rem(26px);
+// 			font-size: rem(16px);
+// 		}
 
-		.discuss-text {
-			font-size: rem(10px); 
-		}
-	}
-}
+// 		.discuss-text {
+// 			font-size: rem(10px); 
+// 		}
+// 	}
+// }
 
 
 @media (max-width: 768px) {
+	.slide-basket-pitch {
+		width: 100%;
+		height: 700px;
+		.background-basket {
+			background-position: center center;
+			background-size: 200%;
+			height: 79%;
+			width: 100%;
+		}
+
+		.basket-iphone {
+			background-size: 100% auto;
+			height: 63%;
+			width: 33%;
+			top: 20.5%;
+			left: 10%;
+		}
 	
+		.active {
+			.basket-line-long {
+				background-size: 60% auto;
+				width: 1%;
+				height: 40%;
+				left: 49%;
+			}
+
+			.basket-radio {
+				background-size: 40% auto;
+				height: 10%;
+				width: 10%;
+				top: 37%;
+				left: 47%;
+			}
+
+			.basket-line-short {
+				background-size: 60% auto;
+				height: 10%;
+				width: 1%;
+				left: 49%;
+				top: 42%;
+			}
+			
+			.basket-line-short-last {
+				background-size: 60% auto;
+				height: 5%;
+				width: 1%;
+				left: 49%;
+				top: 54%;
+			}
+
+			.basket-globes {
+				background-size: 50% auto;
+				height: 6%;
+				width: 10%;
+				top: 48%;
+				left: 46.6%;
+			}
+
+			.basket-cloud {
+				height: 15%;
+				width: 15%;
+				top: 61%;
+				left: 45%;
+				background-size: 58% auto;
+			}
+		}
+		.txt-wapper {
+			position: absolute;
+			top: 39%;
+			left: 60%;
+			.radio-text {
+				font-size: rem(18px);
+			}
+
+			.forums-text {
+				margin-top: rem(45px);
+				font-size: rem(20px);
+			}
+
+			.sparks-text {
+				margin-top: rem(66px);
+				font-size: rem(36px);
+			}
+
+			.discuss-text {
+				font-size: rem(16px);
+				margin-right: rem(45px);
+			}
+		}
+	}
 }
