@@ -1,11 +1,10 @@
 .slide-ipad {
-	background-color: #FFF;
+	background-color: $white;
 	height: 650px;
 	z-index: 100;
 
 	.background-slide-ipad {
 		background-repeat: no-repeat;
-		position: absolute;
 		height: 100%;
 		width: 100%;
 		left: 0;
@@ -32,6 +31,7 @@
 
 @media (max-width: 480px) {
 	.slide-ipad {
+		background-color: $white;
 		.topic-tweet {
 			top: 142%;
 			left: 5%;
@@ -51,6 +51,36 @@
 			left: 34%;
 			height: 4%;
 			background-size: 16%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.slide-ipad {
+		height: rem(510px);
+		background-color: $white;
+		.topic-tweet {
+			top: -15%;
+			left: 5%;
+			height: 65%;
+			background-size: 32%;
+			position: relative;
+		}
+
+		.background-ipad {
+			top: -105%;
+			left: 42%;
+			height: 100%;
+			background-size: 50%;
+			position: relative;
+		}
+
+		.arrow-horizontal {
+			top: -40%;
+			left: 34%;
+			height: 10%;
+			background-size: 16%;
+			position: relative;
 		}
 	}
 }

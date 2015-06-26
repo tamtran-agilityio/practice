@@ -204,3 +204,118 @@
 		}
 	}
 }
+
+@media (max-width: 768px) {
+	.slide-drive {
+		height: rem(1000px);
+		.benefit-content {
+			text-align: center;
+			color: $white;
+			list-style: none;
+
+			li:first-child{
+				font-size: rem(24px);
+				padding-top: rem(60px);
+			}
+
+			li:last-child {
+				font-size: rem(16px);
+				margin-top: rem(10px);
+			}
+		}
+
+		.comment-visual {
+			@include border-radius(rem(5px));
+			background-color: $white;
+			border-radius: rem(20px);
+			width: rem(140px);
+			height: rem(80px);
+			position: absolute;
+			text-align: center;
+			z-index: 150;
+			h4 {
+				font-size: rem(18px);
+				color: #ca0000;
+			}
+
+			span {
+				font-size: rem(14px);
+				color: #ca0000;
+			}
+		}
+
+		.grow-content {
+			left: 58%;
+			h3 {
+				font-size: rem(18px);
+			}
+
+			p {
+				font-size: rem(14px);
+			}
+		}
+		
+		.topic-content {
+			left: 5%;
+			top: 282%;
+			width: 30%;
+			h3 {
+				font-size: rem(18px);
+			}	
+			
+			p {
+				font-size: rem(14px);
+			}
+		}
+
+		.arrow-left {
+			background-size: 8% auto;
+			top: 213%;
+			left: 25%;
+			height: 12%;
+		}
+
+		.arrow-right {
+			background-size: 12% auto;
+			top: 221%;
+			left: 46%;
+			height: 5%;
+		}
+		.background-tweet-wall {
+			height: 700px;
+
+			.tweet-wall {
+				background-size: 50%;
+				left: 5%;
+				z-index: 1;
+				height: 35%;
+			}
+
+			.content-comment {
+				background-size: 50%;
+				left: 5%;
+				z-index: 1;
+				height: 35%;
+				top: 32%;
+			}
+
+			.comment-list {
+				background-size: 50%;
+				left: 5%;
+				z-index: 1;
+				height: 35%;
+				top: 67%;
+				opacity: 0.5;
+			}
+
+			.content-user {
+				background-size: 50%;
+				left: 45%;
+				top: 10%;
+				z-index: 1;
+				height: 70%;
+			}
+
+		}
+	}
+}
