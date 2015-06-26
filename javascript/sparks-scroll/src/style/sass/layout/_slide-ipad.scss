@@ -1,6 +1,6 @@
 .slide-ipad {
 	background-color: #FFF;
-	height: 750px;
+	height: 650px;
 	z-index: 100;
 
 	.background-slide-ipad {
@@ -33,20 +33,23 @@
 @media (max-width: 480px) {
 	.slide-ipad {
 		.topic-tweet {
-			top: 150%;
+			top: 142%;
 			left: 5%;
+			height: 25%;
 			background-size: 32%;
 		}
 
 		.background-ipad {
-			top: 140%;
+			top: 135%;
 			left: 42%;
+			height: 40%;
 			background-size: 50%;
 		}
 
 		.arrow-horizontal {
-			top: 160%;
+			top: 150%;
 			left: 34%;
+			height: 4%;
 			background-size: 16%;
 		}
 	}

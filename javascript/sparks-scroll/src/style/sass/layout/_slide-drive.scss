@@ -97,6 +97,7 @@
 	.slide-drive {
 		position: absolute;
 		top: 75%;
+		height: 760px;
 		.benefit-content {
 			text-align: center;
 			color: $white;
@@ -144,7 +145,7 @@
 		.topic-content {
 			position: absolute;
 			left: 5%;
-			top: 31%;
+			top: 43%;
 			h1 {
 				font-size: rem(12px);
 			}	
@@ -159,18 +160,22 @@
 			background-size: 8% auto;
 			top: 17%;
 			left: 14%;
+			height: 5%;
 		}
 
 		.arrow-right {
 			background-size: 12% auto;
 			top: 19%;
 			left: 45%;
+			height: 5%;
 		}
 		.background-tweet-wall {
+			height: 700px;
 			.background-tweet {
 				background-size: 50%;
 				left: 5%;
 				z-index: 1;
+				height: 10%;
 			}
 
 			.tweet-wall {
@@ -179,12 +184,12 @@
 
 			.content-comment {
 				@extend .background-tweet;
-				top: 8%;
+				top: 15%;
 			}
 
 			.comment-list {
 				@extend .background-tweet;
-				top: 17%;
+				top: 30%;
 				opacity: 0.5;
 			}
 
@@ -193,6 +198,7 @@
 				left: 45%;
 				top: 3%;
 				z-index: 1;
+				height: 33%;
 			}
 
 		}

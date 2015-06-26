@@ -99,6 +99,7 @@
 
 @media (max-width: 480px) {
 	.slide-basket-pitch {
+		height: 223px;
 		.basket-iphone {
 			background-position: 20% 8%;
 			background-size: 30% auto;
@@ -110,7 +111,7 @@
 			background-size: 145% 100%;
 			position: relative;
 			background-position: center center;
-			height: 32%;
+			height: 100%;
 			width: 100%;
 		}
 		.active {
@@ -189,3 +190,7 @@
 	}
 }
 
+
+@media (max-width: 768px) {
+	
+}
