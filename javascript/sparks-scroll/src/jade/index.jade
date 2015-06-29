@@ -10,34 +10,34 @@ html(lang='en')
 		.container-fluid
 			.row
 				header.slide-basket-pitch.skrollable.skrollr-body.skrollable-between
-					.background-basket
-					.basket-iphone
+					.background-basket.skrollable.skrollr-body.skrollable-between(data-0-start='background-position: 50% 0px;', data-100-top-bottom='background-position: 50% -100px;', data-anchor-target='.background-basket')
+					.basket-iphone(data-0-start='opacity:1; background-position: 0% 0px;',data-100-top-bottom='opacity:1; background-position: 50% -100px;')
 					.active
-						.basket-line-long
-						.basket-radio
-						.basket-line-short
-						.basket-globes
-						.basket-line-short-last
-						.basket-cloud
+						.basket-line-long(data-0-start='opacity:0;',data-10='opacity:1;')
+						.basket-radio(data-20-start='opacity:0;',data-40='opacity:1;')
+						.basket-line-short(data-40-start='opacity:0;',data-60='opacity:1;')
+						.basket-globes(data-60-start='opacity:0;',data-80='opacity:1;')
+						.basket-line-short-last(data-80-start='opacity:0;',data-100='opacity:1;')
+						.basket-cloud(data-100-start='opacity:0;',data-120='opacity:1;')
 					.txt-wapper
-						.skrollable.radio-text Talk radio on the airwaves
-						.skrollable.forums-text Online forums on the web 
-						.skrollable.sparks-text Sparks on mobile
-						.skrollable.discuss-text We’re inventing a new way  to discuss what you’re into.
+						.skrollable.radio-text(data-20-start='opacity:0;',data-40='opacity:1;') Talk radio on the airwaves
+						.skrollable.forums-text(data-60-start='opacity:0;',data-80='opacity:1;') Online forums on the web 
+						.skrollable.sparks-text(data-100-start='opacity:0;',data-120='opacity:1;') Sparks on mobile
+						.skrollable.discuss-text(data-100-start='opacity:0;',data-120='opacity:1;') We’re inventing a new way  to discuss what you’re into.
 		.container-fluid
 			.row
-				section.slide-what-sparks.skrollable.skrollr-body.skrollable-between
+				section.slide-what-sparks.skrollable.skrollr-body.skrollable-between(data-100-start='background-position: 50% 0px;', data-200-top-bottom='background-position: 50% -100px;', data-anchor-target='.slide-what-sparks')
 					.wapper-content
-						p.skrollable.sparks-what-text What is Sparks?
-						p.skrollable.fan-iphone An iPhone app for fans to:
+						p.skrollable.sparks-what-text(data-200-start='opacity:0;',data-220-top-bottom='opacity:1;') What is Sparks?
+						p.skrollable.fan-iphone(data-220-start='opacity:0;',data-240-top-bottom='opacity:1;') An iPhone app for fans to:
 						ul.app-iphone
-							li.skrollable Participate in the discussion with visual sparks that they create in seconds
-							li.skrollable Follow the latest pregame breakdown, game threads postgame recaps
-							li.skrollable Discover and engage with influencers and pernalities
-						p.skrollable.channels-text Launching first with NBA, MLB and  World Cup channels in early 2014
+							li.skrollable(data-250-start='opacity:0;',data-280-top-bottom='opacity:1;') Participate in the discussion with visual sparks that they create in seconds
+							li.skrollable(data-250-start='opacity:0;',data-280-top-bottom='opacity:1;') Follow the latest pregame breakdown, game threads postgame recaps
+							li.skrollable(data-250-start='opacity:0;',data-280-top-bottom='opacity:1;') Discover and engage with influencers and pernalities
+						p.skrollable.channels-text(data-270-start='opacity:0;',data-290-top-bottom='opacity:1;') Launching first with NBA, MLB and  World Cup channels in early 2014
 					.background-sparks.skrollable.skrollr-body.skrollable-between
-						.skrollable.sparks-iphone-4
-						.skrollable.sparks-iphone-5
+						.skrollable.sparks-iphone-4(data-200-start='opacity:0;',data-300-top-bottom='opacity:1;')
+						.skrollable.sparks-iphone-5(data-250-start='opacity:0;',data-320-top-bottom='opacity:1;')
 				section.slide-drive.skrollable.skrollr-body.skrollable-between
 					ul.benefit-content
 						li How does it benefit Influencers?
@@ -68,5 +68,4 @@ html(lang='en')
 					.football-pitch
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
-		script(type="text/javascript") var s = skrollr.init();
-		script(type="text/javascript") skrollr.init({forceHeight: false});
+		script(type="text/javascript") var s = skrollr.init(); skrollr.init({forceHeight: false});
