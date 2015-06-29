@@ -5,18 +5,21 @@
 
 	.basket-background {
 		background-repeat: no-repeat;
+		background-size: 100% 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 1;
 	}
 
 	.basket-iphone {
 		background-image: url('../images/iPhone-5S-Black.png');
 		@extend .basket-background;
-		background-size: 18% auto;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
+		background-size: 100% 100%;
+		height: rem(600px);
+		width: 35%;
+		top: rem(100px);
+		left: 8%;
 	}
 
 	.active {
@@ -24,42 +27,63 @@
 		.basket-line-long {
 			background-image: url('../images/line-long.png');
 			@extend .basket-background;
+			height: rem(280px);
+			width: 0.6%;
+			left: 49%;
 		}
 
 		.basket-line-short {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
-			z-index: 100;
+			height: rem(40px);
+			width: 0.6%;
+			top: rem(355px);
+			left: 49%;
 		}
 
 		.basket-line-short-last {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
-			z-index: 100;
+			height: rem(40px);
+			width: 0.6%;
+			top: rem(460px);
+			left: 49%;
 		}
 
 		.basket-radio {
 			background-image: url('../images/radio.png');
 			@extend .basket-background;
-			z-index: 100;
+			height: rem(50px);
+			width: 7%;
+			top: rem(290px);
+			left: 45.5%;
 		}
 
 		.basket-globes {
 			background-image: url('../images/globes.png');
 			@extend .basket-background;
-			z-index: 100;
+			height: rem(35px);
+			width: 10%;
+			top: rem(410px);
+			left: 44.3%;
 		}
 
 		.basket-cloud {
 			background-image: url('../images/images-end.png');
 			@extend .basket-background;
+			height: rem(110px);
+			width: 15%;
+			top: rem(520px);
+			left: 42%;
 		}
-}
+	}
 
 	.background-basket {
 		background-image: url('../images/basket-pitch.png');
 		@extend .basket-background;
 		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -68,7 +92,7 @@
 }
 .txt-wapper {
 		position: absolute;
-		top: 30%;
+		top: rem(302px);
 		left: 60%;
 		z-index: 100;
 		@extend .text-default;
@@ -81,7 +105,7 @@
 }
 
 .forums-text {
-	margin-top: rem(60px);
+	margin-top: rem(80px);
 	font-size: rem(26px);
 	@extend .text-default;
 }
@@ -101,16 +125,14 @@
 	.slide-basket-pitch {
 		height: rem(270px);
 		.basket-iphone {
-			background-size: 45% auto;
 			height: rem(215px);
-			width: rem(290px);
+			width: 30%;
 			z-index: 1;
 			top: rem(55px);
 			left: 13%;
 		}
 		.background-basket {
 			background-size: 145% 100%;
-			position: relative;
 			background-position: center center;
 			height: 100%;
 			width: 100%;
@@ -118,50 +140,44 @@
 		.active {
 			.basket-line-long {
 				background-position: center 0;
-				background-size: 10% auto;
-				height: 12%;
-				width: 6%;
-				left: 46%
+				height: rem(125px);
+				width: 0.5%;
+				left: 49%
 			}
 
 			.basket-line-short {
 				background-position: center 0;
-				background-size: 10% auto;
-				height: 2%;
-				top: 15%;
-				width: 6%;
-				left: 46%;
+				height: rem(18px);
+				top: rem(147px);
+				width: 0.5%;
+				left: 49%;
 			}
 
 			.basket-line-short-last {
 				background-position: center 0;
-				background-size: 10% auto;
-				height: 2%;
-				top: 22%;
-				width: 6%;
-				left: 46%;
+				height: rem(18px);
+				top: rem(192px);
+				width: 0.5%;
+				left: 49%;
 			}
 
 			.basket-radio {
-				background-size: 55% auto;
-				height: 3%;
-				top: 12%;
-				left: 46%;
-				width: 10%;
+				height: rem(20px);
+				top: rem(124px);
+				left: 46.5%;
+				width: 5%;
 			}
 
 			.basket-globes {
-				height: 5%;
-				top: 18%;
-				background-size: 65% auto;
-				width: 11%;
+				height: rem(20px);
+				top: rem(168px);
+				width: 7%;
 				left: 45.5%;
 			}
 		
 			.basket-cloud {
-				height: 6%;
-				top: 25%;
-				background-size: 90% auto;
+				height: rem(35px);
+				top: rem(214px);
 				width: 9%;
 				left: 45%;
 			}
@@ -169,19 +185,19 @@
 	}
 	.txt-wapper {
 		position: absolute;
-		top: 13%;
+		top: rem(128px);
 		left: 60%;
 		.radio-text {
 			font-size: rem(11px);
 		}
 
 		.forums-text {
-			margin-top: rem(20px);
+			margin-top: rem(30px);
 			font-size: rem(12px);
 		}
 
 		.sparks-text {
-			margin-top: rem(26px);
+			margin-top: rem(30px);
 			font-size: rem(16px);
 		}
 
@@ -198,13 +214,11 @@
 		height: 700px;
 		.background-basket {
 			background-position: center center;
-			background-size: 100% 100%;
 			height: rem(530px);
 			width: 100%;
 		}
 
 		.basket-iphone {
-			background-size: 100% 100%;
 			height: rem(424px);
 			width: 33%;
 			top: rem(106px);
@@ -213,72 +227,66 @@
 	
 		.active {
 			.basket-line-long {
-				background-size: 50% 100%;
-				width: 1%;
-				height: rem(250px);
+				width: 0.5%;
+				height: rem(240px);
 				left: 49%;
 			}
 
 			.basket-radio {
-				background-size: 40% auto;
-				height: 5%;
-				width: 10%;
-				top: 30%;
-				left: 47%;
+				height: rem(28px);
+				width: 6%;
+				top: rem(244px);
+				left: 46.2%;
 			}
 
 			.basket-line-short {
-				background-size: 50% 100%;
-				height: rem(40px);
-				width: 1%;
+				height: rem(35px);
+				width: 0.5%;
 				left: 49%;
-				top: 34%;
+				top: rem(275px);
 			}
 			
 			.basket-line-short-last {
-				background-size: 50% 100%;
-				height: rem(40px);
-				width: 1%;
+				height: rem(35px);
+				width: 0.5%;
 				left: 49%;
-				top: 45%;
+				top: rem(365px);
 			}
 
 			.basket-globes {
-				background-size: 50% auto;
-				height: 5%;
-				width: 10%;
-				top: 39%;
-				left: 46.6%;
+				height: rem(45px);
+				width: 6.5%;
+				top: rem(315px);
+				left: 46%;
 			}
 
 			.basket-cloud {
-				height: 10%;
-				width: 15%;
-				top: 51%;
-				left: 45%;
-				background-size: 58% auto;
+				height: rem(70px);
+				width: 10%;
+				top: rem(410px);
+				left: 44%;
 			}
 		}
 		.txt-wapper {
 			position: absolute;
-			top: 31%;
+			top: rem(252px);
 			left: 60%;
 			.radio-text {
-				font-size: rem(18px);
+				font-size: rem(16px);
 			}
 
 			.forums-text {
 				margin-top: rem(45px);
-				font-size: rem(20px);
+				font-size: rem(18px);
 			}
 
 			.sparks-text {
 				margin-top: rem(66px);
-				font-size: rem(36px);
+				font-size: rem(28px);
 			}
 
 			.discuss-text {
-				font-size: rem(16px);
+				font-size: rem(14px);
 				margin-right: rem(45px);
 			}
 		}

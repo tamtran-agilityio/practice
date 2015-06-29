@@ -5,6 +5,7 @@
 	position: inherit;
 
 	.background-slide-drive {
+		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		position: absolute;
 		width: 100%;
@@ -95,13 +96,12 @@
 
 @media (max-width: 480px) {
 	.slide-drive {
-		position: absolute;
-		top: 75%;
-		height: 760px;
+		height: 660px;
 		.benefit-content {
 			text-align: center;
 			color: $white;
 			list-style: none;
+			padding-top: rem(20px);
 			li:first-child{
 				font-size: 1.3rem;
 				margin-top: 4rem;
@@ -119,12 +119,16 @@
 			width: rem(100px);
 			height: rem(50px);
 			position: absolute;
-			left: 20%;
-			top: 18%;
+			left: 26%;
+			top: rem(910px);
 			z-index: 150;
-			p {
-				text-align: center;
+			text-align: center;
+			h4 {
 				font-size: rem(10px);
+				color: #ca0000;
+			}
+			span {
+				font-size: rem(8px);
 				color: #ca0000;
 			}
 		}
@@ -132,7 +136,7 @@
 		.grow-content {
 			position: absolute;
 			left: 58%;
-			top: 5%;
+			top: rem(640px);
 			h1 {
 				font-size: rem(12px);
 			}
@@ -145,7 +149,7 @@
 		.topic-content {
 			position: absolute;
 			left: 5%;
-			top: 43%;
+			top: rem(1060px);
 			h1 {
 				font-size: rem(12px);
 			}	
@@ -157,57 +161,62 @@
 		}
 
 		.arrow-left {
-			background-size: 8% auto;
-			top: 17%;
-			left: 14%;
-			height: 5%;
+			background-size: 100% 100%;
+			top: rem(895px);
+			left: 17%;
+			height: rem(35px);
+			width: 12%;
 		}
 
 		.arrow-right {
-			background-size: 12% auto;
-			top: 19%;
+			background-size: 100% 100%;
+			top: rem(920px);
 			left: 45%;
-			height: 5%;
+			height: rem(12px);
+			width: 12%;
 		}
 		.background-tweet-wall {
 			height: 700px;
 			.background-tweet {
-				background-size: 50%;
+				background-size: 100% 100%;
 				left: 5%;
+				width: 50%;
 				z-index: 1;
-				height: 10%;
 			}
 
 			.tweet-wall {
 				@extend .background-tweet;
+				height: rem(120px);
 			}
 
 			.content-comment {
 				@extend .background-tweet;
-				top: 15%;
+				top: rem(130px);
+				height: rem(140px);
 			}
 
 			.comment-list {
 				@extend .background-tweet;
-				top: 30%;
+				top: rem(280px);
+				height: rem(140px);
 				opacity: 0.5;
 			}
 
 			.content-user {
-				background-size: 50%;
-				left: 45%;
-				top: 3%;
+				background-size: 100% 100%;
+				left: 48%;
+				width: 50%;
+				top: rem(50px);
 				z-index: 1;
-				height: 33%;
+				height: rem(300px);
 			}
-
 		}
 	}
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 481px) {
 	.slide-drive {
-		height: rem(1000px);
+		height: rem(860px);
 		.benefit-content {
 			text-align: center;
 			color: $white;
@@ -232,6 +241,7 @@
 			height: rem(80px);
 			position: absolute;
 			text-align: center;
+			top: rem(1460px);
 			z-index: 150;
 			h4 {
 				font-size: rem(18px);
@@ -257,7 +267,7 @@
 		
 		.topic-content {
 			left: 5%;
-			top: 282%;
+			top: rem(1680px);
 			width: 30%;
 			h3 {
 				font-size: rem(18px);
@@ -269,53 +279,53 @@
 		}
 
 		.arrow-left {
-			background-size: 8% auto;
-			top: 213%;
-			left: 25%;
-			height: 12%;
+			top: rem(1440px);
+			left: 22%;
+			height: 7%;
+			width: 10%;
 		}
 
 		.arrow-right {
-			background-size: 12% auto;
-			top: 221%;
+			top: rem(1470px);
 			left: 46%;
-			height: 5%;
+			height: 3%;
+			width: 10%;
 		}
 		.background-tweet-wall {
 			height: 700px;
+			.background-tweets {
+				background-size: 100% 100%;
+				left: 5%;
+				width: 50%;
+				z-index: 1;
+			}
 
 			.tweet-wall {
-				background-size: 50%;
-				left: 5%;
-				z-index: 1;
-				height: 35%;
+				@extend .background-tweets;
+				height: rem(160px);
 			}
 
 			.content-comment {
-				background-size: 50%;
-				left: 5%;
-				z-index: 1;
-				height: 35%;
-				top: 32%;
+				@extend .background-tweets;
+				top: rem(170px);
+				height: rem(160px);
 			}
 
 			.comment-list {
-				background-size: 50%;
-				left: 5%;
-				z-index: 1;
-				height: 35%;
-				top: 67%;
+				@extend .background-tweets;
+				top: rem(340px);
+				height: rem(160px);
 				opacity: 0.5;
 			}
 
 			.content-user {
-				background-size: 50%;
-				left: 45%;
-				top: 10%;
+				background-size: 100% 100%;
+				left: 48%;
+				width: 50%;
+				top: rem(50px);
 				z-index: 1;
-				height: 70%;
+				height: rem(400px);
 			}
-
 		}
 	}
 }

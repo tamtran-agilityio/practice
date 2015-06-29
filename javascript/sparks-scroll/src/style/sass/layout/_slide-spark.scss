@@ -8,7 +8,7 @@
 
 	.sparks-background {
 		background-repeat: no-repeat;
-		background-size: 100%;
+		background-size: 100% 100%;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -77,9 +77,9 @@
 		height: 280px;
 		.wapper-content {
 			position: absolute;
-			top: 40%;
+			top: rem(310px);
 			left: 8%;
-			margin-right: rem(190px);
+			width: 43%;
 			.sparks-what-text {
 				font-size: rem(12px);
 			}
@@ -112,17 +112,17 @@
 		}
 
 		.sparks-iphone-4 {
-			background-size: 34%;
-			top: 37%;
-			left: 10%;
-			height: 30%;
+			top: rem(290px);
+			left: 48%;
+			width: 30%;
+			height: rem(250px);
 		}
 
 		.sparks-iphone-5 {
-			background-size: 46%;
-			top: 54%;
-			left: 6%;
-			height: 25%;
+			top: rem(380px);
+			left: 54%;
+			height: rem(220px);
+			width: 42%;
 			z-index: 1;
 		}
 	}
@@ -132,13 +132,14 @@
  * Styles with screen 
  * max-width: 768px
  */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 480px) {
 
 	.slide-what-sparks {
-		height: 385px;
+		height: 335px;
 		.wapper-content {
 			left: 6%;
 			width: 34%;
+			top: rem(600px);
 			.sparks-what-text {
 				font-size: rem(30px);
 			}
@@ -170,17 +171,18 @@
 		}
 
 		.sparks-iphone-4 {
-			background-size: 34%;
-			top: 94%;
-			height: 62%;
+			top: rem(570px);
+			left: 45%;
+			height: rem(420px);
+			width: 30%;
 		}
 
 		.sparks-iphone-5 {
-			background-size: 46%;
-			top: 115%;
-			left: 3%;
-			height: 59%;
+			top: rem(710px);
+			left: 52%;
+			height: rem(365px);
 			z-index: 1;
+			width: 40%;
 		}
 	}
 }
