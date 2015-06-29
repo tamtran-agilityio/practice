@@ -17,9 +17,9 @@
 		@extend .basket-background;
 		background-size: 100% 100%;
 		height: rem(600px);
-		width: 30%;
+		width: 25%;
 		top: rem(100px);
-		left: 8%;
+		left:18%;
 	}
 
 	.active {
@@ -72,9 +72,9 @@
 			background-image: url('../images/images-end.png');
 			@extend .basket-background;
 			height: rem(110px);
-			width: 15%;
+			width: 10%;
 			top: rem(520px);
-			left: 42%;
+			left: 44%;
 		}
 	}
 
