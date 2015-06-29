@@ -35,31 +35,38 @@
 		top: rem(800px);
 		left: 17%;
 		.sparks-what-text {
-			font-size: rem(24px);
+			font-family: $font-roboto;
+			@include font-text(rem(24px), bold, $black);
 		}
 
 		.fan-iphone {
-			font-size: rem(20px);
+			font-family: $font-roboto;
+			@include font-text(rem(20px), lighter, $black);
 		}
 
 		.app-iphone {
+			margin-left: rem(-45px);
 			li:before {
 				content: "";
 				display: block;
 				background: url('../images/spark.png') no-repeat;
 				width: rem(20px);
 				height: rem(20px);
+				margin-top: rem(5px);
 				float: left;
 			}
 			li {
-				font-size: rem(24px);
+				font-family: $font-roboto;
+				@include font-text(rem(20px), lighter, $black);
+				margin-bottom: rem(10px);
 				list-style: none;
 				display: inline-block;
 			}
 		}
 
 		.channels-text {
-			font-size: rem(24px);
+			font-family: $font-roboto;
+			@include font-text(rem(20px), lighter, $black);
 		}
 
 		.icon-flash {

@@ -87,9 +87,6 @@
 	}
 }
 
-.text-default {
-	color: $white;
-}
 .txt-wapper {
 		position: absolute;
 		top: rem(302px);
@@ -100,25 +97,24 @@
 }
 
 .radio-text {
-	font-size: rem(22px);
-	@extend .text-default;
+	font-family: $font-roboto;
+	@include font-text(rem(22px), normal, $white);
 }
 
 .forums-text {
 	margin-top: rem(80px);
-	font-size: rem(26px);
-	@extend .text-default;
+	font-family: $font-roboto;
+	@include font-text(rem(22px), normal, $white);
 }
 
 .sparks-text {
 	margin-top: rem(75px);
-	font-size: rem(50px);
-	@extend .text-default;
+	font-family: $font-roboto;
+	@include font-text(rem(45px), bold, $white);
 }
 
 .discuss-text {
-	font-size: rem(20px);
-	@extend .text-default;
+	@include font-text(rem(20px), normal, $white);
 }
 
 @media screen and (max-width: 480px) {
@@ -188,21 +184,25 @@
 		top: rem(128px);
 		left: 60%;
 		.radio-text {
-			font-size: rem(11px);
+			font-family: $font-roboto;
+			@include font-text(rem(11px), normal, $white);
 		}
 
 		.forums-text {
 			margin-top: rem(30px);
-			font-size: rem(12px);
+			font-family: $font-roboto;
+			@include font-text(rem(11px), normal, $white);
 		}
 
 		.sparks-text {
 			margin-top: rem(30px);
-			font-size: rem(16px);
+			font-family: $font-roboto;
+			@include font-text(rem(16px), normal, $white);
 		}
 
 		.discuss-text {
-			font-size: rem(10px); 
+			font-family: $font-roboto;
+			@include font-text(rem(10px), normal, $white);
 		}
 	}
 }
@@ -272,22 +272,26 @@
 			top: rem(252px);
 			left: 60%;
 			.radio-text {
-				font-size: rem(16px);
+				font-family: $font-roboto;
+				@include font-text(rem(16px), normal, $white);
 			}
 
 			.forums-text {
 				margin-top: rem(45px);
-				font-size: rem(18px);
+				font-family: $font-roboto;
+				@include font-text(rem(18px), normal, $white);
 			}
 
 			.sparks-text {
 				margin-top: rem(66px);
-				font-size: rem(28px);
+				font-family: $font-roboto;
+				@include font-text(rem(24px), bold, $white);
 			}
 
 			.discuss-text {
-				font-size: rem(14px);
 				margin-right: rem(45px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $white);
 			}
 		}
 	}

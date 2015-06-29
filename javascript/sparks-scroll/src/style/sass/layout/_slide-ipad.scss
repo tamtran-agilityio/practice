@@ -24,13 +24,17 @@
 		height: rem(752px);
 		width: 42%;
 		left: 42%;
-		top: rem(2470px);
+		top: rem(2500px);
 	}
 
 	.arrow-horizontal {
 		background-image: url('../images/arrow-horizontal.png');
 		z-index: 100;
 		@extend .background-slide-ipad;
+		height: rem(51px);
+		width: 10%;
+		left: 38%;
+		top: rem(2800px);
 	}
 }
 
@@ -70,27 +74,27 @@
 		height: rem(410px);
 		background-color: $white;
 		.topic-tweet {
-			top: rem(-100px);
+			top: rem(1850px);
 			left: 5%;
 			width: 40%;
 			height: rem(310px);
-			position: relative;
+    	position: absolute;
 		}
 
 		.background-ipad {
-			top: rem(-570px);
+			top: rem(1780px);
 			left: 45%;
 			width: 54%;
 			height: rem(500px);
-			position: relative;
+			position: absolute;
 		}
 
 		.arrow-horizontal {
-			top: rem(-270px);
+			top: rem(1960px);
 			left: 42%;
 			height: rem(30px);
 			width: 10%;
-			position: relative;
+			position: absolute;
 		}
 	}
 }

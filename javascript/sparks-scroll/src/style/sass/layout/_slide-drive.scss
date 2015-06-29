@@ -29,7 +29,7 @@
 		.comment-visual {
 			background-color: $white;
 			@include border-radius(30px);
-			width: rem(185px);
+			width: 17%;
 			height: rem(105px);
 			position: absolute;
 			left: 30%;
@@ -37,12 +37,12 @@
 			z-index: 150;
 			text-align: center;
 			h4 {
-				font-size: rem(20px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(20px), normal, $drive-text);
 			}
 			span {
-				font-size: rem(16px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(16px), normal, $drive-text);
 			}
 		}
 
@@ -50,27 +50,29 @@
 		position: absolute;
 		left: 51%;
 		width: 20%;
-		color: $white;
 		h1 {
-				font-size: rem(24px);
+			font-family: $font-roboto;
+			@include font-text(rem(24px), normal, $white);
 		}
 
 		p {
-			font-size: rem(14px);
+			font-family: $font-roboto;
+			@include font-text(rem(14px), normal, $white);
 		}
 	}
 
 	.topic-content {
 			position: absolute;
-			color: $white;
 			left: 15%;
 			top: rem(2500px);
 			h1 {
-				font-size: rem(24px);
+				font-family: $font-roboto;
+				@include font-text(rem(24px), normal, $white);
 			}
 
 			p {
-				font-size: rem(14px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $white);
 			}
 		}
 	.arrow-left {
@@ -90,7 +92,7 @@
 		width: 10%;
 		height: rem(34px);
 		top: rem(2120px);
-		left: 41%;
+		left: 45%;
 	}
 
 	.background-tweet-wall {
@@ -142,16 +144,17 @@
 		height: 660px;
 		.benefit-content {
 			text-align: center;
-			color: $white;
 			list-style: none;
 			padding-top: rem(20px);
 			li:first-child{
-				font-size: rem(13px);
+				font-family: $font-roboto;
+				@include font-text(rem(13px), lighter, $white);
 				margin-top: rem(40px);
 			}
 
 			li:last-child {
-				font-size: rem(10px);
+				font-family: $font-roboto;
+				@include font-text(rem(10px), lighter, $white);
 				margin-top: rem(10px);
 			}
 		}
@@ -159,7 +162,7 @@
 		.comment-visual {
 			background-color: $white;
 			border-radius: rem(20px);
-			width: rem(100px);
+			width: 25%;
 			height: rem(50px);
 			position: absolute;
 			left: 26%;
@@ -214,7 +217,7 @@
 		.arrow-right {
 			background-size: 100% 100%;
 			top: rem(920px);
-			left: 45%;
+			left: 49%;
 			height: rem(12px);
 			width: 12%;
 		}
@@ -266,12 +269,14 @@
 			list-style: none;
 
 			li:first-child{
-				font-size: rem(24px);
+				font-family: $font-roboto;
+				@include font-text(rem(24px), lighter, $white);
 				padding-top: rem(60px);
 			}
 
 			li:last-child {
-				font-size: rem(16px);
+				font-family: $font-roboto;
+				@include font-text(rem(16px), lighter, $white);
 				margin-top: rem(10px);
 			}
 		}
@@ -280,44 +285,48 @@
 			@include border-radius(rem(5px));
 			background-color: $white;
 			border-radius: rem(20px);
-			width: rem(140px);
+			width: 25%;
 			height: rem(80px);
 			position: absolute;
 			text-align: center;
 			top: rem(1460px);
 			z-index: 150;
 			h4 {
-				font-size: rem(18px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(18px), bold, $drive-text);
 			}
 
 			span {
-				font-size: rem(14px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(10px), normal, $drive-text);
 			}
 		}
 
 		.grow-content {
 			left: 58%;
 			h3 {
-				font-size: rem(18px);
+				font-family: $font-roboto;
+				@include font-text(rem(18px), normal, $white);
 			}
 
 			p {
-				font-size: rem(14px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $drive-text);
 			}
 		}
 		
 		.topic-content {
 			left: 5%;
-			top: rem(1680px);
+			top: rem(1760px);
 			width: 30%;
 			h3 {
-				font-size: rem(18px);
+				font-family: $font-roboto;
+				@include font-text(rem(18px), normal, $white);
 			}	
 			
 			p {
-				font-size: rem(14px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $white);
 			}
 		}
 
@@ -329,10 +338,11 @@
 		}
 
 		.arrow-right {
-			top: rem(1470px);
-			left: 46%;
-			height: 3%;
-			width: 10%;
+			top: 149rem;
+			left: 54%;
+			height: 15px;
+			width: 15%;
+			height: rem(15px);
 		}
 		.background-tweet-wall {
 			height: 700px;
