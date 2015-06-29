@@ -10,25 +10,30 @@
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
 	}
 	.sparks-iphone-4 {
-		background-position: 60% 0;
 		background-image: url('../images/iPhone-5S.png');
 		@extend .sparks-background;
+		width: 25%;
+		height: rem(630px);
+		top: rem(760px);
+		left: 47%;
 	}
 
 	.sparks-iphone-5 {
 		background-image: url('../images/iPhone-4S.png');
-		background-position: 85% 55%;
 		@extend .sparks-background;
+		width: 35%;
+		height: rem(523px);
+		top: rem(970px);
+		left: 53%;
+		z-index: 1;
 	}
 	.wapper-content {
 		position: absolute;
-
+		width: 32%;
+		top: rem(800px);
+		left: 17%;
 		.sparks-what-text {
 			font-size: rem(24px);
 		}

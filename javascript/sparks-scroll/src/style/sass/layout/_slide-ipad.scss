@@ -6,21 +6,25 @@
 	.background-slide-ipad {
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
-		height: 100%;
-		width: 100%;
-		left: 0;
-		top: 0;
+		position: absolute;
 	}
 
 	.topic-tweet {
 		background-image: url('../images/topic-tweet.png');
 		@extend .background-slide-ipad;
+		height: rem(414px);
+		width: 25%;
+		left: 15%;
+		top: rem(2600px);
 	}
-
 
 	.background-ipad {
 		background-image: url('../images/ipad.png');
 		@extend .background-slide-ipad;
+		height: rem(752px);
+		width: 42%;
+		left: 42%;
+		top: rem(2470px);
 	}
 
 	.arrow-horizontal {
