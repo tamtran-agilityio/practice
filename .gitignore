@@ -26,3 +26,4 @@ grunt/.sass-cache
 *.git
 *.vagrant
 *.map
+*.sass-cache
