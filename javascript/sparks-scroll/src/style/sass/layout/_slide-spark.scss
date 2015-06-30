@@ -32,7 +32,7 @@
 	.wapper-content {
 		position: absolute;
 		width: 32%;
-		top: rem(800px);
+		top: rem(780px);
 		left: 17%;
 		.sparks-what-text {
 			font-family: $font-roboto;
@@ -41,7 +41,7 @@
 
 		.fan-iphone {
 			font-family: $font-roboto;
-			@include font-text(rem(20px), bold, $black);
+			@include font-text(rem(18px), bold, $black);
 		}
 
 		.app-iphone {
@@ -66,7 +66,7 @@
 
 		.channels-text {
 			font-family: $font-roboto;
-			@include font-text(rem(20px), lighter, $black);
+			@include font-text(rem(18px), lighter, $black);
 		}
 
 		.icon-flash {
@@ -93,16 +93,17 @@
 			left: 8%;
 			width: 43%;
 			.sparks-what-text {
-				font-size: rem(12px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), bold, $black);
 			}
 
 			.fan-iphone {
-				font-size: rem(10px);
+				font-family: $font-roboto;
+				@include font-text(rem(10px), lighter, $black);
 			}
 
 			.app-iphone {
 				padding-left: 0;
-				font-size: rem(10px);
 
 				li:before {
 					width: rem(15px);
@@ -112,15 +113,17 @@
 					margin-top: rem(5px);
 				}
 				li {
-					font-size: rem(10px);
+					font-family: $font-roboto;
+					@include font-text(rem(10px), lighter, $black);
 					list-style: none;
-					margin-bottom: rem(2px);
+					margin: rem(0 0 2px 0);
 					display: inline-block;
 				}
 			}
 	
 			.channels-text {
-				font-size: rem(10px);
+				font-family: $font-roboto;
+				@include font-text(rem(10px), bold, $black);
 			}
 		}
 
@@ -154,16 +157,17 @@
 			width: 34%;
 			top: rem(600px);
 			.sparks-what-text {
-				font-size: rem(30px);
+				font-family: $font-roboto;
+				@include font-text(rem(24px), bold, $black);
 			}
 
 			.fan-iphone {
-				font-size: rem(19px);
+				font-family: $font-roboto;
+				@include font-text(rem(16px), lighter, $black);
 			}
 
 			.app-iphone {
 				padding-left: 0;
-				font-size: rem(10px);
 
 				li:before {
 					width: rem(15px);
@@ -172,7 +176,8 @@
 				}
 				li {
 					margin: rem(5px -5px 5px 0);
-					font-size: rem(14px);
+					font-family: $font-roboto;
+					@include font-text(rem(14px), lighter, $black);
 					margin-bottom: rem(5px);
 					list-style: none;
 					display: inline-block;
@@ -180,7 +185,8 @@
 			}
 	
 			.channels-text {
-				font-size: rem(17px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), bold, $black);
 			}
 		}
 

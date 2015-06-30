@@ -170,18 +170,19 @@
 			z-index: 150;
 			text-align: center;
 			h4 {
-				font-size: rem(10px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(10px), lighter, $drive-text);
 			}
 			span {
-				font-size: rem(8px);
-				color: #ca0000;
+				font-family: $font-roboto;
+				@include font-text(rem(8px), lighter, $drive-text);
 			}
 		}
 
 		.grow-content {
 			position: absolute;
 			left: 58%;
+			width: 30%;
 			top: rem(640px);
 			h1 {
 				font-size: rem(12px);
@@ -271,7 +272,6 @@
 			li:first-child{
 				font-family: $font-roboto;
 				@include font-text(rem(24px), lighter, $white);
-				padding-top: rem(60px);
 			}
 
 			li:last-child {
@@ -311,7 +311,7 @@
 
 			p {
 				font-family: $font-roboto;
-				@include font-text(rem(14px), normal, $drive-text);
+				@include font-text(rem(14px), normal, $white);
 			}
 		}
 		

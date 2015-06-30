@@ -1,5 +1,6 @@
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
+var compass = require('gulp-compass');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var jade = require('gulp-jade');
@@ -78,6 +79,16 @@ gulp.task('sass', function() {
 		// 	compatibility: 'ie8'
 		// }))
 		.pipe(gulp.dest(config.cssOut));
+});
+
+gulp.task('compass', function() {
+  gulp.src(config.css)
+    .pipe(compass({
+      sass: 'src/style/sass',
+      require: ['susy', 'modular-scale']
+    }))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(config.cssOut));
 });
 
 gulp.task('sass:watch', function() {

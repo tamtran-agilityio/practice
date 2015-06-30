@@ -1,7 +1,7 @@
 /* Styles part footer */
 .slide-football-pitch {
 	width: 100%;
-	height: rem(480px);
+	height: rem(474px);
 
 	.football-pitch {
 		background-image: url('../images/football-pitch.png');
@@ -25,12 +25,12 @@
 
 @media (max-width: 480px) {
 	.slide-football-pitch {
-		height: rem(480px);
+		height: rem(474px);
 		.football-pitch {
 			background-size: 100% 100%;
 			position: relative;
 			background-position: center center;
-			height: rem(480px);
+			height: rem(474px);
 			width: 100%;
 		}
 	}
@@ -38,12 +38,11 @@
 
 @media screen and (max-width: 768px) and (min-width: 480px) {
 	.slide-football-pitch {
-		height: rem(480px);
 		.football-pitch {
 			background-size: 100% 100%;
 			position: relative;
 			background-position: center center;
-			height: rem(480px);
+			height: rem(474px);
 			width: 100%;
 		}
 	}
