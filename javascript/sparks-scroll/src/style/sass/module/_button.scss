@@ -1,0 +1,19 @@
+.spark-button {
+
+	width: rem(180px);
+	height: rem(73px);
+	font-family: $font-roboto;
+	background-position: -1px -71px;
+	border: none;
+	display: inline-block;
+	background: url('../images/spark-buttons.png');
+	background-repeat: no-repeat;
+	outline: none;
+	@include border-radius(rem(60px));
+	@include font-text(rem(22px), lighter, $white);
+	margin: rem(20px 0 180px);
+
+	&:hover {
+		background-color: $button-hover;
+	}
+}
