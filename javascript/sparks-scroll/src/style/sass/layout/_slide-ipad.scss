@@ -1,40 +1,44 @@
 .slide-ipad {
 	background-color: $white;
-	height: 650px;
+	height: 725px;
 	z-index: 100;
 
 	.background-slide-ipad {
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
-		position: absolute;
+		position: relative;
 	}
+	
+	.inside {
+		max-width: 950px;
+		margin: 0 auto;
+		position: relative;
+		.topic-tweet {
+			background-image: url('../images/topic-tweet.png');
+			@extend .background-slide-ipad;
+			height: rem(414px);
+			width: rem(320px);
+			top: rem(-100px);
+		}
 
-	.topic-tweet {
-		background-image: url('../images/topic-tweet.png');
-		@extend .background-slide-ipad;
-		height: rem(414px);
-		width: 25%;
-		left: 15%;
-		top: rem(2600px);
-	}
+		.background-ipad {
+			background-image: url('../images/ipad.png');
+			@extend .background-slide-ipad;
+			height: rem(752px);
+			width: rem(665px);
+			top: rem(-700px);
+			left: rem(310px);
+		}
 
-	.background-ipad {
-		background-image: url('../images/ipad.png');
-		@extend .background-slide-ipad;
-		height: rem(752px);
-		width: 42%;
-		left: 42%;
-		top: rem(2500px);
-	}
-
-	.arrow-horizontal {
-		background-image: url('../images/arrow-horizontal.png');
-		z-index: 100;
-		@extend .background-slide-ipad;
-		height: rem(51px);
-		width: 10%;
-		left: 38%;
-		top: rem(2800px);
+		.arrow-horizontal {
+			background-image: url('../images/arrow-horizontal.png');
+			z-index: 100;
+			@extend .background-slide-ipad;
+			height: rem(51px);
+			width: rem(146px);
+			left: rem(280px);
+			top: rem(-350px);
+		}
 	}
 }
 
@@ -42,59 +46,62 @@
 	.slide-ipad {
 		height: rem(310px);
 		background-color: $white;
-		.topic-tweet {
-			position: absolute;
-			top: rem(1140px);
-			left: 5%;
-			height: rem(180px);
-			width: 35%;
-		}
+		.inside {
+			.topic-tweet {
+				position: absolute;
+				top: rem(-40px);
+				left: 5%;
+				height: rem(180px);
+				width: 35%;
+			}
 
-		.background-ipad {
-			position: absolute;
-			top: rem(1100px);
-			height: rem(300px);
-			width: 50%;
-			left: 45%;
-		}
+			.background-ipad {
+				position: absolute;
+				top: rem(-110px);
+				height: rem(300px);
+				width: 50%;
+				left: 45%;
+			}
 
-		.arrow-horizontal {
-			position: absolute;
-			top: rem(1230px);
-			left: 35%;
-			height: 4%;
-			width: 20%;
-			height: rem(20px);
+			.arrow-horizontal {
+				position: absolute;
+				top: rem(30px);
+				left: 35%;
+				height: 4%;
+				width: 20%;
+				height: rem(20px);
+			}
 		}
 	}
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px) {
 	.slide-ipad {
-		height: rem(410px);
+		height: rem(510px);
 		background-color: $white;
-		.topic-tweet {
-			top: rem(1850px);
-			left: 5%;
-			width: 40%;
-			height: rem(310px);
-    	position: absolute;
-		}
+		.inside {
+			.topic-tweet {
+				left: 5%;
+				width: 40%;
+				height: rem(310px);
+	    	position: absolute;
+			}
 
-		.background-ipad {
-			top: rem(1780px);
-			left: 45%;
-			width: 54%;
-			height: rem(500px);
-			position: absolute;
-		}
+			.background-ipad {
+				top: rem(-170px);
+				left: 45%;
+				width: 54%;
+				height: rem(500px);
+				position: absolute;
+			}
 
-		.arrow-horizontal {
-			top: rem(1960px);
-			left: 42%;
-			height: rem(30px);
-			width: 10%;
-			position: absolute;
+			.arrow-horizontal {
+				top: rem(20px);
+				left: 42%;
+				height: rem(30px);
+				width: 10%;
+				position: absolute;
+			}
 		}
 	}
 }

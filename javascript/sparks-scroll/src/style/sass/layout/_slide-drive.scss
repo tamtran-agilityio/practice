@@ -26,19 +26,23 @@
 			}
 		}
 
+	.inside {
+		max-width: 950px;
+		margin: 0 auto;
+		position: relative;
 		.comment-visual {
 			background-color: $white;
 			@include border-radius(30px);
-			width: 17%;
+			width: rem(220px);
 			height: rem(105px);
 			position: absolute;
-			left: 30%;
-			top: rem(2120px);
+			left: rem(230px);
+			top: rem(740px);
 			z-index: 150;
 			text-align: center;
 			h4 {
 				font-family: $font-roboto;
-				@include font-text(rem(20px), normal, $drive-text);
+				@include font-text(rem(20px), bold, $drive-text);
 			}
 			span {
 				font-family: $font-roboto;
@@ -46,26 +50,11 @@
 			}
 		}
 
-	.grow-content {
-		position: absolute;
-		left: 51%;
-		width: 20%;
-		h1 {
-			font-family: $font-roboto;
-			@include font-text(rem(24px), normal, $white);
-		}
-
-		p {
-			font-family: $font-roboto;
-			@include font-text(rem(14px), normal, $white);
-		}
-	}
-
-	.topic-content {
+		.grow-content {
 			position: absolute;
-			left: 15%;
-			top: rem(2500px);
-			h1 {
+			margin-left: 550px;
+			width: rem(250px);
+			h3 {
 				font-family: $font-roboto;
 				@include font-text(rem(24px), normal, $white);
 			}
@@ -75,67 +64,80 @@
 				@include font-text(rem(14px), normal, $white);
 			}
 		}
-	.arrow-left {
-		background-image: url('../images/arrow-left.png');
-		@extend .background-slide-drive;
-		z-index: 152;
-		width: 10%;
-		height: rem(83px);
-		top: rem(2060px);
-		left: 22%;
-	}
 
-	.arrow-right {
-		background-image: url('../images/arrow-right.png');
-		@extend .background-slide-drive;
-		z-index: 152;
-		width: 10%;
-		height: rem(34px);
-		top: rem(2120px);
-		left: 45%;
-	}
+		.topic-content {
+			position: absolute;
+			top: 1110px;
+			width: rem(250px);
+			h3 {
+				font-family: $font-roboto;
+				@include font-text(rem(24px), normal, $white);
+			}
 
-	.background-tweet-wall {
-		position: absolute;
-		height: rem(282px);
-		width: 100%;
-		z-index: 100;
-
-		.tweet-wall {
-			background-image: url('../images/tweet-wall.png');	
+			p {
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $white);
+			}
+		}
+		.arrow-left {
+			background-image: url('../images/arrow-left.png');
 			@extend .background-slide-drive;
-			height: rem(292px);
-			width: 35%;
-			left: 15%;
+			z-index: 152;
+			width: rem(77px);
+			height: rem(83px);
+			top: rem(680px);
+			left: rem(190px);
 		}
 
-		.content-comment {
-			background-image: url('../images/content-comment.png');
+		.arrow-right {
+			background-image: url('../images/arrow-right.png');
 			@extend .background-slide-drive;
-			height: rem(320px);
-			width: 35%;
-			left: 15%;
-			top: rem(310px);
+			z-index: 152;
+			width: rem(175px);
+			height: rem(34px);
+			top: rem(740px);
+			left: rem(420px);
 		}
 
-		.comment-list {
-			background-image: url('../images/comment-list.png');
-			@extend .background-slide-drive;
-			height: rem(278px);
-			width: 35%;
-			left: 15%;
-			top: rem(650px);
-			opacity: 0.5;
-		}
+		.background-tweet-wall {
+			position: absolute;
+			height: rem(282px);
+			width: 100%;
+			z-index: 100;
 
-	}
-	.content-user {
-		background-image: url('../images/content-user.png');
-		@extend .background-slide-drive;
-		height: rem(641px);
-		width: 35%;
-		left: 46%;
-		top: rem(120px)
+			.tweet-wall {
+				background-image: url('../images/tweet-wall.png');	
+				@extend .background-slide-drive;
+				height: rem(292px);
+				width: rem(522px);
+			}
+
+			.content-comment {
+				background-image: url('../images/content-comment.png');
+				@extend .background-slide-drive;
+				height: rem(320px);
+				width: rem(522px);
+				top: rem(310px);
+			}
+
+			.comment-list {
+				background-image: url('../images/comment-list.png');
+				@extend .background-slide-drive;
+				height: rem(278px);
+				width: rem(522px);
+				top: rem(650px);
+				opacity: 0.5;
+			}
+
+		}
+		.content-user {
+			background-image: url('../images/content-user.png');
+			@extend .background-slide-drive;
+			height: rem(641px);
+			width: rem(504px);
+			margin-top: rem(100px);
+			margin-left: rem(440px);
+		}
 	}
 }
 
@@ -158,104 +160,111 @@
 				margin-top: rem(10px);
 			}
 		}
-
-		.comment-visual {
-			background-color: $white;
-			border-radius: rem(20px);
-			width: 25%;
-			height: rem(50px);
-			position: absolute;
-			left: 26%;
-			top: rem(910px);
-			z-index: 150;
-			text-align: center;
-			h4 {
-				font-family: $font-roboto;
-				@include font-text(rem(10px), lighter, $drive-text);
-			}
-			span {
-				font-family: $font-roboto;
-				@include font-text(rem(8px), lighter, $drive-text);
-			}
-		}
-
-		.grow-content {
-			position: absolute;
-			left: 58%;
-			width: 30%;
-			top: rem(640px);
-			h1 {
-				font-size: rem(12px);
+		.inside {
+			.comment-visual {
+				background-color: $white;
+				border-radius: rem(20px);
+				width: 25%;
+				height: rem(50px);
+				position: absolute;
+				left: 26%;
+				top: rem(350px);
+				z-index: 150;
+				text-align: center;
+				h4 {
+					font-family: $font-roboto;
+					@include font-text(rem(10px), lighter, $drive-text);
+				}
+				span {
+					font-family: $font-roboto;
+					@include font-text(rem(8px), lighter, $drive-text);
+				}
 			}
 
-			p {
-				font-size: rem(8px);
+			.grow-content {
+				position: absolute;
+				left: 58%;
+				width: 30%;
+				margin-left: 0;
+				top: rem(80px);
+				h1 {
+					font-size: rem(12px);
+				}
+
+				p {
+					font-size: rem(8px);
+				}
 			}
-		}
-		
-		.topic-content {
-			position: absolute;
-			left: 5%;
-			top: rem(1060px);
-			h1 {
-				font-size: rem(12px);
-			}	
 			
-			p {
-				font-size: rem(8px);
-				margin-right: rem(250px);
-			}
-		}
-
-		.arrow-left {
-			background-size: 100% 100%;
-			top: rem(895px);
-			left: 17%;
-			height: rem(35px);
-			width: 12%;
-		}
-
-		.arrow-right {
-			background-size: 100% 100%;
-			top: rem(920px);
-			left: 49%;
-			height: rem(12px);
-			width: 12%;
-		}
-		.background-tweet-wall {
-			height: 700px;
-			.background-tweet {
-				background-size: 100% 100%;
+			.topic-content {
+				position: absolute;
 				left: 5%;
-				width: 50%;
-				z-index: 1;
+				top: rem(525px);
+				width: 90%;
+				h1 {
+					font-size: rem(12px);
+				}	
+				
+				p {
+					font-size: rem(8px);
+					margin-right: rem(250px);
+				}
 			}
 
-			.tweet-wall {
-				@extend .background-tweet;
-				height: rem(120px);
-			}
-
-			.content-comment {
-				@extend .background-tweet;
-				top: rem(130px);
-				height: rem(140px);
-			}
-
-			.comment-list {
-				@extend .background-tweet;
-				top: rem(280px);
-				height: rem(140px);
-				opacity: 0.5;
-			}
-
-			.content-user {
+			.arrow-left {
 				background-size: 100% 100%;
+				top: rem(330px);
+				left: 18%;
+				height: rem(35px);
+				width: 12%;
+			}
+
+			.arrow-right {
+				background-size: 100% 100%;
+				top: rem(360px);
 				left: 48%;
-				width: 50%;
-				top: rem(50px);
-				z-index: 1;
-				height: rem(300px);
+				height: rem(12px);
+				width: 12%;
+			}
+			.background-tweet-wall {
+				height: 700px;
+				.background-tweet {
+					background-size: 100% 100%;
+					left: 5%;
+					width: 50%;
+					z-index: 1;
+				}
+
+				.tweet-wall {
+					@extend .background-tweet;
+					height: rem(120px);
+					position: absolute;
+					left: 5%;
+				}
+
+				.content-comment {
+					@extend .background-tweet;
+					top: rem(130px);
+					height: rem(140px);
+				}
+
+				.comment-list {
+					@extend .background-tweet;
+					top: rem(280px);
+					height: rem(140px);
+					opacity: 0.5;
+				}
+
+				.content-user {
+					background-size: 100% 100%;
+					width: 50%;
+					margin-top: 40px;
+					left: 47%;
+					position: absolute;
+					margin-left: 0;
+					z-index: 1;
+					height: rem(300px);
+				}
 			}
 		}
 	}
@@ -281,104 +290,116 @@
 			}
 		}
 
-		.comment-visual {
-			@include border-radius(rem(5px));
-			background-color: $white;
-			border-radius: rem(20px);
-			width: 25%;
-			height: rem(80px);
-			position: absolute;
-			text-align: center;
-			top: rem(1460px);
-			z-index: 150;
-			h4 {
-				font-family: $font-roboto;
-				@include font-text(rem(18px), bold, $drive-text);
+		.inside {
+			.comment-visual {
+				@include border-radius(rem(5px));
+				background-color: $white;
+				border-radius: rem(20px);
+				width: 20%;
+				height: rem(80px);
+				position: absolute;
+				text-align: center;
+				top: rem(450px);
+				z-index: 150;
+				left: 29%;
+
+				h4 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), bold, $drive-text);
+				}
+
+				span {
+					font-family: $font-roboto;
+					@include font-text(rem(10px), normal, $drive-text);
+				}
 			}
 
-			span {
-				font-family: $font-roboto;
-				@include font-text(rem(10px), normal, $drive-text);
-			}
-		}
+			.grow-content {
+				left: 58%;
+				margin-left: 0px;
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), normal, $white);
+					line-height: 0px;
+				}
 
-		.grow-content {
-			left: 58%;
-			h3 {
-				font-family: $font-roboto;
-				@include font-text(rem(18px), normal, $white);
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
 			}
-
-			p {
-				font-family: $font-roboto;
-				@include font-text(rem(14px), normal, $white);
-			}
-		}
-		
-		.topic-content {
-			left: 5%;
-			top: rem(1760px);
-			width: 30%;
-			h3 {
-				font-family: $font-roboto;
-				@include font-text(rem(18px), normal, $white);
-			}	
 			
-			p {
-				font-family: $font-roboto;
-				@include font-text(rem(14px), normal, $white);
-			}
-		}
-
-		.arrow-left {
-			top: rem(1440px);
-			left: 22%;
-			height: 7%;
-			width: 10%;
-		}
-
-		.arrow-right {
-			top: 149rem;
-			left: 54%;
-			height: 15px;
-			width: 15%;
-			height: rem(15px);
-		}
-		.background-tweet-wall {
-			height: 700px;
-			.background-tweets {
-				background-size: 100% 100%;
+			.topic-content {
 				left: 5%;
-				width: 50%;
-				z-index: 1;
+				top: rem(670px);
+				width: 30%;
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), normal, $white);
+					line-height: 0px;
+				}	
+				
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
 			}
 
-			.tweet-wall {
-				@extend .background-tweets;
-				height: rem(160px);
+			.arrow-left {
+				top: rem(440px);
+				left: 22%;
+				height: 20%;
+				width: 10%;
 			}
 
-			.content-comment {
-				@extend .background-tweets;
-				top: rem(170px);
-				height: rem(160px);
+			.arrow-right {
+				top: rem(466px);
+				left: 47%;
+				height: 15px;
+				width: 15%;
+				height: rem(15px);
 			}
+			.background-tweet-wall {
+				height: 700px;
+				.background-tweets {
+					background-size: 100% 100%;
+					left: 5%;
+					width: 50%;
+					z-index: 1;
+				}
 
-			.comment-list {
-				@extend .background-tweets;
-				top: rem(340px);
-				height: rem(160px);
-				opacity: 0.5;
-			}
+				.tweet-wall {
+					@extend .background-tweets;
+					height: rem(160px);
+				}
 
-			.content-user {
-				background-size: 100% 100%;
-				left: 48%;
-				width: 50%;
-				top: rem(50px);
-				z-index: 1;
-				height: rem(400px);
+				.content-comment {
+					@extend .background-tweets;
+					top: rem(170px);
+					height: rem(160px);
+				}
+
+				.comment-list {
+					@extend .background-tweets;
+					top: rem(340px);
+					height: rem(160px);
+					opacity: 0.5;
+				}
+
+				.content-user {
+					background-size: 100% 100%;
+					left: 48%;
+					width: 50%;
+					top: rem(60px);
+					z-index: 1;
+					height: rem(400px);
+					margin: 0;
+				}
 			}
 		}
 	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	
 }
