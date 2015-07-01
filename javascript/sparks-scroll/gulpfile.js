@@ -33,8 +33,8 @@ var config = {
 
 var jsLibraryConcatList = [
 	config.vender + 'jquery/dist/jquery.js',
-	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
-	config.vender + 'bower-skrollr/skrollr.js'
+	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js'
+	// config.vender + 'bower-skrollr/skrollr.js'
 ];
 var jsCodeConcatList = [
 	'src/js/main.js'
@@ -81,15 +81,15 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest(config.cssOut));
 });
 
-gulp.task('compass', function() {
-  gulp.src(config.css)
-    .pipe(compass({
-      sass: 'src/style/sass',
-      require: ['susy', 'modular-scale']
-    }))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest(config.cssOut));
-});
+// gulp.task('compass', function() {
+//   gulp.src(config.css)
+//     .pipe(compass({
+//       sass: 'src/style/sass',
+//       require: ['susy', 'modular-scale']
+//     }))
+//     .pipe(minifyCSS())
+//     .pipe(gulp.dest(config.cssOut));
+// });
 
 gulp.task('sass:watch', function() {
 	gulp.watch(config.css, ['sass']);
@@ -118,7 +118,7 @@ gulp.task('concatJsLibrary', function() {
 gulp.task('concatJsCode', function() {
 	return gulp.src(jsCodeConcatList)
 		.pipe(concat('main.js'))
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(gulp.dest('out/js/'))
 		.on('error', gutil.log);
 });
