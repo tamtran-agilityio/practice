@@ -6,75 +6,70 @@
 	.basket-background {
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
 		z-index: 1;
+		margin: 0 auto;
 	}
 
 	.basket-iphone {
 		background-image: url('../images/iPhone-5S-Black.png');
 		@extend .basket-background;
 		background-size: 100% 100%;
-		height: rem(600px);
-		width: 25%;
-		top: rem(100px);
-		left:18%;
+		height: rem(610px);
+		// width: rem(370px);
+		top: rem(90px);
+		margin: 0 auto;
+		position: relative;
 	}
 
 	.active {
+		margin: 0 auto;
 
 		.basket-line-long {
 			background-image: url('../images/line-long.png');
 			@extend .basket-background;
-			height: rem(280px);
-			width: 0.6%;
-			left: 49%;
+			height: rem(243px);
+			width: rem(4px);
 		}
 
 		.basket-line-short {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
-			height: rem(40px);
-			width: 0.6%;
-			top: rem(355px);
-			left: 49%;
+			height: rem(36px);
+			width: rem(4px);
+			margin-top: rem(20px);
 		}
 
 		.basket-line-short-last {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
-			height: rem(40px);
-			width: 0.6%;
-			top: rem(460px);
-			left: 49%;
+			height: rem(36px);
+			width: rem(4px);
+			margin-top: rem(20px);
+
 		}
 
 		.basket-radio {
 			background-image: url('../images/radio.png');
 			@extend .basket-background;
-			height: rem(50px);
-			width: 7%;
-			top: rem(290px);
-			left: 45.5%;
+			height: rem(36px);
+			width: rem(33px);
+			margin-top: rem(20px);
 		}
 
 		.basket-globes {
 			background-image: url('../images/globes.png');
 			@extend .basket-background;
-			height: rem(35px);
-			width: 10%;
-			top: rem(410px);
-			left: 44.3%;
+			height: rem(48px);
+			width: rem(48px);
+			margin-top: rem(20px);
 		}
 
 		.basket-cloud {
 			background-image: url('../images/images-end.png');
 			@extend .basket-background;
-			height: rem(110px);
-			width: 10%;
-			top: rem(520px);
-			left: 44%;
+			height: rem(103px);
+			width: rem(103px);
+			margin-top: rem(20px);
 		}
 	}
 
@@ -89,8 +84,7 @@
 
 .txt-wapper {
 		position: absolute;
-		top: rem(302px);
-		left: 60%;
+		top: rem(272px);
 		z-index: 100;
 }
 
@@ -120,10 +114,8 @@
 		height: rem(270px);
 		.basket-iphone {
 			height: rem(215px);
-			width: 30%;
 			z-index: 1;
 			top: rem(55px);
-			left: 13%;
 		}
 		.background-basket {
 			background-size: 145% 100%;
@@ -134,53 +126,42 @@
 		.active {
 			.basket-line-long {
 				background-position: center 0;
-				height: rem(125px);
-				width: 0.5%;
-				left: 49%
+				height: rem(120px);
 			}
 
 			.basket-line-short {
 				background-position: center 0;
 				height: rem(18px);
-				top: rem(147px);
-				width: 0.5%;
-				left: 49%;
+				margin-top: rem(5px);
 			}
 
 			.basket-line-short-last {
 				background-position: center 0;
 				height: rem(18px);
-				top: rem(192px);
-				width: 0.5%;
-				left: 49%;
+				margin-top: rem(5px);
 			}
 
 			.basket-radio {
 				height: rem(20px);
-				top: rem(124px);
-				left: 46.5%;
-				width: 5%;
+				margin-top: rem(10px);
+				margin-top: rem(5px);
 			}
 
 			.basket-globes {
 				height: rem(20px);
-				top: rem(168px);
-				width: 7%;
-				left: 45.5%;
+				margin-top: rem(5px);
 			}
 		
 			.basket-cloud {
-				height: rem(35px);
-				top: rem(214px);
-				width: 9%;
-				left: 45%;
+				height: rem(40px);
+				width: rem(50px);
+				margin-top: rem(5px);
 			}
 		}
 	}
 	.txt-wapper {
 		position: absolute;
 		top: rem(128px);
-		left: 60%;
 		.radio-text {
 			font-family: $font-roboto;
 			@include font-text(rem(11px), normal, $white);
@@ -218,64 +199,49 @@
 
 		.basket-iphone {
 			height: rem(424px);
-			width: 33%;
 			top: rem(106px);
-			left: 10%;
 		}
 	
 		.active {
 			.basket-line-long {
-				width: 0.5%;
-				height: rem(240px);
-				left: 49%;
+				height: rem(220px);
 			}
 
 			.basket-radio {
 				height: rem(28px);
-				width: 6%;
-				top: rem(244px);
-				left: 46.2%;
+				margin-top: rem(10px);
 			}
 
 			.basket-line-short {
 				height: rem(35px);
-				width: 0.5%;
-				left: 49%;
-				top: rem(275px);
 			}
 			
 			.basket-line-short-last {
 				height: rem(35px);
-				width: 0.5%;
-				left: 49%;
-				top: rem(365px);
+				margin-top: rem(10px);			
 			}
 
 			.basket-globes {
 				height: rem(45px);
-				width: 6.5%;
-				top: rem(315px);
-				left: 46%;
+				margin-top: rem(10px);
 			}
 
 			.basket-cloud {
 				height: rem(70px);
-				width: 10%;
-				top: rem(410px);
-				left: 44%;
+				width: rem(70px);
+				margin-top: rem(10px);
 			}
 		}
 		.txt-wapper {
 			position: absolute;
-			top: rem(252px);
-			left: 60%;
+			top: rem(235px);
 			.radio-text {
 				font-family: $font-roboto;
 				@include font-text(rem(16px), normal, $white);
 			}
 
 			.forums-text {
-				margin-top: rem(45px);
+				margin-top: rem(70px);
 				font-family: $font-roboto;
 				@include font-text(rem(18px), normal, $white);
 			}
