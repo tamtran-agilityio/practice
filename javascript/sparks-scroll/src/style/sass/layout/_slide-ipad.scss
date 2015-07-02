@@ -72,6 +72,12 @@
 				left: 45%;
 			}
 
+			.content-ipad {
+				height: rem(239px);
+				width: 86%;
+				top: rem(26px);
+				left: 7%;
+			}
 			.arrow-horizontal {
 				position: absolute;
 				top: rem(30px);
@@ -102,6 +108,13 @@
 				width: 54%;
 				height: rem(500px);
 				position: absolute;
+			}
+
+			.content-ipad {
+				height: rem(398px);
+				width: 86%;
+				top: rem(43px);
+				left: 7%;
 			}
 
 			.arrow-horizontal {
@@ -135,6 +148,13 @@
 				width: 55%;
 				height: rem(500px);
 				position: absolute;
+			}
+
+			.content-ipad {
+				height: rem(398px);
+				top: rem(43px);
+				left: rem(27px);
+				width: rem(331px);
 			}
 
 			.arrow-horizontal {
