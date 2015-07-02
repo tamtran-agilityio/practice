@@ -3,7 +3,6 @@
 #######################
 __MACOSX/
 cookbooks/
-vagrant/
 
 # Docpad compiled files
 ########################
