@@ -1,4 +1,4 @@
-User manager web
+Practice parallax scrolling web
 
 ## Author
 
@@ -16,7 +16,7 @@ User manager web
 	gulp-jade: run build file jade
 	gulp-sass: run build file sass 
 ## Project structure
-	src: directory source app include images, scss ,jade 
+	src: directory source app include images, fonts, scss ,jade 
 	bower.json: config all libraries need to project
 	gulpfile.js: set config of gulp
 	package.json:description there are plugin used in gulp
@@ -24,11 +24,14 @@ User manager web
 	.editorconfig: config code styles
 	.jscsrc: config code styles for all file
 	.jshintrc: config rules of jshint task 
-## Run user-manager
-1. Install gulp
+## Run practice
+1. Start vagrant
+ - Run 'vagrant up' after 'vagrant ssh'
+ - cd /javascript/sparks-scroll
+2. Install gulp
  - Run 'npm install gulp -g'
-2. Set libraries:
- - Run `bower install` to install all libraries 
-3. Run project
- - Run gulp
+3. Set libraries:
+ - Run 'npm update' to install all libraries 
+4. Run project
+ - Run 'gulp'
  - Open URL: http://localhost:9000 
