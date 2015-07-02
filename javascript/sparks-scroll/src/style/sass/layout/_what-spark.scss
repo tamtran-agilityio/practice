@@ -54,7 +54,6 @@
 				font-family: $font-roboto;
 				@include font-text(rem(20px), lighter, $black);
 				margin-bottom: rem(10px);
-				margin-left: rem(-45px);
 				list-style: none;
 				display: inline-block;
 			}
@@ -145,10 +144,10 @@
 @media screen and (max-width: 768px) and (min-width: 481px) {
 
 	.slide-what-sparks {
-		height: rem(435px);
+		height: rem(570px);
 		.wapper-content {
 			left: 15%;
-			top: rem(10px);
+			top: rem(100px);
     	margin: 0 auto;
 			.sparks-what-text {
 				font-family: $font-roboto;
@@ -190,14 +189,15 @@
 			.sparks-iphone-4 {
 				height: rem(400px);
 				width: 55%;
+				top: rem(60px);
 			}
 
 			.sparks-iphone-5 {
 				height: rem(365px);
 				z-index: 1;
 				width: 85%;
-				top: rem(150px);
-				left: rem(41px);
+				top: rem(250px);
+				left: rem(3px);
 			}
 		}
 	}

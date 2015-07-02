@@ -10,10 +10,6 @@ var gutil = require('gulp-util');
 var minifyCss = require('gulp-minify-css');
 var gulp = require('gulp');
 
-
- 
-
-
 var config = {
 	css: 'src/style/**/*.scss',
 	cssOut: 'out/styles',
@@ -32,13 +28,12 @@ var config = {
 	assetFont: 'src/fonts/roboto/*.*',
 	assetFontOut: 'out/fonts',
 
-	vender: 'src/files/vender/'
+	vendor: 'src/files/vendor/'
 };
 
 var jsLibraryConcatList = [
-	config.vender + 'jquery/dist/jquery.js',
-	config.vender + 'bootstrap-sass-official/assets/javascripts/bootstrap.js'
-	// config.vender + 'bower-skrollr/skrollr.js'
+	config.vendor + 'jquery/dist/jquery.js',
+	config.vendor + 'bootstrap-sass-official/assets/javascripts/bootstrap.js'
 ];
 var jsCodeConcatList = [
 	'src/js/main.js'
@@ -79,20 +74,22 @@ gulp.task('serve', [], function() {
 gulp.task('sass', function() {
 	gulp.src(config.css)
 		.pipe(sass().on('error', sass.logError))
-		// .pipe(minifyCss({
-		// 	compatibility: 'ie8'
-		// }))
+		.pipe(minifyCss({
+			compatibility: 'ie8'
+		}))
 		.pipe(gulp.dest(config.cssOut));
 });
 
+// build sass combine compass code to css
 gulp.task('sass', function() {
   gulp.src(config.css)
     .pipe(compass({
+    	css: 'out/styles/',
       sass: 'src/style/'
     }))
-  	//.pipe(minifyCss({
-		// 	compatibility: 'ie8'
-		// }))
+  	.pipe(minifyCss({
+			compatibility: 'ie8'
+		}))
     .pipe(gulp.dest('out/styles'));
 });
 

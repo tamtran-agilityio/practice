@@ -1,5 +1,16 @@
+.background-basket {
+	background: url('../images/bg-basket-pitch.png')no-repeat; 
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	background-size: contain;
+	// -webkit-background-size: cover;
+	// -moz-background-size: cover;
+	// -o-background-size: cover;
+	// background-size: cover;
+	// overflow: hidden;
+}
 
-.slide-basket-pitch {
+.basket-pitch-slide {
 	width: 100%;
 	height: 700px;
 
@@ -11,14 +22,17 @@
 	}
 
 	.basket-iphone {
-		background-image: url('../images/iPhone-5S-Black.png');
-		@extend .basket-background;
-		background-size: 100% 100%;
-		height: rem(610px);
-		//width: rem(370px);
-		top: rem(90px);
-		margin: 0 auto;
-		position: relative;
+		background: url('../images/iPhone-5S-Black.png')no-repeat; 
+		-webkit-background-size: contain;
+		-moz-background-size: contain;
+		background-size: contain;
+		max-height: 100%;
+		// @extend .basket-background;
+		// background-size: 100% 100%;
+		// height: rem(610px);
+		// top: rem(90px);
+		// margin: 0 auto;
+		// position: relative;
 	}
 
 	.active {
@@ -27,7 +41,7 @@
 		.basket-line-long {
 			background-image: url('../images/line-long.png');
 			@extend .basket-background;
-			height: rem(243px);
+			height: rem(205px);
 			width: rem(4px);
 		}
 
@@ -73,20 +87,11 @@
 			margin-top: rem(20px);
 		}
 	}
-
-	.background-basket {
-		background: url('../images/basket-pitch.png')no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		overflow: hidden;
-	}
 }
 
 .txt-wapper {
 		position: absolute;
-		top: rem(272px);
+		top: rem(235px);
 		z-index: 100;
 }
 
@@ -104,20 +109,20 @@
 .sparks-text {
 	margin-top: rem(75px);
 	font-family: $font-roboto;
-	@include font-text(rem(45px), bold, $white);
+	@include font-text(rem(35px), bold, $white);
 }
 
 .discuss-text {
-	@include font-text(rem(20px), normal, $white);
+	@include font-text(rem(18px), normal, $white);
 }
 
 @media screen and (max-width: 480px) {
-	.slide-basket-pitch {
-		height: rem(270px);
+	.basket-pitch-slide {
+		height: rem(360px);
 		.basket-iphone {
-			height: rem(215px);
+			height: rem(285px);
 			z-index: 1;
-			top: rem(55px);
+			top: rem(75px);
 		}
 		.background-basket {
 			background-size: 145% 100%;
@@ -128,69 +133,69 @@
 		.active {
 			.basket-line-long {
 				background-position: center 0;
-				height: rem(120px);
+				height: rem(130px);
 			}
 
 			.basket-line-short {
 				background-position: center 0;
 				height: rem(18px);
-				margin-top: rem(5px);
+				margin-top: rem(10px);
 			}
 
 			.basket-line-short-last {
 				background-position: center 0;
 				height: rem(18px);
-				margin-top: rem(5px);
+				margin-top: rem(10px);
 			}
 
 			.basket-radio {
 				height: rem(20px);
 				margin-top: rem(10px);
-				margin-top: rem(5px);
+				margin-top: rem(10px);
 			}
 
 			.basket-globes {
 				height: rem(20px);
-				margin-top: rem(5px);
+				margin-top: rem(10px);
 			}
 		
 			.basket-cloud {
-				height: rem(40px);
+				height: rem(50px);
 				width: rem(50px);
-				margin-top: rem(5px);
+				margin-top: rem(10px);
 			}
 		}
 	}
 	.txt-wapper {
 		position: absolute;
-		top: rem(128px);
+		top: rem(147px);
 		.radio-text {
 			font-family: $font-roboto;
-			@include font-text(rem(11px), normal, $white);
+			@include font-text(rem(14px), normal, $white);
 		}
 
 		.forums-text {
 			margin-top: rem(30px);
 			font-family: $font-roboto;
-			@include font-text(rem(11px), normal, $white);
+			@include font-text(rem(14px), normal, $white);
 		}
 
 		.sparks-text {
-			margin-top: rem(30px);
+			margin-top: rem(35px);
 			font-family: $font-roboto;
-			@include font-text(rem(16px), normal, $white);
+			@include font-text(rem(18px), normal, $white);
 		}
 
 		.discuss-text {
 			font-family: $font-roboto;
-			@include font-text(rem(10px), normal, $white);
+			@include font-text(rem(12px), normal, $white);
 		}
 	}
 }
 
 
 @media screen and (max-width: 768px) and (min-width: 481px){
-	.slide-basket-pitch {
+	.basket-pitch-slide {
 		width: 100%;
 		height: rem(530px);
 		.background-basket {

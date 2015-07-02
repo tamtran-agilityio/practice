@@ -1,16 +1,16 @@
-// var s = skrollr.init();
 
-// skrollr.init({forceHeight: false});
-
-var parallaxContainer = $('.background-basket').height();
 
 $(window).scroll(function() { 
 	// body...
 	var sparkScroll = $(this).scrollTop();
 
+	// Check value of image background basket
+	var parallaxContainer = $('.background-basket').height();
+
 	// Set transform of part logo top
 	if (sparkScroll <= parallaxContainer) {
 
+		// Set property transform of traditional sparks
 		$('.basket-line-long').css({
 			'transform' : 'translate(0px, '+ sparkScroll /60 +'%)'
 		});
@@ -52,89 +52,97 @@ $(window).scroll(function() {
 		});
 	}
 	
-	// Set opacity of part what sparks
+	// Set property opacity of part what sparks
 	if(sparkScroll > $('.wapper-content').offset().top - $(window).height()) {
 
+		var opacity = (sparkScroll - $('.wapper-content').offset().top + 200) / (sparkScroll / 100);
+		
+		// Set property background position content what spark
 		$('.wapper-content').css({'background-position':'center '+ (sparkScroll - $('.wapper-content').offset().top) +'px'});
-
-		var opacity = (sparkScroll - $('.wapper-content').offset().top + 200) / (sparkScroll / 5);
-
+		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
-
 		$('.fan-iphone').css({'opacity': opacity});
-
 		$('.app-iphone').css({'opacity': opacity});
-
 		$('.channels-text').css({'opacity': opacity});
-
 		$('.background-sparks').css({'opacity': opacity});
 
 	}
 
-	// Set opacity of part drive
+	// Set property opacity of part drive
 	if(sparkScroll > $('.benefit-content').offset().top - $(window).height()) {
 
+		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 100) / (sparkScroll / 100);
+		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 800) / (sparkScroll / 100);
+		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 50);
+		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 50);
+		var opacityArrowRight = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 100);
+		var opacityTweetUser = (sparkScroll - $('.comment-visual').offset().top + 500) / (sparkScroll / 80);
+		var opacityTopic = (sparkScroll - $('.comment-visual').offset().top + 300) / (sparkScroll / 100);
+		
+		// Set background position content benefit
 		$('.benefit-content').css({'background-position':'center '+ (sparkScroll - $('.benefit-content').offset().top) +'px'});
-
-		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 100) / (sparkScroll / 5);
-
+		
+		// Set property opacity content benefit
 		$('.benefit-content').css({'opacity': opacitysText});
 
+		// Set property opacity grow content
 		$('.grow-content').css({'opacity': opacitysText});
 
-		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 800) / (sparkScroll / 10);
-		
+		// Set property opacity comment visual	
 		$('.comment-visual').css({'opacity': opacityVisual});
 
-		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 6);
+		// Set property opacity image arrow left
+		$('.arrow-left').css({'opacity': opacityArrow});	
 
-		$('.arrow-left').css({'opacity': opacityArrow});
-
-		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 10);
-		
+		// Set property opacity image tweet wall
 		$('.tweet-wall').css({'opacity': opacityTweet});
 
+		// Set property opacity image comtent comment
 		$('.content-comment').css({'opacity': opacityTweet});
 
+		// Set property opacity image comment list
 		$('.comment-list').css({'opacity': opacityTweet});
 
-		var opacityArrowRight = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 6);
-
+		// Set property opacity image arrow right
 		$('.arrow-right').css({'opacity': opacityArrowRight});
 
-		var opacityTweetUser = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 7);
-
+		// Set property opacity image comment user
 		$('.content-user').css({'opacity': opacityTweetUser});
 
-		var opacityTopic = (sparkScroll - $('.comment-visual').offset().top + 300) / (sparkScroll / 6);
-
+		// Set property opacity text topic content
 		$('.topic-content').css({'opacity': opacityTopic});
 	}
 
 	// Set background and opacity of ipad
 	if(sparkScroll > $('.topic-tweet').offset().top - $(window).height()) {
 
+		var opacityTopicTweet = (sparkScroll - $('.topic-tweet').offset().top + 900) / (sparkScroll / 100);
+		var opacityArrowHorizontal = (sparkScroll - $('.topic-tweet').offset().top +800) / (sparkScroll / 100);
+		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top +700) / (sparkScroll / 100);
+		
+		// Set property background position of slide ipad
 		$('.slide-ipad').css({'background-position':'center '+ (sparkScroll - $('.slide-ipad').offset().top) +'px'});
-		var opacityTopicTweet = (sparkScroll - $('.topic-tweet').offset().top + 800) / (sparkScroll / 6);
-
+		
+		// Set property opacity of image topic tweet
 		$('.topic-tweet').css({'opacity': opacityTopicTweet});
 
-		var opacityArrowHorizontal = (sparkScroll - $('.topic-tweet').offset().top +700) / (sparkScroll / 6);
-
+		// Set property opacity of image arrow horizontal
 		$('.arrow-horizontal').css({'opacity': opacityArrowHorizontal});
 
-		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top + 600) / (sparkScroll / 6);
-
+		// Set property opacity of image ipad
 		$('.background-ipad').css({'opacity': opacityIpad});
 	}
 
 	// Promoscope content ipad
 	if(sparkScroll > $('.background-ipad').offset().top - $(window).height()){
 
+
+		var opacityContent = (sparkScroll - $('.background-ipad').offset().top + 500) / (sparkScroll / 100);
+		
+		// Set property background of content ipad
 		$('.content-ipad').css({'background-position':'center '+ (sparkScroll - $('.content-ipad').offset().top) +'px'});
-
-		var opacity = (sparkScroll - $('.background-ipad').offset().top + 400) / (sparkScroll / 5);
-
-		$('.content-ipad').css({'opacity': opacity});
+		
+		// Set property opacity of image content ipad
+		$('.content-ipad').css({'opacity': opacityContent});
 	}
 });

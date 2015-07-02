@@ -27,7 +27,7 @@
 			text-align: center;
 			height: rem(752px);
 			width: rem(632px);
-			top: rem(-700px);
+			top: rem(-680px);
 			left: rem(340px);
 		}
 		
@@ -38,6 +38,11 @@
 			top: rem(65px);
 			left: rem(43px);
 			width: rem(544px);
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			-o-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 		}
 		.arrow-horizontal {
 			background-image: url('../images/arrow-horizontal.png');
@@ -74,9 +79,9 @@
 
 			.content-ipad {
 				height: rem(239px);
-				width: 86%;
+				width: 87%;
 				top: rem(26px);
-				left: 7%;
+				left: 6.6%;
 			}
 			.arrow-horizontal {
 				position: absolute;
