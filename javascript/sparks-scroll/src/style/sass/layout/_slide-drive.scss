@@ -90,7 +90,8 @@
 		}
 
 		.arrow-right {
-			background-image: url('../images/arrow-right.png');
+			background: url('../images/arrow-right.png');
+		  background-size: cover;
 			@extend .background-slide-drive;
 			z-index: 152;
 			width: rem(175px);
@@ -401,5 +402,95 @@
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-	
+	.slide-drive {
+		height: rem(1150px);
+		.inside {
+			max-width: 700px;
+			margin: 0 auto;
+			position: relative;
+			.comment-visual {
+				background-color: $white;
+				@include border-radius(30px);
+				width: rem(170px);
+				height: rem(105px);
+				position: absolute;
+				left: rem(180px);
+				top: rem(600px);
+				z-index: 150;
+				text-align: center;
+				h4 {
+					font-family: $font-roboto;
+					@include font-text(rem(20px), bold, $drive-text);
+				}
+				span {
+					font-family: $font-roboto;
+					@include font-text(rem(16px), normal, $drive-text);
+				}
+			}
+			.grow-content {
+				position: absolute;
+				margin-left: rem(435px);
+				width: rem(250px);
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(24px), normal, $white);
+				}
+
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+			.topic-content {
+				position: absolute;
+				top: rem(904px);
+				width: rem(250px);
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(24px), normal, $white);
+				}
+
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+			.arrow-left {
+				width: rem(77px);
+				height: rem(83px);
+				top: rem(550px);
+				left: rem(130px);
+			}
+			.arrow-right {
+
+				width: rem(175px);
+				height: rem(34px);
+				top: rem(610px);
+
+				left: rem(330px);
+			}
+			.background-tweet-wall {
+				.tweet-wall {
+					background-size: 80% 80%;
+				}
+
+				.content-comment {
+					top: rem(240px);
+					background-size: 80% 80%;
+				}
+
+				.comment-list {
+					top: rem(505px);
+					background-size: 80% 80%;
+					opacity: 0.5;
+				}
+
+				.content-user {
+					width: rem(409px);
+					height: rem(500px);
+					margin-left: rem(330px);
+				}
+			}
+		}
+	}
 }

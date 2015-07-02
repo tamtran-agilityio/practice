@@ -15,7 +15,7 @@
 		@extend .basket-background;
 		background-size: 100% 100%;
 		height: rem(610px);
-		// width: rem(370px);
+		//width: rem(370px);
 		top: rem(90px);
 		margin: 0 auto;
 		position: relative;
@@ -51,8 +51,8 @@
 		.basket-radio {
 			background-image: url('../images/radio.png');
 			@extend .basket-background;
-			height: rem(36px);
-			width: rem(33px);
+			height: rem(33px);
+			width: rem(36px);
 			margin-top: rem(20px);
 		}
 
@@ -65,7 +65,8 @@
 		}
 
 		.basket-cloud {
-			background-image: url('../images/images-end.png');
+			background: url('../images/images-end.png') no-repeat;
+			background-size: cover;
 			@extend .basket-background;
 			height: rem(103px);
 			width: rem(103px);
@@ -74,11 +75,12 @@
 	}
 
 	.background-basket {
-		background-image: url('../images/basket-pitch.png');
-		@extend .basket-background;
-		position: relative;
-		width: 100%;
-		height: 100%;
+		background: url('../images/basket-pitch.png')no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		overflow: hidden;
 	}
 }
 

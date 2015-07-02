@@ -8,7 +8,7 @@ $(window).scroll(function() {
 	// body...
 	var sparkScroll = $(this).scrollTop();
 
-	//
+	// Set transform of part logo top
 	if (sparkScroll <= parallaxContainer) {
 
 		$('.basket-line-long').css({
@@ -52,6 +52,7 @@ $(window).scroll(function() {
 		});
 	}
 	
+	// Set opacity of part what sparks
 	if(sparkScroll > $('.wapper-content').offset().top - $(window).height()) {
 
 		$('.wapper-content').css({'background-position':'center '+ (sparkScroll - $('.wapper-content').offset().top) +'px'});
@@ -70,6 +71,7 @@ $(window).scroll(function() {
 
 	}
 
+	// Set opacity of part drive
 	if(sparkScroll > $('.benefit-content').offset().top - $(window).height()) {
 
 		$('.benefit-content').css({'background-position':'center '+ (sparkScroll - $('.benefit-content').offset().top) +'px'});
@@ -80,15 +82,15 @@ $(window).scroll(function() {
 
 		$('.grow-content').css({'opacity': opacitysText});
 
-		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 10);
+		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 800) / (sparkScroll / 10);
 		
 		$('.comment-visual').css({'opacity': opacityVisual});
 
-		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 6);
+		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 6);
 
 		$('.arrow-left').css({'opacity': opacityArrow});
 
-		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 10);
+		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 10);
 		
 		$('.tweet-wall').css({'opacity': opacityTweet});
 
@@ -96,11 +98,11 @@ $(window).scroll(function() {
 
 		$('.comment-list').css({'opacity': opacityTweet});
 
-		var opacityArrowRight = (sparkScroll - $('.comment-visual').offset().top + 450) / (sparkScroll / 6);
+		var opacityArrowRight = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 6);
 
 		$('.arrow-right').css({'opacity': opacityArrowRight});
 
-		var opacityTweetUser = (sparkScroll - $('.comment-visual').offset().top + 400) / (sparkScroll / 6);
+		var opacityTweetUser = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 7);
 
 		$('.content-user').css({'opacity': opacityTweetUser});
 
@@ -109,18 +111,19 @@ $(window).scroll(function() {
 		$('.topic-content').css({'opacity': opacityTopic});
 	}
 
+	// Set background and opacity of ipad
 	if(sparkScroll > $('.topic-tweet').offset().top - $(window).height()) {
 
 		$('.slide-ipad').css({'background-position':'center '+ (sparkScroll - $('.slide-ipad').offset().top) +'px'});
-		var opacity = (sparkScroll - $('.topic-tweet').offset().top + 700) / (sparkScroll / 6);
+		var opacityTopicTweet = (sparkScroll - $('.topic-tweet').offset().top + 800) / (sparkScroll / 6);
 
-		$('.topic-tweet').css({'opacity': opacity});
+		$('.topic-tweet').css({'opacity': opacityTopicTweet});
 
-		var opacityArrowHorizontal = (sparkScroll - $('.topic-tweet').offset().top + 200) / (sparkScroll / 6);
+		var opacityArrowHorizontal = (sparkScroll - $('.topic-tweet').offset().top +700) / (sparkScroll / 6);
 
 		$('.arrow-horizontal').css({'opacity': opacityArrowHorizontal});
 
-		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top + 100) / (sparkScroll / 6);
+		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top + 600) / (sparkScroll / 6);
 
 		$('.background-ipad').css({'opacity': opacityIpad});
 	}

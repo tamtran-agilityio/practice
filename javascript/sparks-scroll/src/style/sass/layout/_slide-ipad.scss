@@ -22,14 +22,23 @@
 		}
 
 		.background-ipad {
-			background-image: url('../images/ipad.png');
+			background-image: url('../images/ipad-backgound.png');
 			@extend .background-slide-ipad;
+			text-align: center;
 			height: rem(752px);
-			width: rem(665px);
+			width: rem(632px);
 			top: rem(-700px);
-			left: rem(310px);
+			left: rem(340px);
 		}
-
+		
+		.content-ipad {
+			background-image: url('../images/content-ipad.png');
+			@extend .background-slide-ipad;
+			height: rem(598px);
+			top: rem(65px);
+			left: rem(43px);
+			width: rem(544px);
+		}
 		.arrow-horizontal {
 			background-image: url('../images/arrow-horizontal.png');
 			z-index: 100;
@@ -84,13 +93,46 @@
 				left: 5%;
 				width: 40%;
 				height: rem(310px);
-	    	position: absolute;
+				position: absolute;
 			}
 
 			.background-ipad {
 				top: rem(-170px);
 				left: 45%;
 				width: 54%;
+				height: rem(500px);
+				position: absolute;
+			}
+
+			.arrow-horizontal {
+				top: rem(20px);
+				left: 42%;
+				height: rem(30px);
+				width: 10%;
+				position: absolute;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	.slide-ipad {
+		height: rem(510px);
+		background-color: $white;
+		.inside {
+			max-width: 700px;
+			margin: 0 auto;
+			position: relative;
+			.topic-tweet {
+				width: 45%;
+				height: rem(310px);
+				position: absolute;
+			}
+
+			.background-ipad {
+				top: rem(-170px);
+				left: 47%;
+				width: 55%;
 				height: rem(500px);
 				position: absolute;
 			}

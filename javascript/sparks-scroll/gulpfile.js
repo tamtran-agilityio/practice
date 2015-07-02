@@ -10,6 +10,10 @@ var gutil = require('gulp-util');
 var minifyCss = require('gulp-minify-css');
 var gulp = require('gulp');
 
+
+ 
+
+
 var config = {
 	css: 'src/style/**/*.scss',
 	cssOut: 'out/styles',
@@ -81,15 +85,16 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest(config.cssOut));
 });
 
-// gulp.task('compass', function() {
-//   gulp.src(config.css)
-//     .pipe(compass({
-//       sass: 'src/style/sass',
-//       require: ['susy', 'modular-scale']
-//     }))
-//     .pipe(minifyCSS())
-//     .pipe(gulp.dest(config.cssOut));
-// });
+gulp.task('sass', function() {
+  gulp.src(config.css)
+    .pipe(compass({
+      sass: 'src/style/'
+    }))
+  	//.pipe(minifyCss({
+		// 	compatibility: 'ie8'
+		// }))
+    .pipe(gulp.dest('out/styles'));
+});
 
 gulp.task('sass:watch', function() {
 	gulp.watch(config.css, ['sass']);

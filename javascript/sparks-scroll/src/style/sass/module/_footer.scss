@@ -4,10 +4,11 @@
 	height: rem(474px);
 
 	.football-pitch {
-		background-image: url('../images/football-pitch.png');
-		background-repeat: no-repeat;
-		height: 100%;
-		width: 100%;
+		background: url('../images/football-pitch.png') no-repeat center center fixed;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		overflow: hidden;
 		text-align: center;
 		display: block;
 		.title {
@@ -23,27 +24,27 @@
 	}
 }
 
-@media (max-width: 480px) {
-	.slide-football-pitch {
-		height: rem(474px);
-		.football-pitch {
-			background-size: 100% 100%;
-			position: relative;
-			background-position: center center;
-			height: rem(474px);
-			width: 100%;
-		}
-	}
-}
+// @media (max-width: 480px) {
+// 	.slide-football-pitch {
+// 		height: rem(474px);
+// 		.football-pitch {
+// 			background-size: 100% 100%;
+// 			position: relative;
+// 			background-position: center center;
+// 			height: rem(474px);
+// 			width: 100%;
+// 		}
+// 	}
+// }
 
-@media screen and (max-width: 768px) and (min-width: 480px) {
-	.slide-football-pitch {
-		.football-pitch {
-			background-size: 100% 100%;
-			position: relative;
-			background-position: center center;
-			height: rem(474px);
-			width: 100%;
-		}
-	}
-}
+// @media screen and (max-width: 768px) and (min-width: 480px) {
+// 	.slide-football-pitch {
+// 		.football-pitch {
+// 			background-size: 100% 100%;
+// 			position: relative;
+// 			background-position: center center;
+// 			height: rem(474px);
+// 			width: 100%;
+// 		}
+// 	}
+// }
