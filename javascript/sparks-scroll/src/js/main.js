@@ -127,4 +127,14 @@ $(window).scroll(function() {
 
 		$('.background-ipad').css({'opacity': opacityIpad});
 	}
+
+	// Promoscope content ipad
+	if(sparkScroll > $('.background-ipad').offset().top - $(window).height()){
+
+		$('.content-ipad').css({'background-position':'center '+ (sparkScroll - $('.content-ipad').offset().top) +'px'});
+
+		var opacity = (sparkScroll - $('.background-ipad').offset().top + 400) / (sparkScroll / 5);
+
+		$('.content-ipad').css({'opacity': opacity});
+	}
 });
