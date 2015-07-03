@@ -9,79 +9,13 @@ html(lang='en')
 	body
 		.container-fluid
 			.row
-				.background-basket
-					header.basket-pitch-slide
-						.container
-							.row
-								.col-md-4.col-xs-5
-									.row
-										.basket-iphone
-								.col-md-4.col-xs-2
-									.row
-										.active
-											.basket-line-long
-											.basket-radio
-											.basket-line-short 
-											.basket-globes 
-											.basket-line-short-last
-											.basket-cloud
-								.col-md-4.col-xs-5
-									.row
-										.txt-wapper
-											.radio-text Talk radio on the airwaves
-											.forums-text Online forums on the web 
-											.sparks-text Sparks on mobile
-											.discuss-text We’re inventing a new way  to discuss what you’re into.
+				include partials/header.jade
 			.row
-				section.slide-what-sparks.container
-					.row
-						.col-xs-5
-							.wapper-content
-								p.sparks-what-text What is Sparks?
-								p.fan-iphone An iPhone app for fans to:
-								ul.app-iphone
-									li Participate in the discussion with visual sparks that they create in seconds
-									li Follow the latest pregame breakdown, game threads postgame recaps
-									li Discover and engage with influencers and pernalities
-								p.channels-text Launching first with NBA, MLB and  World Cup channels in early 2014
-						.col-xs-7
-							.row
-								.background-sparks
-									.sparks-iphone-4
-									.sparks-iphone-5
+				include partials/what-sparks.jade
 			.row
-				section.how-does
-					.inside
-						ul.benefit-content
-							li How does it benefit Influencers?
-							li Stand out amongst your peers by embracing a new digital medium
-						.grow-content
-							h3 1
-							p Grow your audience by posting visual  content to Twitter and Facebook
-						.comment-visual
-							h4 Drive 120%
-							span more engagement  through visual posts*
-						.arrow-left
-						.arrow-right
-						.background-tweet-wall
-							.tweet-wall
-							.content-comment
-							.comment-list
-							.content-user
-						.topic-content
-							h3 2
-							p Engage with your audience around  specific topics.
-				section.slide-ipad
-					.inside
-						.topic-tweet
-						.arrow-horizontal
-						.background-ipad
-							.content-ipad
+				include partials/how-does.jade
+				include partials/screenshot.jade
 			.row
-				footer.learn-more
-					.football-pitch
-						h2.learn-more_title Learn More?
-						a.spark-button(href="mailto:insiders@sparkslabs.co") Email Us
-						address.address-spark Crafted in San Francisco. © 2014 Sparks Inc.
+				include partials/footer.jade
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
