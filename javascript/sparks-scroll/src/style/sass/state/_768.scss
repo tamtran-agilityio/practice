@@ -1,0 +1,313 @@
+/*
+	Styles with screen min 480px and max 768px
+ */
+
+// Styles of part header
+@media screen and (max-width: 768px) and (min-width: 481px){
+	.basket-pitch-slide {
+		width: 100%;
+		height: rem(530px);
+		.background-basket {
+			background-position: center center;
+			height: rem(530px);
+			width: 100%;
+		}
+
+		.basket-iphone {
+			height: rem(424px);
+			top: rem(106px);
+		}
+	
+		.active {
+			.line-long {
+				height: rem(220px);
+			}
+
+			.radio-airwaves {
+				height: rem(28px);
+				margin-top: rem(10px);
+			}
+
+			.line-short {
+				height: rem(35px);
+			}
+			
+			.line-short-last {
+				height: rem(35px);
+				margin-top: rem(10px);			
+			}
+
+			.globes-online {
+				height: rem(45px);
+				margin-top: rem(10px);
+			}
+
+			.sparks-cloud {
+				height: rem(70px);
+				width: rem(70px);
+				margin-top: rem(10px);
+			}
+		}
+		.exchange-info {
+			position: absolute;
+			top: rem(235px);
+			.radio-text {
+				font-family: $font-roboto;
+				@include font-text(rem(16px), normal, $white);
+			}
+
+			.forums-text {
+				margin-top: rem(70px);
+				font-family: $font-roboto;
+				@include font-text(rem(18px), normal, $white);
+			}
+
+			.sparks-text {
+				margin-top: rem(66px);
+				font-family: $font-roboto;
+				@include font-text(rem(24px), bold, $white);
+			}
+
+			.discuss-text {
+				margin-right: rem(45px);
+				font-family: $font-roboto;
+				@include font-text(rem(14px), normal, $white);
+			}
+		}
+	}
+}
+
+/**
+ * Styles of part what sparks
+ */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+
+	.slide-what-sparks {
+		height: rem(570px);
+		.wapper-content {
+			left: 15%;
+			top: rem(100px);
+    	margin: 0 auto;
+			.sparks-what-text {
+				font-family: $font-roboto;
+				@include font-text(rem(24px), bold, $black);
+			}
+
+			.fan-iphone {
+				font-family: $font-roboto;
+				line-height: 14px;
+				@include font-text(rem(16px), lighter, $black);
+			}
+
+			.app-iphone {
+				padding-left: 0;
+
+				li:before {
+					width: rem(15px);
+					height: rem(15px);
+					background-size: 50%;
+				}
+				li {
+					margin: rem(5px -5px 5px 0);
+					font-family: $font-roboto;
+					@include font-text(rem(14px), lighter, $black);
+					margin-bottom: rem(3px);
+					list-style: none;
+					line-height: 20px;
+					display: inline-block;
+				}
+			}
+	
+			.channels-text {
+				font-family: $font-roboto;
+				@include font-text(rem(14px), bold, $black);
+			}
+		}
+		
+		.background-sparks {
+			.sparks-iphone-black {
+				height: rem(400px);
+				width: 55%;
+				top: rem(60px);
+			}
+
+			.sparks-iphone-white {
+				height: rem(365px);
+				z-index: 1;
+				width: 85%;
+				top: rem(250px);
+				left: rem(3px);
+			}
+		}
+	}
+}
+
+// Styles of part how does
+@media screen and (max-width: 768px) and (min-width: 481px) {
+	.how-does {
+		height: rem(860px);
+		.benefit-content {
+			text-align: center;
+			color: $white;
+			list-style: none;
+
+			li:first-child{
+				font-family: $font-roboto;
+				@include font-text(rem(24px), lighter, $white);
+			}
+
+			li:last-child {
+				font-family: $font-roboto;
+				@include font-text(rem(16px), lighter, $white);
+				margin-top: rem(10px);
+			}
+		}
+
+		.inside {
+			.comment-visual {
+				@include border-radius(rem(5px));
+				background-color: $white;
+				border-radius: rem(20px);
+				width: 26%;
+				height: rem(80px);
+				position: absolute;
+				text-align: center;
+				top: rem(450px);
+				z-index: 150;
+				left: 22%;
+
+				h4 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), bold, $drive-text);
+				}
+
+				span {
+					font-family: $font-roboto;
+					@include font-text(rem(13px), normal, $drive-text);
+				}
+			}
+
+			.grow-content {
+				left: 58%;
+				margin-left: 0px;
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), normal, $white);
+					line-height: 0px;
+				}
+
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+			
+			.topic-content {
+				left: 5%;
+				top: rem(670px);
+				width: 30%;
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(18px), normal, $white);
+					line-height: 0px;
+				}	
+				
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+
+			.arrow-left {
+				top: rem(440px);
+				left: 15%;
+				height: 20%;
+				width: 10%;
+			}
+
+			.arrow-right {
+				top: rem(466px);
+				left: 45%;
+				height: 15px;
+				width: 15%;
+				height: rem(15px);
+			}
+			.background-tweet-wall {
+				height: 700px;
+				.background-tweets {
+					background-size: 100% 100%;
+					left: 5%;
+					width: 50%;
+					z-index: 1;
+				}
+
+				.tweet-wall {
+					@extend .background-tweets;
+					height: rem(160px);
+				}
+
+				.content-comment {
+					@extend .background-tweets;
+					top: rem(170px);
+					height: rem(160px);
+				}
+
+				.comment-list {
+					@extend .background-tweets;
+					top: rem(340px);
+					height: rem(160px);
+					opacity: 0.5;
+				}
+
+				.content-user {
+					background-size: 100% 100%;
+					left: 48%;
+					width: 50%;
+					top: rem(60px);
+					z-index: 1;
+					height: rem(400px);
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+// Styles of part screenshot 
+@media screen and (max-width: 768px) and (min-width: 481px) {
+	.screenshot {
+		height: rem(510px);
+		background-color: $white;
+		.inside {
+			.topic-tweet {
+				left: 5%;
+				width: 40%;
+				height: rem(310px);
+				position: absolute;
+			}
+
+			.background-ipad {
+				top: rem(-170px);
+				left: 45%;
+				width: 54%;
+				height: rem(500px);
+				position: absolute;
+			}
+
+			.content-ipad {
+				height: rem(398px);
+				width: 86%;
+				top: rem(43px);
+				left: 7%;
+			}
+
+			.arrow-horizontal {
+				top: rem(20px);
+				left: 42%;
+				height: rem(30px);
+				width: 10%;
+				position: absolute;
+			}
+		}
+	}
+}
