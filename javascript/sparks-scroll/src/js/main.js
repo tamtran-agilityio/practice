@@ -148,14 +148,14 @@ $(window).scroll(function() {
 });
 
 // Set top down of image 
-$(document).ready(function() {
+// $(document).ready(function() {
 		
-		function beeTop() {
-				$(".content-ipad").animate({top: "-=500"}, 1000, "swing", beeDown);
-		}
-		function beeDown() {
-				$(".content-ipad").animate({top: "+=500"}, 1000, "swing", beeTop);
-		}
+// 		function beeTop() {
+// 				$(".content-ipad").animate({top: "-=500"}, 1000, "swing", beeDown);
+// 		}
+// 		function beeDown() {
+// 				$(".content-ipad").animate({top: "+=500"}, 1000, "swing", beeTop);
+// 		}
 		
-		beeDown();
-});
+// 		beeDown();
+// });

@@ -1,4 +1,4 @@
-.slide-ipad {
+.screenshot {
 	background-color: $white;
 	height: 725px;
 	z-index: 100;
@@ -38,11 +38,6 @@
 			top: rem(65px);
 			left: rem(43px);
 			width: rem(544px);
-			-webkit-transition: all .2s ease-in-out;
-			-moz-transition: all .2s ease-in-out;
-			-o-transition: all .2s ease-in-out;
-			-ms-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;
 		}
 		.arrow-horizontal {
 			background-image: url('../images/arrow-horizontal.png');
@@ -52,123 +47,6 @@
 			width: rem(146px);
 			left: rem(280px);
 			top: rem(-350px);
-		}
-	}
-}
-
-@media (max-width: 480px) {
-	.slide-ipad {
-		height: rem(310px);
-		background-color: $white;
-		.inside {
-			.topic-tweet {
-				position: absolute;
-				top: rem(-40px);
-				left: 5%;
-				height: rem(180px);
-				width: 35%;
-			}
-
-			.background-ipad {
-				position: absolute;
-				top: rem(-110px);
-				height: rem(300px);
-				width: 50%;
-				left: 45%;
-			}
-
-			.content-ipad {
-				height: rem(239px);
-				width: 87%;
-				top: rem(26px);
-				left: 6.6%;
-			}
-			.arrow-horizontal {
-				position: absolute;
-				top: rem(30px);
-				left: 35%;
-				height: 4%;
-				width: 20%;
-				height: rem(20px);
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 768px) and (min-width: 481px) {
-	.slide-ipad {
-		height: rem(510px);
-		background-color: $white;
-		.inside {
-			.topic-tweet {
-				left: 5%;
-				width: 40%;
-				height: rem(310px);
-				position: absolute;
-			}
-
-			.background-ipad {
-				top: rem(-170px);
-				left: 45%;
-				width: 54%;
-				height: rem(500px);
-				position: absolute;
-			}
-
-			.content-ipad {
-				height: rem(398px);
-				width: 86%;
-				top: rem(43px);
-				left: 7%;
-			}
-
-			.arrow-horizontal {
-				top: rem(20px);
-				left: 42%;
-				height: rem(30px);
-				width: 10%;
-				position: absolute;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-	.slide-ipad {
-		height: rem(510px);
-		background-color: $white;
-		.inside {
-			max-width: 700px;
-			margin: 0 auto;
-			position: relative;
-			.topic-tweet {
-				width: 45%;
-				height: rem(310px);
-				position: absolute;
-			}
-
-			.background-ipad {
-				top: rem(-170px);
-				left: 47%;
-				width: 55%;
-				height: rem(500px);
-				position: absolute;
-			}
-
-			.content-ipad {
-				height: rem(398px);
-				top: rem(43px);
-				left: rem(27px);
-				width: rem(331px);
-			}
-
-			.arrow-horizontal {
-				top: rem(20px);
-				left: 42%;
-				height: rem(30px);
-				width: 10%;
-				position: absolute;
-			}
 		}
 	}
 }

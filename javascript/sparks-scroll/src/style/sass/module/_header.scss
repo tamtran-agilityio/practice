@@ -1,13 +1,10 @@
 .background-basket {
-	background: url('../images/bg-basket-pitch.png')no-repeat; 
-	-webkit-background-size: contain;
-	-moz-background-size: contain;
-	background-size: contain;
-	// -webkit-background-size: cover;
-	// -moz-background-size: cover;
-	// -o-background-size: cover;
-	// background-size: cover;
-	// overflow: hidden;
+	background: url('../images/bg-basket-pitch.png')no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
 }
 
 .basket-pitch-slide {
@@ -22,30 +19,26 @@
 	}
 
 	.basket-iphone {
-		background: url('../images/iPhone-5S-Black.png')no-repeat; 
-		-webkit-background-size: contain;
-		-moz-background-size: contain;
-		background-size: contain;
-		max-height: 100%;
-		// @extend .basket-background;
-		// background-size: 100% 100%;
-		// height: rem(610px);
-		// top: rem(90px);
-		// margin: 0 auto;
-		// position: relative;
+		background: url('../images/phone-fail-black.png')no-repeat; 
+		@extend .basket-background;
+		background-size: 100% 100%;
+		height: rem(610px);
+		top: rem(90px);
+		margin: 0 auto;
+		position: relative;
 	}
 
 	.active {
 		margin: 0 auto;
 
-		.basket-line-long {
+		.line-long {
 			background-image: url('../images/line-long.png');
 			@extend .basket-background;
 			height: rem(205px);
 			width: rem(4px);
 		}
 
-		.basket-line-short {
+		.line-short {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
 			height: rem(36px);
@@ -53,7 +46,7 @@
 			margin-top: rem(20px);
 		}
 
-		.basket-line-short-last {
+		.line-short-last {
 			background-image: url('../images/line-short.png');
 			@extend .basket-background;
 			height: rem(36px);
@@ -62,7 +55,7 @@
 
 		}
 
-		.basket-radio {
+		.radio-airwaves {
 			background-image: url('../images/radio.png');
 			@extend .basket-background;
 			height: rem(33px);
@@ -70,7 +63,7 @@
 			margin-top: rem(20px);
 		}
 
-		.basket-globes {
+		.globes-online {
 			background-image: url('../images/globes.png');
 			@extend .basket-background;
 			height: rem(48px);
@@ -78,8 +71,8 @@
 			margin-top: rem(20px);
 		}
 
-		.basket-cloud {
-			background: url('../images/images-end.png') no-repeat;
+		.sparks-cloud {
+			background: url('../images/cloud.png') no-repeat;
 			background-size: cover;
 			@extend .basket-background;
 			height: rem(103px);
@@ -89,7 +82,7 @@
 	}
 }
 
-.txt-wapper {
+.exchange-info {
 		position: absolute;
 		top: rem(235px);
 		z-index: 100;
@@ -114,156 +107,4 @@
 
 .discuss-text {
 	@include font-text(rem(18px), normal, $white);
-}
-
-@media screen and (max-width: 480px) {
-	.basket-pitch-slide {
-		height: rem(360px);
-		.basket-iphone {
-			height: rem(285px);
-			z-index: 1;
-			top: rem(75px);
-		}
-		.background-basket {
-			background-size: 145% 100%;
-			background-position: center center;
-			height: 100%;
-			width: 100%;
-		}
-		.active {
-			.basket-line-long {
-				background-position: center 0;
-				height: rem(130px);
-			}
-
-			.basket-line-short {
-				background-position: center 0;
-				height: rem(18px);
-				margin-top: rem(10px);
-			}
-
-			.basket-line-short-last {
-				background-position: center 0;
-				height: rem(18px);
-				margin-top: rem(10px);
-			}
-
-			.basket-radio {
-				height: rem(20px);
-				margin-top: rem(10px);
-				margin-top: rem(10px);
-			}
-
-			.basket-globes {
-				height: rem(20px);
-				margin-top: rem(10px);
-			}
-		
-			.basket-cloud {
-				height: rem(50px);
-				width: rem(50px);
-				margin-top: rem(10px);
-			}
-		}
-	}
-	.txt-wapper {
-		position: absolute;
-		top: rem(147px);
-		.radio-text {
-			font-family: $font-roboto;
-			@include font-text(rem(14px), normal, $white);
-		}
-
-		.forums-text {
-			margin-top: rem(30px);
-			font-family: $font-roboto;
-			@include font-text(rem(14px), normal, $white);
-		}
-
-		.sparks-text {
-			margin-top: rem(35px);
-			font-family: $font-roboto;
-			@include font-text(rem(18px), normal, $white);
-		}
-
-		.discuss-text {
-			font-family: $font-roboto;
-			@include font-text(rem(12px), normal, $white);
-		}
-	}
-}
-
-
-@media screen and (max-width: 768px) and (min-width: 481px){
-	.basket-pitch-slide {
-		width: 100%;
-		height: rem(530px);
-		.background-basket {
-			background-position: center center;
-			height: rem(530px);
-			width: 100%;
-		}
-
-		.basket-iphone {
-			height: rem(424px);
-			top: rem(106px);
-		}
-	
-		.active {
-			.basket-line-long {
-				height: rem(220px);
-			}
-
-			.basket-radio {
-				height: rem(28px);
-				margin-top: rem(10px);
-			}
-
-			.basket-line-short {
-				height: rem(35px);
-			}
-			
-			.basket-line-short-last {
-				height: rem(35px);
-				margin-top: rem(10px);			
-			}
-
-			.basket-globes {
-				height: rem(45px);
-				margin-top: rem(10px);
-			}
-
-			.basket-cloud {
-				height: rem(70px);
-				width: rem(70px);
-				margin-top: rem(10px);
-			}
-		}
-		.txt-wapper {
-			position: absolute;
-			top: rem(235px);
-			.radio-text {
-				font-family: $font-roboto;
-				@include font-text(rem(16px), normal, $white);
-			}
-
-			.forums-text {
-				margin-top: rem(70px);
-				font-family: $font-roboto;
-				@include font-text(rem(18px), normal, $white);
-			}
-
-			.sparks-text {
-				margin-top: rem(66px);
-				font-family: $font-roboto;
-				@include font-text(rem(24px), bold, $white);
-			}
-
-			.discuss-text {
-				margin-right: rem(45px);
-				font-family: $font-roboto;
-				@include font-text(rem(14px), normal, $white);
-			}
-		}
-	}
 }

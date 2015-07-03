@@ -18,8 +18,7 @@
 		}
 
 		.button-spark {
-			background: url('../images/bg-spark-buttons.png');
-			background-repeat: no-repeat;
+			background: url('../images/bg-spark-buttons.png') no-repeat;
 			@include border-radius(rem(60px));
 			font-family: $font-roboto;
 			@include font-text(rem(22px), lighter, $white);

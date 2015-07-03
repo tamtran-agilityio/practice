@@ -10,15 +10,15 @@
 		background-repeat: no-repeat;
 		position: absolute;
 	}
-	.sparks-iphone-4 {
-		background-image: url('../images/iPhone-5S.png');
+	.sparks-iphone-black {
+		background-image: url('../images/phone-black.png');
 		@extend .sparks-background;
 		width: rem(358px);
 		height: rem(630px);
 	}
 
-	.sparks-iphone-5 {
-		background-image: url('../images/iPhone-4S.png');
+	.sparks-iphone-white {
+		background-image: url('../images/phone-white.png');
 		@extend .sparks-background;
 		width: rem(525px);
 		height: rem(523px);
@@ -44,7 +44,7 @@
 			li:before {
 				content: "";
 				display: block;
-				background: url('../images/spark.png') no-repeat;
+				background: url('../images/icon-spark.png') no-repeat;
 				width: rem(20px);
 				height: rem(20px);
 				margin-top: rem(5px);
@@ -65,160 +65,10 @@
 		}
 
 		.icon-flash {
-			background-image: url('../images/spark.png');
+			background-image: url('../images/spark.png') no-repeat;
 			width: rem(12px);
 			height: rem(16px);
-			background-repeat: no-repeat;
 			display: inline-block;
-		}
-	}
-}
-
-/**
- * Styles with mobile 
- * max-width: 480px
- */
-@media screen and (max-width: 480px) {
-
-	.slide-what-sparks {
-		height: 280px;
-		.wapper-content {
-			position: absolute;
-			left: 8%;
-			.sparks-what-text {
-				font-family: $font-roboto;
-				@include font-text(rem(14px), bold, $black);
-			}
-
-			.fan-iphone {
-				font-family: $font-roboto;
-				@include font-text(rem(10px), lighter, $black);
-			}
-
-			.app-iphone {
-				padding-left: 0;
-
-				li:before {
-					width: rem(15px);
-					height: rem(15px);
-					background-size: 50%;
-					margin-right: rem(-5px);
-					margin-top: rem(5px);
-				}
-				li {
-					font-family: $font-roboto;
-					@include font-text(rem(10px), lighter, $black);
-					list-style: none;
-					margin: rem(0 0 2px 0);
-					display: inline-block;
-				}
-			}
-	
-			.channels-text {
-				font-family: $font-roboto;
-				@include font-text(rem(10px), bold, $black);
-			}
-		}
-
-		.background-sparks {
-			.sparks-iphone-4 {
-				height: 25rem;
-				width: 55%;
-			}
-
-			.sparks-iphone-5 {
-				height: rem(220px);
-				width: 82%;
-				z-index: 1;
-				top: rem(100px);
-				left: 30px;
-			}
-		}
-	}
-}
-
-/**
- * Styles with screen 
- * max-width: 768px
- */
-@media screen and (max-width: 768px) and (min-width: 481px) {
-
-	.slide-what-sparks {
-		height: rem(570px);
-		.wapper-content {
-			left: 15%;
-			top: rem(100px);
-    	margin: 0 auto;
-			.sparks-what-text {
-				font-family: $font-roboto;
-				@include font-text(rem(24px), bold, $black);
-			}
-
-			.fan-iphone {
-				font-family: $font-roboto;
-				line-height: 14px;
-				@include font-text(rem(16px), lighter, $black);
-			}
-
-			.app-iphone {
-				padding-left: 0;
-
-				li:before {
-					width: rem(15px);
-					height: rem(15px);
-					background-size: 50%;
-				}
-				li {
-					margin: rem(5px -5px 5px 0);
-					font-family: $font-roboto;
-					@include font-text(rem(14px), lighter, $black);
-					margin-bottom: rem(3px);
-					list-style: none;
-					line-height: 20px;
-					display: inline-block;
-				}
-			}
-	
-			.channels-text {
-				font-family: $font-roboto;
-				@include font-text(rem(14px), bold, $black);
-			}
-		}
-		
-		.background-sparks {
-			.sparks-iphone-4 {
-				height: rem(400px);
-				width: 55%;
-				top: rem(60px);
-			}
-
-			.sparks-iphone-5 {
-				height: rem(365px);
-				z-index: 1;
-				width: 85%;
-				top: rem(250px);
-				left: rem(3px);
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 1024px) {
-
-	.slide-what-sparks {
-		.sparks-iphone-4 {
-			background-image: url('../images/iPhone-5S.png');
-			width: rem(250px);
-			height: rem(560px);
-			background-size: 100% 100%;
-		}
-
-		.sparks-iphone-5 {
-			background-image: url('../images/iPhone-4S.png');
-			width: rem(398px);
-			height: rem(523px);
-			background-size: 100% 100%;
-			z-index: 1;
 		}
 	}
 }
