@@ -1,9 +1,6 @@
 .background-basket {
-	background: url('../images/bg-basket-pitch.png')no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: url('../images/bg-basket-pitch.png')no-repeat center center ; 
+	height: rem(700px);
 	overflow: hidden;
 }
 

@@ -23,7 +23,9 @@ var config = {
 	jsOutLint: 'out/js/*.js',
 
 	assetImages: 'src/images/*.*',
+	assetImagesSmall: 'src/images/mobile/*.*',
 	assetImagesOut: 'out/images',
+	assetImagesSmallOut: 'out/images/mobile',
 
 	assetFont: 'src/fonts/roboto/*.*',
 	assetFontOut: 'out/fonts',
@@ -145,6 +147,8 @@ gulp.task('jade:watch', function() {
 gulp.task('assets', function() {
 	gulp.src(config.assetImages)
 		.pipe(gulp.dest(config.assetImagesOut));
+	gulp.src(config.assetImagesSmall)
+		.pipe(gulp.dest(config.assetImagesSmallOut));
 });
 
 gulp.task('assetsfont', function() {

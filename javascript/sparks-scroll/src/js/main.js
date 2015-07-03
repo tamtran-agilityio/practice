@@ -53,12 +53,12 @@ $(window).scroll(function() {
 	}
 	
 	// Set property opacity of part what sparks
-	if(sparkScroll > $('.wapper-content').offset().top - $(window).height()) {
+	if(sparkScroll > $('.content-sparks').offset().top - $(window).height()) {
 
-		var opacity = (sparkScroll - $('.wapper-content').offset().top + 200) / (sparkScroll / 100);
+		var opacity = (sparkScroll - $('.content-sparks').offset().top + 200) / (sparkScroll / 100);
 		
 		// Set property background position content what spark
-		$('.wapper-content').css({'background-position':'center '+ (sparkScroll - $('.wapper-content').offset().top) +'px'});
+		$('.content-sparks').css({'background-position':'center '+ (sparkScroll - $('.content-sparks').offset().top) +'px'});
 		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
 		$('.fan-iphone').css({'opacity': opacity});
