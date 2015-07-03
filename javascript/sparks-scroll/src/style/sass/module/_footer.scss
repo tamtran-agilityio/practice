@@ -17,6 +17,20 @@
 			padding-top: rem(105px);
 		}
 
+		.button-spark {
+			background: url('../images/bg-spark-buttons.png');
+			background-repeat: no-repeat;
+			@include border-radius(rem(60px));
+			font-family: $font-roboto;
+			@include font-text(rem(22px), lighter, $white);
+			margin: rem(20px 0 180px);
+			line-height: rem(70px);
+			&:hover {
+				background-color: #b7a4f7;
+				text-decoration: none;
+			}
+		}
+
 		.address-spark {
 			font-family: $font-roboto;
 			@include font-text(rem(14px), bold, $white)
