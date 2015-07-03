@@ -1,0 +1,158 @@
+/* 
+ * Styles with sreen min 769 and max 1024
+ */
+
+// Styles of what sparks
+@media screen and (max-width: 1024px) {
+
+	.slide-what-sparks {
+		.sparks-iphone-black {
+			width: rem(250px);
+			height: rem(560px);
+			background-size: 100% 100%;
+		}
+
+		.sparks-iphone-white {
+			width: rem(398px);
+			height: rem(523px);
+			background-size: 100% 100%;
+			z-index: 1;
+		}
+	}
+}
+
+//Style of part sreenshot
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	.screenshot {
+		height: rem(510px);
+		background-color: $white;
+		.inside {
+			max-width: 700px;
+			margin: 0 auto;
+			position: relative;
+			.topic-tweet {
+				width: 45%;
+				height: rem(310px);
+				position: absolute;
+			}
+
+			.background-ipad {
+				top: rem(-170px);
+				left: 47%;
+				width: 55%;
+				height: rem(500px);
+				position: absolute;
+			}
+
+			.content-ipad {
+				height: rem(398px);
+				top: rem(43px);
+				left: rem(27px);
+				width: rem(331px);
+			}
+
+			.arrow-horizontal {
+				top: rem(20px);
+				left: 42%;
+				height: rem(30px);
+				width: 10%;
+				position: absolute;
+			}
+		}
+	}
+}
+
+// Styles of part how does
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	.how-does {
+		height: rem(1150px);
+		.inside {
+			max-width: 700px;
+			margin: 0 auto;
+			position: relative;
+			.comment-visual {
+				background-color: $white;
+				@include border-radius(30px);
+				width: rem(170px);
+				height: rem(105px);
+				position: absolute;
+				left: rem(180px);
+				top: rem(600px);
+				z-index: 150;
+				text-align: center;
+				h4 {
+					font-family: $font-roboto;
+					@include font-text(rem(20px), bold, $drive-text);
+				}
+				span {
+					font-family: $font-roboto;
+					@include font-text(rem(16px), normal, $drive-text);
+				}
+			}
+			.grow-content {
+				position: absolute;
+				margin-left: rem(435px);
+				width: rem(250px);
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(24px), normal, $white);
+				}
+
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+			.topic-content {
+				position: absolute;
+				top: rem(904px);
+				width: rem(250px);
+				h3 {
+					font-family: $font-roboto;
+					@include font-text(rem(24px), normal, $white);
+				}
+
+				p {
+					font-family: $font-roboto;
+					@include font-text(rem(14px), normal, $white);
+				}
+			}
+			.arrow-left {
+				width: rem(77px);
+				height: rem(83px);
+				top: rem(550px);
+				left: rem(130px);
+			}
+			.arrow-right {
+
+				width: rem(175px);
+				height: rem(34px);
+				top: rem(610px);
+
+				left: rem(330px);
+			}
+			.background-tweet-wall {
+				.tweet-wall {
+					background-size: 75% 80%;
+				}
+
+				.content-comment {
+					top: rem(240px);
+					background-size: 75% 80%;
+				}
+
+				.comment-list {
+					top: rem(505px);
+					background-size: 75% 80%;
+					opacity: 0.5;
+				}
+
+				.content-user {
+					width: rem(400px);
+					height: rem(500px);
+					margin-left: rem(330px);
+				}
+			}
+		}
+	}
+}
