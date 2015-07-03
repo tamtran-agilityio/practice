@@ -14,7 +14,9 @@
 		}
 
 		.basket-iphone {
+			background-image: url('../images/iphone-fail-medium.png');
 			height: rem(424px);
+			width: rem(205px);
 			top: rem(106px);
 		}
 	
@@ -84,7 +86,7 @@
 
 	.slide-what-sparks {
 		height: rem(570px);
-		.wapper-content {
+		.content-sparks {
 			left: 15%;
 			top: rem(100px);
     	margin: 0 auto;
@@ -126,15 +128,17 @@
 		
 		.background-sparks {
 			.sparks-iphone-black {
+				background-image: url('../images/iphone-black-medium.png');
 				height: rem(400px);
-				width: 55%;
+				width: rem(180px);
 				top: rem(60px);
 			}
 
 			.sparks-iphone-white {
-				height: rem(365px);
+				background-image: url('../images/iphone-white-medium.png');
+				height: rem(320px);
 				z-index: 1;
-				width: 85%;
+				width: rem(269px);
 				top: rem(250px);
 				left: rem(3px);
 			}
@@ -190,6 +194,7 @@
 			.grow-content {
 				left: 58%;
 				margin-left: 0px;
+				width: 40%;
 				h3 {
 					font-family: $font-roboto;
 					@include font-text(rem(18px), normal, $white);
@@ -263,7 +268,7 @@
 					background-size: 100% 100%;
 					left: 48%;
 					width: 50%;
-					top: rem(60px);
+					top: rem(80px);
 					z-index: 1;
 					height: rem(400px);
 					margin: 0;

@@ -7,9 +7,11 @@
 	.basket-pitch-slide {
 		height: rem(360px);
 		.basket-iphone {
-			height: rem(285px);
+			background-image: url('../images/mobile/iphone-fail-small.png');
+			height: rem(253px);
+			width: rem(130px);
 			z-index: 1;
-			top: rem(75px);
+			top: rem(107px);
 		}
 		.background-basket {
 			background-size: 145% 100%;
@@ -19,36 +21,44 @@
 		}
 		.active {
 			.line-long {
-				background-position: center 0;
+				background-image: url('../images/mobile/line-long-small.png');
 				height: rem(130px);
+				width: rem(2px);
 			}
 
 			.line-short {
-				background-position: center 0;
+				background-image: url('../images/mobile/line-short-small.png');
 				height: rem(18px);
+				width: rem(2px);
 				margin-top: rem(10px);
 			}
 
 			.line-short-last {
-				background-position: center 0;
+				background-image: url('../images/mobile/line-short-small.png');
 				height: rem(18px);
+				width: rem(2px);
 				margin-top: rem(10px);
 			}
 
 			.radio-airwaves {
-				height: rem(20px);
+				background-image: url('../images/mobile/radio-small.png');
+				height: rem(21px);
+				width: rem(22px);
 				margin-top: rem(10px);
 				margin-top: rem(10px);
 			}
 
 			.globes-online {
-				height: rem(20px);
+				background-image: url('../images/mobile/global-small.png');
+				height: rem(30px);
+				width: rem(30px);
 				margin-top: rem(10px);
 			}
 		
 			.sparks-cloud {
-				height: rem(50px);
-				width: rem(50px);
+				background-image: url('../images/mobile/cloud-small.png');
+				height: rem(45px);
+				width: rem(45px);
 				margin-top: rem(10px);
 			}
 		}
@@ -58,19 +68,19 @@
 		top: rem(147px);
 		.radio-text {
 			font-family: $font-roboto;
-			@include font-text(rem(14px), normal, $white);
+			@include font-text(rem(13px), normal, $white);
 		}
 
 		.forums-text {
 			margin-top: rem(30px);
 			font-family: $font-roboto;
-			@include font-text(rem(14px), normal, $white);
+			@include font-text(rem(13px), normal, $white);
 		}
 
 		.sparks-text {
-			margin-top: rem(35px);
+			margin-top: rem(40px);
 			font-family: $font-roboto;
-			@include font-text(rem(18px), normal, $white);
+			@include font-text(rem(16px), normal, $white);
 		}
 
 		.discuss-text {
@@ -84,8 +94,8 @@
 @media (max-width: 480px) {
 
 	.slide-what-sparks {
-		height: 280px;
-		.wapper-content {
+		height: 290px;
+		.content-sparks {
 			position: absolute;
 			left: 8%;
 			.sparks-what-text {
@@ -125,16 +135,18 @@
 
 		.background-sparks {
 			.sparks-iphone-black {
-				height: 25rem;
-				width: 55%;
+				background-image: url('../images/mobile/iphone-black-small.png');
+				height: rem(251px);
+				width: rem(120px);
 			}
 
 			.sparks-iphone-white {
-				height: rem(220px);
-				width: 82%;
+				background-image: url('../images/mobile/iphone-white-small.png');
+				height: rem(200px);
+				width: rem(199px);
 				z-index: 1;
-				top: rem(100px);
-				left: 30px;
+				top: rem(110px);
+				left: 22px;
 			}
 		}
 	}
@@ -200,7 +212,7 @@
 				position: absolute;
 				left: 5%;
 				top: rem(525px);
-				width: 90%;
+				width: 95%;
 				h1 {
 					font-size: rem(12px);
 				}	
@@ -236,6 +248,7 @@
 				}
 
 				.tweet-wall {
+					background-image: url('../images/mobile/tweet-wall-small.png');
 					@extend .background-tweet;
 					height: rem(120px);
 					position: absolute;
@@ -243,12 +256,14 @@
 				}
 
 				.content-comment {
+					background-image: url('../images/mobile/content-comment-small.png');
 					@extend .background-tweet;
 					top: rem(130px);
 					height: rem(140px);
 				}
 
 				.comment-list {
+					background-image: url('../images/mobile/comment-list-small.png');
 					@extend .background-tweet;
 					top: rem(280px);
 					height: rem(140px);
@@ -256,9 +271,10 @@
 				}
 
 				.content-user {
+					background-image: url('../images/mobile/content-user-small.png');
 					background-size: 100% 100%;
 					width: 50%;
-					margin-top: 40px;
+					margin-top: 60px;
 					left: 47%;
 					position: absolute;
 					margin-left: 0;
@@ -277,6 +293,7 @@
 		background-color: $white;
 		.inside {
 			.topic-tweet {
+				background-image: url('../images/mobile/topic-tweet-small.png');
 				position: absolute;
 				top: rem(-40px);
 				left: 5%;
@@ -285,6 +302,7 @@
 			}
 
 			.background-ipad {
+				background-image: url('../images/mobile/ipad-small.png');
 				position: absolute;
 				top: rem(-110px);
 				height: rem(300px);
