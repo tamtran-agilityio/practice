@@ -121,7 +121,7 @@ $(window).scroll(function() {
 		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top +700) / (sparkScroll / 100);
 		
 		// Set property background position of slide ipad
-		$('.slide-ipad').css({'background-position':'center '+ (sparkScroll - $('.slide-ipad').offset().top) +'px'});
+		$('.screenshot').css({'background-position':'center '+ (sparkScroll - $('.screenshot').offset().top) +'px'});
 		
 		// Set property opacity of image topic tweet
 		$('.topic-tweet').css({'opacity': opacityTopicTweet});
@@ -139,10 +139,23 @@ $(window).scroll(function() {
 
 		var opacityContent = (sparkScroll - $('.background-ipad').offset().top + 500) / (sparkScroll / 100);
 		
-		// Set property background of content ipad
+		//Set property background of content ipad
 		$('.content-ipad').css({'background-position':'center '+ (sparkScroll - $('.content-ipad').offset().top) +'px'});
 		
-		// Set property opacity of image content ipad
+		//Set property opacity of image content ipad
 		$('.content-ipad').css({'opacity': opacityContent});
 	}
+});
+
+// Set top down of image 
+$(document).ready(function() {
+		
+		function beeTop() {
+				$(".content-ipad").animate({top: "-=500"}, 1000, "swing", beeDown);
+		}
+		function beeDown() {
+				$(".content-ipad").animate({top: "+=500"}, 1000, "swing", beeTop);
+		}
+		
+		beeDown();
 });
