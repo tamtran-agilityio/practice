@@ -87,7 +87,7 @@
 	.slide-what-sparks {
 		height: rem(570px);
 		.content-sparks {
-			left: 15%;
+			left: 25%;
 			top: rem(100px);
     	margin: 0 auto;
 			.sparks-what-text {
@@ -292,18 +292,23 @@
 			}
 
 			.background-ipad {
-				top: rem(-170px);
+				top: -17rem;
 				left: 45%;
 				width: 54%;
 				height: rem(500px);
 				position: absolute;
+				padding-top: rem(43px);
 			}
 
 			.content-ipad {
 				height: rem(398px);
-				width: 86%;
+				width: 100%;
 				top: rem(43px);
-				left: 7%;
+				.images-scrolling {
+					left: 7%;
+					height: rem(398px);
+					width: 86%;
+				}
 			}
 
 			.arrow-horizontal {

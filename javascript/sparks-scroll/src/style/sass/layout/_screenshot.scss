@@ -29,15 +29,23 @@
 			width: rem(632px);
 			top: rem(-680px);
 			left: rem(340px);
+			padding-top: rem(60px);
 		}
 		
 		.content-ipad {
-			background-image: url('../images/content-ipad.png');
-			@extend .background-slide-ipad;
-			height: rem(598px);
+			height: rem(605px);
 			top: rem(65px);
 			left: rem(43px);
-			width: rem(544px);
+			width: rem(587px);
+			overflow: hidden;
+				.images-scrolling {
+					@extend .background-slide-ipad;
+					top: rem(65px);
+					left: rem(43px);
+					background-image: url('../images/content-ipad.png');
+					height: rem(665px);
+					width: rem(590px);
+				}
 		}
 		.arrow-horizontal {
 			background-image: url('../images/arrow-horizontal.png');

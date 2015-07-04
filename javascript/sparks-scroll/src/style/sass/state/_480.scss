@@ -94,10 +94,10 @@
 @media (max-width: 480px) {
 
 	.slide-what-sparks {
-		height: 300px;
+		height: 330px;
 		.content-sparks {
 			position: absolute;
-			left: 8%;
+			left: 10%;
 			top: rem(30px);
 			.sparks-what-text {
 				font-family: $font-roboto;
@@ -107,7 +107,7 @@
 
 			.fan-iphone {
 				font-family: $font-roboto;
-				@include font-text(rem(10px), lighter, $black);
+				@include font-text(rem(12px), lighter, $black);
 				line-height: rem(10px);
 			}
 
@@ -123,7 +123,7 @@
 				}
 				li {
 					font-family: $font-roboto;
-					@include font-text(rem(10px), lighter, $black);
+					@include font-text(rem(11px), lighter, $black);
 					list-style: none;
 					margin: rem(0 0 2px 0);
 					display: inline-block;
@@ -132,25 +132,27 @@
 	
 			.channels-text {
 				font-family: $font-roboto;
-				@include font-text(rem(10px), bold, $black);
+				@include font-text(rem(12px), bold, $black);
 			}
 		}
 
 		.background-sparks {
 			.sparks-iphone-black {
 				background-image: url('../images/mobile/iphone-black-small.png');
+				background-size: 100% 100%;
 				height: rem(251px);
-				width: rem(120px);
+				width: rem(105px);
 				top: rem(20px);
 			}
 
 			.sparks-iphone-white {
 				background-image: url('../images/mobile/iphone-white-small.png');
+				background-size: 100% 100%;
 				height: rem(200px);
-				width: rem(199px);
+				width: rem(187px);
 				z-index: 1;
-				top: rem(130px);
-				left: 22px;
+				top: rem(170px);
+				left: 0;
 			}
 		}
 	}
@@ -180,7 +182,7 @@
 			.comment-visual {
 				background-color: $white;
 				border-radius: rem(20px);
-				width: 35%;
+				width: 40%;
 				height: rem(90px);
 				position: absolute;
 				left: 24%;
@@ -194,14 +196,14 @@
 				}
 				span {
 					font-family: $font-roboto;
-					@include font-text(rem(13px), lighter, $drive-text);
+					@include font-text(rem(15px), lighter, $drive-text);
 				}
 			}
 
 			.grow-content {
 				position: absolute;
 				left: 58%;
-				width: 30%;
+				width: 35%;
 				margin-left: 0;
 				top: rem(80px);
 				h1 {
@@ -209,7 +211,7 @@
 				}
 
 				p {
-					font-size: rem(8px);
+					font-size: rem(10px);
 				}
 			}
 			
@@ -217,14 +219,13 @@
 				position: absolute;
 				left: 5%;
 				top: rem(525px);
-				width: 95%;
 				h1 {
 					font-size: rem(12px);
 				}	
 				
 				p {
-					font-size: rem(8px);
-					margin-right: rem(250px);
+					font-size: rem(10px);
+					margin-right: rem(120px);
 				}
 			}
 
@@ -239,7 +240,7 @@
 			.arrow-right {
 				background-size: 100% 100%;
 				top: rem(360px);
-				left: 55%;
+				left: 60%;
 				height: rem(12px);
 				width: 12%;
 			}
@@ -279,7 +280,7 @@
 					background-image: url('../images/mobile/content-user-small.png');
 					background-size: 100% 100%;
 					width: 50%;
-					margin-top: 60px;
+					margin-top: 70px;
 					left: 47%;
 					position: absolute;
 					margin-left: 0;
@@ -300,7 +301,7 @@
 			.topic-tweet {
 				background-image: url('../images/mobile/topic-tweet-small.png');
 				position: absolute;
-				top: rem(-40px);
+				top: -3rem;
 				left: 5%;
 				height: rem(180px);
 				width: 35%;
@@ -309,7 +310,8 @@
 			.background-ipad {
 				background-image: url('../images/mobile/ipad-small.png');
 				position: absolute;
-				top: rem(-110px);
+				padding-top: rem(27px);
+				top: -11rem;
 				height: rem(300px);
 				width: 50%;
 				left: 45%;
@@ -317,9 +319,13 @@
 
 			.content-ipad {
 				height: rem(250px);
-				width: 89%;
+				width: 94%;
 				top: rem(26px);
-				left: 6%;
+				.images-scrolling {
+					height: rem(250px);
+					left: 6%;
+					width: 94%;
+				}
 			}
 
 			.arrow-horizontal {

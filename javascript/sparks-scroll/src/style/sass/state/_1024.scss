@@ -37,18 +37,23 @@
 			}
 
 			.background-ipad {
-				top: rem(-170px);
+				top: -17rem;
 				left: 47%;
 				width: 55%;
 				height: rem(500px);
 				position: absolute;
+				padding-top: rem(43px);
 			}
 
 			.content-ipad {
 				height: rem(398px);
 				top: rem(43px);
-				left: rem(27px);
-				width: rem(331px);
+				width: rem(371px);
+				.images-scrolling {
+					left: rem(27px);
+					height: rem(398px);
+					width: rem(331px);
+				}
 			}
 
 			.arrow-horizontal {
