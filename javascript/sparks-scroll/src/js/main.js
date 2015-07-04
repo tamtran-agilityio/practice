@@ -159,3 +159,47 @@ $(window).scroll(function() {
 		
 // 		beeDown();
 // });
+
+//  Scrolling image content in image ipade
+$(function(){
+	var scroller = $('.background-ipad div.content-ipad');
+	var scrollerContent = scroller.children('ul');
+	scrollerContent.children().clone().appendTo(scrollerContent);
+	var curX = 0;
+	scrollerContent.children().each(function(){
+			var $this = $(this);
+			$this.css('top', curX);
+			curX += $this.outerWidth(true);
+	});
+	var fullW = curX * 2;
+	var viewportW = scroller.width();
+
+	// Scrolling speed management
+	var controller = {curSpeed:0, fullSpeed:4};
+	var $controller = $(controller);
+	var tweenToNewSpeed = function(newSpeed, duration)
+	{
+			if (duration === undefined)
+					duration = 600;
+			$controller.stop(true).animate({curSpeed:newSpeed}, duration);
+	};
+
+	// Pause on hover
+	scroller.hover(function(){
+			tweenToNewSpeed(0);
+	}, function(){
+			tweenToNewSpeed(controller.fullSpeed);
+	});
+
+	// Scrolling management; start the automatical scrolling
+	var doScroll = function()
+	{
+			var curX = scroller.scrollTop();
+			var newX = curX + controller.curSpeed;
+			if (newX > fullW*0.5 - viewportW)
+					newX -= fullW;
+			scroller.scrollTop(newX);
+	};
+	setInterval(doScroll, 100);
+	tweenToNewSpeed(controller.fullSpeed);
+});
