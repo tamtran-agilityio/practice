@@ -94,18 +94,21 @@
 @media (max-width: 480px) {
 
 	.slide-what-sparks {
-		height: 290px;
+		height: 300px;
 		.content-sparks {
 			position: absolute;
 			left: 8%;
+			top: rem(30px);
 			.sparks-what-text {
 				font-family: $font-roboto;
 				@include font-text(rem(14px), bold, $black);
+				line-height: rem(10px);
 			}
 
 			.fan-iphone {
 				font-family: $font-roboto;
 				@include font-text(rem(10px), lighter, $black);
+				line-height: rem(10px);
 			}
 
 			.app-iphone {
@@ -138,6 +141,7 @@
 				background-image: url('../images/mobile/iphone-black-small.png');
 				height: rem(251px);
 				width: rem(120px);
+				top: rem(20px);
 			}
 
 			.sparks-iphone-white {
@@ -145,7 +149,7 @@
 				height: rem(200px);
 				width: rem(199px);
 				z-index: 1;
-				top: rem(110px);
+				top: rem(130px);
 				left: 22px;
 			}
 		}
@@ -176,7 +180,7 @@
 			.comment-visual {
 				background-color: $white;
 				border-radius: rem(20px);
-				width: 30%;
+				width: 35%;
 				height: rem(90px);
 				position: absolute;
 				left: 24%;
@@ -186,6 +190,7 @@
 				h4 {
 					font-family: $font-roboto;
 					@include font-text(rem(18px), lighter, $drive-text);
+					line-height: rem(10px);
 				}
 				span {
 					font-family: $font-roboto;
@@ -234,7 +239,7 @@
 			.arrow-right {
 				background-size: 100% 100%;
 				top: rem(360px);
-				left: 50%;
+				left: 55%;
 				height: rem(12px);
 				width: 12%;
 			}
@@ -311,11 +316,12 @@
 			}
 
 			.content-ipad {
-				height: rem(239px);
-				width: 87%;
+				height: rem(250px);
+				width: 89%;
 				top: rem(26px);
-				left: 6.6%;
+				left: 6%;
 			}
+
 			.arrow-horizontal {
 				position: absolute;
 				top: rem(30px);
