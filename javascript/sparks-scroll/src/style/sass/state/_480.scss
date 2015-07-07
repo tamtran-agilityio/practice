@@ -14,7 +14,6 @@
 			top: rem(107px);
 		}
 		.background-basket {
-			background-size: 145% 100%;
 			background-position: center center;
 			height: 100%;
 			width: 100%;
@@ -67,24 +66,20 @@
 		position: absolute;
 		top: rem(147px);
 		.radio-text-description {
-			font-family: $font-roboto;
 			@include font-text(rem(13px), normal, $white);
 		}
 
 		.forums-text-description {
 			margin-top: rem(30px);
-			font-family: $font-roboto;
 			@include font-text(rem(13px), normal, $white);
 		}
 
 		.sparks-text-description {
 			margin-top: rem(40px);
-			font-family: $font-roboto;
 			@include font-text(rem(16px), normal, $white);
 		}
 
 		.discuss-text-description {
-			font-family: $font-roboto;
 			@include font-text(rem(12px), normal, $white);
 		}
 	}
@@ -93,20 +88,18 @@
 // Styles of what spark
 @media (max-width: 480px) {
 
-	.slide-what-sparks {
+	.what-sparks {
 		height: 330px;
 		.content-sparks {
 			position: absolute;
 			left: 10%;
 			top: rem(30px);
 			.sparks-what-text {
-				font-family: $font-roboto;
 				@include font-text(rem(14px), bold, $black);
 				line-height: rem(10px);
 			}
 
 			.fan-iphone {
-				font-family: $font-roboto;
 				@include font-text(rem(12px), lighter, $black);
 				line-height: rem(10px);
 			}
@@ -122,7 +115,6 @@
 					margin-top: rem(5px);
 				}
 				li {
-					font-family: $font-roboto;
 					@include font-text(rem(11px), lighter, $black);
 					list-style: none;
 					margin: rem(0 0 2px 0);
@@ -131,7 +123,6 @@
 			}
 	
 			.channels-text {
-				font-family: $font-roboto;
 				@include font-text(rem(12px), bold, $black);
 			}
 		}
@@ -167,13 +158,11 @@
 			list-style: none;
 			padding-top: rem(20px);
 			li:first-child{
-				font-family: $font-roboto;
 				@include font-text(rem(13px), lighter, $white);
 				margin-top: rem(40px);
 			}
 
 			li:last-child {
-				font-family: $font-roboto;
 				@include font-text(rem(10px), lighter, $white);
 				margin-top: rem(10px);
 			}
@@ -190,12 +179,10 @@
 				z-index: 150;
 				text-align: center;
 				h4 {
-					font-family: $font-roboto;
 					@include font-text(rem(18px), lighter, $drive-text);
 					line-height: rem(10px);
 				}
 				span {
-					font-family: $font-roboto;
 					@include font-text(rem(15px), lighter, $drive-text);
 				}
 			}
