@@ -10,6 +10,8 @@ $(window).scroll(function() {
 	// Set transform of part logo top
 	if (sparkScroll <= parallaxContainer) {
 
+		var opacity = (sparkScroll - $('.background-basket').offset().top + 200) / (sparkScroll / 100);
+
 		// Set property transform of traditional sparks
 		$('.basket-line-long').css({
 			'transform' : 'translate(0px, '- sparkScroll /60 +'%)'
@@ -55,10 +57,10 @@ $(window).scroll(function() {
 	// Set property opacity of part what sparks
 	if(sparkScroll > $('.content-sparks').offset().top - $(window).height()) {
 
-		var opacity = (sparkScroll - $('.background-basket').offset().top + 200) / (sparkScroll / 100);
-		
+		var opacity = (sparkScroll - $('.content-sparks').offset().top + 200) / (sparkScroll / 100);
+
 		// Set property background position content what spark
-		$('.background-basket').css({'background-position':'100% '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
+		$('.background-basket').css({'background-position':'center '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
 		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
 		$('.fan-iphone').css({'opacity': opacity});
@@ -68,10 +70,10 @@ $(window).scroll(function() {
 
 	}
 
-	// Set property opacity of part drive
+	// Set property opacity of part how does
 	if(sparkScroll > $('.benefit-content').offset().top - $(window).height()) {
 
-		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 100) / (sparkScroll / 100);
+		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 800) / (sparkScroll / 100);
 		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 800) / (sparkScroll / 100);
 		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 50);
 		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 50);
