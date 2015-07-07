@@ -12,42 +12,42 @@ $(window).scroll(function() {
 
 		// Set property transform of traditional sparks
 		$('.basket-line-long').css({
-			'transform' : 'translate(0px, '+ sparkScroll /60 +'%)'
+			'transform' : 'translate(0px, '- sparkScroll /60 +'%)'
 		});
 
 		$('.basket-iphone').css({
-			'transform' : 'translate(0px, -'+ sparkScroll /50 +'%)'
+			'transform' : 'translate(0px, -'- sparkScroll /50 +'%)'
 		});
 
 		$('.background-basket').css({
-			'transform' : 'translate(0px, -'+ sparkScroll /60 +'%)'
+			'transform' : 'translate(0px, -'- sparkScroll /60 +'%)'
 		});
 
-		$('.txt-wapper').css({
-			'transform' : 'translate(0px, -'+ sparkScroll /20 +'%)'
+		$('.exchange-info').css({
+			'transform' : 'translate(0px, -'- sparkScroll /200 +'%)'
 		});
 
-		$('.basket-line-long').css({
+		$('line-long').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /15 +'%)'
 		});
 
-		$('.basket-radio').css({
+		$('.radio-airwaves').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /10 +'%)'
 		});
 
-		$('.basket-line-short').css({
+		$('.line-short').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /10 +'%)'
 		});
 
-		$('.basket-globes').css({
+		$('.globes-online').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /10 +'%)'
 		});
 
-		$('.basket-line-short-last').css({
+		$('.line-short-last').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /10 +'%)'
 		});
 
-		$('.basket-cloud').css({
+		$('.sparks-cloud').css({
 			'transform' : 'translate(0px, -'+ sparkScroll /10 +'%)'
 		});
 	}
@@ -55,10 +55,10 @@ $(window).scroll(function() {
 	// Set property opacity of part what sparks
 	if(sparkScroll > $('.content-sparks').offset().top - $(window).height()) {
 
-		var opacity = (sparkScroll - $('.content-sparks').offset().top + 200) / (sparkScroll / 100);
+		var opacity = (sparkScroll - $('.background-basket').offset().top + 200) / (sparkScroll / 100);
 		
 		// Set property background position content what spark
-		$('.content-sparks').css({'background-position':'center '+ (sparkScroll - $('.content-sparks').offset().top) +'px'});
+		$('.background-basket').css({'background-position':'center '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
 		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
 		$('.fan-iphone').css({'opacity': opacity});
@@ -200,6 +200,7 @@ $(function(){
 					newX -= fullW;
 			scroller.scrollTop(newX);
 	};
+
 	setInterval(doScroll, 100);
 	tweenToNewSpeed(controller.fullSpeed);
 });
