@@ -4,3 +4,12 @@
 	font-weight: $font-weight;
 	color: $color;
 }
+
+@mixin bg-responsive($filename) {
+	@media screen and (max-width: 480px) {
+		background-image: url('../images/mobile/' + $filename);
+	}
+	@media screen and (min-width: 481px) {
+	background-image: url('../images/' + $filename);	
+	}
+}
