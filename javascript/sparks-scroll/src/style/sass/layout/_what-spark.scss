@@ -3,7 +3,7 @@
  */
 .slide-what-sparks {
 	width: 100%;
-	height: rem(680px);
+	height: rem(730px);
 	background: $white;
 
 	.sparks-background {
@@ -15,6 +15,7 @@
 		@extend .sparks-background;
 		width: rem(358px);
 		height: rem(630px);
+		top: rem(50px);
 	}
 
 	.sparks-iphone-white {
@@ -22,14 +23,14 @@
 		@extend .sparks-background;
 		width: rem(525px);
 		height: rem(523px);
-		top: rem(240px);
-		left: rem(40px);
+		top: rem(290px);
+		left: rem(50px);
 		z-index: 1;
 	}
 	.content-sparks {
 		position: absolute;
-		left: 20%;
-		top: rem(50px);
+		left: 30%;
+		top: rem(70px);
 		.sparks-what-text {
 			font-family: $font-roboto;
 			@include font-text(rem(50px), lighter, $black);
