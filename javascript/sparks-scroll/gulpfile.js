@@ -26,6 +26,8 @@ var config = {
 	assetImagesSmall: 'src/images/mobile/*.*',
 	assetImagesOut: 'out/images',
 	assetImagesSmallOut: 'out/images/mobile',
+	assetImagesMedium: 'src/images/image-ipad/*.*',
+	assetImagesMediumOut: 'out/images/image-ipad',
 
 	assetFont: 'src/fonts/roboto/*.*',
 	assetFontOut: 'out/fonts',
@@ -147,6 +149,8 @@ gulp.task('jade:watch', function() {
 gulp.task('assets', function() {
 	gulp.src(config.assetImages)
 		.pipe(gulp.dest(config.assetImagesOut));
+	gulp.src(config.assetImagesMedium)
+		.pipe(gulp.dest(config.assetImagesMediumOut));
 	gulp.src(config.assetImagesSmall)
 		.pipe(gulp.dest(config.assetImagesSmallOut));
 });
