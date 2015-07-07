@@ -58,8 +58,8 @@ $(window).scroll(function() {
 	if(sparkScroll > $('.content-sparks').offset().top - $(window).height()) {
 
 		var opacity = (sparkScroll - $('.content-sparks').offset().top + 200) / (sparkScroll / 100);
-
 		// Set property background position content what spark
+		$('.what-sparks').css({'background-position':'center '+ (sparkScroll - $('.what-sparks').offset().top) +'px'});
 		$('.background-basket').css({'background-position':'center '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
 		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
@@ -73,7 +73,7 @@ $(window).scroll(function() {
 	// Set property opacity of part how does
 	if(sparkScroll > $('.benefit-content').offset().top - $(window).height()) {
 
-		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 800) / (sparkScroll / 100);
+		var opacitysText = (sparkScroll - $('.benefit-content').offset().top + 500) / (sparkScroll / 100);
 		var opacityVisual = (sparkScroll - $('.comment-visual').offset().top + 800) / (sparkScroll / 100);
 		var opacityArrow = (sparkScroll - $('.comment-visual').offset().top + 700) / (sparkScroll / 50);
 		var opacityTweet = (sparkScroll - $('.comment-visual').offset().top + 600) / (sparkScroll / 50);
@@ -81,6 +81,7 @@ $(window).scroll(function() {
 		var opacityTweetUser = (sparkScroll - $('.comment-visual').offset().top + 500) / (sparkScroll / 80);
 		var opacityTopic = (sparkScroll - $('.comment-visual').offset().top + 300) / (sparkScroll / 100);
 		
+		$('.how-does').css({'background-position':'center '+ (sparkScroll - $('.how-does').offset().top) +'px'});
 		// Set background position content benefit
 		$('.benefit-content').css({'background-position':'center '+ (sparkScroll - $('.benefit-content').offset().top) +'px'});
 		
@@ -118,7 +119,7 @@ $(window).scroll(function() {
 	// Set background and opacity of ipad
 	if(sparkScroll > $('.topic-tweet').offset().top - $(window).height()) {
 
-		var opacityTopicTweet = (sparkScroll - $('.topic-tweet').offset().top + 900) / (sparkScroll / 100);
+		var opacityTopicTweet = (sparkScroll - $('.topic-tweet').offset().top + 800) / (sparkScroll / 100);
 		var opacityArrowHorizontal = (sparkScroll - $('.topic-tweet').offset().top +800) / (sparkScroll / 100);
 		var opacityIpad = (sparkScroll - $('.topic-tweet').offset().top +700) / (sparkScroll / 100);
 		
