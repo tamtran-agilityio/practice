@@ -10,7 +10,6 @@
 			background-image: url('../images/mobile/iphone-fail-small.png');
 			height: rem(253px);
 			width: rem(130px);
-			z-index: 1;
 			top: rem(107px);
 		}
 		.background-basket {
@@ -141,7 +140,6 @@
 				background-size: 100% 100%;
 				height: rem(200px);
 				width: rem(187px);
-				z-index: 1;
 				top: rem(170px);
 				left: 0;
 			}
@@ -176,7 +174,6 @@
 				position: absolute;
 				left: 24%;
 				top: rem(350px);
-				z-index: 150;
 				text-align: center;
 				h4 {
 					@include font-text(rem(18px), lighter, $drive-text);
@@ -237,7 +234,6 @@
 					background-size: 100% 100%;
 					left: 5%;
 					width: 50%;
-					z-index: 1;
 				}
 
 				.tweet-wall {
@@ -271,7 +267,6 @@
 					left: 47%;
 					position: absolute;
 					margin-left: 0;
-					z-index: 1;
 					height: rem(300px);
 				}
 			}

@@ -133,7 +133,6 @@
 			.sparks-iphone_white {
 				background-image: url('../images/iphone-white-medium.png');
 				height: rem(320px);
-				z-index: 1;
 				width: rem(269px);
 				top: rem(290px);
 				left: rem(3px);
@@ -171,7 +170,6 @@
 				position: absolute;
 				text-align: center;
 				top: rem(450px);
-				z-index: 150;
 				left: 22%;
 
 				h4 {
@@ -257,7 +255,6 @@
 					left: 48%;
 					width: 50%;
 					top: rem(80px);
-					z-index: 1;
 					height: rem(400px);
 					margin: 0;
 				}

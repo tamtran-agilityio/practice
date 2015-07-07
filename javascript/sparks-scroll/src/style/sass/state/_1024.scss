@@ -16,7 +16,6 @@
 			width: rem(398px);
 			height: rem(523px);
 			background-size: 100% 100%;
-			z-index: 1;
 		}
 	}
 }
@@ -83,7 +82,6 @@
 				position: absolute;
 				left: rem(180px);
 				top: rem(600px);
-				z-index: 150;
 				text-align: center;
 				h4 {
 					@include font-text(rem(20px), bold, $drive-text);
