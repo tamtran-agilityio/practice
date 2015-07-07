@@ -66,24 +66,24 @@
 	.exchange-info {
 		position: absolute;
 		top: rem(147px);
-		.radio-text {
+		.radio-text-description {
 			font-family: $font-roboto;
 			@include font-text(rem(13px), normal, $white);
 		}
 
-		.forums-text {
+		.forums-text-description {
 			margin-top: rem(30px);
 			font-family: $font-roboto;
 			@include font-text(rem(13px), normal, $white);
 		}
 
-		.sparks-text {
+		.sparks-text-description {
 			margin-top: rem(40px);
 			font-family: $font-roboto;
 			@include font-text(rem(16px), normal, $white);
 		}
 
-		.discuss-text {
+		.discuss-text-description {
 			font-family: $font-roboto;
 			@include font-text(rem(12px), normal, $white);
 		}

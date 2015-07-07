@@ -10,7 +10,7 @@
 	}
 	
 	.inside {
-		max-width: 950px;
+		max-width: rem(950px);
 		margin: 0 auto;
 		position: relative;
 		.topic-tweet {
