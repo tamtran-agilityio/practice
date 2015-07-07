@@ -85,23 +85,23 @@
 		z-index: 100;
 }
 
-.radio-text {
+.radio-text-description {
 	font-family: $font-roboto;
 	@include font-text(rem(22px), normal, $white);
 }
 
-.forums-text {
+.forums-text-description {
 	margin-top: rem(80px);
 	font-family: $font-roboto;
 	@include font-text(rem(22px), normal, $white);
 }
 
-.sparks-text {
+.sparks-text-description {
 	margin-top: rem(75px);
 	font-family: $font-roboto;
 	@include font-text(rem(35px), bold, $white);
 }
 
-.discuss-text {
+.discuss-text-description {
 	@include font-text(rem(18px), normal, $white);
 }
