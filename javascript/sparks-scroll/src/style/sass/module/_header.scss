@@ -29,14 +29,14 @@
 		margin: 0 auto;
 
 		.line-long {
-			background-image: url('../images/line-long.png');
+			@include bg-responsive('line-long.png');
 			@extend .basket-background;
 			height: rem(205px);
 			width: rem(4px);
 		}
 
 		.line-short {
-			background-image: url('../images/line-short.png');
+			@include bg-responsive('line-short.png');
 			@extend .basket-background;
 			height: rem(36px);
 			width: rem(4px);
@@ -44,7 +44,7 @@
 		}
 
 		.line-short-last {
-			background-image: url('../images/line-short.png');
+			@include bg-responsive('line-short.png');
 			@extend .basket-background;
 			height: rem(36px);
 			width: rem(4px);
@@ -53,7 +53,7 @@
 		}
 
 		.radio-airwaves {
-			background-image: url('../images/radio.png');
+			@include bg-responsive('radio.png');
 			@extend .basket-background;
 			height: rem(33px);
 			width: rem(36px);
@@ -61,7 +61,7 @@
 		}
 
 		.globes-online {
-			background-image: url('../images/globes.png');
+			@include bg-responsive('globes.png');
 			@extend .basket-background;
 			height: rem(48px);
 			width: rem(48px);
@@ -69,7 +69,7 @@
 		}
 
 		.sparks-cloud {
-			background: url('../images/cloud.png') no-repeat;
+			@include bg-responsive('cloud.png');
 			background-size: cover;
 			@extend .basket-background;
 			height: rem(103px);

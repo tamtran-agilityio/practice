@@ -88,7 +88,7 @@
 		height: rem(570px);
 		.content-sparks {
 			left: 25%;
-			top: rem(100px);
+			top: rem(80px);
     	margin: 0 auto;
 			.sparks-what-text {
 				font-family: $font-roboto;
@@ -127,14 +127,15 @@
 		}
 		
 		.background-sparks {
-			.sparks-iphone-black {
+			background-size: 100% 100%;
+			.sparks-iphone_black {
 				background-image: url('../images/iphone-black-medium.png');
 				height: rem(400px);
 				width: rem(180px);
 				top: rem(60px);
 			}
 
-			.sparks-iphone-white {
+			.sparks-iphone_white {
 				background-image: url('../images/iphone-white-medium.png');
 				height: rem(320px);
 				z-index: 1;

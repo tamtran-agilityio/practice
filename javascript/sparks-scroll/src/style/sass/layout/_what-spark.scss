@@ -9,19 +9,20 @@
 	.sparks-background {
 		background-repeat: no-repeat;
 		position: absolute;
+		background-size: 100% 100%;
 	}
-	.sparks-iphone-black {
+	.sparks-iphone_black {
 		background-image: url('../images/phone-black.png');
 		@extend .sparks-background;
-		width: rem(358px);
-		height: rem(630px);
+		width: rem(300px);
+		height: rem(619px);
 		top: rem(50px);
 	}
 
-	.sparks-iphone-white {
+	.sparks-iphone_white {
 		background-image: url('../images/phone-white.png');
 		@extend .sparks-background;
-		width: rem(525px);
+		width: rem(456px);
 		height: rem(523px);
 		top: rem(290px);
 		left: rem(50px);

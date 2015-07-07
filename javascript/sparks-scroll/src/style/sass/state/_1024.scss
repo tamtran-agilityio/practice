@@ -3,16 +3,16 @@
  */
 
 // Styles of what sparks
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 769px) {
 
 	.slide-what-sparks {
-		.sparks-iphone-black {
+		.sparks-iphone_black {
 			width: rem(250px);
 			height: rem(560px);
 			background-size: 100% 100%;
 		}
 
-		.sparks-iphone-white {
+		.sparks-iphone_white {
 			width: rem(398px);
 			height: rem(523px);
 			background-size: 100% 100%;

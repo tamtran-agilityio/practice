@@ -58,7 +58,7 @@ $(window).scroll(function() {
 		var opacity = (sparkScroll - $('.background-basket').offset().top + 200) / (sparkScroll / 100);
 		
 		// Set property background position content what spark
-		$('.background-basket').css({'background-position':'center '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
+		$('.background-basket').css({'background-position':'100% '+ (sparkScroll - $('.background-basket').offset().top) +'px'});
 		// Set property background opacity content what spark
 		$('.sparks-what-text').css({'opacity': opacity});
 		$('.fan-iphone').css({'opacity': opacity});
@@ -196,7 +196,7 @@ $(function(){
 	{
 			var curX = scroller.scrollTop();
 			var newX = curX + controller.curSpeed;
-			if (newX > fullW*0.5 - viewportW)
+			if (newX > fullW*0.5 - viewportW + 200)
 					newX -= fullW;
 			scroller.scrollTop(newX);
 	};
