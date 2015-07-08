@@ -4,320 +4,169 @@
 
 // styles of part header
 @media (max-width: 480px) {
-	.basket-pitch-slide {
-		height: rem(360px);
-		.basket-iphone {
-			background-image: url('../images/mobile/iphone-fail-small.png');
-			height: rem(253px);
-			width: rem(130px);
-			top: rem(107px);
+	.bg-pitch-basket {
+		background-image: url('../images/mobile-image/bg-pitch.png');
+		height: rem(220px);
+		background-repeat: no-repeat;
+	}
+	
+	.contain-ball {
+		width: 100%;
+		height: rem(220px);
+		.basket-ball {
+			width: 40%;
+			float: left;	
 		}
-		.background-basket {
-			background-position: center center;
-			height: 100%;
-			width: 100%;
-		}
-		.active {
-			.line-long {
-				@include bg-responsive("line-long.png");
-				height: rem(130px);
-				width: rem(2px);
-			}
-
-			.line-short {
-				@include bg-responsive("line-short.png");
-				height: rem(18px);
-				width: rem(2px);
-				margin-top: rem(10px);
-			}
-
-			.line-short-last {
-				@include bg-responsive("line-short.png");
-				height: rem(18px);
-				width: rem(2px);
-				margin-top: rem(10px);
-			}
-
-			.radio-airwaves {
-				@include bg-responsive("radio.png");
-				height: rem(21px);
-				width: rem(22px);
-				margin-top: rem(10px);
-				margin-top: rem(10px);
-			}
-
-			.globes-online {
-				@include bg-responsive("globes.png");
-				height: rem(30px);
-				width: rem(30px);
-				margin-top: rem(10px);
-			}
 		
-			.sparks-cloud {
+		.basket-ball_iphone {
+			background-image: url('../images/mobile-image/iphone-fail.png');
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
+			background-size: 80% auto;
+			height: rem(218px);
+		}
+
+		.inventing-chain {
+			width: 20%;
+			float: left;
+
+			.inventing-chain_line-long {
+				@include bg-responsive("line-long.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				height: rem(80px);
+			}
+
+			.inventing-chain_radio {
+				@include bg-responsive("radio.png");
+				background-repeat: no-repeat;
+				background-position: center; 
+				height: rem(21px);
+			}
+
+			.inventing-chain_line-short {
+				@include bg-responsive("line-short.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				height: rem(14px);
+			}
+
+			.inventing-chain_.globes-online {
+				@include bg-responsive("globes.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				height: rem(26px);
+			}
+
+			.inventing-chain_line-short-last {
+				@include bg-responsive("line-short.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				height: rem(14px);
+			}
+
+			.inventing-chain_cloud {
 				@include bg-responsive("cloud.png");
-				height: rem(45px);
-				width: rem(45px);
-				margin-top: rem(10px);
+				background-repeat: no-repeat;
+				background-position: center;
+				height: rem(38px);
+			}
+		}
+
+		.exchange-info {
+			width: 40%;
+			display: block;
+			overflow: auto;
+			padding-top: 130px;
+
+			.radio-text-description {
+				@include font-text(rem(11px), normal, $white);
+				font-family: $font-roboto;
+			}
+
+			.forums-text-description {
+				@include font-text(rem(11px), normal, $white);
+				font-family: $font-roboto;
+				margin-top: rem(14px);
+			}
+
+			.sparks-text-description {
+				@include font-text(rem(12px), normal, $white);
+				font-family: $font-roboto;
+				margin-top: rem(17px);
+			}
+
+			.discuss-text-description {
+				@include font-text(rem(10px), normal, $white);
+				font-family: $font-roboto;
 			}
 		}
 	}
-	.exchange-info {
-		position: absolute;
-		top: rem(147px);
-		.radio-text-description {
-			@include font-text(rem(13px), normal, $white);
-		}
-
-		.forums-text-description {
-			margin-top: rem(30px);
-			@include font-text(rem(13px), normal, $white);
-		}
-
-		.sparks-text-description {
-			margin-top: rem(40px);
-			@include font-text(rem(16px), normal, $white);
-		}
-
-		.discuss-text-description {
-			@include font-text(rem(12px), normal, $white);
-		}
-	}
-}
 
 // Styles of what spark
-@media (max-width: 480px) {
+	.sparks-insiders {
+		
+	}
+	.sparks-insiders_content {
+		margin: 0 auto;
+		width: 70%;
+		padding-top: rem(50px);
+		.sparks-insiders_content-what {
+			@include font-text(rem(16px), bold, $black);
+			font-family: $font-roboto;
+			line-height: rem(20px);
+		}
 
-	.what-sparks {
-		height: 330px;
-		.content-sparks {
-			position: absolute;
-			left: 10%;
-			top: rem(30px);
-			.sparks-what-text {
-				@include font-text(rem(14px), bold, $black);
-				line-height: rem(10px);
+		.sparks-insiders_content-fan {
+			@include font-text(rem(14px), lighter, $black);
+			line-height: rem(20px);
+			font-family: $font-roboto;
+		}
+
+		.sparks-insiders_content-app {
+			padding-left: 0;
+
+			li:before {
+				content: "";
+				display: block;
+				background: url('../images/desktop-image/icon-spark.png') no-repeat;
+				margin-top: rem(5px);
+				float: left;
+				width: rem(15px);
+				height: rem(15px);
+				background-size: 50%;
+				margin-right: rem(-5px);
+				margin-top: rem(5px);
 			}
-
-			.fan-iphone {
+			li {
 				@include font-text(rem(12px), lighter, $black);
-				line-height: rem(10px);
-			}
-
-			.app-iphone {
-				padding-left: 0;
-
-				li:before {
-					width: rem(15px);
-					height: rem(15px);
-					background-size: 50%;
-					margin-right: rem(-5px);
-					margin-top: rem(5px);
-				}
-				li {
-					@include font-text(rem(11px), lighter, $black);
-					list-style: none;
-					margin: rem(0 0 2px 0);
-					display: inline-block;
-				}
-			}
-	
-			.channels-text {
-				@include font-text(rem(12px), bold, $black);
+				font-family: $font-roboto;
+				list-style: none;
+				margin-bottom: rem(10px);
+				line-height: rem(16px);
+				margin: rem(0 0 2px 0);
+				display: inline-block;
 			}
 		}
 
-		.background-sparks {
-			.sparks-iphone_black {
-				background-image: url('../images/mobile/iphone-black.png');
-				background-size: 100% 100%;
-				height: rem(251px);
-				width: rem(105px);
-				top: rem(20px);
-			}
-
-			.sparks-iphone_white {
-				background-image: url('../images/mobile/iphone-white.png');
-				background-size: 100% 100%;
-				height: rem(200px);
-				width: rem(187px);
-				top: rem(170px);
-				left: 0;
-			}
+		.sparks-insiders_content-channels {
+			@include font-text(rem(14px), lighter, $black);
+			font-family: $font-roboto;
 		}
 	}
-}
 
-//Styles of part how does
-@media (max-width: 480px) {
-	.how-does {
-		height: 660px;
-		.benefit-content {
-			text-align: center;
-			list-style: none;
-			padding-top: rem(20px);
-			li:first-child{
-				@include font-text(rem(13px), lighter, $white);
-				margin-top: rem(40px);
+	.sparks-insiders_phone {
+		margin: 0 auto;
+		.sparks-insiders_phone-black {
+				background-image: url('../images/mobile-image/iphone-black.png');
+				background-repeat: no-repeat;
+				height: rem(151px);
 			}
 
-			li:last-child {
-				@include font-text(rem(10px), lighter, $white);
-				margin-top: rem(10px);
-			}
-		}
-		.inside {
-			.comment-visual {
-				background-color: $white;
-				border-radius: rem(20px);
-				width: 40%;
-				height: rem(90px);
-				position: absolute;
-				left: 24%;
-				top: rem(350px);
-				text-align: center;
-				h4 {
-					@include font-text(rem(18px), lighter, $drive-text);
-					line-height: rem(10px);
-				}
-				span {
-					@include font-text(rem(15px), lighter, $drive-text);
-				}
-			}
-
-			.grow-content {
-				position: absolute;
-				left: 58%;
-				width: 35%;
-				margin-left: 0;
-				top: rem(80px);
-				h1 {
-					font-size: rem(12px);
-				}
-
-				p {
-					font-size: rem(10px);
-				}
-			}
-			
-			.topic-content {
-				position: absolute;
-				left: 5%;
-				top: rem(525px);
-				h1 {
-					font-size: rem(12px);
-				}	
-				
-				p {
-					font-size: rem(10px);
-					margin-right: rem(120px);
-				}
-			}
-
-			.arrow-left {
-				background-size: 100% 100%;
-				top: rem(330px);
-				left: 15%;
-				height: rem(35px);
-				width: 12%;
-			}
-
-			.arrow-right {
-				background-size: 100% 100%;
-				top: rem(360px);
-				left: 60%;
-				height: rem(12px);
-				width: 12%;
-			}
-			.background-tweet-wall {
-				height: 700px;
-				.background-tweet {
-					background-size: 100% 100%;
-					left: 5%;
-					width: 50%;
-				}
-
-				.tweet-wall {
-					@include bg-responsive("tweet-wall.png");
-					@extend .background-tweet;
-					height: rem(120px);
-					position: absolute;
-					left: 5%;
-				}
-
-				.content-comment {
-					@include bg-responsive("content-comment.png");
-					@extend .background-tweet;
-					top: rem(130px);
-					height: rem(140px);
-				}
-
-				.comment-list {
-					@include bg-responsive("comment-list.png");
-					@extend .background-tweet;
-					top: rem(280px);
-					height: rem(140px);
-					opacity: 0.5;
-				}
-
-				.content-user {
-					@include bg-responsive("content-user.png");
-					background-size: 100% 100%;
-					width: 50%;
-					margin-top: 70px;
-					left: 47%;
-					position: absolute;
-					margin-left: 0;
-					height: rem(300px);
-				}
-			}
-		}
-	}
-}
-
-// Styles of part screenshot
-@media (max-width: 480px) {
-	.screenshot {
-		height: rem(310px);
-		background-color: $white;
-		.inside {
-			.topic-tweet {
-				@include bg-responsive("topic-tweet.png");
-				position: absolute;
-				top: -3rem;
-				left: 5%;
-				height: rem(180px);
-				width: 35%;
-			}
-
-			.background-ipad {
-				@include bg-responsive("ipad.png");
-				position: absolute;
-				padding-top: rem(27px);
-				top: -11rem;
-				height: rem(300px);
-				width: 50%;
-				left: 45%;
-			}
-
-			.content-ipad {
-				height: rem(250px);
-				width: 94%;
-				top: rem(26px);
-				.images-scrolling {
-					height: rem(250px);
-					left: 6%;
-					width: 94%;
-				}
-			}
-
-			.arrow-horizontal {
-				position: absolute;
-				top: rem(30px);
-				left: 35%;
-				height: 4%;
-				width: 20%;
-				height: rem(20px);
-			}
+		.sparks-insiders_phone-white {
+			background-image: url('../images/mobile-image/iphone-white.png');
+			background-repeat: no-repeat;
+			height: rem(144px);
 		}
 	}
 }
