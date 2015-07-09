@@ -7,20 +7,15 @@ html(lang='en')
 		title Parallax Sparks
 		link(href='styles/styles.css', rel='stylesheet')
 	body
-		.container-fluid
-			.row
-				// part header
-				include partials/header.jade
-			.row
-				// part layout what spark
-				include partials/what-sparks.jade
-			.row
-				// part layout how does
-				include partials/how-does.jade
-				// part layout screenshot
-				include partials/screenshot.jade
-			.row
-				// part footer
-				include partials/footer.jade
+		// part header
+		include partials/header.jade
+		// part layout what spark
+		include partials/what-sparks.jade
+		// part layout how does
+		include partials/how-does.jade
+		// part layout screenshot
+		include partials/screenshot.jade
+		// part footer
+		include partials/footer.jade
 		script(type="text/javascript" src="js/library.js")
 		script(type="text/javascript" src="js/main.js")
