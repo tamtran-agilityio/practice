@@ -1,0 +1,351 @@
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width : 320px) {
+
+// styles of part header
+	.bg-pitch-basket {
+		background: url('../images/mobile-image/bg-pitch.png') center no-repeat;
+		height: rem(217px);
+	}
+	
+	.contain-ball {
+		width: 100%;
+		height: rem(217px);
+		.basket-ball {
+			width: 40%;
+			float: left;	
+		}
+		
+		.basket-ball__iphone {
+			@include bg-responsive("iphone-fail.png");
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
+			background-size: 80% auto;
+			height: rem(217px);
+		}
+
+		.inventing-chain {
+			width: 20%;
+			float: left;
+			
+			.inventing-chain__line--long,
+			.inventing-chain__radio,
+			.inventing-chain__line--short,
+			.inventing-chain__globes--online,
+			.inventing-chain__line--short-last,
+			.inventing-chain__cloud {
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			.inventing-chain__line--long {
+				@include bg-responsive("line-long.png");
+				height: rem(80px);
+			}
+
+			.inventing-chain__radio {
+				@include bg-responsive("radio.png");
+				height: rem(21px);
+			}
+
+			.inventing-chain__line--short {
+				@include bg-responsive("line-short.png");
+				height: rem(14px);
+			}
+
+			.inventing-chain__globes--online {
+				@include bg-responsive("globes.png");
+				height: rem(26px);
+			}
+
+			.inventing-chain__line--short-last {
+				@include bg-responsive("line-short.png");
+				height: rem(14px);
+			}
+
+			.inventing-chain__cloud {
+				@include bg-responsive("cloud.png");
+				height: rem(38px);
+			}
+		}
+
+		.exchange-info {
+			width: 40%;
+			float: left;
+			display: block;
+			padding-top: 130px;
+
+			.exchange-info__radio {
+				@include font-text(rem(11px), normal, $white, $font-roboto);
+			}
+
+			.exchange-info__forums {
+				@include font-text(rem(11px), normal, $white, $font-roboto);
+				margin-top: rem(14px);
+			}
+
+			.exchange-info__sparks {
+				@include font-text(rem(14px), normal, $white, $font-roboto);
+				margin-top: rem(17px);
+			}
+
+			.exchange-info__discuss {
+				@include font-text(rem(9px), normal, $white, $font-roboto);
+			}
+		}
+	}
+
+// Styles of sparks inssiders
+	.sparks-insiders {
+		height: rem(540px);
+	}
+	.sparks-insiders__content {
+		margin: 0 auto;
+		width: 70%;
+		padding-top: rem(50px);
+		.sparks-insiders__content--what {
+			@include font-text(rem(14px), bold, $black, $font-roboto);
+			line-height: rem(20px);
+		}
+
+		.sparks-insiders__content--fan {
+			@include font-text(rem(12px), lighter, $black, $font-roboto);
+			line-height: rem(20px);
+		}
+
+		.sparks-insiders__content--app {
+			padding-left: 0;
+
+			li:before {
+				content: "";
+				display: block;
+				background: url('../images/desktop-image/icon-spark.png') no-repeat;
+				margin-top: rem(5px);
+				float: left;
+				width: rem(15px);
+				height: rem(15px);
+				background-size: 50%;
+				margin-right: rem(-5px);
+				margin-top: rem(5px);
+			}
+			li {
+				@include font-text(rem(11px), lighter, $black, $font-roboto);
+				list-style: none;
+				margin-bottom: rem(10px);
+				line-height: rem(16px);
+				margin: rem(0 0 2px 0);
+				display: inline-block;
+			}
+		}
+
+		.sparks-insiders__content--channels {
+			@include font-text(rem(12px), lighter, $black, $font-roboto);
+		}
+	}
+
+	.sparks-insiders__phone {
+		margin: 0 auto;
+		.sparks-insiders__phone--black,
+		.sparks-insiders__phone--white {
+				background-repeat: no-repeat;
+				position: relative;	
+		}
+		.sparks-insiders__phone--black {
+			@include bg-responsive('iphone-black.png');
+			height: rem(165px);
+			background-size: 35% 100%;
+			left: 20%;
+			top: rem(20px);
+		}
+
+		.sparks-insiders__phone--white {
+			@include bg-responsive('iphone-white.png');
+			height: rem(144px);
+			background-size: 60% 100%;
+			left: 25%;
+			top: -8rem;
+		}
+	}
+
+	// Styles part influence new digital medium
+	.influence-digital {
+		.influence-digital__visual {
+			background-color: $black;
+			height: rem(920px);
+		}
+
+		.influence-digital__benefit {
+			text-align: center;
+			list-style: none;
+			padding-top: rem(20px);
+			li:first-child{
+				@include font-text(rem(13px), lighter, $white, $font-roboto);
+			}
+
+			li:last-child {
+				@include font-text(rem(10px), lighter, $white, $font-roboto);
+				margin-top: rem(10px);
+			}
+		}
+
+		.influence-digital__posting,
+		.influence-digital__specific-topics {
+			width: 80%;
+			margin-left: 10%;
+			h3 {
+				@include font-text(rem(14px), lighter, $white, $font-roboto);
+				margin: rem(20px 0 5px);
+				display: inline-block;
+			}
+
+			p {
+				@include font-text(rem(10px), lighter, $white, $font-roboto);
+				display: inline;
+			}
+		}
+		.influence-digital__drive {
+			position: absolute;
+			top: rem(1205px);
+			left: 25%;
+			background-color: $white;
+			border-radius: rem(20px);
+			height: rem(70px);
+			text-align: center;
+			width: rem(120px);
+			z-index: 1;
+			h4 {
+				@include font-text(rem(16px), lighter, $drive-text, $font-roboto);
+				line-height: rem(20px);
+			}
+			span {
+				@include font-text(rem(12px), lighter, $drive-text, $font-roboto);
+			}
+		}
+
+		.bg-arrow__left, .bg-arrow__right {
+			background-repeat: no-repeat;
+			position: absolute;
+			z-index: 2;
+			left: 45%;
+		}
+		.bg-arrow__left {
+			@include bg-responsive('arrow-left.png');
+			height: rem(50px);
+			width: rem(30px);
+			top: rem(1160px);
+		}
+
+		.bg-arrow__right {
+			@include bg-responsive('arrow-right.png');
+			height: rem(50px);
+			width: rem(30px);
+			top: rem(1260px);
+		}
+
+		.bg-tweet__wall {
+			.tweet-wall__profile,
+			.tweet-wall__cluster,
+			.tweet-wall__recent,
+			.tweet-wall__expanded{
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 80% 100%;
+			}
+			.tweet-wall__profile {
+				@include bg-responsive('profile.png');
+				margin-top: rem(10px);
+				height: rem(80px);
+			}
+			.tweet-wall__cluster {
+				@include bg-responsive('cluster-tweet.png');
+				margin-top: rem(10px);
+				height: rem(110px);
+			}
+			.tweet-wall__recent {
+				@include bg-responsive('recent-tweet.png');
+				margin-top: rem(10px);
+				height: rem(100px);
+			}
+			.tweet-wall__expanded {
+				@include bg-responsive('pic-tweet-expanded.png');
+				margin-top: rem(100px);
+				height: rem(268px);
+			}
+		}
+	}
+
+	// To do: styles part screenshot silver
+	.screenshot-silver {
+		height: rem(460px);
+
+		.screenshot__expanded--details, 
+		.screenshot__arrow--horizontal,
+		.screenshot__expanded--put,
+		.screenshot__expanded--in {
+			background-repeat: no-repeat;
+			background-position: center;
+			position: relative;
+		}
+
+		.screenshot__expanded--details {
+			@include bg-responsive('pic-tweet-expanded_details.png');
+			height: rem(182px);
+			background-size: 70% 100%;
+			top: -4rem;
+		}
+
+		.screenshot__arrow--horizontal {
+			@include bg-responsive('arrow-horizontal.png');
+			height: rem(60px);
+			top: -6rem;
+			z-index: 1;
+		}
+
+		.screenshot__expanded--put {
+			@include bg-responsive('ipad.png');
+			background-size: 80% 100%;
+			height: rem(272px);
+			top: -9rem;
+		}
+
+		.screenshot__expanded--in {
+			@include bg-responsive('layer-ipad.png');
+			background-size: 71% 100%;
+			height: rem(227px);
+			top: -34.1rem;
+		}
+	}
+	
+	// Styles part footer
+	.bg-ball__learn {
+		background: url('../images/mobile-image/bg-foobal.png') center no-repeat;
+		height: rem(218px);
+	}
+	.learn-more {
+		text-align: center;
+		.learn-more__title{
+			@include font-text(rem(16px), lighter, $white, $font-roboto);
+			padding-top: rem(40px);
+		}
+
+		.learn-more__button {
+			@include border-radius(rem(60px));
+			@include font-text(rem(15px), lighter, $white, $font-roboto);
+			background: url('../images/desktop-image/bg-spark-buttons.png') no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
+			height: rem(40px);
+			width: rem(100px);
+			line-height: rem(40px);
+			text-decoration: none;
+			margin: rem(20px 0 70px);
+			&:hover {
+				background-color: $bg-hover-buttons;
+				text-decoration: none;
+			}
+		}
+
+		.learn-more__address-spark {
+			@include font-text(rem(10px), lighter, $white, $font-roboto);
+		}
+	}
+}
