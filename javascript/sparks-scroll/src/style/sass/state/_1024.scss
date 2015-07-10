@@ -1,155 +1,47 @@
-/* 
- * Styles with sreen min 769 and max 1024
- */
+/* Large Devices, Wide Screens */
 
-// Styles of what sparks
-@media screen and (max-width: 1024px) and (min-width: 769px) {
+@media only screen and (min-width : 1024px) {
+	
+	// To do: styles part sparks insiders
+	.sparks-insiders {
+		height: rem(440px);
+	}
 
-	.what-sparks {
-		.sparks-iphone_black {
-			width: rem(250px);
-			height: rem(560px);
-			background-size: 100% 100%;
-		}
-
-		.sparks-iphone_white {
-			width: rem(398px);
-			height: rem(523px);
-			background-size: 100% 100%;
+	// To do: styles part screen silver
+	.screenshot-silver {
+		.screenshot__expanded--in {
+			height: rem(356px);
+			top: -86rem;
 		}
 	}
-}
-
-//Style of part sreenshot
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-	.screenshot {
-		height: rem(510px);
-		background-color: $white;
-		.inside {
-			max-width: 700px;
-			margin: 0 auto;
-			position: relative;
-			.topic-tweet {
-				width: 45%;
-				height: rem(310px);
-				position: absolute;
-			}
-
-			.background-ipad {
-				top: -17rem;
-				left: 47%;
-				width: 55%;
-				height: rem(500px);
-				position: absolute;
-				padding-top: rem(43px);
-			}
-
-			.content-ipad {
-				height: rem(398px);
-				top: rem(43px);
-				width: rem(371px);
-				.images-scrolling {
-					left: rem(27px);
-					height: rem(398px);
-					width: rem(331px);
-				}
-			}
-
-			.arrow-horizontal {
-				top: rem(20px);
-				left: 42%;
-				height: rem(30px);
-				width: 10%;
-				position: absolute;
+	
+	// To do: styles part influence digital
+	.influence-digital {
+		.bg-arrow__right {
+			left: 38%;
+		}
+	}
+	.influence-digital {
+		.bg-tweet__wall {
+			.tweet-wall__expanded {
+				background-size: 80% auto;
 			}
 		}
 	}
-}
 
-// Styles of part how does
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-	.how-does {
-		height: rem(1150px);
-		.inside {
-			max-width: 700px;
-			margin: 0 auto;
-			position: relative;
-			.comment-visual {
-				background-color: $white;
-				@include border-radius(30px);
-				width: rem(170px);
-				height: rem(105px);
-				position: absolute;
-				left: rem(180px);
-				top: rem(600px);
-				text-align: center;
-				h4 {
-					@include font-text(rem(20px), bold, $drive-text);
-				}
-				span {
-					@include font-text(rem(16px), normal, $drive-text);
-				}
-			}
-			.grow-content {
-				position: absolute;
-				margin-left: rem(435px);
-				width: rem(250px);
-				h3 {
-					@include font-text(rem(24px), normal, $white);
-				}
+	// To do: styles part screenshot silver
+	.screenshot-silver {
 
-				p {
-					@include font-text(rem(14px), normal, $white);
-				}
-			}
-			.topic-content {
-				position: absolute;
-				top: rem(904px);
-				width: rem(250px);
-				h3 {
-					@include font-text(rem(24px), normal, $white);
-				}
+		.screenshot__expanded--details {
+			height: rem(285px);
+		}
+		.screenshot__expanded--put {
+			height: rem(448px);
+		}
 
-				p {
-					@include font-text(rem(14px), normal, $white);
-				}
-			}
-			.arrow-left {
-				width: rem(77px);
-				height: rem(83px);
-				top: rem(550px);
-				left: rem(130px);
-			}
-			.arrow-right {
-
-				width: rem(175px);
-				height: rem(34px);
-				top: rem(610px);
-
-				left: rem(330px);
-			}
-			.background-tweet-wall {
-				.tweet-wall {
-					background-size: 75% 80%;
-				}
-
-				.content-comment {
-					top: rem(240px);
-					background-size: 75% 80%;
-				}
-
-				.comment-list {
-					top: rem(505px);
-					background-size: 75% 80%;
-					opacity: 0.5;
-				}
-
-				.content-user {
-					width: rem(400px);
-					height: rem(500px);
-					margin-left: rem(330px);
-				}
-			}
+		.screenshot__expanded--in {
+			height: rem(357px);
+			top: -88rem;
 		}
 	}
 }
