@@ -119,7 +119,9 @@
 		}
 
 		.influence-digital__drive {
+			display: none;
 			top: rem(980px);
+			width: 35%;
 			left: 21%;
 		} 
 		
@@ -156,6 +158,7 @@
 			top: rem(990px);
 		}
 		.bg-tweet__wall {
+			display: none;
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
 			.tweet-wall__recent {

@@ -22,12 +22,12 @@ var config = {
 	jsOut: 'out/js',
 	jsOutLint: 'out/js/*.js',
 
-	assetImages: 'src/images/*.*',
-	assetImagesSmall: 'src/images/mobile/*.*',
-	assetImagesOut: 'out/images',
-	assetImagesSmallOut: 'out/images/mobile',
-	assetImagesMedium: 'src/images/image-ipad/*.*',
-	assetImagesMediumOut: 'out/images/image-ipad',
+	assetImages: 'src/images/desktop-image/*.*',
+	assetImagesOut: 'out/images/desktop-image',
+	assetImagesSmall: 'src/images/mobile-image/*.*',
+	assetImagesSmallOut: 'out/images/mobile-image',
+	assetImagesMedium: 'src/images/tablet-image/*.*',
+	assetImagesMediumOut: 'out/images/tablet-image',
 
 	assetFont: 'src/fonts/roboto/*.*',
 	assetFontOut: 'out/fonts',

@@ -1,4 +1,4 @@
-/* Large Devices, Wide Screens */
+/* Medium Devices, Desktop */
 
 @media only screen and (min-width : 1024px) {
 	
@@ -17,8 +17,12 @@
 	
 	// To do: styles part influence digital
 	.influence-digital {
+
+		.influence-digital__drive {
+			width: 20%;
+		}
 		.bg-arrow__right {
-			left: 38%;
+			left: 41%;
 		}
 	}
 	.influence-digital {

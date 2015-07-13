@@ -1,0 +1,22 @@
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1024px) {
+	// Styles of part header
+	.contain-ball{
+		.basket-ball__iphone {
+			background-size: 60% auto;
+		}
+	}
+
+	.sparks-insiders {
+		.sparks-insiders__phone {
+			.sparks-insiders__phone--black {
+			}
+		}
+		.sparks-insiders__phone {
+			.sparks-insiders__phone--black {
+				background-size: 45% auto;	
+			}
+		}		
+	}
+}
