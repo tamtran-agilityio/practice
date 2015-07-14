@@ -12,7 +12,6 @@
 		height: rem(281px);
 
 		.basket-ball__iphone {
-			background-size: 63% auto;
 			height: 25.3rem;
 			top: 44px;
 			position: relative;
@@ -96,15 +95,14 @@
 			height: 340px;
 			float: left;
 			.sparks-insiders__phone--black {
-				background-size: 50% auto;
 				height: rem(300px);
 				left: 0;
 				top: rem(40px);
 			}
 
 			.sparks-insiders__phone--white {
-				background-size: 80% auto;
 				height: rem(220px);
+				width: 100%;	
 				left: 0;
 				top: -14rem;
 			}
@@ -115,54 +113,57 @@
 	.influence-digital {
 
 		.influence-digital__visual {
-			height: rem(650px);
+			height: rem(560px);
 		}
 
 		.influence-digital__drive {
 			display: none;
-			top: rem(980px);
-			width: 35%;
+			top: rem(910px);
+			width: 30%;
 			left: 21%;
 		} 
 		
 		.influence-digital__benefit {
-			padding-top: rem(40px);
+			padding: rem(40px 0 20px);
 		}
 		
 		.influence-digital__specific-topics,
 		.influence-digital__posting {
-			position: relative;
-			width: 40%;
+			position: absolute;
 			margin-left: 0;
 			p {
 				display: block;
 			}
 		}
 		.influence-digital__specific-topics {
-			left: 5%;
-			top: -42rem;
+			left: 10%;
+			width: 30%;
+			position: absolute;
+			top: 107rem;
 		}
 		.influence-digital__posting {
 			left: 60%;
-			top: rem(50px);
+			top: 69rem;
 		}
 
 		.bg-arrow__left {
-			top: rem(970px);
+			top: rem(900px);
 			left: 19%;
 		}
 
 		.bg-arrow__right {
 			height: rem(20px);
 			width: rem(50px);
-			top: rem(990px);
+			top: rem(920px);
 		}
 		.bg-tweet__wall {
+			width: 80%;
+			margin: 0 auto;
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
 			.tweet-wall__recent {
-				background-position: 10% 100%;
-				background-size: 50% 100%;
+				background-position: initial;
+				margin-top: 0;
 			}
 
 			.tweet-wall__profile {
@@ -170,7 +171,7 @@
 			}
 
 			.tweet-wall__cluster {
-				height: rem(140px);
+				height: rem(135px);
 			}
 
 			.tweet-wall__recent {
@@ -178,12 +179,12 @@
 			}
 
 			.tweet-wall__expanded {
-				position: relative;
-				top: -45rem;
+				background-position: initial;
+				position: absolute;
+				top: 68rem;
 				left: 45%;
 				width: 50%;
 				height: rem(310px);
-				background-size: 100% auto;
 			}
 		}
 	}
@@ -192,31 +193,42 @@
 	.screenshot-silver {
 		height: rem(340px);
 
+		.container__screenshot {
+			width: 80%;
+			margin: 0 auto;
+		}
+
 		.screenshot__expanded--details {
-			background-position: 10%;
+			background-position: initial;
 			height: rem(169px);
-			background-size: 30% auto;
+			width: 50%;
+			top: 114rem;
+			left: 10%;
 		}
 
 		.screenshot__arrow--horizontal {
-			background-position: 38%;
+			background-position: initial;
+			left: 32%;
 			height: rem(60px);
-			top: -14rem;
+			width: rem(80px);
+			top: 118rem;
 			z-index: 1;
 		}
 
 		.screenshot__expanded--put {
-			background-position: 88%;
-			background-size: 54% auto;
-			height: rem(350px);
-			top: -31rem;
-		}
+			position: absolute;
+			height: rem(380px);
+			width: rem(221px);
+			left: 40%;
+			top: 110rem;
 
-		.screenshot__expanded--in {
-			background-position: 83%;
-			background-size: 48% auto;
-			height: rem(295px);
-			top: -63.2rem;
+			.screenshot__expanded--in {
+				background-position: initial;
+				top: 43px;
+				left: 20px;
+				width: rem(190px);
+				height: rem(250px);
+			}
 		}
 	}
 

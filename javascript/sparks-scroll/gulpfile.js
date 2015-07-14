@@ -91,9 +91,9 @@ gulp.task('sass', function() {
     	css: 'out/styles/',
       sass: 'src/style/'
     }))
-  	.pipe(minifyCss({
-			compatibility: 'ie8'
-		}))
+  // 	.pipe(minifyCss({
+		// 	compatibility: 'ie8'
+		// }))
     .pipe(gulp.dest('out/styles'));
 });
 

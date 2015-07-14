@@ -6,10 +6,8 @@
 	}
 	.contain-ball{
 		.basket-ball__iphone {
-			background-size: 70% auto;
-			position: relative;
-			height: rem(430px);
-			top: 0;
+			height: rem(383px);
+			top: rem(47px);
 		}
 
 		.inventing-chain {
@@ -65,13 +63,13 @@
 
 	// Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(420px);
+		height: rem(480px);
 		.sparks-insiders__content {
 			width: 40%;
 			margin-left: 10%;
-			padding-top: rem(100px);
 			display: inline-block;
 			float: left;
+			padding-top: rem(100px);
 
 			.sparks-insiders__content--what {
 				font-size: rem(20px);
@@ -97,16 +95,18 @@
 			float: left;
 			.sparks-insiders__phone--black {
 				height: rem(390px);
+				background-size: 70%;
 				left: 0;
 				top: rem(40px);
 			}
 
 			.sparks-insiders__phone--white {
-				background-size: 100% auto;
-				height: rem(300px);
-				width: 80%;
-				left: 10%;
-				top: -19rem;
+				position: absolute;
+				background-size:100%;
+				height: rem(323px);
+				top: rem(630px);
+				left: 50%;
+				width: 50%;
 			}
 		}
 	}
@@ -128,13 +128,12 @@
 		}
 
 		.influence-digital__drive {
-			top: rem(1280px);
-			width: 25%;
-			left: 24%;
+			width: 22%;
+			top: 140rem;
 		} 
 		
 		.influence-digital__benefit {
-			padding-top: rem(80px);
+			// padding-top: rem(80px);
 		}
 		
 		.influence-digital__specific-topics,
@@ -145,82 +144,79 @@
 		}
 		.influence-digital__specific-topics {
 			width: 30%;
-			left: 12%;
-			top: -46rem;
+			top: 162rem;
 		}
 		.influence-digital__posting {
+			top: 99rem;
 			width: 30%;
-			left: 55%;
+			left: 60%;
 			line-height: rem(14px);
 		}
 
 		.bg-arrow__left {
-			top: rem(1240px);
+			top: rem(1360px);
+			left: 18%;
 			width: rem(70px);
 			height: rem(85px);
 		}
 
 		.bg-arrow__right {
 			width: rem(110px);
-			top: rem(1280px);
-			left: 45%;
+			top: rem(1400px);
+			left: 40%;
 		}
 		.bg-tweet__wall {
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
 			.tweet-wall__recent {
-				background-position: 20% 100%;
-				background-size: 40% 100%;
 			}
 
 			.tweet-wall__profile {
-				height: rem(142px);
+				height: rem(192px);
 			}
 
 			.tweet-wall__cluster {
-				height: rem(160px);
+				height: rem(210px);
 			}
 
 			.tweet-wall__recent {
-				height: rem(140px);
+				height: rem(200px);
 			}
 
 			.tweet-wall__expanded {
-				position: relative;
-				top: -50rem;
-				left: 40%;
-				height: rem(370px);
-				background-size: 90% auto;
+				height: rem(400px);
+				top: 105rem;
 			}
 		}
 	}
 
 		// To do: styles part screenshot silver
 	.screenshot-silver {
-		height: rem(340px);
+		height: rem(560px);
 		.screenshot__expanded--details {
-			background-position: 16%;
+			top: 169rem;
+			left: 10%;
 			height: rem(269px);
-			top: -8rem;
 		}
 
 		.screenshot__arrow--horizontal {
-			background-position: 42%;
-			top: -23rem;
+			width: 10rem;
+			top: 179rem;
+			left: 35%;
 		}
 
 		.screenshot__expanded--put {
-			background-position: 80%;
-			background-size: 42% auto;
-			height: rem(410px);
-			top: -47rem;
-		}
-
-		.screenshot__expanded--in {
-			background-position: 77.2%;
-			background-size: 36.3% auto;
-			height: rem(330px);
-			top: -84.5rem;
+			height: rem(400px);
+			width: rem(350px);
+			background-size: 80%;
+			top: 165rem;
+			.screenshot__expanded--in {
+				top: 60px;
+				left: 28px;
+				background-size: inherit;
+				width: 30.7rem;
+				height: 32.7rem;
+			}
 		}
 	}
 

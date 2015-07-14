@@ -2,93 +2,57 @@
 
 @media only screen and (min-width : 1200px) {
 	// Styles of part header
-	.contain-ball{
-		.basket-ball__iphone {
-			background-size: 50% auto;
-		}
-	}
-
 	.sparks-insiders {
 		.sparks-insiders__content {
 			margin-left: 30%;
 			width: 20%;
-		}
-
-		.sparks-insiders__phone {
-			.sparks-insiders__phone--black {
-				background-size: 30% auto;	
-			}
-
-			.sparks-insiders__phone--white {
-				background-size: 65% auto;	
-			}
 		}
 	}
 
 	.influence-digital {
 		.influence-digital__posting {
 			width: 20%;
+			left: 63%;
+			top: 103rem;
 		}
 		
 		.influence-digital__specific-topics {
 			width: 20%;
-			left: 25%;
+			left: 20%
 		}
 
 		.influence-digital__drive {
-			width: 13%;
-			left: 35%;
+			width: 15%;
+			left: 30%;
 			top: rem(1340px);
 		}
 		
 		.bg-arrow__left {
 			top: rem(1300px);
-			left: 32%;
+			left: 27%;
 		}
 
 		.bg-arrow__right {
 			width: rem(110px);
 			top: rem(1340px);
-			left: 46%;
+			left: 43%;
 		}
 
 		.bg-tweet__wall {
-			.tweet-wall__profile,
-			.tweet-wall__cluster,
-			.tweet-wall__recent {
-				background-position: 35% 100%;
-				background-size: 28% 100%;
-			}
-			.tweet-wall__expanded {
-				left: 38%;
-				background-size: 56% auto;
-			}
+			width: 60%;
 		}
 	}
-
 	.screenshot-silver {
-		height: rem(420px);
 		.screenshot__expanded--details {
-			background-position: 31% 100%;
-			background-size: 20% 100%;
-			top: -7.5rem;
+			left: 20%;
 		}
 
 		.screenshot__arrow--horizontal {
-			background-position: 48%;
+			left: 43%;
 		}
 
 		.screenshot__expanded--put {
-			background-size: 30% auto;
-			background-position: 70%;
-			height: rem(500px);
-		}
-
-		.screenshot__expanded--in {
-			background-position: 69% !important;
-			background-size: 26% auto;
-			height: rem(400px);
-			top: -92.6rem;
+			left: 45%;
 		}
 	}
 }

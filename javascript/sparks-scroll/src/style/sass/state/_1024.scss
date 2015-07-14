@@ -2,16 +2,27 @@
 
 @media only screen and (min-width : 1024px) {
 	
+	.contain-ball{
+		.basket-ball__iphone {
+			background-size: initial;	
+		}
+	}
 	// To do: styles part sparks insiders
 	.sparks-insiders {
-		height: rem(440px);
+		.sparks-insiders__phone {
+			.sparks-insiders__phone--black {
+					background-size: initial;
+			}
+
+			.sparks-insiders__phone--white {
+					background-size: initial;
+			}
+		}
 	}
 
 	// To do: styles part screen silver
 	.screenshot-silver {
 		.screenshot__expanded--in {
-			height: rem(356px);
-			top: -86rem;
 		}
 	}
 	
@@ -24,11 +35,13 @@
 		.bg-arrow__right {
 			left: 41%;
 		}
-	}
-	.influence-digital {
+
+		.influence-digital__posting {
+			left: 20%;
+		}
+
 		.bg-tweet__wall {
 			.tweet-wall__expanded {
-				background-size: 80% auto;
 			}
 		}
 	}
@@ -37,15 +50,11 @@
 	.screenshot-silver {
 
 		.screenshot__expanded--details {
-			height: rem(285px);
 		}
 		.screenshot__expanded--put {
-			height: rem(448px);
-		}
+			.screenshot__expanded--in {
 
-		.screenshot__expanded--in {
-			height: rem(357px);
-			top: -88rem;
+			}
 		}
 	}
 }
