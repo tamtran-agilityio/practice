@@ -1,0 +1,17 @@
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1400px) { 
+	.screenshot-silver {
+		.screenshot__expanded--details {
+			left: 20%;
+		}
+
+		.screenshot__arrow--horizontal {
+			left: 37%;
+		}
+
+		.screenshot__expanded--put {
+			left: 42%;
+		}
+	}
+}
