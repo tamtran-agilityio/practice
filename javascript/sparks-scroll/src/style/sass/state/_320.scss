@@ -122,7 +122,6 @@
 				float: left;
 				width: rem(15px);
 				height: rem(15px);
-				// background-size: 50%;
 				margin-right: rem(-5px);
 			}
 			li {
@@ -289,7 +288,7 @@
 			display: none;
 			height: rem(182px);
 			width: 	100%;
-			top: 151rem;
+			top: rem(1510px);
 		}
 
 		.screenshot__arrow--horizontal {
@@ -298,7 +297,7 @@
 			background-position: center;
 			height: rem(60px);
 			width: rem(30px);
-			top: 165rem;
+			top: rem(1650px);
 			left: 45%;
 			z-index: 1;
 		}
@@ -308,14 +307,14 @@
 			display: none;
 			width: 85%;
 			height: rem(287px);
-			top: 168rem;
+			top: rem(1680px);
 			left: 10%;
 			.screenshot__expanded--in {
 				@include bg-responsive('layer-ipad.png');
 				width: rem(175px);
-				left: 20px;
-				top: 2.6rem;
-				height: 23.4rem;
+				left: rem(13px);
+				top: rem(25px);
+				height: rem(235px);
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 {
   "name": "sparks-scroll",
   "version": "0.0.0",
-  "description": "Manage libraries for User manager",
+  "description": " handle event scrolling",
   "moduleType": [
     "node"
   ],
@@ -17,11 +17,6 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "bootstrap-sass-official": "~3.3.4"
-  },
   "devDependencies": {
-    "skrollr": "~0.6.30",
-    "bower-skrollr": "~0.6.26"
   }
 }

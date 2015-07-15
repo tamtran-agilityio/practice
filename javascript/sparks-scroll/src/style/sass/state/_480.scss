@@ -12,8 +12,8 @@
 		height: rem(281px);
 
 		.basket-ball__iphone {
-			height: 25.3rem;
-			top: 44px;
+			height: rem(253px);
+			top: rem(44px);
 			position: relative;
 		}
 	}
@@ -43,19 +43,19 @@
 			}
 		}
 		.sparks-insiders__phone {
-			width: 50% !important;
-			height: 570px;
+			height: rem(320px);
 			float: left;
+			width: 50%;
 			.sparks-insiders__phone--black {
 				height: rem(300px);
-				left: 0 !important;
+				left: 0;
 				top: rem(40px);
 			}
 
 			.sparks-insiders__phone--white {
 				height: rem(220px);
 				width: 100%;	
-				left: 0 !important;
+				left: 0;
 				top: -14rem;
 			}
 		}
@@ -64,8 +64,13 @@
 	// Styles part influence new digital medium
 	.influence-digital {
 		height: 56rem !important;
+
+		.container {
+			overflow: initial;
+		}
+
 		.influence-digital__visual {
-			height: rem(560px) !important;
+			height: rem(560px);
 		}
 		
 		.influence-digital__benefit {
@@ -96,6 +101,7 @@
 			height: 200px;
 			position: relative;
 		.bg-arrow__left {
+			background-image: url('../images/desktop-image/arrow-left.png') !important;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -111,7 +117,7 @@
 		.influence-digital__drive {
 			display: none;
 			top: 0;
-			width: 240px;
+			width: 220px;
 			left: 10%;
 			margin: 70px 44px;
 		} 
@@ -145,7 +151,6 @@
 
 			.tweet-wall__expanded {
 				background-position: initial !important;
-				position: absolute !important;
 				top: 68rem !important;
 				left: 45%;
 				width: 50% !important;
@@ -167,11 +172,12 @@
 			background-position: initial;
 			height: rem(169px);
 			width: 50%;
-			top: 114rem !important;
+			top: rem(1140px) !important;
 			left: 10%;
 		}
 
 		.screenshot__arrow--horizontal {
+			background-image: url('../images/tablet-image/arrow-horizontal.png') !important;
 			background-position: initial;
 			left: 32%;
 			height: rem(60px);
@@ -186,12 +192,12 @@
 			width: rem(221px);
 			left: 40% !important;
 			top: 110rem !important;
-			width: 60% !important;
+			width: 60%;
 
 			.screenshot__expanded--in {
 				background-position: initial;
-				top: 43px;
-				left: 20px;
+				top: rem(42px);
+				left: rem(20px);
 				width: rem(190px);
 				height: rem(250px);
 			}
@@ -213,8 +219,8 @@
 	}
 	.contain-ball {
 		.basket-ball__iphone {
-			height: 25.3rem;
-			top: 44px;
+			height: rem(253px);
+			top: rem(28px);
 			position: relative;
 		}
 	.inventing-chain {
@@ -265,31 +271,29 @@
 		}
 	}
 	.sparks-insiders {
-			height: 55.5rem;
-		.sparks-insiders__content {
-			margin-left: 30%;
+			height: rem(555px);
+		.container {
+			overflow: initial;
 		}
+
+		.sparks-insiders__content {
+			margin-left: 20%;
+		}
+
 		.sparks-insiders__phone {
-			width: 100%;
 			.sparks-insiders__phone--black {
-				left: 25%;
-				height: 390px;
+				width: 75%;
+				height: rem(390px);
 			}
 
 			.sparks-insiders__phone--white {
-				left: 34%;
-				top: -10rem;
-				height: 330px;
+				top: -23rem;
+				height: rem(330px);
 			}
 		}
 	}
 	.influence-digital {
 		height: rem(779px);
-		.bg-tweet__wall {
-			.tweet-wall__expanded {
-				top: 123rem;
-			}
-		}
 		.bg-tweet__wall {
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
@@ -300,50 +304,52 @@
 
 			.tweet-wall__expanded {
 				position: absolute;
-				top: 126rem;
+				top: rem(1260px);
 				width: 100%;
-				height: 370px;
+				height: rem(370px);
 			}
 		}
 	.bg-arrow__left {
-		width:  78px;
-		height: 85px;
-		top: 123rem;
+		background-image: url('../images/mobile-image/arrow-left.png');
+		width:  rem(78px);
+		height: rem(85px);
+		top: rem(1230px);
 	}
 	.bg-arrow__right {
-		width: 80px;
-		top: 133rem;
+		background-image: url('../images/mobile-image/arrow-right.png');
+		width: rem(80px);
+		top: rem(1330px);
 	}
 
 	.influence-digital__drive {
-		top: 126.5rem;
+		top: rem(1265px);
 		}
 		.influence-digital__specific-topics {
-			top: 157rem;
+			top: rem(1570px);
 			position: absolute;
 			
 		}
 	}
 
 	.screenshot-silver {
-		height: 810px ;
+		height: rem(810px) ;
 		.screenshot__expanded--details {
-			top: 160rem;
+			top: rem(160px);
 		}
 		.screenshot__expanded--put {
-			top: 177rem;
-			height: 488px;
-			left: 20%;
-			width: 80%;
+			top: rem(1770px);
+			height: rem(488px);
+			left: 22%;
+			width: rem(340px);
+			.screenshot__expanded--in {
+				width: rem(188px);
+				height: rem(251px);
+			}
 		}
 
 		.screenshot__arrow--horizontal {
-			top: 173rem;
-		}
-
-		.screenshot__expanded--in {
-			width: 18.8rem !important;
-			height: 25rem !important;
+			background-image: url('../images/mobile-image/arrow-horizontal.png');
+			top: rem(1730px);
 		}
 	}
 

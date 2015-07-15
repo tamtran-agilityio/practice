@@ -24,6 +24,8 @@ var config = {
 
 	assetImages: 'src/images/desktop-image/*.*',
 	assetImagesOut: 'out/images/desktop-image',
+	assetImageslarge: 'src/images/desktop-large-image/*.*',
+	assetImagesOutlarge: 'out/images/desktop-large-image',
 	assetImagesSmall: 'src/images/mobile-image/*.*',
 	assetImagesSmallOut: 'out/images/mobile-image',
 	assetImagesMedium: 'src/images/tablet-image/*.*',
@@ -149,6 +151,8 @@ gulp.task('jade:watch', function() {
 gulp.task('assets', function() {
 	gulp.src(config.assetImages)
 		.pipe(gulp.dest(config.assetImagesOut));
+	gulp.src(config.assetImageslarge)
+		.pipe(gulp.dest(config.assetImagesOutlarge));
 	gulp.src(config.assetImagesMedium)
 		.pipe(gulp.dest(config.assetImagesMediumOut));
 	gulp.src(config.assetImagesSmall)

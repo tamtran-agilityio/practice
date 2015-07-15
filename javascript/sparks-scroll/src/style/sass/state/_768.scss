@@ -69,7 +69,7 @@
 			margin-left: 10%;
 			display: inline-block;
 			float: left;
-			height: rem(530px);
+			height: rem(290px);
 			padding-top: rem(100px);
 
 			.sparks-insiders__content--what {
@@ -96,17 +96,15 @@
 			float: left;
 			.sparks-insiders__phone--black {
 				height: rem(390px);
-				background-size: 70%;
 				left: 0;
 				top: rem(40px);
 			}
 
 			.sparks-insiders__phone--white {
 				position: absolute;
-				background-size:100%;
 				height: rem(323px);
 				top: rem(630px);
-				left: 50% !important;
+				left: 50%;
 				width: 50%;
 			}
 		}
@@ -114,10 +112,10 @@
 
 	// Styles part influence new digital medium
 	.influence-digital {
-			height: rem(820px) !important;
+			height: rem(700px) !important;
 		
 		.influence-digital__visual {
-			height: 70rem !important
+			height: rem(700px) !important
 		}
 		.influence-digital__benefit {
 			li:first-child{
@@ -130,7 +128,7 @@
 		}
 		
 		.influence-digital__drive-group {
-			top: -31rem;
+			top: -23rem;
 			.bg-arrow__left {
 				left: 8%;
 			}
@@ -148,36 +146,31 @@
 		}
 		.influence-digital__specific-topics {
 			width: 30%;
-			top: 162rem !important;
+			top: rem(1500px) !important;
 		}
 		.influence-digital__posting {
-			top: 99rem;
+			top: rem(1000px);
 			width: 30%;
-			left: 65%;
+			left: 70%;
 			line-height: rem(14px);
 		}
 
 	.bg-tweet__wall {
-		.tweet-wall__profile,
-		.tweet-wall__cluster,
+		.tweet-wall__profile {
+			height: rem(162px);
+		}
+
+		.tweet-wall__cluster {
+			height: rem(176px);
+		}
+
 		.tweet-wall__recent {
-			}
+			height: rem(140px);
+		}
 
-			.tweet-wall__profile {
-				height: rem(192px);
-			}
-
-			.tweet-wall__cluster {
-				height: rem(210px);
-			}
-
-			.tweet-wall__recent {
-				height: rem(200px);
-			}
-
-			.tweet-wall__expanded {
-				height: rem(400px);
-				top: 100rem !important;
+		.tweet-wall__expanded {
+			height: rem(400px);
+			top: 100rem !important;
 			}
 		}
 	}
@@ -186,29 +179,28 @@
 	.screenshot-silver {
 		height: rem(560px);
 		.screenshot__expanded--details {
-			top: 169rem !important;
+			top: rem(1580px) !important;
 			left: 10%;
 			height: rem(269px);
 		}
 
 		.screenshot__arrow--horizontal {
-			width: 10rem;
-			top: 179rem !important;
-			left: 35%;
+			width: rem(100px);
+			top: rem(1660px) !important;
+			left: 36%;
 		}
 
 		.screenshot__expanded--put {
-			height: rem(400px);
-			width: rem(350px) !important;
-			background-size: 80%;
-			left: 45% !important;
-			top: 165rem !important;
+			height: rem(370px);
+			width: rem(260px);
+			left: 42%;
+			top: rem(1520px);
 			.screenshot__expanded--in {
-				top: 58px;
-				left: 28px;
+				top: 53px;
+				left: 26px;
 				background-size: inherit;
-				width: 30.7rem !important;
-				height: 32.7rem !important;
+				width: rem(226px);
+				height: rem(301px);
 			}
 		}
 	}
