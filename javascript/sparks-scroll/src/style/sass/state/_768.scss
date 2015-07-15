@@ -63,12 +63,13 @@
 
 	// Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(480px);
+		height: rem(490px) !important;
 		.sparks-insiders__content {
 			width: 40%;
 			margin-left: 10%;
 			display: inline-block;
 			float: left;
+			height: rem(530px);
 			padding-top: rem(100px);
 
 			.sparks-insiders__content--what {
@@ -105,7 +106,7 @@
 				background-size:100%;
 				height: rem(323px);
 				top: rem(630px);
-				left: 50%;
+				left: 50% !important;
 				width: 50%;
 			}
 		}
@@ -113,9 +114,10 @@
 
 	// Styles part influence new digital medium
 	.influence-digital {
-
+			height: rem(820px) !important;
+		
 		.influence-digital__visual {
-			height: rem(820px);
+			height: 70rem !important
 		}
 		.influence-digital__benefit {
 			li:first-child{
@@ -126,16 +128,18 @@
 				font-size: rem(14px);
 			}
 		}
+		
+		.influence-digital__drive-group {
+			top: -31rem;
+			.bg-arrow__left {
+				left: 8%;
+			}
 
-		.influence-digital__drive {
-			width: 22%;
-			top: 140rem;
-		} 
-		
-		.influence-digital__benefit {
-			// padding-top: rem(80px);
+			.influence-digital__drive {
+				left: 16%;
+			}
 		}
-		
+
 		.influence-digital__specific-topics,
 		.influence-digital__posting {
 			p {
@@ -144,31 +148,19 @@
 		}
 		.influence-digital__specific-topics {
 			width: 30%;
-			top: 162rem;
+			top: 162rem !important;
 		}
 		.influence-digital__posting {
 			top: 99rem;
 			width: 30%;
-			left: 60%;
+			left: 65%;
 			line-height: rem(14px);
 		}
 
-		.bg-arrow__left {
-			top: rem(1360px);
-			left: 18%;
-			width: rem(70px);
-			height: rem(85px);
-		}
-
-		.bg-arrow__right {
-			width: rem(110px);
-			top: rem(1400px);
-			left: 40%;
-		}
-		.bg-tweet__wall {
-			.tweet-wall__profile,
-			.tweet-wall__cluster,
-			.tweet-wall__recent {
+	.bg-tweet__wall {
+		.tweet-wall__profile,
+		.tweet-wall__cluster,
+		.tweet-wall__recent {
 			}
 
 			.tweet-wall__profile {
@@ -185,7 +177,7 @@
 
 			.tweet-wall__expanded {
 				height: rem(400px);
-				top: 105rem;
+				top: 100rem !important;
 			}
 		}
 	}
@@ -194,28 +186,29 @@
 	.screenshot-silver {
 		height: rem(560px);
 		.screenshot__expanded--details {
-			top: 169rem;
+			top: 169rem !important;
 			left: 10%;
 			height: rem(269px);
 		}
 
 		.screenshot__arrow--horizontal {
 			width: 10rem;
-			top: 179rem;
+			top: 179rem !important;
 			left: 35%;
 		}
 
 		.screenshot__expanded--put {
 			height: rem(400px);
-			width: rem(350px);
+			width: rem(350px) !important;
 			background-size: 80%;
-			top: 165rem;
+			left: 45% !important;
+			top: 165rem !important;
 			.screenshot__expanded--in {
-				top: 60px;
+				top: 58px;
 				left: 28px;
 				background-size: inherit;
-				width: 30.7rem;
-				height: 32.7rem;
+				width: 30.7rem !important;
+				height: 32.7rem !important;
 			}
 		}
 	}

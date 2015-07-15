@@ -56,7 +56,7 @@ $(window).scroll(function() {
 
 	// promoscope content ipad
 	if (sparkScroll > (sparkScrollExpanded)) {
-		$('.screenshot__expanded--in').css({'background-position':'0% ' + (sparkScroll - 3 - $('.screenshot__expanded--in').offset().top) + 'px'});
+		$('.screenshot__expanded--in').css({'background-position':'0% ' + (sparkScroll - 15 - $('.screenshot__expanded--in').offset().top) + 'px'});
 	}
 
 	clearTimeout(action);

@@ -1,6 +1,6 @@
 /* Small Devices, Tablets */
 
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 650px) {
 	
 // Styles of part header
 	.bg-pitch-basket {
@@ -16,8 +16,208 @@
 			top: 44px;
 			position: relative;
 		}
+	}
 
-		.inventing-chain {
+	// Styles of sparks inssiders
+	.sparks-insiders {
+		height: rem(335px) !important;
+		.sparks-insiders__content {
+			width: 40%;
+			margin-left: 10% !important;
+			display: inline-block;
+			float: left;
+			.sparks-insiders__content--fan {
+				line-height: rem(30px);
+			}
+
+			.sparks-insiders__content--app {
+				li:before {
+					margin-top: 0;
+				}
+				li {
+					line-height: rem(13px);
+				}
+			}
+			.sparks-insiders__content--channels {
+				margin-top: rem(12px);
+			}
+		}
+		.sparks-insiders__phone {
+			width: 50% !important;
+			height: 570px;
+			float: left;
+			.sparks-insiders__phone--black {
+				height: rem(300px);
+				left: 0 !important;
+				top: rem(40px);
+			}
+
+			.sparks-insiders__phone--white {
+				height: rem(220px);
+				width: 100%;	
+				left: 0 !important;
+				top: -14rem;
+			}
+		}
+	}
+
+	// Styles part influence new digital medium
+	.influence-digital {
+		height: 56rem !important;
+		.influence-digital__visual {
+			height: rem(560px) !important;
+		}
+		
+		.influence-digital__benefit {
+			padding: rem(40px 0 20px);
+		}
+		
+		.influence-digital__specific-topics,
+		.influence-digital__posting {
+			position: absolute;
+			margin-left: 0;
+			p {
+				display: block;
+			}
+		}
+		.influence-digital__specific-topics {
+			left: 10%;
+			width: 30%;
+			position: absolute;
+			top: 107rem !important;
+		}
+		.influence-digital__posting {
+			left: 60%;
+			top: 69rem;
+		}
+	.influence-digital__drive-group {
+			top: -18rem;
+			overflow: hidden;
+			height: 200px;
+			position: relative;
+		.bg-arrow__left {
+			top: 0;
+			left: 0;
+			width: 100%;
+			margin-left: 7%;
+			height: 120px;
+			width: 85%;
+		}
+
+		.bg-arrow__right {
+			height: rem(20px);
+		}
+
+		.influence-digital__drive {
+			display: none;
+			top: 0;
+			width: 240px;
+			left: 10%;
+			margin: 70px 44px;
+		} 
+		
+	}
+		.bg-tweet__wall {
+			width: 80%;
+			margin: 0 auto;
+			img {
+				width: 100%;
+				height: auto;
+			}
+			.tweet-wall__profile,
+			.tweet-wall__cluster,
+			.tweet-wall__recent {
+				background-position: initial !important;
+				margin-top: 0;
+			}
+
+			.tweet-wall__profile {
+				height: rem(122px);
+			}
+
+			.tweet-wall__cluster {
+				height: rem(135px);
+			}
+
+			.tweet-wall__recent {
+				height: rem(120px);
+			}
+
+			.tweet-wall__expanded {
+				background-position: initial !important;
+				position: absolute !important;
+				top: 68rem !important;
+				left: 45%;
+				width: 50% !important;
+				height: rem(310px);
+			}
+		}
+	}
+
+	// To do: styles part screenshot silver
+	.screenshot-silver {
+		height: rem(340px) !important;
+
+		.container__screenshot {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.screenshot__expanded--details {
+			background-position: initial;
+			height: rem(169px);
+			width: 50%;
+			top: 114rem !important;
+			left: 10%;
+		}
+
+		.screenshot__arrow--horizontal {
+			background-position: initial;
+			left: 32%;
+			height: rem(60px);
+			width: rem(80px);
+			top: 118rem !important;
+			z-index: 1;
+		}
+
+		.screenshot__expanded--put {
+			position: absolute ;
+			height: rem(380px);
+			width: rem(221px);
+			left: 40% !important;
+			top: 110rem !important;
+			width: 60% !important;
+
+			.screenshot__expanded--in {
+				background-position: initial;
+				top: 43px;
+				left: 20px;
+				width: rem(190px);
+				height: rem(250px);
+			}
+		}
+	}
+
+	// Styles part footer
+	.bg-ball__learn {
+		background: url('../images/tablet-image/bg-foobal.png') center no-repeat;
+		height: rem(218px);
+	}
+}
+
+@media only screen and (min-width : 480px) {
+	// Styles of part header
+	.bg-pitch-basket {
+		background: url('../images/tablet-image/bg-picth.png') center no-repeat;
+		height: rem(281px);
+	}
+	.contain-ball {
+		.basket-ball__iphone {
+			height: 25.3rem;
+			top: 44px;
+			position: relative;
+		}
+	.inventing-chain {
 			.inventing-chain__line--long {
 				height: rem(100px);
 			}
@@ -42,7 +242,6 @@
 				height: rem(58px);
 			}
 		}
-
 		.exchange-info {
 			padding-top: rem(108px);
 
@@ -65,176 +264,90 @@
 			}
 		}
 	}
-
-	// Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(335px);
+			height: 55.5rem;
 		.sparks-insiders__content {
-			width: 40%;
-			margin-left: 10%;
-			display: inline-block;
-			float: left;
-			.sparks-insiders__content--fan {
-				line-height: rem(30px);
-			}
-
-			.sparks-insiders__content--app {
-				li:before {
-					margin-top: 0;
-				}
-				li {
-					line-height: rem(13px);
-				}
-			}
-			.sparks-insiders__content--channels {
-				margin-top: rem(12px);
-			}
+			margin-left: 30%;
 		}
 		.sparks-insiders__phone {
-			width: 50%;
-			height: 340px;
-			float: left;
+			width: 100%;
 			.sparks-insiders__phone--black {
-				height: rem(300px);
-				left: 0;
-				top: rem(40px);
+				left: 25%;
+				height: 390px;
 			}
 
 			.sparks-insiders__phone--white {
-				height: rem(220px);
-				width: 100%;	
-				left: 0;
-				top: -14rem;
+				left: 34%;
+				top: -10rem;
+				height: 330px;
 			}
 		}
 	}
-
-	// Styles part influence new digital medium
 	.influence-digital {
-
-		.influence-digital__visual {
-			height: rem(560px);
-		}
-
-		.influence-digital__drive {
-			display: none;
-			top: rem(910px);
-			width: 30%;
-			left: 21%;
-		} 
-		
-		.influence-digital__benefit {
-			padding: rem(40px 0 20px);
-		}
-		
-		.influence-digital__specific-topics,
-		.influence-digital__posting {
-			position: absolute;
-			margin-left: 0;
-			p {
-				display: block;
+		height: rem(779px);
+		.bg-tweet__wall {
+			.tweet-wall__expanded {
+				top: 123rem;
 			}
-		}
-		.influence-digital__specific-topics {
-			left: 10%;
-			width: 30%;
-			position: absolute;
-			top: 107rem;
-		}
-		.influence-digital__posting {
-			left: 60%;
-			top: 69rem;
-		}
-
-		.bg-arrow__left {
-			top: rem(900px);
-			left: 19%;
-		}
-
-		.bg-arrow__right {
-			height: rem(20px);
-			width: rem(50px);
-			top: rem(920px);
 		}
 		.bg-tweet__wall {
-			width: 80%;
-			margin: 0 auto;
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
-			.tweet-wall__recent {
-				background-position: initial;
-				margin-top: 0;
-			}
-
-			.tweet-wall__profile {
-				height: rem(122px);
-			}
-
-			.tweet-wall__cluster {
-				height: rem(135px);
-			}
-
-			.tweet-wall__recent {
-				height: rem(120px);
+			.tweet-wall__recent,
+			.tweet-wall__expanded {
+				background-position: center;
 			}
 
 			.tweet-wall__expanded {
-				background-position: initial;
 				position: absolute;
-				top: 68rem;
-				left: 45%;
-				width: 50%;
-				height: rem(310px);
+				top: 126rem;
+				width: 100%;
+				height: 370px;
 			}
+		}
+	.bg-arrow__left {
+		width:  78px;
+		height: 85px;
+		top: 123rem;
+	}
+	.bg-arrow__right {
+		width: 80px;
+		top: 133rem;
+	}
+
+	.influence-digital__drive {
+		top: 126.5rem;
+		}
+		.influence-digital__specific-topics {
+			top: 157rem;
+			position: absolute;
+			
 		}
 	}
 
-	// To do: styles part screenshot silver
 	.screenshot-silver {
-		height: rem(340px);
-
-		.container__screenshot {
-			width: 80%;
-			margin: 0 auto;
-		}
-
+		height: 810px ;
 		.screenshot__expanded--details {
-			background-position: initial;
-			height: rem(169px);
-			width: 50%;
-			top: 114rem;
-			left: 10%;
+			top: 160rem;
+		}
+		.screenshot__expanded--put {
+			top: 177rem;
+			height: 488px;
+			left: 20%;
+			width: 80%;
 		}
 
 		.screenshot__arrow--horizontal {
-			background-position: initial;
-			left: 32%;
-			height: rem(60px);
-			width: rem(80px);
-			top: 118rem;
-			z-index: 1;
+			top: 173rem;
 		}
 
-		.screenshot__expanded--put {
-			position: absolute;
-			height: rem(380px);
-			width: rem(221px);
-			left: 40%;
-			top: 110rem;
-
-			.screenshot__expanded--in {
-				background-position: initial;
-				top: 43px;
-				left: 20px;
-				width: rem(190px);
-				height: rem(250px);
-			}
+		.screenshot__expanded--in {
+			width: 18.8rem !important;
+			height: 25rem !important;
 		}
 	}
 
-	// Styles part footer
 	.bg-ball__learn {
 		background: url('../images/tablet-image/bg-foobal.png') center no-repeat;
-		height: rem(218px);
 	}
-}
+} 

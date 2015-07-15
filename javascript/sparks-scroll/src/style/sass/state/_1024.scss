@@ -37,9 +37,12 @@
 		}
 
 		.influence-digital__posting {
-			left: 20%;
+			left: 65%;
 		}
-
+		
+		.influence-digital__specific-topics {
+			left: 16%;
+		}
 		.bg-tweet__wall {
 			.tweet-wall__expanded {
 			}
@@ -50,8 +53,15 @@
 	.screenshot-silver {
 
 		.screenshot__expanded--details {
+			left: 16%;
 		}
+
+		.screenshot__arrow--horizontal {
+			left: 41%;
+		}
+
 		.screenshot__expanded--put {
+			left: 50% !important;
 			.screenshot__expanded--in {
 
 			}
