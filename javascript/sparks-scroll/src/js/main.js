@@ -50,9 +50,14 @@ $(window).scroll(function() {
 
   var sparkScroll = $(this).scrollTop();
   var sparkScrollExpanded = $('.screenshot__expanded--in').offset().top;
-  var heightBasket = $('.bg-pitch-basket').height();
-  var heightSilver = $('.screenshot-silver').height();
   var bgPitch = $('.bg-pitch-basket');
+  var bgLearn = $('.bg-ball__learn');
+  var bgSparks = $('.sparks-insiders');
+  var bgInfluence = $('.influence-digital');
+  var heightBasket = bgPitch.height();
+  var heightLearn = $('.bg-ball__learn').height();
+  var heightSilver = $('.screenshot-silver').height();
+
   var screenSilver = $('.screenshot-silver');
   var expandedIn = $('.screenshot__expanded--in');
 
@@ -61,13 +66,27 @@ $(window).scroll(function() {
     bgPitch.css({'background-position':'center ' + (sparkScroll - bgPitch.offset().top) + 'px'});
   }
 
+  //Set property background of background ball learn
+  if(sparkScroll > bgLearn.height()) {
+    bgLearn.css({'background-position':'center ' + (sparkScroll + $(window).height() - bgLearn.height() - bgLearn.offset().top) +'px'});
+  }
+
+  //Set property background of background ball learn
+  // if(sparkScroll > bgLearn.offset().top - $(window).height()) {
+  //   bgLearn.css({'background-position':'center ' + (sparkScroll + 500 - bgLearn.offset().top) +'px'});
+  // }
+
   // set background position of screenshot silver
   if (sparkScroll <= heightSilver) {
     screenSilver.css({'background-position':'center ' + (sparkScroll - screenSilver.offset().top) + 'px'});
   }
 
+  if (sparkScroll <= heightSilver) {
+    screenSilver.css({'background-position':'center ' + (sparkScroll - screenSilver.offset().top) + 'px'});
+  }
+
   // promoscope content ipad
-  if (sparkScroll > sparkScrollExpanded) {
+  if (sparkScroll > sparkScrollExpanded / 2) {
     expandedIn.css({'background-position':'0% ' + (sparkScroll - expandedIn.offset().top) + 'px'});
   } else {
     expandedIn.css({'background-position':'0% 0%'});
