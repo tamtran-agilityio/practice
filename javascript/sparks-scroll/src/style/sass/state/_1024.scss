@@ -11,11 +11,11 @@
 	.sparks-insiders {
 		.sparks-insiders__phone {
 			.sparks-insiders__phone--black {
-					background-size: initial;
+				background-size: initial;
 			}
 
 			.sparks-insiders__phone--white {
-					background-size: initial;
+				background-size: initial;
 			}
 		}
 	}
@@ -41,29 +41,23 @@
 		}
 		
 		.influence-digital__specific-topics {
-			left: 17%;
+			left: 15%;
 		}
-		.bg-tweet__wall {
-			.tweet-wall__expanded {
-			}
-		}
-	}
-
-	// To do: styles part screenshot silver
-	.screenshot-silver {
 
 		.screenshot__expanded--details {
-			left: 17%;
+			top: -4rem;
+			position: relative;
 		}
 
 		.screenshot__arrow--horizontal {
-			left: 42%;
+			left: 36%;
 		}
 
 		.screenshot__expanded--put {
-			left: 48%;
+			position: relative;
+			left: 40%;
+			top: -37rem;
 			.screenshot__expanded--in {
-
 			}
 		}
 	}

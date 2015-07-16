@@ -1,0 +1,211 @@
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 650px) {
+	
+// Styles of part header
+	.bg-pitch-basket {
+		background: url('../images/tablet-image/bg-picth.png') center no-repeat;
+		height: rem(281px);
+	}
+
+	.contain-ball {
+		height: rem(281px);
+
+		.basket-ball__iphone {
+			height: rem(253px);
+			top: rem(28px);
+			position: relative;
+		}
+	}
+
+	// Styles of sparks inssiders
+	.sparks-insiders {
+		height: rem(335px);
+		.sparks-insiders__content {
+			width: 40%;
+			margin-left: 10%;
+			display: inline-block;
+			float: left;
+			.sparks-insiders__content--fan {
+				line-height: rem(30px);
+			}
+
+			.sparks-insiders__content--app {
+				li:before {
+					margin-top: 0;
+				}
+				li {
+					line-height: rem(13px);
+				}
+			}
+			.sparks-insiders__content--channels {
+				margin-top: rem(12px);
+			}
+		}
+		.sparks-insiders__phone {
+			height: rem(320px);
+			float: left;
+			width: 50%;
+			.sparks-insiders__phone--black {
+				height: rem(300px);
+				left: 0;
+				top: rem(40px);
+			}
+
+			.sparks-insiders__phone--white {
+				height: rem(220px);
+				width: 100%;	
+				left: 0;
+				top: -14rem;
+			}
+		}
+	}
+
+	// Styles part influence new digital medium
+	.influence-digital {
+		height: 56rem;
+
+		.container {
+			overflow: initial;
+		}
+
+		.influence-digital__visual {
+			height: rem(560px);
+		}
+		
+		.influence-digital__benefit {
+			padding: rem(40px 0 20px);
+		}
+		
+		.influence-digital__specific-topics,
+		.influence-digital__posting {
+			position: absolute;
+			margin-left: 0;
+			p {
+				display: block;
+			}
+		}
+		.influence-digital__specific-topics {
+			left: 10%;
+			width: 30%;
+			position: absolute;
+			top: 107rem;
+		}
+		.influence-digital__posting {
+			left: 60%;
+			top: 69rem;
+		}
+	.influence-digital__drive-group {
+			top: -18rem;
+			overflow: hidden;
+			height: 200px;
+			position: relative;
+		.bg-arrow__left {
+			background-image: url('../images/desktop-image/arrow-left.png');
+			top: 0;
+			left: 0;
+			width: 100%;
+			margin-left: 7%;
+			height: 120px;
+			width: 85%;
+		}
+
+		.bg-arrow__right {
+			height: rem(20px);
+		}
+
+		.influence-digital__drive {
+			display: none;
+			top: 0;
+			width: 220px;
+			left: 10%;
+			margin: 70px 44px;
+		} 
+		
+	}
+		.bg-tweet__wall {
+			width: 80%;
+			margin: 0 auto;
+			img {
+				width: 100%;
+				height: auto;
+			}
+			.tweet-wall__profile,
+			.tweet-wall__cluster,
+			.tweet-wall__recent {
+				background-position: initial;
+				margin-top: 0;
+			}
+
+			.tweet-wall__profile {
+				height: rem(122px);
+			}
+
+			.tweet-wall__cluster {
+				height: rem(135px);
+			}
+
+			.tweet-wall__recent {
+				height: rem(120px);
+			}
+
+			.tweet-wall__expanded {
+				background-position: initial;
+				top: 68rem;
+				left: 45%;
+				width: 50%;
+				height: rem(310px);
+			}
+		}
+		.screenshot__expanded--details {
+			background-position: initial;
+			height: rem(169px);
+			width: 50%;
+			top: rem(1140px);
+			left: 10%;
+		}
+
+		.screenshot__arrow--horizontal {
+			background-image: url('../images/desktop-image/arrow-horizontal.png');
+			background-position: initial;
+			left: 32%;
+			height: rem(60px);
+			width: rem(80px);
+			top: 118rem;
+			z-index: 1;
+		}
+
+		.screenshot__expanded--put {
+			position: absolute ;
+			height: rem(380px);
+			width: rem(221px);
+			left: 40%;
+			top: 109rem;
+			width: 60%;
+
+			.screenshot__expanded--in {
+				background-position: initial;
+				top: rem(25px);
+				left: rem(12px);
+				width: rem(190px);
+				height: rem(251px);
+			}
+		}
+	}
+
+	// To do: styles part screenshot silver
+	.screenshot-silver {
+		height: rem(340px);
+
+		.container__screenshot {
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+
+	// Styles part footer
+	.bg-ball__learn {
+		background: url('../images/tablet-image/bg-foobal.png') center no-repeat;
+		height: rem(218px);
+	}
+}

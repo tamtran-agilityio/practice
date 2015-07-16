@@ -63,7 +63,7 @@
 
 	// Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(490px) !important;
+		height: rem(490px);
 		.sparks-insiders__content {
 			width: 40%;
 			margin-left: 10%;
@@ -81,6 +81,12 @@
 			}
 
 			.sparks-insiders__content--app {
+				li:before {
+					margin-top: rem(3px);
+					float: left;
+					margin-right: rem(-5px);
+				}
+
 				li {
 					font-size: rem(14px);
 					line-height: rem(14px);
@@ -112,10 +118,10 @@
 
 	// Styles part influence new digital medium
 	.influence-digital {
-			height: rem(700px) !important;
+			height: rem(700px) ;
 		
 		.influence-digital__visual {
-			height: rem(700px) !important
+			height: rem(700px);
 		}
 		.influence-digital__benefit {
 			li:first-child{
@@ -146,12 +152,12 @@
 		}
 		.influence-digital__specific-topics {
 			width: 30%;
-			top: rem(1500px) !important;
+			top: rem(1500px);
 		}
 		.influence-digital__posting {
 			top: rem(1000px);
 			width: 30%;
-			left: 70%;
+			left: 63%;
 			line-height: rem(14px);
 		}
 
@@ -170,23 +176,17 @@
 
 		.tweet-wall__expanded {
 			height: rem(400px);
-			top: 100rem !important;
+			top: 100rem;
 			}
 		}
-	}
-
-		// To do: styles part screenshot silver
-	.screenshot-silver {
-		height: rem(560px);
 		.screenshot__expanded--details {
-			top: rem(1580px) !important;
+			top: rem(1580px);
 			left: 10%;
 			height: rem(269px);
 		}
-
 		.screenshot__arrow--horizontal {
 			width: rem(100px);
-			top: rem(1660px) !important;
+			top: rem(1660px);
 			left: 36%;
 		}
 
@@ -205,7 +205,12 @@
 		}
 	}
 
-	// Styles part footer
+		// To do: styles part screenshot silver
+	.screenshot-silver {
+		height: rem(560px);
+	}
+
+	// styles part footer
 	.bg-ball__learn {
 		background: url('../images/desktop-image/bg-football.png') center no-repeat;
 		height: rem(293px);

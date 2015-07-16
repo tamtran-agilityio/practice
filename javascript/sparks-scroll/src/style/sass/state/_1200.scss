@@ -1,16 +1,44 @@
 /* Large Devices, Wide Screens */
 
 @media only screen and (min-width : 1200px) {
-	// Styles of part header
+
+	// To do: styles part sparks insiders
 	.sparks-insiders {
 		.sparks-insiders__content {
-			margin-left: 30%;
-			width: 35%;
+			margin-left: 10%;
+			width: 40%;
+		}
+
+		.sparks-insiders__content {
+			.sparks-insiders__content--what {
+				font-size: rem(20px);
+			}
+
+			.sparks-insiders__content--fan {
+				font-size: rem(16px)
+			}
+
+			.sparks-insiders__content--app {
+				li {
+					line-height: rem(18px);
+				}
+			}
+			.sparks-insiders__content--channels {
+				font-size: rem(16px);
+			}
+		}
+
+		.sparks-insiders__phone {
+			.sparks-insiders__phone--black {
+				position: absolute;
+				top: 47rem;
+				left: 50%;
+				width: 50%;
+			}
 		}
 	}
-
 	.influence-digital {
-		height: rem(810px) !important;
+		height: rem(810px);
 		.influence-digital__posting {
 			width: 20%;
 			left: 55%;
@@ -59,27 +87,22 @@
 
 		.tweet-wall__expanded {
 			height: rem(400px);
-			top: rem(1000px) !important;
+			top: rem(1000px);
 			}
 		}
-	}
-	.screenshot-silver {
-		height: rem(500px) !important;
 		.screenshot__expanded--details {
-			left: 15%;
-			top: rem(1700px) !important;
+			left: 0;
+			top: rem(20px);
 		}
 
 		.screenshot__arrow--horizontal {
-			left: 36%;
-			top: rem(1800px) !important;
+			top: rem(1800px);
 		}
 
 		.screenshot__expanded--put {
 			height: rem(555px);
 			width: rem(390px);
-			left: 40%;
-			top: rem(1640px);
+			top: -30rem;
 			.screenshot__expanded--in {
 				left: rem(24px);
 				top: rem(49px);
@@ -87,5 +110,8 @@
 				width: rem(340px);
 			}
 		}
+	}
+	.screenshot-silver {
+		height: rem(500px);
 	}
 }

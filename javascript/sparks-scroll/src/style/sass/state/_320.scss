@@ -37,32 +37,26 @@
 				background-position: center;
 			}
 			.inventing-chain__line--long {
-				@include bg-responsive("line-long.png");
 				height: rem(80px);
 			}
 
 			.inventing-chain__radio {
-				@include bg-responsive("radio.png");
 				height: rem(21px);
 			}
 
 			.inventing-chain__line--short {
-				@include bg-responsive("line-short.png");
 				height: rem(14px);
 			}
 
 			.inventing-chain__globes--online {
-				@include bg-responsive("globes.png");
 				height: rem(26px);
 			}
 
 			.inventing-chain__line--short-last {
-				@include bg-responsive("line-short.png");
 				height: rem(14px);
 			}
 
 			.inventing-chain__cloud {
-				@include bg-responsive("cloud.png");
 				height: rem(38px);
 			}
 		}
@@ -95,7 +89,7 @@
 
 // Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(540px);
+		height: rem(500px);
 	}
 	.sparks-insiders__content {
 		margin: 0 auto;
@@ -143,11 +137,9 @@
 		margin: 0 auto;
 		.sparks-insiders__phone--black,
 		.sparks-insiders__phone--white {
-				background-repeat: no-repeat;
 				position: relative;	
 		}
 		.sparks-insiders__phone--black {
-			@include bg-responsive('iphone-black.png');
 			height: rem(165px);
 			left: 20%;
 			width: 80%;
@@ -155,7 +147,6 @@
 		}
 
 		.sparks-insiders__phone--white {
-			@include bg-responsive('iphone-white.png');
 			height: rem(144px);
 			left: 25%;
 			width: 75%;
@@ -200,8 +191,8 @@
 		.influence-digital__drive {
 			position: absolute;
 			display: none;
-			top: rem(1205px);
-			left: 25%;
+			top: rem(1162px);
+			left: 27%;
 			background-color: $white;
 			border-radius: rem(20px);
 			height: rem(70px);
@@ -222,106 +213,92 @@
 			position: absolute;
 			display: none;
 			z-index: 2;
-			left: 45%;
+			left: 48%;
 		}
 		.bg-arrow__left {
 			@include bg-responsive('arrow-left.png');
 			display: none;
 			height: rem(50px);
 			width: rem(30px);
-			top: rem(1160px);
+			top: rem(1120px);
 		}
 
 		.bg-arrow__right {
 			@include bg-responsive('arrow-right.png');
 			height: rem(50px);
 			width: rem(30px);
-			top: rem(1260px);
+			top: rem(1220px);
 		}
 
 		.bg-tweet__wall {
-			display: none;
 			.tweet-wall__profile,
 			.tweet-wall__cluster,
 			.tweet-wall__recent,
 			.tweet-wall__expanded {
-				background-repeat: no-repeat;
 				background-position: center center;
 			}
 			.tweet-wall__profile {
-				@include bg-responsive('profile.png');
 				margin-top: rem(10px);
 				height: rem(80px);
 			}
 			.tweet-wall__cluster {
-				@include bg-responsive('cluster-tweet.png');
 				margin-top: rem(10px);
 				height: rem(110px);
 			}
 			.tweet-wall__recent {
-				@include bg-responsive('recent-tweet.png');
 				margin-top: rem(10px);
 				height: rem(100px);
 			}
 			.tweet-wall__expanded {
-				@include bg-responsive('pic-tweet-expanded.png');
 				margin-top: rem(80px);
 				height: rem(205px);
+			}
+		}
+		.screenshot__expanded--details {
+			background-position: center;
+			display: none;
+			height: rem(142px);
+			width: 	100%;
+			top: rem(1500px);
+		}
+
+		.screenshot__arrow--horizontal {
+			@include bg-responsive('arrow-horizontal.png');
+			background-repeat: no-repeat;
+			position: absolute;
+			display: none;
+			background-position: center;
+			height: rem(60px);
+			width: rem(30px);
+			top: rem(1600px);
+			left: 45%;
+			z-index: 1;
+		}
+
+		.screenshot__expanded--put {
+			display: none;
+			width: 90%;
+			height: rem(287px);
+			top: rem(1640px);
+			left: 5%;
+			.screenshot__expanded--in {
+				width: rem(176px);
+				left: rem(12px);
+				top: rem(25px);
+				height: rem(236px);
+				position: absolute;
 			}
 		}
 	}
 
 	// To do: styles part screenshot silver
 	.screenshot-silver {
-		height: rem(460px);
-		.screenshot__expanded--details, 
-		.screenshot__arrow--horizontal,
-		.screenshot__expanded--put,
-		.screenshot__expanded--in {
-			background-repeat: no-repeat;
-			position: absolute;
-		}
-
-		.screenshot__expanded--details {
-			@include bg-responsive('pic-tweet-expanded_details.png');
-			background-position: center;
-			display: none;
-			height: rem(182px);
-			width: 	100%;
-			top: rem(1510px);
-		}
-
-		.screenshot__arrow--horizontal {
-			@include bg-responsive('arrow-horizontal.png');
-			display: none;
-			background-position: center;
-			height: rem(60px);
-			width: rem(30px);
-			top: rem(1650px);
-			left: 45%;
-			z-index: 1;
-		}
-
-		.screenshot__expanded--put {
-			@include bg-responsive('ipad.png');
-			display: none;
-			width: 85%;
-			height: rem(287px);
-			top: rem(1680px);
-			left: 10%;
-			.screenshot__expanded--in {
-				@include bg-responsive('layer-ipad.png');
-				width: rem(175px);
-				left: rem(13px);
-				top: rem(25px);
-				height: rem(235px);
-			}
-		}
+		height: rem(530px);
 	}
 	
 	// Styles part footer
 	.bg-ball__learn {
-		background: url('../images/mobile-image/bg-foobal.png') center no-repeat;
+		background: url('../images/mobile-image/bg-fooball.png') center no-repeat;
 		height: rem(218px);
 	}
 	.learn-more {
@@ -350,6 +327,14 @@
 
 		.learn-more__address-spark {
 			@include font-text(rem(10px), lighter, $white, $font-roboto);
+		}
+	}
+}
+
+@media (min-width: 390px ) {
+	.screenshot-silver {
+		.screenshot__expanded--put {
+			left: 12%;
 		}
 	}
 }
