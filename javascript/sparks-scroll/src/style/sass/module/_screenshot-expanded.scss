@@ -1,0 +1,17 @@
+.screenshot__expanded--details, 
+.screenshot__expanded--put,
+.screenshot__expanded--in {
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.screenshot__expanded--details {
+	@include bg-responsive('pic-tweet-expanded_details.png');
+}
+
+.screenshot__expanded--put {
+	@include bg-responsive('ipad.png');
+	.screenshot__expanded--in {
+		@include bg-responsive('layer-ipad.png');
+	}
+}
+

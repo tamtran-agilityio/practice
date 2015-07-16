@@ -1,0 +1,26 @@
+/* styles of part inventing chain */
+.inventing-chain {
+	.inventing-chain__line--long {
+		@include bg-responsive("line-long.png");
+	}
+
+	.inventing-chain__radio {
+		@include bg-responsive("radio.png");
+	}
+
+	.inventing-chain__line--short {
+		@include bg-responsive("line-short.png");
+	}
+
+	.inventing-chain__globes--online {
+		@include bg-responsive("globes.png");
+	}
+
+	.inventing-chain__line--short-last {
+		@include bg-responsive("line-short.png");
+	}
+
+	.inventing-chain__cloud {
+		@include bg-responsive("cloud.png");
+	}
+}

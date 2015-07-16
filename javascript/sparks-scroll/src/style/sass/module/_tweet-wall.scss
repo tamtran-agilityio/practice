@@ -1,0 +1,22 @@
+.bg-tweet__wall {
+	display: none;
+	.tweet-wall__profile,
+	.tweet-wall__cluster,
+	.tweet-wall__recent,
+	.tweet-wall__expanded {
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.tweet-wall__profile {
+		@include bg-responsive('profile.png');
+	}
+	.tweet-wall__cluster {
+		@include bg-responsive('cluster-tweet.png');
+	}
+	.tweet-wall__recent {
+		@include bg-responsive('recent-tweet.png');
+	}
+	.tweet-wall__expanded {
+		@include bg-responsive('pic-tweet-expanded.png');
+	}
+}

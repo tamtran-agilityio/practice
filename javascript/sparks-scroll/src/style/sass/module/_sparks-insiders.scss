@@ -1,0 +1,15 @@
+/*styles of part sparks insiders*/
+.sparks-insiders__phone {
+	.sparks-insiders__phone--black,
+	.sparks-insiders__phone--white {
+		background-repeat: no-repeat;
+		position: relative;	
+	}
+	.sparks-insiders__phone--black {
+		@include bg-responsive('iphone-black.png');
+	}
+
+	.sparks-insiders__phone--white {
+		@include bg-responsive('iphone-white.png');
+	}
+}
