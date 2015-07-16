@@ -1,7 +1,7 @@
 {
   "name": "sparks-scroll",
   "version": "1.0.0",
-  "description": "Practice user manager of Tam Tran",
+  "description": "Practice of Tam Tran",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-install": "^0.4.0"
