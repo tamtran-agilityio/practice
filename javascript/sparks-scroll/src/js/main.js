@@ -1,4 +1,4 @@
-/* global script of parallax scrolling*/
+/*script of parallax scrolling*/
 
 /**
  * scrollParallax execute fade in when scrolling into
@@ -25,7 +25,7 @@ function scrollParallax() {
   }
 
   // fade in arrow left, right
-  if (($(this).scrollTop()) > (heightInfluence * 1.2)) {
+  if (($(this).scrollTop()) > (heightInfluence * 1.1)) {
     arrowLeft.fadeIn();
     arrowRight.fadeIn();
   }
@@ -69,6 +69,8 @@ $(window).scroll(function() {
   // promoscope content ipad
   if (sparkScroll > sparkScrollExpanded) {
     expandedIn.css({'background-position':'0% ' + (sparkScroll - expandedIn.offset().top) + 'px'});
+  } else {
+    expandedIn.css({'background-position':'0% 0%'});
   }
 
   clearTimeout(action);

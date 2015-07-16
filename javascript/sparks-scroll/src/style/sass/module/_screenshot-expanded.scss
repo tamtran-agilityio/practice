@@ -1,4 +1,4 @@
-.screenshot__expanded--details, 
+/* styles of part screenshot__expanded */
 .screenshot__expanded--put,
 .screenshot__expanded--in {
 	background-repeat: no-repeat;
@@ -6,6 +6,7 @@
 }
 .screenshot__expanded--details {
 	@include bg-responsive('pic-tweet-expanded_details.png');
+	background-repeat: no-repeat;
 }
 
 .screenshot__expanded--put {
