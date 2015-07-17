@@ -1,18 +1,19 @@
 /* styles of part screenshot__expanded */
-.screenshot__expanded--put,
-.screenshot__expanded--in {
-	background-repeat: no-repeat;
-	position: absolute;
-}
-.screenshot__expanded--details {
-	@include bg-responsive('pic-tweet-expanded_details.png');
-	background-repeat: no-repeat;
-}
+.screenshot {
+	.screenshot__expanded {
+		@include m(detail) {
+			@include bg-responsive('pic-tweet-expanded_details.png');
+			@extend %bg-repeat;
+		}
+	
+		@include m(put) {
+			@include bg-responsive('ipad.png');
+			@extend %bg-repeat;
+		}
 
-.screenshot__expanded--put {
-	@include bg-responsive('ipad.png');
-	.screenshot__expanded--in {
-		@include bg-responsive('layer-ipad.png');
+		@include m(in) {
+			@include bg-responsive('layer-ipad.png');
+			@extend %bg-repeat;
+		}
 	}
 }
-

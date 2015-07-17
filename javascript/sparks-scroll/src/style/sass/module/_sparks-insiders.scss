@@ -1,8 +1,9 @@
 /*styles of part sparks insiders*/
+
 .sparks-insiders__phone {
 	.sparks-insiders__phone--black,
 	.sparks-insiders__phone--white {
-		background-repeat: no-repeat;
+		@extend %bg-repeat;
 		position: relative;	
 	}
 	.sparks-insiders__phone--black {
