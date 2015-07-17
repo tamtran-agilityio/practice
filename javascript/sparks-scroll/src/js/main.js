@@ -5,6 +5,9 @@
  */
 var action;
 
+/**
+ * function execute fade out
+ */
 function scrollParallax() {
   var digitalDrive = $('.influence-digital__drive');
   var topicTweet = $('.bg-tweet__wall');
