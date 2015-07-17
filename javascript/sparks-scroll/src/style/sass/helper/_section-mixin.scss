@@ -1,0 +1,51 @@
+/* styles mixin font text*/
+
+@mixin font-text($font-size, $font-weight, $color, $font-family) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	font-family: $font-family;
+}
+
+
+/* styles mixin size of block*/
+
+@mixin size($width, $height: $width) {
+	$width: width;
+	$height: height;
+}
+
+/* styles mixin of BEM syntax*/
+
+@mixin e($name) {
+	@at-root #{&}__#{$name} {		
+		@content
+	}
+} 
+ 
+@mixin m($name) {
+	@at-root #{&}--#{$name} {
+		@content;
+	}
+}
+
+/* styles mixin change image of page*/
+
+@mixin bg-responsive($filename) {
+
+	@media (max-width : 480px) {
+		background-image: url('../images/mobile-image/' + $filename);
+	}
+
+	@media (min-width: 481px) and (max-width: 768px) {
+		background-image: url('../images/tablet-image/' + $filename);
+	}
+
+	@media (min-width: 769px) and (max-width: 1199) {
+		background-image: url('../images/desktop-image/' + $filename);
+	}
+
+	@media (min-width : 1200px) {
+		background-image: url('../images/desktop-large-image/' + $filename);
+	}
+}
