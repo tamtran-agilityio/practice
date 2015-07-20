@@ -1,6 +1,6 @@
 /* Extra Small Devices, Phones */
 
-@media only screen and (min-width : 320px) {
+@media (min-width : 320px) {
 
 // styles of part header
 	.bg-pitch-basket {
@@ -8,159 +8,127 @@
 		height: rem(217px);
 	}
 	
-	.contain-ball {
-		width: 100%;
+	.basket-ball {
+		width: 40%;
+		float: left;	
+	}
+	
+	.basket-ball__iphone {
+		@include bg-responsive("iphone-fail.png");
+		background-repeat: no-repeat;
+		position: relative;
 		height: rem(217px);
-		.basket-ball {
-			width: 40%;
-			float: left;	
-		}
-		
-		.basket-ball__iphone {
-			@include bg-responsive("iphone-fail.png");
-			background-repeat: no-repeat;
-			background-position: 100% 100%;
-			height: rem(217px);
-		}
-
-		.inventing-chain {
-			width: 20%;
-			float: left;
-			
-			.inventing-chain__line--long,
-			.inventing-chain__radio,
-			.inventing-chain__line--short,
-			.inventing-chain__globes--online,
-			.inventing-chain__line--short-last,
-			.inventing-chain__cloud {
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-			.inventing-chain__line--long {
-				height: rem(80px);
-			}
-
-			.inventing-chain__radio {
-				height: rem(21px);
-			}
-
-			.inventing-chain__line--short {
-				height: rem(14px);
-			}
-
-			.inventing-chain__globes--online {
-				height: rem(26px);
-			}
-
-			.inventing-chain__line--short-last {
-				height: rem(14px);
-			}
-
-			.inventing-chain__cloud {
-				height: rem(38px);
-			}
-		}
-
-		.exchange-info {
-			width: 40%;
-			float: left;
-			display: block;
-			padding-top: 130px;
-
-			.exchange-info__radio {
-				@include font-text(rem(11px), normal, $white, $font-roboto);
-			}
-
-			.exchange-info__forums {
-				@include font-text(rem(11px), normal, $white, $font-roboto);
-				margin-top: rem(14px);
-			}
-
-			.exchange-info__sparks {
-				@include font-text(rem(14px), normal, $white, $font-roboto);
-				margin-top: rem(17px);
-			}
-
-			.exchange-info__discuss {
-				@include font-text(rem(9px), normal, $white, $font-roboto);
-			}
-		}
+		left: 8%;
+		top: rem(59px);
 	}
 
-// Styles of sparks inssiders
+	.inventing-chain {
+		width: 20%;
+		float: left;
+
+		@include e(segment-long) {
+			height: rem(80px);
+		}
+
+		@include e(radio) {
+			height: rem(21px);
+		}
+
+		@include e(segment-short) {
+			height: rem(14px);
+		}
+
+		@include e(globes) {
+			height: rem(26px);
+		}
+
+		@include e(cloud) {
+			height: rem(38px);
+		}
+	}
+	
+	.exchange-info {
+		margin-top: rem(80px);
+		@include e(forums) {
+			margin-top: rem(14px);
+		}
+
+		@include e(sparks) {
+			margin-top: rem(17px);
+		}
+	}
+	// Styles of sparks inssiders
 	.sparks-insiders {
 		height: rem(500px);
+		@include e(content) {
+			margin: 5rem 10% 3rem;
+			@include m(what) {
+				@include font-text(rem(14px), bold, $black, $font-roboto);
+				line-height: rem(20px);
+			}
+
+			 @include m(fan) {
+				@include font-text(rem(12px), lighter, $black, $font-roboto);
+				line-height: rem(20px);
+			}
+
+			@include m(app) {
+				padding-left: 0;
+
+				li:before {
+					content: "";
+					display: block;
+					background: url('../images/desktop-image/icon-spark.png') no-repeat;
+					margin-top: rem(5px);
+					float: left;
+					width: rem(15px);
+					height: rem(15px);
+					margin-right: rem(-5px);
+				}
+				li {
+					@include font-text(rem(11px), lighter, $black, $font-roboto);
+					list-style: none;
+					margin-bottom: rem(10px);
+					line-height: rem(16px);
+					margin: rem(0 0 2px 0);
+					display: inline-block;
+				}
+			}
+
+			@include m(channels) {
+				@include font-text(rem(12px), lighter, $black, $font-roboto);
+			}
 	}
-	.sparks-insiders__content {
-		margin: 0 auto;
-		width: 70%;
-		padding-top: rem(50px);
-		.sparks-insiders__content--what {
-			@include font-text(rem(14px), bold, $black, $font-roboto);
-			line-height: rem(20px);
-		}
-
-		.sparks-insiders__content--fan {
-			@include font-text(rem(12px), lighter, $black, $font-roboto);
-			line-height: rem(20px);
-		}
-
-		.sparks-insiders__content--app {
-			padding-left: 0;
-
-			li:before {
-				content: "";
-				display: block;
-				background: url('../images/desktop-image/icon-spark.png') no-repeat;
-				margin-top: rem(5px);
-				float: left;
-				width: rem(15px);
-				height: rem(15px);
-				margin-right: rem(-5px);
-			}
-			li {
-				@include font-text(rem(11px), lighter, $black, $font-roboto);
-				list-style: none;
-				margin-bottom: rem(10px);
-				line-height: rem(16px);
-				margin: rem(0 0 2px 0);
-				display: inline-block;
-			}
-		}
-
-		.sparks-insiders__content--channels {
-			@include font-text(rem(12px), lighter, $black, $font-roboto);
-		}
 	}
 
-	.sparks-insiders__phone {
-		margin: 0 auto;
-		.sparks-insiders__phone--black,
-		.sparks-insiders__phone--white {
-				position: relative;	
-		}
-		.sparks-insiders__phone--black {
-			height: rem(165px);
-			left: 20%;
-			width: 80%;
-			top: rem(20px);
-		}
+	.sparks-insiders {
+		@include e(phone) {
+			@include m(blacks) {
+				height: rem(165px);
+				left: 20%;
+				top: rem(20px);			
+			}
 
-		.sparks-insiders__phone--white {
-			height: rem(144px);
-			left: 25%;
-			width: 75%;
-			top: -8rem;
+			@include m(whites) {
+				height: rem(144px);
+				left: 25%;
+				top: -8rem;
+			}
 		}
 	}
 
 	// Styles part influence new digital medium
 	.influence-digital {
-			background-color: $black;
-		.influence-digital__visual {
+		height: rem(850px);
+		@include e(drive-group) {
+			position: relative;
+			top: -27rem;
+			@include m(drive) {
+
+			}
 		}
 
-		.influence-digital__benefit {
+		@include e(benefit) {
 			text-align: center;
 			list-style: none;
 			padding-top: rem(20px);
@@ -174,10 +142,9 @@
 			}
 		}
 
-		.influence-digital__posting,
-		.influence-digital__specific-topics {
+		@include e(posting) {
 			margin-left: 10%;
-			h3 {
+			span {
 				@include font-text(rem(14px), lighter, $white, $font-roboto);
 				margin: rem(20px 0 5px);
 				display: inline-block;
@@ -188,10 +155,24 @@
 				display: inline;
 			}
 		}
-		.influence-digital__drive {
-			position: absolute;
-			display: none;
-			top: rem(1162px);
+
+		@include e(posting-topic) {
+			margin-left: 10%;
+			span {
+				@include font-text(rem(14px), lighter, $white, $font-roboto);
+				margin: rem(20px 0 5px);
+				display: inline-block;
+			}
+
+			p {
+				@include font-text(rem(10px), lighter, $white, $font-roboto);
+				display: inline;
+			}
+		}
+
+		@include e(drive) {
+			position: relative;
+			// display: none;
 			left: 27%;
 			background-color: $white;
 			border-radius: rem(20px);
@@ -210,83 +191,79 @@
 
 		.bg-arrow__left, .bg-arrow__right {
 			background-repeat: no-repeat;
-			position: absolute;
-			display: none;
+			position: relative;
+			// display: none;
 			z-index: 2;
 			left: 48%;
 		}
-		.bg-arrow__left {
-			@include bg-responsive('arrow-left.png');
-			display: none;
-			height: rem(50px);
-			width: rem(30px);
-			top: rem(1120px);
+		.bg-arrow {
+			@include e(left) {
+				@include bg-responsive('arrow-left.png');
+				// display: none;
+				height: rem(50px);
+				width: rem(30px);
+				top: -11rem;
+			}
+		
+			@include e(right) {
+				@include bg-responsive('arrow-right.png');
+				height: rem(50px);
+				width: rem(30px);
+				top: -7rem;
+			}
 		}
 
-		.bg-arrow__right {
-			@include bg-responsive('arrow-right.png');
-			height: rem(50px);
-			width: rem(30px);
-			top: rem(1220px);
-		}
-
-		.bg-tweet__wall {
-			.tweet-wall__profile,
-			.tweet-wall__cluster,
-			.tweet-wall__recent,
-			.tweet-wall__expanded {
-				background-position: center center;
-			}
-			.tweet-wall__profile {
-				margin-top: rem(10px);
-				height: rem(80px);
-			}
-			.tweet-wall__cluster {
+		.tweet-wall {
+			height: rem(620px);
+			@include e(profile) {
 				margin-top: rem(10px);
 				height: rem(110px);
 			}
-			.tweet-wall__recent {
+			@include e(cluster) {
+				margin-top: rem(10px);
+				height: rem(120px);
+			}
+			@include e(recent) {
 				margin-top: rem(10px);
 				height: rem(100px);
 			}
-			.tweet-wall__expanded {
+			@include e(expanded) {
 				margin-top: rem(80px);
 				height: rem(205px);
 			}
 		}
-		.screenshot__expanded--details {
-			background-position: center;
-			display: none;
-			height: rem(142px);
-			width: 	100%;
-			top: rem(1500px);
-		}
 
-		.screenshot__arrow--horizontal {
-			@include bg-responsive('arrow-horizontal.png');
-			background-repeat: no-repeat;
-			position: absolute;
-			display: none;
-			background-position: center;
+		.screenshot {
+			height: rem(530px);
+			@include e(expanded) {
+				@include m(detail) {
+					background-position: center;
+					// display: none;
+					height: rem(142px);
+					width: 	100%;
+				}
+	
+			@include m(put) {
+				position: relative;
+				// display: none;
+				height: rem(287px);
+				left: 18%;
+				top: -5rem;
+				img {
+					position: relative;
+					// width: rem(176px);
+					left: rem(12px);
+					top: rem(25px);
+					height: rem(236px);
+				}
+			}
+		}
+		@include e(arrow) {
 			height: rem(60px);
 			width: rem(30px);
-			top: rem(1600px);
 			left: 45%;
 			z-index: 1;
-		}
-
-		.screenshot__expanded--put {
-			display: none;
-			width: 90%;
-			height: rem(287px);
-			top: rem(1640px);
-			left: 5%;
-			.screenshot__expanded--in {
-				width: rem(176px);
-				left: rem(12px);
-				top: rem(25px);
-				height: rem(236px);
-				position: absolute;
+			top: -2rem;
 			}
 		}
 	}

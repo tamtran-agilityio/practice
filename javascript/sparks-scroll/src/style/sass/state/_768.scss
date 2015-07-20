@@ -4,83 +4,57 @@
 		background: url('../images/desktop-image/bg-pitch.png') center no-repeat;
 		height: rem(430px);
 	}
-	.contain-ball{
-		.basket-ball__iphone {
-			height: rem(383px);
-			top: rem(47px);
+	.basket-ball {
+		@include e(iphone) {
+			height: rem(350px);
+			margin-top: rem(95px);
+		}
+	}
+
+	.inventing-chain {
+		@include e(segment-long) {
+			height: rem(160px);
 		}
 
-		.inventing-chain {
-			.inventing-chain__line--long {
-				height: rem(150px);
-			}
-
-			.inventing-chain__radio {
-				height: rem(40px);
-			}
-
-			.inventing-chain__line--short {
-				height: rem(26px);
-			}
-
-			.inventing-chain__globes--online {
-				height: rem(45px);
-			}
-
-			.inventing-chain__line--short-last {
-				height: rem(26px);
-			}
-
-			.inventing-chain__cloud {
-				height: rem(93px);
-			}
+		@include e(radio) {
+			height: rem(30px);
 		}
 
-		.exchange-info {
-			padding-top: rem(163px);
-
-			.exchange-info__radio {
-				font-size: rem(14px);
-			}
-
-			.exchange-info__forums {
-				font-size: rem(16px);
-				margin-top: rem(54px);
-			}
-
-			.exchange-info__sparks {
-				font-size: rem(18px);
-				margin-top: rem(80px);
-			}
-
-			.exchange-info__discuss {
-				width: 70%;
-				font-size: rem(14px);
-				margin-top: rem(20px);
-			}
+		@include e(segment-short) {
+			height: rem(24px);
 		}
+
+		@include e(globes) {
+			height: rem(48px);
+		}
+
+		@include e(cloud) {
+			height: rem(80px);
+		}
+	}
+
+	.exchange-info {
+		margin-top: rem(170px);
 	}
 
 	// Styles of sparks inssiders
 	.sparks-insiders {
-		height: rem(490px);
-		.sparks-insiders__content {
-			width: 40%;
-			margin-left: 10%;
+		height: rem(400px);
+		@include e(content) {
+			width: 30%;
+			margin-left: 20%;
 			display: inline-block;
-			float: left;
 			height: rem(290px);
-			padding-top: rem(100px);
-
-			.sparks-insiders__content--what {
+			@include m(what) {
 				font-size: rem(20px);
 			}
 
-			.sparks-insiders__content--fan {
-				font-size: rem(16px)
+			@include m(fan) {
+				font-size: rem(16px);
+				margin: rem(10px 0);
 			}
 
-			.sparks-insiders__content--app {
+			@include m(app) {
 				li:before {
 					margin-top: rem(3px);
 					float: left;
@@ -89,41 +63,40 @@
 
 				li {
 					font-size: rem(14px);
-					line-height: rem(14px);
 				}
+				
 			}
-			.sparks-insiders__content--channels {
+			@include m(channels) {
 				font-size: rem(16px);
+				margin-top: rem(10px);
 			}
 		}
-		.sparks-insiders__phone {
+		@include e(phone) {
 			width: 50%;
 			height: 340px;
 			float: left;
-			.sparks-insiders__phone--black {
+			@include m(blacks) {
 				height: rem(390px);
 				left: 0;
 				top: rem(40px);
 			}
 
-			.sparks-insiders__phone--white {
-				position: absolute;
+			@include m(whites) {
+				position: relative;
 				height: rem(323px);
-				top: rem(630px);
-				left: 50%;
-				width: 50%;
 			}
 		}
 	}
 
 	// Styles part influence new digital medium
 	.influence-digital {
-			height: rem(700px) ;
-		
-		.influence-digital__visual {
+		height: rem(700px) ;
+		 
+		@include e(visual) {
 			height: rem(700px);
 		}
-		.influence-digital__benefit {
+		@include e(benefit) {
+			margin-top: rem(40px);
 			li:first-child{
 				font-size: rem(16px);
 			}
@@ -133,74 +106,73 @@
 			}
 		}
 		
-		.influence-digital__drive-group {
-			top: -23rem;
+		@include e(drive-group) {
+			top: -61rem;
 			.bg-arrow__left {
 				left: 8%;
-			}
-
-			.influence-digital__drive {
-				left: 16%;
-			}
-		}
-
-		.influence-digital__specific-topics,
-		.influence-digital__posting {
-			p {
-				display: block;
+				background-size: initial;
+				width: 440px;
+				height: 110px;
 			}
 		}
-		.influence-digital__specific-topics {
+		@include e(drive) {
+			width: rem(140px);
+			left: 15%;
+		}
+		
+		@include e(posting) {
 			width: 30%;
-			top: rem(1500px);
-		}
-		.influence-digital__posting {
-			top: rem(1000px);
-			width: 30%;
-			left: 63%;
-			line-height: rem(14px);
 		}
 
-	.bg-tweet__wall {
-		.tweet-wall__profile {
-			height: rem(162px);
+		@include e(posting-topic) {
+			top: rem(120px);
 		}
 
-		.tweet-wall__cluster {
-			height: rem(176px);
-		}
-
-		.tweet-wall__recent {
-			height: rem(140px);
-		}
-
-		.tweet-wall__expanded {
-			height: rem(400px);
-			top: 100rem;
+		.tweet-wall {
+			@include e(profile) {
+				margin-top: rem(10px);
+				height: rem(150px);
+			}
+			@include e(cluster) {
+				margin-top: rem(10px);
+				height: rem(160px);
+			}
+			@include e(recent) {
+				margin-top: rem(10px);
+				height: rem(140px);
+			}
+			@include e(expanded) {
+				top: -48rem;
+				height: rem(325px);
 			}
 		}
-		.screenshot__expanded--details {
-			top: rem(1580px);
-			left: 10%;
-			height: rem(269px);
-		}
-		.screenshot__arrow--horizontal {
-			width: rem(100px);
-			top: rem(1660px);
-			left: 36%;
-		}
+		.screenshot {
+			height: rem(530px);
+			@include e(expanded) {
+				@include m(detail) {
+					background-position: initial;
+					height: rem(210px);
+					margin-top: 0;
+				}
 
-		.screenshot__expanded--put {
-			height: rem(370px);
-			width: rem(260px);
-			left: 42%;
-			top: rem(1520px);
-			.screenshot__expanded--in {
-				top: 53px;
-				left: 26px;
-				background-size: inherit;
-				width: rem(226px);
-				height: rem(301px);
+				@include m(put) {
+					height: rem(367px);
+					width: rem(310px);
+					left: 43%;
+					top: -35rem;
+					img {
+						left: rem(16px);
+						top: rem(33px);
+						height: rem(305px);
+					}
+				}
+			}
+			@include e(arrow) {
+				height: rem(60px);
+				width: rem(120px);
+				left: 30%;
+				z-index: 1;
+				top: -14rem;
 			}
 		}
 	}
