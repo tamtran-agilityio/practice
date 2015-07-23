@@ -1,0 +1,127 @@
+.title {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.demo {
+
+  .box {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #2aa4a2;
+    background-color: #8fdce5;
+  }
+
+  &:hover {
+
+    .box {
+      position: relative;
+      @include animation-name(box,slide);
+      @include animation-duration(2s);
+      @include animation-iteration-count(infinite);
+
+      @include keyframes(box) {
+        0% { @include transform(scale(1));}
+        50% { @include transform(scale(2));}
+        100% { @include transform(scale(1));}
+      }
+
+      @include keyframes(slide) {
+        0% {left: 0;}
+        50% {left:100px; }
+        100% {left: 0;}
+      }
+    }
+  }
+}
+
+.colums {
+  @include columns(12 8em);
+}
+
+.flex {
+  &__container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include flex(2);
+    @include flex-direction(row);
+    @include align-items(stretch);
+    @include justify-content(space-around);
+  }
+
+  &__item {
+    @include flex(1);
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    &:last-child {
+      background-color: red;
+    }
+
+    &--contend {
+      @include keyframes(fadeIn) {
+        from {
+          @include transform(scale(0));
+        }
+        to {
+          @include transform(scale(1));
+        }
+      }
+    }
+  }
+}
+
+$fg-column: 60px;             // Column Width
+$fg-gutter: 25px;             // Gutter Width
+$fg-max-columns: 12;          // Total Columns For Main Container
+
+.flex-colums {
+  width: flex-grid(4);        // returns (315px / 1020px) = 30.882353%;
+  margin-left: flex-gutter(); // returns (25px / 1020px) = 2.45098%;
+
+  p {
+    width: flex-grid(2, 4);   // returns (145px / 315px) = 46.031746%;
+    float: left;
+    margin: flex-gutter(4);   // returns (25px / 315px) = 7.936508%;
+    background: tint(red, 40%);
+  }
+
+  blockquote {
+    background: shade(blue, 60%);
+    float: left;
+    width: flex-grid(2, 4);   // returns (145px / 315px) = 46.031746%;
+    font-size: golden-ratio(24px,  1);
+  }
+}
+
+.function {
+  &__grid {
+    margin: unpack(1em 2em);
+    font-size: rem(12);
+    margin-top: 50px;
+    height: 300px;
+    background-color: #9400D3;
+    $gw-column: 100px;          // Column Width
+    $gw-gutter: 40px;           // Gutter Width
+    div {
+      width: grid-width(4);     // returns 520px;
+      margin-left: $gw-gutter;  // returns 40px;
+    }
+  }
+
+  &__image {
+    margin-top: 60px;
+    @include background-image(linear-gradient(white 0, yellow 50%, transparent 50%));
+    height: 100px;
+  }
+}
