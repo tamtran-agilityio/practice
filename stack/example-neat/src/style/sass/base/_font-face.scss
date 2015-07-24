@@ -1,0 +1,6 @@
+/* mixin font face */
+
+@include font-face("Roboto", "/fonts/Roboto-Black", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Light", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Regular", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Thin", $file-formats: eot ttf woff);
