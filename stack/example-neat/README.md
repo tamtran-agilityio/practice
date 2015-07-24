@@ -17,9 +17,9 @@ Practice example bourbon
  - cd /stack/example-bourbon-neat
 2. Install plugin
  - gem install bourbon
- - bourbon install src/files/vendor
+ - bourbon install
  - gem install neat
- - neat install src/files/vendor
+ - neat install
 3. Run project
  - Run 'gulp'
 
