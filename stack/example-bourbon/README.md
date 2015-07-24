@@ -1,20 +1,7 @@
-Practice parallax scrolling web
+Practice example bourbon
 
 ## Author
 
-## Gulp plugin
-	browser-sync: watch load page on browser
-	gulp-concat: To concat all js file to one file
-	gulp-jade: support build jade
-	gulp-jshint: checking code styles js 
-	gulp-minify-css: min file styles
-	gulp-sass: support build sass
-	gulp-util: Utility functions for gulp plugins
-	jshint-stylish: To style for result of jshint task
-## Gulp task
-	gulp: run build all app
-	gulp-jade: run build file jade
-	gulp-sass: run build file sass 
 ## Project structure
 	src: directory source app include images, fonts, scss ,jade 
 	bower.json: config all libraries need to project
@@ -27,11 +14,7 @@ Practice parallax scrolling web
 ## Run practice
 1. Start vagrant
  - Run 'vagrant up' after 'vagrant ssh'
- - cd /javascript/sparks-scroll
-2. Install gulp
- - Run 'npm install gulp -g'
-3. Set libraries:
- - Run 'npm update' to install all libraries 
-4. Run project
+ - cd /stack/example-bourbon
+2. Run project
  - Run 'gulp'
- - Open URL: http://localhost:9000 
+
