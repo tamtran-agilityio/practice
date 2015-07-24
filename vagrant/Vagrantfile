@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "hashicorp/precise32"
   config.vm.synced_folder "../javascript/", "/javascript"
+  config.vm.synced_folder "../stack/", "/stack"
   config.vm.network :forwarded_port, guest:9778, host: 9778
   config.vm.network :forwarded_port, guest:9000, host: 9000
   config.vm.provision :shell, path: "bootstrap.sh",:privileged => false

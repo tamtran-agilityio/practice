@@ -1,6 +1,6 @@
 /* styles of part screenshot__expanded */
 .screenshot {
-	.screenshot__expanded {
+	@include e(expanded) {
 		@include m(detail) {
 			@include bg-responsive('pic-tweet-expanded_details.png');
 			@extend %bg-repeat;
@@ -15,5 +15,11 @@
 			@include bg-responsive('layer-ipad.png');
 			@extend %bg-repeat;
 		}
+	}
+	@include e(arrow) {
+		@include bg-responsive('arrow-horizontal.png');
+		@extend %bg-repeat;
+		@extend %background-center;
+		position: relative;
 	}
 }

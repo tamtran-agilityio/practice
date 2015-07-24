@@ -1,16 +1,16 @@
 /*styles of part sparks insiders*/
 
-.sparks-insiders__phone {
-	.sparks-insiders__phone--black,
-	.sparks-insiders__phone--white {
-		@extend %bg-repeat;
-		position: relative;	
-	}
-	.sparks-insiders__phone--black {
-		@include bg-responsive('iphone-black.png');
-	}
-
-	.sparks-insiders__phone--white {
-		@include bg-responsive('iphone-white.png');
+.sparks-insiders {
+	@include e(phone) {
+		@include m(blacks) {
+			@extend %bg-repeat;
+			@include bg-responsive('iphone-black.png');
+			position: relative;		
+		}
+		@include m(whites) {
+			@extend %bg-repeat;
+			@include bg-responsive('iphone-white.png');
+			position: relative;		
+		}
 	}
 }

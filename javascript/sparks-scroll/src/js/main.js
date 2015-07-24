@@ -3,48 +3,72 @@
 /**
  * scrollParallax execute fade in when scrolling into
  */
-var action;
 
-/**
- * function execute fade out
- */
-function scrollParallax() {
-  var digitalDrive = $('.influence-digital__drive');
-  var topicTweet = $('.bg-tweet__wall');
-  var arrowLeft = $('.bg-arrow__left');
-  var arrowRight = $('.bg-arrow__right');
-  var arrowHorizon = $('.screenshot__arrow--horizontal');
-  var expandedDetails = $('.screenshot__expanded--details');
-  var expandedPut = $('.screenshot__expanded--put');
-  var heightInfluence = $('.influence-digital').height();
-  var heightScreenshot = $('.screenshot-silver').height();
+(function(window, document, undefined) {
+  'use strict';
 
-  action = setTimeout(function() {
+  /**
+   * global api
+   */
+  
+  var scrolling = {
+    get: function() {
+      return _instance;
+    },
+
+    // main entry point
+    init: function(options) {
+      return _instance || Scroll; 
+    }
+  }
+
+  function Scroll(options) {
+    documentElement = document.documentElement;
+    body = document.body;
+
+
+  }
+  /**
+   * function excute scrolling
+   */
+  var scroll = function scrollParallax() {
+    // body...
+    var digitalDrive = $('.influence-digital__drive');
+    var topicTweet = $('.bg-tweet__wall');
+    var arrowLeft = $('.bg-arrow__left');
+    var arrowRight = $('.bg-arrow__right');
+    var arrowHorizon = $('.screenshot__arrow--horizontal');
+    var expandedDetails = $('.screenshot__expanded--details');
+    var expandedPut = $('.screenshot__expanded--put');
+    var heightInfluence = $('.influence-digital').offset().top;
+    var heightScreenshot = $('.screenshot-silver').height();
 
     // fade in block influence-digital
-    if (($(this).scrollTop()) > (heightInfluence / 3)) {
-      digitalDrive.fadeIn();
-      topicTweet.fadeIn();
-    }
+    var hide = function() {
+      if ($this.scrollTop() > (heightInfluence)) {
+        digitalDrive.fadeIn();
+        topicTweet.fadeIn();
+      }
 
-    // fade in arrow left, right
-    if (($(this).scrollTop()) > (heightInfluence * 1.1)) {
-      arrowLeft.fadeIn('slow');
-      arrowRight.fadeIn('slow');
-    }
+      // fade in arrow left, right
+      if (($(this).scrollTop()) > (arrowLeft)) {
+        arrowLeft.fadeIn();
+        arrowRight.fadeIn();
+      }
 
-    // fade in block screenshot silver
-    if ($(this).scrollTop() > (heightScreenshot)) {
-      expandedDetails.fadeIn();
-      expandedPut.fadeIn();
-    }
+      // fade in block screenshot silver
+      if ($(this).scrollTop() > (heightScreenshot)) {
+        expandedDetails.fadeIn();
+        expandedPut.fadeIn();
+      }
 
-    if ($(this).scrollTop() > (heightScreenshot * 2.5)) {
-      arrowHorizon.fadeIn();
+      if ($(this).scrollTop() > (heightScreenshot * 2.5)) {
+        arrowHorizon.fadeIn();
+      }
     }
+  }
+}(window, document));
 
-  }, 300);
-}
 
 /**
  * handle event when scrolling
@@ -52,7 +76,7 @@ function scrollParallax() {
 $(window).scroll(function() {
 
   var sparkScroll = $(this).scrollTop();
-  var sparkScrollExpanded = $('.screenshot__expanded--in').offset().top;
+  var sparkScrollExpanded = $('img').offset().top;
   var sparkScrollExpandedPut = $('.screenshot__expanded--put');
   var bgPitch = $('.bg-pitch-basket');
   var bgLearn = $('.bg-ball__learn');
@@ -63,7 +87,7 @@ $(window).scroll(function() {
   var heightSilver = $('.screenshot-silver').height();
 
   var screenSilver = $('.screenshot-silver');
-  var expandedIn = $('.screenshot__expanded--in');
+  var expandedIn = $('img');
 
   // set background position of pitch basket
   if (sparkScroll <= heightBasket) {
@@ -87,6 +111,4 @@ $(window).scroll(function() {
     expandedIn.css({'background-position':'0% 0%'});
   }
 
-  clearTimeout(action);
-  scrollParallax();
 });

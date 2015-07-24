@@ -37,11 +37,11 @@
 		background-image: url('../images/mobile-image/' + $filename);
 	}
 
-	@media (min-width: 481px) and (max-width: 768px) {
+	@media (min-width: 481px) and (max-width: 767px) {
 		background-image: url('../images/tablet-image/' + $filename);
 	}
 
-	@media (min-width: 769px) and (max-width: 1199) {
+	@media (min-width: 768px) {
 		background-image: url('../images/desktop-image/' + $filename);
 	}
 
