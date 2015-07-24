@@ -1,0 +1,6 @@
+.background-based {
+  @include background-image(url("/images/background-based.png"));
+  background-position: center top, center;
+  background-repeat: no-repeat, repeat-x;
+  height: em(700px);
+}

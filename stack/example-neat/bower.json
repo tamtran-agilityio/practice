@@ -1,7 +1,7 @@
 {
-  "name": "Example bourbon",
+  "name": "example bourbon",
   "version": "0.0.0",
-  "description": " Practice Example NEAT",
+  "description": " practice about bourbon neat",
   "moduleType": [
     "node"
   ],
