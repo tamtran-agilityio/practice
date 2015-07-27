@@ -1,0 +1,50 @@
+/* styles part instagram slide  include 4 image*/
+
+.instagram-slide {
+  @include padding(em(80px) null);
+  background-color: $black;
+}
+
+.instagram-short {
+  @include outer-container(50%);
+  text-align: center;
+  margin-bottom: em(30px);
+  
+  @include e(grey-line) {
+    width: em(100px);
+    height: em(5px);
+    display: inline-block;
+    border-top: solid em(1px) #e1dddd;
+    border-bottom: solid em(1px) #e1dddd;
+  }
+  
+  @include e(title) {
+    @include font-text(em(18px),bold, $white, 'Roboto');
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 em(15px);
+  }
+}
+
+/* container part instagram image */
+.instagram-scroll {
+  @include outer-container(95%);
+  @include e(image) {
+    @include span-columns(3);
+  }
+}
+
+/* instagram button */
+.instagram-link {
+  margin-top: em(50px);
+  @include outer-container(50%);
+  text-align: center;
+  @include e(buttons) {
+    @include padding(em(10px) em(20px));
+    text-transform: uppercase;
+    border: solid em(1px) #e1dddd;
+    background-color: $black;
+    color: $white;
+    border-width: 1px;
+  }
+}
