@@ -1,0 +1,23 @@
+/* styles each service*/
+
+.services {
+  @include span-columns(4);
+  @include padding(em(15px));
+  @include border-width(em(10px));
+  @include border-color($black);
+  text-align: center;
+  background-color: $white;
+  
+  @include e(image) {
+    width: 100%;
+  }
+
+  @include e(title) {
+    @include font-text(em(17px), bold, $black, 'Roboto');
+    @include margin(em(25px) null em(15px));
+  }
+
+  @include e(description) {
+    @include font-text(em(14px), sans-serif, $black, 'Roboto');
+  }
+}
