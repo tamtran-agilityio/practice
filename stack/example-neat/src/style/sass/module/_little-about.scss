@@ -1,0 +1,69 @@
+/* styles part title about me and my service */
+
+.little-about {
+  @include outer-container(75%);
+  @include e(content) {
+    @include span-columns(6);
+  }
+}
+
+.about-description {
+  @include e(headline) {
+    @include font-text(em(16px), bold, $black, 'Roboto');
+    text-transform: uppercase;
+    display: inline-block;
+    @include margin(null em(15px) em(25px) null);
+  }
+
+  @include e(grey-line) {
+    width: em(100px);
+    height: em(5px);
+    display: inline-block;
+    border-top: solid em(1px) #e1dddd;
+    border-bottom: solid em(1px) #e1dddd;
+  }
+}
+
+/* styles part title about me */
+
+.about-description {
+  @include e(image) {
+    @include span-columns(5);
+  }
+
+  @include e(detail) {
+    @include span-columns(7);
+    margin-left: em(10px);
+    @include m(lead) {
+      @include font-text(em(15px), bold, $black, 'Roboto');
+      margin-bottom: em(10px);
+    }
+
+    @include m(more) {
+      @include font-text(em(14px), bold, $black, 'Roboto');
+    }
+  }
+}
+
+/* styles part title my service */
+
+.services-about {
+  @include e(image) {
+    @include span-columns(1);
+    float: left;
+  }
+
+  @include e(description) {
+    @include span-columns(11);
+    @include m(title) {
+      @include font-text(em(17px), bold, $black, 'Roboto');
+      text-transform: capitalize;
+      margin-bottom: em(10px);
+    }
+
+    @include m(detail) {
+      @include font-text(em(14px), lighter, $black, 'Roboto');
+      margin-bottom: em(30px);
+    }
+  }
+}
