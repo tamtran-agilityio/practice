@@ -8,10 +8,19 @@ html(lang='en')
     link(href='styles/styles.css', rel='stylesheet')
   body
     .container
-      .background-based
-      .based
-        h2.based__headline Jonathon Kubb
-        h3.based__headphoto Photography
-        span.based__headbased Based in New York since 2001
-
+      // part based head
+      include partials/based.jade
+      section.services-i-do
+        // part introduce page
+        include partials/page-title.jade
+        // part service do offer
+        include partials/service-offer.jade
+        // details services i do offer
+        include partials/service-detail.jade
+      // slide instagram
+      include partials/instagram-slide.jade
+      // part blog post
+      include partials/blog-post.jade
+      // little about me, services
+      include partials/little-about.jade
 
