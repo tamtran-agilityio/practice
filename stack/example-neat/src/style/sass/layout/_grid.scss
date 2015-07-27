@@ -2,4 +2,9 @@
 
 .container {
   @include outer-container(100%);
+  background-color: #f9f9f9;
+}
+
+.container-service {
+  @include outer-container(75%);
 }
