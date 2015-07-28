@@ -24,4 +24,12 @@
     @include span-columns(12);
     margin-bottom: em(40px);
   }
+
+  .logo {
+    @include span-columns(2);
+  }
+
+  .nav {
+    @include span-columns(10);
+  }
 }

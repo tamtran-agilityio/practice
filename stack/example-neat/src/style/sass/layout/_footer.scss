@@ -23,7 +23,7 @@
     @include font-text(em(14px), normal, $white, $font-roboto);
 
     &:before {
-      @include background-image(url('/images/icon/icon-market.png'));
+      @include background-image(url('/images/icons/icon-market.png'));
       background-repeat: no-repeat;
       content: "";
       width: em(15px);
@@ -37,7 +37,7 @@
     @include margin(em(10px) 0);
     display: block;
     &:before {
-      @include background-image(url('/images/icon/icon-phone.png'));
+      @include background-image(url('/images/icons/icon-phone.png'));
       background-repeat: no-repeat;
       content: "";
       width: em(15px);
@@ -50,7 +50,7 @@
     @include font-text(em(14px), normal, $white, $font-roboto);
     text-decoration: none;
     &:before {
-      @include background-image(url('/images/icon/icon-later.png'));
+      @include background-image(url('/images/icons/icon-later.png'));
       background-repeat: no-repeat;
       content: "";
       width: em(15px);
