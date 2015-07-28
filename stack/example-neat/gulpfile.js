@@ -1,3 +1,4 @@
+var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var compass = require('gulp-compass');
@@ -8,7 +9,6 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var minifyCss = require('gulp-minify-css');
-var gulp = require('gulp');
 
 var config = {
 	css: 'src/style/**/*.scss',
@@ -72,11 +72,11 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest(config.cssOut));
 });
 
-
 // build sass combine compass code to css
 gulp.task('sass', function() {
   gulp.src(config.css)
     .pipe(compass({
+      config_file: './config.rb',
     	css: 'out/styles/',
       sass: 'src/style/'
     }))
