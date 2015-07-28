@@ -1,20 +1,12 @@
 /* styles part section blog post */
 .blog-post {
-  @include outer-container(75%);
+  @include outer-container(100%);
   @include padding(em(80px) 0);
 
   .blog-title {
-    @include outer-container(100%);
     text-align: center;
     margin-bottom: em(25px);
-    @include e(grey-line) {
-      width: em(100px);
-      height: em(5px);
-      display: inline-block;
-      border-top: solid em(1px) #e1dddd;
-      border-bottom: solid em(1px) #e1dddd;
-    }
-    
+ 
     @include e(from) {
       @include font-text(em(18px),bold, $black, $font-roboto);
       text-transform: uppercase;
@@ -25,7 +17,6 @@
 }
 
 /* styles each journal post */
-
 .journal-post {
   @include span-columns(4);
   @include border-width(em(10px));

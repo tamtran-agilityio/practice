@@ -14,7 +14,7 @@ var config = {
 	css: 'src/style/**/*.scss',
 	cssOut: 'out/styles',
 
-  image: 'src/images/*.png',
+  image: 'src/images/**/*.png',
   imageOut: 'out/images',
 
   font: 'src/fonts/*.*',
@@ -58,7 +58,7 @@ gulp.task('serve', [], function() {
 	});
 
 	gulp.watch(['out/*.html'], browserSync.reload);
-  gulp.watch(['out/images/*.npg'], browserSync.reload);
+  gulp.watch(['out/images/**/*.npg'], browserSync.reload);
 	gulp.watch(['out/styles/*.css'], browserSync.reload);
 });
 

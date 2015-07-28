@@ -6,20 +6,11 @@
 }
 
 .instagram-short {
-  @include outer-container(50%);
   text-align: center;
   margin-bottom: em(30px);
   
-  @include e(grey-line) {
-    width: em(100px);
-    height: em(5px);
-    display: inline-block;
-    border-top: solid em(1px) #e1dddd;
-    border-bottom: solid em(1px) #e1dddd;
-  }
-  
   @include e(title) {
-    @include font-text(em(18px),bold, $white, 'Roboto');
+    @include font-text(em(18px),bold, $white, $font-roboto);
     text-transform: uppercase;
     display: inline-block;
     margin: 0 em(15px);
@@ -37,12 +28,11 @@
 /* instagram button */
 .instagram-link {
   margin-top: em(50px);
-  @include outer-container(50%);
   text-align: center;
   @include e(buttons) {
     @include padding(em(10px) em(20px));
     text-transform: uppercase;
-    border: solid em(1px) #e1dddd;
+    border: solid em(1px) $color-parallel;
     background-color: $black;
     color: $white;
     border-width: 1px;

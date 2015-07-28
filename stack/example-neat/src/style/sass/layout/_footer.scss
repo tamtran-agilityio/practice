@@ -1,3 +1,4 @@
+/* style part footer*/
 .site-footer {
   background-color: #373737;
   @include padding(em(80px) 0);
@@ -20,24 +21,48 @@
 
   @include e(address) {
     @include font-text(em(14px), normal, $white, $font-roboto);
+
+    &:before {
+      @include background-image(url('/images/icon/icon-market.png'));
+      background-repeat: no-repeat;
+      content: "";
+      width: em(15px);
+      height: em(15px);
+      display: inline-block;
+    }
   }
   
   strong {
     @include font-text(em(14px), normal, $white, $font-roboto);
-    @include margin(em(20px) 0);
+    @include margin(em(10px) 0);
     display: block;
+    &:before {
+      @include background-image(url('/images/icon/icon-phone.png'));
+      background-repeat: no-repeat;
+      content: "";
+      width: em(15px);
+      height: em(15px);
+      display: inline-block;
+    }
   }
 
   a {
     @include font-text(em(14px), normal, $white, $font-roboto);
-    margin-top: em(20px);
     text-decoration: none;
+    &:before {
+      @include background-image(url('/images/icon/icon-later.png'));
+      background-repeat: no-repeat;
+      content: "";
+      width: em(15px);
+      height: em(15px);
+      display: inline-block;
+    }
   }
 
   li {
-     @include font-text(em(14px), normal, $white, $font-roboto);
-     margin-bottom: em(20px);
-     list-style-type: none;
+    @include font-text(em(14px), normal, $white, $font-roboto);
+    margin-bottom: em(25px);
+    list-style-type: none;
   } 
 }
 

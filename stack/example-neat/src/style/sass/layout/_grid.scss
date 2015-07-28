@@ -2,9 +2,9 @@
 
 .container {
   @include outer-container(100%);
-  background-color: #f9f9f9;
+  background-color: $bg-container-full;
 }
 
-.container-service {
+.container-content {
   @include outer-container(75%);
 }

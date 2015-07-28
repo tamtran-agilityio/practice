@@ -1,7 +1,6 @@
 /* create  mixin use site*/
 
 // mixin font face
-
 @mixin font-text($font-size, $font-weight, $color, $font-family ) {
   font-size: $font-size;
   font-weight: $font-weight;
@@ -10,7 +9,6 @@
 } 
 
 // styles mixin of BEM syntax
-
 @mixin e($name) {
   @at-root #{&}__#{$name} {   
     @content
