@@ -1,0 +1,32 @@
+/* styles background of head */
+
+.background-based {
+  background-image: url("/images/background-based.png");
+  background-position: center top, center;
+  background-repeat: no-repeat;
+  height: em(700px);
+  position: relative;
+}
+.based {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  top: 30%;
+  @include e(headline) {
+    @include font-text(em(50px), bold, $white, $font-roboto);
+  }
+
+  @include e(headphoto) {
+    @include font-text(em(40px), lighter, $white, $font-roboto);
+    margin-top: em(5px);
+    letter-spacing: em(4px);
+  }
+
+  @include e(headbased) {
+    @include font-text(em(14px), lighter, $white, $font-roboto);
+    margin-top: em(10px);
+    text-transform: capitalize;
+    display: inline-block;
+  }
+}
