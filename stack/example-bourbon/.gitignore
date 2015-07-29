@@ -3,6 +3,7 @@
 out/
 node_modules/
 vendor/
+bourbon/
 
 #temp files
 #########################
