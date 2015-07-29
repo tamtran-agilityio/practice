@@ -9,3 +9,5 @@
   'sass/layout/all-layout',
   'sass/module/all-module',
   'sass/state/all-state';
+  @import "compass/utilities/sprites";
+  @import "icons/*.png";
