@@ -21,7 +21,7 @@
   @include span-columns(4);
   @include border-width(em(10px));
   @include border-color($black);
-  background-color: $white;
+  background-color: $base-background-color;
   @include e(image) {
     width: 100%;
   }
