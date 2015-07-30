@@ -1,3 +1,21 @@
+/* styles responsive video and form  */
+
+.video {
+  @include e(wapper) {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    @include margin(em(20px) 0);
+
+    embed,
+    object,
+    iframe {
+      @include position(absolute, 0px null null 0px);
+      @include size(100%);
+    }
+  }
+}
 .reply-controll {
   @include outer-container(100%);
   border: em(1px) solid $light-gray;
