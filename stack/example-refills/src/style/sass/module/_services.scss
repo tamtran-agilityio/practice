@@ -10,14 +10,21 @@
   
   @include e(image) {
     width: 100%;
+    background-color: $card-image-hover-color;
     img {
-      overflow: hidden;
-      background-color: $card-image-hover-color;
       @include transition (all 0.2s ease-in-out);
       border-top-left-radius: $base-border-radius;
       border-top-right-radius: $base-border-radius;
       width: 100%;
       opacity: 1;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    img {
+      opacity: 0.7;
     }
   }
 

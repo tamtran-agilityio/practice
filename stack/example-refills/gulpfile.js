@@ -84,29 +84,29 @@ gulp.task('sass', function() {
   gulp.src(config.css)
     .pipe(compass({
       config_file: './config.rb',
-    	css: 'out/styles/',
+      css: 'out/styles/',
       sass: 'src/style/'
     }))
-    // 	.pipe(minifyCss({
-    // 	compatibility: 'ie8'
-    // }))
+      .pipe(minifyCss({
+      compatibility: 'ie8'
+    }))
     .pipe(gulp.dest('out/styles'));
 });
 
 gulp.task('sass:watch', function() {
-	gulp.watch(config.css, ['sass']);
+  gulp.watch(config.css, ['sass']);
 });
 
 // build jade code to html
 gulp.task('jade', function() {
-	var YOUR_LOCALS = {};
+  var YOUR_LOCALS = {};
 
-	gulp.src(config.html)
-		.pipe(jade({
-			locals: YOUR_LOCALS,
-			pretty: true
-		}))
-		.pipe(gulp.dest(config.htmlOut));
+  gulp.src(config.html)
+    .pipe(jade({
+      locals: YOUR_LOCALS,
+      pretty: true
+    }))
+  .pipe(gulp.dest(config.htmlOut));
 });
 
 // concat build all js file

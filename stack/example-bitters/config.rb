@@ -13,6 +13,9 @@ http_images_path = "/images"
 http_generated_images_path = "/images"
 generated_images_dir = "out/images"
 
+javascripts_dir = "src/styles"
+generated_javscripts_dir = "out/styles"
+
 javascripts_dir = "src/js"
 generated_javscripts_dir = "out/js"
 

@@ -1,4 +1,4 @@
-Practice example bourbon neat
+Practice example bourbon neat refills
 
 ## Author
 
@@ -19,7 +19,7 @@ Practice example bourbon neat
 ## Run practice
 1. Start vagrant
  - Run 'vagrant up' after 'vagrant ssh'
- - cd /stack/example-bitters
+ - cd /stack/example-refills
 2. Install plugin
  - gem install bourbon
  - bourbon install

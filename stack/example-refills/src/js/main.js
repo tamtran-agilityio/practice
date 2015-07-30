@@ -1,11 +1,4 @@
 /* file javscript */
-// $(function() {
-//   $('.header-top').click(function () {
-//     $('.header-top').slideToggle("slow");
-//   });
-//   $('.header-top').css({"display":"none","transition":"none","max-height":"inherit"});
-//   $('#toggleMenu').remove();
-// });
 
 $(document).ready(function() {
   var menuToggle = $('#centered-navigation-mobile-menu').unbind();
