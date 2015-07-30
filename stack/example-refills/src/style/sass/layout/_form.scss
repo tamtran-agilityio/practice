@@ -1,0 +1,14 @@
+.reply-controll {
+  @include outer-container(100%);
+  border: em(1px) solid $light-gray;
+  @include border-radius(5px);
+  @include margin(0 0 em(50px));
+  @include e(title) {
+    @include font-text(em(18px), bold, $black, $font-roboto);
+    @include padding(em(20px) em(50px));
+  }
+
+  @include e(action) {
+    @include margin(em(20px) em(50px));
+  }
+}

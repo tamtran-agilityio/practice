@@ -1,0 +1,16 @@
+/* styles part introduce service do offer*/
+.page-title {
+  @include outer-container(100%);
+  text-align: center;
+  margin-bottom: em(80px);
+  
+  @include e(introduce) {
+    @include font-text(em(34px),lighter, $black, $font-roboto);
+    text-transform: capitalize;
+    margin-bottom: em(20px);
+  }
+
+  @include e(based) {
+    @include font-text(em(14px),sans-serif, $black, $font-roboto);    
+  }
+}

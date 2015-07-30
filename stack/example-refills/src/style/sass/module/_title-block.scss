@@ -1,0 +1,7 @@
+/* style module title of block */
+.title-block {
+  @include font-text(em(18px),bold, $black, $font-roboto);
+  @include margin(0 em(15px));
+  text-transform: uppercase;
+  display: inline-block;
+}
