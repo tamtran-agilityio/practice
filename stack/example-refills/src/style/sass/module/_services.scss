@@ -8,7 +8,7 @@
   text-align: center;
   background-color: $base-background-color;
   
-  @include e(image) {
+  @include e(image) {  
     width: 100%;
     background-color: $card-image-hover-color;
     img {

@@ -3,4 +3,10 @@
   .based__headphoto {
     letter-spacing: initial;
   }
+
+  .reply-controll {
+    @include e(action) {
+      @include margin(em(20px) em(20px));
+    }
+  }
 }
