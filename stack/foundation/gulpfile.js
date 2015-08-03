@@ -35,6 +35,7 @@ var jsLibraryConcatList = [
 ];
 var jsCodeConcatList = [
   config.vendor + 'jquery/dist/jquery.js',
+  config.vendor + 'foundation/js/foundation.js',
   'src/js/main.js'
 ];
 

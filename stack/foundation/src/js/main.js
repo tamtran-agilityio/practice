@@ -1,1 +1,2 @@
 /* file javscript */
+$(document).foundation();
