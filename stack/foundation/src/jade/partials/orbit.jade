@@ -1,0 +1,29 @@
+.comtainer-orbit
+  ul.example-orbit(data-orbit='')
+    li
+      img(src='/images/conceptual.png', alt='slide 1')
+      .orbit-caption
+        | Caption One.
+    li.active
+      img(src='/images/cake-tops.png', alt='slide 2')
+      .orbit-caption
+        | Caption Two.
+    li
+      img(src='/images/wild-mushrooms.png', alt='slide 3')
+      .orbit-caption
+        | Caption Three.
+
+  // content sliders
+  ul.example-orbit-content(data-orbit='')
+    li(data-orbit-slide='headline-1')
+      div
+        h2 Headline 1
+        h3 Subheadline
+    li(data-orbit-slide='headline-2')
+      div
+        h2 Headline 2
+        h3 Subheadline
+    li(data-orbit-slide='headline-3')
+      div
+        h2 Headline 3
+        h3 Subheadline
