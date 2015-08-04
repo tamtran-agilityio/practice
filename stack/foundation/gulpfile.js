@@ -14,7 +14,7 @@ var config = {
 	css: 'src/style/**/*.scss',
 	cssOut: 'out/styles',
 
-  image: 'src/images/**/*.png',
+  image: 'src/images/**/*.*',
   imageOut: 'out/images',
 
   font: 'src/fonts/*.*',

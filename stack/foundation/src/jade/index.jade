@@ -7,7 +7,14 @@ html(lang='en')
     title Example bourbon neat
     link(href='styles/styles.css', rel='stylesheet')
   body
-    // part menu of site
-    include partials/menu.jade
-    script(type="text/javascript" src="js/main.js")
-
+    .container
+      // part bar top of site
+      include partials/bar-top.jade
+      // part menu of site
+      include partials/menu.jade
+      // par orbit
+      include partials/orbit.jade
+      // part clearing
+      include partials/clearing.jade
+      script(type="text/javascript" src="js/main.js")
+    

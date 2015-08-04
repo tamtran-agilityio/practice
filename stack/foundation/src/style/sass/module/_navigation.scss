@@ -1,0 +1,24 @@
+/* create menu of file */
+
+.top-bar {
+  .toggle-topbar {
+    span {
+      @include font-text(em(18px), bold, $black, $font-roboto);
+    }
+  }
+
+  .top-bar-section {
+    li {
+      background-color: $white;
+    }
+    a {
+      @include font-text(em(18px), italic, $black, $font-roboto);
+    }
+
+    .logo {
+      background-image: url("/images/shophia.png");
+      background-repeat: no-repeat;
+      @include size(em(270px) em(130px));
+    }
+  }
+}

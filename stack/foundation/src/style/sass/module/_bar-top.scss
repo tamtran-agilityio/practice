@@ -1,0 +1,40 @@
+.container-top {
+  background-color: $topbar-color;
+  height: em(80px);
+}
+.wapper-content {
+  background-color: $topbar-color;
+  overflow: hidden;
+  @include margin(0 auto);
+  li {
+    list-style-type: none;
+  }
+  @include e(phone) {
+    @include font-text(em(18px), bold, $black, $font-roboto);
+    &:before {
+      content: " A ";
+      @include size(em(10px));
+      @include margin(em(10px));
+    }
+  } 
+  @include e(section) {
+    a {
+      @include font-text(em(18px), normal, $black, $font-roboto);
+      @include padding(em(20px));
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    
+    .right {
+      li:after {
+        content: "|";
+        margin-left: (em(5px));
+      }
+
+      li:last-child {
+        content: "";
+      }
+    }
+  }
+}
+
