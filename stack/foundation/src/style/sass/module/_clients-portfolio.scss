@@ -1,0 +1,27 @@
+.clients-portfolio {
+  background-color: $bg-portfolio;
+  @include padding(em(30px) 0 em(50px));
+  @include e(title) {
+    @include font-text(em(34px), bold, $white, $font-roboto);
+    text-align: center;
+  }
+}
+
+.portfolio {
+  text-align: center;
+  margin-top: em(30px);
+  @include e(image) {
+    width: em(300px);
+    height: em(220px);
+  }
+
+  @include e(title) {
+    @include font-text(em(18px), bold, $white, $font-roboto);
+    @include margin(em(20px) 0);
+  }
+
+  @include e(content) {
+    @include font-text(em(16px), lighter, $white, $font-roboto);
+    text-align: left;
+  }
+}
