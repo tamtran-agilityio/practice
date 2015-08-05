@@ -1,3 +1,4 @@
+/* styles of part package hosting*/
 .package-hosting {
   @include padding(em(30px) 0 em(80px));
   background-color: $bg-package;
@@ -9,6 +10,7 @@
   }
 }
 
+/* styles of each package hosting*/
 .package {
   background-color: $bg-type-package;
   text-align: center;
