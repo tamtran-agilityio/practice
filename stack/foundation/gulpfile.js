@@ -35,6 +35,10 @@ var jsLibraryConcatList = [
 ];
 var jsCodeConcatList = [
   config.vendor + 'jquery/dist/jquery.js',
+  config.vendor + 'foundation/js/vendor/jquery.cookie.js',
+  config.vendor + 'foundation/js/vendor/fastclick.js',
+  config.vendor + 'foundation/js/vendor/modernizr.js',
+  config.vendor + 'foundation/js/vendor/placeholder.js',
   config.vendor + 'foundation/js/foundation.js',
   'src/js/main.js'
 ];
