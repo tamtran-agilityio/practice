@@ -1,0 +1,23 @@
+{
+  "name": "materialize",
+  "version": "0.0.0",
+  "description": " practice about mui",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Tam Tran"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "materialize": "~0.97.0"
+  }
+}

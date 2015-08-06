@@ -1,0 +1,31 @@
+/* create  mixin use site*/
+
+/* mixin font face */
+
+@include font-face("Roboto", "/fonts/Roboto-Black", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Light", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Regular", $file-formats: eot ttf woff);
+@include font-face("Roboto", "/fonts/Roboto-Thin", $file-formats: eot ttf woff);
+
+$font-roboto: "Roboto",sans-serif;
+
+// mixin font face
+@mixin font-text($font-size, $font-weight, $color, $font-family ) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  font-family: $font-family;
+} 
+
+// styles mixin of BEM syntax
+@mixin e($name) {
+  @at-root #{&}__#{$name} {   
+    @content
+  }
+} 
+ 
+@mixin m($name) {
+  @at-root #{&}--#{$name} {
+    @content;
+  }
+}
