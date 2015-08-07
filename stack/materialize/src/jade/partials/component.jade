@@ -1,0 +1,112 @@
+// part example grid
+.row
+  .col.s12.red.darken-1.center-align This div is 12-columns wide
+  .col.s6.blue.lighten-1 This div is 6-columns wide
+  .col.s6.blue.lighten-2 This div is 6-columns wide
+// example responsive video
+.row
+  .col.s12
+    .video-container.no-controls
+      iframe(src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen)
+// example  showdow
+.row
+  .col.s12.m2
+    .z-depth-1 z-depth-1
+  .col.s12.m2
+    .z-depth-2 z-depth-2
+  .col.s12.m2
+    .z-depth-3 z-depth-3
+  .col.s12.m2
+    .z-depth-4 z-depth-4
+  .col.s12.m2
+    .z-depth-5 z-depth-5
+// example collection
+.row
+  .col.s12
+    .collection
+      .collection-item
+        a(href="javascript:void(0)") Alan
+          span.badge 1
+      .collection-item
+        a(href="javascript:void(0)") Alan
+          span.badge.new 1
+.row
+  .col.s12
+    ul#dropdown.dropdown-content
+      li
+        a(href="javascript:void(0)") one
+        span.badge 1
+      li
+        a(href="javascript:void(0)") two
+        span.new.badge 1
+    a.btn.dropdown-button(href="javascript:void(0)" data-activates="dropdown") Dropdown
+      i.mdi-navigation-arrow-drop-down.right
+  // example buttons
+  .col.s12
+    a.waves-effect.waves-light.btn button
+      i.material-icons.left 
+    a.waves-effect.waves-light.btn button
+      i.mdi-navigation-arrow-drop-down.right
+    a.btn-floating.btn-large.waves-effect.waves-light.red
+      i.material-icons add
+  .col.s12
+    .card
+      .card-image.waves-effect.waves-block.waves-light
+        img.activator(src='/images/nature.png')
+      .card-content
+        span.activator.card-title.activator.grey-text.text-darken-4
+        | Card Title
+        i.mdi-navigation-more-vert.right.activator
+        p
+          a(href='#') This is a link
+      .card-reveal
+        span.card-title.grey-text.text-darken-4 Card Title
+          i.mdi-navigation-close.right
+          p Here is some more information about this product that is only revealed once clicked on.
+  // example collection
+  .col.s12
+    ul.collection.with-header
+      li.collection-header
+        h4 Name
+      li.collection-item Jack
+      li.collection-item Born
+      li.collection-item Hack
+.row
+  form.col.s12
+    .row
+      .input-field.col.s6
+        input#first_name.validate(placeholder="Placeholder" type="text")
+        label(for="first_name") First Name
+      .input-field.col.s6
+        input#last_name.validate(placeholder="Placeholder" type="text")
+        label(for="last_name") Last Name
+    .row
+      .input-field.col.s12
+        input#password.validate(placeholder="Placeholder" type="password")
+        label(for="password") Password
+    .row
+      .input-field.col.s12
+        textarea#textarea1.materialize-textarea
+        label(for="textarea1") Textarea
+.row
+  .col.s12
+    nav.nav-wrapper
+      a.brand-logo.center(href="javascript:void(0)") Logo
+      ul#nav-mobile.left.hide-on-med-and-down
+        li
+          a(href="javascript:void(0)") Sass
+        li
+          a(href="javascript:void(0)") Components
+        li
+          a(href="javascript:void(0)") Contact
+// example preloader 
+.row
+  .col.s12
+    .preloader-wrapper.big.active
+      .spinner-layer.spinner-blue
+        .circle-clipper.left
+          .circle
+        .gap-patch
+          .circle
+        .circle-clipper.right
+          .circle
