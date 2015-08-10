@@ -1,4 +1,5 @@
 /* file javscript */
+// create menu on device
 $(function() {
   $('.header-top').click(function () {
     $('.header-top').slideToggle("slow");
