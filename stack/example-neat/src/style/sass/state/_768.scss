@@ -1,5 +1,4 @@
 /* styles on divece tablet */
-
 @media (max-width: em(768px)) {
   .services {
     @include span-columns(12);
