@@ -22,6 +22,9 @@
   @include outer-container(95%);
   @include e(image) {
     @include span-columns(3);
+    img {
+      width: 100%;
+    }
   }
 }
 

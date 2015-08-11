@@ -21,11 +21,8 @@ Practice example bourbon neat
  - Run 'vagrant up' after 'vagrant ssh'
  - cd /stack/example-bitters
 2. Install plugin
- - gem install bourbon
- - bourbon install
- - gem install neat
- - neat install
- - gem install bitters
+ - npm install
+ - bower install
 3. Run project
  - Run 'gulp'
 

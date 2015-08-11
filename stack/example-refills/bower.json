@@ -1,5 +1,5 @@
 {
-  "name": "example bourbon neat bitters",
+  "name": "rifills",
   "version": "0.0.0",
   "description": " practice about bourbon neat bitters",
   "moduleType": [
@@ -18,5 +18,9 @@
     "tests"
   ],
   "devDependencies": {
+    "jquery":"*",
+    "neat":"*",
+    "bourbon":"*",
+    "bitters":"*"
   }
 }
