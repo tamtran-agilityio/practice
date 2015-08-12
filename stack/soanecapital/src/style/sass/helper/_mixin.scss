@@ -1,0 +1,23 @@
+/* styles part mixin */
+// create mixin font face
+@mixin font-text($font-size, $font-weight, $color, $font-family ) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  font-family: $font-family;
+} 
+
+/* styles mixin of BEM syntax */
+// use of element
+@mixin e($name) {
+  @at-root #{&}__#{$name} {   
+    @content
+  }
+} 
+
+// use of modify
+@mixin m($name) {
+  @at-root #{&}--#{$name} {
+    @content;
+  }
+}
