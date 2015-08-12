@@ -1,0 +1,15 @@
+/* styles navigation */
+//modify tag nav
+nav {
+  background-color: transparent;
+  box-shadow: none;
+  position: fixed;
+}
+
+// design background logo
+.logo-header {
+  width: 188px;
+  height: 60px;
+  display: block;
+  background: url(/images/logo-text-white.png) top no-repeat;
+}
