@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html.fsvs(lang='en')
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     meta(charset='utf-8')
@@ -8,9 +8,10 @@ html(lang='en')
     link(href='styles/styles.css', rel='stylesheet')
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
   body
-    // part header 
-    include partials/header.jade
+    .container
+      // part header 
+      include partials/header.jade
     // part slide index
     include partials/slide.jade
-    script(type="text/javascript" src="js/main.js")
+      script(type="text/javascript" src="js/main.js")
 

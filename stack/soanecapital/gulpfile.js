@@ -17,7 +17,7 @@ var config = {
   image: 'src/images/**/*.*',
   imageOut: 'out/images',
 
-  font: 'src/files/vendor/materialize/font/**/*.*',
+  font: ['src/fonts/**/*.*','src/files/vendor/materialize/font/**/*.*'],
   fontOut: 'out/font',
 
 	html: 'src/jade/*.jade',
@@ -36,6 +36,7 @@ var jsLibraryConcatList = [
 var jsCodeConcatList = [
   config.vendor + 'jquery/dist/jquery.js',
   config.vendor + 'materialize/bin/materialize.js',
+  'src/js/fsvs.js',
   'src/js/main.js'
 ];
 
