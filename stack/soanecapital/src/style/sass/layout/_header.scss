@@ -1,15 +1,24 @@
 /* styles navigation */
 //modify tag nav
 nav {
+  z-index: 10;
   background-color: transparent;
   box-shadow: none;
-  position: fixed;
+  position: relative;
+}
+
+.nav-mobile {
+  a {
+    @include font-text(em(16px), lighter, $white, $font-helveticaneue);
+    padding: 0 em(10px);
+    text-transform: uppercase;
+  }
 }
 
 // design background logo
 .logo-header {
-  width: 188px;
-  height: 60px;
+  width: auto;
+  height: em(80px);
   display: block;
   background: url(/images/logo-text-white.png) top no-repeat;
 }
