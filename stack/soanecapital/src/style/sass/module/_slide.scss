@@ -1,31 +1,9 @@
 /* styles part slide index */
-#fsvs-body-index {
-  transition: all 0.6s cubic-bezier(0.5, 0.01, 0.09, 0.99);
-  transform: translate3d(0px, 0%, 0px);
-}
-.fsvs-body {
-  visibility: hidden;
-  perspective: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-}
-
-.background-full-resp {
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: auto 100%;
-    -moz-background-size: auto 100%;
-    -o-background-size: auto 100%;
-    background-size: auto 100%;
-}
 .slide {
   @include e(first) {
-    //background-image: url("/images/living-room.png");
+    background-image: url("/images/living-room.png");
   }
+  
   @include e(background-full) {
     position: absolute;
     z-index: -1;
@@ -37,18 +15,37 @@
     right: 0;
     margin: auto;
     display: block;
-    img {
-      width: 100%;
-      height: 100%;
-      // @include animation(scale 40s linear infinite);
-      @-moz-keyframes { 
-        @include animation-name(scale);
-        @include animation-duration(40s);
-        @include animation-timing-function(linear);
-        @include animation-iteration-count(infinite);
-      }
+  }
+
+  img {
+    @include animation(zoom 50s infinite);
+    width: 100%;
+    height: 100%;
+  }
+  // set zoom image 
+  @-webkit-keyframes zoom {
+    0% {
+      transform: scale(1,1);
+    }
+    50% {
+      transform: scale(1.2,1.2);
+    }
+    100% {
+      transform: scale(1,1);
     }
   }
-  @include e(zoom-background) {
+
+  /* Standard syntax */
+  @keyframes zoom {
+    0% {
+      transform: scale(1,1);
+    }
+    50% {
+      transform: scale(1.2,1.2);
+    }
+    100% {
+      transform: scale(1,1);
+    }
   }
 }
+
