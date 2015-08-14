@@ -1,0 +1,40 @@
+.fixed-bottom {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  line-height: 6.5em;
+  font-size: 0.8em;
+  
+  .sound {
+    @include e(volume) {
+      @extend %dislay-inline-block;
+      color: #926e4d;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @include e(text) {
+      @extend %dislay-inline-block;
+      @include font-text(em(14px), normal, $white, $font-helveticaneue);
+    }    
+  }
+  .copyright {
+    @include e(text) {
+      @extend %dislay-inline-block;
+      @include font-text(em(14px), inherit, $white, $font-helveticaneue);
+      opacity: 0.6;
+    }
+
+    @include e(link) {
+      @extend %dislay-inline-block;
+      @include font-text(em(14px), lighter, $white, $font-helveticaneue);
+      &:before {
+        content: '|';
+        margin: em(10px);
+      }
+    }
+  }
+}
