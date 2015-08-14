@@ -25,16 +25,16 @@
     @include e(text) {
       @extend %dislay-inline-block;
       @include font-text(em(14px), inherit, $white, $font-helveticaneue);
-      opacity: 0.6;
+      opacity: 0.5;
+      &:after {
+        content: '|';
+        margin: em(10px);
+      }
     }
 
     @include e(link) {
       @extend %dislay-inline-block;
       @include font-text(em(14px), lighter, $white, $font-helveticaneue);
-      &:before {
-        content: '|';
-        margin: em(10px);
-      }
     }
   }
 }

@@ -24,7 +24,7 @@ html.fsvs {
 		}
 	}
 	#fsvs-pagination {
-    display: none;
+    // display: none;
 		margin: 0;
 		padding:8px 4px;
 		position: fixed;
@@ -52,4 +52,12 @@ html.fsvs {
 			}
 		}
 	}
+}
+
+.show-text {
+  opacity: 1;
+}
+
+.hidden-text {
+  opacity: 0;
 }
