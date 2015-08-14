@@ -1,0 +1,65 @@
+.bachground-footer {
+  background-image: url("/images/bg-pattern-brown.png");
+  height: em(690px);
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  .nav-contain {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+
+    a {
+      text-transform: uppercase;
+    }
+  }
+
+  .infor {
+    margin: em(40px) 0;
+    @include e(detail) {
+      @include font-text(em(14px), lighter, #676363, $font-helveticaneue);
+      line-height: em(34px);
+    }
+
+    @include e(find-us) {
+      @include font-text(em(14px), lighter, #ac855e, $font-helveticaneue);
+    }
+
+    a {
+      @extend .infor__find-us;
+    }
+
+    @include e(direct) {
+      background: transparent;
+      color: #dac9be;
+      border-color: #926e4d;
+    }
+  }
+
+  .control {
+    @include e(message) {
+      margin: em(20px) 0;
+      height: 100%;
+      &:hover {
+        border-color: $cl-boder-from;
+      }
+    }
+
+    input {
+      border: 1px solid $white;
+      &:hover {
+        border: 1px solid $cl-boder-from;      
+      }
+    }
+    // @include e(name) {
+    // }
+  }
+
+  .button {
+    @include e(send) {
+      background-color: $cl-button-send;
+      &:hover {
+        background-color: transparent;
+        border: em(1px) solid $cl-boder-from;
+      }
+    }
+  }
+}
