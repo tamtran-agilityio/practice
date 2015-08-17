@@ -23,6 +23,8 @@
       autoPlay : false,
       bodyID : 'fsvs-body',
       selector : '> .slide',
+      selectorTille : '.big-tille',
+      selectorDetais : '.details-content',
       mouseSwipeDisance : 40,
       afterSlide : function(){},
       beforeSlide : function(){},
@@ -551,7 +553,11 @@
         _body.removeClass( removeClass = 'active-slide-' + (before+1) );
         _body.addClass( 'active-slide-' + (after+1) );
         $( options.selector, body ).eq( before ).removeClass( 'active-slide' );
+        $( options.selectorTille, body ).eq( before ).removeClass('show-text');
+        $( options.selectorDetais, body ).eq( before ).removeClass('show-text');
         $( options.selector, body ).eq( after ).addClass( 'active-slide' );
+        $( options.selectorTille, body ).eq( after ).addClass( 'show-text' );
+        $( options.selectorDetais, body ).eq( after ).addClass( 'show-text' );
         if( options.nthClasses ) {
           _body.removeClass( 'active-nth-slide-' + (( before % options.nthClasses )+1) );
           _body.addClass( 'active-nth-slide-' + (( after % options.nthClasses )+1) );
