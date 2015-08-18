@@ -6,9 +6,8 @@
 /* set navigation */
 $(".button-collapse").sideNav(); 
 
-
 /* set slide up background use fsvs plugin */
-$(function() {
+$(document).ready( function() {
   var fsvs = $.fn.fsvs({
     speed : 600,
     bodyID : 'fsvs-body',
@@ -26,36 +25,21 @@ $(function() {
     detectHash : true
   });
 
+  /* execute when scrolling */
+  $(window).scroll(function(){
+    var $aTop = $('.boxes-container').height() + 117.188 ;
+    var $hiddenFooter = $('.boxes-container').height() - 50;
+    var $head = $(this).scrollTop();
 
-/////
-  // var $active = ($("#slide-1").hasClass("active-slide")) ;
-  // if ($active) {
-  //   $('.big-tille').addClass('show-text');
-  // }
-  // if (!$active) {
-  //   $('.big-tille').removeClass('show-text');
-  // }
-  ///  
-
-  function scrollParallax() {
-    var bigTop = $('#slide-1').offset().top;
-
-      // fade in arrow left, right
-    if (($(this).scrollTop()) > (bigTop )) {
-        ('.big-tille').fadeIn();
+    /* checking when to show footer*/  
+    if($(this).scrollTop() >= ($aTop)){
+      $('.bachground-footer').fadeIn();
     }
-  }
-});
 
-$(function() {
-  $(window).scroll(function() {
-    console.log('@--',$(this).scrollTop());
-    var bigTop =$('#slide-1').offset().top;
-    if ($(this).scrollTop() >= bigTop) {
-      alert('2');    
-    };
-    // setTimeout(function() {
-    //   scrollParallax();
-    // }, 200);
+    /* checking when to hidden footer*/
+    if($(this).scrollTop() < ($hiddenFooter)){
+      $('.bachground-footer').fadeOut();
+    }
   });
 });
+
