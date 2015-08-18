@@ -1,9 +1,12 @@
 .bachground-footer {
   background-image: url("/images/bg-pattern-brown.png");
   height: em(690px);
+  bottom: -400px;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  display: none;
+  z-index: 9;
+  @include animation(cubic 1s);
   .nav-contain {
     border-bottom: 1px solid rgba(255,255,255,.1);
 
@@ -62,4 +65,21 @@
       }
     }
   }
+}
+
+
+.animated-cubic {
+
+  -webkit-transition: all 1s cubic-bezier(0.19,1,.22,1);
+  -moz-transition: all 1s cubic-bezier(0.19,1,.22,1);
+  -ms-transition: all 1s cubic-bezier(0.19,1,.22,1);
+  -o-transition: all 1s cubic-bezier(0.19,1,.22,1);
+  transition: all 1s cubic-bezier(0.19,1,.22,1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@keyframes cubic {
+  display: block !important;
+  transform: translate(0,-335px);
 }
