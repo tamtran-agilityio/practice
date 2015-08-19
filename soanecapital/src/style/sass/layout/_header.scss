@@ -18,12 +18,7 @@ nav {
 
 // design background logo
 .logo-header {
-  width: auto;
-  height: em(80px);
+  @include size(auto, em(80px));
   display: block;
   background: url(/images/logo-text-white.png) top no-repeat;
-}
-.fade-in {
-  opacity: 1 !important;
-  transform: translateY(0px) !important;
 }

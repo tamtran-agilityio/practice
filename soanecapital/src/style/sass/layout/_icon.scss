@@ -2,8 +2,7 @@
 .icon-up-arrow {
     background-image: url("/images/icon/icon-up-arrow.png");
     background-size: 100%;
-    width: 24px;
-    height: 12px;
+    @include size(em(24px),em(12px));
 }
 
 .icon-close {

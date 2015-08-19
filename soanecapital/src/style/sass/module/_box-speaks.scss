@@ -22,11 +22,10 @@
   }
 
   @include e(image) {
+    @include size(100%, auto);
     position: absolute;
     opacity: 0;
     z-index: 4;
-    width: 100%;
-    height: auto;
     cursor: pointer;
     vertical-align: middle;
     backface-visibility: hidden;
@@ -34,8 +33,7 @@
 
   @include e(dark) {
     z-index: 2;
-    width: 100%;
-    height: auto;
+    @include size(100%, auto);
     vertical-align: middle;
   }
   .intro {
@@ -52,26 +50,24 @@
   .cube {
     margin-bottom: em(80px);
     &:before {
+      @include size(em(60px));
       position: absolute;
       content: '';
       margin: 0 auto;
       top: 0;
       right: 0;
       left: 0;
-      width: 60px;
-      height: 60px;
-      border: 1px solid $white;
+      border: em(1px) solid $white;
       transform: rotate(45deg);
-      border-radius: 5px;
+      border-radius: em(5px);
       background-clip: padding-box;
      }
     @include e(arrow) {
+      @include size(em(9px), em(15px));
       opacity: 0;
       position: absolute;
       display: block;
-      width: 9px;
-      height: 15px;
-      top: 10px;
+      top: em(10px);
       left: 0;
       right: 0;
       margin: 0 auto;

@@ -33,7 +33,7 @@
 
 
 // set show text 
-@keyframes bounceInUp {
+@include keyframes(bounceInUp) {
   from, 60%, 75%, 90%, 100% {
     animation-timing-function: cubic-bezier(0.19,1,.22,1);
   }

@@ -2,8 +2,7 @@
   z-index: 100;
   position: absolute;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  @include size(100%);
 
   .loader__item {
     border: 1px solid;
@@ -15,8 +14,7 @@
     border-right-color: transparent;
     border-left-color: transparent;
     border-bottom-color: transparent;
-    width: 100px;
-    height: 100px;
+    @include size(100px);
     @include animation(spin 2s linear both);
   }
 }
