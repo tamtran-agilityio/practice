@@ -1,7 +1,7 @@
 .bachground-footer {
   background-image: url("/images/bg-pattern-brown.png");
   height: em(690px);
-  bottom: -400px;
+  bottom: -350px;
   width: 100%;
   position: fixed;
   display: none;
@@ -30,9 +30,23 @@
       @extend .infor__find-us;
     }
 
+    @include e(group) {
+      position: absolute;
+      top: em(100px);
+      right: 20%;
+      height: em(50px);
+      display: flex;
+    }
+
     @include e(direct) {
       background: transparent;
       color: #dac9be;
+      border-color: #926e4d;
+    }
+    @include e(close) {
+      opacity: 0;
+      width: em(54px);
+      background-color: $cl-button-send; 
       border-color: #926e4d;
     }
   }
@@ -52,8 +66,6 @@
         border: 1px solid $cl-boder-from;      
       }
     }
-    // @include e(name) {
-    // }
   }
 
   .button {
@@ -67,19 +79,23 @@
   }
 }
 
-
-.animated-cubic {
-
-  -webkit-transition: all 1s cubic-bezier(0.19,1,.22,1);
-  -moz-transition: all 1s cubic-bezier(0.19,1,.22,1);
-  -ms-transition: all 1s cubic-bezier(0.19,1,.22,1);
-  -o-transition: all 1s cubic-bezier(0.19,1,.22,1);
-  transition: all 1s cubic-bezier(0.19,1,.22,1);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.control {
+  border: none;
+  box-shadow: none;
 }
 
-@keyframes cubic {
-  display: block !important;
-  transform: translate(0,-335px);
+.collapsible-header, {
+  background-color: transparent;
+  border: none;
+  height: 0;
+}
+
+.collapsible-body {
+  border: none;
+}
+
+#map {
+  opacity: 0;
+  width: 100%;
+  height: 350px;
 }

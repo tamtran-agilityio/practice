@@ -5,6 +5,7 @@
   position: absolute;
   z-index: 10;
   bottom: em(120px);
+  display: none;
   @include animation(showArrow 5s cubic-bezier(0.19,1,.22,1));
 
   li {

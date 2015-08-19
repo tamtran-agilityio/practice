@@ -71,7 +71,7 @@
       display: block;
       width: 9px;
       height: 15px;
-      top: 20px;
+      top: 10px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -80,7 +80,7 @@
     }
     @include e(number) {
       @include font-text(em(14px), bold, $white, $font-helveticaneue);
-      margin-top: em(20px);
+      margin-top: em(30px);
     }
   }
 
@@ -99,11 +99,11 @@
     }
     .cube__arrow {
       opacity: 1;
-      @include animation(arrow 5s linear);
+      @include animation(arrow 300ms linear );
     }
 
     .cube__number {
-      @include animation(number 5s linear);
+      @include animation(number 300ms linear);
     }
   }
 }
@@ -148,12 +148,12 @@
   }
 
   from {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 20px, 0);
     opacity: 0;
   }
 
   to {
-    transform: translate3d(0, -16px, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
@@ -166,12 +166,13 @@
   }
 
   from {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -20px, 0);
     opacity: 0;
   }
 
   to {
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 0, 0);
+    animation-play-state: paused;
     opacity: 1;
   }
 }

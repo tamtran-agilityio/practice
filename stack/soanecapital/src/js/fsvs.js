@@ -622,6 +622,31 @@
         } else {
           scrolling = false;
         }
+        if( app.canSlideDown() == false) {
+          $('.bachground-footer').fadeIn();
+          $(".infor__direct").click( function()
+            {
+              $('.bachground-footer').css({
+                bottom: '0'
+            });
+              $(".infor__close").css({
+              opacity: '1'
+            });
+          });
+          $(".infor__close").click( function()
+            {
+              $('.bachground-footer').css({
+                bottom: '-350px'
+              });
+              $(".infor__close").css({
+                opacity: '0'
+              });
+            }
+          );
+        }
+        // else {
+        //   $('.bachground-footer').fadeOut();
+        // }
       },
 
       /**
@@ -635,6 +660,9 @@
           app.slideToIndex( (currentSlideIndex-1), e );
         } else {
           scrolling = false;
+        }
+        if( app.canSlideUp() ) {
+          $('.bachground-footer').fadeOut();
         }
       },
 

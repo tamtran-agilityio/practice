@@ -21,12 +21,14 @@
   visibility: visible;
   opacity: 0;
   backface-visibility: hidden;
+  display: none;
 }
 
 .details-content {
   @include font-text(em(16px), lighter, $white, $font-helveticaneue);
   @include animation(bounceInUp 5s);
   opacity: 0;
+  display: none;
 }
 
 
