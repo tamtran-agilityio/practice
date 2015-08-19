@@ -1,0 +1,24 @@
+{
+  "name": "soanecapital",
+  "version": "1.0.0",
+  "description": " practice about materialize",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Tam Tran"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery":"*",
+    "materialize": "~0.97.0"
+  }
+}

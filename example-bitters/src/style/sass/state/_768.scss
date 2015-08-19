@@ -1,0 +1,35 @@
+/* styles on divece tablet */
+
+@media (max-width: em(768px)) {
+  .services {
+    @include span-columns(12);
+  }
+  
+  .instagram-scroll {
+    .instagram-scroll__image {
+      @include span-columns(12);
+    }
+  }
+
+  .journal-post {
+    @include span-columns(12);
+  }
+
+  .little-about__content {
+    @include span-columns(12);
+    margin-bottom: em(40px);
+  }
+
+  .contact {
+    @include span-columns(12);
+    margin-bottom: em(40px);
+  }
+
+  .logo {
+    @include span-columns(2);
+  }
+
+  .nav {
+    @include span-columns(10);
+  }
+}

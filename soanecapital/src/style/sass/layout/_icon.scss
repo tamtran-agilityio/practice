@@ -1,0 +1,26 @@
+/* styles icon of site*/
+.icon-up-arrow {
+    background-image: url("/images/icon/icon-up-arrow.png");
+    background-size: 100%;
+    width: 24px;
+    height: 12px;
+}
+
+.icon-close {
+  background-image: url("/images/icon/icon-cross.png");
+  background-repeat: no-repeat;
+  margin: em(5px);
+  display: block;
+  height: em(25px);
+  @include animation(revolve 3s linear);
+}
+
+@include keyframes(revolve) {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
