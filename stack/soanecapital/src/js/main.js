@@ -3,10 +3,6 @@
  * -------------------------
  */
 
-/* set navigation */
-$(".button-collapse").sideNav(); 
-
-/* set slide up background use fsvs plugin */
 $(document).ready( function() {
   var fsvs = $.fn.fsvs({
     speed : 600,
@@ -24,6 +20,150 @@ $(document).ready( function() {
     nthClasses : false,
     detectHash : true
   });
+
+  /* set navigation */
+  $(".button-collapse").sideNav(); 
+
+  /* show page index*/ 
+  ;(function() {
+    'use strict';
+
+    var $loader = $('.loader');
+    var $main = $('.main-full');
+    var $bigTitle = $('.big-tille');
+    var $detailsContent = $('.details-content');
+    var $downArrow = $('.down-arrow');
+    var time = 1000;
+    var $heightBoxes = $('.boxes-container');
+    var $backFooter = $('.bachground-footer');
+    var $inforDirect = $(".infor__direct");
+    var $inforClose = $(".infor__close");
+    var $volumeUp = $(".sound__volume--up");
+    var $volumeOff = $(".sound__volume--off");
+    var $playMusic = $(".sound__text--state");
+    var $offMusic = $(".sound__text--separator");
+    var $aTop = $heightBoxes.height() + 117.188 ;
+    var $hiddenFooter = $heightBoxes.height() - 50;
+    var $head = $(this).scrollTop();
+
+    /* Show element */
+    function showElement(element) {
+      element.show();
+    }
+
+    /* Hidden element */
+    function hideElement(element) {
+      element.hide();
+    }
+
+    /* Add Class for element */
+    function addClass(element,nameclass) {
+      element.addClass(nameclass);
+    }
+
+    /* Remove Class of element */
+    function removeClass(element,nameclass) {
+      element.removeClass(nameclass);
+    }
+
+    /* Set timeout for the element execute element*/
+    function afterTime(section, callback, element, attribute) {
+
+      setTimeout(function() {
+        callback(element, attribute);
+      }, section);
+    }
+
+    /* function add atriblute trainstion css */
+    function addAtrCss(element) {
+      return {
+        "-webkit-transition": "all " + element + "ms ease",
+        "-moz-transition": "all " + element + "ms ease",
+        "-o-transition": "all " + element + "ms ease",
+        transition: "all " + element + "ms ease"
+      }
+    }
+
+    // Animation for menu when click on it
+    function menuload() {
+      afterTime(2000, showElement, $main);
+      afterTime(2000, showElement, $bigTitle);
+      afterTime(2000, showElement, $downArrow);
+      afterTime(2000, showElement, $detailsContent);
+    }
+
+    // When load page will show loader
+    $(window).on('load', function() {
+      afterTime(1500, hideElement, $loader);
+      menuload();
+    });
+
+    /* event handle click icon volume*/ 
+    $volumeUp.click( function() {
+      $volumeOff.fadeIn();
+      $volumeUp.fadeOut();
+      $playMusic.fadeIn();
+      $offMusic.fadeOut();
+    })
+
+    $offMusic.click( function() {
+      $volumeOff.fadeIn();
+      $volumeUp.fadeOut();
+      $playMusic.fadeIn();
+      $offMusic.fadeOut();
+    })
+
+    $volumeOff.click( function() {
+      $volumeUp.fadeIn();
+      $volumeOff.fadeOut();
+      $playMusic.fadeOut();
+      $offMusic.fadeIn();
+    })
+
+    $playMusic.click( function() {
+      $volumeUp.fadeIn();
+      $volumeOff.fadeOut();
+      $playMusic.fadeOut();
+      $offMusic.fadeIn();
+    })
+
+
+    /* execute when scrolling */
+    $(window).scroll(function(){
+
+      /* checking when to show footer*/  
+      if($head >= ($aTop)){
+        $backFooter.fadeIn();
+      }
+
+      /* checking when to hidden footer*/
+      if($head < ($hiddenFooter)){
+        $backFooter.fadeOut();
+      }
+
+      /* set event when click button direction*/
+      $inforDirect.click( function() {
+          $backFooter.css({
+            bottom: '0'
+          });
+          $inforClose.css({
+            opacity: '1'
+        });
+      });
+
+      /* set event when click button direction close*/
+      $inforClose.click( function()
+        {
+          $backFooter.css({
+            bottom: '-350px'
+          });
+          $inforClose.css({
+            opacity: '0'
+          });
+        }
+      );
+    });
+  })();
 });
 
 function initialize() {
@@ -35,132 +175,3 @@ function initialize() {
   var map=new google.maps.Map(document.getElementById("map"), mapProp);
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
-
-
-/**
- * [Show footer and handle on footer]
- */
-;(function() {
-  'use strict';
-
-    function showFooter(element) {
-      window.onkeydown = function(e) {
-        e = e || window.event;
-        if ( e.keyCode === '40' ) {
-          element.fadeIn();
-        }
-      }
-    };
-  showFooter('.bachground-footer');
-  /* execute when scrolling */
-  $(window).scroll(function(){
-    var $aTop = $('.boxes-container').height() + 117.188 ;
-    var $hiddenFooter = $('.boxes-container').height() - 50;
-    var $head = $(this).scrollTop();
-
-    /* checking when to show footer*/  
-    if($(this).scrollTop() >= ($aTop)){
-      $('.bachground-footer').fadeIn();
-    }
-
-    /* checking when to hidden footer*/
-    if($(this).scrollTop() < ($hiddenFooter)){
-      $('.bachground-footer').fadeOut();
-    }
-
-    /* set event when click button direction*/
-    $(".infor__direct").click( function()
-      {
-        $('.bachground-footer').css({
-          bottom: '0'
-        });
-      $(".infor__close").css({
-        opacity: '1'
-      });
-    });
-
-    /* set event when click button direction close*/
-    $(".infor__close").click( function()
-      {
-        $('.bachground-footer').css({
-          bottom: '-350px'
-        });
-        $(".infor__close").css({
-          opacity: '0'
-        });
-      }
-    );
-  });
-}());
-
-/* show footer with slide*/
-// ;(function() {
-//   var selector = '.slide';
-//   var currentSlideIndex = 0;
-//   function checkDown() {
-//   if ( $( options.selector, body ).eq( (currentSlideIndex + 1) ).length === 0 ) return false;
-//     return true;
-//   };
-//   if (checkDown()) {
-//     $('.bachground-footer').fadeIn();
-//   }
-//   else {
-//     $('.bachground-footer').fadeOut();
-//   }
-// }())
-
-/* show page index*/ 
-;(function() {
-  'use strict';
-
-  var $loader = $('.loader');
-  var $main = $('.main-full');
-  var $bigTitle = $('.big-tille');
-  var $detailsContent = $('.details-content');
-  var $downArrow = $('.down-arrow');
-  var time = 1000;
-
-  /* Show element */
-  function showElement(element) {
-    element.show();
-  }
-
-  /* Hidden element */
-  function hideElement(element) {
-    element.hide();
-  }
-
-  /* Add Class for element */
-  function addClass(element,nameclass) {
-    element.addClass(nameclass);
-  }
-
-  /* Remove Class of element */
-  function removeClass(element,nameclass) {
-    element.removeClass(nameclass);
-  }
-
-  /* Set timeout for the element execute element*/
-  function afterTime(section, callback, element, attribute) {
-
-    setTimeout(function() {
-      callback(element, attribute);
-    }, section);
-  }
-
-  // Animation for menu when click on it
-  function menuload() {
-    afterTime(2000, showElement, $main);
-    afterTime(2000, showElement, $bigTitle);
-    afterTime(2000, showElement, $downArrow);
-    afterTime(2000, showElement, $detailsContent);
-  }
-
-  // When load page will show loader
-  $(window).on('load', function() {
-    afterTime(1500, hideElement, $loader);
-    menuload();
-  });
-})();
-
-
