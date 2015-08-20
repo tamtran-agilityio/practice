@@ -49,3 +49,17 @@ $asset-pipeline: false !default;
     @content;
   }
 }
+
+/* mixin size*/
+@mixin size($width, $height:$width) {
+  width: $width;
+  height: $height; 
+}
+
+/* mixin perspective*/
+@mixin perspective($val) {
+  -webkit-perspective: $val; 
+  -moz-perspective: $val; 
+  -ms-perspective: $val; 
+  perspective: $val;
+}
