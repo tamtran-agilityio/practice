@@ -1,0 +1,42 @@
+.carousel {
+  @extend %position-relative;
+  @include size(100%);
+  overflow: hidden;
+  z-index: 1;
+
+  @include e(outer) {
+    left: -210.5px;
+    display: block;
+    @include size(em(5532px), 100%);
+    @extend %position-relative;
+  }
+
+  @include e(wrapper) {
+    @include size(em(461px), 100%);
+    opacity: 0;
+    float: left;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include e(image) {
+    @include size(100%);
+    background-size: auto 110%;
+    -webkit-background-size: auto 110%;
+    &:hover {
+      background-size: auto 100%;
+      -webkit-background-size: auto 100%;
+    }
+  }
+
+  @include e(describe) {
+    width: em(461px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @include e(box) {
+    border: none !important;
+  }
+} 
