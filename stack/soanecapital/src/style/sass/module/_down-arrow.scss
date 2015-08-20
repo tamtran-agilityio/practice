@@ -1,8 +1,7 @@
 .down-arrow {
   background-image: url("/images/icon/icon-down-arrow.png");
-  width: em(40px);
-  height: em(20px);
-  position: absolute;
+  @include size(em(40px), em(20px));
+  @extend %position-absolute;
   z-index: 10;
   bottom: em(120px);
   display: none;
@@ -13,11 +12,10 @@
   }
 
   span {
+    @include size(em(8px), em(1px));
     display: block;
-    margin: 24px auto;
-    width: 8px;
-    height: 1px;
-    background-color: #fff;
+    margin: em(24px) auto;
+    background-color: $white;
     &:nth-child(1) {
       @include animation(goFlash 2.5s 2.7s ease-in-out infinite);
     }
@@ -36,28 +34,28 @@
   }
 
   // set animation of tag span 
-  @keyframes goFlash {
-    from {
+@include keyframes(goFlash) {
+  from {
       opacity: 0;
-    }
+  }
 
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
   }
 }
 
 // animation of background arrow
-@keyframes showArrow {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100px, 0);
-    }
-
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
+@include keyframes(showArrow) {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
   }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 
 

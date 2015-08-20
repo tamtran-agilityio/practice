@@ -8,33 +8,29 @@ html.fsvs {
 	overflow: hidden;
 	#fsvs-body {
 		-webkit-backface-visibility: hidden;
-		-webkit-perspective: 1000;
-		position: absolute;
+		@include perspective(1000);
+		@extend %position-absolute;
 		top: 0;
 		left: 0;
 		z-index: 1;
-		height: 100%;
-		width: 100%;
+    @include size(100%);
 		> * {
-			height: 100%;
-			width: 100%;
+      @include size(100%);
 			overflow: hidden;
 			-webkit-backface-visibility: hidden;
-			-webkit-perspective: 1000;
+			@include perspective(1000);
 		}
 	}
 	#fsvs-pagination {
-    // display: none;
 		margin: 0;
-		padding:8px 4px;
+		padding: em(8px) em(4px);
 		position: fixed;
-		height: auto;
+    @include size(em(32px), auto);
 		right: -100px;
 		top: 10%;
 		z-index: 999;
-		width: 32px;
 		li {
-			height: 10px;
+			height: em(10px);
 			span {
 				border: 1px solid white;
 				display: block;
@@ -57,10 +53,9 @@ html.fsvs {
 .show-text {
   opacity: 1 !important;
   @include animation-name(bounceInUp 5s);
-  @extend .bounceInUp ;
 }
 
-@keyframes bounceInUp {
+@include keyframes(bounceInUp) {
   from {
     opacity: 0;
     transform: translate3d(0, 100px, 0);
@@ -69,12 +64,4 @@ html.fsvs {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-}
-
-.bounceInUp {
-  animation-name: bounceInUp !important;
-}
-
-.hidden-text {
-  opacity: 0 ;
 }

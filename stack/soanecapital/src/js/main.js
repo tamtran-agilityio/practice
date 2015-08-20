@@ -106,18 +106,18 @@ $(document).ready( function() {
       $offMusic.fadeOut();
     })
 
-    $offMusic.click( function() {
-      $volumeOff.fadeIn();
-      $volumeUp.fadeOut();
-      $playMusic.fadeIn();
-      $offMusic.fadeOut();
-    })
-
     $volumeOff.click( function() {
       $volumeUp.fadeIn();
       $volumeOff.fadeOut();
       $playMusic.fadeOut();
       $offMusic.fadeIn();
+    })
+
+    $offMusic.click( function() {
+      $volumeOff.fadeIn();
+      $volumeUp.fadeOut();
+      $playMusic.fadeIn();
+      $offMusic.fadeOut();
     })
 
     $playMusic.click( function() {
@@ -126,7 +126,6 @@ $(document).ready( function() {
       $playMusic.fadeOut();
       $offMusic.fadeIn();
     })
-
 
     /* execute when scrolling */
     $(window).scroll(function(){

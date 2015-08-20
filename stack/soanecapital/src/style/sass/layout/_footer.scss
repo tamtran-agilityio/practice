@@ -31,7 +31,7 @@
     }
 
     @include e(group) {
-      position: absolute;
+      @extend %position-absolute;
       top: em(100px);
       right: 20%;
       height: em(50px);
@@ -62,7 +62,8 @@
 
     input {
       border: 1px solid $white;
-      &:hover {
+      &:hover,
+      &:active {
         border: 1px solid $cl-boder-from;      
       }
     }
@@ -96,6 +97,7 @@
 
 #map {
   opacity: 0;
+  @include size(100%, em(350px));
   width: 100%;
   height: 350px;
 }

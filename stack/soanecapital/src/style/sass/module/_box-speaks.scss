@@ -22,11 +22,10 @@
   }
 
   @include e(image) {
+    @include size(100%, auto);
     position: absolute;
     opacity: 0;
     z-index: 4;
-    width: 100%;
-    height: auto;
     cursor: pointer;
     vertical-align: middle;
     backface-visibility: hidden;
@@ -34,8 +33,7 @@
 
   @include e(dark) {
     z-index: 2;
-    width: 100%;
-    height: auto;
+    @include size(100%, auto);
     vertical-align: middle;
   }
   .intro {
@@ -52,31 +50,29 @@
   .cube {
     margin-bottom: em(80px);
     &:before {
-      position: absolute;
+      @include size(em(60px));
+      @extend %position-absolute;
       content: '';
       margin: 0 auto;
       top: 0;
       right: 0;
       left: 0;
-      width: 60px;
-      height: 60px;
-      border: 1px solid $white;
+      border: em(2px) solid $white;
       transform: rotate(45deg);
-      border-radius: 5px;
+      border-radius: em(5px);
       background-clip: padding-box;
      }
     @include e(arrow) {
+      @include size(em(9px), em(15px));
+      @extend %position-absolute;
       opacity: 0;
-      position: absolute;
       display: block;
-      width: 9px;
-      height: 15px;
-      top: 10px;
+      top: em(10px);
       left: 0;
       right: 0;
       margin: 0 auto;
       background: url("/images/icon/up-arrow-small.png") center left/100% 100% no-repeat;
-      backface-visibility: hidden
+      backface-visibility: hidden;
     }
     @include e(number) {
       @include font-text(em(14px), bold, $white, $font-helveticaneue);

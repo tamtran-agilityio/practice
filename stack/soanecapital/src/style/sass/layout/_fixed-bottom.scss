@@ -10,25 +10,44 @@
   .sound {
     @include e(volume) {
       @extend %dislay-inline-block;
-      position: relative;
+      @extend %position-relative;
       color: #926e4d;
-      display: inline-block;
+      @extend %dislay-inline-block;
       width: em(32px);
-      margin: 0 0 em(17px);
+      margin: 0 0 em(20px);
       &:hover {
         color: $white;
       }
+
       @include m(up) {
-        position: absolute;
+        @extend %position-absolute;
       }
+
       @include m(off) {
-        position: absolute;
+        @extend %position-absolute;
+        display: none;
       }
     }
 
     @include e(text) {
+      @extend %position-relative;
       @extend %dislay-inline-block;
       @include font-text(em(14px), normal, $white, $font-helveticaneue);
+
+      @include m(state) {
+        @extend %position-absolute;
+        top: 0;
+        left: em(60px);
+        display: none;
+        margin-left: em(5px);
+      }
+
+      @include m(separator) {
+        @extend %position-absolute;
+        top: 0;
+        left: em(60px);
+        margin-left: em(5px);
+      }
     }    
   }
   .copyright {

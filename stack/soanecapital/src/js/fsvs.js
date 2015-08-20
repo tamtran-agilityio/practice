@@ -644,9 +644,6 @@
             }
           );
         }
-        // else {
-        //   $('.bachground-footer').fadeOut();
-        // }
       },
 
       /**
