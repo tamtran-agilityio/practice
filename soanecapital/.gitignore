@@ -3,9 +3,7 @@
 out/
 node_modules/
 vendor/
-bourbon/
-neat/
-base/
+
 
 #temp files
 #########################
