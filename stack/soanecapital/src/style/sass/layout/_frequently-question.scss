@@ -1,0 +1,21 @@
+  /* styles background of page soane speaks*/
+.faq {
+  background-image: url("/images/faq.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
+  background-size: em(2000px) auto;
+  position: absolute;
+  top: 0;
+
+  @include e(logo) {
+    background: url("/images/faq-title-decoration.png") top left/100% 100% no-repeat;
+    @include size(em(400px), em(320px));
+    background-size: 100% 100%;
+  }
+  // container of part question
+  @include e(container) {
+    @extend %position-relative;
+    height: em(850px);
+  }
+}

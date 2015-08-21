@@ -1,0 +1,69 @@
+/* styles of part question and answer*/
+.question {
+  overflow: hidden;
+  @include e(box) {
+    @extend %position-relative;
+    width: 50%;
+    background: url(/images/faq-bg-decorations.svg) top right/auto 250px no-repeat $white;
+    background-size: auto 250px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 1px solid #1c1b16;
+    opacity: 0;
+  }
+
+  @include e(active) {
+    @include animation(gridTranslate 1s);
+    opacity: 1 !important;
+  }
+
+  .right {
+    float: right;
+    clear: right;
+  }
+  .left {
+    float: left;
+    clear: left;
+  }
+
+  @include e(numbers) {
+    padding: em(20px) 0;
+
+    &:after,
+    &:before {
+      content: "";
+      @extend %dislay-inline-block;
+      @include size(em(24px), em(1px));
+      margin: 0 em(4px) em(2px);
+      background-color: #d7d7d7;
+      vertical-align: middle;
+    }
+  }
+
+  @include e(title) {
+    @include font-text(em(22px), normal, $black, $font-helveticaneue);
+    padding: 0 5%;
+  }
+
+   @include e(answer) {
+    @include font-text(em(14px), normal, $black, $font-helveticaneue);
+    padding: 0 10%;
+    margin-bottom: em(50px);
+
+    li {
+      list-style-type: circle;
+    }
+  }
+}
+
+@include keyframes(gridTranslate) {
+  from {
+    transform: translate3d(0,50px,0);
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+  }
+}
+
+    
