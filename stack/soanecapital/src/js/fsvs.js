@@ -622,6 +622,7 @@
         } else {
           scrolling = false;
         }
+
         if( app.canSlideDown() == false) {
           $('.bachground-footer').fadeIn();
           $(".infor__direct").click( function()

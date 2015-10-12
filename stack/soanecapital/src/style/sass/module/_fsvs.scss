@@ -52,7 +52,8 @@ html.fsvs {
 
 .show-text {
   opacity: 1 !important;
-  @include animation-name(bounceInUp 5s);
+  @include animation-name(bounceInUp s);
+  display: block !important;
 }
 
 @include keyframes(bounceInUp) {

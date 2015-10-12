@@ -18,17 +18,18 @@ echo '### Install Node Version Manager'
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
 source ~/.nvm/nvm.sh
 nvm install 0.10.22 && nvm alias default 0.10.22
+sudo apt-get install npm
 
 echo '### Install global modules ...'
-sudo npm install -g grunt-cli
-sudo npm install -g bower
+npm install --global gulp
+npm install -g bower
 
 echo '### Install Docpad ...'
-sudo npm install -g docpad@6.59
+npm install -g docpad@6.78
 
 echo '### Install Sass and Compass'
-sudo gem install sass
-sudo gem install compass
+gem install sass
+gem install compass
 
 echo 'source ~/.nvm/nvm.sh' >> ~/.bashrc
 touch ~/.bash_profile
