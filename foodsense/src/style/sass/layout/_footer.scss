@@ -1,0 +1,53 @@
+/** style part footer */
+footer {
+  clear: both;
+  position: relative;
+  min-height: em(20);
+  padding-top: em(20);
+  border-top: em(2) solid #E5E5E5;
+  color: #AAA;
+  p {
+    line-height: em(24);
+    a {
+      text-decoration: none;
+      border-left: 1px solid #E5E5E5;
+      margin-left: em(5);
+      
+      &:first-child {
+        border-left: none;
+      }
+    }
+    span {
+      display: inline-block;
+    }
+    .copyright {
+      display: inline-block;
+    }
+  }
+
+}
+.social {
+  position: absolute;
+  top: em(20);
+  right: 0;
+  li {
+    float: left;
+    display: inline;
+    margin-left: 5px;
+    a {
+    display: block;
+    @include size(em(32px));
+    text-indent: -999em;
+    opacity: 0.4;
+    } 
+  }
+}
+.twitter {
+  background: url("/images/icon/icon-twitter.png") no-repeat 50% 1px;
+}
+.facebook {
+  background: url("/images/icon/icon-facebook.png") no-repeat 50% 1px;
+}
+.rss {
+  background: url("/images/icon/icon-rss.png") no-repeat 50% 1px;
+}

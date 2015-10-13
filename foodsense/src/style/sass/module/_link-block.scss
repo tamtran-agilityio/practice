@@ -1,0 +1,7 @@
+a {
+  color: $color-link;
+  @include transition(color .3s ease);
+  &:hover {
+    color: $color-link-hover;
+  }
+}

@@ -35,11 +35,10 @@ var jsLibraryConcatList = [
 ];
 var jsCodeConcatList = [
   config.vendor + 'jquery/dist/jquery.js',
-  config.vendor + 'foundation/js/vendor/jquery.cookie.js',
-  config.vendor + 'foundation/js/vendor/fastclick.js',
-  config.vendor + 'foundation/js/vendor/modernizr.js',
-  config.vendor + 'foundation/js/vendor/placeholder.js',
-  config.vendor + 'foundation/js/foundation.js',
+  config.vendor + 'jquery_lazyload/jquery.lazyload.js',
+  config.vendor + 'picturefill/picturefill.js',
+  config.vendor + 'retina.js/dist/retina.js',
+  config.vendor + 'handlebars/handlebars.js',
   'src/js/main.js'
 ];
 
