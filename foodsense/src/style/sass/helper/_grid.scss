@@ -1,0 +1,27 @@
+/** set grid **/
+.container-page {
+  width: em(1176);
+  padding: em(50) em(48) 0;
+  margin: 0 auto;
+  line-height: 1;
+  color: $base-color-text;
+  background: $white;
+  font-family: ff-tisa-web-pro, Georgia, sans-serif;
+}
+.wap-content {
+  width: 1080px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  padding: 10px 20px;
+  background: $white;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+  -webkit-box-shadow: 1px 1px 2px #F5F5F5;
+  -moz-box-shadow: 1px 1px 2px #F5F5F5;
+  box-shadow: 1px 1px 2px #F5F5F5;
+  @include transition(all .2s ease);
+}
