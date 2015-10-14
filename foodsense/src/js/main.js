@@ -3,7 +3,7 @@
 
 var Application = {};
 
-(function($, W, A , H) {
+(function($, W, A) {
 
   A.App = function() {
 
@@ -23,11 +23,8 @@ var Application = {};
       $feature.on('click', function(event) {
 
         event.preventDefault();
-
         var hrefTarget = $(this).children('a').attr('href');
-
         remove_Class();
-
         $(hrefTarget).addClass($active);
         $(this).addClass($active);
       });
@@ -35,13 +32,9 @@ var Application = {};
 
     // set handle image slides
     var slideImage = function() {
-
       $feature.each(function(i) {
-
         if($($feature[i]).hasClass($active)) {
-
           if($($feature[i]).is(':nth-child(4)')) {
-
             remove_Class();
             $($slide_Active[0]).addClass($active);
             $($feature[0]).addClass($active);
@@ -77,7 +70,17 @@ var Application = {};
     };
   };
 
-}(window.jQuery, window, Application, window.Handlebars));
+   //A.get_Date =function() {
+    // function get_Date(item, page) {
+    //   $.getJSON('../../data/data.json', function(data) {
+    //     var template = $(item).html();
+    //     var info = Mustache.to_html(template, data);
+    //     $(page).html(info);
+    //   });
+    // };
+  //} 
+    // get_Date("#blog","#blog");
+}(window.jQuery, window, Application));
 
 window.jQuery(document).ready(function() {
   new Application.App().init();
