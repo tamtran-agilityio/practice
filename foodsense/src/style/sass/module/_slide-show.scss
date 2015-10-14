@@ -1,7 +1,7 @@
 .featured {
   position: relative;
   width: 100%;
-  height: 510px;
+  height: 560px;
   #slide-1, #slide-3 {
     h1, h2 {
       position: absolute;
@@ -62,8 +62,7 @@
   @include e(item) {
     float: left;
     text-align: center;
-        display: block;
-    float: left;
+    display: block;
     padding: 8px 0 2px;
     line-height: 1.1em;
     color: #60BEAE;
@@ -95,3 +94,31 @@
     background: #d9efec;
   }
 }
+
+.newsletter {
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 29px;
+  line-height: 1em;
+  border-top: 1px dashed $border-color;
+  border-bottom: 1px dashed $border-color;
+  background: url(/images/icons/icon-mailinglist-32.png) no-repeat 18px 7px;
+  @include e(desc) {
+    float: left;
+    width: 49%;
+    padding: 7px 24px 0 66px;
+    font-size: .75em;
+    font-style: italic;
+  }
+  @include e(submit) {
+    display: block;
+    float: left;
+    margin-top: em(12);
+    @include m(email) {
+      width: 260px;
+    }
+  }
+}
+
