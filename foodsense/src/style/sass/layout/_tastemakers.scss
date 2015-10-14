@@ -1,10 +1,9 @@
-.tastemakers {
+.header-page {
   width: 100%;
   margin: 0 0 30px;
   padding: 20px 0 28px;
   border-bottom: 2px solid $border-color;
   @include e(title) {
-    background: url("/images/icons/page-tastemakers.png") 0 -99px no-repeat;
     margin-bottom: 0;
     padding: 10px 0 14px;
     line-height: 1.25em;
@@ -17,6 +16,16 @@
     width: 69%;
     line-height: 1.6em;
     font-style: italic;
+  }
+}
+.tastemakers {
+  @extend .header-page;
+  .tastemakers__title {
+    @extend .header-page__title;
+    background: url("/images/icons/page-tastemakers.png") 0 -99px no-repeat;
+  }
+  .tastemakers__desc {
+    @extend .header-page__desc;
   }
 }
 .main {
