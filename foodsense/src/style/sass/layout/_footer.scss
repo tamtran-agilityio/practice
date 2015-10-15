@@ -3,17 +3,20 @@ footer {
   clear: both;
   position: relative;
   min-height: em(20);
-  padding-top: em(20);
-  border-top: em(2) solid #E5E5E5;
+  padding-top: 20px;
+  border-top: 2px solid #E5E5E5;
   @include flexbox();
   justify-content: space-between;
   color: #AAA;
+  padding-bottom: 20px;
   p {
     line-height: em(24);
+    line-height: 1.5em;
+    font-size: .75em;
     a {
       text-decoration: none;
       border-left: 1px solid #E5E5E5;
-      margin-left: em(5);
+      padding: 0 3px;
       
       &:first-child {
         border-left: none;
@@ -22,15 +25,15 @@ footer {
     span {
       display: inline-block;
     }
-    .copyright {
-      display: inline-block;
-    }
+  }
+  .copyright {
+    display: block;
   }
 
 }
 .social {
   position: absolute;
-  top: em(20);
+  top: 20px;
   right: 0;
   li {
     float: left;

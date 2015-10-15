@@ -1,0 +1,45 @@
+@media screen and (max-width: 1176px){
+  .container-page {
+    max-width: 896px;
+  }
+  .wap-content {
+    width: 100%;
+  }
+  .content {
+    width: 712px;
+  }
+  .featured {
+    .slide {
+      width: 100%;
+    }
+    .slide__item {
+      width: 712px;
+    }
+  }
+  .navigation {
+    .navigation__item {
+      a {
+        width: 177px;
+        height: 25px;
+        padding: 0;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+  .newsletter {
+    .newsletter__submit--email {
+      width: 160px;
+    }
+  }
+  .blog {
+    .ad-block {
+      width: 160px;
+      .ad-block__img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

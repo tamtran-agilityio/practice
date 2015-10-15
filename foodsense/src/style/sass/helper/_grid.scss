@@ -1,7 +1,7 @@
 /** set grid **/
 .container-page {
-  width: em(1176);
-  padding: em(50) em(48) 0;
+  max-width: 1176px;
+  padding: 50px 48px 0;
   margin: 0 auto;
   line-height: 1;
   color: $base-color-text;
