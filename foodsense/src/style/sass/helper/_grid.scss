@@ -25,3 +25,24 @@
   box-shadow: 1px 1px 2px #F5F5F5;
   @include transition(all .2s ease);
 }
+
+.header-page {
+  width: 100%;
+  margin: 0 0 30px;
+  padding: 20px 0 28px;
+  border-bottom: 2px solid $border-color;
+  @include e(title) {
+    margin-bottom: 0;
+    padding: 10px 0 14px;
+    line-height: 1.25em;
+    font-size: 2.25em;
+    color: #111;
+    padding-left: 58px;
+    text-transform: capitalize;
+  }
+  @include e(desc) {
+    width: 69%;
+    line-height: 1.6em;
+    font-style: italic;
+  }
+}

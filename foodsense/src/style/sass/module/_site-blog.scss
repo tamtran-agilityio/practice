@@ -1,0 +1,96 @@
+.blog-page {
+  @extend .header-page;
+  .blog__icon {
+    @extend .header-page__title;
+    background: url("/images/icons/page-blog.png") 0 -99px no-repeat;
+  }
+  .blog__desc {
+    @extend .header-page__desc;
+  }
+}
+.blog-wap {
+  width: 69%;
+  float: left;
+  margin-bottom: 40px;
+  min-width: 590px;
+}
+.blog-post {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed #E5E5E5;
+  @include e(title) {
+    margin-bottom: 20px;
+    line-height: 1.25em;
+    font-size: 1.5em;
+    display: block;
+  }
+  @include e(group) {
+    clear: both;
+    margin-bottom: 30px;
+  }
+  @include e(desc) {
+    margin-bottom: 20px;
+    line-height: 1.5em;
+  }
+  @include e(imges) {
+    float: right;
+    width: 252px;
+    margin: 0 0 10px 20px;
+    img {
+      width: 232px;
+      padding: 9px;
+      background: #FFF;
+      border: 1px solid #E5E5E5;
+      -webkit-box-shadow: 1px 2px 3px #F5F5F5;
+      -moz-box-shadow: 1px 1px 3px #F5F5F5;
+      box-shadow: 1px 1px 3px #F5F5F5;
+    }
+  }
+  @include e(link) {
+    margin-bottom: 20px;
+    line-height: 1.5em;
+  }
+
+  @include e(footer) {
+    margin-bottom: 30px;
+    line-height: 1.5em;
+    display: flex;
+    li {
+      float: left;
+      margin-bottom: 10px;
+      line-height: 1.4em;
+      font-size: .75em;
+    }
+    @include m(date) {
+      height: 40px;
+      padding: 5px 5% 5px 0;
+      border-right: 2px solid #E5E5E5;
+      span {
+        font-size: .875em;
+        color: #BBB;
+        display: block;
+        margin-bottom: 5px;
+      }
+      em {
+        display: block;
+        font-size: 1.3125em;
+      }
+    }
+    @include m(comment) {
+      border-right: 2px solid #E5E5E5;
+      height: 23px;
+      margin: 0 0 10px 5%;
+      padding: 27px 5% 0 0;
+      background: url(../images/icons/icon-blog-comments.png) no-repeat left -40px;
+    }
+    @include m(tags) {
+      height: 23px;
+      margin: 0 5% 10px 5%;
+      padding: 27px 5% 0 0;
+      background: url(../images/icons/icon-blog-tag.png) no-repeat left -40px;
+    }
+  }
+}
