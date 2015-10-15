@@ -1,9 +1,9 @@
 extends layouts/default
 block variables
-  - bodyClass = "tastemaker"
+  - bodyClass = "blog"
 block content
   .content
-    header.blog-page
-      h1.blog__icon Blog 
-      p.blog__desc Eat up the latest news, recipe collections, cooking tips, and personal journeys to a plant-based life.
+    header.header-page
+      h1.header-page__title.blog__icon Blog 
+      p.header-page__desc Eat up the latest news, recipe collections, cooking tips, and personal journeys to a plant-based life.
     include templates/blog.jade

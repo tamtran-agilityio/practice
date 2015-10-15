@@ -5,6 +5,8 @@ footer {
   min-height: em(20);
   padding-top: em(20);
   border-top: em(2) solid #E5E5E5;
+  @include flexbox();
+  justify-content: space-between;
   color: #AAA;
   p {
     line-height: em(24);

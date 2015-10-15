@@ -38,7 +38,6 @@ var jsCodeConcatList = [
   config.vendor + 'jquery_lazyload/jquery.lazyload.js',
   config.vendor + 'picturefill/picturefill.js',
   config.vendor + 'retina.js/dist/retina.js',
-  config.vendor + 'handlebars/handlebars.js',
   config.vendor + 'mustache.js/mustache.js',
   'src/js/main.js'
 ];

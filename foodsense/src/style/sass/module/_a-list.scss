@@ -1,0 +1,43 @@
+.a-list-title {
+  background: url("/images/icons/page-alist.png") 0 -99px no-repeat;
+}
+.vendors {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 24px 29px 0;
+  padding-bottom: 30px;
+  font-size: .875em;
+  border-bottom: 1px dotted #E5E5E5;
+  @include e(images) {
+    float: right;
+    width: 35%;
+    margin: 0 0 15px 5%;
+  }
+  @include e(title) {
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    font-size: 1.3125em;
+    display: block;
+  }
+  @include e(desc) {
+    margin-bottom: 20px;
+    line-height: 1.5em;
+  }
+  @include e(link) {
+    display: inline-block;
+    margin-bottom: 20px;
+    // float: left;
+    font-size: .875em;
+  }
+  @include e(note) {
+    padding: 0 0 5px 24px;
+    color: #666;
+    font-style: italic;
+    font-size: .75em;
+    line-height: 1.5em;
+    background: url(../images/icons/icon-marketplace-note.png) no-repeat left -37px;
+    strong {
+      font-weight: bold;
+    }
+  }
+}
