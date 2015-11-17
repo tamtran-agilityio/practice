@@ -10,6 +10,7 @@ var Application = {};
     var $slide_Active = $('.slide__item');
         $feature = $('.navigation__item');
         $active = 'active';
+        $page_Active = $('body');
 
     // Remove all class active at slide image and navigation of Slide
     var remove_Class = function() {
@@ -51,6 +52,15 @@ var Application = {};
       });
     };
 
+    // check title page active
+    function set_Page_Active(children, node) {
+      var objRef = document.body;
+      if objRef.hasClass(children) {
+        children.parent('li').addClass('active');
+      }
+    }
+    set_Page_Active('item', 'tastemaker');
+
     this.init = function() {
 
       // execute function use lazyload
@@ -69,7 +79,7 @@ var Application = {};
       change_Slide();
     };
   };
-  
+
 }(window.jQuery, window, Application));
 
 window.jQuery(document).ready(function() {
