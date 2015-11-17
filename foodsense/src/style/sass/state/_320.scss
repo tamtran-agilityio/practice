@@ -8,6 +8,7 @@
   }
   .content {
     width: 100%;
+    overflow: hidden;
   }
   .logo {
     width: 100%;
@@ -87,7 +88,7 @@
   }
 
   .blog {
-    width: 280px;
+    // width: 280px;
     margin: 0 auto 20px;
     .ad-block {
       width: 280px;
@@ -98,6 +99,25 @@
       .ad-block__img {
         width: 260px;
       }
+    }
+  }
+  .blog-wap {
+    width: 100%;
+  }
+  .sub-bar {
+    width: 100%;
+  }
+  .blog-post {
+    .blog-post__imges {
+      float: left;
+      margin: 0 68px 20px 0;
+    }
+  }
+  .header-page {
+    width: auto;
+    padding: 0 16px 20px;
+    .header-page__desc {
+      width: 100%;
     }
   }
 }

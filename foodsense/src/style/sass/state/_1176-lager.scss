@@ -42,4 +42,10 @@
       }
     }
   }
+  .sub-bar {
+    input[type="submit"] {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
 }

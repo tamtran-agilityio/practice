@@ -79,7 +79,8 @@
   }
 
   .blog {
-    width: 564px;
+    width: 480px;
+    margin: 0 auto;
     // margin: 0 auto 20px;
     .ad-block {
       width: 216px;
@@ -94,5 +95,12 @@
     .ad-block:nth-child(2n) {
       margin-right: 0;
     }
+  }
+
+  .blog-wap {
+    width: 100%;
+  }
+  .sub-bar {
+    width: 100%;
   }
 }
