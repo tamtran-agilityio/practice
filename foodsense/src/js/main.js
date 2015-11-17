@@ -69,17 +69,7 @@ var Application = {};
       change_Slide();
     };
   };
-
-   //A.get_Date =function() {
-    // function get_Date(item, page) {
-    //   $.getJSON('../../data/data.json', function(data) {
-    //     var template = $(item).html();
-    //     var info = Mustache.to_html(template, data);
-    //     $(page).html(info);
-    //   });
-    // };
-  //} 
-    // get_Date("#blog","#blog");
+  
 }(window.jQuery, window, Application));
 
 window.jQuery(document).ready(function() {
