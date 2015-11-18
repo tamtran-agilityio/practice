@@ -53,13 +53,18 @@ var Application = {};
     };
 
     // check title page active
-    function set_Page_Active(children, node) {
-      var objRef = document.body;
-      if objRef.hasClass(children) {
-        children.parent('li').addClass('active');
+    function set_Page_Active(element, node) {
+      if ($('body').hasClass(element)) {
+        $('.item').find(node).addClass('active');
+      } else {
+        $('.item').find(node).removeClass('active');
       }
     }
-    set_Page_Active('item', 'tastemaker');
+    set_Page_Active('tastemaker', '.item__tastemakers');
+    set_Page_Active('blog', '.item__blogs');
+    set_Page_Active('a-list', '.item__vendors');
+    set_Page_Active('contribute', '.item__contribute');
+    set_Page_Active('about', '.item__about');
 
     this.init = function() {
 
