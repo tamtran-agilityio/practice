@@ -19,8 +19,7 @@
   .navigation {
     .navigation__item {
       a {
-        width: 177px;
-        height: 25px;
+         @include size(177px, 25px);
         padding: 0;
       }
       p {
@@ -46,6 +45,14 @@
     input[type="submit"] {
       margin-top: 10px;
       margin-left: 0;
+    }
+  }
+  .main {
+    .product {
+       @include size(322px, 530px);
+    }
+    .product:nth-child(2n) {
+      margin: 0 0 24px 0;
     }
   }
 }

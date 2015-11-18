@@ -98,10 +98,18 @@
     }
   }
 
-  .blog-wap {
-    width: 100%;
+  .blog-wap,.sub-bar {
+    width: 90%;
+    padding: 0 24px;
   }
-  .sub-bar {
-    width: 100%;
+  .main {
+    padding: 0 24px;
+    width: 90%;
+    .product {
+       @include size(182px, 430px);
+    }
+    .product:nth-child(2n) {
+      margin: 0 0 24px 0;
+    }
   }
 }
