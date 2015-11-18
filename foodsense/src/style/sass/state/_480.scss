@@ -47,18 +47,20 @@
   }
   .side-bar {
     top: 20px;
-    width: 100%;
+    width: 375px;
+    right: 0;
+    left: initial;
     height: 49px;
     font-size: .75em;
     .item {
       @include flexbox();
       flex-flow: row wrap;
       justify-content: flex-end;
-      padding: 16px 8px 6px;
+      padding: 16px 0;
       li {
         a {
-          background-position: 50% 0;
-          padding: 40px 0px 0 9px;
+          background-image: none;
+          padding: 20px 0px 0 9px;
           margin-left: 14px;
         }
       }
