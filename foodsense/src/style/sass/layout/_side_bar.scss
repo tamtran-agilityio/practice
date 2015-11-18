@@ -25,6 +25,8 @@
 }
 
 .item {
+  @include flexbox();
+  flex-wrap: wrap;
   .background-content {
     display: block;
     height: em(28);
@@ -34,7 +36,6 @@
     @include transition(all .2s ease);
   }
   li {
-    display: block;
     margin-bottom: em(18);
     line-height: 1.3em;
   }

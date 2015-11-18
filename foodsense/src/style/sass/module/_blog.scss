@@ -6,9 +6,7 @@
   margin-bottom: 18px;
 }
 .ad-block {
-  // @include flex(1 25%);
   width: 206px;
-  float: left;
   margin: 0 24px 25px 0;
   @include e(head) {
   }

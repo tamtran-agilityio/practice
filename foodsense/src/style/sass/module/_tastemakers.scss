@@ -2,6 +2,9 @@
   background: url("/images/icons/page-tastemakers.png") 0 -99px no-repeat;
 }
 .main {
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: flex-end;
   width: 100%;
   min-height: 550px;
   overflow: hidden;
@@ -10,7 +13,7 @@
 .product {
   overflow: visible;
   position: relative;
-  float: left;
+  // float: left;
   width: 184px;
   height: 430px;
   margin: 0 24px 28px 0;

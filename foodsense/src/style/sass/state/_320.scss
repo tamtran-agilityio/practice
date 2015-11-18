@@ -124,6 +124,7 @@
     width: 90%;
     .product {
       @include size(266px, 480px);
+      margin: 0 0 28px 0;
     }
   }
 }

@@ -91,6 +91,8 @@
 
 .sub-bar {
   float: right;
+  @include flexbox();
+  flex-direction: column;
   width: 26%;
   margin-bottom: 40px;
   color: #888;

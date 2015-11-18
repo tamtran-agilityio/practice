@@ -76,7 +76,7 @@
       border-right: none;
     }
     a {
-      @include size(191px , 60px);
+      @include size(191.25px , 60px);
       display: block;
       padding: 25px 12px 0 20px;
     }
@@ -103,7 +103,7 @@
   width: 100%;
   min-height: 48px;
   margin-bottom: 29px;
-  line-height: 1em;
+  line-height: 16px;
   border-top: 1px dashed $border-color;
   border-bottom: 1px dashed $border-color;
   background: url(/images/icons/icon-mailinglist-32.png) no-repeat 18px 7px;

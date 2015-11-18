@@ -9,6 +9,7 @@
   }
   .content {
     width: 100%;
+    overflow: hidden;
   }
   .side-social {
     display: none;
@@ -81,16 +82,13 @@
 
   .blog {
     width: 480px;
-    margin: 0 auto;
-    display: block;
-    justify-content: space-around;
-    // margin: 0 auto 20px;
+    @include flexbox();
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 auto 20px;
     .ad-block {
       width: 216px;
       margin-right: 24px;
-      .ad-block__head {
-        // width: 280px;
-      }
       .ad-block__img {
         width: 195px;
       }
@@ -105,7 +103,11 @@
     padding: 0 24px;
   }
   .header-page {
-    padding-top: 0;
+    padding: 0 24px 0;
+    width: 90%;
+    .header-page__desc {
+      width: 100%;
+    }
   }
   .main {
     padding: 0 24px;
