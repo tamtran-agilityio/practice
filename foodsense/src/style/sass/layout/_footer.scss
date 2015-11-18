@@ -39,11 +39,14 @@ footer {
     float: left;
     display: inline;
     margin-left: 5px;
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
     a {
     display: block;
     @include size(em(32px));
     text-indent: -999em;
-    opacity: 0.4;
     } 
   }
 }
