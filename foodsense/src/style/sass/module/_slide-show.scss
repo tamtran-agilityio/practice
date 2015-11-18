@@ -49,6 +49,9 @@
 }
 
 .navigation {
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: flex-end;
   position: absolute;
   top: 445px;
   background: #EFF8F7;
@@ -60,9 +63,7 @@
   -moz-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
   @include e(item) {
-    float: left;
     text-align: center;
-    display: block;
     padding: 8px 0 2px;
     line-height: 1.1em;
     color: #60BEAE;
@@ -75,9 +76,8 @@
       border-right: none;
     }
     a {
+      @include size(191px , 60px);
       display: block;
-      width: 191px;
-      height: 60px;
       padding: 25px 12px 0 20px;
     }
     h3 {
@@ -90,14 +90,16 @@
     }
   }
   .navigation__item.active {
-    color: #34ac98;
+    color: $action-color;
     background: #d9efec;
   }
 }
 
 .newsletter {
   overflow: hidden;
-  clear: both;
+  @include flexbox();
+  flex-flow: row wrap;
+  justify-content: flex-end;
   width: 100%;
   min-height: 48px;
   margin-bottom: 29px;
@@ -106,7 +108,6 @@
   border-bottom: 1px dashed $border-color;
   background: url(/images/icons/icon-mailinglist-32.png) no-repeat 18px 7px;
   @include e(desc) {
-    float: left;
     width: 49%;
     padding: 7px 24px 0 66px;
     font-size: .75em;
@@ -114,7 +115,6 @@
   }
   @include e(submit) {
     display: block;
-    float: left;
     margin-top: em(12);
     @include m(email) {
       width: 260px;

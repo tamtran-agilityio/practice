@@ -60,11 +60,6 @@ var Application = {};
         $('.item').find(node).removeClass('active');
       }
     }
-    set_Page_Active('tastemaker', '.item__tastemakers');
-    set_Page_Active('blog', '.item__blogs');
-    set_Page_Active('a-list', '.item__vendors');
-    set_Page_Active('contribute', '.item__contribute');
-    set_Page_Active('about', '.item__about');
 
     this.init = function() {
 
@@ -81,6 +76,14 @@ var Application = {};
         slideImage();
       }, 3500);
 
+      // get tag select
+      set_Page_Active('tastemaker', '.item__tastemakers');
+      set_Page_Active('blog', '.item__blogs');
+      set_Page_Active('a-list', '.item__vendors');
+      set_Page_Active('contribute', '.item__contribute');
+      set_Page_Active('about', '.item__about');
+
+      // call function change slide
       change_Slide();
     };
   };

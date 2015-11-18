@@ -81,17 +81,6 @@
   -moz-box-shadow: $horiz $vert $blur $spread $color;
   box-shadow: $horiz $vert $blur $spread $color;
 }
-// @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-//   @if $inset {
-//     -webkit-box-shadow:inset $top $left $blur $color;
-//     -moz-box-shadow:inset $top $left $blur $color;
-//     box-shadow:inset $top $left $blur $color;
-//   } @else {
-//     -webkit-box-shadow: $top $left $blur $color;
-//     -moz-box-shadow: $top $left $blur $color;
-//     box-shadow: $top $left $blur $color;
-//   }
-// }
 
 // styles mixin of BEM syntax
 @mixin e($name) {

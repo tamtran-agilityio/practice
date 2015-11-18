@@ -18,9 +18,10 @@
     width: 528px;
     margin: 0;
     .item {
-      float: right;
+      @include flexbox();
+      flex-flow: row wrap;
+      justify-content: flex-end;
       li {
-        display: inline-block;
         a {
           background-position: 50% 0;
           padding: 40px 0 0 0;
