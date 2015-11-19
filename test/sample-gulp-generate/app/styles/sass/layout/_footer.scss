@@ -1,0 +1,61 @@
+/** style part footer */
+footer {
+  clear: both;
+  position: relative;
+  min-height: em(20);
+  padding-top: 20px;
+  border-top: 2px solid #E5E5E5;
+  @include flexbox();
+  justify-content: space-between;
+  color: #AAA;
+  padding-bottom: 20px;
+  p {
+    line-height: em(24);
+    line-height: 1.5em;
+    font-size: .75em;
+    a {
+      text-decoration: none;
+      border-left: 1px solid #E5E5E5;
+      padding: 0 3px;
+      
+      &:first-child {
+        border-left: none;
+      }
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  .copyright {
+    display: block;
+  }
+
+}
+.social {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  li {
+    float: left;
+    display: inline;
+    margin-left: 5px;
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+    a {
+    display: block;
+    @include size(em(32px));
+    text-indent: -999em;
+    } 
+  }
+}
+.twitter {
+  background: url("/images/icons/icon-twitter.png") no-repeat 50% 1px;
+}
+.facebook {
+  background: url("/images/icons/icon-facebook.png") no-repeat 50% 1px;
+}
+.rss {
+  background: url("/images/icons/icon-rss.png") no-repeat 50% 1px;
+}

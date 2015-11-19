@@ -1,0 +1,115 @@
+.logo {
+  float: left;
+  width: em(160);
+  margin-bottom: em(25);
+  @include e(brand) {
+    background: url("/images/food-sense.png") 0 0 no-repeat;
+    @include size(em(120));
+    @include transition(all 0.2s ease);
+    text-indent: -999em;
+    margin-right: em(20); 
+    display: block;
+  }
+}
+
+.side-bar {
+  position: absolute;
+  top: em(160);
+  left: 0;
+  width: em(160);
+  .active {
+    a {
+      color: $color-link-active !important;
+    }
+  }
+}
+
+.item {
+  @include flexbox();
+  flex-wrap: wrap;
+  .background-content {
+    display: block;
+    height: em(28);
+    padding: em(6) 0 0 em(44);
+    font-style: italic;
+    color: $color-link;
+    @include transition(all .2s ease);
+  }
+  li {
+    margin-bottom: em(18);
+    line-height: 1.3em;
+  }
+  @include e(tastemakers) {
+    a {
+      background: url("/images/icons/nav-tastemakers.png") no-repeat;
+      @extend .background-content;
+    }
+  }
+
+  @include e(blogs) {
+    a {
+      background: url("/images/icons/nav-blog.png") no-repeat;
+      @extend .background-content;
+    }
+  }
+
+  @include e(vendors) {
+    a {
+      background: url("/images/icons/nav-alist.png") no-repeat;
+      @extend .background-content;
+    }
+  }
+
+  @include e(contribute) {
+    a {
+      background: url("/images/icons/nav-contribute.png") no-repeat;
+      @extend .background-content;
+    }
+  }
+
+  @include e(about) {
+    a {
+      background: url("/images/icons/nav-about.png") no-repeat;
+      @extend .background-content;
+    }
+  }
+}
+
+.side-social {
+  position: absolute;
+  top: em(450);
+  left: 0;
+  width: em(160);
+  h1 {
+    text-transform: uppercase;
+    margin: 0 0 em(9);
+    padding-bottom: em(5);
+    text-transform: uppercase;
+    font-size: .75em;
+    border-bottom: 1px dashed $border-color;
+  }
+  .button-social {
+    @include size(110px, 20px);
+    padding: 7px 0 0 28px;
+    font-size: em(10);
+  }
+  @include e(twitter) {
+    margin-bottom: em(32);
+    .button {
+      @extend .button-social;
+      background: url("/images/icons/icon-twitter-16.png") no-repeat 6px 6px ;
+    }
+  }
+  @include e(facebook) {
+    .button {
+      @extend .button-social;
+      background: url("/images/icons/icon-facebook-16.png") no-repeat 6px 6px;
+    }
+  }
+  @include e(desc) {
+    margin-bottom: 15px;
+    line-height: 1.75em;
+    font-size: .6825em;
+    font-style: italic;
+  }
+}

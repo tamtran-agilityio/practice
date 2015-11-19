@@ -1,0 +1,9 @@
+extends layouts/default
+block variables
+  - bodyClass = "blog"
+block content
+  .content
+    header.header-page
+      h1.header-page__title.blog__icon Blog 
+      p.header-page__desc Eat up the latest news, recipe collections, cooking tips, and personal journeys to a plant-based life.
+    include templates/blog.jade
