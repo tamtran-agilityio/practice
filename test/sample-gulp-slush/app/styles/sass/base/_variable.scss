@@ -1,0 +1,32 @@
+/** variable of page */
+$white: #FFF;
+$black: #000;
+$base-color-text: #333;
+$color-link: #34AC98;
+$color-link-hover: #EC6635;
+$color-link-active: #95d4c9;
+// font Sizes
+$font-base: 100%;
+
+// line height
+$base-line-height: 1;
+$heading-line-height: 1.2;
+
+// other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// colors
+$blue: #477dca;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// font Colors
+$action-color: #34AC98;
+$border-color: #E5E5E5;
+// border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;

@@ -1,0 +1,48 @@
+/** set grid **/
+.container-page {
+  max-width: 1176px;
+  padding: 50px 48px 0;
+  margin: 0 auto;
+  line-height: 1;
+  color: $base-color-text;
+  background: $white;
+  font-family: ff-tisa-web-pro, Georgia, sans-serif;
+}
+.wap-content {
+  width: 1080px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  padding: 10px 20px;
+  background: $white;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+  -webkit-box-shadow: 1px 1px 2px #F5F5F5;
+  -moz-box-shadow: 1px 1px 2px #F5F5F5;
+  box-shadow: 1px 1px 2px #F5F5F5;
+  @include transition(all .2s ease);
+}
+
+.header-page {
+  width: 100%;
+  margin: 0 0 30px;
+  padding: 20px 0 28px;
+  border-bottom: 2px solid $border-color;
+  .header-page__title {
+    margin-bottom: 0;
+    padding: 10px 0 14px;
+    line-height: 1.25em;
+    font-size: 2.25em;
+    color: #111;
+    padding-left: 58px;
+    text-transform: capitalize;
+  }
+  .header-page__desc {
+    width: 69%;
+    line-height: 1.6em;
+    font-style: italic;
+  }
+}

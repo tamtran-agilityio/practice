@@ -1,0 +1,123 @@
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  .container-page {
+    width: 480px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .wap-content {
+    width: 480px;
+  }
+  .content {
+    width: 100%;
+    overflow: hidden;
+  }
+  .side-social {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .featured {
+    height: auto;
+    #slide-2, #slide-4 {
+      h1, h2 {
+        left: 0;
+        width: 480px;
+      }
+    }
+    h1 {
+      top: 172px;
+      padding: 10px 10px;
+      background: rgba(255,255,255,.8);
+      color: #222;
+      font-size: 1.125em;
+      float: left;
+      width: 480px;
+    }
+    h2 {
+      top: 212px;
+      padding: 9px 10px 11px;
+      font-size: .875em;
+      float: left;
+      width: 480px;
+    }
+    .slide {
+      height: 280px;
+    }
+  }
+  .side-bar {
+    top: 20px;
+    width: 375px;
+    right: 0;
+    left: initial;
+    height: 49px;
+    font-size: .75em;
+    .item {
+      @include flexbox();
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      padding: 16px 0;
+      li {
+        a {
+          background-image: none;
+          padding: 20px 0px 0 9px;
+          margin-left: 14px;
+        }
+      }
+    }
+  }
+  .newsletter {
+    justify-content: space-around;
+    margin-top: 10px;
+    .newsletter__desc {
+      width: 100%;
+      background-position: 15px 14px;
+    }
+    .newsletter__submit {
+      padding-left: 10px;
+      padding-bottom: 10px;
+    }
+    .newsletter__submit--email {
+      width: 320px;
+    }
+  }
+
+  .blog {
+    width: 480px;
+    @include flexbox();
+    justify-content: center;
+    flex-flow: row wrap;
+    .ad-block {
+      width: 216px;
+      margin-right: 24px;
+      .ad-block__img {
+        width: 195px;
+      }
+    }
+    .ad-block:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  .blog-wap,.sub-bar {
+    width: 90%;
+    padding: 0 24px;
+  }
+  .header-page {
+    padding: 0 24px 0;
+    width: 90%;
+    .header-page__desc {
+      width: 100%;
+    }
+  }
+  .main {
+    padding: 0 24px;
+    width: 90%;
+    .product {
+       @include size(182px, 430px);
+    }
+    .product:nth-child(2n) {
+      margin: 0 0 24px 0;
+    }
+  }
+}
