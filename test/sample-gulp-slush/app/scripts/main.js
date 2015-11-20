@@ -8,9 +8,9 @@ var Application = {};
   A.App = function() {
 
     var $slide_Active = $('.slide__item');
-        $feature = $('.navigation__item');
-        $active = 'active';
-        $page_Active = $('body');
+    var $feature = $('.navigation__item');
+    var $active = 'active';
+    var $page_Active = $('body');
 
     // Remove all class active at slide image and navigation of Slide
     var remove_Class = function() {
