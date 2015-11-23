@@ -68,8 +68,8 @@ section.main
     h2.product__title
       a(href="javascript:void(0)") Cranberry Lime Cocktail
     p.product__desc   An easy, crowd pleasing cocktail, using ingredients you have on hand.
-    .fb-like
+    .fb-like(data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true")
     p.product__footer
       a(href="javascript:void(0)") The Vintage Mixer →
   #fb-root
-  script (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"; fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+  script (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));

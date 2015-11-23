@@ -1,95 +1,86 @@
 /* file javscript */
-'use strict';
+!(function ( $ ) {
+  'use strict';
 
-var Application = {};
+  var $slide_Active = $('.slide__item');
+  var $feature = $('.navigation__item');
+  var $active = 'active';
+  var $page_Active = $('body');
 
-(function($, W, A) {
+  // Click on navigation of slide image
+  var change_Slide = function() {
 
-  A.App = function() {
+    $feature.on('click', function(event) {
 
-    var $slide_Active = $('.slide__item');
-    var $feature = $('.navigation__item');
-    var $active = 'active';
-    var $page_Active = $('body');
-
-    // Remove all class active at slide image and navigation of Slide
-    var remove_Class = function() {
+      event.preventDefault();
+      var hrefTarget = $(this).children('a').attr('href');
       $feature.removeClass($active);
       $slide_Active.removeClass($active);
-    };
+      $(hrefTarget).addClass('active');
+      $(this).addClass('active');
+      $(hrefTarget).fadeIn();
+      $(this).fadeIn();
+    });
+  };
+  change_Slide();
 
-    // Click on navigation of slide image
-    var change_Slide = function() {
+  function change_Slider(item, element) {
 
-      $feature.on('click', function(event) {
+    var change_img_time     = 3500;
+    var transition_speed    = 100;
 
-        event.preventDefault();
-        var hrefTarget = $(this).children('a').attr('href');
-        remove_Class();
-        $(hrefTarget).addClass($active);
-        $(this).addClass($active);
-      });
-    };
+    var simple_slideshow    = $(item),
+      listItems           = simple_slideshow.children(element),
+      listLen             = listItems.length,
+      i                   = 0,
 
-    // set handle image slides
-    var slideImage = function() {
-      $feature.each(function(i) {
-        if($($feature[i]).hasClass($active)) {
-          if($($feature[i]).is(':nth-child(4)')) {
-            remove_Class();
-            $($slide_Active[0]).addClass($active);
-            $($feature[0]).addClass($active);
-            return false;
+      changeList = function () {
 
-          } else {
-
-            remove_Class();
-            $($slide_Active[i + 1]).addClass($active);
-            $($feature[i + 1]).addClass($active);
-            return false;
+        listItems.eq(i).fadeOut(transition_speed, function () {
+          i += 1;
+          if (i === listLen) {
+              i = 0;
           }
-        }
-      });
-    };
-
-    // check title page active
-    function set_Page_Active(element, node) {
-      if ($('body').hasClass(element)) {
-        $('.item').find(node).addClass('active');
-      } else {
-        $('.item').find(node).removeClass('active');
-      }
-    }
-
-    this.init = function() {
-
-      // execute function use lazyload
-      $(W).bind('load', function() {
-
-        $('img').lazyload({
-          effect: 'fadeIn'
+          listItems.eq(i).fadeIn(transition_speed);
         });
-      });
+      };
 
-      // set time for each slide
-      setInterval(function() {
-        slideImage();
-      }, 3500);
 
-      // get tag select
-      set_Page_Active('tastemaker', '.item__tastemakers');
-      set_Page_Active('blog', '.item__blogs');
-      set_Page_Active('a-list', '.item__vendors');
-      set_Page_Active('contribute', '.item__contribute');
-      set_Page_Active('about', '.item__about');
-
-      // call function change slide
-      change_Slide();
-    };
+    listItems.not(':first').hide();
+    setInterval(changeList, change_img_time);
   };
 
-}(window.jQuery, window, Application));
+  function change_navigation() {
+    if ($('#slide-1').css('display') =='none') {
+      $('.navigation__item').removeClass('active');
+    } else {
+      $('.navigation__item').addClass('active');
+    }
+  }
+  // change_navigation();
 
-window.jQuery(document).ready(function() {
-  new Application.App().init();
-});
+ // check title page active
+  function set_Page_Active(element, node) {
+    if ($('body').hasClass(element)) {
+      $('.item').find(node).addClass('active');
+    } else {
+      $('.item').find(node).removeClass('active');
+    }
+  }
+
+  change_Slider('.slide', 'section');
+
+  set_Page_Active('tastemaker', '.item__tastemakers');
+  set_Page_Active('blog', '.item__blogs');
+  set_Page_Active('a-list', '.item__vendors');
+  set_Page_Active('contribute', '.item__contribute');
+  set_Page_Active('about', '.item__about');
+
+  $(window).bind('load', function() {
+
+    $('img').lazyload({
+      effect: 'fadeIn'
+    });
+  });
+
+}( jQuery ));
