@@ -1,58 +1,55 @@
- Training project (HTML-CSS & DOCPAD)
+#Overview
+1. [Javascript]
+2. [Docpad and Gulp]
+3. [Vagrant]
 
-
-## Getting Started 
- sudo apt-get install git
- git clone git@asoft.git:training/tamtran-training.git
- cd ~/tamtran-training/practice
-
-## Setup
-Install:
-
-  1. Installing Virtualbox:
-  ``` 
-  $ sudo apt-get install virtualbox
-  ```
+#Structure Folder
+1. /javascript-training:
+  * Animation example:
+      * [Example-Bitters] Do example use Bitters
+      * [Example-Bourbon] Do example use Bourbon
+      * [Example-Foundation] Do example use Foundation
+      * [Example-MUI] Do example use MUI
+      * [Example-Materializecss] Do example use Materializecss
+  * Animation practice:
+      * [Soanecapital] Do practice use Materializecss
+  * Javascript Example:
+      * [Parallax-Scrolling] Do example parallax scrolling
+      * [Example-Lodash] Do example use Plugin Lodash
+  * Javascript Practice:
+      * [Todo-list] Do practice use javascript
+      * [User-Manager] Do practice use jquery
+      * [Sparks-Scroll] Do practice about parallax scrolling
+  * Responsive Advance practice:
+      * [Foodsense-Gulp_Slush] Do practice Foodsense use Gulp Slush  
+      * [Foodsense-Gulp_Yeoman] Do practice Foodsense use Gulp Yeoman
+2. /vagrant:
+ * Vagrantfile
+        - Use box hashicorp/precise32
+        - Synced folders to /javascript
+        - Network of docpad is 9000
+        - Provision shell script bootstrap.sh
+    * bootstrap.sh
+        * Install Node Version Manager
+        * Install global modules: docpad, gulp, bower
   
-  2. Installing Vagrant:
-  ```
-  $ sudo apt-get install vagrant
-  ```
+#Run practice on vagrant
+    cd /vagrant
+    vagrant up
+    vagrant ssh
+    cd / folder container practice
 
-  3. Getting vagrant  machine up:
-  ```
-  $ vagrant box add hashicorp/precise32
-  ```
+#Run practice on machine
+    cd / folder container practice
+**Folder /javascript contain all practice.**
 
-  4. Configure Project:
-  ```
-  $ mkdir vagrant_project
-  $ cd vagrant_project
-  $ vagrant init
-  ```
-
-  5. Edit the Vagrantfile in this directory and replace
-  ```
-  config.vm.box = "hashicorp/precise32"
-  ```
-
-
-Start Server to run DOCPAD:
-  ```
-  vagrant ssh
-  cd /docpad
-  docpad run
-  docpad install sass
-  docpad install jade
-  ```
-  ```
-
-## NOTES
-HTML-CSS/ Practice
-Docpad/ Example
-
-
-Training project javascript
-####1. javascript(/javascript)
-
-All practice in javascript training
+###If practice run with docpad use command line:
+    npm install
+    bower install
+    docpad run
+    Run on browser with address : localhost:9778
+###If practice run with gulp use command line:
+    npm install
+    bower install
+    gulp
+    Run on browser with address : localhost:9000

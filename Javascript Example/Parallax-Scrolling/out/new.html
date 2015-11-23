@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parallax Example</title>
+    <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <section id="slide-first" style="height: 980px;" class="homeSlide">
+          <div data-0-start="background-position: 50% 0px;" data-100-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-first" style="background-position: 50% 0px; cursor: inherit;" class="bcg skrollable skrollr-body skrollable-between">
+            <div data-0="background-image:url('../images/emoticon.png');" data-100="background-image:url('../images/fun.jpg');" class="bcg-move skrollable skrollr-body skrollable-between">
+              <div class="hsContainer">
+                <div data-center="bottom: 200px; opacity: 1" data-top="bottom: 1200px; opacity: 0" data-anchor-target="#slide-first h2" style="bottom: 200px; opacity: 1;" class="hsContent skrollable skrollr-body skrollable-before">
+                  <h2>Simple parallax scrolling is...</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="slide-second" style="height: 980px;" class="homeSlide">
+          <div data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-bottom-top="background-position: 50% 100px;" data-anchor-target="#slide-second" style="background-position: 50% 0px; cursor: inherit;" class="bcg skrollable skrollr-body skrollable-between">
+            <div class="hsContainer">
+              <div data-center="opacity: 1" data-center-top="opacity: 0" data--100-bottom="opacity: 0;" data-anchor-target="#slide-third" style="opacity: 0.99390243902439;" class="hsContent skrollable skrollr-body skrollable-between">
+                <h2>great for story telling websites.</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="slide-third" style="height: 980px;" class="homeSlide">
+          <div data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-bottom-top="background-position: 50% 100px;" data-anchor-target="#slide-third" style="background-position: 50% 0px; cursor: inherit;" class="bcg skrollable skrollr-body skrollr-body skrollable-between">
+            <div class="hsContainer">
+              <div data--50-bottom="opacity: 0;" data--200-bottom="opacity: 1;" data-center="opacity: 1" data-200-top="opacity: 0" data-anchor-target="#slide-third h2" style="opacity: 1;" class="hsContent skrollable skrollable-between">
+                <h2>Now go and create your own story</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/library.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">var s = skrollr.init();</script>
+    <script type="text/javascript">skrollr.init({forceHeight: false});</script>
+  </body>
+</html>

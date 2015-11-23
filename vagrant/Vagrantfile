@@ -11,8 +11,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
-  config.vm.synced_folder "../foodsense/", "/foodsense"
-  config.vm.synced_folder "../test", "/test"
+  config.vm.synced_folder "../Animation Example/", "/Animation Example"
+  config.vm.synced_folder "../Animation Parctice/", "/Animation Parctice"
+  config.vm.synced_folder "../Foodsense/", "/Foodsense"
+  config.vm.synced_folder "../Javascript Example/", "/Javascript Example"
+  config.vm.synced_folder "../Javascript Practice/", "/Javascript Practice"
   config.vm.network :forwarded_port, guest:9000, host: 9000
   config.vm.provision :shell, path: "bootstrap.sh",:privileged => false
   # The url from where the 'config.vm.box' box will be fetched if it
