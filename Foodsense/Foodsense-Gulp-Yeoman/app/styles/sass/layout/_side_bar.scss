@@ -7,7 +7,7 @@
     @include size(em(120));
     @include transition(all 0.2s ease);
     text-indent: -999em;
-    margin-right: em(20); 
+    margin-right: em(20);
     display: block;
   }
 }
@@ -43,6 +43,10 @@
     a {
       background: url("/images/icons/nav-tastemakers.png") no-repeat;
       @extend .background-content;
+      &:hover {
+        background-position: 5px 65%;
+        color: $color-link-hover;
+      }
     }
   }
 
@@ -50,6 +54,10 @@
     a {
       background: url("/images/icons/nav-blog.png") no-repeat;
       @extend .background-content;
+      &:hover {
+        background-position: 5px 65%;
+        color: $color-link-hover;
+      }
     }
   }
 
@@ -57,6 +65,10 @@
     a {
       background: url("/images/icons/nav-alist.png") no-repeat;
       @extend .background-content;
+      &:hover {
+        background-position: 5px 65%;
+        color: $color-link-hover;
+      }
     }
   }
 
@@ -64,6 +76,10 @@
     a {
       background: url("/images/icons/nav-contribute.png") no-repeat;
       @extend .background-content;
+      &:hover {
+        background-position: 5px 65%;
+        color: $color-link-hover;
+      }
     }
   }
 
@@ -71,6 +87,10 @@
     a {
       background: url("/images/icons/nav-about.png") no-repeat;
       @extend .background-content;
+      &:hover {
+        background-position: 5px 65%;
+        color: $color-link-hover;
+      }
     }
   }
 }

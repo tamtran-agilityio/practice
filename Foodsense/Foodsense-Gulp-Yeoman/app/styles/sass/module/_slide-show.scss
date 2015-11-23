@@ -22,6 +22,9 @@
     color: #222;
     background: #FFF;
     font-size: 1.5em;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   h2 {
     top: 334px;
@@ -30,6 +33,9 @@
     font-weight: normal;
     font-size: 1em;
     background: #111;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 .slide {

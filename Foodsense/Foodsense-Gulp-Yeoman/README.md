@@ -3,5 +3,6 @@
 #Run with gulp use command line:
   npm install
   bower install
-  gulp
+  gulp bulid
+  gulp serve
   Run on browser with address : localhost:9000

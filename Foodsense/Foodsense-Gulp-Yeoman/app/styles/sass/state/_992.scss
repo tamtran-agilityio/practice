@@ -21,6 +21,10 @@
           background-position: 50% 0;
           padding: 40px 0 0 0;
           margin-right: 20px;
+          &:hover {
+            background-position: 50% 3px;
+            color: $color-link-hover;
+          }
         }
       }
     }
