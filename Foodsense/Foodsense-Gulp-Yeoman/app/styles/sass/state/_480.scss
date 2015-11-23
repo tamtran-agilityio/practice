@@ -43,6 +43,14 @@
     }
     .slide {
       height: 280px;
+      .slide__credit {
+        background: rgb(255,255,255);
+        top: 260px;
+        right: 0;
+        &:before {
+          content: '* ';
+        }
+      }
     }
   }
   .side-bar {

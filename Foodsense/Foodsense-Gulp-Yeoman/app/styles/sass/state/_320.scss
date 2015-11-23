@@ -22,7 +22,7 @@
     #slide-2, #slide-4 {
       h1, h2 {
         left: 0;
-        width: 320px;
+        width: 300px;
       }
     }
     h1 {
@@ -30,19 +30,28 @@
       padding: 10px 10px;
       background: rgba(255,255,255,.8);
       color: #222;
-      font-size: 1.125em;
+      font-size: 13.5px;
       float: left;
-      width: 320px;
+      width: 300px;
     }
     h2 {
       top: 248px;
       padding: 9px 10px 11px;
       font-size: .875em;
       float: left;
-      width: 320px;
+      width: 300px;
+      font-size: 9.5px;
     }
     .slide {
-      height: 248px;
+      height: 310px;
+    }
+    .slide__credit {
+      top: 290px;
+      right: 0;
+      font-size: 6px;
+      &:before {
+        content: '* ';
+      }
     }
   }
   .newsletter {

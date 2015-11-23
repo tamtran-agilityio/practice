@@ -52,6 +52,27 @@
   .slide__item.active {
     z-index: 5;
   }
+  @include e(credit) {
+    position: absolute;
+    right: 10px;
+    top: 417px;
+    padding: 5px 8px 5px;
+    font-size: 8px;
+    color: #555;
+    background: #F5F5F5;
+    background: rgba(255,255,255,.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    z-index: 9;
+    a {
+      color: #555;
+      &:hover {
+        color: $color-link-hover;
+      }
+    }
+  }
 }
 
 .navigation {
