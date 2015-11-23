@@ -34,22 +34,22 @@
         * Install global modules: docpad, gulp, bower
   
 #Run practice on vagrant
-    cd /vagrant
-    vagrant up
-    vagrant ssh
-    cd / folder container practice
+    - cd /vagrant
+    - vagrant up
+    - vagrant ssh
+    - cd / folder container practice
 
 #Run practice on machine
-    cd / folder container practice
+    - cd / folder container practice
 **Folder /javascript contain all practice.**
 
 ###If practice run with docpad use command line:
-    npm install
-    bower install
-    docpad run
-    Run on browser with address : localhost:9778
+    - npm install
+    - bower install
+    - docpad run
+    - Run on browser with address : localhost:9778
 ###If practice run with gulp use command line:
-    npm install
-    bower install
-    gulp
-    Run on browser with address : localhost:9000
+    - npm install
+    - bower install
+    - gulp
+    - Run on browser with address : localhost:9000
