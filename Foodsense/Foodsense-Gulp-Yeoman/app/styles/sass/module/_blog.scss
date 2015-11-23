@@ -28,6 +28,7 @@
     line-height: 1.45em;
   }
   @include e(meta) {
+    font-size: em(14);
     margin-top: 10px;
     color: #AAA;
     a {
