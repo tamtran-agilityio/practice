@@ -29,10 +29,10 @@
     sliderResponse(target);
   }
 
-  var timingRun = setInterval(function() { sliderTiming(); },5000);
+  var timingRun = setInterval(function() { sliderTiming(); },4000);
   function resetTiming() {
     clearInterval(timingRun);
-    timingRun = setInterval(function() { sliderTiming(); },5000);
+    timingRun = setInterval(function() { sliderTiming(); },4000);
   }
 
   // check title page active

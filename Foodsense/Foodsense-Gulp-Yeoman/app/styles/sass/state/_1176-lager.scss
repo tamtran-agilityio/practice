@@ -19,8 +19,9 @@
   .navigation {
     .navigation__item {
       text-align: center;
+      font-size: .875em;
       a {
-         @include size(177px, 25px);
+         @include size(177.25px, 25px);
         padding: 0;
       }
       p {

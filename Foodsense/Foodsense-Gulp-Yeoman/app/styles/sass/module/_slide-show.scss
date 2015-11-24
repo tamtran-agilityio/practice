@@ -105,6 +105,7 @@
       @include size(191.25px , 60px);
       display: block;
       padding: 25px 12px 0 20px;
+      transition: all .2s ease;
     }
     h3 {
       font-size: 1.125em;
