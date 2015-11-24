@@ -4,7 +4,7 @@
 
   var triggers = $('ul.navigation li');
   var images = $('.slide__item');
-  var lastElem = triggers.length-1;
+  var lastElem = triggers.length - 1;
   var target;
 
   triggers.first().addClass('active');
@@ -29,10 +29,10 @@
     sliderResponse(target);
   }
 
-  var timingRun = setInterval(function() { sliderTiming(); },4000);
+  var timingRun = setInterval(function() { sliderTiming(); }, 4000);
   function resetTiming() {
     clearInterval(timingRun);
-    timingRun = setInterval(function() { sliderTiming(); },4000);
+    timingRun = setInterval(function() { sliderTiming(); }, 4000);
   }
 
   // check title page active
