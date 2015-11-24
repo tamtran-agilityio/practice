@@ -15,14 +15,17 @@
       float: right;
       margin: 0 0 20px 20px;
       padding: 9px;
-      background: #FFF;
-      border: 1px solid #E5E5E5;
-      -webkit-box-shadow: 1px 2px 3px #F5F5F5;
-      -moz-box-shadow: 1px 1px 3px #F5F5F5;
-      box-shadow: 1px 1px 3px #F5F5F5;
+      background: $white;
+      border: 1px solid $border-color;
+      -webkit-box-shadow: 1px 2px 3px $border-showdow;
+      -moz-box-shadow: 1px 1px 3px $border-showdow;
+      box-shadow: 1px 1px 3px $border-showdow;
     }
     a {
-      border-bottom: 1px dashed #E5E5E5;
+      border-bottom: 1px dashed $border-color;
+      &:hover {
+        background: $back-ground;
+      }
     }
-  } 
+  }
 }
