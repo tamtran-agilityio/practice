@@ -14,7 +14,7 @@
   width: 100%;
   margin-bottom: 50px;
   padding-bottom: 8px;
-  border-bottom: 2px dashed #E5E5E5;
+  border-bottom: 2px dashed $border-color;
   @include e(title) {
     margin-bottom: 20px;
     line-height: 1.25em;
@@ -36,18 +36,21 @@
     img {
       width: 232px;
       padding: 9px;
-      background: #FFF;
-      border: 1px solid #E5E5E5;
-      -webkit-box-shadow: 1px 2px 3px #F5F5F5;
-      -moz-box-shadow: 1px 1px 3px #F5F5F5;
-      box-shadow: 1px 1px 3px #F5F5F5;
+      background: $white;
+      border: 1px solid $border-color;
+      -webkit-box-shadow: 1px 2px 3px $border-showdow;
+      -moz-box-shadow: 1px 1px 3px $border-showdow;
+      box-shadow: 1px 1px 3px $border-showdow;
     }
   }
   @include e(link) {
     margin-bottom: 20px;
     line-height: 1.5em;
     a {
-      border-bottom: 1px dashed #E5E5E5;
+      border-bottom: 1px dashed $border-color;
+      &:hover {
+        background: $back-ground;
+      }
     }
   }
 
@@ -64,7 +67,7 @@
     @include m(date) {
       height: 40px;
       padding: 5px 5% 5px 0;
-      border-right: 2px solid #E5E5E5;
+      border-right: 2px solid $border-color;
       span {
         font-size: .875em;
         color: #BBB;
@@ -77,7 +80,7 @@
       }
     }
     @include m(comment) {
-      border-right: 2px solid #E5E5E5;
+      border-right: 2px solid $border-color;
       height: 23px;
       margin: 0 0 10px 5%;
       padding: 27px 5% 0 0;
@@ -99,15 +102,15 @@
   height: 40px;
   font-size: 12px;
   a:hover {
-    background-color: #EFF8F7;
-    border-color: #D3EDE9;
+    background-color: $back-ground;
+    border-color: $border-greend;
     color: #EC6635;
   }
   .button__older {
     padding: 10px 20px;
-    background: #FFF;
+    background: $white;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $border-color;
     position: absolute;
     right: 0;
   }
@@ -143,7 +146,7 @@
     margin-bottom: 9px;
     padding-bottom: 5px;
     line-height: 1.3em;
-    border-bottom: 1px dashed #E5E5E5;
+    border-bottom: 1px dashed $border-color;
     font-style: italic;
   }
 
@@ -170,7 +173,7 @@
     margin-bottom: 9px;
     padding-bottom: 5px;
     line-height: 1.3em;
-    border-bottom: 1px dashed #E5E5E5;
+    border-bottom: 1px dashed $border-color;
     font-style: italic;
   }
   p {
@@ -192,7 +195,7 @@
     margin-bottom: 9px;
     padding-bottom: 5px;
     line-height: 1.3em;
-    border-bottom: 1px dashed #E5E5E5;
+    border-bottom: 1px dashed $border-color;
     font-style: italic;
   }
   .contact-info__desc {
@@ -203,7 +206,7 @@
       display: inline-block;
     }
     a {
-      border-bottom: 1px dashed #E5E5E5;
+      border-bottom: 1px dashed $border-color;
     }
   }
 }

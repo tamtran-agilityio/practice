@@ -7,7 +7,7 @@
   margin: 0 24px 29px 0;
   padding-bottom: 30px;
   font-size: .875em;
-  border-bottom: 1px dotted #E5E5E5;
+  border-bottom: 1px dotted $border-color;
   @include e(images) {
     float: right;
     width: 35%;
@@ -29,9 +29,9 @@
     font-size: .875em;
     line-height: 21px;
     &:hover {
-      background-color: #EFF8F7;
-      border-color: #D3EDE9;
-      color: #EC6635;
+      background-color: $back-ground;
+      border-color: $border-greend;
+      color: $color-link-hover;
     }
   }
   @include e(note) {

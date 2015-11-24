@@ -11,17 +11,15 @@
 .product {
   overflow: visible;
   position: relative;
-  // float: left;
   width: 184px;
   height: 430px;
   margin: 0 24px 28px 0;
   padding: 10px;
-  background: #FFF;
-  border: 1px solid #E5E5E5;
-  // @include box-shadow(1px 2px 3px #F5F5F5);
+  background: $white;
+  border: 1px solid $border-color;
   @include box-shadow();
   @include e(head) {
-   
+
   }
   @include e(img) {
     max-width: 100%;
@@ -33,7 +31,7 @@
     margin-bottom: 9px;
     padding: 8px 0 10px;
     line-height: 1.3em;
-    border-bottom: 1px dotted #E5E5E5;
+    border-bottom: 1px dotted $border-color;
   }
   @include e(desc) {
     margin-bottom: 20px;
@@ -50,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 30px;
-    border-top: 1px dotted #E5E5E5;
+    border-top: 1px dotted $border-color;
     line-height: 1.5em;
     font-size: 0.75em;
     a {

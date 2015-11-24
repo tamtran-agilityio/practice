@@ -4,7 +4,7 @@ footer {
   position: relative;
   min-height: em(20);
   padding-top: 20px;
-  border-top: 2px solid #E5E5E5;
+  border-top: 2px solid $border-color;
   @include flexbox();
   justify-content: space-between;
   color: #AAA;
@@ -15,9 +15,9 @@ footer {
     font-size: .75em;
     a {
       text-decoration: none;
-      border-left: 1px solid #E5E5E5;
+      border-left: 1px solid $border-color;
       padding: 0 3px;
-      
+
       &:first-child {
         border-left: none;
       }
@@ -47,7 +47,7 @@ footer {
     display: block;
     @include size(em(32px));
     text-indent: -999em;
-    } 
+    }
   }
 }
 .twitter {
