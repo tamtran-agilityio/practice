@@ -26,8 +26,13 @@
   @include e(link) {
     display: inline-block;
     margin-bottom: 20px;
-    // float: left;
     font-size: .875em;
+    line-height: 21px;
+    &:hover {
+      background-color: #EFF8F7;
+      border-color: #D3EDE9;
+      color: #EC6635;
+    }
   }
   @include e(note) {
     padding: 0 0 5px 24px;

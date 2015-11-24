@@ -141,7 +141,7 @@
   }
   @include e(submit) {
     display: block;
-    margin-top: em(12);
+    margin-top: 12px;
     @include m(email) {
       width: 260px;
     }
