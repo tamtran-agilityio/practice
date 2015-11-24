@@ -25,7 +25,7 @@
 
   function sliderTiming() {
     target = $('ul.navigation li.active').index();
-    target === lastElem ? target = 0 : target = target+1;
+    target === lastElem ? target = 0 : target = target + 1;
     sliderResponse(target);
   }
 
