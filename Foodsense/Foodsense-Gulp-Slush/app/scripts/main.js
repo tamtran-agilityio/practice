@@ -50,4 +50,10 @@
   set_Page_Active('contribute', '.item__contribute');
   set_Page_Active('about', '.item__about');
 
+  $(window).bind('load', function() {
+    $('img').lazyload({
+      effect: 'fadeIn'
+    });
+  });
+
 }( jQuery ));
