@@ -19,7 +19,9 @@
   border: 1px solid $border-color;
   @include box-shadow();
   @include e(head) {
-
+    &:hover {
+      opacity: .75;
+    }
   }
   @include e(img) {
     max-width: 100%;
