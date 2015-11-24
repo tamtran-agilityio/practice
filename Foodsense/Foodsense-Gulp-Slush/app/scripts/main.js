@@ -20,6 +20,7 @@
       target = $(this).index();
       sliderResponse(target);
       resetTiming();
+      return false;
     }
   });
 

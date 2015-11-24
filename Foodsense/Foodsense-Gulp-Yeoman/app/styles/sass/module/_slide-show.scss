@@ -49,9 +49,6 @@
     left: 0;
     width: 896px;
   }
-  .slide__item.active {
-    z-index: 5;
-  }
   @include e(credit) {
     position: absolute;
     right: 10px;
