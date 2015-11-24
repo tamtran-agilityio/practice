@@ -2,6 +2,7 @@
   float: left;
   width: em(160);
   margin-bottom: em(25);
+  transition: all .3s ease;
   @include e(brand) {
     background: url("/images/food-sense.png") 0 0 no-repeat;
     @include size(em(120));
