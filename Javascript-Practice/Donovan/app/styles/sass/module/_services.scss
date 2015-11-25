@@ -18,7 +18,7 @@
       text-transform: none;
       text-align: left;
       font-style: normal;
-      border-bottom: 1px solid #393939;
+      border-bottom: 1px solid $color-border-title;
       font-family: 'Open Sans', sans-serif;
       font-size: 70px;
       line-height: 82px;
@@ -30,5 +30,59 @@
     width: 23.5%;
     margin: 0 20px 20px 0;
     text-align: center;
+    h5 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 22px;
+      color: #a3a3a3;
+      padding-bottom: 15px;
+    }
+    a {
+      display: block;
+      position: relative;
+      @include size(100%, 100%);
+      &:hover {
+        h5 {
+          transition-delay: 0.7s;
+          color: $color-link-hover;
+        }
+        .services__icon--black {
+          transform: rotate(720deg) scale(0);
+          opacity: 0;
+        }
+        .services__icon--light {
+          transform: rotate(720deg) scale(1);
+          opacity: 1;
+          transition-delay: 0.4s;
+        }
+      }
+    }
+  }
+  @include e(icon) {
+    position: relative;
+    z-index: 10;
+    top: 0;
+    left: 50%;
+    margin-left: -51px;
+    width: 102px;
+    height: 116px;
+    @include m(black) {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease-out;
+      opacity: 1;
+    }
+    @include m(light) {
+      transition: all 0.5s ease-out;
+      transform: rotate(720deg) scale(0);
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+    }
   }
 }
