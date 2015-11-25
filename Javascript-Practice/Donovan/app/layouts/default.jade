@@ -4,17 +4,15 @@ html(lang='en')
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Foodsense
-    link(rel="shortcut icon", type="image" href="images/favicon.ico")
+    title Raymond Donovan - Professional Photographer
+    //- link(rel="shortcut icon", type="image" href="images/favicon.ico")
     link(href='styles/main.css', rel='stylesheet')
   - var bodyClass;
   block variables
   body(class=bodyClass)
-    .container-page
-      .wap-content
-        include header.jade
-        block content
-        include footer.jade
+    include header.jade
+    block content
+    include footer.jade
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -32,6 +30,7 @@ html(lang='en')
 
     // build:js scripts/plugins.js
     script(src='../bower_components/jquery_lazyload/jquery.lazyload.js')
+    script(src='../bower_components/handlebars/handlebars.js')
     script(src='../bower_components/picturefill/dist/picturefill.js')
     script(src='../bower_components/retina.js/dist/retina.js')
     // endbuild

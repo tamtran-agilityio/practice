@@ -1,0 +1,34 @@
+.footer {
+  position: relative;
+  z-index: 12;
+  background: #343434;
+  padding: 27px 0 200px 0;
+  .copyright {
+    float: left;
+    text-transform: uppercase;
+    font-family: $font-opensans;
+    font-weight: 400;
+    color: #9b9b9b;
+    @include e(link) {
+      color: #f14833;
+      &:hover {
+        color: $white;
+      }
+      &:before {
+        content: "|";
+        margin-left: 5px;
+      }
+    }
+  }
+  .back_top {
+    @include size(26px, 30px);
+    background: url(../images/back_top.png);
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    border: none;
+    outline: none;
+    float: right;
+  }
+}

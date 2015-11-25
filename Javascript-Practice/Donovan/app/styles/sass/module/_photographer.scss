@@ -1,0 +1,59 @@
+.photographer {
+  @include size(100%, 971px);
+  background-image: url(../images/photographer-pro.jpg);
+  background-position: 0 0 ;
+  background-size: cover ;
+  text-align: center;
+}
+.photographer {
+  position: relative;
+  @include e(block) {
+    margin: 268px 0;
+  }
+  @include e(slogan) {
+    display: inline-block;
+    text-transform: none;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 31px;
+    line-height: 42px;
+    color: $white;
+    &:after,&:before {
+      content: "";
+      display: inline-block;
+      margin: 0 10px 10px;
+      background: $white;
+      @include size(96px, 1px);
+    }
+  }
+  @include e(name) {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 90px;
+    line-height: 115px;
+    color: $white;
+    font-weight: 800;
+    text-shadow: 5px 3px 6px rgba(0,0,0,0.26);
+  }
+  @include e(des) {
+    display: inline-block;
+    text-transform: none;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 31px;
+    line-height: 42px;
+    color: $white;
+  }
+  .buttonNext {
+    @include size(49px, 57px);
+    background: url(../images/button_down.png);
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+    margin: 175px auto 0;
+    border: none;
+    outline: none;
+  }
+}

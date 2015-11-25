@@ -1,0 +1,84 @@
+.about-me {
+  background: url('../images/about-me_bg.jpg') repeat left top;
+  width: 100%;
+  padding: 86px 0 69px;
+}
+.about {
+  @include e(content) {
+    h2 {
+      display: block;
+      margin: 0 0 23px;
+      padding: 0;
+      text-transform: none;
+      text-align: left;
+      font-style: normal;
+      border-bottom: 1px solid $color-border-title;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 70px;
+      line-height: 82px;
+      color: #b8b8b8;
+      font-weight: 300;
+    }
+  }
+  @include e(block) {
+    @include flexbox();
+    h4 {
+      margin: 0;
+      padding: 0 0 15px;
+      text-transform: none;
+      text-align: left;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 32px;
+      font-style: normal;
+      line-height: 36px;
+      color: #222;
+    }
+    p {
+      font-family: 'Verdana', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #929292;
+    }
+  }
+  @include e(biography) {
+    width: 66%;
+    margin: 0 20px 20px 0;
+    p:nth-child(n) {
+      padding-bottom: 15px;
+    }
+  }
+  @include e(contact) {
+    width: 34%;
+  }
+  @include e(infor) {
+    margin: 14px 0 24px;
+    li {
+      margin-bottom: 10px;
+      a:hover {
+        color: $color-link-hover;
+      }
+    }
+    @include m(phone) {
+      background: url('../images/inf_icon.png') no-repeat 0 0 ;
+      padding-left: 44px;
+      @include size( auto, 20px);
+    }
+    @include m(address) {
+      background: url('../images/inf_icon.png') no-repeat 0 -99px ;
+      padding-left: 44px;
+      @include size( auto, 20px);
+    }
+    @include m(mail) {
+      background: url('../images/inf_icon.png') no-repeat 0 -188px ;
+      padding-left: 44px;
+      @include size( auto, 20px);
+    }
+    @include m(site) {
+      background: url('../images/inf_icon.png') no-repeat 0 -265px ;
+      padding-left: 44px;
+      @include size( auto, 20px);
+    }
+  }
+}

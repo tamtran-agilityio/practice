@@ -1,0 +1,87 @@
+.contact {
+  background: url('../images/contact-bg.jpg') repeat left top;
+  width: 100%;
+  padding: 86px 0 69px;
+}
+.contact {
+  @include e(block){
+    display: block;
+    h2 {
+      display: block;
+      margin: 0 0 23px;
+      padding: 0;
+      text-transform: none;
+      text-align: left;
+      font-style: normal;
+      border-bottom: 1px solid $color-border-title;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 70px;
+      line-height: 82px;
+      color: #b8b8b8;
+      font-weight: 300;
+    }
+  }
+  @include e(client) {
+    float: left;
+    position: relative;
+    margin: 0 15px 10px 0;
+    height: 384px;
+    width: 334px;
+    @include m(bground) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+    @include m(photo) {
+      float: left;
+      margin: 0 20px 20px 0;
+      z-index: 5;
+    }
+  }
+  @include e(desc) {
+    h5 {
+      margin: 100px 0 0 0;
+      padding-bottom: 8px;
+      text-transform: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 32px;
+      line-height: 31px;
+      font-weight: 300;
+      color: #acacac;
+    }
+  }
+  @include e(socials) {
+    a {
+      display: inline-block;
+      width: 27px;
+      height: 32px;
+      margin: 5px 8px 0;
+      transition: all 0.1s ease-in-out;
+    }
+    @include m(mail) {
+      background: url('../images/socials.png') no-repeat;
+      &:hover {
+        background-position: 0 -32px;
+      }
+    }
+    @include m(skype) {
+      background: url('../images/socials.png') no-repeat -47px 0;
+      &:hover {
+        background-position: -47px -32px;
+      }
+    }
+    @include m(face) {
+      background: url('../images/socials.png') no-repeat -94px 0;
+      &:hover {
+        background-position: -94px -32px;
+      }
+    }
+    @include m(twitter) {
+      background: url('../images/socials.png') no-repeat -141px 0;
+      &:hover {
+        background-position: -141px -32px;
+      }
+    }
+  }
+}

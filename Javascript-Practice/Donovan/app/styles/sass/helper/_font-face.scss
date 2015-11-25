@@ -1,0 +1,12 @@
+/***import font-face****/
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic);
+@include font-face("Varnada", "/fonts/Vernada", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-Bold", "/fonts/open-sans/Bold", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-BoldItalic", "/fonts/open-sans/BoldItalic", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-Italic", "/fonts/open-sans/Italic", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-Light", "/fonts/open-sans/Light", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-Regular", "/fonts/open-sans/Regular", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-Semibold", "/fonts/open-sans/Semibold", $file-formats: eot svg ttf woff);
+@include font-face("OpenSans-SemiboldItalic", "/fonts/open-sans/SemiboldItalic", $file-formats: eot svg ttf woff);
+$font-varnada: "Varnada", sans serif;
+$font-opensans: 'OpenSans', sans serif;

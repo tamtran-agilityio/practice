@@ -15,10 +15,10 @@
 }
 
 @mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-  -moz-box-ordinal-group: $val;     
-  -ms-flex-order: $val;     
-  -webkit-order: $val;  
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
   order: $val;
 }
 
@@ -33,13 +33,13 @@
   }
   @-moz-keyframes $animation-name {
     @content;
-  }  
+  }
   @-ms-keyframes $animation-name {
     @content;
   }
   @-o-keyframes $animation-name {
     @content;
-  }  
+  }
   @keyframes $animation-name {
     @content;
   }
@@ -50,7 +50,7 @@
   -moz-animation: #{$str};
   -ms-animation: #{$str};
   -o-animation: #{$str};
-  animation: #{$str};      
+  animation: #{$str};
 }
 
 @mixin transition($args...) {
@@ -82,13 +82,48 @@
   box-shadow: $horiz $vert $blur $spread $color;
 }
 
+// create mixin font face
+@mixin font-text($font-size, $font-weight, $color, $font-family ) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  font-family: $font-family;
+}
+
+// mixin font-face
+$asset-pipeline: false !default;
+
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal,
+  $asset-pipeline: $asset-pipeline,
+  $file-formats: eot woff2 woff ttf svg) {
+
+  $font-url-prefix: font-url-prefixer($asset-pipeline);
+
+  @font-face {
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+
+    src: font-source-declaration(
+      $font-family,
+      $file-path,
+      $asset-pipeline,
+      $file-formats,
+      $font-url-prefix
+    );
+  }
+}
 // styles mixin of BEM syntax
 @mixin e($name) {
-  @at-root #{&}__#{$name} {   
+  @at-root #{&}__#{$name} {
     @content
   }
-} 
- 
+}
+
 @mixin m($name) {
   @at-root #{&}--#{$name} {
     @content;
