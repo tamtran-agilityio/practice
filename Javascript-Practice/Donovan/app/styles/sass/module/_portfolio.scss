@@ -1,0 +1,117 @@
+.portfolio {
+  background: url("../images/about-me_bg.jpg") repeat left top;
+  width: 100%;
+  padding: 86px 0 69px;
+}
+#portfolio {
+  @include flexbox();
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.portfolio {
+  @include e(title) {
+    h2 {
+      display: block;
+      margin: 0 0 23px;
+      padding: 0;
+      text-transform: none;
+      text-align: left;
+      font-style: normal;
+      border-bottom: 1px solid $color-border-title;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 70px;
+      line-height: 82px;
+      color: #b8b8b8;
+      font-weight: 300;
+    }
+  }
+  @include e(block) {
+    margin: 0;
+    width: 250px;
+    height: 100%;
+    &:hover {
+      .portfolio__zoom {
+        left: 83px;
+        transition-delay: 0.3s;
+      }
+      .portfolio__link {
+        right: 84px;
+        transition-delay: 0.3s;
+      }
+      .portfolio__description {
+        top: 20px;
+      }
+    }
+  }
+  @include e(image) {
+    overflow: hidden;
+    position: relative;
+    height: 291px;
+    width: 255px;
+    background: #fff;
+    @include m(bg) {
+      position: absolute;
+      z-index: 100;
+      left: 0;
+      top: 0;
+    }
+    @include m(port) {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .portfolio__zoom, .portfolio__link {
+    @include size(42px);
+    position: absolute;
+    z-index: 110;
+    bottom: 85px;
+    background-repeat: no-repeat;
+    opacity: 0.61;
+    transition: all 0.1s ease-in-out;
+  }
+  @include e(zoom) {
+
+    left: -77px;
+    background-image: url(../images/zoom.png);
+    a {
+      @include size(42px);
+      display: block;
+      text-indent: -9999px;
+    }
+  }
+  @include e(link) {
+    right: -77px;
+    background-image: url(../images/link.png);
+    a {
+      @include size(42px);
+      display: block;
+      text-indent: -9999px;
+    }
+  }
+  @include e(description) {
+    @include size(255px, 291px);
+    position: absolute;
+    top: -273px;
+    padding: 0;
+    background: #f14833;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    h5 {
+      font-family: 'Open Sans', sans-serif;
+      padding: 74px 10px 0;
+      text-transform: uppercase;
+      font-size: 18px;
+      color: $white;
+    }
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: $white;
+    }
+  }
+}

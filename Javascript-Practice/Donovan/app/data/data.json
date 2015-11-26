@@ -27,49 +27,49 @@
   ],
   "exhibitions": [
     {
-      "time-line": " 2012",
+      "time": " 2012",
       "title": " “Etiam gravida convallis, Columbus College, Columbus, Ohio",
       "description": ""
     },
     {
-      "time-line": "2010",
+      "time": "2010",
       "title": "“TEtiam nunc tortor”, Junction View Studios, Columbus, Ohio",
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras sed risus"
     },
     {
-      "time-line": "2009",
+      "time": "2009",
       "title": "“Vestibulum euismod ”, Columbus College, Columbus, Ohio",
       "description": "Donec in vehicula augue. Sed et nisi sem, at semper dolor. Pellentesque habitant morbi tristique senectus"
     },
     {
-      "time-line": "2008",
+      "time": "2008",
       "title": "“Aliquam vitae lorem ”, Junction View Studios, Columbus, Ohio",
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras sed risus"
     }
   ],
   "experience": [
     {
-      "time-line": "2012-now",
+      "time": "2012-now",
       "title": "Wedding Photographer @FamousCompany, Inc.",
       "description": ""
     },
     {
-      "time-line": "2010-2012",
+      "time": "2010-2012",
       "title": "Web Design @FamousCompany, Inc.",
       "description": "Aliquam vitae lorem nunc, nec iaculis leo. Nulla tempor iaculis enim, at pharetra velit imperdiet sed. In"
     },
     {
-      "time-line": "2009-2010",
+      "time": "2009-2010",
       "title": "Fashion Photographer @FamousCompany, Inc.",
       "description": "Maecenas quam sem, ornare ac consectetur a, vehicula eu neque. Suspendisse eros nunc, porta eget"
     },
     {
-      "time-line": "2008-2009",
+      "time": "2008-2009",
       "title": "Commercial Photographer @FamousCompany, Inc.",
       "description": "Duis elementum mollis purus, sit amet porta eros aliquet euismod. Donec sit amet dictum erat. Curabitur"
     },
     {
-      "time-line": "2007-2008",
+      "time": "2007-2008",
       "title": "Fashion Photographer @FamousCompany, Inc.",
       "description": "Maecenas quam sem, ornare ac consectetur a, vehicula eu neque. Suspendisse eros nunc, porta eget"
     }

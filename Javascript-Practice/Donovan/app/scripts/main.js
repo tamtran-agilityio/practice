@@ -2,8 +2,13 @@
 (function ( $ ) {
   // 'use strict';
 
-  // // call function getData
+  // call function getData to servives
   renderItem('../templates/modules/services.html', '#services');
+  // call function getData to
+  renderItem('../templates/modules/portfolio.html', '#portfolio');
+  // call function getData to
+  renderItem('../templates/modules/exhibitions.html', '#exhibitions');
+
 
   /* Helper function */
   // function get data to data.json

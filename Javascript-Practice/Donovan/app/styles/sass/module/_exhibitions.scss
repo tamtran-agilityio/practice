@@ -1,0 +1,139 @@
+.exhibitions {
+  background: url("../images/about-me_bg.jpg") repeat left top;
+  width: 100%;
+  padding: 86px 0 69px;
+}
+#exhibitions {
+  position: relative;
+  h5 {
+    padding-bottom: 9px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #343434;
+  }
+  li {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .exhibitions__time {
+      position: absolute;
+      font-size: 26px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 20px;
+      color: #f14833;
+    }
+  }
+  li:nth-child(n+1) {
+    &:hover {
+      .exhibitions__time {
+        background: url(../images/exhib_date_left_bg_h.png) no-repeat right center;
+        font-size: 26px;
+      }
+      .exhibitions__content {
+        h5 {
+          color: #f14833;
+        }
+      }
+    }
+    .exhibitions__time {
+      width:130px;
+      right: 461px;
+      top: 58px;
+      background: url(../images/exhib_date_left_bg.png) no-repeat right center;
+    }
+    .exhibitions__content {
+      position: relative;
+      width: 420px;
+      margin-top: 30px;
+      padding: 13px 20px 9px;
+      background: #fff;
+      color: #8d8d8d;
+      border: 1px solid #dedede;
+      border-radius: 12px;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  li:nth-child(3n) {
+    &:hover {
+      .exhibitions__time {
+        background: url(../images/exhib_date_left_bg_right_h.png) no-repeat left center;
+        font-size: 26px;
+      }
+      .exhibitions__content {
+        h5 {
+          color: #f14833;
+        }
+      }
+    }
+    .exhibitions__time {
+      right: 408px;
+      top: 58px;
+      text-align: right;
+      background: url(../images/exhib_date_left_bg_right.png) no-repeat left center;
+    }
+  }
+  li:nth-child(2n) {
+    .exhibitions__content {
+      float: right;
+    }
+  }
+  li:first-child {
+    display: flex;
+    &:hover {
+      .exhibitions__content {
+        h5 {
+          color: #343434;
+        }
+      }
+      .exhibitions__time {
+        background: url(../images/exhib_date_top_bg_h.png) no-repeat left center;
+        font-size: 22px;
+      }
+    }
+    .exhibitions__content {
+      margin-left: 80px;
+      width: auto;
+      padding: 0;
+      margin-top: 5px;
+      background: transparent;
+      border: none;
+    }
+    .exhibitions__time {
+      left: 49.5% ;
+      top: 0 ;
+      width: 95px ;
+      text-align: right;
+      background: url(../images/exhib_date_top_bg_h.png) no-repeat left center;
+    }
+  }
+}
+.exhibitions {
+  @include e(title) {
+    h2 {
+      display: block;
+      margin: 0 0 23px;
+      padding: 0;
+      text-transform: none;
+      text-align: left;
+      font-style: normal;
+      border-bottom: 1px solid $color-border-title;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 70px;
+      line-height: 82px;
+      color: #b8b8b8;
+      font-weight: 300;
+    }
+  }
+  @include e(line) {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    width: 1px;
+    height: 83%;
+    background: #c3c3c3;
+  }
+}
