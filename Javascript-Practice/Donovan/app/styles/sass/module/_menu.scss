@@ -1,0 +1,82 @@
+.menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 76px;
+  background: #222222;
+  z-index: 9999;
+  .navigation {
+    overflow-x: hidden;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 770px;
+    .active {
+      color: $white;
+    }
+    li {
+      display: inline-block;
+      text-align: center;
+      width: 128px;
+      padding: 28px 0 12px;
+      margin: 0 -2.5px;
+      text-transform: none;
+      background: none;
+      border-bottom: 1px solid #393939;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 20px;
+      color: #a3a3a3;
+      transition: all 0.2s ease-in-out;
+    }
+    li:nth-child(1):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 0;
+      }
+    }
+    li:nth-child(2):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 128px;
+      }
+    }
+    li:nth-child(3):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 256px;
+      }
+    }
+    li:nth-child(4):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 384px;
+      }
+    }
+    li:nth-child(5):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 512px;
+      }
+    }
+    li:nth-child(6):hover {
+      color: $white;
+      ~.effect_bock {
+        left: 640px;
+      }
+    }
+  }
+}
+.effect_bock {
+  position: relative;
+  z-index: 100;
+  width: 128px;
+  height: 10px;
+  bottom: 5px;
+  background: url(../images/menu_effect.png) no-repeat;
+  margin-left: 0;
+  left: -130px;
+  transition: 0.5s ease-in-out;
+}
