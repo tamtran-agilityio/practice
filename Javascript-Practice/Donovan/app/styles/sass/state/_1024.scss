@@ -1,0 +1,49 @@
+@media only screen and (max-width: 1023px) and (min-width: 767px) {
+  .container {
+    width: 724px;
+  }
+  .photographer {
+    .photographer__name {
+      font-size: 50px;
+      line-height: 65px;
+    }
+  }
+  #exhibitions li:first-child .exhibitions__content {
+    width: 265px;
+  }
+  #exhibitions li:nth-child(n+1) {
+    .exhibitions__content {
+      width: 282px;
+    }
+    .exhibitions__time {
+      right: 323px;
+    }
+  }
+  #exhibitions li:nth-child(3n) {
+    .exhibitions__time {
+      right: 270px;
+    }
+  }
+  .exhibitions__line {
+    height: 81%;
+  }
+  #portfolio {
+    justify-content: center;
+  }
+  #resume li:first-child .resume__content {
+    width: 200px;
+  }
+  #resume li:nth-child(n+1) .resume__content {
+    width: 282px;
+  }
+  #resume li:nth-child(n+1) .resume__time {
+    right: 323px;
+  }
+  #resume {
+    li:nth-child(3n), li:nth-child(5) {
+      .resume__time {
+        right: 221px;
+      }
+    }
+  }
+}
