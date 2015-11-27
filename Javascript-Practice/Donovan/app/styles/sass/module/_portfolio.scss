@@ -18,8 +18,7 @@
   }
   @include e(block) {
     margin: 0;
-    width: 250px;
-    height: 100%;
+    @include size(250px, 100%);
     &:hover {
       .portfolio__zoom {
         left: 83px;
@@ -35,11 +34,10 @@
     }
   }
   @include e(image) {
+    @include size(255px, 291px);
     overflow: hidden;
     position: relative;
-    height: 291px;
-    width: 255px;
-    background: #fff;
+    background: $white;
     @include m(bg) {
       position: absolute;
       z-index: 100;
@@ -86,18 +84,18 @@
     position: absolute;
     top: -273px;
     padding: 0;
-    background: #f14833;
+    background: $color-scarlet;
     text-align: center;
     transition: all 0.3s ease-in-out;
     h5 {
-      font-family: 'Open Sans', sans-serif;
+      font-family: $font-opensans;
       padding: 74px 10px 0;
       text-transform: uppercase;
       font-size: 18px;
       color: $white;
     }
     p {
-      font-family: 'Open Sans', sans-serif;
+      font-family: $font-opensans;
       font-size: 14px;
       line-height: 20px;
       font-weight: 400;

@@ -7,11 +7,11 @@
   position: relative;
   h5 {
     padding-bottom: 9px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-opensans;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    color: #343434;
+    color: $color-gray;
   }
   li {
     position: relative;
@@ -20,12 +20,11 @@
     z-index: 99;
     .resume__time {
       position: absolute;
-      font-size: 26px;
-      font-family: 'Open Sans', sans-serif;
+      font-family: $font-opensans;
       font-weight: 300;
       font-size: 22px;
       line-height: 20px;
-      color: #f14833;
+      color: $color-scarlet;
     }
   }
   li:nth-child(n+1) {
@@ -126,7 +125,7 @@
     padding: 0 0 15px;
     text-transform: none;
     text-align: left;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-opensans;
     font-weight: 300;
     font-size: 27px;
     font-style: normal;
