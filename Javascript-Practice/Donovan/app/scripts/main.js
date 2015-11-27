@@ -3,6 +3,7 @@
   'use strict';
 
   var links = $('.navigation').find('li');
+  var linksdrop = $('.navigationdrop').find('li');
   var htmlbody = $('html,body');
   var buttonNext = $('.buttonNext');
   var buttonPre = $('.back_top');
@@ -25,6 +26,15 @@
   // call function update layout section 1
   mymargtop();
 
+  // handle on button menu
+  $('.btn_dropdown').click(function() {
+    $('.navigationdrop').fadeIn();
+  });
+
+  $('.navigationdrop li').click(function() {
+    $('.navigationdrop').fadeOut();
+  });
+
   // handle when srcoll
   $(window).on('scroll', function () {
 
@@ -42,6 +52,12 @@
 
   // excute when click section
   links.click(function (e) {
+    e.preventDefault();
+    var datasection = $(this).attr('data-section');
+    goToByScroll(datasection);
+  });
+
+  linksdrop.click(function (e) {
     e.preventDefault();
     var datasection = $(this).attr('data-section');
     goToByScroll(datasection);
@@ -135,7 +151,7 @@
   // function to item active
   function itemNavActive(section, item) {
     var _crollWindow = $(window).scrollTop();
-    if ((_crollWindow < (section.offset().top)) && (_crollWindow > (section.offset().top - section.height()))) {
+    if ((_crollWindow < (section.offset().top + 86)) && (_crollWindow > (section.offset().top - section.height() - 69 ))) {
       item.addClass('active');
     } else {
       item.removeClass('active');
@@ -143,3 +159,8 @@
   }
 
 }( jQuery ));
+
+$(document).ready(function(){
+  $("a[rel^='prettyPhoto']").prettyPhoto();
+  // $('.portfolio__zoom').attr('rel').prettyPhoto();
+});

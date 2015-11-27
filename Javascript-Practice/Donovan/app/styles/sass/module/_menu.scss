@@ -5,6 +5,9 @@
   height: 76px;
   background: #222222;
   z-index: 9999;
+  .navigationdrop {
+    display: none;
+  }
   .navigation {
     overflow-x: hidden;
     position: relative;
@@ -70,6 +73,7 @@
   }
 }
 .effect_bock {
+  display: block;
   position: relative;
   z-index: 100;
   width: 128px;

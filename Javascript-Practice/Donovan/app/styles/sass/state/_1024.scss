@@ -9,6 +9,9 @@
         width: 120px;
       }
     }
+    .navigation .active {
+      background: url(../images/menu_effect.png) no-repeat bottom center;
+    }
   }
   .photographer {
     background-attachment: initial;
@@ -68,9 +71,16 @@
       background: url(../images/menu_effect.png) no-repeat bottom center;
     }
   }
+  .navigation li:hover, .navigation .active {
+    background: url(../images/menu_effect.png) no-repeat bottom center;
+  }
+
   .navigation {
     .effect_bock {
       display: none;
     }
+  }
+  .menu .navigation li:nth-child(6):hover ~ .effect_bock {
+    left: 540px;
   }
 }
