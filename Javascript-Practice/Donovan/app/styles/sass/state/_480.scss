@@ -1,5 +1,60 @@
-@media screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) {
   .container {
     width: 300px;
+  }
+  .photographer__block {
+    .photographer__slogan:after,
+    .photographer__slogan:before {
+      width: 70px;
+      margin: 0px 5px 5px;
+    }
+    .photographer__name {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    .buttonNext {
+      margin: 50px auto 0;
+    }
+  }
+  .about__block {
+    flex-flow: row wrap;
+    .about__biography,
+    .about__contact {
+      width: 100%;
+    }
+  }
+  .contact__client {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  #exhibitions li:nth-child(n+1) {
+    .exhibitions__content {
+      width: 210px;
+    }
+  }
+  #resume li:nth-child(n+1) {
+    .resume__content {
+      width: 210px;
+    }
+  }
+  #resume li:first-child {
+    .resume__content {
+      margin-left: 42px !important;
+      margin-top: 40px !important;
+    }
+  }
+  #exhibitions li:first-child {
+    .exhibitions__content {
+      margin-left: 42px !important;
+      margin-top: 40px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .container {
+    width: 295px;
   }
 }
