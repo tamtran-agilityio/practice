@@ -7,26 +7,16 @@
   @include e(block){
     display: block;
     h2 {
-      display: block;
-      margin: 0 0 23px;
-      padding: 0;
-      text-transform: none;
-      text-align: left;
-      font-style: normal;
+      @extend %heading-title;
       border-bottom: 1px solid $color-border-gray;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 70px;
-      line-height: 82px;
-      color: #b8b8b8;
-      font-weight: 300;
+      color: $color-title;
     }
   }
   @include e(client) {
+    @include size(334px, 384px);
     float: left;
     position: relative;
     margin: 0 15px 10px 0;
-    height: 384px;
-    width: 334px;
     @include m(bground) {
       position: absolute;
       left: 0;
@@ -44,7 +34,7 @@
       margin: 100px 0 0 0;
       padding-bottom: 8px;
       text-transform: none;
-      font-family: 'Open Sans', sans-serif;
+      font-family: $font-opensans;
       font-size: 32px;
       line-height: 31px;
       font-weight: 300;
@@ -53,9 +43,8 @@
   }
   @include e(socials) {
     a {
+      @include size(27px, 32px);
       display: inline-block;
-      width: 27px;
-      height: 32px;
       margin: 5px 8px 0;
       transition: all 0.1s ease-in-out;
     }

@@ -1,16 +1,16 @@
 .footer {
   position: relative;
   z-index: 12;
-  background: #343434;
+  background: $color-footer-bg;
   padding: 27px 0 200px 0;
   .copyright {
     float: left;
     text-transform: uppercase;
     font-family: $font-opensans;
     font-weight: 400;
-    color: #9b9b9b;
+    color: $color-footer;
     @include e(link) {
-      color: #f14833;
+      color: $color-link-hover;
       &:hover {
         color: $white;
       }

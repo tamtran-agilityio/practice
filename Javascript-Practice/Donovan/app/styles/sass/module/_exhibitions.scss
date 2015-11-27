@@ -11,7 +11,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    color: #343434;
+    color: $color-gray;
   }
   li {
     position: relative;
@@ -25,7 +25,7 @@
       font-weight: 300;
       font-size: 22px;
       line-height: 20px;
-      color: #f14833;
+      color: $color-scarlet;
     }
   }
   li:nth-child(n+1) {
@@ -37,7 +37,7 @@
       .exhibitions__content {
         box-shadow: 0 0 16px rgba(0,0,0,0.15);
         h5 {
-          color: #f14833;
+          color: $color-scarlet;
         }
       }
     }
@@ -68,7 +68,7 @@
       .exhibitions__content {
         box-shadow: 0 0 16px rgba(0,0,0,0.15);
         h5 {
-          color: #f14833;
+          color: $color-scarlet;
         }
       }
     }
@@ -90,7 +90,7 @@
       .exhibitions__content {
         box-shadow: none;
         h5 {
-          color: #343434;
+          color: $color-gray;
         }
       }
       .exhibitions__time {
@@ -118,17 +118,9 @@
 .exhibitions {
   @include e(title) {
     h2 {
-      display: block;
-      margin: 0 0 23px;
-      padding: 0;
-      text-transform: none;
-      text-align: left;
-      font-style: normal;
+      @extend %heading-title;
+      color: #343434;
       border-bottom: 1px solid $color-border-title;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 70px;
-      line-height: 82px;
-      font-weight: 300;
     }
   }
   @include e(line) {

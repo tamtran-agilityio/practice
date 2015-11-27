@@ -12,17 +12,8 @@
 .portfolio {
   @include e(title) {
     h2 {
-      display: block;
-      margin: 0 0 23px;
-      padding: 0;
-      text-transform: none;
-      text-align: left;
-      font-style: normal;
+      @extend %heading-title;
       border-bottom: 1px solid $color-border-title;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 70px;
-      line-height: 82px;
-      font-weight: 300;
     }
   }
   @include e(block) {
