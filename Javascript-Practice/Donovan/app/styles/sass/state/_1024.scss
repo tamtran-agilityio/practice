@@ -11,13 +11,16 @@
     }
   }
   .photographer {
+    background-attachment: initial;
     .photographer__name {
       font-size: 50px;
       line-height: 65px;
     }
   }
-  #exhibitions li:first-child .exhibitions__content {
-    width: 265px;
+  #exhibitions li:first-child  {
+    .exhibitions__content {
+      width: 265px;
+    }
   }
   #exhibitions li:nth-child(n+1) {
     .exhibitions__content {
@@ -38,20 +41,36 @@
   #portfolio {
     justify-content: center;
   }
-  #resume li:first-child .resume__content {
-    width: 200px;
+  #resume li:first-child {
+    .resume__content {
+      width: 200px;
+    }
   }
-  #resume li:nth-child(n+1) .resume__content {
-    width: 282px;
+  #resume li:nth-child(n+1) {
+    .resume__content {
+      width: 282px;
+    }
   }
-  #resume li:nth-child(n+1) .resume__time {
-    right: 323px;
+  #resume li:nth-child(n+1) {
+    .resume__time {
+      right: 323px;
+    }
   }
   #resume {
     li:nth-child(3n), li:nth-child(5) {
       .resume__time {
         right: 221px;
       }
+    }
+  }
+  .navigation li:hover, {
+    .navigation .active {
+      background: url(../images/menu_effect.png) no-repeat bottom center;
+    }
+  }
+  .navigation {
+    .effect_bock {
+      display: none;
     }
   }
 }

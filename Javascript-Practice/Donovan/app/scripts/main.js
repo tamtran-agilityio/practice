@@ -1,5 +1,5 @@
 /* Javascript file */
-(function ( $ ) {
+!(function ( $ ) {
   'use strict';
 
   var links = $('.navigation').find('li');
@@ -118,16 +118,17 @@
 
   // function show menu
   function showMenu() {
+    var $menu =  $('.menu');
     var _crollWindow = $(window).scrollTop();
     var _heightPhotographer = $('.photographer').height();
-    var _heightMenu = $('.menu').height();
+    var _heightMenu = $menu.height();
     if (_crollWindow > (_heightPhotographer - _heightMenu)) {
-      $('.menu').css('position','fixed');
-      $('.menu').css('top','0px');
+      $menu.css('position','fixed');
+      $menu.css('top','0px');
     }
     else {
-      $('.menu').css('position','absolute');
-      $('.menu').css('top',_heightPhotographer - _heightMenu);
+      $menu.css('position','absolute');
+      $menu.css('top',_heightPhotographer - _heightMenu);
     }
   }
 

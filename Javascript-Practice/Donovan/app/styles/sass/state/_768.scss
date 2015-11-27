@@ -1,0 +1,142 @@
+@media only screen and (max-width: 766px) and (min-width: 480px) {
+  .container {
+    width: 420px;
+  }
+  .photographer__block {
+    .photographer__slogan,
+    .photographer__des {
+      font-size: 21px;
+    }
+    .photographer__name {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .buttonNext {
+      margin: 50px auto 0;
+    }
+  }
+  .about__block {
+    flex-flow: row wrap;
+    .about__biography,.about__contact {
+      width: 100%;
+    }
+  }
+  #services {
+    flex-flow: row wrap;
+    .services__product {
+      width: 100%;
+    }
+  }
+  .about__content,
+  .services__block,
+  .exhibitions__title,
+  .resume__title,
+  .portfolio__title,
+  .contact__block
+   {
+    h2 {
+      padding-bottom: 10px;
+      font-size: 45px;
+      line-height: 58px;
+    }
+  }
+  .contact__desc {
+    h5 {
+      font-size: 26px;
+    }
+  }
+  #exhibitions {
+    .exhibitions__line {
+      left: 4px;
+    }
+    .exhibitions__item {
+      .exhibitions__content {
+        margin-left: 42px;
+        margin-top: 50px;
+        width: 230px;
+      }
+    }
+  }
+  #exhibitions li:first-child {
+    .exhibitions__time {
+      top: 4px !important;
+      left: 0 !important;
+      height: 20px !important;
+      background: url(../images/exhib_date_top_bg_h.png) no-repeat left center !important;
+    }
+    .exhibitions__content {
+      margin-left: 115px !important;
+      width: 280px !important;
+      margin-top: 0 !important;
+    }
+  }
+  #exhibitions li:nth-child(n+1) {
+    .exhibitions__time {
+      top: 20px;
+      left: 1px;
+      height: 150px;
+      padding-left: 42px;
+      text-align: left;
+      background: url(../images/exhib_date_left_bg.png) no-repeat left center;
+    }
+    .exhibitions__content {
+      width: 230px;
+      float: none;
+      margin-left: 42px;
+      margin-top: 50px;
+    }
+    &:hover {
+      .exhibitions__time {
+        background: url(../images/exhib_date_left_bg_h.png) no-repeat left center;
+      }
+    }
+  }
+
+  #resume {
+    .resume__line {
+      left: 4px;
+    }
+    .resume__item {
+      .resume__content {
+        margin-left: 42px;
+        margin-top: 50px;
+        width: 280px;
+      }
+    }
+  }
+  #resume li:first-child {
+    .resume__time {
+      left: 0 !important;
+      top: 4px !important;
+      height: 20px !important;
+      width: 300px !important;
+      background: url(../images/exhib_date_top_bg_h.png) no-repeat left center !important;
+    }
+    .resume__content {
+      margin-left: 160px !important;
+      width: 260px !important;
+      margin-top: 0 !important;
+    }
+  }
+  #resume li:nth-child(n+1) {
+    .resume__time {
+      top: 20px;
+      left: 1px;
+      height: 150px;
+      padding-left: 42px;
+      text-align: left;
+      background: url(../images/exhib_date_left_bg2.png) no-repeat left center;
+    }
+    .resume__content {
+      width: 230px;
+      float: none;
+      margin-left: 42px;
+      margin-top: 50px;
+    }
+    &:hover {
+      .resume__time {
+        background: url(../images/exhib_date_left_bg2_h.png) no-repeat left center;
+      }
+    }
+  }
+}
