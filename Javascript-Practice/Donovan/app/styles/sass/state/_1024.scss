@@ -60,6 +60,9 @@
     }
   }
   #resume {
+    .resume__line {
+      height: 85%;
+    }
     li:nth-child(3n), li:nth-child(5) {
       .resume__time {
         right: 221px;
