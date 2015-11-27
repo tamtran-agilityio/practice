@@ -17,23 +17,11 @@
     // call function getData to section resume
   renderItem('../templates/modules/resume.html', '#resume');
 
-  // $('.portfolio__zoom').parent('a').attr('rel', 'prettyPhoto').prettyPhoto();
   // function pop up image portfolio
   setTimeout(function() {
     $('a[rel^="prettyPhoto"]').prettyPhoto();
   }, 2000);
 
-  // $('a').on('click', function(event) {
-  //   event.preventDefault();
-  //   console.log('abab');
-  // });
-
-  // $(document).ready(function(){
-  //   $('a').on('click', function(event) {
-  //     event.preventDefault();
-  //     console.log('abab');
-  //   });
-  // });
   // handle when resize
   $(window).on('resize',function() {
     //Update slider height
