@@ -17,6 +17,9 @@
     // call function getData to section resume
   renderItem('../templates/modules/resume.html', '#resume');
 
+  // function pop up image portfolio
+  $('.portfolio__zoom').parent().attr('rel', 'prettyPhoto').prettyPhoto();
+
   // handle when resize
   $(window).bind('resize',function() {
     //Update slider height
@@ -159,8 +162,3 @@
   }
 
 }( jQuery ));
-
-$(document).ready(function(){
-  $("a[rel^='prettyPhoto']").prettyPhoto();
-  // $('.portfolio__zoom').attr('rel').prettyPhoto();
-});
