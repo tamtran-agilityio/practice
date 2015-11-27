@@ -2,6 +2,14 @@
   .container {
     width: 724px;
   }
+  .menu {
+    .navigation {
+      width: 100%;
+      li {
+        width: 120px;
+      }
+    }
+  }
   .photographer {
     .photographer__name {
       font-size: 50px;

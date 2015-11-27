@@ -22,6 +22,23 @@
     sliderHeight();
     mymargtop ();
   });
+  // call function update layout section 1
+  mymargtop();
+
+  // handle when srcoll
+  $(window).on('scroll', function () {
+
+    // call function show menu
+    showMenu();
+    // call funtion add item active
+    itemNavActive($('.about-me'), $('.itemAbout'));
+    itemNavActive($('.services'), $('.itemServices'));
+    itemNavActive($('.exhibitions'), $('.itemExhibitions'));
+    itemNavActive($('.resume'), $('.itemResume'));
+    itemNavActive($('.portfolio'), $('.itemPortfolio'));
+    itemNavActive($('.contact'), $('.itemContact'));
+
+  });
 
   // excute when click section
   links.click(function (e) {
@@ -99,43 +116,29 @@
     }
   }
 
-   // handle when srcoll
-  $(window).on("scroll", function () {
-
+  // function show menu
+  function showMenu() {
     var _crollWindow = $(window).scrollTop();
     var _heightPhotographer = $('.photographer').height();
     var _heightMenu = $('.menu').height();
-
-    // call function show menu
-    showMenu();
-    // call funtion add item active
-    itemNavActive($('.about-me'), $('.itemAbout'));
-    itemNavActive($('.services'), $('.itemServices'));
-    itemNavActive($('.exhibitions'), $('.itemExhibitions'));
-    itemNavActive($('.resume'), $('.itemResume'));
-    itemNavActive($('.portfolio'), $('.itemPortfolio'));
-    itemNavActive($('.contact'), $('.itemContact'));
-
-    // function show menu
-    function showMenu() {
-      if (_crollWindow > (_heightPhotographer - _heightMenu)) {
-        $('.menu').css("position","fixed");
-        $('.menu').css("top","0px");
-      }
-      else {
-        $('.menu').css("position","absolute");
-        $('.menu').css("top",_heightPhotographer - _heightMenu);
-      }
+    if (_crollWindow > (_heightPhotographer - _heightMenu)) {
+      $('.menu').css('position','fixed');
+      $('.menu').css('top','0px');
     }
-
-    // function to item active
-    function itemNavActive(section, item) {
-      if ((_crollWindow < (section.offset().top)) && (_crollWindow > (section.offset().top - section.height()))) {
-        item.addClass('active');
-      } else {
-        item.removeClass('active');
-      }
+    else {
+      $('.menu').css('position','absolute');
+      $('.menu').css('top',_heightPhotographer - _heightMenu);
     }
-  });
+  }
+
+  // function to item active
+  function itemNavActive(section, item) {
+    var _crollWindow = $(window).scrollTop();
+    if ((_crollWindow < (section.offset().top)) && (_crollWindow > (section.offset().top - section.height()))) {
+      item.addClass('active');
+    } else {
+      item.removeClass('active');
+    }
+  }
 
 }( jQuery ));

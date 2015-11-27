@@ -85,12 +85,15 @@
     }
   }
   li:first-child {
+    h5 {
+      color: #6f6f6f;
+    }
     display: flex;
     &:hover {
       .resume__content {
         box-shadow: none;
         h5 {
-          color: #343434;
+          color: #6f6f6f;
         }
       }
       .resume__time {
