@@ -73,11 +73,10 @@
   }
 }
 .effect_bock {
+  @include size(128px, 10px);
   display: block;
   position: relative;
   z-index: 100;
-  width: 128px;
-  height: 10px;
   bottom: 5px;
   background: url(../images/menu_effect.png) no-repeat;
   margin-left: 0;

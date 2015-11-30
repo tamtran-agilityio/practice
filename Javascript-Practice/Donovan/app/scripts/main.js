@@ -17,23 +17,11 @@
     // call function getData to section resume
   renderItem('../templates/modules/resume.html', '#resume');
 
-  // $('.portfolio__zoom').parent('a').attr('rel', 'prettyPhoto').prettyPhoto();
   // function pop up image portfolio
   setTimeout(function() {
     $('a[rel^="prettyPhoto"]').prettyPhoto();
   }, 2000);
 
-  // $('a').on('click', function(event) {
-  //   event.preventDefault();
-  //   console.log('abab');
-  // });
-
-  // $(document).ready(function(){
-  //   $('a').on('click', function(event) {
-  //     event.preventDefault();
-  //     console.log('abab');
-  //   });
-  // });
   // handle when resize
   $(window).on('resize',function() {
     //Update slider height
@@ -168,7 +156,7 @@
   // function to item active
   function itemNavActive(section, item) {
     var _crollWindow = $(window).scrollTop();
-    if ((_crollWindow < (section.offset().top + 86)) && (_crollWindow > (section.offset().top - section.height() + 69 ))) {
+    if ((_crollWindow > (section.offset().top - 86)) && (_crollWindow < (section.offset().top + section.height() + 69 ))) {
       item.addClass('active');
     } else {
       item.removeClass('active');
