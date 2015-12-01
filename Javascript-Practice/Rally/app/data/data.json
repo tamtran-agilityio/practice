@@ -1,0 +1,34 @@
+{
+  "person":[
+    {
+      "persion-image":"../images/team/ben-cline.jpg",
+      "person-name": "Ben Cline",
+      "person-title": "Designer/Founder"
+    },
+    {
+      "persion-image":"../images/team/wes-pearce.jpg",
+      "person-name": "Wes Pearce",
+      "person-title": "Designer/Founder"
+    },
+    {
+      "persion-image":"../images/team/adam-luptak.jpg",
+      "person-name": "Adam Luptak",
+      "person-title": "Developer"
+    },
+    {
+      "persion-image":"../images/team/geof-crowl.jpg",
+      "person-name": "Geof Crowl",
+      "person-title": "Designer"
+    },
+    {
+      "persion-image":"../images/team/anson-schall.jpg",
+      "person-name": "Anson Schall",
+      "person-title": "Designer"
+    },
+    {
+      "persion-image":"../images/team/eric-atwell.jpg",
+      "person-name": "Eric Atwell",
+      "person-title": "Designer"
+    }
+  ]
+}

@@ -11,13 +11,13 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -L get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 rvm requirements
-rvm install 2.0.0
+rvm install -global
 rvm rubygems current
 
 echo '### Install Node Version Manager'
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
 source ~/.nvm/nvm.sh
-nvm install 0.10.22 && nvm alias default 0.10.22
+# nvm install 0.10.22 && nvm alias default 0.10.22
 sudo apt-get install npm
 
 echo '### Install global modules ...'
@@ -25,7 +25,7 @@ npm install --global gulp
 npm install -g bower
 
 echo '### Install Docpad ...'
-npm install -g docpad@6.78
+npm install -g
 
 echo '### Install Sass and Compass'
 gem install sass
