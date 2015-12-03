@@ -553,7 +553,7 @@
     line-height: 1.25;
     text-align: center;
     position: absolute;
-    top: 85%;
+    top: 84%;
     left: 10%;
     right: 10%;
   }
@@ -594,13 +594,14 @@
     }
   }
   .stagger {
-    @include flexbox();
-    flex-flow: row wrap;
+    // @include flexbox();
+    // flex-flow: row wrap;
     // justify-content: flex-end;
     @include e(item) {
       width: 50%;
-      position: relative;
-      flex-flow: row wrap;
+      float: left;
+      // position: relative;
+      // flex-flow: row wrap;
       // justify-content: flex-end;
       @include m(make) {
         position: relative;
