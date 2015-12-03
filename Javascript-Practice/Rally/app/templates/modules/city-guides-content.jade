@@ -274,7 +274,7 @@ section.page-section.itinerary
   h2.guides__title
     | What Is an Itinerary?
     p How We Made an Itinerary Experience More Useful
-  p.guides__block
+  p.guides__desc
     | At its core, an itinerary is just a list. Since we already had a Favorites list, we had to seriously consider what value an Itinerary section would add for the user. In the end, it boiled down to what kinds of content are being saved. We decided that Favorites were a place to save specific pieces of content – What To Dos, Photos, etc. Itineraries, however, are strictly for Points of Interest – physical locations that a user can actually visit.
     span.iphone__block.itinerary__block
       span.iphone__graphic-highlight
@@ -549,3 +549,175 @@ section.page-section.itinerary
   .graphic-caption-box
     h4 Wildly Divergent Sizes
   p.guides__desc
+    | There was a simple reason to start with the iPhone: the screen is smaller. We had to figure out how to solve all our UX challenges with the real estate available to us. This cut both ways, though – sometimes we would come up with a great solution on the iPhone, but when it came to designing the iPad version, that solution simply wouldn’t work anymore. Perhaps using the extra space created awkward deadzones or a layout didn’t work in the larger format.
+  p.guides__desc
+    | To get a leg up on these design problems, we started by choosing a portrait-only orientation for the iPad app. We knew a tablet app shouldn’t simply be a scaled up version of the phone app, but keeping a similar aspect ratio helped.
+  p.guides__quote
+    em There was a simple reason to start with the iPhone: the screen is smaller.
+  p.guides__desc
+    | We found that list views, which were a staple of the iPhone version, were problematic on the iPad. Native apps generally solve that problem using a split-screen or popover, but we weren’t satisfied with those solutions. Inspired by grid-based products like Pinterest, we settled on presenting our lists as grids on the iPad.
+  p.guides__desc
+    | In the case of our context menu, we discovered that our iPhone solution looked silly on the iPad. We instead created a whole new paradigm for the menu, and we liked it so much that we decided to port it back to the iPhone to replace our original design.
+  svg.travel__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
+    g
+      rect(x='27.5', y='39.5', fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', width='93', height='57')
+      polygon(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', points='\
+      87.5,109.5 60.5,109.5 64.1,96.5 83.9,96.5   ')
+      g
+        path(fill='#9e8bd4', d='M40.2,67.4c-0.1-0.2-0.1-0.2-0.4-0.2h-1.5c-0.2,0-0.3,0-0.4,0.2l-0.3,1c-0.1,0.4-0.2,0.7-0.2,0.8\
+        c0,0.1,0,0.2,0.3,0.2l0.3,0c0.1,0,0.1,0.2,0,0.2c-0.3,0-0.6,0-1,0c-0.3,0-0.7,0-0.9,0c-0.1,0-0.1-0.2,0-0.2l0.3,0\
+        c0.2,0,0.5-0.1,0.6-0.5c0.2-0.5,0.5-1.1,0.9-2.2l1-2.6c0.1-0.4,0.2-0.5,0.2-0.7c0.2-0.1,0.4-0.2,0.5-0.4c0.1,0,0.1,0,0.1,0.1\
+        c0.1,0.4,0.3,0.9,0.4,1.3l1.3,3.9c0.3,0.8,0.4,1,0.8,1l0.3,0c0.1,0,0,0.2,0,0.2c-0.4,0-0.7,0-1.2,0c-0.5,0-0.8,0-1.1,0\
+        c-0.1,0-0.1-0.2,0-0.2l0.3,0c0.2,0,0.3-0.1,0.3-0.2c0-0.1,0-0.3-0.1-0.5L40.2,67.4z M38.3,66.5c-0.1,0.2-0.1,0.2,0.2,0.2h1.2\
+        c0.3,0,0.3,0,0.2-0.3l-0.5-1.6c-0.1-0.2-0.2-0.5-0.2-0.6h0c0,0-0.1,0.3-0.2,0.6L38.3,66.5z')
+      g
+        path(fill='#9e8bd4', d='M109.5,67.8c-0.2-0.5-0.3-0.6-1-0.6h-3.7c-0.6,0-0.8,0.1-0.9,0.6l-0.9,2.6c-0.4,1.1-0.5,1.8-0.5,2\
+        c0,0.3,0.1,0.4,0.7,0.5l0.8,0.1c0.2,0.1,0.2,0.5,0,0.6c-0.6,0-1.4,0-2.5-0.1c-0.8,0-1.7,0-2.3,0.1c-0.1-0.1-0.2-0.5,0-0.6l0.8-0.1\
+        c0.6,0,1.1-0.3,1.5-1.2c0.4-1.1,1.1-2.7,2.1-5.4l2.5-6.6c0.3-0.9,0.5-1.3,0.4-1.7c0.6-0.2,1-0.6,1.3-0.9c0.1,0,0.3,0,0.4,0.2\
+        c0.3,1.1,0.7,2.2,1.1,3.3l3.3,9.8c0.7,2.1,1,2.5,2.1,2.6l0.7,0.1c0.2,0.1,0.1,0.5,0,0.6c-1,0-1.8-0.1-2.9-0.1\
+        c-1.2,0-2.1,0-2.8,0.1c-0.2-0.1-0.2-0.5,0-0.6l0.7-0.1c0.5,0,0.9-0.2,0.9-0.4c0-0.3-0.1-0.7-0.3-1.3L109.5,67.8z M104.7,65.6\
+        c-0.2,0.6-0.2,0.6,0.5,0.6h3c0.7,0,0.8-0.1,0.5-0.8l-1.3-4c-0.2-0.6-0.4-1.2-0.6-1.5h0c-0.1,0.1-0.3,0.7-0.6,1.4L104.7,65.6z')
+      circle(fill='#9e8bd4', cx='56.5', cy='66.5', r='3.5')
+      line(fill='none', stroke='#9e8bd4', stroke-linejoin='round', stroke-miterlimit='10', x1='48', y1='66.5', x2='95', y2='66.5')
+      circle(fill='#9e8bd4', cx='74', cy='91', r='2')
+      line(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linejoin='round', stroke-miterlimit='10', x1='28', y1='85.5', x2='120', y2='85.5')
+      rect(x='34', y='46', fill='#9e8bd4', width='2', height='2')
+      rect(x='38', y='46', fill='#9e8bd4', width='2', height='2')
+      rect(x='42', y='46', fill='#9e8bd4', width='2', height='2')
+      g
+        rect(x='111', y='45', fill='#9e8bd4', width='1', height='1')
+        rect(x='112', y='46', fill='#9e8bd4', width='1', height='1')
+        rect(x='111', y='47', fill='#9e8bd4', width='1', height='1')
+        rect(x='113', y='45', fill='#9e8bd4', width='1', height='1')
+        rect(x='113', y='47', fill='#9e8bd4', width='1', height='1')
+  .graphic-caption-box
+    h4 Shared Data Models or Bust
+  p.guides__desc
+    | You never want to have to build your data models twice. We made sure we were building pure data models that could be shared across both platforms.
+  p.guides__desc
+    | This time around we leaned heavily on the use of on-demand getters, so that we only had to load data from the database into memory when we need it, rather than loading everything at the top.
+  p.guides__desc
+    | We were able to use what we learned on
+    a(href="/national-parks/") Nation park
+    | to build a cleaner, simpler interface for fetching and caching data in memory – as developers, we’re always working to create better ways to protect us from ourselves.
+  span.iphone__block.building-universal
+    span.iphone__graphic-highlight
+    span.iphone__device-group
+      span.iphone__device-group--content
+        span.iphone__device
+          span.iphone__shadow
+          span.iphone__chrome
+          span.iphone__device-content
+            span.iphone__screen
+              img(src="../images/shared-data-ipad%402x.jpg")
+        span.ipad__portrait
+          span.ipad__shadow
+          span.ipad__chrome
+          span.iphone__device-content
+            span.ipad__screen
+              img(src="../images/shared-data-ipad%402x.jpg")
+  .graphic-caption-box
+    h4 Separate Views
+  p.guides__desc
+    | While it’s important to keep our data models reusable, the same isn’t true for our views and view controllers. Very often, the layouts are different enough that there would be no benefit to trying to write code that would work for both. Even in the event of views that look very similar between devices, the difference in form factor means that sizes and spacing will end up being different.
+  p.guides__desc
+    | In our app delegate, we do a check to determine which device family we’re running, and from there we init the root view controller built specifically for that device and never look back.
+  svg.travel__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
+    g
+      g
+        path(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M55,46.7c4-9.4,13.7-14.8,24.3-13.7c9,0.9,16.3,6,19.6,13.8')
+        rect(x='68.7', y='37.8', transform='matrix(0.9691 -0.2466 0.2466 0.9691 -8.1479 19.3485)', fill='#9e8bd4', width='8.9', height='8.9')
+        rect(x='82.4', y='41.6', transform='matrix(0.6981 0.716 -0.716 0.6981 59.194 -48.2836)', fill='#9e8bd4', width='8.9', height='8.9')
+        polygon(fill='#9e8bd4', points='66.6,55.3 68.7,48.8 60.2,46.1 58.9,50.4     ')
+        polyline(fill='none', stroke='#9e8bd4', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', points='\
+        87.1,55.5 87.3,54.7 88.4,55     ')
+      path(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+      M113.5,95.5v7c0,8.2-6.8,15-15,15h-43c-8.2,0-14.9-6.4-14.9-14.7V95')
+      path(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+      M113.5,74V61.3c0-8.2-6.5-14.9-14.6-15c-5.1,6.5-13,11.2-21.9,11.2s-16.7-4.7-21.7-11.2c-8.2,0.1-14.8,6.8-14.8,15v8.5V74')
+      path(fill='none', stroke='#9e8bd4', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='M44.5,63\
+      c0-6.9,2.3-11.9,9.2-12c0.9,1.2,1.9,2.2,3,3.2')
+      path(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+      M114,74c-19.2-9.7-66.5-9.1-79.5,3.9v13.1c11,11.8,74,11.3,85,0V77.8C118.5,76.4,116.3,75.1,114,74')
+      path(fill='none', stroke='#9e8bd4', stroke-miterlimit='10', d='M42.5,79.7v8.7c9,7.8,60,7.5,69,0v-8.7C100.5,70.7,53.5,70,42.5,79.7\
+      z')
+      line(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', x1='40.6', y1='70.2', x2='32.2', y2='61.8')
+      line(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', x1='40.7', y1='59.9', x2='37.4', y2='56.6')
+      path(fill='none', stroke='#9e8bd4', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='M25.6,57\
+      c-1.9-1.9-1.9-5.1,0-7c1-1,2.2-1.5,3.5-1.5')
+      path(fill='#9e8bd4', d='M63,86.2c0,1.5-1.2,2.8-2.8,2.8h-4.5c-1.5,0-2.8-1.2-2.8-2.8v-4.5c0-1.5,1.2-2.8,2.8-2.8h4.5\
+      c1.5,0,2.8,1.2,2.8,2.8V86.2z')
+      path(fill='#9e8bd4', d='M101,86.2c0,1.5-1.2,2.8-2.8,2.8h-4.5c-1.5,0-2.8-1.2-2.8-2.8v-4.5c0-1.5,1.2-2.8,2.8-2.8h4.5\
+      c1.5,0,2.8,1.2,2.8,2.8V86.2z')
+      circle(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', cx='29.5', cy='53.5', r='9')
+  .graphic-caption-box
+    h4 Reducing Bloat
+  p.guides__desc
+    | One of the best things about partnering with National Geographic is the inclusion of their incredible photography. Unfortunately, those beautiful photos can come at a hefty filesize cost, particularly when dealing with the truly absurd resolution of the Retina iPad.
+  p.guides__desc
+    | We wanted to ensure that the app would have a light footprint when you download it from the store, so we built a solution for downloading and storing photos on-demand. This required some fancy footwork, allowing downloads to resume from partial files, dynamically changing the prioritization of downloads, and resizing photos without blocking the main thread.
+  svg.travel__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
+    g
+      circle(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', cx='74.5', cy='74.5', r='44')
+      g
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M110.5,74.5c0,6.3-3.9,8.5-6.7,13.6c-2.1,3.7-1.5,9.6-4.7,12.4c-3.4,3-8.6,2.2-13,3.7c-3.7,1.3-7.6,6.2-11.7,6.2\
+        c-4.7,0-7.1-4.2-11.2-5.8c-3.7-1.4-9.1-0.1-12.1-2.6c-3.4-2.9-3.5-8.2-5.7-12.1c-2.8-5.1-6.9-7-6.9-13.2c0-4.5,4.1-9.3,5.6-13.3\
+        c1.7-4.4,0.6-10.1,3.8-13.5c3.1-3.3,10.4-3.7,14.6-5.7c4.7-2.2,6.4-5.8,11.9-5.8c5.1,0,7.4,4.5,11.8,6.4c4.6,2,11.2,1.4,14.6,5\
+        c3.9,4.1,3.1,8,4.7,13.5C106.3,66.6,110.5,71.1,110.5,74.5z')
+        circle(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', cx='74.5', cy='74.5', r='8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M52.9,54.9c0,0,1.7,4.1,0,7.8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M88.1,74.3c0,0,2.4,2.3,5.5,3')
+        line(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', x1='98.3', y1='60.2', x2='94.5', y2='65.1')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M85.9,60.2c0,0,2,2.8,0,6.2')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M72.1,46.5c-2,1.6-0.9,3.8,0,7.8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M59.3,65.7c1.7,4.3,0,7.8,0,7.8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M62.1,55.3c0,0,4.2,1.2,5.1,5.2')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M51.5,75.2c-3.5,3.1-4.7,5.6-4.7,5.6')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M87.1,49.7c-0.1,2.6-2.6,2.9-6.3,4.5')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M100.9,75.2c0,0,1.7,4.1,0,7.8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M90.9,87.5c2.1,0.7,0,7.8,0,7.8')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M75.3,89.6c2.1,0.7,6.7-0.5,6.7-0.5')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M74.5,96.6c0,0-0.1,2.8-1.7,6.4')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M64,92.7c0,0-0.9,2.1-3.9,4.6')
+        path(fill='none', stroke='#A500BD', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
+        M56.5,83c-0.1,0.5,0.9,6.7,0.9,6.7')
+section.page-section.itinerary
+  .guides__block-number
+    span 10
+  h2.guides__title
+    | Response
+    p Repeat Clients are the highest compliments
+  p.guides__desc
+    em For several years, National Geographic had wanted to create a City Guides app. In order to stand out in a very crowded category, execution was paramount. When Rally exceeded our expectations on the National Parks app, we knew we had found the ideal partner to help us craft something special. Rally understood from the start that National Geographic’s value proposition is quality, hand­picked content, and that the interface needed to convey this at a glance. They worked tirelessly with us throughout the entire process, providing us with as many wireframes, designs, and prototypes as necessary to get it right. The result is an elegant, useful, and completely differentiated urban travel app. The Rally team is an exceptional group of talented and dedicated professionals who consistently deliver on our brand promise.
+  p.guides__caption
+    span Rachel Graham
+    | , Senior Director, Digital Book Publishing, National Geographic Society
+section.page-section-footer.itinerary
+  .dribbble-shots
+    .dribbble-shots-inner
+      .dribbble__item--yellow
+    .dribbble-shots-inner
+      .dribbble__item--weather
+    .dribbble-shots-inner
+      .dribbble__item
+    .dribbble-shots-inner
+      .dribbble__item
+    .dribbble-shots-inner
+      .dribbble__item
+    .dribbble-shots-inner
+      .dribbble__item
