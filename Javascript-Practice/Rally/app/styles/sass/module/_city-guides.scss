@@ -227,6 +227,36 @@
   margin: 0 auto;
   color: #d9cdf6;
   display: block;
+  &:fill {
+    stroke-dasharray: 400 0;
+    opacity: 1;
+  }
+  &:fill {
+    stroke-dasharray: 0 400;
+    webkit-transition: 1.5s linear !important;
+    transition: 1.5s linear !important;
+    opacity: 0;
+  }
+  &:stroke {
+    stroke-dasharray: 400 0;
+    opacity: 1;
+  }
+  &:stroke {
+    opacity: 0;
+    stroke-dasharray: 0 400;
+    -webkit-transition: 1.5s linear !important;
+    transition: 1.5s linear !important;
+  }
+}
+.travel__icon [fill] {
+  stroke-dasharray: 0 400;
+  opacity: 0;
+}
+.travel__icon [fill] {
+  stroke-dasharray: 400 0;
+  opacity: 1;
+  webkit-transition: 1.5s linear !important;
+    transition: 1.5s linear !important;
 }
 .guides {
   @include e(block-number) {
@@ -606,6 +636,7 @@
 }
 
 .guides__caption {
+  padding: 30px 0;
   @extend .guides__decs;
   padding-left: 10%;
   padding-right: 10%;
@@ -674,60 +705,123 @@
     justify-content: space-around;
     // justify-content: center;
     align-items: center;
-    .dribbble-shots-inner {
-      @include size(300px);
-      border-radius: 50%;
-      overflow: hidden;
-      position: relative;
-      // clip-path: circle(60px at center);
-      &:before {
-        transform: rotate(-135deg) skewX(-45deg) scale(1.414,0.707) translate(0,-50%);
-        border-radius: 50%;
+  }
+  .dribbble-shots-inner {
+    @include size(350px);
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .dribbble-shots--bg {
+        transform: rotate(20deg);
+        transition: transform 0.75s;
+      }
+      .dribbble-shots--image {
+        transform: translate(-10%, 0px);
+        transition: transform 0.75s;
       }
     }
-    .dribbble__item {
+  }
+  .dribbble-shots--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    .fill-rotate {
+      width: 99%;
+      height: 99%;
       position: absolute;
-      top: -50px;
-      width: 300px;
-      height: 300px;
-      background-size: cover;
-      transition: 0.4s ease;
-      clip-path: polygon(50% 10%, 8% 100%, 94% 100%);
-      // clip-path: polygon(50% 5%, 0% 100%, 100% 100%);
-      &:hover {
-        background-position: 0 center;
-        clip-path:  polygon(59% 12%, -5% 81%, 96% 100%);
-        transition: 0.4s ease;
-        .link__text {
-          display: block;
-        }
-      }
+      top: -99px;
+      left: -99px;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      border: 100px solid #fff;
+      box-sizing: content-box;
     }
-    .link__text {
-      display: none;
-      background: #3e384f;
-      color: #d9cdf6;
-      width: 100%;
+    img {
+      @include size(350px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
     }
-    .dribbble__item--yellow {
-      @extend .dribbble__item;
-      background: url('../images/yellow.png') center center;
+  }
+  .dribbble-shots--image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.dribbble__title {
+  text-align: center;
+  color: #3e384f;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: "Futura Light", sans-serif;
+  font-weight: 200;
+  text-transform: none;
+  margin-top: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  font-size: 16px;
+  &:before {
+    background: #3e384f;
+    display: block;
+    content: "";
+    width: 48px;
+    height: 1px;
+    background: black;
+    margin: 0 auto 43px;
+  }
+  .dribbble__more {
+    font-family: "Futura Bold", sans-serif;
+    font-weight: 700;
+    display: block;
+    text-transform: uppercase;
+    font-size: 28px;
+    color: #3e384f;
+    margin-bottom: 10px;
+  }
+  .logo-dribbble {
+    display: block;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 105px;
+    height: 32px;
+    margin: 6px auto;
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 101px;
+      height: 28px;
+      background: black;
+      margin: 2px auto;
+      position: relative;
     }
-    .dribbble__item--weather {
-      @extend .dribbble__item;
-      background: url('../images/_weather_section_on_ipad_1x.jpg') center center;
-    }
-    .dribbble__item--itinerary {
-      @extend .dribbble__item;
-      background: url('../images/_essentials-render_1x.png') center center;
-    }
-    .dribbble__item--do {
-      @extend .dribbble__item;
-      background: url('../images/_what-to-do_1x.jpg') center center;
-    }
-    .dribbble__item--weather-small {
-      @extend .dribbble__item;
-      background: url('../images/weather-small_1_00181.png') center center;
+    &:after {
+      display: block;
+      content: "";
+      width: 105px;
+      height: 32px;
+      background: transparent url(../images/dribbble-cutout@2x.png);
+      background-size: 100% 100%;
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 }

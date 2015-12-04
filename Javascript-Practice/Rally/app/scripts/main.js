@@ -1,6 +1,16 @@
-!(function ($) {
+(function ($) {
 
   renderItem('../templates/modules/person.html', '#person');
+  $('.slider-item').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    arrows: true,
+    // fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+    // autoplay: true
+  });
   /* Helper function */
   // function get data to data.json
   function getData(source, element) {
