@@ -1,9 +1,16 @@
 .studio {
   position: relative;
+  padding: 22% 0;
+  &:before {
+    margin-bottom: 100%;
+  }
   @include e(head) {
     background: url('../images/header-bg.jpg');
-    position: relative;
+    position: absolute;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     max-width: none;
     width: 100%;
     img {
