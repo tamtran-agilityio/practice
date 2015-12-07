@@ -1,4 +1,8 @@
 @media (min-width: 1080px) {
+  .city__better {
+    margin-top: 70px;
+    letter-spacing: 12px;
+  }
   .studio__huge, .city__travel {
     font-size: 150px;
   }
@@ -152,6 +156,10 @@
       margin-top: 30px;
     }
   }
+  .page-section-footer {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
   .footer-page {
     .footer-content {
       left: 50%;
@@ -171,6 +179,113 @@
       .social__facebook {
         margin-left: 0;
       }
+    }
+  }
+
+  /* styles page city*/
+  .iphone__block {
+    max-width: 840px;
+  }
+
+  .caption-box__block {
+    .iphone__block {
+      max-width: 670px;
+    }
+  }
+  .a-guide-to-your-travels .iphone__device {
+    width: 31%;
+  }
+  .iphone__lines {
+    left: 32%;
+    top: -14px;
+  }
+  .iphone__detail-crop {
+    width: 20%;
+    left: 38%;
+  }
+  .graphic-caption-content {
+    display: block;
+  }
+  .numbered-title-list {
+    li:nth-child(2) {
+    .iphone__device:nth-child(2) {
+        top: -14px;
+        left: 3%;
+      }
+    }
+    .iphone__lines {
+      left: 35%;
+    }
+    .iphone__arrow {
+      top: 25%;
+      left: 39%;
+    }
+    .iphone__tap {
+      left: 20%;
+      top: 50%;
+    }
+  }
+  .graphic-caption-content {
+    display: block;
+    top: 55%;
+    left: 70%;
+    text-align: left;
+    h4 {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 20px;
+      width: 64%;
+    }
+  }
+  .caption-box__block-overflow {
+    overflow: hidden;
+    width: 180%;
+    margin-left: -40%;
+    .iphone__block {
+      max-width: 1240px;
+    }
+    .iphone__device-group {
+      margin-top: 20px;
+    }
+    .iphone__device {
+      top: 0;
+      &:nth-child(1) {
+        width: 23%;
+        position: relative;
+        left: -32%;
+      }
+      &:nth-child(2) {
+        width: 23%;
+        position: absolute;
+        left: 39%;
+      }
+      &:nth-child(3) {
+        width: 23%;
+        position: absolute;
+        left: 49%;
+      }
+    }
+    .iphone__lines {
+      top: 5px;
+      left: 49%;
+    }
+    .iphone__tap {
+      left: 13%;
+      top: 56.5%;
+    }
+    .iphone__tap--itinerary {
+       top: 36.5%;
+    }
+    .iphone__arrow {
+      left: 39.6%;
+      top: 28.6%;
+    }
+    .iphone__arrow--itinerary {
+      left: 71.5%;
+      top: 59%;
     }
   }
 }

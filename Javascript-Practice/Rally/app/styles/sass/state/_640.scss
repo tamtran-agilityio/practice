@@ -108,4 +108,7 @@
       }
     }
   }
+  .numbered-title-list .numbered-title:before, .numbered-title-list .numbered-title--cross:before, .numbered-title-list .numbered-title--deep:before {
+    line-height: 18px;
+  }
 }

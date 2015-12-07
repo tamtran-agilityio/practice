@@ -1,4 +1,21 @@
 @media (min-width: 768px) {
+  .city__better {
+    font-size: 14px;
+    margin-top: 50px;
+    letter-spacing: 6px;
+  }
+  .city__arrive {
+    margin-bottom: 15px;
+  }
+  .city__arrive, .city__attribution {
+    font-size: 14px;
+    letter-spacing: 6px;
+    padding-left: 6px;
+    word-spacing: 0.25em;
+  }
+  .city__travel {
+    font-size: 119px;
+  }
   .site-nav {
     height: 61px;
     -webkit-perspective-origin: 50% 60px;
@@ -155,6 +172,96 @@
         }
       }
     }
+  }
+  .slick-dots {
+    height: 61px;
+    li button:before {
+      top: 10px;
+    }
+  }
+  .guides__block-number {
+    font-size: 14px;
+    &:before, &:after {
+      border-width: 4px 0 0;
+      margin-top: -2px;
+    }
+    span {
+      border-width: 0 3px;
+      width: 35px;
+      height: 23px;
+      line-height: 23px;
+      &:after, &:before {
+        left: -3px;
+      }
+    }
+  }
+  .guides__title  {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    font-size: 44px;
+    p {
+      font-size: 13px;
+    }
+  }
+  .guides__desc {
+    font-size: 24px;
+    line-height: 38px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .travel__icon {
+    @include size(150px);
+  }
+  .numbered-title-list {
+    .numbered-title--cross,
+    .numbered-title--deep {
+      font-size: 24px;
+      line-height: 38px;
+    }
+  }
+  .graphic-caption-box h4 {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .guides__quote em {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .list {
+    padding-left: 10%;
+    padding-right: 10%;
+    li {
+      font-size: 21px;
+    }
+  }
+  .guides__caption {
+    font-size: 18px;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+  .iphone__block {
+    margin-top: 40px;
+  }
+  .a-guide-to-your-travels .iphone__block {
+    margin-top: 50px;
+  }
+  .footer-page .footer-logo img {
+    width: 40px;
+    left: 50%;
+    margin-left: -482px;
+    padding-top: 60px;
+  }
+  .a-guide-to-your-travels .graphic-caption-content {
+    display: none;
+    position: absolute;
+    top: 32%;
+    left: 70%;
+    width: 30%;
+  }
+  .numbered-title-list .numbered-title:before,
+  .numbered-title-list .numbered-title--cross:before,
+  .numbered-title-list .numbered-title--deep:before {
+    line-height: 24px;
   }
 }
 
