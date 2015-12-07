@@ -195,6 +195,7 @@
   background: #fff;
   padding-top: 45px;
   overflow: hidden;
+  width: 100%;
   @include e(content) {
     width: 100%;
   }
@@ -225,15 +226,58 @@
       border-top: 6px solid transparent;
     }
   }
+  @include e(item-block) {
+    display: none;
+    &:before {
+      content: "";
+      display: block;
+      padding-bottom: 20%;
+    }
+  }
+  @include e(item-bg) {
+    transition: opacity 0.2s linear;
+    background-image: url("../images/reason-0.jpg");
+    position: absolute;
+    top: 27px;
+    left: 38%;
+    right: 0;
+    bottom: 0;
+    max-height: 480px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .stagger {
     @include flexbox();
     flex-flow: row wrap;
     justify-content: flex-end;
+    @include e(number) {
+      display: block;
+      font-family: "Futura Bold";
+      font-size: 7.5em;
+      font-style: normal;
+      letter-spacing: -0.1em;
+      margin-left: -0.1em;
+      margin-top: 10px;
+      font-weight: bold;
+      -webkit-font-feature-settings: "kern";
+    }
     @include e(item) {
       width: 50%;
       position: relative;
       flex-flow: row wrap;
       justify-content: flex-end;
+      @include m(number) {
+        display: block;
+        font-family: "ff-meta-serif-web-pro";
+        font-size: 8px;
+        font-style: italic;
+        font-weight: 400;
+        position: absolute;
+        bottom: 110%;
+        color: #fff;
+        margin-bottom: 8%;
+      }
       @include m(make) {
         position: relative;
         width: 100%;

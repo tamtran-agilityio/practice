@@ -1,6 +1,6 @@
 .container {
   min-height: 100%;
-  -webkit-transform: scale(1);
+  // -webkit-transform: scale(1);
   overflow: hidden;
 }
 .city-container {
@@ -211,7 +211,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-dots {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 41px;
   z-index: 999;

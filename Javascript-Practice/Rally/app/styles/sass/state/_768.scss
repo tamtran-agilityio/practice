@@ -1,0 +1,166 @@
+@media (min-width: 768px) {
+  .site-nav {
+    height: 61px;
+    -webkit-perspective-origin: 50% 60px;
+    -moz-perspective-origin: 50% 60px;
+    perspective-origin: 50% 60px;
+  }
+  .nav-bar {
+    height: 61px;
+  }
+  .nav-link-logo {
+    width: 70px;
+    height: 61px;
+    background-image: url(../img/common/logo-desktop@2x.png);
+    background-position: 19px -1px;
+    background-repeat: no-repeat;
+    background-size: 34px 122px;
+  }
+  /* Burger */
+  .nav-link-menu {
+    right: 0;
+    padding: 22px;
+  }
+  .nav-link-menu-content {
+    width: 30px;
+    height: 17px;
+  }
+  .nav-link-menu-inner {
+    border-width: 3px 0 0 0;
+  }
+  .nav-link-menu-outer {
+    &:before, &:after {
+      border-width: 3px 0 0 0;
+    }
+  }
+  .nav-link-menu-inner {
+    top: 7px;
+  }
+  .nav-link-menu.active .nav-link-menu-outer {
+    &:before {
+      -webkit-transform: translateY(-2.5px) translateX(-3px) rotate(-45deg);
+      -moz-transform: translateY(-2.5px) translateX(-3px) rotate(-45deg);
+      transform: translateY(-2.5px) translateX(-3px) rotate(-45deg);
+    }
+    &:after {
+      -webkit-transform: translateY(4.5px) translateX(-3px) rotate(45deg);
+      -moz-transform: translateY(4.5px) translateX(-3px) rotate(45deg);
+      transform: translateY(4.5px) translateX(-3px) rotate(45deg);
+    }
+  }
+  .nav-link-logo.content-mode {
+    background-position: 19px -62px;
+  }
+  .pagination {
+    height: 60px;
+    li a {
+      width: 26px;
+      &:after {
+        width: 10px;
+        height: 10px;
+        margin: -5px 0 0 -5px;
+        background-size: 10px 20px;
+      }
+    }
+  }
+  .site-head .pagination {
+    display: block;
+    top: auto;
+    bottom: 24px;
+  }
+  .site-nav .pagination li a:after {
+    background-position: 0 -10px;
+  }
+
+  .site-head .pagination {
+    top: auto;
+    bottom: 72px;
+  }
+
+  .site-head .pagination {
+    bottom: 108px;
+  }
+
+  .site-head .pagination {
+    bottom: 110px;
+  }
+  #nav-menu {
+    top: 60px;
+    height: 350px;
+  }
+  #nav-menu-content, .nav-menu-content, .nav-menu-base, .nav-menu-base-content, .nav-menu-fold, .nav-menu-fold-content {
+    height: 350px;
+  }
+  #nav-menu-right {
+    .nav-menu-base {
+      width: 721px;
+      -webkit-transform: rotateZ(-29deg);
+      -moz-transform: rotateZ(-29deg);
+      transform: rotateZ(-29deg);
+    }
+    .nav-menu-base-content {
+      -webkit-transform: rotateZ(29deg);
+      -moz-transform: rotateZ(29deg);
+      transform: rotateZ(29deg);
+    }
+    .nav-menu-fold {
+      width: 721px;
+      -webkit-transform: translateY(100%) rotateZ(-29deg) translateY(-1px) rotateX(180deg);
+      -moz-transform: translateY(100%) rotateZ(-29deg) translateY(-1px) rotateX(180deg);
+      transform: translateY(100%) rotateZ(-29deg) translateY(-1px) rotateX(180deg);
+    }
+    .nav-menu-fold-content {
+      -webkit-transform: translateY(1px) translateY(-100%) rotateZ(29deg);
+      -moz-transform: translateY(1px) translateY(-100%) rotateZ(29deg);
+      transform: translateY(1px) translateY(-100%) rotateZ(29deg);
+    }
+  }
+  .site-nav.nav-menu-open #nav-menu-right .nav-menu-fold {
+    -webkit-transform: translateY(100%) rotateZ(-29deg) translateY(-1px);
+    -moz-transform: translateY(100%) rotateZ(-29deg) translateY(-1px);
+    transform: translateY(100%) rotateZ(-29deg) translateY(-1px);
+  }
+  .nav-menu-columns-container {
+    width: 768px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  .nav-menu-column {
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+    padding: 40px 10px 0 10px;
+    &:last-child {
+      width: 40%;
+    }
+    h2 {
+      font: 700 52px/52px "Futura Bold";
+      padding: 0 0 36px 0;
+      letter-spacing: -2px;
+      text-indent: 10px;
+      text-transform: uppercase;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      font: 300 12px/3 "Futura Book";
+      text-transform: uppercase;
+      text-indent: 11px;
+      a {
+        display: block;
+        text-decoration: none;
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (min-height: 660px) {
+  .site-head a.down-arrow {
+    visibility: visible;
+    bottom: 24px;
+  }
+}

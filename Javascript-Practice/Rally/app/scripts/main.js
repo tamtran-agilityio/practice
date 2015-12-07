@@ -11,6 +11,28 @@
     slidesToScroll: 1
     // autoplay: true
   });
+  showMenu();
+  // handle menu show
+  function showMenu() {
+    // body...
+    var $buttonNav = $('.nav-link-menu-outer');
+    var visible = true;
+    $buttonNav.on('click', function() {
+      if(!visible) {
+        $(this).parents('.nav-link-menu').addClass('active');
+        $(this).parents('.site-nav').addClass('nav-menu-open');
+      } else {
+        $(this).parents('.nav-link-menu').removeClass('active');
+        $(this).parents('.site-nav').removeClass('nav-menu-open');
+        // $buttonNav.on('click', function() {
+        // });
+      }
+
+      visible = !visible;
+      return false
+    });
+  }
+  // nav-link-menu
   /* Helper function */
   // function get data to data.json
   function getData(source, element) {

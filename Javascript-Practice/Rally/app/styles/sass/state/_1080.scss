@@ -1,0 +1,150 @@
+@media (min-width: 1080px) {
+  .studio__huge, .city__travel {
+    font-size: 150px;
+  }
+  .first-word {
+    border-color: #2f363b !important;
+    width: 220px;
+  }
+  .reasons__item-block {
+    display: block;
+    max-height: 480px;
+  }
+  .intro, .people, .clients, .awards {
+    margin: 0 auto;
+    max-width: 940px;
+    overflow: visible;
+  }
+  .intro__content, .people__content, .clients__wapper, .awards__wapper {
+    margin-left: 320px;
+    padding: 0;
+  }
+  .intro__content {
+    margin-top: 30px;
+  }
+  .reasons__content {
+    position: relative;
+  }
+  .intro__head, .people__head, .awards__head, .clients__head {
+    width: 230px;
+    float: left;
+    left: 0;
+  }
+  .reasons__head {
+    left: 50%;
+    margin-left: -545px;
+  }
+  .intro__head, .people__head, .awards__head, .outro__head, .clients__head {
+  }
+  .reasons {
+    .stagger {
+      flex-flow: column;
+    }
+    .stagger__item {
+      width: 100%;
+    }
+    .stagger__item--desc-make {
+      left: 50%;
+      margin-left: 150px;
+      padding: 50px 0 0 50px;
+      right: 0;
+      top: 0;
+      position: absolute;
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+    .stagger__item--make-bg {
+
+    }
+    .stagger__item:nth-child(2n) {
+      .stagger__item--desc-make {
+        right: 50%;
+        margin-left: 50px;
+        padding: 50px 0 0 50px;
+        left: 0;
+        top: 0;
+      }
+      .stagger__item--make {
+        left: 50%;
+        margin-right: 150px;
+        right: 0;
+        top: 0;
+
+      }
+    }
+    .stagger__item--make {
+      right: 50%;
+      margin-right: -150px;
+      left: 0;
+      top: 0;
+      width: 60%;
+      &:after {
+        display: none;
+      }
+    }
+    .stagger__item--number {
+      position: relative;
+      color: #2f363b;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+    .stagger__number {
+      margin-top: 30px;
+    }
+  }
+  .outro {
+    .stagger__item {
+      width: 100%;
+      position: relative;
+    }
+    .stagger {
+      position: relative;
+    }
+    .stagger__item--desc-make {
+      left: 50%;
+      margin-left: 150px;
+      padding: 50px 0 0 50px;
+      right: 0;
+      top: 0;
+      position: absolute;
+    }
+    .stagger__item:nth-child(2n) {
+      .stagger__item--desc-make {
+        right: 50%;
+        margin-left: 50px;
+        padding: 50px 0 0 50px;
+        left: 0;
+        top: 0;
+      }
+      .stagger__item--make {
+        left: 50%;
+        margin-right: 150px;
+        right: 0;
+        top: 0;
+      }
+    }
+    .stagger__item--make {
+      right: 50%;
+      margin-right: -150px;
+      left: 0;
+      top: 0;
+      width: 60%;
+      &:after {
+        display: none;
+      }
+    }
+    .stagger__item .stagger__item--build-bg {
+
+    }
+    .stagger__item--number {
+      position: relative;
+      color: #2f363b;
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+    .stagger__number {
+      margin-top: 30px;
+    }
+  }
+}

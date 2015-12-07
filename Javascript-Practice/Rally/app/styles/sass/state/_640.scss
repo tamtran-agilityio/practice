@@ -1,0 +1,101 @@
+@media (min-width: 640px) {
+  .first-word {
+    font-size: 18px;
+    padding-bottom: 16px;
+    padding-top: 64px;
+  }
+  .intro__head,
+  .people__head,
+  .awards__head,
+  .reasons__head,
+  .outro__head,
+  .clients__head {
+    background-position: 0 40px;
+    background-size: 3.5em;
+    font-size: 40px;
+    left: 10%;
+    padding: 25px 0 50px 60px;
+    margin-left: -60px;
+    width: 270px;
+  }
+  .intro__desc {
+    font-size: 24px;
+  }
+  #person {
+    justify-content: space-between;
+    .person__item {
+      width: 28%;
+      margin-right: 8%;
+      padding-bottom: 28%;
+      &:nth-child(3n) {
+        margin-right: 0 !important;
+      }
+      &:nth-child(2n) {
+        margin-right: 8%;
+      }
+    }
+  }
+
+  .clients__item {
+    width: 28%;
+    padding-bottom: 28%;
+    margin-right: 8%;
+    &:nth-child(3n) {
+      margin-right: 0 !important;
+    }
+    &:nth-child(2n) {
+      margin-right: 8%;
+    }
+  }
+  .stagger__number {
+    font-size: 75px;
+  }
+  .reasons {
+    .stagger__item--number {
+      font-size: 10px;
+    }
+    .stagger__item--desc-make {
+      h3 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .awards__item,
+  .awards__fwa,
+  .awards__w3,
+  .awards__webby,
+  .awards__awwwards,
+  .awards__german,
+  .awards__adobe,
+  .awards__appstore,
+  .awards__apple {
+    width: 28%;
+    padding-bottom: 29%;
+    margin-right: 8%;
+    &:nth-child(3n) {
+      margin-right: 0 !important;
+    }
+    &:nth-child(2n) {
+      margin-right: 8%;
+    }
+  }
+  .outro .stagger__item--desc-make {
+    h3 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .footer-page .footer-content {
+    h4 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

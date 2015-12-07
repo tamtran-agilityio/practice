@@ -1,0 +1,14 @@
+@media (min-width: 960px) {
+  .nav-menu-columns-container {
+    width: 960px;
+  }
+  .nav-menu-column {
+    padding: 40px 20px 0 20px;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 990px) {
+  .site-head a.down-arrow {
+    bottom: 44px;
+  }
+}
