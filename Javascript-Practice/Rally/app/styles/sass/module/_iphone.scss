@@ -157,7 +157,9 @@
   }
 }
 
-.caption-box__block, .caption-box__block-overflow {
+.caption-box__block,
+.caption-box__block-overflow,
+.caption-box__block-mistakes{
   position: relative;
   display: block;
 }

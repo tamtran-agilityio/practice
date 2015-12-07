@@ -288,5 +288,48 @@
       top: 59%;
     }
   }
+  .caption-box__block-mistakes {
+    .iphone__block {
+      max-width: 940px;
+    }
+    .iphone__device {
+      width: 31%;
+      margin-top: 25px;
+      &:nth-child(1) {
+        margin-top: 15px;
+      }
+      &:nth-child(2){
+        margin-right: 25%;
+      }
+    }
+    .iphone__lines {
+      left: 40%;
+      top: 2px;
+    }
+    .iphone__tap {
+      top: 33.5%;
+      left: 31%;
+    }
+    .iphone__arrow {
+      left: 45%;
+      top: 28.2%;
+    }
+    .graphic-caption-content {
+      display: block;
+      top: 35%;
+      left: 75%;
+      text-align: left;
+      h4 {
+        font-size: 18px;
+        line-height: 20px;
+        text-align: left;
+      }
+      p {
+        font-size: 16px;
+        line-height: 20px;
+        width: 64%;
+      }
+    }
+  }
 }
 
