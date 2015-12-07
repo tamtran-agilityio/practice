@@ -90,12 +90,22 @@
       font-size: 16px;
     }
   }
-  .footer-page .footer-content {
-    h4 {
-      font-size: 18px;
+  .footer-page {
+    .footer-content {
+      h4 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 16px;
+      }
     }
-    p {
-      font-size: 16px;
+    .footer-social {
+      .social__facebook {
+        width: 60px;
+        height: 60px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
   }
 }

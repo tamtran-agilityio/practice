@@ -231,7 +231,7 @@
     &:before {
       content: "";
       display: block;
-      padding-bottom: 20%;
+      padding-bottom: 14%;
     }
   }
   @include e(item-bg) {
@@ -616,6 +616,7 @@
   overflow: hidden;
   @include e(content) {
     width: 100%;
+    position: relative;
   }
   @include e(head) {
     background-image: url(../images/section-bg.png);
@@ -645,15 +646,9 @@
     }
   }
   .stagger {
-    // @include flexbox();
-    // flex-flow: row wrap;
-    // justify-content: flex-end;
     @include e(item) {
       width: 50%;
       float: left;
-      // position: relative;
-      // flex-flow: row wrap;
-      // justify-content: flex-end;
       @include m(make) {
         position: relative;
         width: 100%;
@@ -720,6 +715,42 @@
     }
   }
 }
+.outro__item-block {
+  @extend .reasons__item-block;
+  text-align: center;
+  .outro__item-bg {
+    @extend .reasons__item-bg;
+    background-image: url("../images/outro-map.jpg");
+    &:before {
+      display: block;
+      content: "Rally studio";
+      padding-bottom: 42px;
+      padding-top: 142px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-family: "Futura Bold", sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      text-align: center;
+      color: #e65a58;
+      background: url(../images/pin@2x.png) no-repeat bottom center;
+      background-size: 22px 27px;
+    }
+    &:after {
+      display: block;
+      content: "Salt Lake City, UT\A(244W 300N #101)";
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-family: "Futura Bold", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      font-size: 16px;
+      color: #e65a58;
+      line-height: 2.0;
+      margin-top: 20px;
+    }
+  }
+}
 
 .footer-page {
   background: #f2f2f2;
@@ -751,6 +782,33 @@
       font-size: 9px;
       padding-bottom: 12px;
       line-height: 1.65;
+    }
+  }
+  .footer-social {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
+    .social__facebook {
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 100%;
+      width: 40px;
+      height: 40px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      text-decoration: none;
+      background-image: url(../images/share-facebook@2x.png);
+    }
+    .social__twitter {
+      @extend .social__facebook;
+      background-image: url(../images/share-twitter@2x.png);
+    }
+    .social__dribbble {
+      @extend .social__facebook;
+      background-image: url(../images/share-dribbble@2x.png);
     }
   }
 }
