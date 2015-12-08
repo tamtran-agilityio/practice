@@ -11,6 +11,16 @@
     slidesToScroll: 1
     // autoplay: true
   });
+  // $('.slider-device').slick({
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 300,
+  //   arrows: true,
+  //   // fade: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1
+  //   // autoplay: true
+  // });
   showMenu();
   // handle menu show
   function showMenu() {

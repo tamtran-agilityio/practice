@@ -182,14 +182,64 @@
     }
   }
 
+
   /* styles page city*/
+  .iphone__graphic-crosslink {
+    .iphone__device {
+      margin-left: 0;
+      width: 31%;
+    }
+    .iphone__lines {
+      left: 32%;
+      top: 0;
+    }
+    .iphone__aux-content {
+      width: 31%;
+      left: 1%;
+    }
+    .graphic-caption-content {
+      top: 30%;
+      left: 65%;
+    }
+  }
+
+  .iphone__graphic-deeplink {
+    .iphone__device {
+      margin-left: 0;
+      width: 31%;
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 38%;
+      }
+    }
+    .iphone__lines {
+      left: 49%;
+      top: 0;
+    }
+    .iphone__tap {
+      left: 30%;
+    }
+    .iphone__arrow {
+      left: 56%;
+    }
+    .graphic-caption-content {
+      top: 30%;
+    }
+  }
   .iphone__block {
     max-width: 840px;
   }
 
   .caption-box__block {
     .iphone__block {
-      max-width: 670px;
+      max-width: 940px;
+    }
+    .iphone__video {
+      width: 31%;
+    }
+    .graphic-caption-content {
+      top: 30%;
     }
   }
   .a-guide-to-your-travels .iphone__device {
@@ -200,8 +250,8 @@
     top: -14px;
   }
   .iphone__detail-crop {
-    width: 20%;
-    left: 38%;
+    width: 75%;
+    left: 133%;
   }
   .graphic-caption-content {
     display: block;
@@ -217,7 +267,7 @@
       left: 35%;
     }
     .iphone__arrow {
-      top: 25%;
+      top: 27.5%;
       left: 39%;
     }
     .iphone__tap {
@@ -225,10 +275,15 @@
       top: 50%;
     }
   }
+  .caption-box__around {
+    .iphone__block {
+      max-width: 670px;
+    }
+  }
   .graphic-caption-content {
     display: block;
     top: 55%;
-    left: 70%;
+    left: 65%;
     text-align: left;
     h4 {
       font-size: 18px;
@@ -238,6 +293,36 @@
       font-size: 16px;
       line-height: 20px;
       width: 64%;
+    }
+  }
+  .caption-box__block-mistakes {
+    .iphone__device-group {
+      margin-top: 0;
+    }
+    .iphone__device {
+      width: 31%;
+      margin-left: 6%;
+      &:nth-child(2) {
+        position: absolute;
+        left: 36%;
+        top: 0;
+      }
+    }
+    .iphone__lines {
+      left: 40%;
+    }
+    .iphone__tap {
+      left: 31%;
+    }
+    .iphone__arrow {
+      left: 44%;
+    }
+    .graphic-caption-content {
+      h4 {
+        text-align: left;
+      }
+      top: 30%;
+      left: 70%;
     }
   }
   .caption-box__block-overflow {
@@ -288,48 +373,48 @@
       top: 59%;
     }
   }
-  .caption-box__block-mistakes {
-    .iphone__block {
-      max-width: 940px;
-    }
-    .iphone__device {
-      width: 31%;
-      margin-top: 25px;
-      &:nth-child(1) {
-        margin-top: 15px;
-      }
-      &:nth-child(2){
-        margin-right: 25%;
-      }
-    }
-    .iphone__lines {
-      left: 40%;
-      top: 2px;
-    }
-    .iphone__tap {
-      top: 33.5%;
-      left: 31%;
-    }
-    .iphone__arrow {
-      left: 45%;
-      top: 28.2%;
-    }
-    .graphic-caption-content {
-      display: block;
-      top: 35%;
-      left: 75%;
-      text-align: left;
-      h4 {
-        font-size: 18px;
-        line-height: 20px;
-        text-align: left;
-      }
-      p {
-        font-size: 16px;
-        line-height: 20px;
-        width: 64%;
-      }
-    }
-  }
+  // .caption-box__block-mistakes {
+  //   .iphone__block {
+  //     max-width: 940px;
+  //   }
+  //   .iphone__device {
+  //     width: 31%;
+  //     margin-top: 25px;
+  //     &:nth-child(1) {
+  //       margin-top: 15px;
+  //     }
+  //     &:nth-child(2){
+  //       margin-right: 25%;
+  //     }
+  //   }
+  //   .iphone__lines {
+  //     left: 40%;
+  //     top: 2px;
+  //   }
+  //   .iphone__tap {
+  //     top: 33.5%;
+  //     left: 31%;
+  //   }
+  //   .iphone__arrow {
+  //     left: 45%;
+  //     top: 28.2%;
+  //   }
+  //   .graphic-caption-content {
+  //     display: block;
+  //     top: 35%;
+  //     left: 75%;
+  //     text-align: left;
+  //     h4 {
+  //       font-size: 18px;
+  //       line-height: 20px;
+  //       text-align: left;
+  //     }
+  //     p {
+  //       font-size: 16px;
+  //       line-height: 20px;
+  //       width: 64%;
+  //     }
+  //   }
+  // }
 }
 

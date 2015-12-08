@@ -239,6 +239,8 @@
 .numbered-title-list {
   li {
     position: relative;
+    overflow: hidden;
+    display: block;
   }
   .numbered-title {
     text-align: center;

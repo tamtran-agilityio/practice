@@ -1,3 +1,120 @@
+.iphone__graphic-crosslink {
+  position: relative;
+  display: block;
+}
+.block__device-header {
+  position: relative;
+  display: block;
+  .iphone__device {
+    &:nth-child(1) {
+      position: absolute;
+      left: 0;
+      top: -10px;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      left: 66%;
+      top: 10px;
+    }
+  }
+}
+.iphone__graphic-crosslink {
+  .iphone__device {
+    margin-left: 0;
+    width: 47%;
+  }
+  .iphone__lines {
+    left: 47%;
+    top: 0;
+  }
+  .iphone__aux-content {
+    width: 47%;
+    left: 29%;
+  }
+}
+.iphone__graphic-deeplink {
+  display: block;
+  position: relative;
+  .iphone__device {
+    margin-left: 0;
+    width: 47%;
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 54%;
+    }
+  }
+  .iphone__lines {
+    left: 49%;
+    top: 0;
+  }
+  .iphone__tap {
+    top: 52.5%;
+    left: 30%;
+  }
+  .iphone__arrow {
+    top: 27.5%;
+    left: 56%;
+  }
+}
+.caption-box__block-overflow {
+  width: 180%;
+  .iphone__device {
+    margin-left: 0;
+    width: 31%;
+    margin-right: 20%;
+  }
+  .iphone__block {
+    width: 180%;
+  }
+  .iphone__block {
+    max-width: 1200px;
+  }
+}
+.caption-box__block-mistakes {
+  display: block;
+  position: relative;
+  .iphone__device-group {
+    margin-top: 0;
+  }
+  .iphone__device {
+    width: 47%;
+    margin-left: 0;
+    &:nth-child(2) {
+      position: absolute;
+      left: 53%;
+      top: 0;
+    }
+  }
+  .iphone__lines {
+    top: 0%;
+    left: 49%;
+  }
+  .iphone__tap {
+    top: 33%;
+    left: 36%;
+  }
+  .iphone__arrow {
+    top: 28%;
+    left: 57%;
+  }
+}
+.iphone__building-universal {
+  display: block;
+  position: relative;
+  .iphone__block {
+    max-width: 780px;
+  }
+  .iphone__device {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .ipad__portrait {
+    width: 71%;
+    left: 14%;
+  }
+}
 .iphone {
   @include e(device-group) {
     margin-top: -1.5em;
@@ -43,16 +160,6 @@
     width: 34.5%;
     margin: auto;
     position: relative;
-    &:nth-child(1) {
-      position: absolute;
-      left: 0;
-      top: -2.5%;
-    }
-    &:nth-child(3) {
-      position: absolute;
-      right: 0;
-      bottom: -2.5%;
-    }
     &:before {
       padding-bottom: 211.9%;
       content: "";
@@ -95,7 +202,7 @@
   @include e(lines) {
     position: absolute;
     height: 100%;
-    left: 50%;
+    left: 35%;
     top: -8px;
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
@@ -107,13 +214,14 @@
     left: 0;
     bottom: 0;
     right: 0;
+    width: 31%;
   }
   @include e(detail-crop) {
     position: absolute;
     left: 60%;
     bottom: 4%;
     border-radius: 50%;
-    width: 35%;
+    width: 75%;
     background: #191919;
     &:nth-child(2) {
       bottom: 58%;
@@ -164,53 +272,53 @@
   display: block;
 }
 
-.itinerary__block {
-  padding: 30px 0 0 0;
-  overflow: hidden;
-  .iphone__device {
-    top: 0;
-    bottom: 0;
-    &:nth-child(1) {
-      left: - 15%;
-    }
-    &:nth-child(3) {
-      right: - 15%;
-    }
-  }
-  .iphone__tap {
-    left: 0;
-    top: 55.5%;
-  }
-  .iphone__tap--itinerary {
-    top: 36%;
-    left: 48%;
-    position: absolute;
-    transform: translate3d(-50%, -50%, 0);
-    background-repeat: no-repeat;
-    z-index: 2;
-    width: 50px;
-    height: 50px;
-    background-size: 50px 50px;
-    background-image: url(../images/tap@2x.png);
-  }
-  .iphone__arrow {
-    top: 58%;
-    left: 83%;
-  }
-  .iphone__arrow--itinerary {
-    display: block;
-    position: absolute;
-    transform: translate3d(-50%, -50%, 0);
-    background-repeat: no-repeat;
-    z-index: 2;
-    width: 22px;
-    height: 12px;
-    background-size: 22px 12px;
-    background-image: url(../images/arrow@2x.png);
-    top: 27.7%;
-    left: 34%;
-  }
-  .iphone__lines {
-    top: 0;
-  }
-}
+// .itinerary__block {
+//   padding: 30px 0 0 0;
+//   overflow: hidden;
+//   .iphone__device {
+//     top: 0;
+//     bottom: 0;
+//     &:nth-child(1) {
+//       left: - 15%;
+//     }
+//     &:nth-child(3) {
+//       right: - 15%;
+//     }
+//   }
+//   .iphone__tap {
+//     left: 0;
+//     top: 55.5%;
+//   }
+//   .iphone__tap--itinerary {
+//     top: 36%;
+//     left: 48%;
+//     position: absolute;
+//     transform: translate3d(-50%, -50%, 0);
+//     background-repeat: no-repeat;
+//     z-index: 2;
+//     width: 50px;
+//     height: 50px;
+//     background-size: 50px 50px;
+//     background-image: url(../images/tap@2x.png);
+//   }
+//   .iphone__arrow {
+//     top: 58%;
+//     left: 83%;
+//   }
+//   .iphone__arrow--itinerary {
+//     display: block;
+//     position: absolute;
+//     transform: translate3d(-50%, -50%, 0);
+//     background-repeat: no-repeat;
+//     z-index: 2;
+//     width: 22px;
+//     height: 12px;
+//     background-size: 22px 12px;
+//     background-image: url(../images/arrow@2x.png);
+//     top: 27.7%;
+//     left: 34%;
+//   }
+//   .iphone__lines {
+//     top: 0;
+//   }
+// }
