@@ -1,22 +1,22 @@
 /* Case study icons */
 .case-study-icon {
-    margin: auto;
-    width: 75px;
-    height: 75px;
+  margin: auto;
+  width: 75px;
+  height: 75px;
 }
 .case-study-icon svg {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .case-study-icon [stroke] {
-    stroke: black;
+  stroke: black;
 }
 .case-study-icon [fill] {
-    fill: black;
+  fill: black;
 }
 .case-study-icon [fill=none] {
-    fill: none !important;
+  fill: block;
 }
 
 /* Fill and stroke */
@@ -43,7 +43,7 @@
 
 /* Fill */
 .case-study-icon-ready [fill] {
-    opacity: 0;
+    opacity: 1;
 }
 .case-study-icon-ready [fill]:nth-child(3n+0) {
     -webkit-transition: 500ms 0;

@@ -5,22 +5,22 @@
         h1
           span.city__better No Such Thing as Friends on
           span.city__travel Powder Days
-          span#snowbird-hero.graphic
-            span.graphic-highlight
-            span.device-group
-              span.device-group-content
-                span.browser.device
-                  span.device-shadow
-                  span.device-chrome
-                  span.device-content
-                    span.device-screen
+          span.snowbird-hero.block__device-header
+            span.device__graphic-highlight
+            span.device__block
+              span.device__group-content
+                span.browser__device
+                  span.device__shadow
+                  span.device__chrome
+                  span.device__content
+                    span.device__screen
                       img(src='../images/hero-browser%402x.jpg')
                     span.overlap-shadow
-                span.iphone.device
-                  span.device-shadow
-                  span.device-chrome
-                  span.device-content
-                    span.device-screen
+                span.iphone__device
+                  span.device__shadow
+                  span.device__chrome
+                  span.device__content
+                    span.device__screen
                       img(src='../images/hero-iphone%402x.jpg')
           span.city__arrive Re-Thinking the Nature of
           span.city__attribution a Ski Resort Website
@@ -359,11 +359,13 @@
       #slideshow-mobile-first.slideshow.narrow
         .graphic.slideshow-placeholder
           .graphic-highlight
-          .device-group
+          .device__group
             .device-group-content
-              .iphone.device
+              .iphone__device
                 .device-aux-content
-                  .device-screen
+                  .iphone__chrome
+                  .device__screen
+                    img(src='../images/mountain-report%402x.jpg')
       .graphic-caption-box
         h4 Aiming for Native
       p.guides__desc
@@ -406,20 +408,31 @@
       #slideshow-prototyping.slideshow.narrow
         .graphic.slideshow-placeholder
           .graphic-highlight
-          .device-group
+          .device__group
             .device-group-content
-              .iphone.device
+              .iphone__device
                 .device-aux-content
-                  .device-screen
+                  .iphone__chrome
+                  .device__screen
+                    img(src='../images/video-prototype-menu.jpg')
       .graphic-caption-box
         h4 The Mountains
       p.guides__desc
         | A mobile-first philosophy didn’t mean that we wanted to neglect the desktop site. As we worked on extrapolating the desktop/tablet site from our smartphone designs, we incorporated some elements, like the 3D page transitions, but we wanted the larger version of the site to have some unique charms of its own. We came up with the concept of an abstracted mountain range as part of the main navigation. By using peaks of differing heights, we could indicate the section the current page belongs to as well as providing a rollover effect. The developers got to work on a prototype, eventually using Simplex noise and some simple spring dynamics to bring the generative mountain range to life.
-      #graphic-mountains.graphic
+      #graphic-mountains.graphic.graphic-mountains
         .graphic-highlight
-        .device-group
-          .device-group-content
-            svg#Layer_1.lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 576 456', enable-background='new 0 0 576 456', xml:space='preserve')
+        span.block__device-header
+          span.device__graphic-highlight
+          span.device__block
+            span.device__group-content
+              span.browser__device
+                span.device__shadow
+                span.device__content
+                  span.device__screen
+                    img(src='../images/the-mountains%402x.jpg')
+            span.device-aux-content
+              img(src='../images/zoom-mountains@2x.jpg')
+            svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 576 456', enable-background='new 0 0 576 456', xml:space='preserve')
               path(vector-effect='non-scaling-stroke', fill='none', stroke='#5BC2EF', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M299,78.5\
               C299,38.4,237.9,6,162.5,6S26,41.5,26,96.8')
     section.device-specific-mobile.page-section
@@ -502,18 +515,18 @@
         h4 Client-Side Detection
       p.guides__desc
         | Unfortunately, not all mobile browsers are created equal. For instance, some CSS3 features, like 3D transforms, aren’t fully implemented on older versions of Android or Windows Phone. Rather than tossing out those effects altogether, we created a simpler versions that we could use as a fallback. At runtime, we could then use JavaScript to inspect the browser’s user agent string and determine whether to use the simple or full version.
-      #graphic-client-side-detection.graphic
+      #graphic-client-side-detection.graphic.side-detection
         .graphic-highlight
-        .device-group
-          .device-group-content
-            .browser.device
-              .device-shadow
-              .device-chrome
-              .device-content
-                .device-screen
-                  img(src='/images/client-side-detection%402x.jpg')
+          span.device__graphic-highlight
+          span.device__block
+            span.device__group-content
+              span.browser__device
+                span.device__shadow
+                span.device__content
+                  span.device__screen
+                    img(src='/images/client-side-detection%402x.jpg')
                   span.overlap-shadow
-            .ipad.device
+            .ipad__device
               .device-shadow
               .device-chrome
               .device-content
@@ -717,7 +730,7 @@
                 .device-chrome
                 .device-content
                   .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/snowbird/screens/dining%402x.jpg', width='500')
+                    img(src='../images/dining%402x.jpg')
       .graphic-caption-box
         h4 Image Sizing and Cropping
       p.guides__desc
@@ -732,14 +745,14 @@
                 .device-chrome
                 .device-content
                   .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/snowbird/screens/image-sizing-cropping%402x.jpg', width='500')
+                    img(src='../images/image-sizing-cropping%402x.jpg')
                     span.overlap-shadow
               .iphone.device
                 .device-shadow
                 .device-chrome
                 .device-content
                   .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/snowbird/screens/image-sizing-cropping-iphone%402x.jpg', width='150')
+                    img(src='../images/image-sizing-cropping-iphone%402x.jpg')
     section.building-for-performance.page-section
       .guides__block-number
         span 08
