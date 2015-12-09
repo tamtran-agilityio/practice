@@ -21,24 +21,24 @@
 
 /* Fill and stroke */
 .case-study-icon .fill {
-    fill: #2f363b;
+  fill: #2f363b;
 }
 .case-study-icon .stroke {
-    fill: none;
-    stroke: #2f363b;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #2f363b;
+  stroke-miterlimit: 10;
 }
 .case-study-icon .stroke-2 {
-    stroke-width: 2;
+  stroke-width: 2;
 }
 .case-study-icon .stroke-3 {
-    stroke-width: 3;
+  stroke-width: 3;
 }
 .case-study-icon .stroke-roundcap {
-    stroke-linecap: round;
+  stroke-linecap: round;
 }
 .case-study-icon .stroke-roundjoin {
-    stroke-linejoin: round;
+  stroke-linejoin: round;
 }
 
 #snowbird .case-study-icon [stroke] {
@@ -50,41 +50,42 @@
 
 /* Fill */
 .case-study-icon-ready [fill] {
-    opacity: 1;
+  opacity: 0;
 }
 .case-study-icon-ready [fill]:nth-child(3n+0) {
-    -webkit-transition: 500ms 0;
-    transition: 500ms 0;
+  -webkit-transition: 500ms 0;
+  transition: 500ms 0;
 }
 .case-study-icon-ready [fill]:nth-child(3n+1) {
-    -webkit-transition: 500ms 150ms;
-    transition: 500ms 150ms;
+  -webkit-transition: 500ms 150ms;
+  transition: 500ms 150ms;
 }
 .case-study-icon-ready [fill]:nth-child(3n+2) {
-    -webkit-transition: 500ms 300ms;
-    transition: 500ms 300ms;
+  -webkit-transition: 500ms 300ms;
+  transition: 500ms 300ms;
 }
 .case-study-icon-ready [fill=none] {
-    opacity: 1;
-    -webkit-transition: none;
-    transition: none;
+  opacity: 1;
+  -webkit-transition: none;
+  transition: none;
 }
 
 /* Stroke */
 .case-study-icon-ready [stroke] {
-    stroke-dasharray: 0 400;
-    -webkit-transition: 1.5s linear !important;
-    transition: 1.5s linear !important;
+  stroke-dasharray: 0 400;
+  -webkit-transition: 1.5s linear !important;
+  transition: 1.5s linear !important;
 }
 .case-study-icon-ready [stroke-dasharray] {
-    stroke-dasharray: 3.5 !important;
-    opacity: 0;
+  /* Just the map "route"? */
+  stroke-dasharray: 3.5 !important;
+  opacity: 0;
 }
 
 /* Animate */
 .case-study-icon-anim [stroke] {
-    stroke-dasharray: 400 0;
+  stroke-dasharray: 400 0;
 }
 .case-study-icon-anim [fill] {
-    opacity: 1;
+  opacity: 1;
 }

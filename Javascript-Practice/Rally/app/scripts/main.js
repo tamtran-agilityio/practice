@@ -6,21 +6,10 @@
     infinite: true,
     speed: 300,
     arrows: true,
-    // fade: true,
     slidesToShow: 1,
     slidesToScroll: 1
-    // autoplay: true
   });
-  // $('.slider-device').slick({
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 300,
-  //   arrows: true,
-  //   // fade: true,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1
-  //   // autoplay: true
-  // });
+
   showMenu();
   // handle menu show
   function showMenu() {
@@ -34,14 +23,50 @@
       } else {
         $(this).parents('.nav-link-menu').removeClass('active');
         $(this).parents('.site-nav').removeClass('nav-menu-open');
-        // $buttonNav.on('click', function() {
-        // });
       }
 
       visible = !visible;
       return false
     });
   }
+
+  accordion('.button-background','.code-backgrounds' ,'.code-sample-backgrounds');
+  accordion('.button-img','.code-img' ,'.code-image');
+  accordion('.button-canvas','.code-canvas' ,'.code-exa-canvas');
+  // function to calculator element
+  function currentHeight(element) {
+    var $heightItem = $(element);
+    return $heightItem.height();
+  }
+
+  // function set active element block show
+  function accordion(trigger, tag , heightCurrent) {
+    //variables
+    var heightElement = currentHeight(heightCurrent);
+    var $button = $(trigger), //trigger firing the event
+      visible = true; //flag for wayfinding
+
+    $button.hover().css({
+      'cursor': 'pointer'
+    });
+
+    //event
+    $button.click(function() {
+      //conditional check
+      if (!visible) {
+        $button.removeClass('active');
+        $(tag).css('height','66px');
+      } else {
+        $button.addClass('active');
+        $(tag).css('height',heightElement);
+      }
+
+      //flag dude
+      visible = !visible;
+      return false
+    });
+  }
+
   // nav-link-menu
   /* Helper function */
   // function get data to data.json

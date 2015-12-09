@@ -631,25 +631,146 @@
           p.guides__desc
             | To handle CSS backgrounds, it was a simple case of using a media selector to override a background image in the case of a retina screen (for our purposes, a pixel-density of 1.5 or higher).
           .code-collection
-            .code-sample
-              pre.
-            .code-expand-button
+            .code-sample.code-backgrounds
+              pre
+                code.code-sample-backgrounds
+                  span.syntax-2 .mobile-cta
+                  span.syntax-3 {
+                  | background: white url(
+                  span.syntax-2 '../img/mobile-cta-arrow.png'
+                  | ) no-repeat center center;
+                  | -webkit-background-size:
+                  span.syntax-4 21px 19px
+                  | ;
+                  | -moz-background-size:
+                  span.syntax-2 21px 19px
+                  | ;
+                  | background-size:
+                  span.syntax-2 21px 19px
+                  | ;
+                  span.syntax-3 }
+                  span.syntax-2
+                    strong @media screen
+                  |  and (-webkit-device-pixel-ratio: 2.0),
+                  | screen and (-moz-device-pixel-ratio: 2.0),
+                  | screen and (device-pixel-ratio: 2.0)
+                  span.syntax-3 {
+                  span.syntax-2 .mobile-cta
+                  span.syntax-3 {
+                  | background-image: url(
+                  span.syntax-4 '../img/mobile-cta-arrow@2x.png'
+                  | );
+                  span.syntax-3 }
+                  span.syntax-3 }
+            .button-background
         li
           h3.numbered-title--cross IMG Tags
           p.guides__desc
             | To handle actual IMG tags, we went the route of including both non-retina and retina versions in the HTML markup, specifying the dimensions to ensure they render at the right size, and including appropriate classes. We then used CSS, with media selectors, to show and hide the appropriate images.
           .code-collection
-            .code-sample
-              pre.
-            .code-expand-button
+            .code-sample.code-img
+              pre
+                code.code-image
+                  | &lt;img id=
+                  span.syntax-2 'hero'
+                  | class=
+                  span.syntax-2 'nonretina'
+                  | width=
+                  span.syntax-2 '920'
+                  | height=
+                  span.syntax-2 '350'
+                  | src=
+                  span.syntax-2 '/static/​media/​hero_shots/​summer_tram_A_1840x700_​normal.jpg'
+                  | /&gt;
+                  | &lt;img id=
+                  span.syntax-2 'hero'
+                  | class=
+                  span.syntax-2 'retina'
+                  | width=
+                  span.syntax-2 '920'
+                  | height=
+                  span.syntax-2 '350'
+                  | src=
+                  span.syntax-2 '/static/​media/​hero_shots/​summer_pool_A_1840x700_​normal_retina.jpg'
+                  | /&gt;
+                  span.syntax-2 img.retina
+                  span.syntax-3 {
+                  | display: none;
+                  span.syntax-3 }
+                  span.syntax-2 img.nonretina
+                  span.syntax-3 {
+                  | display: block;
+                  span.syntax-3 }
+                  span.syntax-2
+                    strong @media screen
+                  |  and (-webkit-device-pixel-ratio: 2.0),
+                  | screen and (-moz-device-pixel-ratio: 2.0),
+                  | screen and (device-pixel-ratio: 2.0)
+                  span.syntax-3 {
+                  span.syntax-2 img.retina
+                  span.syntax-3 {
+                  | display: block;
+                  span.syntax-3 }
+                  span.syntax-2 img.nonretina
+                  span.syntax-3 {
+                  | display: none;
+                  span.syntax-3 }
+                  span.syntax-3 }
+            .button-img
         li
           h3.numbered-title--cross Canvas Elements
           p.guides__desc
             | For our canvas elements, the situation got the most convoluted. We started by setting the dimensions on the canvas element in both the markup and in CSS. Then, in JavaScript, we detected the pixel-density ratio of the device. If the ratio is greater than 1, we had to increase the element size (much like our IMG tags), and then take that ratio into consideration for all our drawing.
           .code-collection
-            .code-sample
-              pre.
-            .code-expand-button
+            .code-sample.code-canvas
+              pre
+                code.code-exa-canvas
+                  | &lt;img id=
+                  span.syntax-2 'hero'
+                  | class=
+                  span.syntax-2 'nonretina'
+                  | width=
+                  span.syntax-2 '920'
+                  | height=
+                  span.syntax-2 '350'
+                  | src=
+                  span.syntax-2 '/static/​media/​hero_shots/​summer_tram_A_1840x700_​normal.jpg'
+                  | /&gt;
+                  | &lt;img id=
+                  span.syntax-2 'hero'
+                  | class=
+                  span.syntax-2 'retina'
+                  | width=
+                  span.syntax-2 '920'
+                  | height=
+                  span.syntax-2 '350'
+                  | src=
+                  span.syntax-2 '/static/​media/​hero_shots/​summer_pool_A_1840x700_​normal_retina.jpg'
+                  | /&gt;
+                  span.syntax-2 img.retina
+                  span.syntax-3 {
+                  | display: none;
+                  span.syntax-3 }
+                  span.syntax-2 img.nonretina
+                  span.syntax-3 {
+                  | display: block;
+                  span.syntax-3 }
+                  span.syntax-2
+                    strong @media screen
+                  | and (-webkit-device-pixel-ratio: 2.0),
+                  | screen and (-moz-device-pixel-ratio: 2.0),
+                  | screen and (device-pixel-ratio: 2.0)
+                  span.syntax-3 {
+                  span.syntax-2 img.retina
+                  span.syntax-3 {
+                  | display: block;
+                  span.syntax-3 }
+                  span.syntax-2 img.nonretina
+                  span.syntax-3 {
+                  | display: none;
+                  span.syntax-3 }
+                  span.syntax-3 }
+            .button-canvas
     section.the-right-tools.page-section
       .guides__block-number
         span 07

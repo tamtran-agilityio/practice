@@ -3,4 +3,10 @@
     background: #0074a4;
     color: #caf2fd;
   }
+  .numbered-title--cross {
+    &:before {
+      color:  #0074a4;
+      background-color: #004f70;
+    }
+  }
 }
