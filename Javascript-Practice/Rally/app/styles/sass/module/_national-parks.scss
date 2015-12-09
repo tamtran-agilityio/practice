@@ -1,0 +1,147 @@
+#national-parks {
+  .page-section {
+    background: #442c24;
+    color: #ffc3af;
+  }
+  .device__graphic-highlight {
+    background-image: url(../images/highlight-national-parks.png);
+  }
+  .guides__title {
+    p {
+      color: #ffc3af;
+    }
+  }
+  .guides__desc {
+    a {
+      color: #ffc3af;
+    }
+  }
+}
+.ipad__device {
+  .device__shadow {
+    background-image: url(../images/ipad-shadow@2x.png);
+    left: -7.5%;
+    right: -7.5%;
+    bottom: -7.5%;
+  }
+  .device__chrome {
+    background-image: url(../images/ipad@2x.png);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+.best__title {
+  @extend %heading-title;
+}
+.meeting__natgeo {
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 14px;
+  .meeting__title {
+    margin: 0 auto 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 1em;
+      height: 1.55em;
+      border: 0.16em solid #ffd800;
+      margin: 0 auto 0.6em;
+    }
+  }
+  .first-word {
+    display: block;
+    color: #a8705d;
+    text-shadow: 0 0 0 #a8705d;
+    font-family: "Futura Light";
+    font-weight: 200;
+    font-size: 0.65em;
+    letter-spacing: 0.5em;
+    line-height: 2em;
+  }
+  .image-wrapper {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      padding-bottom: 62.7%;
+    }
+    img {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      opacity: 1;
+      transition: opacity 0.2s linear;
+    }
+  }
+}
+.attribution {
+  font-family: "proxima-nova";
+  font-size: 0.8em;
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+}
+.caption__employee {
+  position: relative;
+  margin: 60px 0;
+  font-size: 13px;
+  color: $white;
+  text-align: center;
+  img {
+    display: block;
+    margin: 2em auto;
+    border-radius: 50%;
+    min-width: 140px;
+    max-width: 200px;
+    width: 40%;
+  }
+  .job-title {
+    font-family: "Futura Book";
+    font-weight: 300;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: #e45b5b;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+  }
+}
+.national-parks-hero {
+  display: block;
+  position: relative;
+  .device__group {
+    display: block;
+    margin: -10px auto 0;
+    max-width: 940px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .device__group-content {
+    position: relative;
+  }
+  .ipad__device {
+    width: 79.5%;
+    position: relative;
+    display: block;
+    &:before {
+      padding-bottom: 76.9%;
+      content: "";
+      display: block;
+    }
+  }
+  .iphone__device {
+    width: 21%;
+    position: absolute;
+    right: 0;
+    bottom: 2%;
+  }
+}

@@ -1,6 +1,9 @@
 (function ($) {
 
+  // render data of part person
   renderItem('../templates/modules/person.html', '#person');
+
+  // use slick plugin slider
   $('.slider-item').slick({
     dots: true,
     infinite: true,
@@ -10,7 +13,16 @@
     slidesToScroll: 1
   });
 
+  // show menu
   showMenu();
+
+  // excute handle show tag
+  accordion('.button-background','.code-backgrounds' ,'.code-sample-backgrounds');
+  accordion('.button-img','.code-img' ,'.code-image');
+  accordion('.button-canvas','.code-canvas' ,'.code-exa-canvas');
+
+  /* Helper function */
+
   // handle menu show
   function showMenu() {
     // body...
@@ -30,9 +42,6 @@
     });
   }
 
-  accordion('.button-background','.code-backgrounds' ,'.code-sample-backgrounds');
-  accordion('.button-img','.code-img' ,'.code-image');
-  accordion('.button-canvas','.code-canvas' ,'.code-exa-canvas');
   // function to calculator element
   function currentHeight(element) {
     var $heightItem = $(element);
@@ -67,8 +76,6 @@
     });
   }
 
-  // nav-link-menu
-  /* Helper function */
   // function get data to data.json
   function getData(source, element) {
 

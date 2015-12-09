@@ -25,16 +25,8 @@
     display: block;
   }
   @include e(travel) {
-    word-spacing: 99em;
-    font-size: 60px;
-    color: $white;
-    position: relative;
-    display: block;
-    letter-spacing: -0.07em;
-    padding-right: 0.07em;
-    line-height: 0.82em;
-    padding-top: 0.25em;
-    font-weight: 700;
+    @extend %heading-title;
+    white-space: 99em;
   }
   @include e(arrive) {
     display: block;
