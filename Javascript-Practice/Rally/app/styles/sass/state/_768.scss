@@ -263,6 +263,14 @@
   .numbered-title-list .numbered-title--deep:before {
     line-height: 24px;
   }
+
+  .icon-comparison {
+    width: 360px;
+    .icon-1,.icon-2 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
 }
 
 @media (min-width: 768px) and (min-height: 660px) {
