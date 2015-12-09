@@ -41,6 +41,13 @@
     stroke-linejoin: round;
 }
 
+#snowbird .case-study-icon [stroke] {
+  stroke: #64c4ec;
+}
+#snowbird .case-study-icon [fill] {
+  fill: #64c4ec;
+}
+
 /* Fill */
 .case-study-icon-ready [fill] {
     opacity: 1;

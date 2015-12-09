@@ -718,7 +718,6 @@
             .device__group-content
               .browser__device
                 .device__shadow
-                .device__chrome
                 .device__content
                   .device__screen
                     img(src='../images/dining%402x.jpg')
@@ -727,22 +726,21 @@
       p.guides__desc
         | The sizing and cropping of images seems to always be a requirement for any CMS, but we’ve yet to be enamored with any existing solutions. They always seem to come up short, either in flexibility or usability. For this site, any image uploaded into the CMS would need to be saved at a variety of sizes, to account for differing dimensions between the desktop and smartphone versions, thumbnails to appear in search results, and retina versions for all of the above. We crafted a Django widget that allowed us to define varied dimension requirements in our data models. When an image is uploaded, it’s automatically sized, cropped, and saved out for all the various sizes. It’s still not our ideal solution; we’d love to have the chance to build a JavaScript widget to assist the process and select the exact crop, but we simply didn’t have time, so it remains on our wishlist.
       figure
-        #graphic-image-sizing-cropping.graphic
+        #graphic-image-sizing-cropping.graphic-cropping
           .device__graphic-highlight
-          .device-group
+          .device__group
             .device-group-content
-              .browser.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .browser__device
+                .device__shadow
+                .device__content
+                  .device__screen
                     img(src='../images/image-sizing-cropping%402x.jpg')
                     span.overlap-shadow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
                     img(src='../images/image-sizing-cropping-iphone%402x.jpg')
     section.building-for-performance.page-section
       .guides__block-number
@@ -845,14 +843,16 @@
         h4 CSS Transitions
       p.guides__desc
         | Whenever possible, we knew we’d want to use CSS transitions rather than JavaScript-driven animation, since most modern devices will offload CSS transitions to the GPU. Naturally, canvas animations, such as the Lifts & Trails circle graphs, had to be driven with Javascript, but we’re using CSS transitions wherever we’re animating position or transformation, like the animated transitions between pages.
-      #slideshow-css-transitions.slideshow
+      #slideshow-css-transitions.slideshow-transitions
         .graphic.slideshow-placeholder
           .device__graphic-highlight
-          .device-group
+          .device__group
             .device-group-content
-              .browser.device
+              .browser__device
+                .device__chrome
+                .device__screen
                 .device-aux-content
-                  .device-screen
+                  img(src="../images/video-css-page-transition.jpg")
     section.rallys-home-slopes.page-section
       .guides__block-number
         span 09
