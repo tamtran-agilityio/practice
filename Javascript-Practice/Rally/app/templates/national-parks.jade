@@ -277,57 +277,46 @@
         |  program from the non-profit
         a(href='http://www.easternnational.org/') Eastern National
         | , where visitors to the parks could get a cancellation stamp commemorating their visit, much like in a national passport. For some, this has become an obsession, collecting stamps in their passports in a quest to visit them all.
-      #circles-rectangles
-        #caption-circle.caption
-          b
-            | We tried
-            br
-            | circles…
+      .circles-rectangles
+        .caption-circle.caption
+          span We tried
+          span.circles circles…
         .image-wrapper
           img(src='../images/national-parks-circle-stamp-concepts.png')
-        #caption-rectangle.caption
-          b
-            | We tried
-            br
-            | rectangles…
+        .caption-rectangle.caption
+          span We tried
+          span.circles rectangles…
         .image-wrapper
           img(src='../images/national-parks-rectangle-stamp-concepts.png')
-        #caption-rectangle-circle.caption
-          b
-            | We tried
-            br
-            | rectangles
-            br
-            | with circles…
+        .caption-rectangle-circle.caption
+          span We tried
+          span rectangles
+          span with circles…
       p.guides__desc
         | We were stoked to take a crack at updating this concept for the digital age. Rather than having a simple stamp with differing text for each park, we wanted to really brand each one. We were inspired by the ambition of Nicole Meyer’s
         a(href='http://www.branding10000lakes.com/') Branding 10,000 Lakes
         |  project, and we wanted to give each park a unique stamp that could be representative of its most memorable features.
-      #rounded-hexagon
-        .caption
-          b
-            | And we ended up with
-            br
-            | the rounded hexagon.
+      .rounded-hexagon
+        .caption-hexagon
+          span And we ended up with
+          span the rounded hexagon.
         .image-wrapper
           img(src='../images/national-parks-hex-stamp-concept.png')
       p.guides__desc
         | One problem – none of us at Rally were illustrators. Recognizing our weakness, we reached out to our very talented friend
         a(href='http://valeriejar.com/') Valerie Jar
         | . Val worked closely with us, experimenting with different looks for the stamps. We tried traditional circular stamps and we tried rectangular stamps, but we were looking for something unique. When we tried a hexagon, we knew we had cracked it. We really feel Val knocked it out of the park.
-      #hex-sketches
-        .caption
-          b
-            | Then Val started
-            br
-            | sketching… a lot…
-        #hex-sketches-1.image-wrapper
+      .hex-sketches
+        .caption-sketches
+          span Then Val started
+          span sketching… a lot…
+        .hex-sketches-1.image-wrapper
           img(src='../images/hex-sketches-1.png')
-        #hex-sketches-2.image-wrapper
+        .hex-sketches-2.image-wrapper
           img(src='../images/hex-sketches-2.png')
-      #hex-slideshow.simple-slideshow
-        .caption
-          b And here's a sample of the finished product.
+      .hex-slideshow.simple-slideshow
+        .caption-hex
+          span And here's a sample of the finished product.
         .stamp-images-wrapper
           .stamp-images
             .stamp-images-overflow
@@ -665,36 +654,32 @@
         | Ah, the new retina display. We loved the beautiful, crisp graphics, but there was a tradeoff: time and effort. We built our comps at one size or another – retina for iPhone and non-retina for iPad – and we cut UI assets out at that size during development. We used some simple Python scripts (using
         a(href='http://www.pythonware.com/products/pil/') PIL
         | ) to create either retina or non-retina images to act as placeholders, but those resized graphics weren’t good enough for the final product. Towards the end of the project, as the developers were putting in the final touches, a designer went through the app, recreating assets at the proper sizes to ensure pixel-perfection on either screen type.
-      #parks-icon-comparison.icon-comparison
+      .parks-icon-comparison.icon-comparison
         .icon-1
           .image-wrapper
             img(src='../images/national-parks-retina.png')
           .caption
-            b
-              | Retina Size
-              br
-            |             ( 248 × 290 )
+            span Retina Size
+            span ( 248 × 290 )
         .icon-2
           .image-wrapper
             img(src='../images/national-parks-non-retina.png')
           .caption
-            b
-              | Actual Size
-              br
-            |             ( 124 × 145 )
+            sapn Actual Size
+            span ( 124 × 145 )
       .graphic-caption-box
         h4 The Tray
       p.guides__desc
         | For the iPad version of the app, we thought we’d make use of the extra screen real estate to make it easier for users to jump between content within a list. Rather than forcing users to back out to a list view to see other items, we designed a tray that could be opened from the bottom of the screen to present the other list items. In practice, given that these trays could hold three items or thirty, we knew we needed a system of dequeueing cells, much like UITableView. We crafted a RIHorizontalTableView class, which works like a UITableView but allows cells to scroll horizontally instead of vertically.
-      #graphic-tray.graphic
+      .graphic-tray.graphic
         .graphic-highlight
-        .device-group
-          .device-group-content
-            .ipad.device
-              .device-shadow
-              .device-chrome
-              .device-content
-                .device-screen
+        .device__group
+          .device__group-content
+            .ipad__device
+              .device__shadow
+              .device__chrome
+              .device__content
+                .device__screen
                   img(src='../images/tray%402x.jpg')
     section.oops.page-section
       .guides__block-number
@@ -706,15 +691,15 @@
         h4 The Trials and Tribulations of MapKit
       p.guides__desc
         | The chief benefit of using a mature code library like Apple’s MapKit is being able to count on it being well-crafted and relatively bug-free. The downside, of course, is being at the mercy of the library’s authors when it comes to skinning and customization. We quickly discovered that MapKit was not really designed with customization in mind. Skinning pins isn’t bad, but there’s not much you can do to substantively alter the map callouts; to get around this, we had to exploit a nasty hack by creating callouts that are, for all intents and purposes, actually map pins. This approach enabled us to get the look we wanted, but required ugly workarounds to circumvent some normal pin behaviors.
-      #graphic-trials-tribulations-mapkit.graphic
-        .graphic-highlight
-        .device-group
+      .graphic-trials-tribulations-mapkit.graphic
+        .graphic__highlight
+        .device__group
           .device-group-content
-            .ipad.device
-              .device-shadow
-              .device-chrome
-              .device-content
-                .device-screen
+            .ipad__device
+              .device__shadow
+              .device__chrome
+              .device__content
+                .device__screen
                   img(src='../images/trials-tribulations%402x.jpg')
             .graphic-caption
               .graphic-caption-content
@@ -726,14 +711,17 @@
           document.write(document.querySelector("#graphic-trials-tribulations-mapkit .graphic-caption").innerHTML);
       p.guides__desc
         | The other downside to using MapKit came when Apple announced that they were replacing the Google-sourced map tiles with their own. We were using an undocumented but widely known MapKit property that allowed us to use Google’s terrain tiles, which looked great with the style of the app and helped connote an outdoor focus without the visual clutter of satellite imagery. When users upgraded to iOS 6, however, this terrain option vanished, leaving them with a map style that just didn’t work as nicely with our app design.
-      #slideshow-trials-tribulations.slideshow
+      .slideshow-trials-tribulations.slideshow
         .graphic.slideshow-placeholder
-          .graphic-highlight
-          .device-group
-            .device-group-content
-              .ipad.device
-                .device-aux-content
-                  .device-screen
+          span.graphic__highlight
+          span.device__group
+            span.device__group-content
+              span.ipad__device
+                span.device__shadow
+                span.device__chrome
+                span.device__content
+                  span.device__screen
+                    img(src="../images/trials-tribulations-google%402x.jpg")
       .case-study-icon.case-study-icon-ready
         svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
           g
@@ -783,15 +771,15 @@
         | The Yahoo Weather API broke.
       p.guides__desc
         | This shouldn’t have been such a big deal, but we screwed up. Instead of failing silently, tons of our new users were seeing an iOS alert giving them a cryptic error message. In the end, Yahoo fixed the rogue data center that was causing issues, we removed the offending alert, and we eventually replaced Yahoo with Weather Underground.
-      #graphic-protect-your-app.graphic
+      .graphic-protect-your-app.graphic
         .graphic-highlight
-        .device-group
+        .device__group
           .device-group-content
-            .iphone.device
-              .device-shadow
-              .device-chrome
-              .device-content
-                .device-screen
+            .iphone__device
+              .device__shadow
+              .device__chrome
+              .device__content
+                .device__screen
                   img(src='../images/protect-your-app%402x.jpg')
             .graphic-caption
               .graphic-caption-content
@@ -810,9 +798,8 @@
       p.guides__quote
         em
           | Some of the brightest minds I’ve had the pleasure of working with have been at Rally Interactive. Their ability to express product vision and strategy is surpassed only by their ability to deliver. Rally Interactive has become a trusted partner of National Geographic, successfully collaborating on two major, multi­-award­-winning apps (and counting), and a few forward­-looking interactive storytelling pieces. Each time, Rally has approached each initiative with excitement, ingenuity, composure, and professionalism and continues to deliver world class products and consumer experiences. A brilliant group of thinkers, designers, developers, producers and technologists passionate about their work and creating high quality products.
-      .caption
-        | —
-        b Jess Elder
+      p.guides__caption
+        span Jess Elder
         | , Senior Product Manager, National Geographic Society
       .case-study-icon.case-study-icon-ready
         svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
