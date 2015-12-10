@@ -1,4 +1,4 @@
-.page-content {
+.page-content-city {
   position: relative;
   background: #3e384f;
   color: #d9cdf6;
@@ -26,7 +26,7 @@
   }
   @include e(travel) {
     @extend %heading-title;
-    white-space: 99em;
+    word-spacing: 99em;
   }
   @include e(arrive) {
     display: block;
@@ -42,7 +42,6 @@
     position: relative;
   }
   @include e(block) {
-    padding-top: 30px;
     max-width: none;
     h1 {
       text-align: center;

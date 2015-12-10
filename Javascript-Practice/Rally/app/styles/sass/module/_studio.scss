@@ -1,3 +1,23 @@
+#site-body {
+  .page-content-studio {
+    position: relative;
+    background-color: $white;
+    color: #2f363b;
+    display: block;
+    overflow: hidden;
+  }
+  .intro__desc {
+    color: #2f363b;
+  }
+  p, span {
+    color: #2f363b;
+  }
+  .stagger__item--desc-make {
+    p {
+      color: #2f363b;
+    }
+  }
+}
 .studio {
   position: relative;
   padding: 22% 0;

@@ -59,16 +59,18 @@
 }
 .caption-box__block-overflow {
   width: 180%;
+  margin-bottom: 80px;
   .iphone__device {
-    margin-left: 0;
-    width: 31%;
-    margin-right: 20%;
+    // margin-left: 0;
+    // width: 31%;
+    // margin-right: 20%;
   }
   .iphone__block {
     width: 180%;
   }
   .iphone__block {
     max-width: 1200px;
+    overflow: hidden;
   }
 }
 .caption-box__block-mistakes {
@@ -266,6 +268,7 @@
 }
 
 .caption-box__block,
+.caption-box__around,
 .caption-box__block-overflow,
 .caption-box__block-mistakes{
   position: relative;
