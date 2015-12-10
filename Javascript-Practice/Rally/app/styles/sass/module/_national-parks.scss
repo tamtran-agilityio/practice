@@ -472,6 +472,26 @@
     }
   }
 }
+
+.graphic-tray {
+  .device__group {
+    display: block;
+    max-width: 670px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .ipad__device {
+    width: 100%;
+    position: relative;
+    display: block;
+    &:before {
+      padding-bottom: 76.9%;
+      content: "";
+      display: block;
+    }
+  }
+}
 .parks-icon-comparison {
   width: 271px;
   margin: 30px auto;

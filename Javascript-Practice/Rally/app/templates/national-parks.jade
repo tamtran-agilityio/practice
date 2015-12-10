@@ -454,11 +454,11 @@
         h4 Evolving Conventions
       p.guides__desc
         | We didn’t want to reinvent the wheel more than necessary, so we started with familiar UI conventions. We used the convention of the standard UINavigationController, but since we wanted the power to fully customize our titlebars, we created our own NGSNavigationController and NGSTitlebar classes to give ourselves all the flexibility we wanted.
-      #graphic-evolving-conventions-1.graphic.device-slideshow.device-slideshow-enabled
-        .graphic-highlight
-        .graphic-overflow
-          .device-group
-            .device-group-content
+      .graphic-evolving-conventions-1.graphic.device-slideshow.device-slideshow-enabled
+        .graphic__highlight
+        .graphic__overflow
+          .device__group
+            .device__group-content
               svg#Layer_1.lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1328 1144', enable-background='new 0 0 1328 1144', xml:space='preserve')
                 polyline(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', points='17.6,432.3 \
                 276.3,432.3 276.3,221 414.3,221 ')
@@ -468,28 +468,28 @@
               #conventions-arrow-1.arrow
               #conventions-tap-2.tap
               #conventions-arrow-2.arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
                     img(src='../images/evolving-1%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/national-parks/screens/evolving-2%402x.jpg')
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
+                    img(src='../images/evolving-2%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/national-parks/screens/evolving-3%402x.jpg')
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
+                    img(src='../images/evolving-3%402x.jpg')
                 .device-aux-content
         .pagination-bar(style='display: block;')
           .pagination-bar-outer
@@ -498,10 +498,10 @@
                 .pagination-bar-handle
       p.guides__desc
         | We also utilized the emerging convention, popularized by apps like Facebook and Path, of the hidden tray on the left side, which we used as a hub for the user’s data.
-      #graphic-evolving-conventions-2.graphic.device-slideshow.device-slideshow-enabled
-        .graphic-highlight
+      .graphic-evolving-conventions-2.graphic.device-slideshow.device-slideshow-enabled
+        .graphic__highlight
         .graphic-overflow
-          .device-group(style='transform: translate3d(0.359066%, 0px, 0px);')
+          .device__group(style='transform: translate3d(0.359066%, 0px, 0px);')
             .device-group-content
               svg#Layer_1.lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1936 1170', enable-background='new 0 0 1936 1170', xml:space='preserve')
                 polyline(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', points='23.1,226.1 \
@@ -510,28 +510,28 @@
               .tap
               #user-hub-arrow-1.arrow
               #user-hub-arrow-2.arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
-                    img(src='../images/screens/evolving-4%402x.jpg')
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
+                    img(src='../images/evolving-4%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/national-parks/screens/evolving-5%402x.jpg')
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
+                    img(src='../images/evolving-5%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
-                    img(src='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=', data-src='http://com.rallyinteractive.cdn.s3.amazonaws.com/img/case-studies/national-parks/screens/evolving-6%402x.jpg')
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
+                    img(src='../images/evolving-6%402x.jpg')
                 .device-aux-content
         .pagination-bar(style='display: block;')
           .pagination-bar-outer
@@ -569,15 +569,15 @@
         | As they say, necessity is the mother of invention. We had a problem – we had a variety of interactions that seemed suited to be
         a(href='http://en.wikipedia.org/wiki/Modal_window') modals
         | , but the amount of content going into them varied considerably. We landed on the push-back, where the modal can be as large or small as required. An added bonus of the push-back was the ability to leave the top portion of the parent screen visible, so there is always context of where the user came from.
-      #graphic-push-back-modals.graphic
-        .graphic-highlight
-        .device-group
-          .device-group-content
-            .iphone.device
-              .device-shadow
-              .device-chrome
-              .device-content
-                .device-screen
+      .graphic-push-back-modals.graphic
+        .graphic__highlight
+        .device__group
+          .device__group-content
+            .iphone__device
+              .device__shadow
+              .device__chrome
+              .device__content
+                .device__screen
                   .video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/national-parks/pushback-modal.mov')
                     .video-player-overlay
                       a(href='#') play
@@ -604,11 +604,11 @@
         h4 Photo Gallery Centering
       p.guides__desc
         | If there’s one thing that National Geographic is known for, it’s their stunning photography. In our photo viewer, we always wanted to be sure users could see as much of a photo as possible, unimpaired by captions or titles. To achieve this, we built our photo viewer to dynamically center the photo in whatever open space remained between the title and caption areas. Since the captions are different lengths, this center point might be different from photo to photo. To prevent these differing displacements from being jarring, we chose to smoothly animate the line of photos up and down as the user navigates the gallery.
-      #graphic-photo-gallery-centering.graphic.device-slideshow.device-slideshow-enabled
-        .graphic-highlight
+      .graphic-photo-gallery-centering.graphic.device-slideshow.device-slideshow-enabled
+        .graphic__highlight
         .graphic-overflow
-          .device-group
-            .device-group-content
+          .device__group
+            .device__group-content
               svg#Layer_1.lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1120 1170', enable-background='new 0 0 1120 1170', xml:space='preserve')
                 path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M75.5,721.7h50.4\
                 c17.8,0,32.2,14.4,32.2,32.2l0,48.8c0,17.8,14.4,32.2,32.2,32.2H250')
@@ -618,27 +618,27 @@
                 c-17.8,0-32.2,14.4-32.2,32.2l0,60.8c0,17.8-14.4,32.2-32.2,32.2h-59.6')
                 path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M1040,352.9h-50.4\
                 c-17.8,0-32.2-14.4-32.2-32.2l0-86.8c0-17.8-14.4-32.2-32.2-32.2h-59.6')
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
                     img(src='../images/photo-gallery-1%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
                     img(src='../images/photo-gallery-2%402x.jpg')
                 .device-aux-content
                   // arrow
-              .iphone.device
-                .device-shadow
-                .device-chrome
-                .device-content
-                  .device-screen
+              .iphone__device
+                .device__shadow
+                .device__chrome
+                .device__content
+                  .device__screen
                     img(src='../images/photo-gallery-3%402x.jpg')
                 .device-aux-content
         .pagination-bar
@@ -672,7 +672,7 @@
       p.guides__desc
         | For the iPad version of the app, we thought we’d make use of the extra screen real estate to make it easier for users to jump between content within a list. Rather than forcing users to back out to a list view to see other items, we designed a tray that could be opened from the bottom of the screen to present the other list items. In practice, given that these trays could hold three items or thirty, we knew we needed a system of dequeueing cells, much like UITableView. We crafted a RIHorizontalTableView class, which works like a UITableView but allows cells to scroll horizontally instead of vertically.
       .graphic-tray.graphic
-        .graphic-highlight
+        .graphic__highlight
         .device__group
           .device__group-content
             .ipad__device
