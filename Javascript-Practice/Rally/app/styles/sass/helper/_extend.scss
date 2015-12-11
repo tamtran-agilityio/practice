@@ -9,3 +9,44 @@
   padding-top: 0.25em;
   font-weight: 700;
 }
+%header-block {
+  background-image: url(../images/section-bg.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 3.16em;
+  font-size: 30px;
+  left: 5%;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  margin-left: -40px;
+  padding: 0 0 40px 40px;
+  position: relative;
+  text-transform: uppercase;
+  width: 200px;
+}
+%studio-title {
+  display: block;
+  font-family: "ff-meta-serif-web-pro";
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  text-transform: initial;
+  letter-spacing: 0;
+  padding-bottom: 6px;
+  padding-top: 22px;
+  border-top: 6px solid transparent;
+}
+
+%social__footer {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  text-decoration: none;
+}

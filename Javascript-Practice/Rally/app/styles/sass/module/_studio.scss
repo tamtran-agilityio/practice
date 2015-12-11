@@ -2,27 +2,26 @@
   .page-content-studio {
     position: relative;
     background-color: $white;
-    color: #2f363b;
+    color: $color-base;
     display: block;
     overflow: hidden;
   }
   .intro__desc {
-    color: #2f363b;
-  }
-  p, span {
-    color: #2f363b;
+    color: $color-base;
   }
   .stagger__item--desc-make {
     p {
-      color: #2f363b;
+      color: $color-base;
     }
   }
 }
 .studio {
   position: relative;
-  padding: 22% 0;
+  margin-top: 45px;
   &:before {
-    margin-bottom: 100%;
+    content: "";
+    display: block;
+    padding-bottom: 45%;
   }
   @include e(head) {
     background: url('../images/header-bg.jpg');
@@ -36,14 +35,17 @@
     img {
       width: 100%;
     }
+    &:before {
+      margin-bottom: 100%;
+    }
   }
   @include e(content) {
     position: absolute;
     top: 15%;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
     text-align: center;
+    text-transform: uppercase;
   }
   @include e(huge) {
     color: $white;
@@ -51,52 +53,26 @@
     font-family: "Futura Bold", Futura, sans-serif;
     font-size: em(60);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    padding-top: 0.25em;
+    letter-spacing: 0;
+    padding-top: 14px;;
     word-spacing: 99em;
     line-height: 0.95;
-    text-align: center;
     text-shadow: 0 0 0 white;
-    text-transform: uppercase;
     vertical-align: middle;
-    -webkit-font-feature-settings: "kern";
     @include m(desc) {
       color: $white;
       font-size: 14px;
-      text-transform: uppercase;
     }
   }
 }
 .intro {
   padding-top: 45px;
-  background: #fff;
   width: 100%;
   overflow: hidden;
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+            @extend %studio-title;
     }
   }
   @include e(content) {
@@ -112,37 +88,15 @@
   }
 }
 .people {
-  background: #fff;
   padding-top: 45px;
   overflow: hidden;
   @include e(content) {
     padding: 0 5%;
   }
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+      @extend %studio-title;
     }
   }
 }
@@ -200,7 +154,7 @@
       cursor: default;
       -webkit-transition: opacity 500ms;
       text-align: center;
-      background: #2f363b;
+      background: $color-base;
       opacity: 0;
       display: inline-block;
       vertical-align: middle;
@@ -212,7 +166,6 @@
   }
 }
 .reasons {
-  background: #fff;
   padding-top: 45px;
   overflow: hidden;
   width: 100%;
@@ -220,30 +173,9 @@
     width: 100%;
   }
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+      @extend %studio-title;
     }
   }
   @include e(item-block) {
@@ -276,7 +208,7 @@
       font-family: "Futura Bold";
       font-size: 7.5em;
       font-style: normal;
-      letter-spacing: -0.1em;
+      letter-spacing: 0;
       margin-left: -0.1em;
       margin-top: 10px;
       font-weight: bold;
@@ -295,7 +227,6 @@
         font-weight: 400;
         position: absolute;
         bottom: 110%;
-        color: #fff;
         margin-bottom: 8%;
       }
       @include m(make) {
@@ -366,49 +297,23 @@
   }
 }
 .clients {
-  background: #fff;
-  // padding-top: 45px;
   overflow: hidden;
   @include e(content) {
     width: 100%;
   }
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+      @extend %studio-title;
     }
   }
   @include e(wapper) {
     padding: 0 5%;
     @include flexbox();
     flex-flow: row wrap;
-    // justify-content: flex-end;
   }
   @include e(item) {
     background: rgba(47, 54, 59, 0.1);
-    transition: background 500ms;
-    -webkit-transition: background 500ms;
     font-family: monospace;
     text-indent: -1em;
     letter-spacing: -1em;
@@ -419,6 +324,8 @@
     padding-bottom: 48%;
     margin-right: 2%;
     margin-top: 4%;
+    transition: background 500ms;
+    -webkit-transition: background 500ms;
     &:hover {
       background: rgba(47, 54, 59, 1.0);
     }
@@ -426,15 +333,14 @@
       margin-right: 0;
     }
     @include m(images) {
-      position: absolute;
+      cursor: default;
       background-size: 400% auto;
       background-image: url(../images/client-logos.png);
       background-repeat: no-repeat;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
-      cursor: default;
+      top: 0;
+      position: absolute;
+      width: 100%;
     }
     @include m(natgeo) {
       @extend .clients__item--images;
@@ -475,37 +381,15 @@
   }
 }
 .awards {
-  background: #fff;
   padding-top: 45px;
   overflow: hidden;
   @include e(content) {
     width: 100%;
   }
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+      @extend %studio-title;
     }
   }
   @include e(wapper) {
@@ -529,7 +413,7 @@
       .awards__count {
         color: $white;
         &:after {
-          background-color: #2f363b;
+          background-color: $color-base;
         }
       }
     }
@@ -575,6 +459,7 @@
     cursor: default;
   }
   @include e(count) {
+    @include size(60px);
     display: block;
     font-family: "Futura Bold";
     font-size: 22px;
@@ -583,8 +468,6 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60px;
-    height: 60px;
     margin-top: -30px;
     margin-left: -30px;
     line-height: 1;
@@ -608,7 +491,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      border: 3px solid #2f363b;
+      border: 3px solid $color-base;
       z-index: -1;
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
@@ -631,7 +514,6 @@
 }
 
 .outro {
-  background: #fff;
   padding-top: 45px;
   overflow: hidden;
   @include e(content) {
@@ -639,30 +521,9 @@
     position: relative;
   }
   @include e(head) {
-    background-image: url(../images/section-bg.png);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 3.16em;
-    font-size: 30px;
-    left: 5%;
-    letter-spacing: -0.075em;
-    line-height: 1;
-    margin-left: -40px;
-    padding: 0 0 23px 40px;
-    position: relative;
-    text-transform: uppercase;
-    width: 200px;
+    @extend %header-block;
     span {
-      display: block;
-      font-family: "ff-meta-serif-web-pro";
-      font-size: 14px;
-      font-style: italic;
-      font-weight: 500;
-      text-transform: initial;
-      letter-spacing: 0;
-      padding-bottom: 6px;
-      padding-top: 22px;
-      border-top: 6px solid transparent;
+      @extend %studio-title;
     }
   }
   .stagger {
@@ -758,7 +619,7 @@
     }
     &:after {
       display: block;
-      content: "Salt Lake City, UT\A(244W 300N #101)";
+      content: "Salt Lake City";
       margin: 0 auto;
       text-transform: uppercase;
       font-family: "Futura Bold", sans-serif;

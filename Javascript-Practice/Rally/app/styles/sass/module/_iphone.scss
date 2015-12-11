@@ -61,9 +61,6 @@
   width: 180%;
   margin-bottom: 80px;
   .iphone__device {
-    // margin-left: 0;
-    // width: 31%;
-    // margin-right: 20%;
   }
   .iphone__block {
     width: 180%;
@@ -117,10 +114,43 @@
     left: 14%;
   }
 }
+.ipad__block {
+  max-width: 670px;
+  margin: auto;
+  padding: 0 5%;
+  margin-top: 15px;
+  margin-bottom: 2.0em;
+  display: block;
+  position: relative;
+  span {
+    display: block;
+  }
+}
+
+.group-device__block {
+  max-width: 780px;
+  margin: auto;
+  padding: 0 5%;
+  margin-top: 15px;
+  margin-bottom: 2.0em;
+  display: block;
+  position: relative;
+  span {
+    display: block;
+  }
+  .ipad__port {
+    width: 71%;
+    position: relative;
+    left: 29%;
+    &:before {
+      padding-bottom: 130.2%;
+      display: block;
+      content: "";
+    }
+  }
+}
 .iphone {
   @include e(device-group) {
-    margin-top: -1.5em;
-    margin-bottom: 2.0em;
     @include m(content) {
       position: relative;
     }

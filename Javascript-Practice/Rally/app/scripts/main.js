@@ -8,7 +8,7 @@ $(document).ready(function() {
       dots: true,
       infinite: false,
       speed: 300,
-      arrows: true,
+      arrows: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       accessibility: false,
@@ -28,18 +28,18 @@ $(document).ready(function() {
       variableWidth: true
     });
 
-    $('#scroll-device').slick({
-      dots: false,
-      infinite: false,
-      centerMode: true,
-      speed: 300,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      accessibility: true,
-      adaptiveHeight: true,
-      variableWidth: true
-    });
+    // $('#scroll-device').slick({
+    //   dots: false,
+    //   infinite: false,
+    //   centerMode: true,
+    //   speed: 300,
+    //   arrows: false,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   accessibility: true,
+    //   adaptiveHeight: true,
+    //   variableWidth: true
+    // });
 
     /* Helper function */
 
@@ -119,30 +119,31 @@ $(document).ready(function() {
       });
     }
 
+      // get height window
+    function sliderHeight(){
+      var windowHeight = $(window).height();
+      $('.ribbon').css('height', windowHeight);
+    }
 
+    // function to next to part need find
+    // function nextPage() {
+    //   $('a[href*=#]:not([href=#])').click(function() {
+    //     if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+    //       var target = $(this.hash);
+    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //       if (target.length) {
+    //         $('html,body').animate({ scrollTop: target.offset().top }, 1000);
+    //         return false;
+    //       }
+    //     }
+    //   });
+    // }
 
-    // var $scroll = $('#scroll-device');
+    // excute scroll next part
+    // nextPage();
 
-    // // Call Sly on frame
-    // $scroll.sly({
-    //   horizontal: 1,
-    //   itemNav: 'forceCentered',
-    //   smart: 1,
-    //   activateMiddle: 1,
-    //   activateOn: 'click',
-    //   mouseDragging: 1,
-    //   touchDragging: 1,
-    //   releaseSwing: 1,
-    //   startAt: 0,
-    //   scrollBy: 1,
-    //   speed: 300,
-    //   elasticBounds: 1,
-    //   easing: 'easeOutExpo',
-    //   dragHandle: 1,
-    //   dynamicHandle: 1,
-    //   clickBar: 1
-    // });
-
+    // height ribbon block
+    sliderHeight();
     // render data of part person
     renderItem('../templates/modules/person.html', '#person');
 

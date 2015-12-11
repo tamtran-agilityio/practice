@@ -35,25 +35,15 @@
     text-align: center;
     padding-bottom: 50px;
     .social__facebook {
-      display: inline-block;
-      overflow: hidden;
-      text-indent: 100%;
-      width: 40px;
-      height: 40px;
-      margin-left: 5px;
-      margin-right: 5px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100% 100%;
-      text-decoration: none;
+      @extend %social__footer;
       background-image: url(../images/share-facebook@2x.png);
     }
     .social__twitter {
-      @extend .social__facebook;
+      @extend %social__footer;
       background-image: url(../images/share-twitter@2x.png);
     }
     .social__dribbble {
-      @extend .social__facebook;
+      @extend %social__footer;
       background-image: url(../images/share-dribbble@2x.png);
     }
   }
