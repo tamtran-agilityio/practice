@@ -246,8 +246,6 @@
     padding-left: 5%;
     padding-right: 5%;
     &:before {
-      background: #9e8bd4;
-      color: #3e384f;
       content:"";
       font-family: "proxima-nova";
       font-size: 90%;
@@ -265,12 +263,32 @@
     @extend .numbered-title;
     &:before {
       content: "1";
+      background: #9e8bd4;
+      color: #3e384f;
     }
   }
   .numbered-title--deep {
     @extend .numbered-title;
     &:before {
       content: "2";
+      background: #9e8bd4;
+      color: #3e384f;
+    }
+  }
+  .numbered-title--img {
+    @extend .numbered-title;
+    &:before {
+      content: "2";
+      color: #0074a4;
+      background-color: #004f70;
+    }
+  }
+  .numbered-title--canvas {
+    @extend .numbered-title;
+    &:before {
+      content: "3";
+      color: #0074a4;
+      background-color: #004f70;
     }
   }
   li:nth-child(2) {

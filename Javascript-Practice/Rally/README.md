@@ -1,5 +1,5 @@
-#Run practice on machine
-  npm install
-  bower install
-  gulp serve
-  Run on browser with address : localhost:9000
+##Run practice on machine
+...npm install
+...bower install
+...gulp serve
+...[Rally](localhost:9000)

@@ -6,7 +6,7 @@ $(document).ready(function() {
     // use slick plugin slider
     $('.slider-item').slick({
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 300,
       arrows: true,
       slidesToShow: 1,
@@ -18,7 +18,20 @@ $(document).ready(function() {
     $('#slider-device').slick({
       dots: false,
       infinite: false,
-      // centerMode: true,
+      centerMode: true,
+      speed: 300,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      accessibility: true,
+      adaptiveHeight: true,
+      variableWidth: true
+    });
+
+    $('#scroll-device').slick({
+      dots: false,
+      infinite: false,
+      centerMode: true,
       speed: 300,
       arrows: false,
       slidesToShow: 1,
@@ -106,27 +119,6 @@ $(document).ready(function() {
       });
     }
 
-    // var $frame = $('#slider-device');
-
-    // // Call Sly on frame
-    // $frame.sly({
-    //   horizontal: 1,
-    //   itemNav: 'forceCentered',
-    //   smart: 1,
-    //   activateOn: 'click',
-    //   mouseDragging: 1,
-    //   touchDragging: 1,
-    //   releaseSwing: 1,
-    //   startAt: 3,
-    //   scrollBar: $('.scrollbar'),
-    //   scrollBy: 1,
-    //   speed: 300,
-    //   elasticBounds: 1,
-    //   easing: 'easeOutExpo',
-    //   dragHandle: 1,
-    //   dynamicHandle: 1,
-    //   clickBar: 1
-    // });
 
 
     // var $scroll = $('#scroll-device');

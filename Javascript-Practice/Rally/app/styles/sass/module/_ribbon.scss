@@ -1,0 +1,226 @@
+.ribbon {
+  height: 900px;
+  background-color: $white;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  .page-head-content {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    top: 45%;
+    z-index: 9;
+    .name-title {
+      font-size: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #2f363b;
+      padding: 20px 0;
+    }
+    .name-desc {
+      vertical-align: middle;
+      font-family: "Futura Book";
+      font-size: 7px;
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: 0.25em;
+      text-align: center;
+      text-transform: uppercase;
+      color: #2f363b;
+    }
+  }
+}
+
+.ribbon-block {
+  position: relative;
+  top: 20%;
+  display: block;
+  .ribbon-1 {
+    width: 150px;
+    height: 66px;
+    top: 100px;
+    position: absolute;
+    left: 0px;
+    transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-2 {
+    width: 70px;
+    height: 180px;
+    top: 100px;
+    position: absolute;
+    left: 102px;
+    transform: skew(20deg);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background: red;
+  }
+  .ribbon-3 {
+    width: 70px;
+    height: 280px;
+    position: absolute;
+    left: 208px;
+    transform: skew(-28deg);
+    -webkit-transform: skew(-28deg);
+    -moz-transform: skew(-28deg);
+    -o-transform: skew(-28deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-4 {
+    width: 70px;
+    height: 315px;
+    position: absolute;
+    left: 325px;
+    transform: skew(15deg);
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    -o-transform: skew(15deg);
+    background: red;
+  }
+  .ribbon-5 {
+    width: 105px;
+    height: 84px;
+    position: absolute;
+    top: 231px;
+    left: 437px;
+    transform: skew(121deg);
+    -webkit-transform: skew(121deg);
+    -moz-transform: skew(121deg);
+    -o-transform: skew(121deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-6 {
+    width: 238px;
+    height: 45px;
+    position: absolute;
+    top: 187px;
+    left: 542px;
+    transform: skew(121deg);
+    -webkit-transform: skew(121deg);
+    -moz-transform: skew(121deg);
+    -o-transform: skew(121deg);
+    background: red;
+  }
+  .ribbon-7 {
+    width: 98px;
+    height: 105px;
+    position: absolute;
+    top: 187px;
+    left: 633px;
+    transform: skew(121deg);
+    -webkit-transform: skew(121deg);
+    -moz-transform: skew(121deg);
+    -o-transform: skew(121deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-8 {
+    width: 210px;
+    height: 45px;
+    position: absolute;
+    top: 292px;
+    left: 555px;
+    transform: skew(200deg);
+    -webkit-transform: skew(200deg);
+    -moz-transform: skew(200deg);
+    -o-transform: skew(200deg);
+    background: red;
+  }
+  .ribbon-9 {
+    width: 62px;
+    height: 98px;
+    position: absolute;
+    top: 292px;
+    left: 728px;
+    transform: skew(208deg);
+    -webkit-transform: skew(208deg);
+    -moz-transform: skew(208deg);
+    -o-transform: skew(208deg);
+    background: red;
+  }
+  .ribbon-10 {
+    width: 63px;
+    height: 250px;
+    position: absolute;
+    top: 140px;
+    left: 848px;
+    transform: skew(143deg);
+    -webkit-transform: skew(143deg);
+    -moz-transform: skew(143deg);
+    -o-transform: skew(143deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-11 {
+    width: 63px;
+    height: 250px;
+    position: absolute;
+    top: 140px;
+    left: 923px;
+    transform: skew(171deg);
+    -webkit-transform: skew(171deg);
+    -moz-transform: skew(171deg);
+    -o-transform: skew(171deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-12 {
+    width: 63px;
+    height: 150px;
+    position: absolute;
+    top: 240px;
+    left: 961px;
+    transform: skew(143deg);
+    -webkit-transform: skew(143deg);
+    -moz-transform: skew(143deg);
+    -o-transform: skew(143deg);
+    background: red;
+  }
+  .ribbon-13 {
+    width: 272px;
+    height: 50px;
+    position: absolute;
+    top: 240px;
+    left: 999px;
+    transform: skew(147deg);
+    -webkit-transform: skew(147deg);
+    -moz-transform: skew(147deg);
+    -o-transform: skew(147deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-14 {
+    width: 63px;
+    height: 250px;
+    position: absolute;
+    top: 140px;
+    left: 848px;
+    transform: skew(143deg);
+    -webkit-transform: skew(143deg);
+    -moz-transform: skew(143deg);
+    -o-transform: skew(143deg);
+    background: red;
+    opacity: 0.7;
+  }
+  .ribbon-15 {
+    width: 63px;
+    height: 250px;
+    position: absolute;
+    top: 140px;
+    left: 848px;
+    transform: skew(143deg);
+    -webkit-transform: skew(143deg);
+    -moz-transform: skew(143deg);
+    -o-transform: skew(143deg);
+    background: red;
+    opacity: 0.7;
+  }
+}

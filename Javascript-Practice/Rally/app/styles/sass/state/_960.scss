@@ -5,6 +5,50 @@
   .nav-menu-column {
     padding: 40px 20px 0 20px;
   }
+  .graphic-dining {
+    .device__screen {
+      top: 0%;
+      left: 0;
+      right: 0;
+    }
+  }
+  .graphic-cropping {
+    .device__group {
+      max-width: 940px;
+      padding-right: 12.5%;
+      padding-left: 12.5%;
+    }
+    .browser__device {
+      .device__screen {
+        top: 0%;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+  .graphic-events {
+    .device__group {
+      max-width: 940px;
+      padding-right: 12.5%;
+      padding-left: 12.5%;
+    }
+    .device__screen {
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      bottom: 10%;
+    }
+    .device-aux-content {
+      left: -40%;
+      img {
+        width: 40%;
+      }
+    }
+    .iphone__lines {
+      left: 50%;
+      top: -30px;
+    }
+  }
 }
 
 @media (min-width: 768px) and (min-height: 990px) {

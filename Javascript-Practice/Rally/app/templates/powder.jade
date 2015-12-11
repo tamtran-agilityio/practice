@@ -1,3 +1,4 @@
+include ribbon.jade
 #snowbird.page-content-snowbird
   section.page-section.header
     header.city__block
@@ -634,26 +635,31 @@
             pre
               code.code-sample-backgrounds
                 span.syntax-2 .mobile-cta
-                span.syntax-3 {
+                span.syntax-3  {
+                | &nbsp;
                 | background: white url(
                 span.syntax-2 '../img/mobile-cta-arrow.png'
                 | ) no-repeat center center;
-                | -webkit-background-size:
+                |   -webkit-background-size:
                 span.syntax-4 21px 19px
                 | ;
-                | -moz-background-size:
+                |   -moz-background-size:
                 span.syntax-2 21px 19px
                 | ;
-                | background-size:
+                |   background-size:
                 span.syntax-2 21px 19px
                 | ;
+                | &nbsp;
                 span.syntax-3 }
+                | &nbsp;
+                | &nbsp;
                 span.syntax-2
                   strong @media screen
-                |  and (-webkit-device-pixel-ratio: 2.0),
-                | screen and (-moz-device-pixel-ratio: 2.0),
-                | screen and (device-pixel-ratio: 2.0)
-                span.syntax-3 {
+                | and (-webkit-device-pixel-ratio: 2.0),
+                |   screen and (-moz-device-pixel-ratio: 2.0),
+                |   screen and (device-pixel-ratio: 2.0)
+                span.syntax-3   {
+                | &nbsp;
                 span.syntax-2 .mobile-cta
                 span.syntax-3 {
                 | background-image: url(
@@ -663,7 +669,7 @@
                 span.syntax-3 }
           .button-background
       li
-        h3.numbered-title--cross IMG Tags
+        h3.numbered-title--img IMG Tags
         p.guides__desc
           | To handle actual IMG tags, we went the route of including both non-retina and retina versions in the HTML markup, specifying the dimensions to ensure they render at the right size, and including appropriate classes. We then used CSS, with media selectors, to show and hide the appropriate images.
         .code-collection
@@ -692,32 +698,45 @@
                 | src=
                 span.syntax-2 '/static/​media/​hero_shots/​summer_pool_A_1840x700_​normal_retina.jpg'
                 | /&gt;
+                | &nbsp;
                 span.syntax-2 img.retina
-                span.syntax-3 {
-                | display: none;
+                span.syntax-3  {
+                | &nbsp;
+                |   display: none;
+                | &nbsp;
                 span.syntax-3 }
+                | &nbsp;
                 span.syntax-2 img.nonretina
-                span.syntax-3 {
-                | display: block;
+                span.syntax-3   {
+                | &nbsp;
+                |   display: block;
+                | &nbsp;
                 span.syntax-3 }
+                | &nbsp;
                 span.syntax-2
                   strong @media screen
                 |  and (-webkit-device-pixel-ratio: 2.0),
                 | screen and (-moz-device-pixel-ratio: 2.0),
                 | screen and (device-pixel-ratio: 2.0)
+                | &nbsp;
                 span.syntax-3 {
                 span.syntax-2 img.retina
-                span.syntax-3 {
-                | display: block;
+                span.syntax-3   {
+                | &nbsp;
+                |   display: block;
+                | &nbsp;
                 span.syntax-3 }
+                | &nbsp;
                 span.syntax-2 img.nonretina
                 span.syntax-3 {
+                | &nbsp;
                 | display: none;
-                span.syntax-3 }
+                | &nbsp;
+                span.syntax-3   }
                 span.syntax-3 }
           .button-img
       li
-        h3.numbered-title--cross Canvas Elements
+        h3.numbered-title--canvas Canvas Elements
         p.guides__desc
           | For our canvas elements, the situation got the most convoluted. We started by setting the dimensions on the canvas element in both the markup and in CSS. Then, in JavaScript, we detected the pixel-density ratio of the device. If the ratio is greater than 1, we had to increase the element size (much like our IMG tags), and then take that ratio into consideration for all our drawing.
         .code-collection
@@ -746,13 +765,18 @@
                 | src=
                 span.syntax-2 '/static/​media/​hero_shots/​summer_pool_A_1840x700_​normal_retina.jpg'
                 | /&gt;
+                | &nbsp;
                 span.syntax-2 img.retina
                 span.syntax-3 {
-                | display: none;
+                | &nbsp;
+                |   display: none;
+                | &nbsp;
                 span.syntax-3 }
                 span.syntax-2 img.nonretina
                 span.syntax-3 {
-                | display: block;
+                | &nbsp;
+                |   display: block;
+                | &nbsp;
                 span.syntax-3 }
                 span.syntax-2
                   strong @media screen
