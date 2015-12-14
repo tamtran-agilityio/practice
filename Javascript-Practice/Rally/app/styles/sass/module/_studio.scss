@@ -1,4 +1,8 @@
-#site-body {
+#site_Body {
+  margin: 41px 0 0 0;
+  min-height: 100%;
+  -webkit-transform: scale(1);
+  overflow: hidden;
   .page-content-studio {
     position: relative;
     background-color: $white;
@@ -16,12 +20,26 @@
   }
 }
 .studio {
-  position: relative;
-  margin-top: 45px;
-  &:before {
+  padding-top: 0;
+  max-width: none;
+  overflow: hidden;
+  background-color: $white;
+  &:after {
     content: "";
+    display: table;
+    clear: left;
+  }
+  .header {
+    margin: auto;
+    background: #2f363b;
+    position: relative;
     display: block;
-    padding-bottom: 45%;
+    margin-right: -15px;
+    &:before {
+      content: "";
+      display: block;
+      padding-bottom: 45%;
+    }
   }
   @include e(head) {
     background: url('../images/header-bg.jpg');
@@ -30,39 +48,60 @@
     bottom: 0;
     left: 0;
     right: 0;
-    max-width: none;
-    width: 100%;
     img {
+      position: absolute;
+      top: 0;
+      max-width: none;
       width: 100%;
     }
     &:before {
-      margin-bottom: 100%;
+      content: "";
+      // display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -4px;
+    }
+    span {
+      display: block;
+      font-family: "Futura Bold", Futura, sans-serif;
+      font-size: 55px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      padding-top: 5px;;
+      word-spacing: 99em;
     }
   }
+
   @include e(content) {
-    position: absolute;
-    top: 15%;
-    left: 0;
-    width: 100%;
+    color: white;
+    display: inline-block;
+    font-family: "Futura Book";
+    font-size: 7px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    line-height: 0.95;
+    position: relative;
     text-align: center;
+    text-shadow: 0 0 0 white;
     text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-font-feature-settings: "kern";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
   @include e(huge) {
     color: $white;
     display: block;
     font-family: "Futura Bold", Futura, sans-serif;
-    font-size: em(60);
-    font-weight: 700;
+    font-size: 52.5px;
+    font-weight: bold;
     letter-spacing: 0;
     padding-top: 14px;;
     word-spacing: 99em;
     line-height: 0.95;
     text-shadow: 0 0 0 white;
     vertical-align: middle;
-    @include m(desc) {
-      color: $white;
-      font-size: 14px;
-    }
   }
 }
 .intro {
@@ -72,15 +111,27 @@
   @include e(head) {
     @extend %header-block;
     span {
-            @extend %studio-title;
+      @extend %studio-title;
     }
   }
   @include e(content) {
     padding: 0 5%;
   }
   @include e(desc) {
-    font-size: em(18);
+    font-size: 18px;
     line-height: 30px;
+    span {
+      position: relative;
+      font-style: italic;
+      &:before {
+        content: "“";
+        position: absolute;
+        right: 100%;
+      }
+      &:after {
+        content: "”";
+      }
+    }
     em {
       font-style: italic;
       padding: 0 5px;
@@ -125,6 +176,8 @@
       top: 30%;
       width: 100%;
       text-align: center;
+      transform: translate3d(0, 10px, 0);
+      transition: 500ms;
       h5 {
         font-size: em(25px);
         color: $white;
@@ -147,10 +200,11 @@
     }
     @include e(details) {
       position: absolute;
-      top: -10px;
+      top: 0;
       left: 0;
       right: 0;
-      bottom: 10px;
+      bottom: 0;
+      cursor: default;
       cursor: default;
       -webkit-transition: opacity 500ms;
       text-align: center;
@@ -162,6 +216,14 @@
       transform: translate3d(0, 10px, 0);
       -webkit-transition: 500ms;
       transition: 500ms;
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 1px;
+        margin-right: -4px;
+      }
     }
   }
 }

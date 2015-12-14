@@ -173,6 +173,7 @@ $(document).ready(function() {
       variableWidth: false,
       adaptiveHeight: true,
       arrows: false,
+      swipeToSlide: false,
       centerMode: true,
       centerPadding: '60px 70px 0',
       responsive: [
