@@ -7,43 +7,74 @@
     background-image: url(../images/highlight-national-parks.png);
     top: 78%;
   }
-  .guides__title {
-    p {
-      color: #ffc3af;
+  .guides {
+    @include e(title) {
+      p {
+        color: #ffc3af;
+      }
+    }
+    @include e(quote) {
+      em {
+        color: #ffc3af;
+      }
+    }
+    @include e(desc) {
+      a {
+        color: #ffc3af;
+      }
     }
   }
-  .guides__quote {
-    em {
-      color: #ffc3af;
+  .ipad__device {
+    .device__screen {
+      top: 10.5%;
+      left: 9.5%;
+      right: 9.5%;
+      bottom: 10.5%;
     }
-  }
-  .guides__desc {
-    a {
-      color: #ffc3af;
-    }
-  }
-  .ipad__device .device__screen {
-    top: 10.5%;
-    left: 9.5%;
-    right: 9.5%;
-    bottom: 10.5%;
   }
   .guides__block-number {
     border-color: #e45b5b;
   }
-  .iphone__tap {
+  .iphone__tap,
+  .iphone__tap--itinerary {
     background-image: url(../images/national-parks/tap@2x.png);
   }
-  .iphone__arrow {
+  .iphone__arrow,
+  .iphone__arrow--itinerary {
     background-image: url(../images/national-parks/arrow@2x.png);
   }
-}
-
-.graphic-trials-tribulations-mapkit {
-  .ipad__device {
-
+  .graphic-evolving-conventions {
+    .iphone__tap {
+      top: 36%;
+      left: 20%;
+    }
+    .iphone__arrow {
+      top: 17%;
+      left: 39%;
+    }
+    .iphone__tap--itinerary {
+      top: 71.5%;
+      left: 44%;
+    }
+    .iphone__arrow--itinerary {
+      left: 72%;
+    }
+  }
+  .graphic-evolving-conventions-data {
+    .iphone__tap {
+      top: 17%;
+      left: 8%;
+    }
+    .iphone__arrow {
+      top: 48%;
+      left: 38%;
+    }
+    .iphone__arrow--itinerary {
+      left: 72%;
+    }
   }
 }
+
 .ipad__device {
   .device__shadow {
     background-image: url(../images/ipad-shadow@2x.png);

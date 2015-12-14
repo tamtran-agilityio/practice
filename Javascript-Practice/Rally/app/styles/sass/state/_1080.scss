@@ -413,6 +413,12 @@
       max-width: 780px;
     }
   }
+
+  .graphic-cropping {
+    .iphone__device {
+      top: 5%;
+    }
+  }
   .slideshow-trials-tribulations {
     .device__group {
       max-width: 670px;
@@ -435,5 +441,38 @@
   .hex-slideshow {
     width: 100%;
     position: relative;
+  }
+    // part graphic evolving
+  #national-parks {
+    .graphic-evolving-conventions {
+      .iphone__tap {
+        top: 39%;
+        left: 20%;
+      }
+      .iphone__arrow {
+        top: 20%;
+        left: 39%;
+      }
+      .iphone__tap--itinerary {
+        top: 73.5%;
+        left: 44%;
+      }
+      .iphone__arrow--itinerary {
+        left: 72%;
+      }
+    }
+    .graphic-evolving-conventions-data {
+      .iphone__tap {
+        top: 20%;
+        left: 8%;
+      }
+      .iphone__arrow {
+        top: 50%;
+        left: 38%;
+      }
+      .iphone__arrow--itinerary {
+        left: 72%;
+      }
+    }
   }
 }

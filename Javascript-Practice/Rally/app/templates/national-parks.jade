@@ -453,8 +453,7 @@
       h4 Evolving Conventions
     p.guides__desc
       | We didn’t want to reinvent the wheel more than necessary, so we started with familiar UI conventions. We used the convention of the standard UINavigationController, but since we wanted the power to fully customize our titlebars, we created our own NGSNavigationController and NGSTitlebar classes to give ourselves all the flexibility we wanted.
-    .graphic-evolving-conventions-1.graphic.device-slideshow.device-slideshow-enabled
-    span.caption-box__slider
+    span.caption-box__slider.graphic-evolving-conventions
       span.device__graphic-highlight
       span.caption-box__block-overflow
         span.iphone__block
@@ -488,34 +487,36 @@
               1050.3,844.3 1050.3,221 1188.3,221 ')
     p.guides__desc
       | We also utilized the emerging convention, popularized by apps like Facebook and Path, of the hidden tray on the left side, which we used as a hub for the user’s data.
-    .graphic-evolving-conventions-2.graphic.device-slideshow.device-slideshow-enabled
-      span.caption-box__slider
-        span.device__graphic-highlight
-        span.caption-box__block-overflow
-          span.iphone__block
-            span.iphone__device-group
-              span.iphone__device
-                span.iphone__shadow
-                span.iphone__chrome
-                span.iphone__device-content
-                  span.iphone__screen
-                    img(src="../images/evolving-4%402x.jpg")
-              span.iphone__device
-                span.iphone__shadow
-                span.iphone__chrome
-                span.iphone__device-content
-                  span.iphone__screen
-                    img(src="../images/evolving-5%402x.jpg")
-              span.iphone__device
-                span.iphone__shadow
-                span.iphone__chrome
-                span.iphone__device-content
-                  span.iphone__screen
-                    img(src="../images/evolving-6%402x.jpg")
-            svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1936 1170', enable-background='new 0 0 1936 1170', xml:space='preserve')
-              polyline(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', points='23.1,226.1 \
-              571.9,226.1 571.9,585 687.6,585 ')
-              line(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', x1='1245', y1='585', x2='1480.7', y2='585')
+    span.caption-box__slider.graphic-evolving-conventions-data
+      span.device__graphic-highlight
+      span.caption-box__block-overflow
+        span.iphone__block
+          span.iphone__device-group
+            span.iphone__device
+              span.iphone__shadow
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  img(src="../images/evolving-4%402x.jpg")
+            span.iphone__device
+              span.iphone__shadow
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  img(src="../images/evolving-5%402x.jpg")
+            span.iphone__device
+              span.iphone__shadow
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  img(src="../images/evolving-6%402x.jpg")
+            span.iphone__tap
+            span.iphone__arrow
+            span.iphone__arrow--itinerary
+          svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1936 1170', enable-background='new 0 0 1936 1170', xml:space='preserve')
+            polyline(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', points='23.1,226.1 \
+            571.9,226.1 571.9,585 687.6,585 ')
+            line(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', x1='1245', y1='585', x2='1480.7', y2='585')
     .graphic-caption-box
       h4 Skeuomorphism
     p.guides__desc
@@ -583,38 +584,38 @@
     p.guides__desc
       | If there’s one thing that National Geographic is known for, it’s their stunning photography. In our photo viewer, we always wanted to be sure users could see as much of a photo as possible, unimpaired by captions or titles. To achieve this, we built our photo viewer to dynamically center the photo in whatever open space remained between the title and caption areas. Since the captions are different lengths, this center point might be different from photo to photo. To prevent these differing displacements from being jarring, we chose to smoothly animate the line of photos up and down as the user navigates the gallery.
     .graphic-photo-gallery-centering.graphic.device-slideshow.device-slideshow-enabled
-    span.caption-box__slider
-      span.device__graphic-highlight
-      span.caption-box__block-overflow
-        span.iphone__block
-          span.iphone__device-group
-            span.iphone__device
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/evolving-4%402x.jpg")
-            span.iphone__device
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/evolving-5%402x.jpg")
-            span.iphone__device
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/evolving-6%402x.jpg")
-          svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1120 1170', enable-background='new 0 0 1120 1170', xml:space='preserve')
-            path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M75.5,721.7h50.4\
-            c17.8,0,32.2,14.4,32.2,32.2l0,48.8c0,17.8,14.4,32.2,32.2,32.2H250')
-            path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M75.5,365.9h50.4\
-            c17.8,0,32.2-14.4,32.2-32.2l0-99.8c0-17.8,14.4-32.2,32.2-32.2H250')
-            path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M1040,709.7h-50.4\
-            c-17.8,0-32.2,14.4-32.2,32.2l0,60.8c0,17.8-14.4,32.2-32.2,32.2h-59.6')
-            path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M1040,352.9h-50.4\
-            c-17.8,0-32.2-14.4-32.2-32.2l0-86.8c0-17.8-14.4-32.2-32.2-32.2h-59.6')
+      span.caption-box__slider
+        span.device__graphic-highlight
+        span.caption-box__block-overflow
+          span.iphone__block
+            span.iphone__device-group
+              span.iphone__device
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/evolving-4%402x.jpg")
+              span.iphone__device
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/evolving-5%402x.jpg")
+              span.iphone__device
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/evolving-6%402x.jpg")
+            svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1120 1170', enable-background='new 0 0 1120 1170', xml:space='preserve')
+              path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M75.5,721.7h50.4\
+              c17.8,0,32.2,14.4,32.2,32.2l0,48.8c0,17.8,14.4,32.2,32.2,32.2H250')
+              path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M75.5,365.9h50.4\
+              c17.8,0,32.2-14.4,32.2-32.2l0-99.8c0-17.8,14.4-32.2,32.2-32.2H250')
+              path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M1040,709.7h-50.4\
+              c-17.8,0-32.2,14.4-32.2,32.2l0,60.8c0,17.8-14.4,32.2-32.2,32.2h-59.6')
+              path(vector-effect='non-scaling-stroke', fill='none', stroke='#E55B5B', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M1040,352.9h-50.4\
+              c-17.8,0-32.2-14.4-32.2-32.2l0-86.8c0-17.8-14.4-32.2-32.2-32.2h-59.6')
     .graphic-caption-box
       h4 Handcrafting Retina Graphics
     p.guides__desc
@@ -632,7 +633,7 @@
         .image-wrapper
           img(src='../images/national-parks-non-retina.png')
         .caption
-          sapn Actual Size
+          span Actual Size
           span ( 124 × 145 )
     .graphic-caption-box
       h4 The Tray
@@ -751,11 +752,11 @@
                     span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
                       span.ipad__player-overlay
                         a(href="#")
-        .graphic-caption
-          .graphic-caption-content
-            h4.caption-title Park Forecasts
-            .caption-text
-              | Weather forecasts were the cause of a stumble out of the gate for the app, but it’s all good now. 87 and sunny, sounds pretty nice…
+      .graphic-caption
+        .graphic-caption-content
+          h4.caption-title Park Forecasts
+          .caption-text
+            | Weather forecasts were the cause of a stumble out of the gate for the app, but it’s all good now. 87 and sunny, sounds pretty nice…
   .page-section.response
     .guides__block-number
       span 09

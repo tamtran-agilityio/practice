@@ -1,7 +1,4 @@
-.iphone__graphic-crosslink {
-  position: relative;
-  display: block;
-}
+/* style part device iphone*/
 .block__device-header {
   position: relative;
   display: block;
@@ -22,41 +19,47 @@
   }
 }
 .iphone__graphic-crosslink {
-  .iphone__device {
-    margin-left: 0;
-    width: 47%;
-  }
-  .iphone__lines {
-    left: 47%;
-    top: 0;
-  }
-  .iphone__aux-content {
-    width: 47%;
-    left: 29%;
+  position: relative;
+  display: block;
+  .iphone {
+    @include e(device) {
+      margin-left: 0;
+      width: 47%;
+    }
+    @include e(lines) {
+      left: 47%;
+      top: 0;
+    }
+    @include e(aux-content) {
+      width: 47%;
+      left: 29%;
+    }
   }
 }
 .iphone__graphic-deeplink {
   display: block;
   position: relative;
-  .iphone__device {
-    width: 47%;
-    &:nth-child(2) {
-      position: absolute;
-      top: 0;
-      left: 54%;
+  .iphone {
+    @include e(device) {
+      width: 47%;
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 54%;
+      }
     }
-  }
-  .iphone__lines {
-    left: 49%;
-    top: 0;
-  }
-  .iphone__tap {
-    top: 52.5%;
-    left: 30%;
-  }
-  .iphone__arrow {
-    top: 27.5%;
-    left: 56%;
+    @include e(lines) {
+      left: 49%;
+      top: 0;
+    }
+    @include e(tap) {
+      top: 52.5%;
+      left: 30%;
+    }
+    @include e(arrow) {
+      top: 27.5%;
+      left: 56%;
+    }
   }
 }
 .caption-box__slider {
@@ -70,99 +73,109 @@
   .caption-box__block-overflow {
     width: 180%;
     margin-left: -40%;
-    .iphone__device {
-      width: 23%;
-      &:nth-child(1) {
-        left: 5%;
-        margin: inherit;
+    .iphone {
+      @include e(device) {
+        width: 23%;
+        &:nth-child(1) {
+          left: 5%;
+          margin: inherit;
+        }
+        &:nth-child(2) {
+          position: absolute;
+          left: 38%;
+          top: 0;
+        }
+         &:nth-child(3) {
+          position: absolute;
+          left: 71%;
+          top: 0;
+        }
       }
-      &:nth-child(2) {
-        position: absolute;
-        left: 38%;
-        top: 0;
+      @include e(block) {
+        max-width: 1200px;
+        margin: 0 auto;
       }
-       &:nth-child(3) {
-        position: absolute;
-        left: 71%;
-        top: 0;
+      @include e(device-group) {
+        overflow: hidden;
+        position: relative;
       }
-    }
-    .iphone__block {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .iphone__device-group {
-      overflow: hidden;
-      position: relative;
-    }
-    .iphone__lines {
-      left: 49%;
-    }
-    .iphone__tap {
-      left: 14%;
-      top: 53%;
-    }
-    .iphone__arrow {
-      left: 39%;
-      top: 26%;
+      @include e(lines) {
+        left: 49%;
+      }
+      @include e(tap) {
+        left: 14%;
+        top: 53%;
+      }
+      @include e(arrow) {
+        left: 39%;
+        top: 26%;
+      }
     }
   }
 }
 
 .source__block,
 .mistakes__block,
-.graphic-push-back-modals {
+.graphic-push-back-modals,
+.graphic-protect-your-app {
   position: relative;
   display: block;
+  .graphic-caption-content {
+    top: 30%;
+  }
 }
 .caption-box__block-mistakes {
   display: block;
   position: relative;
-  .iphone__device-group {
-    margin-top: 0;
-  }
-  .iphone__device {
-    width: 47%;
-    margin-left: 0;
-    &:nth-child(2) {
-      position: absolute;
-      left: 53%;
-      top: 0;
+  .iphone {
+    @include e(device-group) {
+      margin-top: 0;
     }
-  }
-  .iphone__lines {
-    top: 0%;
-    left: 49%;
-  }
-  .iphone__tap {
-    top: 33%;
-    left: 36%;
-  }
-  .iphone__tap--itinerary {
-    @extend .iphone__tap;
-    top: 32%;
-    left: 40%;
-  }
-  .iphone__arrow {
-    top: 28%;
-    left: 57%;
-  }
-  .iphone__arrow--itinerary {
-    @extend .iphone__tap;
-    top: 32%;
-    left: 40%;
+    @include e(device) {
+      width: 47%;
+      margin-left: 0;
+      &:nth-child(2) {
+        position: absolute;
+        left: 53%;
+        top: 0;
+      }
+    }
+    @include e(lines) {
+      top: 0%;
+      left: 49%;
+    }
+    @include e(tap) {
+      top: 33%;
+      left: 36%;
+    }
+    @include e(tap--itinerary) {
+      @extend .iphone__tap;
+      top: 32%;
+      left: 40%;
+    }
+    @include e(arrow) {
+      top: 28%;
+      left: 57%;
+    }
+    @include e(arrow--itinerary) {
+      @extend .iphone__tap;
+      top: 32%;
+      left: 40%;
+    }
   }
 }
 .iphone__building-universal {
   display: block;
   position: relative;
-  .iphone__block {
-    max-width: 780px;
-  }
-  .iphone__device {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  .iphone {
+    @include e(block) {
+      max-width: 780px;
+    }
+    @include e(device) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
   .ipad__portrait {
     width: 71%;
@@ -359,53 +372,10 @@
   display: block;
 }
 
-// .itinerary__block {
-//   padding: 30px 0 0 0;
-//   overflow: hidden;
-//   .iphone__device {
-//     top: 0;
-//     bottom: 0;
-//     &:nth-child(1) {
-//       left: - 15%;
-//     }
-//     &:nth-child(3) {
-//       right: - 15%;
-//     }
-//   }
-//   .iphone__tap {
-//     left: 0;
-//     top: 55.5%;
-//   }
-//   .iphone__tap--itinerary {
-//     top: 36%;
-//     left: 48%;
-//     position: absolute;
-//     transform: translate3d(-50%, -50%, 0);
-//     background-repeat: no-repeat;
-//     z-index: 2;
-//     width: 50px;
-//     height: 50px;
-//     background-size: 50px 50px;
-//     background-image: url(../images/tap@2x.png);
-//   }
-//   .iphone__arrow {
-//     top: 58%;
-//     left: 83%;
-//   }
-//   .iphone__arrow--itinerary {
-//     display: block;
-//     position: absolute;
-//     transform: translate3d(-50%, -50%, 0);
-//     background-repeat: no-repeat;
-//     z-index: 2;
-//     width: 22px;
-//     height: 12px;
-//     background-size: 22px 12px;
-//     background-image: url(../images/arrow@2x.png);
-//     top: 27.7%;
-//     left: 34%;
-//   }
-//   .iphone__lines {
-//     top: 0;
-//   }
-// }
+.iphone__arrow--itinerary {
+  @extend .iphone__arrow;
+}
+.iphone__tap--itinerary {
+  @extend .iphone__tap;
+}
+

@@ -273,12 +273,40 @@
       }
    }
   }
-  // .numbered-title-list .numbered-title:before,
-  // .numbered-title-list .numbered-title--cross:before,
-  // .numbered-title-list .numbered-title--deep:before {
-  //   line-height: 24px;
-  // }
 
+  // part graphic evolving
+  #national-parks {
+    .graphic-evolving-conventions {
+      .iphone__tap {
+        top: 37%;
+        left: 20%;
+      }
+      .iphone__arrow {
+        top: 18%;
+        left: 39%;
+      }
+      .iphone__tap--itinerary {
+        top: 72.5%;
+        left: 44%;
+      }
+      .iphone__arrow--itinerary {
+        left: 72%;
+      }
+    }
+    .graphic-evolving-conventions-data {
+      .iphone__tap {
+        top: 18%;
+        left: 8%;
+      }
+      .iphone__arrow {
+        top: 49%;
+        left: 38%;
+      }
+      .iphone__arrow--itinerary {
+        left: 72%;
+      }
+    }
+  }
   .icon-comparison {
     width: 360px;
     .icon-1,.icon-2 {
