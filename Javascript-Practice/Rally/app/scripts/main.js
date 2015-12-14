@@ -3,17 +3,9 @@ $(document).ready(function() {
   'use strict';
   (function ($) {
 
-    // use slick plugin slider
-    $('.slider-item').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      accessibility: false,
-      adaptiveHeight: true
-    });
+    var $wrapSlidePage = $('.slider-item');
+
+    /* Helper function */
 
     // set color menu
     function setColor() {
@@ -23,7 +15,7 @@ $(document).ready(function() {
       var $baseContent = $('.nav-menu-base-content');
       var $foldContent = $('.nav-menu-fold-content');
       var $menuContent = $('.nav-menu-content');
-      $('.slider-item').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
           $navBar.css('background-color', 'rgb(183, 89, 255)');
           $navContent.css('background-color', 'rgb(183, 89, 255)');
@@ -54,35 +46,8 @@ $(document).ready(function() {
           }
         }
       });
+      return false;
     }
-
-    // $('#slider-device').slick({
-    //   dots: false,
-    //   infinite: false,
-    //   centerMode: true,
-    //   speed: 300,
-    //   arrows: false,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   accessibility: true,
-    //   adaptiveHeight: true,
-    //   variableWidth: true
-    // });
-
-    // $('#scroll-device').slick({
-    //   dots: false,
-    //   infinite: false,
-    //   centerMode: true,
-    //   speed: 300,
-    //   arrows: false,
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   accessibility: true,
-    //   adaptiveHeight: true,
-    //   variableWidth: true
-    // });
-
-    /* Helper function */
 
     // handle menu show
     function showMenu() {
@@ -168,25 +133,63 @@ $(document).ready(function() {
       $('.ribbon').css('height', windowHeight);
     }
 
-    // function to next to part need find
-    // function nextPage() {
-    //   $('a[href*=#]:not([href=#])').click(function() {
-    //     if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-    //       var target = $(this.hash);
-    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    //       if (target.length) {
-    //         $('html,body').animate({ scrollTop: target.offset().top }, 1000);
-    //         return false;
-    //       }
-    //     }
-    //   });
-    // }
+    // function of part scroll iphone
+    function scrollScreen() {
+      $('.iphone__block').draggable({ axis: 'x' });
+    }
 
-    // excute scroll next part
-    // nextPage();
+    // Excute scroll iphone
+    scrollScreen();
+
+    // use slick plugin slider change page
+    $wrapSlidePage.slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      accessibility: false,
+      adaptiveHeight: true
+    });
+
+    // use slick plugin slider change image on iphone
+    $('.iphone__screenshots').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      accessibility: false,
+      variableWidth: false,
+      adaptiveHeight: true,
+      arrows: false,
+      centerMode: true,
+      centerPadding: '60px 60px 0',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
 
     // set color menu
-    setColor();
+    setColor($wrapSlidePage);
 
     // height ribbon block
     sliderHeight();

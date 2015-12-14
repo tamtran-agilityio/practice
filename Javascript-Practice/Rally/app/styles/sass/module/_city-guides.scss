@@ -1,7 +1,7 @@
 .page-content-city {
   position: relative;
-  background: #3e384f;
-  color: #d9cdf6;
+  background: $color-guides-bg;
+  color: $color-guides;
   display: block;
 }
 .city {
@@ -10,8 +10,8 @@
     display: block;
   }
   @include e(header) {
-    background: #3e384f;
-    color: #d9cdf6;
+    background: $color-guides-bg;
+    color: $color-guides;
   }
   @include e(better) {
     font-size: 10px;
@@ -21,7 +21,7 @@
   }
   @include e(attribution) {
     font-size: 8px;
-    color: #d9cdf6;
+    color: $color-guides;
     display: block;
   }
   @include e(travel) {
@@ -53,14 +53,14 @@
 .page-section {
   padding-top: 60px;
   padding-bottom: 1px;
-  background: #3e384f;
-  color: #d9cdf6;
+  background: $color-guides-bg;
+  color: $color-guides;
 }
 
 .travel__icon {
   @include size(75px);
   margin: 0 auto;
-  color: #d9cdf6;
+  color: $color-guides;
   display: block;
   &:fill {
     stroke-dasharray: 400 0;
@@ -195,7 +195,7 @@
       padding-top: 15px;
       font-family: "Futura Light", sans-serif;
       font-weight: 200;
-      color: #d9cdf6;
+      color: $color-guides;
     }
   }
   @include e(desc) {
@@ -211,7 +211,7 @@
       text-decoration: underline;
       cursor: auto;
       margin: 0 3px;
-      color: #d9cdf6;
+      color: $color-guides;
     }
     em {
       position: relative;
@@ -293,8 +293,8 @@
   }
   li:nth-child(2) {
     .iphone__device:nth-child(2) {
-      top: -8px;
-      left: 26%;
+      top: 0;
+      left: 56%;
     }
   }
 }
@@ -406,9 +406,6 @@
     width: 42%;
     top: 0;
     bottom: 0;
-    &:nth-child(1) {
-      margin-left: 5%;
-    }
     &:nth-child(2) {
       margin-right: 5%;
     }
@@ -511,7 +508,6 @@
     @include flexbox();
     flex-flow: row wrap;
     justify-content: space-around;
-    // justify-content: center;
     align-items: center;
   }
   .dribbble-shots-inner {

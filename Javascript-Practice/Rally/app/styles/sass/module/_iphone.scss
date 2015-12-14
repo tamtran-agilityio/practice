@@ -96,7 +96,6 @@
         margin: 0 auto;
       }
       @include e(device-group) {
-        overflow: hidden;
         position: relative;
       }
       @include e(lines) {
@@ -109,6 +108,16 @@
       @include e(arrow) {
         left: 39%;
         top: 26%;
+        z-index: 1;
+      }
+       @include e(tap--itinerary) {
+        left: 48%;
+        top: 34%;
+      }
+      @include e(arrow--itinerary) {
+        left: 72%;
+        top: 56.5%;
+        z-index: 1;
       }
     }
   }
@@ -136,7 +145,7 @@
       margin-left: 0;
       &:nth-child(2) {
         position: absolute;
-        left: 53%;
+        left: 56%;
         top: 0;
       }
     }
@@ -254,7 +263,11 @@
   }
   @include e(device-content) {
     border-radius: 11%/5%;
-    overflow: hidden;
+    // overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
   }
   @include e(device) {
     width: 34.5%;
@@ -379,3 +392,31 @@
   @extend .iphone__tap;
 }
 
+.iphone__screenshots {
+  width: 140%;
+  height: 100%;
+  .slick-list {
+    overflow: visible;
+  }
+  .screenshot {
+    position: relative;
+    float: left;
+    width: 20%;
+    margin: 0 5% 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 45%;
+    img {
+      margin-top: 30%;
+      width: 60%;
+      opacity: 0.5;
+    }
+  }
+  .slick-center {
+    img {
+      margin-top: 0;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
