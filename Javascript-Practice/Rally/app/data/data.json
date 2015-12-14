@@ -30,5 +30,12 @@
       "person-name": "Eric Atwell",
       "person-title": "Designer"
     }
+  ],
+  "gesture": [
+    {
+      "image":"../images/video-gesture-main-menu.jpg",
+      "title":"Main Menu",
+      "description":"We learned on National Parks</a> that with the stack metaphor popularized by iOS, it’s easy for users to get buried in crosslinked content. Our solution for City Guides was a main menu that is always accessible to the user, allowing them to jump from anywhere, no matter how buried, to a different section of the app. While there is a tappable UI callout visible at all times, we also wanted to allow for opening and closing the menu with a simple swiping gesture....continue"
+    }
   ]
 }

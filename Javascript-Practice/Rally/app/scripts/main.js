@@ -153,6 +153,15 @@ $(document).ready(function() {
       adaptiveHeight: true
     });
 
+    // $('.highlight-content').slick({
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   arrows: false,
+    //   fade: true,
+    //   variableWidth: true,
+    //   asNavFor: '.iphone__screenshots'
+    // });
+
     // use slick plugin slider change image on iphone
     $('.iphone__screenshots').slick({
       dots: true,
@@ -165,15 +174,16 @@ $(document).ready(function() {
       adaptiveHeight: true,
       arrows: false,
       centerMode: true,
-      centerPadding: '60px 60px 0',
+      centerPadding: '60px 70px 0',
       responsive: [
         {
           breakpoint: 768,
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 2
+            centerPadding: '40px 70px 0',
+            slidesToShow: 1,
+            slidesToScroll: 1
           }
         },
         {
@@ -181,8 +191,9 @@ $(document).ready(function() {
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 2
+            centerPadding: '40px 70px 0',
+            slidesToShow: 1,
+            slidesToScroll: 1
           }
         }
       ]

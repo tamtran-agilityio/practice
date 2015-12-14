@@ -409,7 +409,13 @@
                       img.screenImage(src="../images/routing-illogical%402x.jpg")
                     .screenshot
                       img.screenImage(src="../images/routing-logical%402x.jpg")
-                      .graphic-caption-content
+                  //- .highlight-content
+                  //-   .graphic-caption-content
+                  //-     h4 Non-Optimal Route
+                  //-     p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
+                  //-   .graphic-caption-content
+                  //-     h4 Optimal Route
+                  //-     p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
   section.page-section.gesture
     .guides__block-number
       span 06
@@ -433,11 +439,19 @@
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
-                  img(src="../images/video-gesture-main-menu.jpg")
-                  span.ipad__screen
-                  span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
-                    span.ipad__player-overlay
-                      a(href="#")
+                  .iphone__screenshots
+                    .screenshot
+                      img(src="../images/video-gesture-main-menu.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                        span.ipad__player-overlay
+                          a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/video-gesture-swipe.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                        span.ipad__player-overlay
+                          a(href="#")
   section.page-section.custom-animation
     .guides__block-number
       span 07

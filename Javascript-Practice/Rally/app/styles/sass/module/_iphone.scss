@@ -411,6 +411,9 @@
       width: 60%;
       opacity: 0.5;
     }
+    .ipad__player-overlay {
+      width: 60%;
+    }
   }
   .slick-center {
     img {
@@ -418,5 +421,20 @@
       width: 100%;
       opacity: 1;
     }
+    .ipad__player-overlay {
+      width: 100%;
+    }
+  }
+}
+.highlight-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 100px;
+  .graphic-caption-content {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0 auto;
   }
 }
