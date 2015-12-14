@@ -1,4 +1,9 @@
 @media (min-width: 1080px) {
+  .slick-dots li {
+    button:before {
+      font-size: 40px;
+    }
+  }
   .city__better {
     margin-top: 70px;
     letter-spacing: 12px;
@@ -19,7 +24,10 @@
     max-width: 940px;
     overflow: visible;
   }
-  .intro__content, .people__content, .clients__wapper, .awards__wapper {
+  .intro__content,
+  .people__content,
+  .clients__wapper,
+  .awards__wapper {
     margin-left: 320px;
     padding: 0;
   }
@@ -29,16 +37,37 @@
   .reasons__content {
     position: relative;
   }
-  .intro__head, .people__head, .awards__head, .clients__head {
+  .intro__head,
+  .people__head,
+  .awards__head,
+  .clients__head {
     width: 230px;
     float: left;
     left: 0;
   }
-  .reasons__head {
+
+  .graphic-trials-tribulations-mapkit {
+    .graphic-caption-content {
+      top: 30%;
+    }
+  }
+  .reasons__head, .outro__head {
     left: 50%;
     margin-left: -545px;
   }
-  .intro__head, .people__head, .awards__head, .outro__head, .clients__head {
+
+  .graphic-caption-content {
+    position: absolute;
+    h4 {
+      text-align: left;
+    }
+  }
+  .intro__head,
+  .people__head,
+  .awards__head,
+  .outro__head,
+  .clients__head {
+
   }
   .reasons {
     .stagger {
@@ -74,7 +103,6 @@
         margin-right: 150px;
         right: 0;
         top: 0;
-
       }
     }
     .stagger__item--make {
@@ -142,9 +170,6 @@
       &:after {
         display: none;
       }
-    }
-    .stagger__item .stagger__item--build-bg {
-
     }
     .stagger__item--number {
       position: relative;
@@ -242,8 +267,10 @@
       top: 30%;
     }
   }
-  .a-guide-to-your-travels .iphone__device {
-    width: 31%;
+  .a-guide-to-your-travels {
+    .iphone__device {
+      width: 31%;
+    }
   }
   .iphone__lines {
     left: 32%;
@@ -256,23 +283,37 @@
   .graphic-caption-content {
     display: block;
   }
+  .source__block {
+    .graphic-caption-content {
+      top: 40%;
+    }
+  }
+
+  .mistakes__block {
+    .iphone__device:nth-child(1) {
+      margin-left: 0;
+    }
+    .iphone__tap {
+      left: 25%;
+    }
+  }
   .numbered-title-list {
     li:nth-child(2) {
     .iphone__device:nth-child(2) {
-        top: -14px;
-        left: 3%;
+      top: 0;
+      left: 36%;
       }
     }
     .iphone__lines {
-      left: 35%;
+      left: 33%;
     }
     .iphone__arrow {
       top: 27.5%;
-      left: 39%;
+      left: 37%;
     }
     .iphone__tap {
-      left: 20%;
-      top: 50%;
+      left: 18%;
+      top: 52%;
     }
   }
   .caption-box__around {
@@ -304,18 +345,18 @@
       margin-left: 6%;
       &:nth-child(2) {
         position: absolute;
-        left: 36%;
+        left: 31%;
         top: 0;
       }
     }
     .iphone__lines {
-      left: 40%;
+      left: 35%;
     }
     .iphone__tap {
-      left: 31%;
+      left: 27%;
     }
     .iphone__arrow {
-      left: 44%;
+      left: 38%;
     }
     .graphic-caption-content {
       h4 {
@@ -354,20 +395,45 @@
       top: 59%;
     }
   }
-  .snowbird-hero .iphone__device {
-    width: 23%;
+  .snowbird-hero {
+    .iphone__device {
+      width: 23%;
+    }
   }
   .slideshow-placeholder {
     .device__group {
       max-width: 940px;
-
     }
     .iphone__device {
       width: 31%;
     }
   }
-  .graphic-events .device__group {
-    max-width: 780px;
+  .graphic-events {
+    .device__group {
+      max-width: 780px;
+    }
+  }
+  .slideshow-trials-tribulations {
+    .device__group {
+      max-width: 670px;
+    }
+  }
+  .hex-sketches {
+    max-width: 1280px;
+    position: relative;
+    overflow: hidden;
+    .hex-sketches-1,
+    .hex-sketches-2 {
+      width: 48%;
+      margin: 0;
+      float: left;
+    }
+    .hex-sketches-2 {
+      left: 4%;
+    }
+  }
+  .hex-slideshow {
+    width: 100%;
+    position: relative;
   }
 }
-

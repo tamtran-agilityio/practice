@@ -38,6 +38,9 @@
 .slideshow-placeholder {
   position: relative;
   display: block;
+  .iphone__device {
+    margin: 0 auto;
+  }
   .device__group {
     max-width: 525px;
     margin: 0 auto;

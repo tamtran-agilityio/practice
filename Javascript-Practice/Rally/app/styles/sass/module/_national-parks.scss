@@ -5,6 +5,7 @@
   }
   .device__graphic-highlight {
     background-image: url(../images/highlight-national-parks.png);
+    top: 78%;
   }
   .guides__title {
     p {
@@ -26,6 +27,21 @@
     left: 9.5%;
     right: 9.5%;
     bottom: 10.5%;
+  }
+  .guides__block-number {
+    border-color: #e45b5b;
+  }
+  .iphone__tap {
+    background-image: url(../images/national-parks/tap@2x.png);
+  }
+  .iphone__arrow {
+    background-image: url(../images/national-parks/arrow@2x.png);
+  }
+}
+
+.graphic-trials-tribulations-mapkit {
+  .ipad__device {
+
   }
 }
 .ipad__device {

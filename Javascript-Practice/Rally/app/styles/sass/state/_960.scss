@@ -55,6 +55,15 @@
       top: -30px;
     }
   }
+  .nav-menu-left {
+    display: block;
+  }
+  .nav-menu-center {
+    left: 279px;
+    .nav-menu-content {
+      left: -279px;
+    }
+  }
 }
 
 @media (min-width: 768px) and (min-height: 990px) {

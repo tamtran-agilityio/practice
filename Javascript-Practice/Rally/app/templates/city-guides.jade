@@ -123,25 +123,25 @@
           | The Crosslink
         p.guides__desc
           | At the core of our content are actual locations, which we call Points of Interest. Let’s take a look at a specific Point of Interest: the Tower of London. The Tower of London has a What To Do, explaining briefly the history of the Tower, and what to do and see there. It also has a Did You Know fact, which could be shared on Twitter or Facebook. The Tower also has an entry in the Secrets section, with little-known details for the curious traveler. If a user reads the Did You Know and is interested to learn more, they will see crosslink buttons to the What To Do and Secret content, and a single tap will bring them to that related content.
-      span.iphone__graphic-crosslink
-        span.iphone__graphic-highlight
-        span.iphone__block
-          span.iphone__device-group
-            span.iphone__device-group--content
-              span.iphone__device
-                span.iphone__shadow
-                span.iphone__chrome
-                span.iphone__device-content
-                  span.iphone__screen
-                    img(src="../images/crosslink%402x.jpg")
-              svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 520 1046', enable-background='new 0 0 520 1046', xml:space='preserve')
-                path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M198.3,684.7\
-                c141,6.2,216.8-117.4,254.5-241.4')
-                path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M198.3,756.1\
-                c71-6.2,135-4.1,168,40.9')
-              span.iphone__aux-content
-                img.iphone__detail-crop(src="../images/zoom-dyk%402x.jpg")
-                img.iphone__detail-crop(src="../images/zoom-secret%402x.jpg")
+        span.iphone__graphic-crosslink
+          span.iphone__graphic-highlight
+          span.iphone__block
+            span.iphone__device-group
+              span.iphone__device-group--content
+                span.iphone__device
+                  span.iphone__shadow
+                  span.iphone__chrome
+                  span.iphone__device-content
+                    span.iphone__screen
+                      img(src="../images/crosslink%402x.jpg")
+                svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 520 1046', enable-background='new 0 0 520 1046', xml:space='preserve')
+                  path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M198.3,684.7\
+                  c141,6.2,216.8-117.4,254.5-241.4')
+                  path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M198.3,756.1\
+                  c71-6.2,135-4.1,168,40.9')
+                span.iphone__aux-content
+                  img.iphone__detail-crop(src="../images/zoom-dyk%402x.jpg")
+                  img.iphone__detail-crop(src="../images/zoom-secret%402x.jpg")
         .graphic-caption-content
           h4 Crosslink
           p The crosslink buttons allow users to jump immediately to other content related to the same Point of Interest
@@ -172,9 +172,9 @@
                 svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 624 1046', enable-background='new 0 0 624 1046', xml:space='preserve')
                   path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M115,549h163.7\
           c18.4,0,33.3-14.9,33.3-33.3V322c0-18.4,14.9-33.3,33.3-33.3h24.3')
-          .graphic-caption-content
-            h4 Deeplink
-            p By tapping highlighted text in any text field, the user can deeplink into a Point of Interest view, presenting all pertinent information about the location.
+        .graphic-caption-content
+          h4 Deeplink
+          p By tapping highlighted text in any text field, the user can deeplink into a Point of Interest view, presenting all pertinent information about the location.
   section.page-section.a-spreadsheet-to-an-app
     .guides__block-number
       span 03
@@ -255,21 +255,22 @@
       h4 Open Source SDK
     p.guides__desc
       | We’re not content to use the same old UI metaphors, particularly when they don’t serve our goals. With our maps in this app, we knew we wanted to integrate the concept of the crosslink, so the traditional map callout simply wasn’t going to cut it. We came up with the concept of the “bubble” callout, with up to 2 smaller crosslink callouts. Let’s be honest – this is pretty far outside the norm of customization options provided by existing map SDKs. Fortunately for us, MapBox provides an open-source SDK for their map, so we had the power to dive into the internals to allow ourselves the degree of control necessary for our UX goals.
-    span.caption-box__block
-      span.iphone__graphic-highlight
-      span.iphone__block
-        span.iphone__device-group
-          span.iphone__device-group--content
-            span.iphone__video
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/open-source-sdk%402x.jpg")
-                  span.ipad__screen
-                  span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
-                    span.ipad__player-overlay
-                      a(href="#")
+    .source__block
+      span.caption-box__block
+        span.iphone__graphic-highlight
+        span.iphone__block
+          span.iphone__device-group
+            span.iphone__device-group--content
+              span.iphone__video
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/open-source-sdk%402x.jpg")
+                    span.ipad__screen
+                    span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
       .graphic-caption-content
         h4 The Bubble Callout
         p The “bubble” callout appears when a pin is tapped, presenting secondary crosslinks in addition to the primary What To Do content. This level of customization was possible because of the open-source nature of MapBox.
@@ -281,38 +282,38 @@
       p How We Made an Itinerary Experience More Useful
     p.guides__desc
       | At its core, an itinerary is just a list. Since we already had a Favorites list, we had to seriously consider what value an Itinerary section would add for the user. In the end, it boiled down to what kinds of content are being saved. We decided that Favorites were a place to save specific pieces of content – What To Dos, Photos, etc. Itineraries, however, are strictly for Points of Interest – physical locations that a user can actually visit.
-    span.caption-box__block-overflow
+    span.caption-box__slider
       span.iphone__graphic-highlight
-      span.iphone__block.itinerary__block
-          //- ul.clearfix.iphone__device-group--content
-        span.iphone__device-group#slider-device
-            li.iphone__device
+      span.caption-box__block-overflow
+        span.iphone__block
+          span.iphone__device-group
+            span.iphone__device
               span.iphone__shadow
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
                   img(src="../images/itinerary-1%402x.jpg")
-            li.iphone__device
+            span.iphone__device
               span.iphone__shadow
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
                   img(src="../images/itinerary-2%402x.jpg")
-            li.iphone__device
+            span.iphone__device
               span.iphone__shadow
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
                   img(src="../images/itinerary-3%402x.jpg")
-          //- span.iphone__tap
-          //- span.iphone__tap--itinerary
-          //- span.iphone__arrow
-          //- span.iphone__arrow--itinerary
-      //-     svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1736 1170', enable-background='new 0 0 1736 1170', xml:space='preserve')
-      //-       path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M41,651.5h333.8\
-      //- c54.3,0,98.2-44,98.2-98.2v-130c0-54.3,44-98.2,98.2-98.2H627')
-      //-       path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M885,418h281.8\
-      //- c54.3,0,98.2,44,98.2,98.2v65c0,54.3,44,98.2,98.2,98.2h55.8')
+            span.iphone__tap
+            span.iphone__tap--itinerary
+            span.iphone__arrow
+            span.iphone__arrow--itinerary
+        svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 1736 1170', enable-background='new 0 0 1736 1170', xml:space='preserve')
+          path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M41,651.5h333.8\
+    c54.3,0,98.2-44,98.2-98.2v-130c0-54.3,44-98.2,98.2-98.2H627')
+          path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M885,418h281.8\
+    c54.3,0,98.2,44,98.2,98.2v65c0,54.3,44,98.2,98.2,98.2h55.8')
     .graphic-caption-box
       h4 Getting Around the Cities
     p.guides__desc
@@ -321,28 +322,29 @@
       | , the Itinerary section was a bit of an afterthought. We were so focused on the other features of the app, it kind of got lost in the shuffle. We’re not terribly comfortable with missed opportunities, so we were pretty excited to get a second run at the concept.
     p.guides__desc
       | Some of our improvements were simple UX considerations that were missing, like the ability to rename an itinerary. More central, though, was our focus on making the itinerary a helpful planning tool.
-    span.caption-box__block-mistakes
-      span.iphone__graphic-highlight
-      span.iphone__block
-        span.iphone__device-group
-          span.iphone__device-group--content
-            span.iphone__device
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/learning-from-past-mistakes-1%402x.jpg")
-            span.iphone__device
-              span.iphone__shadow
-              span.iphone__chrome
-              span.iphone__device-content
-                span.iphone__screen
-                  img(src="../images/learning-from-past-mistakes-2%402x.jpg")
-            span.iphone__tap
-            span.iphone__arrow
-            svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 420 1046', enable-background='new 0 0 420 1046', xml:space='preserve')
-              path(vector-effect='non-scaling-stroke', fill='none', stroke='#8F64AA', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M105.8,347.9H183\
-              c14.9,0,27-12.1,27-27s12.1-27,27-27h33.4')
+    .mistakes__block
+      span.caption-box__block-mistakes
+        span.iphone__graphic-highlight
+        span.iphone__block
+          span.iphone__device-group
+            span.iphone__device-group--content
+              span.iphone__device
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/learning-from-past-mistakes-1%402x.jpg")
+              span.iphone__device
+                span.iphone__shadow
+                span.iphone__chrome
+                span.iphone__device-content
+                  span.iphone__screen
+                    img(src="../images/learning-from-past-mistakes-2%402x.jpg")
+              span.iphone__tap
+              span.iphone__arrow
+              svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 420 1046', enable-background='new 0 0 420 1046', xml:space='preserve')
+                path(vector-effect='non-scaling-stroke', fill='none', stroke='#8F64AA', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M105.8,347.9H183\
+                c14.9,0,27-12.1,27-27s12.1-27,27-27h33.4')
       .graphic-caption-content
         h4 Renaming an Itinerary
         p The ability to rename an existing itinerary was one part of making the Itinerary section a useful planning tool for users.

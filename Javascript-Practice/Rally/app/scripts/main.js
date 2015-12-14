@@ -15,18 +15,59 @@ $(document).ready(function() {
       adaptiveHeight: true
     });
 
-    $('#slider-device').slick({
-      dots: false,
-      infinite: false,
-      centerMode: true,
-      speed: 300,
-      arrows: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      accessibility: true,
-      adaptiveHeight: true,
-      variableWidth: true
-    });
+    // set color menu
+    function setColor() {
+      // body...
+      var $navBar = $('.nav-bar-bg');
+      var $navContent = $('#nav-menu-content');
+      var $baseContent = $('.nav-menu-base-content');
+      var $foldContent = $('.nav-menu-fold-content');
+      var $menuContent = $('.nav-menu-content');
+      $('.slider-item').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if (nextSlide === 1) {
+          $navBar.css('background-color', 'rgb(183, 89, 255)');
+          $navContent.css('background-color', 'rgb(183, 89, 255)');
+          $baseContent.css('background-color', 'rgb(183, 89, 255)');
+          $foldContent.css('background-color', 'rgb(183, 89, 255)');
+          $menuContent.css('background-color', 'rgb(183, 89, 255)');
+        } else {
+          if (nextSlide === 2) {
+            $navBar.css('background-color', 'rgb(74, 197, 252)');
+            $navContent.css('background-color', 'rgb(74, 197, 252)');
+            $baseContent.css('background-color', 'rgb(74, 197, 252)');
+            $foldContent.css('background-color', 'rgb(74, 197, 252)');
+            $menuContent.css('background-color', 'rgb(74, 197, 252)');
+          } else {
+            if (nextSlide === 3) {
+              $navBar.css('background-color', 'rgb(228, 91, 91)');
+              $navContent.css('background-color', 'rgb(228, 91, 91)');
+              $baseContent.css('background-color', 'rgb(228, 91, 91)');
+              $foldContent.css('background-color', 'rgb(228, 91, 91)');
+              $menuContent.css('background-color', 'rgb(228, 91, 91)');
+            } else {
+              $navBar.css('background-color', 'rgb(198, 207, 212)');
+              $navContent.css('background-color', 'rgb(198, 207, 212)');
+              $baseContent.css('background-color', 'rgb(198, 207, 212)');
+              $foldContent.css('background-color', 'rgb(198, 207, 212)');
+              $menuContent.css('background-color', 'rgb(198, 207, 212)');
+            }
+          }
+        }
+      });
+    }
+
+    // $('#slider-device').slick({
+    //   dots: false,
+    //   infinite: false,
+    //   centerMode: true,
+    //   speed: 300,
+    //   arrows: false,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   accessibility: true,
+    //   adaptiveHeight: true,
+    //   variableWidth: true
+    // });
 
     // $('#scroll-device').slick({
     //   dots: false,
@@ -52,9 +93,11 @@ $(document).ready(function() {
         if(!visible) {
           $(this).parents('.nav-link-menu').addClass('active');
           $(this).parents('.site-nav').addClass('nav-menu-open');
+          $('.slick-dots').css('display', 'none');
         } else {
           $(this).parents('.nav-link-menu').removeClass('active');
           $(this).parents('.site-nav').removeClass('nav-menu-open');
+          $('.slick-dots').css('display', 'block');
         }
 
         visible = !visible;
@@ -141,6 +184,9 @@ $(document).ready(function() {
 
     // excute scroll next part
     // nextPage();
+
+    // set color menu
+    setColor();
 
     // height ribbon block
     sliderHeight();

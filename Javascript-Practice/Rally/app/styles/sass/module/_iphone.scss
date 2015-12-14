@@ -11,6 +11,9 @@
       left: 0;
       top: -10px;
     }
+    &:nth-child(2) {
+      margin: 0 auto;
+    }
     &:nth-child(3) {
       position: absolute;
       left: 66%;
@@ -36,7 +39,6 @@
   display: block;
   position: relative;
   .iphone__device {
-    margin-left: 0;
     width: 47%;
     &:nth-child(2) {
       position: absolute;
@@ -57,18 +59,61 @@
     left: 56%;
   }
 }
-.caption-box__block-overflow {
-  width: 180%;
-  margin-bottom: 80px;
-  .iphone__device {
+.caption-box__slider {
+  padding: 30px 0 82px 0;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  .iphone__graphic-highlight {
+    top: 73%;
   }
-  .iphone__block {
+  .caption-box__block-overflow {
     width: 180%;
+    margin-left: -40%;
+    .iphone__device {
+      width: 23%;
+      &:nth-child(1) {
+        left: 5%;
+        margin: inherit;
+      }
+      &:nth-child(2) {
+        position: absolute;
+        left: 38%;
+        top: 0;
+      }
+       &:nth-child(3) {
+        position: absolute;
+        left: 71%;
+        top: 0;
+      }
+    }
+    .iphone__block {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .iphone__device-group {
+      overflow: hidden;
+      position: relative;
+    }
+    .iphone__lines {
+      left: 49%;
+    }
+    .iphone__tap {
+      left: 14%;
+      top: 53%;
+    }
+    .iphone__arrow {
+      left: 39%;
+      top: 26%;
+    }
   }
-  .iphone__block {
-    max-width: 1200px;
-    overflow: hidden;
-  }
+}
+
+.source__block,
+.mistakes__block,
+.graphic-push-back-modals {
+  position: relative;
+  display: block;
 }
 .caption-box__block-mistakes {
   display: block;
@@ -93,9 +138,19 @@
     top: 33%;
     left: 36%;
   }
+  .iphone__tap--itinerary {
+    @extend .iphone__tap;
+    top: 32%;
+    left: 40%;
+  }
   .iphone__arrow {
     top: 28%;
     left: 57%;
+  }
+  .iphone__arrow--itinerary {
+    @extend .iphone__tap;
+    top: 32%;
+    left: 40%;
   }
 }
 .iphone__building-universal {
@@ -190,7 +245,6 @@
   }
   @include e(device) {
     width: 34.5%;
-    margin: auto;
     position: relative;
     &:before {
       padding-bottom: 211.9%;

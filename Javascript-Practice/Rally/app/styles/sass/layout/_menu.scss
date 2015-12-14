@@ -23,6 +23,7 @@
   width: 100%;
   height: 100%;
   visibility: hidden;
+  background-color: rgb(198, 207, 212);
 }
 
 /* Logo, hamburger */
@@ -325,7 +326,7 @@
 }
 
 #nav-menu-content {
-  background: rgb(198, 207, 212);
+  background-color: rgb(198, 207, 212);
   top: 0;
   left: 0;
   right: 0;
@@ -343,6 +344,7 @@
 
 #nav-menu-center .nav-menu-content {
   left: -279px;
+  background-color: rgb(198, 207, 212);
 }
 
 /* Bases and folds */
@@ -371,9 +373,7 @@
   }
 }
 
-/* Left base and fold
-   448px = sqrt(280^2 + 350^2)
-   51deg = atan(350/280) */
+/* Left base and fold8 */
 
 #nav-menu-left {
   .nav-menu-base {
@@ -387,6 +387,7 @@
     transform: rotateZ(51deg);
   }
   .nav-menu-base-content {
+    background-color: rgb(198, 207, 212);
     right: 0;
     width: 280px;
     -webkit-transform-origin: 100% 100% 0;
@@ -407,6 +408,7 @@
     transform: translateY(100%) rotateZ(51deg) translateY(-1px) rotateX(180deg);
   }
   .nav-menu-fold-content {
+    background-color: rgb(198, 207, 212);
     right: 0;
     width: 280px;
     -webkit-transform-origin: 100% 100% 0;
@@ -418,9 +420,7 @@
   }
 }
 
-/* Right base and fold
-   721px = sqrt(630^2 + 350^2)
-   29deg = atan(350/630) */
+/* Right base and fold */
 
 #nav-menu-right {
   .nav-menu-base {
@@ -434,6 +434,7 @@
     transform: rotateZ(-38deg);
   }
   .nav-menu-base-content {
+    background-color: rgb(198, 207, 212);
     left: 0;
     width: 630px;
     -webkit-transform-origin: 0 100% 0;
@@ -454,6 +455,7 @@
     transform: translateY(100%) rotateZ(-38deg) translateY(-1px) rotateX(180deg);
   }
   .nav-menu-fold-content {
+    background-color: rgb(198, 207, 212);
     left: 0;
     width: 630px;
     -webkit-transform-origin: 0 100% 0;
@@ -507,6 +509,7 @@
 }
 
 #nav-menu-content {
+  background-color: rgb(198, 207, 212);
   -webkit-transition: 0ms 0ms;
   -moz-transition: 0ms 0ms;
   transition: 0ms 0ms;
@@ -552,8 +555,6 @@
   }
   .nav-menu-content {
     visibility: visible;
-    /* See note about finding midpoint */
-    /* 220 + 350 */
     -webkit-transition: 0ms 320ms;
     -moz-transition: 0ms 320ms;
     transition: 0ms 320ms;

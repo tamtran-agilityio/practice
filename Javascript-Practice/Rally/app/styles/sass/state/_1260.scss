@@ -1,3 +1,17 @@
+@media (min-width: 1200px) {
+  .graphic-trials-tribulations-mapkit {
+    .device__group {
+      max-width: 1200px;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .ipad__device {
+      width: 61%;
+      margin: 0;
+    }
+  }
+}
+
 @media (min-width: 1260px) {
   .nav-menu-columns-container {
     width: 1142px;
