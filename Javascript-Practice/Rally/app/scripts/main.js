@@ -65,6 +65,7 @@ $(document).ready(function() {
           $(this).parents('.site-nav').removeClass('nav-menu-open');
           $('.slick-dots').css('display', 'block');
           $('.nav-link-logo').css('display', 'block');
+          $('#navMenu').fadeIn('slow');
         }
 
         visible = !visible;
