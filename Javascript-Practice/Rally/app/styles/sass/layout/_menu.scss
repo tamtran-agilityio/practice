@@ -271,7 +271,7 @@
 /* Media queries */
 
 
-#nav-menu {
+#navMenu {
   display: none;
   position: absolute;
   top: 40px;
@@ -287,39 +287,39 @@
 
 /* Nav menu thirds */
 
-#nav-menu-left, #nav-menu-right, #nav-menu-center {
+#navMenuLeft, #navMenuRight, #navMenuCenter {
   position: absolute;
   top: 0;
   bottom: 0;
   pointer-events: none;
 }
 
-#nav-menu-left {
+#navMenuLeft {
   left: 0;
   width: 280px;
   z-index: 1;
 }
 
-#nav-menu-right {
+#navMenuRight {
   right: 0;
   width: 630px;
   z-index: 1;
 }
 
-#nav-menu-center {
+#navMenuCenter {
   left: 279px;
   right: 629px;
 }
 
 /* Nav menu content */
 
-#nav-menu-content, .nav-menu-content {
+#navMenuContent, .nav-menu-content {
   position: absolute;
   text-align: center;
   z-index: 1;
 }
 
-#nav-menu-content {
+#navMenuContent {
   background-color: rgb(198, 207, 212);
   top: 0;
   left: 0;
@@ -328,15 +328,15 @@
   z-index: 2;
 }
 
-#nav-menu-left .nav-menu-content {
+#navMenuLeft .nav-menu-content {
   left: 0;
 }
 
-#nav-menu-right .nav-menu-content {
+#navMenuRight .nav-menu-content {
   right: 0;
 }
 
-#nav-menu-center .nav-menu-content {
+#navMenuCenter .nav-menu-content {
   left: -279px;
   background-color: rgb(198, 207, 212);
 }
@@ -369,7 +369,7 @@
 
 /* Left base and fold8 */
 
-#nav-menu-left {
+#navMenuLeft {
   .nav-menu-base {
     right: 0;
     width: 448px;
@@ -416,7 +416,7 @@
 
 /* Right base and fold */
 
-#nav-menu-right {
+#navMenuRight {
   .nav-menu-base {
     left: 0;
     width: 804px;
@@ -463,7 +463,7 @@
 
 /* Center base */
 
-#nav-menu-center {
+#navMenuCenter {
   .nav-menu-base, .nav-menu-base-content {
     left: 0;
     right: 0;
@@ -478,7 +478,7 @@
   transition: 0ms 850ms;
 }
 
-#nav-menu {
+#navMenu {
   -webkit-transition: -webkit-transform 750ms 100ms;
   -moz-transition: -moz-transform 750ms 100ms;
   transition: transform 750ms 100ms;
@@ -502,7 +502,7 @@
   }
 }
 
-#nav-menu-content {
+#navMenuContent {
   background-color: rgb(198, 207, 212);
   -webkit-transition: 0ms 0ms;
   -moz-transition: 0ms 0ms;
@@ -516,7 +516,7 @@
   -webkit-transition: 0ms;
   -moz-transition: 0ms;
   transition: 0ms;
-  #nav-menu {
+  #navMenu {
     display: block;
     -webkit-transform: rotateX(0);
     -webkit-transition: -webkit-transform 750ms;
@@ -525,7 +525,7 @@
     transform: rotateX(0);
     transition: transform 750ms;
   }
-  #nav-menu-left .nav-menu-fold {
+  #navMenuLeft .nav-menu-fold {
     -webkit-transform: translateY(100%) rotateZ(51deg) translateY(-1px);
     -webkit-transition: 750ms 100ms;
     -moz-transform: translateY(100%) rotateZ(51deg) translateY(-1px);
@@ -533,7 +533,7 @@
     transform: translateY(100%) rotateZ(51deg) translateY(-1px);
     transition: 750ms 100ms;
   }
-  #nav-menu-right .nav-menu-fold {
+  #navMenuRight .nav-menu-fold {
     -webkit-transform: translateY(100%) rotateZ(-38deg) translateY(-1px);
     -webkit-transition: 750ms 100ms;
     -moz-transform: translateY(100%) rotateZ(-38deg) translateY(-1px);
@@ -541,7 +541,7 @@
     transform: translateY(100%) rotateZ(-38deg) translateY(-1px);
     transition: 750ms 100ms;
   }
-  #nav-menu-content {
+  #navMenuContent {
     visibility: visible;
     -webkit-transition: 0ms 850ms;
     -moz-transition: 0ms 850ms;
@@ -604,7 +604,7 @@
 Begin media query styles
 ///////////////////////////////*/
 
-#nav-menu, #nav-menu-content, .nav-menu-content, .nav-menu-base, .nav-menu-base-content, .nav-menu-fold, .nav-menu-fold-content {
+#navMenu, #navMenuContent, .nav-menu-content, .nav-menu-base, .nav-menu-base-content, .nav-menu-fold, .nav-menu-fold-content {
   height: 500px;
 }
 
@@ -622,11 +622,11 @@ Begin media query styles
 
 /* Don't show left fold until wide enough to do so */
 
-#nav-menu-left {
+#navMenuLeft {
   display: none;
 }
 
-#nav-menu-center {
+#navMenuCenter {
   left: 0;
   .nav-menu-content {
     left: 0;
@@ -634,10 +634,10 @@ Begin media query styles
 }
 
 @media (min-width: 960px) {
-  #nav-menu-left {
+  #navMenuLeft {
     display: block;
   }
-  #nav-menu-center {
+  #navMenuCenter {
     left: 279px;
     .nav-menu-content {
       left: -279px;
