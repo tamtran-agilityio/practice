@@ -59,10 +59,12 @@ $(document).ready(function() {
           $(this).parents('.nav-link-menu').addClass('active');
           $(this).parents('.site-nav').addClass('nav-menu-open');
           $('.slick-dots').css('display', 'none');
+          $('.nav-link-logo').css('display', 'none');
         } else {
           $(this).parents('.nav-link-menu').removeClass('active');
           $(this).parents('.site-nav').removeClass('nav-menu-open');
           $('.slick-dots').css('display', 'block');
+          $('.nav-link-logo').css('display', 'block');
         }
 
         visible = !visible;

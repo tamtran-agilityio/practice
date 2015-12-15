@@ -1,11 +1,14 @@
-#siteBody
+// page index
+#siteStudio
+  // section header
   section.studio
-    .header
+    .studio__block
       .studio__head
         img(src='../images/header-bg.jpg')
         h1.studio__content
           span.studio__huge The Studio
           | Headquarters in Salt Lake City
+  // section intro
   section.intro
     h2.intro__head
       span.first-word One
@@ -21,12 +24,14 @@
         | It’s our process, but it’s just as relevant on powder-covered mountain tops or in ancient red rock canyons. If the blood, sweat, and tears hardly seem worth it, it’ll guide us through.
         em Let’s Go Rally.
         | When the product ships, we’ll think back and be glad we said these three words.
+  // section people
   section.people
     h2.people__head
       span.first-word Six
       | People on Our Team
     .people__content
       #person
+  // section reasons
   section.reasons
     .reasons__content
       h2.reasons__head
@@ -83,6 +88,7 @@
               | We’re Inspired by the Outdoors.
             p
               | Skiing, snowboarding, cycling, exploring, running, motorcycling, and generally seeking inspiration for the next product we want to make.
+  // section clients
   section.clients
     .clients__content
       h2.clients__head
@@ -108,6 +114,7 @@
           .clients__item--bwin
         .clients__item
           .clients__item--paypal
+  // section awards
   section.awards
     .awards__content
       h2.awards__head
@@ -146,6 +153,7 @@
           .awards__item-content
             span.awards__count 2
             span.awards__name Apple Design Award
+  // section outro
   section.outro
     .outro__content
       h2.outro__head
@@ -175,6 +183,7 @@
             p
               | We are always looking for talented individuals. Please send a link to your work to
               a(href="mailto:jobs@rallyinteractive.com?subject=career opportunities") jobs@rallyinteractive.com
+  // part footer
   footer.footer-page
     img.footer-logo(src="../images/logo.png" alt='logo')
     .footer-content

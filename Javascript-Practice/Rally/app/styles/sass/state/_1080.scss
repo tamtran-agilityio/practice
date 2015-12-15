@@ -8,12 +8,19 @@
   .studio__content {
     letter-spacing: 0.4em;
     line-height: 0.9;
+    span  {
+      font-size: 125px;
+      letter-spacing: 0em;
+      line-height: 0.85;
+    }
   }
   .city__better {
     margin-top: 70px;
     letter-spacing: 12px;
   }
-  .studio__huge, .city__travel , .best__title {
+  .studio__huge,
+  .city__travel,
+  .best__title {
     font-size: 150px;
   }
   .first-word {
@@ -34,7 +41,9 @@
     max-width: 940px;
     overflow: visible;
   }
-  .people, .clients, .awards {
+  .people,
+  .clients,
+  .awards {
     padding-top: 180px;
     margin: 0 auto;
     max-width: 940px;
