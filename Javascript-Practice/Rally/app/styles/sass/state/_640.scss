@@ -1,4 +1,11 @@
+/* style medium device */
 @media (min-width: 640px) {
+  // footer
+  .footer-page {
+    .footer-logo {
+      left: 10%;
+    }
+  }
   .first-word {
     font-size: 18px;
     padding-bottom: 16px;
@@ -33,32 +40,52 @@
       width: 28%;
       margin-right: 8%;
       padding-bottom: 28%;
+      margin-top: 8%;
       &:nth-child(3n) {
         margin-right: 0 !important;
       }
       &:nth-child(2n) {
         margin-right: 8%;
       }
-    }
-    .person__block {
-      h5 {
-        font-size: 26px;
-      }
-      p {
-        font-size: 12px;
+      &:nth-child(-n+3) {
+        margin-top: 0;
       }
     }
   }
-
-  .clients__item {
-    width: 28%;
-    padding-bottom: 28%;
-    margin-right: 8%;
-    &:nth-child(3n) {
-      margin-right: 0 !important;
-    }
-    &:nth-child(2n) {
+  // styles part clients
+  .clients {
+    .clients__item {
+      width: 28%;
       margin-right: 8%;
+      padding-bottom: 28%;
+      margin-top: 8%;
+      &:nth-child(3n) {
+        margin-right: 0 !important;
+      }
+      &:nth-child(2n) {
+        margin-right: 8%;
+      }
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+    }
+  }
+  // style part awards
+  .awards {
+    .awards__item {
+      width: 28%;
+      margin-right: 8%;
+      padding-bottom: 28%;
+      margin-top: 8%;
+      &:nth-child(3n) {
+        margin-right: 0 !important;
+      }
+      &:nth-child(2n) {
+        margin-right: 8%;
+      }
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
     }
   }
   .stagger__number {

@@ -1,4 +1,4 @@
-#site_Body {
+#siteBody {
   margin: 41px 0 0 0;
   min-height: 100%;
   -webkit-transform: scale(1);
@@ -160,7 +160,7 @@
       position: relative;
       width: 48%;
       padding-bottom: 48%;
-      margin-right: 2%;
+      margin-right: 4%;
       margin-top: 4%;
       &:nth-child(2n) {
         margin-right: 0;
@@ -169,14 +169,22 @@
         .person__details {
           opacity: 1;
         }
+        .person__block {
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      &:nth-child(-n+2) {
+        margin-top: 0;
       }
     }
     @include e(block) {
-      position: absolute;
-      top: 30%;
-      width: 100%;
-      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      width: 90%;
+      -webkit-transform: translate3d(0, 10px, 0);
       transform: translate3d(0, 10px, 0);
+      -webkit-transition: 500ms;
       transition: 500ms;
       h5 {
         font-size: 25px;
@@ -207,6 +215,7 @@
       cursor: default;
       cursor: default;
       -webkit-transition: opacity 500ms;
+      transition: opacity 500ms;
       text-align: center;
       background: $color-base;
       opacity: 0;
@@ -286,6 +295,7 @@
         position: absolute;
         bottom: 110%;
         margin-bottom: 8%;
+        color: $white;
       }
       @include m(make) {
         position: relative;
@@ -334,9 +344,12 @@
         @extend .stagger__item--make-bg;
         background-image: url('../images/reason-4.jpg');
       }
-      @include m(desc-make) {
+      @include m(content) {
         position: relative;
         padding: 50px 10% 55px;
+        display: block;
+      }
+      @include m(desc-make) {
         h3 {
           background-image: url(../images/line.png);
           background-repeat: no-repeat;
@@ -384,7 +397,7 @@
     position: relative;
     width: 48%;
     padding-bottom: 48%;
-    margin-right: 2%;
+    margin-right: 4%;
     margin-top: 4%;
     transition: background 500ms;
     -webkit-transition: background 500ms;
@@ -393,6 +406,9 @@
     }
     &:nth-child(2n) {
       margin-right: 0;
+    }
+    &:nth-child(-n+2) {
+      margin-top: 0;
     }
     @include m(images) {
       cursor: default;
@@ -466,7 +482,7 @@
     position: relative;
     width: 48%;
     padding-bottom: 48%;
-    margin-right: 2%;
+    margin-right: 4%;
     margin-top: 4%;
     &:nth-child(2n) {
       margin-right: 0;
@@ -482,13 +498,16 @@
   }
   @include e(fwa) {
     @extend .awards__item;
+    margin-top: 0;
     background-position: 0 0;
   }
   @include e(w3) {
+    margin-top: 0;
     @extend .awards__item;
     background-position: 33.3% 0;
   }
   @include e(webby) {
+    margin-top: 0;
     @extend .awards__item;
     background-position: 66.7% 0;
   }
@@ -637,9 +656,11 @@
         @extend .stagger__item--make-bg;
         background-image: url('../images/outro-3.jpg');
       }
-      @include m(desc-make) {
+      @include m(content) {
         position: relative;
         padding: 50px 10% 55px;
+      }
+      @include m(desc-make) {
         h3 {
           background-image: url(../images/line.png);
           background-repeat: no-repeat;
@@ -662,6 +683,7 @@
           a {
             margin: 0 3px;
             color: #e65a58;
+            text-decoration: underline;
           }
         }
       }
@@ -673,6 +695,7 @@
   .outro__item-bg {
     @extend .reasons__item-bg;
     background-image: url("../images/outro-map.jpg");
+    display: none;
     &:before {
       display: block;
       content: "Rally studio";
@@ -689,8 +712,9 @@
       background-size: 22px 27px;
     }
     &:after {
+      width: 20%;
       display: block;
-      content: "Salt Lake City";
+      content: "Salt Lake City, UT\A(244W 300N #101)";
       margin: 0 auto;
       text-transform: uppercase;
       font-family: "Futura Bold", sans-serif;

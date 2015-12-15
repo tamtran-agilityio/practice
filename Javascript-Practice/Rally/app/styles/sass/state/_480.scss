@@ -12,11 +12,96 @@
       font-size: 60px;
     }
   }
+  // style part person
+  #person {
+    justify-content: space-between;
+    .person__item {
+      width: 30%;
+      margin-right: 5%;
+      padding-bottom: 30%;
+      margin-top: 5%;
+      &:nth-child(2n) {
+        margin-right: 5%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+    }
+    .person__block {
+      h5 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  // styles part clients
+  .clients {
+    .clients__item {
+      width: 30%;
+      margin-right: 5%;
+      padding-bottom: 30%;
+      margin-top: 5%;
+      &:nth-child(2n) {
+        margin-right: 5%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+    }
+  }
+  // style part awards
+  .awards {
+    .awards__item {
+      width: 30%;
+      margin-right: 5%;
+      padding-bottom: 30%;
+      margin-top: 5%;
+      &:nth-child(2n) {
+        margin-right: 5%;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+    }
+  }
+  // style part footer
   .footer-page {
+    .footer-logo {
+      padding-top: 90px;
+      width: 40px;
+    }
+    .footer-content {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 90px;
+      h4 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 16px;
+        padding-bottom: 24px;
+      }
+    }
     .footer-social {
+      margin: 0 auto;
+      text-align: center;
+      padding-bottom: 50px;
       .social__facebook {
         width: 60px;
         height: 60px;
+        margin: 0 10px;
       }
       .social__twitter {
         width: 60px;

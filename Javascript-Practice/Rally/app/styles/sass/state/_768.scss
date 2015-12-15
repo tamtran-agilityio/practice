@@ -1,6 +1,6 @@
 /* style of small device */
 @media (min-width: 768px) {
-  #site_Body {
+  #siteBody {
     margin: 61px 0 0 0;
   }
   .city__better {
@@ -20,7 +20,8 @@
   .city__arrive {
     margin-bottom: 15px;
   }
-  .city__arrive, .city__attribution {
+  .city__arrive,
+  .city__attribution {
     font-size: 14px;
     letter-spacing: 6px;
     padding-left: 6px;
@@ -188,10 +189,15 @@
   }
   .slick-dots {
     height: 61px;
-    li button:before {
-      top: 10px;
+    li {
+      width: 16px;
+      button:before {
+        top: 10px;
+        font-size: 40px;
+      }
     }
   }
+  // .slick-dots li button:before
   .guides__block-number {
     font-size: 14px;
     &:before, &:after {
@@ -322,6 +328,17 @@
     .icon-1,.icon-2 {
       font-size: 16px;
       line-height: 20px;
+    }
+  }
+  #person {
+    .person__block {
+      h5 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 16px;
+      }
     }
   }
 }

@@ -5,18 +5,15 @@
   clear: left;
   position: relative;
   .footer-logo {
-    img {
-      width: 20px;
-      position: absolute;
-      left: 5%;
-      padding-top: 45px;
-    }
+    width: 20px;
+    position: absolute;
+    left: 5%;
+    padding-top: 45px;
   }
   .footer-content {
-    width: 50%;
     margin: 0 auto;
     text-align: center;
-    padding-top: 90px;
+    padding-top: 45px;
     .foot-first {
       display: block;
     }
@@ -33,7 +30,7 @@
   .footer-social {
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     .social__facebook {
       @extend %social__footer;
       background-image: url(../images/share-facebook@2x.png);
