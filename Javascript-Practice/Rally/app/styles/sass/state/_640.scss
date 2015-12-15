@@ -4,6 +4,12 @@
     padding-bottom: 16px;
     padding-top: 64px;
   }
+  .studio__content {
+    font-size: 10px;
+    span {
+      font-size: 75px;
+    }
+  }
   .intro__head,
   .people__head,
   .awards__head,
@@ -32,6 +38,14 @@
       }
       &:nth-child(2n) {
         margin-right: 8%;
+      }
+    }
+    .person__block {
+      h5 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 12px;
       }
     }
   }

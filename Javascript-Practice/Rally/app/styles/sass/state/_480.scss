@@ -6,4 +6,26 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+  .studio__content {
+    font-size: 8px;
+    span {
+      font-size: 60px;
+    }
+  }
+  .footer-page {
+    .footer-social {
+      .social__facebook {
+        width: 60px;
+        height: 60px;
+      }
+      .social__twitter {
+        width: 60px;
+        height: 60px;
+      }
+      .social__dribbble {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
 }

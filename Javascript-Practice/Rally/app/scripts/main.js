@@ -135,7 +135,7 @@ $(document).ready(function() {
 
     // function of part scroll iphone
     function scrollScreen() {
-      $('.iphone__block').draggable({ axis: 'x' });
+      // $('.iphone__block').draggable({ axis: 'x' });
     }
 
     // Excute scroll iphone

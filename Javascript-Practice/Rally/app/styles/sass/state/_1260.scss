@@ -11,6 +11,11 @@
       margin: 0;
     }
   }
+  .studio__content {
+    span {
+      font-size: 144px;
+    }
+  }
 }
 
 @media (min-width: 1260px) {
@@ -21,6 +26,18 @@
     padding: 40px 40px 0 40px;
     h2 {
       font: 700 70px/70px "Futura Bold";
+    }
+  }
+  .reasons {
+    .stagger__item {
+      &:before {
+        padding-bottom: 35%;
+      }
+    }
+  }
+  .outro {
+    .stagger__item:before {
+      padding-bottom: 35%;
     }
   }
 }

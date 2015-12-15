@@ -1,9 +1,18 @@
 /* style of small device */
 @media (min-width: 768px) {
+  #site_Body {
+    margin: 61px 0 0 0;
+  }
   .city__better {
     font-size: 14px;
     margin-top: 50px;
     letter-spacing: 6px;
+  }
+  .studio__content {
+    font-size: 12px;
+    span {
+      font-size: 90px;
+    }
   }
   .best__title {
     font-size: 119px;
