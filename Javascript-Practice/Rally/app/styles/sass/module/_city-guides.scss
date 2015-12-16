@@ -18,20 +18,38 @@
     color: $white;
     display: block;
     margin-top: 30px;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    line-height: 1.0em;
+    font-family: "Futura Book";
+    font-weight: 300;
+    padding-top: 1.25em;
+    -webkit-font-smoothing: initial;
+    position: relative;
   }
   @include e(attribution) {
-    font-size: 8px;
-    color: $color-guides;
     display: block;
+    color: $white;
+    font-size: 8px;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    line-height: 1.0em;
+    font-family: "Futura Book";
+    font-weight: 300;
+    padding-top: 1.25em;
+    -webkit-font-smoothing: initial;
+    position: relative;
   }
   @include e(travel) {
     @extend %heading-title;
+    font-size: 75px;
+    font-family: $font-futura-bold;
     word-spacing: 99em;
   }
   @include e(arrive) {
     display: block;
     color: $white;
-    font-size: em(8);
+    font-size: 8px;
     letter-spacing: 0.5em;
     padding-left: 0.5em;
     line-height: 1.0em;
@@ -261,6 +279,8 @@
   }
   .numbered-title--cross {
     @extend .numbered-title;
+    line-height: 17px;
+    margin: 20px auto;
     &:before {
       content: "1";
       background: #9e8bd4;
@@ -268,6 +288,7 @@
     }
   }
   .numbered-title--deep {
+    line-height: 17px;
     @extend .numbered-title;
     &:before {
       content: "2";
@@ -276,6 +297,7 @@
     }
   }
   .numbered-title--img {
+    line-height: 17px;
     @extend .numbered-title;
     &:before {
       content: "2";
@@ -326,7 +348,7 @@
 }
 
 .graphic-caption-box {
-  margin: 30px 0 0;
+  margin: 30px 0;
   h4 {
     color: $white;
     text-align: center;

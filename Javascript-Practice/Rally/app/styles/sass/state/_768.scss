@@ -5,8 +5,10 @@
   }
   .city__better {
     font-size: 14px;
-    margin-top: 50px;
-    letter-spacing: 6px;
+    margin-top: 42px;
+    letter-spacing: 0.75em;
+    padding-left: 0.75em;
+    word-spacing: 0.25em;
   }
   .studio__content {
     font-size: 12px;
@@ -16,19 +18,18 @@
   }
   .best__title {
     font-size: 119px;
-  }
-  .city__arrive {
-    margin-bottom: 15px;
+    padding-top: 20px;
   }
   .city__arrive,
   .city__attribution {
     font-size: 14px;
-    letter-spacing: 6px;
-    padding-left: 6px;
+    letter-spacing: 0.75em;
+    padding-left: 0.75em;
     word-spacing: 0.25em;
   }
   .city__travel {
     font-size: 119px;
+    padding-top: 20px;
   }
   .site-nav {
     height: 61px;
@@ -229,8 +230,18 @@
       font-size: 13px;
     }
   }
+
+  // style page city page
+  .page-section {
+    padding-top: 120px;
+  }
+  .page-section.header {
+    padding-top: 60px;
+  }
   .guides__desc {
     font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     line-height: 38px;
     padding-left: 10%;
     padding-right: 10%;
@@ -248,6 +259,7 @@
   .graphic-caption-box h4 {
     font-size: 24px;
     line-height: 38px;
+    margin: 80px 0;
   }
   .guides__quote em {
     font-size: 24px;
@@ -265,8 +277,11 @@
     padding-left: 12.5%;
     padding-right: 12.5%;
   }
-  .iphone__block {
-    margin-top: 40px;
+
+  .block__device-header {
+    .iphone__block {
+      max-width: 840px;
+    }
   }
   .a-guide-to-your-travels .iphone__block {
     margin-top: 50px;

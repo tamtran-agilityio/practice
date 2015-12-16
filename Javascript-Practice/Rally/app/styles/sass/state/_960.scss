@@ -11,6 +11,10 @@
       font-size: 105px;
     }
   }
+  .group-device__block {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
   .ipad__block,
   .iphone__block {
     padding-left: 12.5%;
@@ -68,6 +72,11 @@
     .nav-menu-content {
       left: -279px;
     }
+  }
+
+  .device__block {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
   }
 }
 

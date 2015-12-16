@@ -1,5 +1,5 @@
-#city-travel.page-content-city
-  section.page-section
+#cityTravel.page-content-city
+  section.page-section.header
     .city__header
       header.city__block
         h1
@@ -405,10 +405,11 @@
               span.iphone__device-content
                 span.iphone__screen
                   .iphone__screenshots
-                    .screenshot
-                      img.screenImage(src="../images/routing-illogical%402x.jpg")
-                    .screenshot
-                      img.screenImage(src="../images/routing-logical%402x.jpg")
+                    ul.clearfix
+                      li.screenshot
+                        img.screenImage(src="../images/routing-illogical%402x.jpg")
+                      li.screenshot
+                        img.screenImage(src="../images/routing-logical%402x.jpg")
                   //- .highlight-content
                   //-   .graphic-caption-content
                   //-     h4 Non-Optimal Route
@@ -507,7 +508,7 @@
       | The process generally entails a developer (whoever has the most patience left) sitting side-by-side with a designer, tweaking values to fine-tune the animation into the precise, sexy beast that we’re looking for. This process can quite literally go on for hours; in this case, the tuning of the main card-flip animation took the better part of a day.
     span.caption-box__block
       span.iphone__graphic-highlight
-      span.group-device__block
+      span.iphone__block
         span.iphone__device-group--content
           span.iphone__video
             span.iphone__shadow

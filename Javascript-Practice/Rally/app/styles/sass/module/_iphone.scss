@@ -2,6 +2,7 @@
 .block__device-header {
   position: relative;
   display: block;
+  margin-top: -20px;
   .iphone__device {
     &:nth-child(1) {
       position: absolute;
@@ -336,7 +337,7 @@
     width: 75%;
     background: #191919;
     &:nth-child(2) {
-      bottom: 58%;
+      bottom: 55%;
     }
   }
   @include e(tap) {
@@ -393,37 +394,56 @@
 }
 
 .iphone__screenshots {
-  width: 140%;
+  overflow: visible !important;
+  width: auto;
   height: 100%;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 247%;
+    li {
+      float: left;
+      width: 44%;
+      height: 100% !important;
+      margin: 0 23px 0 0;
+      padding: 0;
+      background: #333;
+      color: #ddd;
+      text-align: center;
+      cursor: pointer;
+     }
+  }
   .slick-list {
     overflow: visible;
   }
   .screenshot {
-    position: relative;
-    float: left;
-    width: 20%;
-    margin: 0 5% 0 0;
-    height: 100%;
-    overflow: hidden;
-    width: 45%;
-    img {
-      margin-top: 30%;
-      width: 60%;
-      opacity: 0.5;
-    }
-    .ipad__player-overlay {
-      width: 60%;
-    }
-  }
-  .slick-center {
-    img {
-      margin-top: 0;
-      width: 100%;
-      opacity: 1;
-    }
-    .ipad__player-overlay {
-      width: 100%;
-    }
+  //   position: relative;
+  //   float: left;
+  //   width: 20%;
+  //   margin: 0 5% 0 0;
+  //   height: 100%;
+  //   overflow: hidden;
+  //   width: 45%;
+  //   img {
+  //     margin-top: 30%;
+  //     width: 60%;
+  //     opacity: 0.5;
+  //   }
+  //   .ipad__player-overlay {
+  //     width: 60%;
+  //   }
+  // }
+  // .slick-center {
+  //   img {
+  //     margin-top: 0;
+  //     width: 100%;
+  //     opacity: 1;
+  //   }
+  //   .ipad__player-overlay {
+  //     width: 100%;
+  //   }
   }
 }
 .highlight-content {

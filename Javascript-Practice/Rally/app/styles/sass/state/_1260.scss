@@ -14,8 +14,6 @@
   .studio__content {
     span {
       font-size: 130px;
-      letter-spacing: 5.4px;
-      line-height: inherit;
     }
   }
 }
@@ -41,6 +39,13 @@
   .outro {
     .stagger__item:before {
       padding-bottom: 35%;
+    }
+  }
+}
+@media (min-width: 1400px) {
+  .studio__content {
+    span {
+      font-size: 162px;
     }
   }
 }

@@ -147,7 +147,7 @@ $(document).ready(function() {
     // use slick plugin slider change page
     $wrapSlidePage.slick({
       dots: true,
-      infinite: false,
+      infinite: true,
       speed: 300,
       arrows: false,
       slidesToShow: 1,
@@ -166,42 +166,74 @@ $(document).ready(function() {
     // });
 
     // use slick plugin slider change image on iphone
-    $('.iphone__screenshots').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      accessibility: false,
-      variableWidth: false,
-      adaptiveHeight: true,
-      arrows: false,
-      swipeToSlide: false,
-      centerMode: true,
-      centerPadding: '60px 70px 0',
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px 70px 0',
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px 70px 0',
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
+    // $('.iphone__screenshots').slick({
+    //   dots: true,
+    //   infinite: false,
+    //   speed: 300,
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   accessibility: false,
+    //   variableWidth: false,
+    //   adaptiveHeight: true,
+    //   arrows: false,
+    //   swipeToSlide: false,
+    //   centerMode: true,
+    //   centerPadding: '60px 70px 0',
+    //   responsive: [
+    //     {
+    //       breakpoint: 768,
+    //       settings: {
+    //         arrows: false,
+    //         centerMode: true,
+    //         centerPadding: '40px 70px 0',
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1
+    //       }
+    //     },
+    //     {
+    //       breakpoint: 480,
+    //       settings: {
+    //         arrows: false,
+    //         centerMode: true,
+    //         centerPadding: '40px 70px 0',
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1
+    //       }
+    //     }
+    //   ]
+    // });
+    // -------------------------------------------------------------
+    //   Force Centered Navigation
+    // -------------------------------------------------------------
+    (function () {
+      var $frame = $('.iphone__screenshots');
+      var $wrap  = $frame.parent();
+
+      // Call Sly on frame
+      $frame.sly({
+        horizontal: 1,
+        itemNav: 'forceCentered',
+        smart: 1,
+        activateMiddle: 1,
+        activateOn: 'click',
+        mouseDragging: 1,
+        touchDragging: 1,
+        releaseSwing: 1,
+        startAt: 0,
+        // scrollBar: $wrap.find('.scrollbar'),
+        scrollBy: 1,
+        speed: 300,
+        elasticBounds: 1,
+        easing: 'easeOutExpo',
+        dragHandle: 1,
+        dynamicHandle: 1,
+        clickBar: 1,
+
+        // Buttons
+        // prev: $wrap.find('.prev'),
+        // next: $wrap.find('.next')
+      });
+    }());
 
     // set color menu
     setColor($wrapSlidePage);
