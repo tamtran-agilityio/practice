@@ -577,6 +577,7 @@
 
 .nav-menu-column {
   text-align: left;
+  visibility: visible;
   ul {
     list-style-type: none;
     padding: 0 0 38px 0;
@@ -594,7 +595,11 @@
       color: $white;
     }
   }
+  // &:nth-child(1), &:nth-child(3) {
+  //   visibility: visible;
+  // }
 }
+
 
 [data-path="/"] a[href="/"], [data-path="/city-guides/"] a[href="/city-guides/"], [data-path="/snowbird/"] a[href="/snowbird/"], [data-path="/national-parks/"] a[href="/national-parks/"], .nav-menu-column li a:hover {
   background: rgba(0, 0, 0, 0.1);
