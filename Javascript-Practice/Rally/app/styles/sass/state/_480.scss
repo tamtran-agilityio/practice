@@ -123,4 +123,25 @@
     padding-left: 10%;
     padding-right: 10%;
   }
+
+  // slider scroll image
+  .iphone__screenshots {
+    width: 110%;
+    .screenshot {
+      position: relative;
+      float: left;
+      margin: 0 5% 0 0;
+      height: 100%;
+      overflow: hidden;
+      width: 90%;
+      img {
+        width: 100%;
+      }
+    }
+    .slick-center {
+      .ipad__player-overlay {
+        width: 100%;
+      }
+    }
+  }
 }

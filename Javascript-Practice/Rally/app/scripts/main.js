@@ -3,51 +3,7 @@ $(document).ready(function() {
   'use strict';
   (function ($) {
 
-    // var $wrapSlidePage = $('.slider-item');
-
     /* Helper function */
-
-    // set color menu
-    // function setColor() {
-    //   // body...
-    //   var $navBar = $('.nav-bar-bg');
-    //   var $navContent = $('#navMenuContent');
-    //   var $baseContent = $('.nav-menu-base-content');
-    //   var $foldContent = $('.nav-menu-fold-content');
-    //   var $menuContent = $('.nav-menu-content');
-    //   $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    //     if (nextSlide === 1) {
-    //       $navBar.css('background-color', 'rgb(183, 89, 255)');
-    //       $navContent.css('background-color', 'rgb(183, 89, 255)');
-    //       $baseContent.css('background-color', 'rgb(183, 89, 255)');
-    //       $foldContent.css('background-color', 'rgb(183, 89, 255)');
-    //       $menuContent.css('background-color', 'rgb(183, 89, 255)');
-    //     } else {
-    //       if (nextSlide === 2) {
-    //         $navBar.css('background-color', 'rgb(74, 197, 252)');
-    //         $navContent.css('background-color', 'rgb(74, 197, 252)');
-    //         $baseContent.css('background-color', 'rgb(74, 197, 252)');
-    //         $foldContent.css('background-color', 'rgb(74, 197, 252)');
-    //         $menuContent.css('background-color', 'rgb(74, 197, 252)');
-    //       } else {
-    //         if (nextSlide === 3) {
-    //           $navBar.css('background-color', 'rgb(228, 91, 91)');
-    //           $navContent.css('background-color', 'rgb(228, 91, 91)');
-    //           $baseContent.css('background-color', 'rgb(228, 91, 91)');
-    //           $foldContent.css('background-color', 'rgb(228, 91, 91)');
-    //           $menuContent.css('background-color', 'rgb(228, 91, 91)');
-    //         } else {
-    //           $navBar.css('background-color', 'rgb(198, 207, 212)');
-    //           $navContent.css('background-color', 'rgb(198, 207, 212)');
-    //           $baseContent.css('background-color', 'rgb(198, 207, 212)');
-    //           $foldContent.css('background-color', 'rgb(198, 207, 212)');
-    //           $menuContent.css('background-color', 'rgb(198, 207, 212)');
-    //         }
-    //       }
-    //     }
-    //   });
-    //   // return false;
-    // }
 
     // handle menu show
     function showMenu() {
@@ -162,7 +118,7 @@ $(document).ready(function() {
         accessibility: false,
         adaptiveHeight: true
       });
-      $wrapSlidePage.on('beforeChange', function(event, slick, nextSlide){
+      $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
           $navBar.css('background-color', 'rgb(183, 89, 255)');
           $navContent.css('background-color', 'rgb(183, 89, 255)');
@@ -196,15 +152,6 @@ $(document).ready(function() {
       return  false;
     }());
 
-    // $('.highlight-content').slick({
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   arrows: false,
-    //   fade: true,
-    //   variableWidth: true,
-    //   asNavFor: '.iphone__screenshots'
-    // });
-
     // use slick plugin slider change image on iphone
     (function () {
       $('.iphone__screenshots').slick({
@@ -218,15 +165,21 @@ $(document).ready(function() {
         adaptiveHeight: true,
         arrows: false,
         swipeToSlide: false,
-        centerMode: true,
-        centerPadding: '60px 70px 0',
+        // centerMode: true,
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        },
+        // centerPadding: '60px 70px 0',
+        asNavFor: '.iphone__screenshots-before',
         responsive: [
           {
             breakpoint: 768,
             settings: {
               arrows: false,
-              centerMode: true,
-              centerPadding: '40px 70px 0',
+              // centerMode: true,
+              centerPadding: '0',
               slidesToShow: 1,
               slidesToScroll: 1
             }
@@ -243,39 +196,26 @@ $(document).ready(function() {
           }
         ]
       });
+      $('.iphone__screenshots-before').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: false,
+        adaptiveHeight: false,
+        arrows: false,
+        asNavFor: '.iphone__screenshots',
+        // swipeToSlide: false,
+        // centerMode: true,
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        },
+      });
     }());
-    // -------------------------------------------------------------
-    //   Force Centered Navigation
-    // -------------------------------------------------------------
-    // (function () {
-    //   var $frame = $('.iphone__screenshots');
-    //   // var $wrap  = $frame.parent();
-
-    //   // Call Sly on frame
-    //   $frame.sly({
-    //     horizontal: 1,
-    //     itemNav: 'forceCentered',
-    //     smart: 1,
-    //     activateMiddle: 1,
-    //     activateOn: 'click',
-    //     mouseDragging: 1,
-    //     touchDragging: 1,
-    //     releaseSwing: 1,
-    //     startAt: 0,
-    //     // scrollBar: $wrap.find('.scrollbar'),
-    //     scrollBy: 1,
-    //     speed: 300,
-    //     elasticBounds: 1,
-    //     easing: 'easeOutExpo',
-    //     dragHandle: 1,
-    //     dynamicHandle: 1,
-    //     clickBar: 1
-
-    //     // Buttons
-    //     // prev: $wrap.find('.prev'),
-    //     // next: $wrap.find('.next')
-    //   });
-    // }());
 
     // set color menu
     // setColor($wrapSlidePage);
