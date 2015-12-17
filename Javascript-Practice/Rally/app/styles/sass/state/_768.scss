@@ -366,6 +366,16 @@
   .iphone__screenshots {
     width: 112%;
   }
+  .highlight-content {
+    .caption-non-optimal, .caption-optimal {
+      h4 {
+        max-width: 220px;
+      }
+      p {
+        max-width: 464px;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) and (min-height: 660px) {

@@ -450,12 +450,49 @@
   }
 }
 .highlight-content {
-  position: relative;
-  display: block;
   width: 100%;
-  min-width: 100px;
+  top: -145px;
+  left: 110%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 220px;
+  font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
+  cursor: default;
+  margin-right: -23%;
+  .caption-non-optimal {
+    h4 {
+      text-align: left;
+    }
+    @extend .graphic-caption-content;
+    display: inline-block;
+    vertical-align: middle;
+    top: 40%;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .caption-optimal {
+    h4 {
+      text-align: left;
+    }
+    @extend .graphic-caption-content;
+    display: none;
+    display: inline-block;
+    vertical-align: middle;
+    top: 40%;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
   .graphic-caption-content {
-    display: block;
     float: left;
     width: 100%;
     margin: 0 auto;

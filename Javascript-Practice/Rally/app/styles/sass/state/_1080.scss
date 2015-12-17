@@ -597,4 +597,12 @@
       }
     }
   }
+  .highlight-content {
+    .caption-non-optimal, .caption-optimal {
+      left: 0;
+    }
+     .caption-non-optimal {
+      display: none;
+     }
+  }
 }
