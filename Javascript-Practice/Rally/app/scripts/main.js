@@ -191,11 +191,13 @@ $(document).ready(function() {
       });
       $('.iphone__screenshots-before').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
-          $('.caption-non-optimal').fadeIn();
-          $('.caption-optimal').fadeOut();
-        } else {
           $('.caption-non-optimal').fadeOut();
           $('.caption-optimal').fadeIn();
+          $('.pagination-bar-content').addClass('acitve');
+        } else {
+          $('.caption-non-optimal').fadeIn();
+          $('.caption-optimal').fadeOut();
+          $('.pagination-bar-content').removeClass('acitve');
         }
       });
     }());

@@ -385,7 +385,7 @@
       width: 31%;
     }
     .graphic-caption-content {
-      top: 30%;
+      top: 35%;
     }
   }
   .a-guide-to-your-travels {
@@ -600,6 +600,10 @@
   .highlight-content {
     .caption-non-optimal, .caption-optimal {
       left: 0;
+      top: 35%;
+      p {
+        width: 100%;
+      }
     }
      .caption-non-optimal {
       display: none;

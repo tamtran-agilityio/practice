@@ -111,6 +111,10 @@
   webkit-transition: 1.5s linear !important;
     transition: 1.5s linear !important;
 }
+
+.gesture {
+  padding-top: 80px;
+}
 .guides {
   @include e(block-number) {
     border-color: #9e8bd4;

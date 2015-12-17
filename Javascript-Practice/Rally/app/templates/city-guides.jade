@@ -395,12 +395,12 @@
     p.guides__desc
       | To skirt this weakness, we created a system in our API to cache and compare routing solutions server-side to improve routes over time without over-burdening the server on any particular request.
     span.caption-box__block
-      span.iphone__graphic-highlight
+      //- span.iphone__graphic-highlight
       span.iphone__block
         span.iphone__device-group
           span.iphone__device-group--content
             span.iphone__video
-              span.iphone__shadow
+              //- span.iphone__shadow
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
@@ -414,13 +414,20 @@
                     img.screenImage(src="../images/routing-illogical%402x.jpg")
                   .screenshot
                     img.screenImage(src="../images/routing-logical%402x.jpg")
-                .highlight-content
-                  .caption-non-optimal
-                    h4 Non-Optimal Route
-                    p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
-                  .caption-optimal
-                    h4 Optimal Route
-                    p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
+              .highlight-content
+                .caption-non-optimal
+                  h4 Non-Optimal Route
+                  p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
+                    span.caption-continue ...continue
+                .caption-optimal
+                  h4 Optimal Route
+                  p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
+                    span.caption-continue ...continue
+              span.pagination-bar
+                .pagination-bar-outes
+                  .pagination-bar-inner
+                    .pagination-bar-content
+                      .pagination-bar-handle
   section.page-section.gesture
     .guides__block-number
       span 06
