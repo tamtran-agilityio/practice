@@ -366,15 +366,8 @@
   .iphone__screenshots {
     width: 112%;
   }
-  .highlight-content {
-    .caption-non-optimal, .caption-optimal {
-      h4 {
-        max-width: 220px;
-      }
-      p {
-        max-width: 464px;
-      }
-    }
+  .caption-box__block {
+    // overflow: hidden;
   }
   .highlight-content {
     width: 100%;
@@ -391,55 +384,74 @@
     font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
     cursor: default;
     margin-right: -23%;
-  .caption-non-optimal {
-    display: inline-block;
-    vertical-align: middle;
-    top: 40%;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    h4 {
-      text-align: left;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+      margin-left: -0.25em;
     }
-    p {
-      overflow: visible;
-      height: auto;
+    .caption-non-optimal {
+      display: inline-block;
+      vertical-align: middle;
+      top: 40%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      padding-top: 20px;
+      h4 {
+        text-align: left;
+        max-width: 220px;
+      }
+      p {
+        max-width: 464px;
+        overflow: visible;
+        height: auto;
+        width: 100%;
+        padding-top: 20px;
+      }
+      .caption-continue {
+        display: none;
+      }
     }
-    .caption-continue {
+    .caption-optimal {
       display: none;
-    }
-  }
-  .caption-optimal {
-    display: none;
-    vertical-align: middle;
-    top: 40%;
-    left: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    h4 {
-      text-align: left;
-    }
-    p {
-      overflow: visible;
-      height: auto;
+      vertical-align: middle;
+      top: 40%;
+      left: 0;
+      position: absolute;
+      bottom: 0;
       width: 100%;
-      padding-top: 20px;
+      h4 {
+        text-align: left;
+        max-width: 220px;
+      }
+      p {
+        max-width: 464px;
+        overflow: visible;
+        height: auto;
+        width: 100%;
+        padding-top: 20px;
+      }
+      .caption-continue {
+        display: none;
+      }
     }
-    .caption-continue {
-      display: none;
+    .graphic-caption-content {
+      position: relative;
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+      max-width: initial;
+      min-width: initial;
     }
   }
-  .graphic-caption-content {
-    float: left;
-    width: 100%;
-    margin: 0 auto;
+  .pagination-bar {
+    height: 40px;
+    max-width: 480px;
   }
-}
 }
 
 @media (min-width: 768px) and (min-height: 660px) {

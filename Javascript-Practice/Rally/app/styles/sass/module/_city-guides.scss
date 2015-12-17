@@ -115,6 +115,18 @@
 .gesture {
   padding-top: 80px;
 }
+
+.custom-animation {
+  .caption-box__block {
+    margin-bottom: 80px;
+  }
+  .highlight-content {
+    top: 10px;
+  }
+  .pagination-bar {
+    top:  50px;
+  }
+}
 .guides {
   @include e(block-number) {
     border-color: #9e8bd4;

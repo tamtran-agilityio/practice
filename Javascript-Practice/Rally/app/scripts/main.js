@@ -149,12 +149,13 @@ $(document).ready(function() {
           }
         }
       });
-      return  false;
+      return false;
     }());
 
     // use slick plugin slider change image on iphone
     (function () {
-      $('.iphone__screenshots').slick({
+      var $wrapSlidePage = $('.slider-item');
+      $('#gestureMain').slick({
         dots: true,
         infinite: false,
         speed: 300,
@@ -170,9 +171,9 @@ $(document).ready(function() {
             draggable: false
           });
         },
-        asNavFor: '.iphone__screenshots-before'
+        asNavFor: '#gestureMainMore'
       });
-      $('.iphone__screenshots-before').slick({
+      $('#gestureMainMore').slick({
         dots: true,
         infinite: false,
         speed: 300,
@@ -182,14 +183,14 @@ $(document).ready(function() {
         variableWidth: false,
         adaptiveHeight: false,
         arrows: false,
-        asNavFor: '.iphone__screenshots',
+        asNavFor: '#gestureMain',
         onInit: function() {
           $wrapSlidePage.slick({
             draggable: false
           });
-        },
+        }
       });
-      $('.iphone__screenshots-before').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('#gestureMainMore').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
           $('.caption-non-optimal').fadeOut();
           $('.caption-optimal').fadeIn();
@@ -202,6 +203,106 @@ $(document).ready(function() {
       });
     }());
 
+    (function () {
+      var $wrapSlidePage = $('.slider-item');
+      $('#cardsCity').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: false,
+        adaptiveHeight: true,
+        arrows: false,
+        swipeToSlide: false,
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        },
+        asNavFor: '#cardsCityEssentials'
+      });
+      $('#cardsCityEssentials').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: false,
+        adaptiveHeight: false,
+        arrows: false,
+        asNavFor: '#cardsCity',
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        }
+      });
+      $('#cardsCityEssentials').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if (nextSlide === 1) {
+          $('.caption-non-optimal').fadeOut();
+          $('.caption-optimal').fadeIn();
+          $('.pagination-bar-content').addClass('acitve');
+        } else {
+          $('.caption-non-optimal').fadeIn();
+          $('.caption-optimal').fadeOut();
+          $('.pagination-bar-content').removeClass('acitve');
+        }
+      });
+    }());
+
+
+    (function () {
+      var $wrapSlidePage = $('.slider-item');
+      $('#gestureMapbox').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: false,
+        adaptiveHeight: true,
+        arrows: false,
+        swipeToSlide: false,
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        },
+        asNavFor: '#gestureSwipe'
+      });
+      $('#gestureSwipe').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: false,
+        adaptiveHeight: false,
+        arrows: false,
+        asNavFor: '#gestureMapbox',
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        }
+      });
+      $('#gestureSwipe').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        if (nextSlide === 1) {
+          $('.caption-non-optimal').fadeOut();
+          $('.caption-optimal').fadeIn();
+          $('.pagination-bar-content').addClass('acitve');
+        } else {
+          $('.caption-non-optimal').fadeIn();
+          $('.caption-optimal').fadeOut();
+          $('.pagination-bar-content').removeClass('acitve');
+        }
+      });
+    }());
     // set color menu
     // setColor($wrapSlidePage);
 

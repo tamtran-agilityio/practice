@@ -404,30 +404,31 @@
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
-                  .iphone__screenshots
+                  #gestureMain.iphone__screenshots
                     .screenshot
                       img.screenImage(src="../images/routing-illogical%402x.jpg")
                     .screenshot
                       img.screenImage(src="../images/routing-logical%402x.jpg")
-                .iphone__screenshots-before
+                #gestureMainMore.iphone__screenshots-before
                   .screenshot
                     img.screenImage(src="../images/routing-illogical%402x.jpg")
                   .screenshot
                     img.screenImage(src="../images/routing-logical%402x.jpg")
               .highlight-content
-                .caption-non-optimal
-                  h4 Non-Optimal Route
-                  p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
-                    span.caption-continue ...continue
-                .caption-optimal
-                  h4 Optimal Route
-                  p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
-                    span.caption-continue ...continue
-              span.pagination-bar
-                .pagination-bar-outes
-                  .pagination-bar-inner
-                    .pagination-bar-content
-                      .pagination-bar-handle
+                .highlight-content-inner
+                  .caption-non-optimal
+                    h4 Non-Optimal Route
+                    p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
+                      span.caption-continue ...continue
+                  .caption-optimal
+                    h4 Optimal Route
+                    p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
+                      span.caption-continue ...continue
+            span.pagination-bar
+              .pagination-bar-outes
+                .pagination-bar-inner
+                  .pagination-bar-content
+                    .pagination-bar-handle
   section.page-section.gesture
     .guides__block-number
       span 06
@@ -442,18 +443,18 @@
       li
         p Specialized gestures can give power users access to less-important features as well as quicker ways to traverse primary features
     span.caption-box__block
-      span.iphone__graphic-highlight
+      //- span.iphone__graphic-highlight
       span.iphone__block
         span.iphone__device-group
           span.iphone__device-group--content
             span.iphone__video
-              span.iphone__shadow
+              //- span.iphone__shadow
               span.iphone__chrome
               span.iphone__device-content
                 span.iphone__screen
-                  .iphone__screenshots
+                  #gestureMapbox.iphone__screenshots
                     .screenshot
-                      img(src="../images/video-gesture-main-menu.jpg")
+                      img.screenImage(src="../images/video-gesture-main-menu.jpg")
                       span.ipad__screen
                       span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
                         span.ipad__player-overlay
@@ -464,6 +465,30 @@
                       span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
                         span.ipad__player-overlay
                           a(href="#")
+                #gestureSwipe.iphone__screenshots-before
+                  .screenshot
+                    img.screenImage(src="../images/video-gesture-main-menu.jpg")
+                  .screenshot
+                    img.screenImage(src="../images/video-gesture-swipe.jpg")
+              .highlight-content
+                .highlight-content-inner
+                  .caption-non-optimal
+                    h4 Main Menu
+                    p | We learned on
+                        a(href="#") National Parks
+                        | that with the stack metaphor popularized by iOS, it’s easy for users to get buried in crosslinked content. Our solution for City Guides was a main menu that is always accessible to the user, allowing them to jump from anywhere, no matter how buried, to a different section of the app. While there is a tappable UI callout visible at all times, we also wanted to allow for opening and closing the menu with a simple swiping gesture.
+                        span.caption-continue ...continue
+                  .caption-optimal
+                    h4 Swipeable List Cells
+                    p | We love (and miss) the swipeable cells pioneered by
+                      a(href="#") Loren Brichter
+                      |  in Tweetie 2. We wanted to replicate the same slinky feel, allowing the user to pull the cell to the side with immediate visual feedback. We wound up using these swipeable cells two ways: for primary content, exposing the context menu options, and for user-curated itineraries, to reveal editing options. We’re particularly proud of the renaming feature, where the swiped cell expands to become an input field.
+                      span.caption-continue ...continue
+            span.pagination-bar
+              .pagination-bar-outes
+                .pagination-bar-inner
+                  .pagination-bar-content
+                    .pagination-bar-handle
   section.page-section.custom-animation
     .guides__block-number
       span 07
@@ -518,19 +543,62 @@
     p.guides__desc
       | The process generally entails a developer (whoever has the most patience left) sitting side-by-side with a designer, tweaking values to fine-tune the animation into the precise, sexy beast that we’re looking for. This process can quite literally go on for hours; in this case, the tuning of the main card-flip animation took the better part of a day.
     span.caption-box__block
-      span.iphone__graphic-highlight
+      //- span.iphone__graphic-highlight
       span.iphone__block
-        span.iphone__device-group--content
-          span.iphone__video
-            span.iphone__shadow
-            span.iphone__chrome
-            span.iphone__device-content
-              ul.clearfix.iphone__screen
-                img(src="../images/video-gesture-main-menu.jpg")
-                span.ipad__screen
-                span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
-                  span.ipad__player-overlay
-                    a(href="#")
+        span.iphone__device-group
+          span.iphone__device-group--content
+            span.iphone__video
+              //- span.iphone__shadow
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  #cardsCity.iphone__screenshots
+                    .screenshot
+                      img.screenImage(src="../images/video-details-city-cards.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/video-details-essentials.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                #cardsCityEssentials.iphone__screenshots-before
+                  .screenshot
+                    img.screenImage(src="../images/video-details-city-cards.jpg")
+                  .screenshot
+                    img.screenImage(src="../images/video-details-essentials.jpg")
+              .highlight-content
+                .highlight-content-inner
+                  .caption-non-optimal
+                    h4 City Cards
+                    p An quick After Effects prototype formed the basis of the City Card animation, giving us a unique effect rather than simply a standard scrolling motion.
+                      span.caption-continue ...continue
+                  .caption-optimal
+                    h4 City Statistics
+                    p The Statistics section gave us an opportunity to have a little fun with animations, animating both the location of elements and the numerical values of the statistics.
+                      span.caption-continue ...continue
+            span.pagination-bar
+              .pagination-bar-outes
+                .pagination-bar-inner
+                  .pagination-bar-content
+                    .pagination-bar-handle
+    //- span.caption-box__block
+    //-   span.iphone__graphic-highlight
+    //-   span.iphone__block
+    //-     span.iphone__device-group--content
+    //-       span.iphone__video
+    //-         span.iphone__shadow
+    //-         span.iphone__chrome
+    //-         span.iphone__device-content
+    //-           ul.clearfix.iphone__screen
+    //-             img(src="../images/video-gesture-main-menu.jpg")
+    //-             span.ipad__screen
+    //-             span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+    //-               span.ipad__player-overlay
+    //-                 a(href="#")
     svg.travel__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
       g
         path(fill='none', stroke='#9e8bd4', stroke-width='3', stroke-linecap='round', stroke-linejoin='round', stroke-miterlimit='10', d='\
