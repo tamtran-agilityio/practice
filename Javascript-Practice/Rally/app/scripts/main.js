@@ -156,7 +156,7 @@ $(document).ready(function() {
     (function () {
       var $wrapSlidePage = $('.slider-item');
       $('#gestureMain').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -174,7 +174,7 @@ $(document).ready(function() {
         asNavFor: '#gestureMainMore'
       });
       $('#gestureMainMore').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -206,7 +206,7 @@ $(document).ready(function() {
     (function () {
       var $wrapSlidePage = $('.slider-item');
       $('#cardsCity').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -224,7 +224,7 @@ $(document).ready(function() {
         asNavFor: '#cardsCityEssentials'
       });
       $('#cardsCityEssentials').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -257,7 +257,7 @@ $(document).ready(function() {
     (function () {
       var $wrapSlidePage = $('.slider-item');
       $('#gestureMapbox').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -275,7 +275,7 @@ $(document).ready(function() {
         asNavFor: '#gestureSwipe'
       });
       $('#gestureSwipe').slick({
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
@@ -293,14 +293,33 @@ $(document).ready(function() {
       });
       $('#gestureSwipe').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
-          $('.caption-non-optimal').fadeOut();
-          $('.caption-optimal').fadeIn();
+          $('.caption-non-optimal').fadeOut(10);
+          $('.caption-optimal').fadeIn('slow');
           $('.pagination-bar-content').addClass('acitve');
         } else {
-          $('.caption-non-optimal').fadeIn();
-          $('.caption-optimal').fadeOut();
+          $('.caption-non-optimal').fadeIn('slow');
+          $('.caption-optimal').fadeOut(10);
           $('.pagination-bar-content').removeClass('acitve');
         }
+      });
+
+      $('.stamp-images-overflow').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        accessibility: false,
+        variableWidth: true,
+        adaptiveHeight: false,
+        arrows: false,
+        // swipeToSlide: false,
+        onInit: function() {
+          $wrapSlidePage.slick({
+            draggable: false
+          });
+        },
+        // asNavFor: '#gestureSwipe'
       });
     }());
     // set color menu

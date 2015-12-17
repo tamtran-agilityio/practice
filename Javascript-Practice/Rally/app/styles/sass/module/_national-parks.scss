@@ -389,18 +389,18 @@
     }
   }
   .stamp-images-overflow {
-    width: 600%;
+    // width: 600%;
     overflow: hidden;
     padding: 0 0 50px;
   }
   .image-wrapper {
     float: left;
-    width: 16.66%;
+    width: 2%;
     position: relative;
     &:before {
       display: block;
       content: "";
-      padding-bottom: 30%;
+      padding-bottom: 35%;
     }
     img {
       max-width: 100%;
