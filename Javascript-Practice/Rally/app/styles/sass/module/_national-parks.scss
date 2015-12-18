@@ -88,6 +88,12 @@
       background: #e45b5b;
     }
   }
+  .city__better {
+    color: $white;
+  }
+  .city__attribution {
+    color: #e45b5b;
+  }
 }
 
 .guides__response {
@@ -564,9 +570,13 @@
     }
   }
 }
-.graphic-trials-tribulations-mapkit,
-.slideshow-placeholder-tribulations {
+.graphic-trials-tribulations-mapkit {
   @extend .graphic-tray;
+  .graphic-caption-content {
+    display: none;
+  }
+}
+.slideshow-placeholder-tribulations {
 }
 
 .parks-icon-comparison {

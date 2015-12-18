@@ -152,10 +152,11 @@ $(document).ready(function() {
       return false;
     }());
 
+
     // use slick plugin slider change image on iphone
-    (function () {
+    function sliderDelay(slide, changeDelay) {
       var $wrapSlidePage = $('.slider-item');
-      $('#gestureMain').slick({
+      $(slide).slick({
         dots: false,
         infinite: false,
         speed: 300,
@@ -171,9 +172,9 @@ $(document).ready(function() {
             draggable: false
           });
         },
-        asNavFor: '#gestureMainMore'
+        asNavFor: changeDelay
       });
-      $('#gestureMainMore').slick({
+      $(changeDelay).slick({
         dots: false,
         infinite: false,
         speed: 300,
@@ -183,14 +184,14 @@ $(document).ready(function() {
         variableWidth: false,
         adaptiveHeight: false,
         arrows: false,
-        asNavFor: '#gestureMain',
+        asNavFor: slide,
         onInit: function() {
           $wrapSlidePage.slick({
             draggable: false
           });
         }
       });
-      $('#gestureMainMore').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
         if (nextSlide === 1) {
           $('.caption-non-optimal').fadeOut();
           $('.caption-optimal').fadeIn();
@@ -201,108 +202,10 @@ $(document).ready(function() {
           $('.pagination-bar-content').removeClass('acitve');
         }
       });
-    }());
+    }
 
     (function () {
       var $wrapSlidePage = $('.slider-item');
-      $('#cardsCity').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        accessibility: false,
-        variableWidth: false,
-        adaptiveHeight: true,
-        arrows: false,
-        swipeToSlide: false,
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false
-          });
-        },
-        asNavFor: '#cardsCityEssentials'
-      });
-      $('#cardsCityEssentials').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        accessibility: false,
-        variableWidth: false,
-        adaptiveHeight: false,
-        arrows: false,
-        asNavFor: '#cardsCity',
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false
-          });
-        }
-      });
-      $('#cardsCityEssentials').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        if (nextSlide === 1) {
-          $('.caption-non-optimal').fadeOut();
-          $('.caption-optimal').fadeIn();
-          $('.pagination-bar-content').addClass('acitve');
-        } else {
-          $('.caption-non-optimal').fadeIn();
-          $('.caption-optimal').fadeOut();
-          $('.pagination-bar-content').removeClass('acitve');
-        }
-      });
-    }());
-
-
-    (function () {
-      var $wrapSlidePage = $('.slider-item');
-      $('#gestureMapbox').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        accessibility: false,
-        variableWidth: false,
-        adaptiveHeight: true,
-        arrows: false,
-        swipeToSlide: false,
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false
-          });
-        },
-        asNavFor: '#gestureSwipe'
-      });
-      $('#gestureSwipe').slick({
-        dots: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        accessibility: false,
-        variableWidth: false,
-        adaptiveHeight: false,
-        arrows: false,
-        asNavFor: '#gestureMapbox',
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false
-          });
-        }
-      });
-      $('#gestureSwipe').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        if (nextSlide === 1) {
-          $('.caption-non-optimal').fadeOut(10);
-          $('.caption-optimal').fadeIn('slow');
-          $('.pagination-bar-content').addClass('acitve');
-        } else {
-          $('.caption-non-optimal').fadeIn('slow');
-          $('.caption-optimal').fadeOut(10);
-          $('.pagination-bar-content').removeClass('acitve');
-        }
-      });
-
       $('.stamp-images-overflow').slick({
         dots: true,
         infinite: false,
@@ -322,6 +225,13 @@ $(document).ready(function() {
         // asNavFor: '#gestureSwipe'
       });
     }());
+
+
+    sliderDelay('#gestureMain', '#gestureMainMore');
+    sliderDelay('#cardsCity', '#cardsCityEssentials');
+    sliderDelay('#gestureMapbox', '#gestureSwipe');
+    sliderDelay('#prototype', '#prototypeDelay');
+    sliderDelay('#mountainReport', '#mountainReportDelay');
     // set color menu
     // setColor($wrapSlidePage);
 
