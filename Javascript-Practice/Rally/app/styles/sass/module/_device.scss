@@ -50,6 +50,8 @@
   .device__group {
     max-width: 525px;
     margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
@@ -67,10 +69,21 @@
   .device__shadow {
     bottom: 0;
   }
+  .device__chrome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/browser@2x.png);
+    background-position: top;
+    background-size: 100% auto;
+  }
   .browser__device {
+    margin-top: 60%;
+    width: 68%;
+    margin: 0 0 0 auto;
     position: relative;
-    width: 75%;
-    left: 25%;
     &:before {
       padding-bottom: 77.5%;;
       content: "";
@@ -78,17 +91,25 @@
     }
   }
   .iphone__lines {
-    left: 47%;
-    top: 8px;
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
   }
   .device-aux-content {
     position: absolute;
-    width: 20%;
-    top: 14%;
-    left: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
     img {
-      width: 100%;
+      width: 40%;
       border-radius: 50%;
+      position: absolute;
+      top: 15%;
+      left: -47%;
     }
   }
 }
@@ -103,12 +124,28 @@
   }
   .browser__device {
     position: relative;
-    width: 75%;
+    width: 73%;
     left: 0;
     &:before {
       padding-bottom: 77.5%;;
       content: "";
       display: block;
+    }
+    .device__screen {
+      top: 7.5%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .device__chrome {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(../images/browser@2x.png);
+      background-position: top;
+      background-size: 100% auto;
     }
   }
   .iphone__lines {
@@ -126,20 +163,27 @@
     }
   }
   .iphone__device {
-    width: 27%;
+    width: 16.6%;
     position: absolute;
     top: 30%;
-    left: 85%;
+    left: 73%;
+
   }
   .ipad__device {
     position: absolute;
-    width: 70%;
+    width: 52%;
     left: 30%;
-    top: 25%;
+    top: 15%;
     &:before {
       padding-bottom: 77.5%;
       content: "";
       display: block;
+    }
+    .device__screen {
+      top: 14%;
+      left: 7%;
+      right: 7%;
+      bottom: 14%;
     }
     .device__chrome {
       background-image: url(../images/ipad@2x.png);
@@ -153,21 +197,42 @@
     max-width: 670px;
     margin: 0 auto;
     position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .device__chrome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/browser@2x.png);
+    background-position: top;
+    background-size: 100% auto;
+  }
+  .device__screen {
+    top: 7.5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .browser__device {
+    margin: 0 auto;
+    position: relative;
     &:before {
       padding-bottom: 77.5%;
       content: "";
       display: block;
     }
   }
-  .browser__device {
-    width: 75%;
-    margin: 0 0 0 auto;
-  }
   .device__graphic-highlight {
     top: 80%;
   }
   .device__shadow {
-    bottom: 0;
+    left: -6%;
+    right: -6%;
+    bottom: -6%;
+    background-image: url(../images/browser-shadow@2x.png);
   }
 }
 .slideshow-transitions {
@@ -179,8 +244,6 @@
     position: relative;
   }
   .browser__device {
-    width: 86%;
-    margin: 0 auto;
     position: relative;
     &:before {
       padding-bottom: 77.5%;
@@ -234,14 +297,35 @@
       display: block;
     }
   }
-  .iphone__device {
+  .device__chrome {
+    background-image: url(../images/browser@2x.png);
     position: absolute;
-    top: 25%;
-    width: 20%;
-    right: 10%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-position: top;
+    background-position: top;
+    background-size: 100% auto;
+  }
+  .device__screen {
+    top: 7.5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .device__shadow {
-    bottom: 0;
+    left: -6%;
+    right: -6%;
+    bottom: -6%;
+    background-image: url(../images/browser-shadow@2x.png);
+  }
+  .iphone__device {
+    position: absolute;
+    bottom: -2%;
+    width: 20%;
+    right: 10%;
   }
   .device__graphic-highlight {
     top: 80%;
@@ -265,13 +349,39 @@
       display: block;
     }
   }
+  .device__chrome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/browser@2x.png);
+    background-position: top;
+    background-size: 100% auto;
+  }
+  .device__shadow {
+    left: -6%;
+    right: -6%;
+    bottom: -14%;
+  }
+  .device__screen {
+    top: 7.5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   .device-aux-content {
     position: absolute;
-    top: 15%;
-    left: -35%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     img {
+      width: 40%;
       border-radius: 50%;
-      width: 35%;
+      position: absolute;
+      top: 7%;
+      left: -47%;
     }
   }
   .device__graphic-highlight {
@@ -282,8 +392,8 @@
     margin: 0 auto;
   }
   .iphone__lines {
-    left: 54%;
-    top: -20px;
+    left: 52%;
+    top: -8px;
   }
 }
 .device {

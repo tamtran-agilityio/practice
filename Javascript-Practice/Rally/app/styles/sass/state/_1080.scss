@@ -600,13 +600,19 @@
   .highlight-content {
     .caption-non-optimal, .caption-optimal {
       left: 0;
-      top: 35%;
+      position: relative;
       p {
         width: 100%;
       }
     }
-     .caption-non-optimal {
+    .caption-non-optimal {
       display: none;
-     }
+    }
+  }
+  .national-parks-hero {
+  .device__group {
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
   }
 }

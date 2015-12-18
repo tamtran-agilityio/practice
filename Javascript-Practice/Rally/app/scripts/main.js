@@ -318,7 +318,7 @@ $(document).ready(function() {
           $wrapSlidePage.slick({
             draggable: false
           });
-        },
+        }
         // asNavFor: '#gestureSwipe'
       });
     }());

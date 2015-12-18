@@ -122,6 +122,7 @@
     font-size: 0.65em;
     letter-spacing: 0.5em;
     line-height: 2em;
+    margin: 0 auto;
   }
   .image-wrapper {
     position: relative;
@@ -132,9 +133,12 @@
     }
     img {
       position: absolute;
-      width: 100%;
+      display: block;
+      margin: 0 auto;
       top: 0;
       bottom: 0;
+      left: 0;
+      right: 0;
       opacity: 1;
       transition: opacity 0.2s linear;
     }
@@ -454,7 +458,7 @@
   .device__group {
     display: block;
     margin: -10px auto 0;
-    max-width: 940px;
+    max-width: 1120px;
     padding-left: 5%;
     padding-right: 5%;
   }

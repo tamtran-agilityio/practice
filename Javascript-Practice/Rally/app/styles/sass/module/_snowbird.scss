@@ -13,4 +13,27 @@
   .guides__block-number {
     border-color: #64c4ec;
   }
+  .guides__title p {
+    color: #caf2fd;
+    text-shadow: 0 0 0 #caf2fd;
+  }
+  a {
+    color: #caf2fd;
+  }
+}
+.graphic-mountains {
+  .device__block {
+    max-width: 780px;
+  }
+  .device__screen {
+    top: 7.5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+.side-detection {
+  .device__block {
+    max-width: 1100px;
+  }
 }

@@ -356,7 +356,7 @@
       h4 Mobile First, -ish
     p.guides__desc
       | After a long run-up to the project, we were eager to get going. We dove right in, attacking from multiple angles to try to find the best elements to build the design around. However, after an initial round of designs, it was clear that we’d lost our way a bit. Sometimes you just have to make course corrections, so we took a step back. We had long conversations about our design philosophies and decided to refocus on the smartphone version of the site. We figured that rather than starting big then scaling down, starting small and then blowing it up to desktop size would yield a better result.
-    #slideshow-mobile-first.slideshow.narrow
+    #slideshowMobileFirst.slideshow.narrow
       .graphic.slideshow-placeholder
         .device__graphic-highlight
         .device__group
@@ -406,7 +406,7 @@
       | Our hiccup with the design process had a secondary benefit: we were able to get the developers to prototype concepts as soon as the designers imagined them. This prototyping process let us quickly inform the design process with technical realities. The cube-flip concept developed in this fashion; the initial idea led to a
       a(href='http://dribbble.com/shots/660594-Snowbird-Mobile-Site-Prototype') prototype
       | , where we tested the feasibility of the concept and established restrictions that the platform would impose on us.
-    #slideshow-prototyping.slideshow.narrow
+    #slideshowPrototyping.slideshow.narrow
       .graphic.slideshow-placeholder
         .device__graphic-highlight
         .device__group
@@ -421,22 +421,23 @@
       h4 The Mountains
     p.guides__desc
       | A mobile-first philosophy didn’t mean that we wanted to neglect the desktop site. As we worked on extrapolating the desktop/tablet site from our smartphone designs, we incorporated some elements, like the 3D page transitions, but we wanted the larger version of the site to have some unique charms of its own. We came up with the concept of an abstracted mountain range as part of the main navigation. By using peaks of differing heights, we could indicate the section the current page belongs to as well as providing a rollover effect. The developers got to work on a prototype, eventually using Simplex noise and some simple spring dynamics to bring the generative mountain range to life.
-    #graphic-mountains.graphic.graphic-mountains
+    #graphicMountains.graphic.graphic-mountains
         //- .device__graphic-highlight
         //- span.block__device-header
         span.device__graphic-highlight
         span.device__block
           span.device__group-content
             span.browser__device
+              span.device__chrome
               span.device__shadow
               span.device__content
                 span.device__screen
                   img(src='../images/the-mountains%402x.jpg')
-          span.device-aux-content
-            img(src='../images/zoom-mountains@2x.jpg')
-          svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 576 456', enable-background='new 0 0 576 456', xml:space='preserve')
-            path(vector-effect='non-scaling-stroke', fill='none', stroke='#5BC2EF', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M299,78.5\
-            C299,38.4,237.9,6,162.5,6S26,41.5,26,96.8')
+              span.device-aux-content
+                img(src='../images/zoom-mountains@2x.jpg')
+            svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 576 456', enable-background='new 0 0 576 456', xml:space='preserve')
+              path(vector-effect='non-scaling-stroke', fill='none', stroke='#5BC2EF', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M299,78.5\
+              C299,38.4,237.9,6,162.5,6S26,41.5,26,96.8')
   section.device-specific-mobile.page-section
     .guides__block-number
       span 05
@@ -517,29 +518,30 @@
       h4 Client-Side Detection
     p.guides__desc
       | Unfortunately, not all mobile browsers are created equal. For instance, some CSS3 features, like 3D transforms, aren’t fully implemented on older versions of Android or Windows Phone. Rather than tossing out those effects altogether, we created a simpler versions that we could use as a fallback. At runtime, we could then use JavaScript to inspect the browser’s user agent string and determine whether to use the simple or full version.
-    #graphic-client-side-detection.graphic.side-detection
+    #graphicClient.graphic.side-detection
       span.device__graphic-highlight
       span.device__block
         span.device__group-content
           span.browser__device
+            span.device__chrome
             span.device__shadow
             span.device__content
               span.device__screen
                 img(src='/images/client-side-detection%402x.jpg')
               span.overlap-shadow
-            .ipad__device
-              .device__shadow
-              .device__chrome
-              .device__content
-                .device__screen
-                  img(src='../images/client-side-detection-ipad%402x.jpg')
-                  span.overlap-shadow
-            .iphone__device
-              .device__shadow
-              .device__chrome
-              .device__content
-                .device__screen
-                  img(src='../images/client-side-detection-iphone%402x.jpg')
+          .ipad__device
+            .device__shadow
+            .device__chrome
+            .device__content
+              .device__screen
+                img(src='../images/client-side-detection-ipad%402x.jpg')
+                span.overlap-shadow
+          .iphone__device
+            .device__shadow
+            .device__chrome
+            .device__content
+              .device__screen
+                img(src='../images/client-side-detection-iphone%402x.jpg')
     //- .caption
     //-   b Custom experience for iPhone, iPad, or desktop
     .graphic-caption-box
@@ -837,15 +839,16 @@
     p.guides__desc
       | Snowbird hosts a variety of events throughout the year. Some are one-time events, some stretch for days at a time, and some recur weekly or monthly. We needed a robust event system to allow the flexibility to allow so many possibilities, so that’s precisely what we built. We also built custom logic to comprehend recurring or monthly events into the specific dates on which they occur. This allowed us both to list the individual dates they occur, and also to filter the events to show only ones occurring on a given day or within a certain range.
     figure
-      #graphic-events.graphic.graphic-events
+      #graphicEvents.graphic.graphic-events
         .device__graphic-highlight
         .device__group
           .device-group-content
             .browser__device
-              .device__shadow
-              .device__content
-                .device__screen
-                  img(src='../images/host-events@2x.jpg')
+              span.device__chrome
+              span.device__shadow
+              span.device__content
+              span.device__screen
+                img(src='../images/host-events@2x.jpg')
               .device-aux-content
                 img.detail-crop(src='../images/zoom-events%402x.jpg')
         svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 576 380', enable-background='new 0 0 576 380', xml:space='preserve')
@@ -858,13 +861,14 @@
       abbr(title='What You See Is What You Get') WYSIWG
       |  editors are the enemy of consistency, so we wanted a better solution. In the end, we created a system where the Snowbird team could add all the times a restaurant was open as individual entries. Our custom logic would then grind through and spit out a simplified entry, displaying the days and times the restaurant was open in a simple and accurate manner, giving us the control to keep the styling uniform.
     figure
-      #graphic-dining.graphic.graphic-dining
+      #graphicDining.graphic.graphic-dining
         .device__graphic-highlight
         .device__group
           .device__group-content
             .browser__device
-              .device__shadow
-              .device__content
+              span.device__chrome
+              span.device__shadow
+              span.device__content
                 .device__screen
                   img(src='../images/dining%402x.jpg')
     .graphic-caption-box
@@ -872,21 +876,22 @@
     p.guides__desc
       | The sizing and cropping of images seems to always be a requirement for any CMS, but we’ve yet to be enamored with any existing solutions. They always seem to come up short, either in flexibility or usability. For this site, any image uploaded into the CMS would need to be saved at a variety of sizes, to account for differing dimensions between the desktop and smartphone versions, thumbnails to appear in search results, and retina versions for all of the above. We crafted a Django widget that allowed us to define varied dimension requirements in our data models. When an image is uploaded, it’s automatically sized, cropped, and saved out for all the various sizes. It’s still not our ideal solution; we’d love to have the chance to build a JavaScript widget to assist the process and select the exact crop, but we simply didn’t have time, so it remains on our wishlist.
     figure
-      #graphic-image-sizing-cropping.graphic-cropping
+      #graphicImageSizing.graphic-cropping
         .device__graphic-highlight
         .device__group
           .device-group-content
             .browser__device
-              .device__shadow
-              .device__content
+              span.device__chrome
+              span.device__shadow
+              span.device__content
                 .device__screen
                   img(src='../images/image-sizing-cropping%402x.jpg')
                   span.overlap-shadow
             .iphone__device
               .iphone__shadow
-              .device__chrome
-              .device__content
-                .device__screen
+              .iphone__chrome
+              .iphone__content
+                .iphone__screen
                   img(src='../images/image-sizing-cropping-iphone%402x.jpg')
   section.building-for-performance.page-section
     .guides__block-number
@@ -989,14 +994,14 @@
       h4 CSS Transitions
     p.guides__desc
       | Whenever possible, we knew we’d want to use CSS transitions rather than JavaScript-driven animation, since most modern devices will offload CSS transitions to the GPU. Naturally, canvas animations, such as the Lifts & Trails circle graphs, had to be driven with Javascript, but we’re using CSS transitions wherever we’re animating position or transformation, like the animated transitions between pages.
-    #slideshow-css-transitions.slideshow-transitions
+    #slideshowTransitions.slideshow-transitions
       .graphic.slideshow-placeholder
         .device__graphic-highlight
         .device__group
           .device-group-content
             .browser__device
-              .device__chrome
-              .device__screen
+              span.device__chrome
+              span.device__screen
               .device-aux-content
                 img(src="../images/video-css-page-transition.jpg")
   section.rallys-home-slopes.page-section
