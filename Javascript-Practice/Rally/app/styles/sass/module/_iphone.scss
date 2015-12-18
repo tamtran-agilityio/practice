@@ -3,20 +3,37 @@
   position: relative;
   display: block;
   margin-top: -20px;
+  .overlap_shadow {
+    background: url(../images/overlap-shadow.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: 70%;
+    display: block;
+  }
   .iphone__device {
+    width: 34.5%;
     &:nth-child(1) {
       position: absolute;
       left: 0;
-      top: -10px;
+      top: -2.5%;;
     }
     &:nth-child(2) {
       margin: 0 auto;
+      z-index: 1
     }
     &:nth-child(3) {
       position: absolute;
-      left: 66%;
-      top: 10px;
+      right: 0;
+      bottom: -2.5%;
+      z-index: 2
     }
+  }
+  .iphone__device-content {
+    overflow: hidden;
   }
 }
 .iphone__graphic-crosslink {
@@ -190,6 +207,13 @@
   .ipad__portrait {
     width: 71%;
     left: 14%;
+  }
+  .iphone__device-content {
+    z-index: 0;
+  }
+  .iphone__device {
+    width: 32%;
+    bottom: 2%;
   }
 }
 .ipad__block {
@@ -542,7 +566,7 @@
   height: 40px;
   margin: 0 auto;
   max-width: 300px;
-  background: #3e384f;
+  // background: #3e384f;
   top: 60px;
   .pagination-bar-outer {
     position: relative;

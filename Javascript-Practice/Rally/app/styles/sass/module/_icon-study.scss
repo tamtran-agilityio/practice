@@ -47,10 +47,10 @@
 #snowBird .case-study-icon [fill] {
   fill: #64c4ec;
 }
-#national-parks .case-study-icon [fill] {
+#nationalParks .case-study-icon [fill] {
     fill: #e45b5b;
 }
-#national-parks .case-study-icon [stroke] {
+#nationalParks .case-study-icon [stroke] {
   stroke: #e45b5b;
 }
 
@@ -59,8 +59,8 @@
   opacity: 0;
 }
 .case-study-icon-ready [fill]:nth-child(3n+0) {
-  -webkit-transition: 500ms 0;
-  transition: 500ms 0;
+  -webkit-transition: 500ms 0ms;
+  transition: 500ms 0ms;
 }
 .case-study-icon-ready [fill]:nth-child(3n+1) {
   -webkit-transition: 500ms 150ms;

@@ -356,17 +356,49 @@
       h4 Mobile First, -ish
     p.guides__desc
       | After a long run-up to the project, we were eager to get going. We dove right in, attacking from multiple angles to try to find the best elements to build the design around. However, after an initial round of designs, it was clear that we’d lost our way a bit. Sometimes you just have to make course corrections, so we took a step back. We had long conversations about our design philosophies and decided to refocus on the smartphone version of the site. We figured that rather than starting big then scaling down, starting small and then blowing it up to desktop size would yield a better result.
-    #slideshowMobileFirst.slideshow.narrow
-      .graphic.slideshow-placeholder
-        .device__graphic-highlight
-        .device__group
-          .device-group-content
-            .iphone__device
-              .device-aux-content
-                .iphone__shadow
-                .iphone__chrome
-                .device__screen
-                  img(src='../images/mountain-report%402x.jpg')
+    span#slideshowMobileFirst.caption-box__block
+      //- span.iphone__graphic-highlight
+      span.iphone__block
+        span.iphone__device-group
+          span.iphone__device-group--content
+            span.iphone__video
+              //- span.iphone__shadow
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  #mountainReport.iphone__screenshots
+                    .screenshot
+                      img.screenImage(src='../images/mountain-report%402x.jpg')
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/lodging@2x.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                #mountainReportDelay.iphone__screenshots-before
+                  .screenshot
+                    img.screenImage(src='../images/mountain-report%402x.jpg')
+                  .screenshot
+                    img.screenImage(src="../images/lodging@2x.jpg")
+              .highlight-content
+                .highlight-content-inner
+                  .caption-non-optimal
+                    h4 Mountain Report
+                    p The Mountain Report showcases the hallmarks of the smartphone design – large, tappable interaction points and clean, bold graphic design.
+                      span.caption-continue ...continue
+                  .caption-optimal
+                    h4 Book a Trip
+                    p The “Book a Trip” widget is collapsible to conserve screen real-estate, and utilizes the smartphone’s native date-picker and list-picker tools.
+                      span.caption-continue ...continue
+            span.pagination-bar
+              .pagination-bar-outes
+                .pagination-bar-inner
+                  .pagination-bar-content
+                    .pagination-bar-handle
     .graphic-caption-box
       h4 Aiming for Native
     p.guides__desc
@@ -406,17 +438,47 @@
       | Our hiccup with the design process had a secondary benefit: we were able to get the developers to prototype concepts as soon as the designers imagined them. This prototyping process let us quickly inform the design process with technical realities. The cube-flip concept developed in this fashion; the initial idea led to a
       a(href='http://dribbble.com/shots/660594-Snowbird-Mobile-Site-Prototype') prototype
       | , where we tested the feasibility of the concept and established restrictions that the platform would impose on us.
-    #slideshowPrototyping.slideshow.narrow
-      .graphic.slideshow-placeholder
-        .device__graphic-highlight
-        .device__group
-          .device-group-content
-            .iphone__device
-              .device-aux-content
-                .iphone__shadow
-                .iphone__chrome
-                .device__screen
-                  img(src='../images/video-prototype-menu.jpg')
+    span#slideshowPrototyping.caption-box__block
+      span.iphone__block
+        span.iphone__device-group
+          span.iphone__device-group--content
+            span.iphone__video
+              span.iphone__chrome
+              span.iphone__device-content
+                span.iphone__screen
+                  #prototype.iphone__screenshots
+                    .screenshot
+                      img.screenImage(src='../images/video-prototype-menu.jpg')
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/video-prototype-cube-flip.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                #prototypeDelay.iphone__screenshots-before
+                  .screenshot
+                    img.screenImage(src='../images/video-prototype-menu.jpg')
+                  .screenshot
+                    img.screenImage(src="../images/video-prototype-cube-flip.jpg")
+              .highlight-content
+                .highlight-content-inner
+                  .caption-non-optimal
+                    h4 Menu Flip-Down
+                    p Hiding the menu is standard on mobile sites, but we wanted a novel way to reveal it, resulting in the flip-down from the top.
+                      span.caption-continue ...continue
+                  .caption-optimal
+                    h4 Cube-Flip Transition
+                    p We wanted to indicate a sense of direction in page transitions, so came up with a cube flip to the left for forward motion, and a cube flip to the right if the user uses the back button.
+                      span.caption-continue ...continue
+            span.pagination-bar
+              .pagination-bar-outes
+                .pagination-bar-inner
+                  .pagination-bar-content
+                    .pagination-bar-handle
     .graphic-caption-box
       h4 The Mountains
     p.guides__desc

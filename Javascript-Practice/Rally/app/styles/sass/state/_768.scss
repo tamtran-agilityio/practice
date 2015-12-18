@@ -17,7 +17,7 @@
     }
   }
   .best__title {
-    font-size: 119px;
+    font-size: 136px;
     padding-top: 20px;
   }
   .city__arrive,
@@ -31,6 +31,7 @@
   .city__travel {
     font-size: 119px;
     padding-top: 20px;
+    letter-spacing: -0.05em;
   }
   .site-nav {
     height: 61px;
@@ -262,9 +263,12 @@
     line-height: 38px;
     margin: 80px 0;
   }
-  .guides__quote em {
-    font-size: 24px;
-    line-height: 38px;
+  .guides__quote,
+  .guides__response {
+    em {
+      font-size: 24px;
+      line-height: 38px;
+    }
   }
   .list {
     padding-left: 10%;
@@ -457,6 +461,39 @@
   .case-study-icon {
     width: 150px;
     height: 150px;
+  }
+  .caption__employee {
+    font-size: 16px;
+  }
+  .guides__title {
+    p {
+      padding-top: 30px;
+    }
+  }
+  .attribution {
+    font-size: 24px;
+  }
+  .circles-rectangles {
+    .caption-circle,
+    .caption-rectangle,
+    .caption-rectangle-circle {
+      font-size: 18px;
+    }
+  }
+  .rounded-hexagon {
+    .caption-hexagon {
+      font-size: 18px;
+    }
+  }
+  .hex-sketches {
+    .caption-sketches {
+      font-size: 18px;
+    }
+  }
+  .hex-slideshow {
+    .caption-hex {
+      font-size: 18px;
+    }
   }
 }
 

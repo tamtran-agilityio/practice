@@ -16,7 +16,10 @@
     }
     @include e(quote) {
       em {
-        color: #ffc3af;
+        color: $white;
+        &:before {
+          display: none;
+        }
       }
     }
     @include e(desc) {
@@ -74,8 +77,32 @@
       left: 72%;
     }
   }
+  .dribbble__title {
+    a {
+      color: #e45b5b;
+    }
+    h2 {
+      color: #e45b5b;
+    }
+    .logo-dribbble:before {
+      background: #e45b5b;
+    }
+  }
 }
 
+.guides__response {
+  em {
+    color: #ffc3af;
+    font-style: italic;
+    display: block;
+    max-width: 940px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+    font-size: 16px;
+    position: relative;
+  }
+}
 .ipad__device {
   .device__shadow {
     background-image: url(../images/ipad-shadow@2x.png);
@@ -134,11 +161,12 @@
     img {
       position: absolute;
       display: block;
-      margin: 0 auto;
+      margin: auto;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      max-width: 100%;
       opacity: 1;
       transition: opacity 0.2s linear;
     }
@@ -451,6 +479,10 @@
   }
 }
 .national-parks-hero {
+  display: block;
+  .device__graphic-highlight {
+    top: 88%;
+  }
   span {
     display: block;
   }
@@ -511,36 +543,18 @@
     }
   }
 }
-.graphic-trials-tribulations-mapkit {
-  .device__group {
-    display: block;
-    max-width: 670px;
-    margin: 0 auto;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .ipad__device {
-    width: 100%;
-    position: relative;
-    display: block;
-    &:before {
-      padding-bottom: 76.9%;
-      content: "";
-      display: block;
-    }
-  }
-}
 
 .graphic-tray {
   .device__group {
     display: block;
-    max-width: 670px;
+    max-width: 880px;
     margin: 0 auto;
     padding-left: 5%;
     padding-right: 5%;
   }
   .ipad__device {
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     position: relative;
     display: block;
     &:before {
@@ -550,6 +564,11 @@
     }
   }
 }
+.graphic-trials-tribulations-mapkit,
+.slideshow-placeholder-tribulations {
+  @extend .graphic-tray;
+}
+
 .parks-icon-comparison {
   width: 271px;
   margin: 30px auto;

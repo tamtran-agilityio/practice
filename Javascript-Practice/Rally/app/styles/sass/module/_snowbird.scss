@@ -20,6 +20,21 @@
   a {
     color: #caf2fd;
   }
+  .dribbble__title {
+    a {
+      color: #0074a4;
+    }
+    h2 {
+      color: #0074a4;
+    }
+    .logo-dribbble:before {
+      background: #0074a4;
+    }
+  }
+  .city__better,
+  .city__attribution {
+    color: $white;
+  }
 }
 .graphic-mountains {
   .device__block {

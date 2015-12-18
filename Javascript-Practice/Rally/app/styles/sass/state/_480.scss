@@ -144,12 +144,29 @@
       }
     }
   }
+  .code-collection {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
   .national-parks-hero,
   .slideshow-placeholder,
   .graphic-dining {
   .device__group {
     padding-left: 10%;
     padding-right: 10%;
+    }
+  }
+  .guides__quote,
+  .guides__response {
+    em {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+  .graphic-tray, {
+    .device__group {
+      padding-left: 10%;
+      padding-right: 10%;
     }
   }
 }

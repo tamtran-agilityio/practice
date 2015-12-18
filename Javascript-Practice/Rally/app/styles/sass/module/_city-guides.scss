@@ -15,7 +15,7 @@
   }
   @include e(better) {
     font-size: 10px;
-    color: $white;
+    color: #9e8bd4;
     display: block;
     margin-top: 30px;
     letter-spacing: 0.5em;
@@ -29,7 +29,7 @@
   }
   @include e(attribution) {
     display: block;
-    color: $white;
+    color: $color-guides;
     font-size: 8px;
     letter-spacing: 0.5em;
     padding-left: 0.5em;
@@ -428,6 +428,7 @@
     position: absolute;
     top: 0;
     opacity: 0.5;
+    background: $black;
     a {
       @include size(100%);
       display: block;
@@ -459,11 +460,11 @@
   em {
     font-style: italic;
     display: block;
-    width: 70%;
-    min-width: 320px;
-    max-width: 580px;
-    margin: auto;
-    color: white;
+    max-width: 940px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+    color: $white;
     font-size: 16px;
     position: relative;
     &:before {
@@ -501,7 +502,7 @@
     line-height: 26px;
     margin-right: auto;
     max-width: 940px;
-    margin-left: 10%;
+    margin-left: 5%;
     padding-right: 5%;
     margin-top: 7px;
   }
@@ -617,15 +618,6 @@
   letter-spacing: 0.02em;
   line-height: 1.5;
   font-size: 16px;
-  &:before {
-    background: #3e384f;
-    display: block;
-    content: "";
-    width: 48px;
-    height: 1px;
-    background: black;
-    margin: 0 auto 43px;
-  }
   .dribbble__more {
     font-family: "Futura Bold", sans-serif;
     font-weight: 700;
@@ -652,6 +644,7 @@
       background: black;
       margin: 2px auto;
       position: relative;
+      background-color: #3e384f;
     }
     &:after {
       display: block;

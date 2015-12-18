@@ -14,6 +14,7 @@
   .city__travel {
     font-size: 136px;
   }
+  .code-collection,
   .group-device__block {
     padding-left: 12.5%;
     padding-right: 12.5%;
@@ -59,8 +60,21 @@
     padding-left: 12.5%;
     padding-right: 12.5%;
   }
-
+  .national-parks-hero,
   .slideshow-placeholder {
+    .device__group {
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+  }
+  .guides__quote,
+  .guides__response {
+    em {
+      padding-left: 12.5%;
+      padding-right: 12.5%;
+    }
+  }
+  .graphic-tray {
     .device__group {
       padding-left: 12.5%;
       padding-right: 12.5%;

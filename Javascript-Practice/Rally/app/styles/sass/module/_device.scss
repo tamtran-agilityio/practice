@@ -55,6 +55,18 @@
   }
 }
 
+.overlap_shadow {
+  background: url(../images/overlap-shadow.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: 70%;
+  display: block;
+}
+
 .graphic-mountains {
   position: relative;
   display: block;
