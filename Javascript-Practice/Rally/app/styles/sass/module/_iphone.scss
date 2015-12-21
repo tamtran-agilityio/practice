@@ -434,16 +434,32 @@
   .iphone__screenshots {
     width: 125%;
     .screenshot {
-    position: relative;
-    float: left;
-    margin: 0 5% 0 0;
-    height: 100%;
-    overflow: hidden;
-    width: 90%;
-    img {
-      width: 100%;
+      position: relative;
+      float: left;
+      margin: 0 5% 0 0;
+      height: 100%;
+      overflow: hidden;
+      width: 90%;
+      img {
+        width: 100%;
+      }
     }
   }
+}
+#slideshowPrototyping {
+  .iphone__screenshots {
+    width: 125%;
+    .screenshot {
+      position: relative;
+      float: left;
+      margin: 0 5% 0 0;
+      height: 100%;
+      overflow: hidden;
+      width: 70%;
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 .iphone__screenshots {
@@ -475,23 +491,61 @@
   .screenshot {
     position: relative;
     float: left;
-    margin: 0 0% 0 0;
+    margin: 0 0 0 0;
     height: 100%;
     overflow: hidden;
-    width: 90%;
+    width: 85%;
     -webkit-transform: scale3d(.70,.70,1);
     transform: scale3d(.70,.70,1);
-    // &:nth-child(1) {
-    //   img {
-    //     margin-left: 30%;
-    //   }
-    // }
     img {
       width: 100%;
       margin-top: 30%;
     }
   }
 }
+
+#trialsTribulations {
+  .device__screen {
+    overflow: hidden;
+  }
+}
+.ipad__screenshots {
+  width: 110%;
+  .screenshot {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 90%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.ipad__screenshots-before {
+  position: absolute !important;
+  top: 0;
+  width: 100%;
+  .slick-list {
+    overflow: visible;
+    opacity: 0.15;
+  }
+  .screenshot {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+    -webkit-transform: scale3d(.70,.70,1);
+    transform: scale3d(.70,.70,1);
+    img {
+      width: 100%;
+    }
+  }
+}
+
 .highlight-content-block {
   li {
     padding-top: 0;
@@ -518,6 +572,61 @@
 .find-interesting-things-faster {
   .iphone__graphic-highlight {
     top: 65%;
+  }
+}
+
+.slideshow-caption-content {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
+  cursor: default;
+  .caption-optimal {
+    width: 100%;
+    position: relative;
+    max-width: 210px;
+    margin: 0 auto;
+    padding: 0;
+    display: none;
+    h4 {
+      margin: -20px 0 0 0;
+      padding: 30px 0 5px 0;
+      font: 700 13px/1.5em "Futura Bold", serif;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+    p {
+      height: 1em;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+      font-size: 16px;
+      color: $white;
+    }
+    a {
+      color: $white;
+      margin: 0 3px;
+    }
+    .caption-continue {
+          background: -webkit-linear-gradient(left, rgba(68,44,36,0) 0%, rgba(68,44,36,1) 30%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-left: 30px;
+      color: rgba(255,255,255,.6);
+    }
+  }
+  .caption-optimal.active {
+    display: block;
   }
 }
 .highlight-content {
@@ -602,6 +711,6 @@
   .pagination-bar-handle {
     position: absolute;
     // width: 50%;
-    border-top: 1px solid #fff;
+    border-top: 1px solid $white;
   }
 }

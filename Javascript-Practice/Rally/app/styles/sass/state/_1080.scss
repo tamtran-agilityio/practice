@@ -533,41 +533,6 @@
     position: relative;
   }
     // part graphic evolving
-  #national-parks {
-    .graphic-evolving-conventions {
-      .iphone__tap {
-        top: 39%;
-        left: 20%;
-      }
-      .iphone__arrow {
-        top: 20%;
-        left: 39%;
-      }
-      .iphone__tap--itinerary {
-        top: 73.5%;
-        left: 44%;
-      }
-      .iphone__arrow--itinerary {
-        left: 72%;
-      }
-    }
-    .graphic-evolving-conventions-data {
-      .iphone__tap {
-        top: 20%;
-        left: 8%;
-      }
-      .iphone__arrow {
-        top: 50%;
-        left: 38%;
-      }
-      .iphone__arrow--itinerary {
-        left: 72%;
-      }
-    }
-  }
-    .highlight-content-slider {
-    left: 110% !important;
-  }
   .highlight-content {
     width: 100%;
     left: 65%;
@@ -624,25 +589,50 @@
       min-width: initial;
     }
   }
-  .find-interesting-things-faster .iphone__graphic-highlight {
-    top: 88%;
+  .find-interesting-things-faster {
+    .iphone__graphic-highlight {
+      top: 88%;
+    }
   }
   .highlight-content {
-    .caption-non-optimal, .caption-optimal {
+    .caption-optimal {
       left: 0;
       position: relative;
       p {
         width: 100%;
       }
     }
-    .caption-non-optimal {
-      display: none;
-    }
   }
   .national-parks-hero {
   .device__group {
       padding-left: 12.5%;
       padding-right: 12.5%;
+    }
+  }
+  #nationalParks {
+    .graphic-evolving-conventions {
+      .iphone__tap {
+        top: 39%;
+      }
+      .iphone__arrow {
+        top: 20%
+      }
+      .iphone__tap--itinerary {
+        top: 74.5%;
+        left: 44%;
+      }
+    }
+    .graphic-evolving-conventions-data {
+      .iphone__tap {
+        top: 20%;
+      }
+      .iphone__arrow {
+        top: 51%;
+        left: 38%;
+      }
+      .iphone__arrow--itinerary {
+        left: 71%;
+      }
     }
   }
 }

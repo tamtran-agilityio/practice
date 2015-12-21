@@ -357,6 +357,12 @@
       line-height: 20px;
     }
   }
+
+  .graphic-tray {
+    .ipad__device {
+      width: 85%;
+    }
+  }
   #person {
     .person__block {
       h5 {
@@ -436,6 +442,39 @@
   .hex-slideshow {
     .caption-hex {
       font-size: 18px;
+    }
+  }
+
+  .slideshow-caption-content {
+    padding: 30px 0 5px 0;
+    .caption-optimal {
+      max-width: 464px;
+      h4 {
+        margin: -20px 0 0 0;
+        padding: 30px 0 5px 0;
+        font: 700 26px "Futura Bold", serif;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+        color: #fff;
+      }
+      p {
+        height: auto;
+        font-size: 18px;
+        color: $white;
+      }
+      a {
+        color: $white;
+        margin: 0 3px;
+      }
+    }
+    .caption-continue {
+      display: none;
+    }
+  }
+  .pagination-bar {
+    .pagination-bar-inner {
+      height: 2px;
     }
   }
 }

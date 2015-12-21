@@ -53,7 +53,7 @@
       left: 20%;
     }
     .iphone__arrow {
-      top: 17%;
+      top: 17.9%;
       left: 39%;
     }
     .iphone__tap--itinerary {
@@ -548,6 +548,9 @@
       display: block;
     }
   }
+  .pagination-bar {
+    top: 10px;
+  }
 }
 
 .graphic-tray {
@@ -559,7 +562,7 @@
     padding-right: 5%;
   }
   .ipad__device {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     display: block;
@@ -571,8 +574,29 @@
   }
 }
 .graphic-trials-tribulations-mapkit {
-  @extend .graphic-tray;
-  .graphic-caption-content {
+  .highlight-content {
+    display: block;
+    width: 25%;
+    max-width: initial;
+  }
+  .device__group {
+    display: block;
+    max-width: 670px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .ipad__device {
+    width: 100%;
+    position: relative;
+    display: block;
+    &:before {
+      padding-bottom: 76.9%;
+      content: "";
+      display: block;
+    }
+  }
+  .highlight-content {
     display: none;
   }
 }

@@ -12,6 +12,9 @@
       font-size: 60px;
     }
   }
+  .best__title {
+    font-size: 75px;
+  }
   // style part person
   #person {
     justify-content: space-between;
@@ -164,6 +167,12 @@
     }
   }
   .graphic-tray, {
+    .device__group {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+  .slideshow-trials-tribulations {
     .device__group {
       padding-left: 10%;
       padding-right: 10%;

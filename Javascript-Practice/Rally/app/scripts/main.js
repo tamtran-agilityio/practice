@@ -239,6 +239,7 @@ $(document).ready(function() {
     sliderDelay('#gestureMapbox', '#gestureSwipe', '#slideshowHowToGesture');
     sliderDelay('#prototype', '#prototypeDelay', '#slideshowPrototyping');
     sliderDelay('#mountainReport', '#mountainReportDelay', '#slideshowMobileFirst');
+    sliderDelay('.ipad__screenshots', '.ipad__screenshots-before', '#trialsTribulations');
     // set color menu
     // setColor($wrapSlidePage);
 

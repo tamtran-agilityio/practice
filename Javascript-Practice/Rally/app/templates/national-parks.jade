@@ -659,7 +659,7 @@
       h4 The Trials and Tribulations of MapKit
     p.guides__desc
       | The chief benefit of using a mature code library like Apple’s MapKit is being able to count on it being well-crafted and relatively bug-free. The downside, of course, is being at the mercy of the library’s authors when it comes to skinning and customization. We quickly discovered that MapKit was not really designed with customization in mind. Skinning pins isn’t bad, but there’s not much you can do to substantively alter the map callouts; to get around this, we had to exploit a nasty hack by creating callouts that are, for all intents and purposes, actually map pins. This approach enabled us to get the look we wanted, but required ugly workarounds to circumvent some normal pin behaviors.
-    .graphic-trials-tribulations-mapkit.graphic
+    #tribulationsMapkit.graphic-trials-tribulations-mapkit.graphic
       .device__graphic-highlight
       .device__group
         .device-group-content
@@ -669,16 +669,16 @@
             .device__content
               .device__screen
                 img(src='../images/trials-tribulations%402x.jpg')
-      .graphic-caption
-        .graphic-caption-content
-          h4.caption-title Skinning MapKit
-          .caption-text
-            | We were ultimately able to customize the look of pins and callouts on our maps, but at the cost of grey hairs and ugly hacks.
+      .highlight-content
+        ul.highlight-content-inner
+          li.caption-optimal
+            h4.caption-title Skinning MapKit
+            p.caption-text
+              | We were ultimately able to customize the look of pins and callouts on our maps, but at the cost of grey hairs and ugly hacks.
     p.guides__desc
       | The other downside to using MapKit came when Apple announced that they were replacing the Google-sourced map tiles with their own. We were using an undocumented but widely known MapKit property that allowed us to use Google’s terrain tiles, which looked great with the style of the app and helped connote an outdoor focus without the visual clutter of satellite imagery. When users upgraded to iOS 6, however, this terrain option vanished, leaving them with a map style that just didn’t work as nicely with our app design.
-    .slideshow-trials-tribulations.slideshow
+    #trialsTribulations.slideshow-trials-tribulations.slideshow
       .graphic.slideshow-placeholder-tribulations
-        span.device__graphic-highlight
         span.device__group
           span.device__group-content
             span.ipad__device
@@ -686,7 +686,31 @@
               span.device__chrome
               span.device__content
                 span.device__screen
-                  img(src="../images/trials-tribulations-google%402x.jpg")
+                  .ipad__screenshots
+                    .screenshot
+                      img(src="../images/trials-tribulations-google%402x.jpg")
+                    .screenshot
+                      img(src="../images/trials-tribulations-mapkit%402x.jpg")
+                .ipad__screenshots-before
+                  .screenshot
+                    img(src="../images/trials-tribulations-google%402x.jpg")
+                  .screenshot
+                    img(src="../images/trials-tribulations-mapkit%402x.jpg")
+            .slideshow-caption-content
+              ul.highlight-content-inner
+                li.caption-optimal
+                  h4 Google Maps
+                  p Terrain tiles from Google Maps - we miss you! The terrain style looked great with the design of our app; its gently muted colors and elevation profiles evoke old-school guidebooks.
+                    span.caption-continue ...continue
+                li.caption-optimal
+                  h4 Apple Maps
+                  p Sadly, Apple’s satellite maps just don't look as nice with the design of the app. The saturated colors of the map blend with the pins, resulting in candy-colored over‑stimulating maps.
+                   span.caption-continue ...continue
+      span.pagination-bar
+        .pagination-bar-outes
+          .pagination-bar-inner
+            .pagination-bar-content
+              .pagination-bar-handle
     .case-study-icon.case-study-icon-ready
       svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
         g

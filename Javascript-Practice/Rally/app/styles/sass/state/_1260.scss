@@ -16,6 +16,23 @@
       font-size: 130px;
     }
   }
+  .graphic-trials-tribulations-mapkit {
+    .device__group {
+      max-width: 1200px;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .ipad__device {
+      width: 62%;
+      margin: 0;
+    }
+    .highlight-content {
+      display: block;
+      .caption-optimal {
+        display: block;
+      }
+    }
+  }
 }
 
 /* style of larger */
