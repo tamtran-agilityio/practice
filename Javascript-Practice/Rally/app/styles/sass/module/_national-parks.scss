@@ -1,5 +1,6 @@
 /* style  part page national parks*/
 #nationalParks {
+  overflow: hidden;
   .page-section {
     background: #442c24;
     color: #ffc3af;
@@ -152,10 +153,11 @@
     text-shadow: 0 0 0 #a8705d;
     font-family: "Futura Light";
     font-weight: 200;
-    font-size: 0.65em;
-    letter-spacing: 0.5em;
-    line-height: 2em;
+    font-size: 14px;
+    letter-spacing: 6px;
+    line-height: 28px;;
     margin: 0 auto;
+    padding: 0;
   }
   .image-wrapper {
     position: relative;
@@ -547,6 +549,12 @@
       content: "";
       display: block;
     }
+  }
+  .device__chrome {
+    z-index: 1;
+  }
+  .device__screen {
+    z-index: 1;
   }
   .pagination-bar {
     top: 10px;

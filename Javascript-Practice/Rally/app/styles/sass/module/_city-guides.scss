@@ -3,9 +3,9 @@
   background: $color-guides-bg;
   color: $color-guides;
   display: block;
+  overflow: hidden;
 }
 .city {
-
   @include e(wapper) {
     display: block;
   }
