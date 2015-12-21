@@ -371,6 +371,28 @@
   .iphone__screenshots {
     width: 112%;
   }
+  .highlight-content-block {
+    li {
+    padding-top: 0;
+    }
+    top: 0 !important;
+    color: white;
+    min-width: 240px;
+    max-width: 360px;
+    margin: 50px auto;
+    overflow: hidden;
+    .caption-optimal {
+      position: relative !important;
+      h4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      p {
+        height: auto !important;
+        font-size: 14px;
+      }
+    }
+  }
   .highlight-content-slider {
     left: 110% !important;
   }
@@ -384,6 +406,7 @@
     bottom: 0;
     display: inline-block;
     vertical-align: middle;
+    overflow: visible;
     max-width: 220px;
     font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
     cursor: default;
@@ -396,30 +419,6 @@
       vertical-align: middle;
       margin-left: -0.25em;
     }
-    .caption-non-optimal {
-      display: inline-block;
-      vertical-align: middle;
-      top: 40%;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      h4 {
-        text-align: left;
-        max-width: 220px;
-      }
-      p {
-        max-width: 464px;
-        overflow: visible;
-        height: auto;
-        width: 100%;
-        padding-top: 20px;
-      }
-      .caption-continue {
-        display: none;
-      }
-    }
     .caption-optimal {
       display: none;
       vertical-align: middle;
@@ -431,6 +430,7 @@
       h4 {
         text-align: left;
         max-width: 220px;
+        font-size: 18px;
       }
       p {
         max-width: 464px;

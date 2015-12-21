@@ -384,7 +384,7 @@
                     img.screenImage(src='../images/mountain-report%402x.jpg')
                   .screenshot
                     img.screenImage(src="../images/lodging@2x.jpg")
-              .highlight-content
+              .highlight-content.highlight-content-slider
                 ul.highlight-content-inner
                   li.caption-optimal
                     h4 Mountain Report
@@ -454,6 +454,12 @@
                       span.ipad__player-overlay
                         a(href="#")
                     .screenshot
+                      img.screenImage(src="../images/video-prototype-slideshows.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                      span.ipad__player-overlay
+                        a(href="#")
+                    .screenshot
                       img.screenImage(src="../images/video-prototype-cube-flip.jpg")
                       span.ipad__screen
                       span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
@@ -462,6 +468,8 @@
                 #prototypeDelay.iphone__screenshots-before
                   .screenshot
                     img.screenImage(src='../images/video-prototype-menu.jpg')
+                  .screenshot
+                    img.screenImage(src="../images/video-prototype-slideshows.jpg")
                   .screenshot
                     img.screenImage(src="../images/video-prototype-cube-flip.jpg")
               .highlight-content.highlight-content-slider
@@ -473,6 +481,10 @@
                   li.caption-optimal
                     h4 Cube-Flip Transition
                     p We wanted to indicate a sense of direction in page transitions, so came up with a cube flip to the left for forward motion, and a cube flip to the right if the user uses the back button.
+                      span.caption-continue ...continue
+                  li.caption-optimal
+                    h4 Slideshows
+                    p When it came to implementing media slideshows, we decided to echo the menu and mountain report flip-downs.
                       span.caption-continue ...continue
             span.pagination-bar
               .pagination-bar-outes

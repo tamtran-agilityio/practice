@@ -432,7 +432,7 @@
 
 #slideshowHowToGesture {
   .iphone__screenshots {
-    width: 145%;
+    width: 125%;
     .screenshot {
     position: relative;
     float: left;
@@ -467,7 +467,7 @@
 }
 
 .iphone__screenshots-before {
-  width: 90%;
+  width: 100%;
   .slick-list {
     overflow: visible;
     opacity: 0.15;
@@ -479,19 +479,47 @@
     height: 100%;
     overflow: hidden;
     width: 90%;
-    &:nth-child(1) {
-      img {
-        margin-left: 30%;
-      }
-    }
+    -webkit-transform: scale3d(.70,.70,1);
+    transform: scale3d(.70,.70,1);
+    // &:nth-child(1) {
+    //   img {
+    //     margin-left: 30%;
+    //   }
+    // }
     img {
-      width: 65%;
-      margin-top: 60%;
-      margin-left: 15%;
+      width: 100%;
+      margin-top: 30%;
+    }
+  }
+}
+.highlight-content-block {
+  li {
+    padding-top: 0;
+  }
+  top: 0 !important;
+  color: white;
+  min-width: 240px;
+  max-width: 360px;
+  margin: 50px auto;
+  overflow: hidden;
+  .caption-optimal {
+    position: relative !important;
+    h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    p {
+      height: auto !important;
+      font-size: 14px;
     }
   }
 }
 
+.find-interesting-things-faster {
+  .iphone__graphic-highlight {
+    top: 65%;
+  }
+}
 .highlight-content {
   position: relative;
   left: 0;
@@ -508,36 +536,6 @@
     vertical-align: middle;
     display: inline-block;
   }
-  // .caption-non-optimal {
-  //   h4 {
-  //     text-align: center;
-  //   }
-  //   p {
-  //     height: 1.5em;
-  //     overflow: hidden;
-  //     position: relative;
-  //     max-width: 210px;
-  //     margin: 0 auto;
-  //     padding: 0;
-  //     font: inherit;
-  //   }
-  //   .caption-continue {
-  //     background: -webkit-linear-gradient(left, rgba(62,56,79,0) 0%, rgba(62,56,79,1) 30%);
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     padding-left: 30px;
-  //     color: rgba(255,255,255,.6);
-  //   }
-  //   @extend .graphic-caption-content;
-  //   vertical-align: middle;
-  //   top: 0;
-  //   display: block;
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  // }
   .caption-optimal.active {
     display: block;
   }
@@ -546,13 +544,13 @@
       text-align: center;
     }
     p {
-      height: 1.5em;
+      height: 1em;
       overflow: hidden;
       position: relative;
       max-width: 210px;
       margin: 0 auto;
       padding: 0;
-      font: inherit;
+      font-size: 16px;
     }
     a {
       color: $white;
@@ -586,7 +584,6 @@
   height: 40px;
   margin: 0 auto;
   max-width: 300px;
-  // background: #3e384f;
   top: 60px;
   .pagination-bar-outer {
     position: relative;
@@ -602,17 +599,9 @@
     overflow: hidden;
     background: rgba(255,255,255,.3);
   }
-  .pagination-bar-content {
-    transform: translate3d(0%, 0px, 0px);
-    transition: transform 0.2s ease-out;
-  }
-  .acitve {
-    transform: translate3d(50%, 0px, 0px);
-    transition: transform 0.2s ease-out;
-  }
   .pagination-bar-handle {
     position: absolute;
-    width: 50%;
+    // width: 50%;
     border-top: 1px solid #fff;
   }
 }

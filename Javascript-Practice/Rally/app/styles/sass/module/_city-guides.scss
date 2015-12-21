@@ -322,6 +322,7 @@
     }
   }
   .numbered-title--canvas {
+    line-height: 17px;
     @extend .numbered-title;
     &:before {
       content: "3";
@@ -440,7 +441,7 @@
 
 .mistakes__block {
   padding: 30px 0 0 0;
-  overflow: hidden;
+  // overflow: hidden;
   .iphone__device {
     width: 42%;
     top: 0;

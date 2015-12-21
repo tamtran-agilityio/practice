@@ -152,65 +152,21 @@ $(document).ready(function() {
       return false;
     }());
 
+    // function of set width pagination
+    function paginationBar(item) {
+      var elementItem = $('ul.highlight-content-inner li.caption-optimal');
+      var barCount = $(item).find(elementItem).length;
+      // set width pagination
+      $(item).find('.pagination-bar-handle').css('width', 100 / barCount + '%');
+    }
 
-    // // use slick plugin slider change image on iphone
-    // function sliderDelay(slide, changeDelay) {
-    //   var $wrapSlidePage = $('.slider-item');
-    //   $(slide).slick({
-    //     dots: false,
-    //     infinite: false,
-    //     speed: 300,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     accessibility: false,
-    //     variableWidth: false,
-    //     adaptiveHeight: true,
-    //     arrows: false,
-    //     swipeToSlide: false,
-    //     onInit: function() {
-    //       $wrapSlidePage.slick({
-    //         draggable: false
-    //       });
-    //     },
-    //     asNavFor: changeDelay
-    //   });
-    //   $(changeDelay).slick({
-    //     dots: false,
-    //     infinite: false,
-    //     speed: 300,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     accessibility: false,
-    //     variableWidth: false,
-    //     adaptiveHeight: false,
-    //     arrows: false,
-    //     asNavFor: slide,
-    //     onInit: function() {
-    //       $wrapSlidePage.slick({
-    //         draggable: false
-    //       });
-    //     }
-    //   });
-    //   $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    //     if (nextSlide === 1) {
-    //       $('.caption-non-optimal').fadeOut(10);
-    //       $('.caption-optimal').fadeIn('slow');
-    //       $('.pagination-bar-content').addClass('acitve');
-    //     } else {
-    //       $('.caption-non-optimal').fadeIn('slow');
-    //       $('.caption-optimal').fadeOut(10);
-    //       $('.pagination-bar-content').removeClass('acitve');
-    //     }
-    //   });
-    // }
-
-
-
-     // use slick plugin slider change image on iphone
+    // use slick plugin slider change image on iphone
     function sliderDelay(slide, changeDelay, context) {
+      paginationBar(context);
       var $wrapSlidePage = $('.slider-item');
-      var contextshow = $(context).find('ul.highlight-content-inner li.caption-optimal');
-      contextshow.eq(0).addClass('active');
+      var $contextshow = $(context).find('ul.highlight-content-inner li.caption-optimal');
+      // set item first active
+      $contextshow.eq(0).addClass('active');
       $(slide).slick({
         dots: false,
         infinite: false,
@@ -248,10 +204,11 @@ $(document).ready(function() {
       });
       $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
         // console.log(nextSlide);
-        contextshow.removeClass('active').eq(nextSlide).addClass('active');
-        if (nextSlide === 0) {
-          $('.pagination-bar-content').addClass('acitve');
-        }
+        var barCount = $contextshow.length;
+        var changle = ((100 / barCount) * nextSlide);
+        $contextshow.removeClass('active').eq(nextSlide).addClass('active');
+        $(context).find('.pagination-bar-content').css('transform', 'translate3d(' + changle + '%, 0px, 0px)');
+        $(context).find('.pagination-bar-content').css('transition', 'transform 0.2s ease-out');
       });
     }
 
@@ -273,7 +230,6 @@ $(document).ready(function() {
             draggable: false
           });
         }
-        // asNavFor: '#gestureSwipe'
       });
     }());
 
