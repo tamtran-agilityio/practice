@@ -371,13 +371,12 @@
   .iphone__screenshots {
     width: 112%;
   }
-  .caption-box__block {
-    // overflow: hidden;
+  .highlight-content-slider {
+    left: 110% !important;
   }
   .highlight-content {
     width: 100%;
-    top: -145px;
-    left: 110%;
+    left: 65%;
     position: absolute;
     z-index: 1;
     top: 0;

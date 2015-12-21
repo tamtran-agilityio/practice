@@ -120,9 +120,9 @@
   .caption-box__block {
     margin-bottom: 80px;
   }
-  .highlight-content {
-    top: 10px;
-  }
+  // .highlight-content {
+  //   // top: 10px;
+  // }
   .pagination-bar {
     top:  50px;
   }
@@ -264,7 +264,7 @@
 .numbered-title-list {
   li {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     display: block;
     padding-top: 15px;
   }
@@ -456,14 +456,14 @@
 }
 
 .guides__quote {
+  display: block;
+  max-width: 940px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0 auto;
   @extend .guides__decs;
   em {
     font-style: italic;
-    display: block;
-    max-width: 940px;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin: 0 auto;
     color: $white;
     font-size: 16px;
     position: relative;
@@ -495,6 +495,8 @@
 .list {
   list-style-type: decimal;
   padding-bottom: 20px;
+  max-width: 940px;
+  margin: 0 auto;
   li {
     color: white;
     font-size: 14px;

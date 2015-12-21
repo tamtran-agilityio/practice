@@ -144,9 +144,11 @@
                 span.iphone__aux-content
                   img.iphone__detail-crop(src="../images/zoom-dyk%402x.jpg")
                   img.iphone__detail-crop(src="../images/zoom-secret%402x.jpg")
-        .graphic-caption-content
-          h4 Crosslink
-          p The crosslink buttons allow users to jump immediately to other content related to the same Point of Interest
+          .highlight-content
+            ul.highlight-content-inner
+              li.caption-optimal.active
+                h4 Crosslink
+                p The crosslink buttons allow users to jump immediately to other content related to the same Point of Interest
       li
         h3.numbered-title--deep
           | The Deeplink
@@ -174,9 +176,11 @@
                 svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 624 1046', enable-background='new 0 0 624 1046', xml:space='preserve')
                   path(vector-effect='non-scaling-stroke', fill='none', stroke='#9e8bd4', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M115,549h163.7\
           c18.4,0,33.3-14.9,33.3-33.3V322c0-18.4,14.9-33.3,33.3-33.3h24.3')
-        .graphic-caption-content
-          h4 Deeplink
-          p By tapping highlighted text in any text field, the user can deeplink into a Point of Interest view, presenting all pertinent information about the location.
+          .highlight-content
+            ul.highlight-content-inner
+              li.caption-optimal.active
+                h4 Deeplink
+                p By tapping highlighted text in any text field, the user can deeplink into a Point of Interest view, presenting all pertinent information about the location.
   section.page-section.a-spreadsheet-to-an-app
     .guides__block-number
       span 03
@@ -273,9 +277,11 @@
                     span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
                       span.ipad__player-overlay
                         a(href="#")
-      .graphic-caption-content
-        h4 The Bubble Callout
-        p The “bubble” callout appears when a pin is tapped, presenting secondary crosslinks in addition to the primary What To Do content. This level of customization was possible because of the open-source nature of MapBox.
+      .highlight-content
+        ul.highlight-content-inner
+          li.caption-optimal.active
+            h4 The Bubble Callout
+            p The “bubble” callout appears when a pin is tapped, presenting secondary crosslinks in addition to the primary What To Do content. This level of customization was possible because of the open-source nature of MapBox.
   section.page-section.itinerary
     .guides__block-number
       span 05
@@ -347,12 +353,14 @@
               svg#Layer_1.iphone__lines(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 420 1046', enable-background='new 0 0 420 1046', xml:space='preserve')
                 path(vector-effect='non-scaling-stroke', fill='none', stroke='#8F64AA', stroke-width='2', stroke-miterlimit='10', stroke-dasharray='4.5,4', d='M105.8,347.9H183\
                 c14.9,0,27-12.1,27-27s12.1-27,27-27h33.4')
-      .graphic-caption-content
-        h4 Renaming an Itinerary
-        p The ability to rename an existing itinerary was one part of making the Itinerary section a useful planning tool for users.
+      .highlight-content
+        ul.highlight-content-inner
+          li.caption-optimal.active
+            h4 Renaming an Itinerary
+            p The ability to rename an existing itinerary was one part of making the Itinerary section a useful planning tool for users.
     p.guides__desc
       | Since every location is geolocated, we wanted to plot them on a map and visualize a route between points. Turning an itinerary into a route posed a problem, however – unlike the curated content of our Walks section, a user itinerary is likely to be created without regard for the logistics of getting from place to place.
-    p.guides__quote
+    p.guides__quote.case-study
       em We didn’t want users locked into illogical routes, so we created a toggle that shows an optimized route for their custom itinerary.
     svg.travel__icon(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='150px', height='150px', viewbox='0 0 150 150', enable-background='new 0 0 150 150', xml:space='preserve')
       g
@@ -396,7 +404,7 @@
       | . By adapting his code, we were able to build a solution that gives us fairly optimal solutions – fairly optimal because, as the number of locations increases, the number of potential combinations increases exponentially, which makes finding a concrete ‘most optimal’ solution incredibly expensive.
     p.guides__desc
       | To skirt this weakness, we created a system in our API to cache and compare routing solutions server-side to improve routes over time without over-burdening the server on any particular request.
-    span.caption-box__block
+    span#slideshowSmarterRouting.caption-box__block
       //- span.iphone__graphic-highlight
       span.iphone__block
         span.iphone__device-group
@@ -416,13 +424,13 @@
                     img.screenImage(src="../images/routing-illogical%402x.jpg")
                   .screenshot
                     img.screenImage(src="../images/routing-logical%402x.jpg")
-              .highlight-content
-                .highlight-content-inner
-                  .caption-non-optimal
+              .highlight-content.highlight-content-slider
+                ul.highlight-content-inner
+                  li.caption-optimal
                     h4 Non-Optimal Route
                     p Without using the Optimal Route toggle, users could easily end up with itinerary routes that will leave them scrambling all over the city.
                       span.caption-continue ...continue
-                  .caption-optimal
+                  li.caption-optimal
                     h4 Optimal Route
                     p Thanks to our server-side routing solution, we can provide users a more optimal route, minimizing unneccesary travel.
                       span.caption-continue ...continue
@@ -444,7 +452,7 @@
         p No primary features should require a specialized gesture to access
       li
         p Specialized gestures can give power users access to less-important features as well as quicker ways to traverse primary features
-    span.caption-box__block
+    span.caption-box__block#slideshowHowToGesture
       //- span.iphone__graphic-highlight
       span.iphone__block
         span.iphone__device-group
@@ -467,24 +475,54 @@
                       span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
                         span.ipad__player-overlay
                           a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/video-gesture-main-menu.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                        span.ipad__player-overlay
+                          a(href="#")
+                    .screenshot
+                      img.screenImage(src="../images/video-gesture-swipe.jpg")
+                      span.ipad__screen
+                      span.ipad__video-player(data-video-url='http://com.rallyinteractive.cdn.s3.amazonaws.com/video/city-guides/why-mapbox.mov')
+                        span.ipad__player-overlay
+                          a(href="#")
                 #gestureSwipe.iphone__screenshots-before
                   .screenshot
                     img.screenImage(src="../images/video-gesture-main-menu.jpg")
                   .screenshot
                     img.screenImage(src="../images/video-gesture-swipe.jpg")
-              .highlight-content
-                .highlight-content-inner
-                  .caption-non-optimal
+                  .screenshot
+                    img.screenImage(src="../images/video-gesture-main-menu.jpg")
+                  .screenshot
+                    img.screenImage(src="../images/video-gesture-swipe.jpg")
+              .highlight-content.highlight-content-slider
+                ul.highlight-content-inner
+                  li.caption-optimal.active
                     h4 Main Menu
-                    p | We learned on
-                        a(href="#") National Parks
-                        | that with the stack metaphor popularized by iOS, it’s easy for users to get buried in crosslinked content. Our solution for City Guides was a main menu that is always accessible to the user, allowing them to jump from anywhere, no matter how buried, to a different section of the app. While there is a tappable UI callout visible at all times, we also wanted to allow for opening and closing the menu with a simple swiping gesture.
-                        span.caption-continue ...continue
-                  .caption-optimal
+                    p
+                      | We learned on
+                      a(href="#") National Parks
+                      | that with the stack metaphor popularized by iOS, it’s easy for users to get buried in crosslinked content. Our solution for City Guides was a main menu that is always accessible to the user, allowing them to jump from anywhere, no matter how buried, to a different section of the app. While there is a tappable UI callout visible at all times, we also wanted to allow for opening and closing the menu with a simple swiping gesture.
+                      span.caption-continue ...continue
+                  li.caption-optimal
                     h4 Swipeable List Cells
-                    p | We love (and miss) the swipeable cells pioneered by
+                    p
+                      | We love (and miss) the swipeable cells pioneered by
                       a(href="#") Loren Brichter
-                      |  in Tweetie 2. We wanted to replicate the same slinky feel, allowing the user to pull the cell to the side with immediate visual feedback. We wound up using these swipeable cells two ways: for primary content, exposing the context menu options, and for user-curated itineraries, to reveal editing options. We’re particularly proud of the renaming feature, where the swiped cell expands to become an input field.
+                      | in Tweetie 2. We wanted to replicate the same slinky feel, allowing the user to pull the cell to the side with immediate visual feedback. We wound up using these swipeable cells two ways: for primary content, exposing the context menu options, and for user-curated itineraries, to reveal editing options. We’re particularly proud of the renaming feature, where the swiped cell expands to become an input field.
+                      span.caption-continue ...continue
+                  li.caption-optimal
+                    h4 Detail Views
+                    p
+                      | In our ongoing quest to connect users to interesting content, we turned our gaze upon news reader apps and came away with a sideways swipe for more content. In any detail view coming from a list, the user can swipe left or right to traverse the content in the parent list.
+                      span.caption-continue ...continue
+                  li.caption-optimal
+                    h4 Weather
+                    p
+                      | There’s a glut of weather apps out there, and among them, hourly forecasts for the next 24 hours are nearly universal. However, hourly forecasts rarely extend into the rest of the week. Our goal for the weather section was to show detailed breakdowns for a full 7-day forecast, but without a lot of clutter. We were inspired by
+                      a(href="#") Solar
+                      | ’s vertically-scrolling 24 hour forecast, and wanted to apply the same principle to a full 7-day forecast. Users can swipe back and forth across the screen to scroll through the forecast, or they can use the day indicators at the top to jump between days with more precision.
                       span.caption-continue ...continue
             span.pagination-bar
               .pagination-bar-outes
@@ -544,7 +582,7 @@
       | Often, these rough animations will persist in the build for quite some time while we build other features. As deadlines approach (often, the day of submission), we get serious about these.
     p.guides__desc
       | The process generally entails a developer (whoever has the most patience left) sitting side-by-side with a designer, tweaking values to fine-tune the animation into the precise, sexy beast that we’re looking for. This process can quite literally go on for hours; in this case, the tuning of the main card-flip animation took the better part of a day.
-    span.caption-box__block
+    span.caption-box__block#slideshowCustomAnimation
       //- span.iphone__graphic-highlight
       span.iphone__block
         span.iphone__device-group
@@ -572,13 +610,13 @@
                     img.screenImage(src="../images/video-details-city-cards.jpg")
                   .screenshot
                     img.screenImage(src="../images/video-details-essentials.jpg")
-              .highlight-content
-                .highlight-content-inner
-                  .caption-non-optimal
+              .highlight-content.highlight-content-slider
+                ul.highlight-content-inner
+                  li.caption-optimal
                     h4 City Cards
                     p An quick After Effects prototype formed the basis of the City Card animation, giving us a unique effect rather than simply a standard scrolling motion.
                       span.caption-continue ...continue
-                  .caption-optimal
+                  li.caption-optimal
                     h4 City Statistics
                     p The Statistics section gave us an opportunity to have a little fun with animations, animating both the location of elements and the numerical values of the statistics.
                       span.caption-continue ...continue
@@ -662,7 +700,7 @@
       | There was a simple reason to start with the iPhone: the screen is smaller. We had to figure out how to solve all our UX challenges with the real estate available to us. This cut both ways, though – sometimes we would come up with a great solution on the iPhone, but when it came to designing the iPad version, that solution simply wouldn’t work anymore. Perhaps using the extra space created awkward deadzones or a layout didn’t work in the larger format.
     p.guides__desc
       | To get a leg up on these design problems, we started by choosing a portrait-only orientation for the iPad app. We knew a tablet app shouldn’t simply be a scaled up version of the phone app, but keeping a similar aspect ratio helped.
-    p.guides__quote
+    p.guides__quote.case-study
       em There was a simple reason to start with the iPhone: the screen is smaller.
     p.guides__desc
       | We found that list views, which were a staple of the iPhone version, were problematic on the iPad. Native apps generally solve that problem using a split-screen or popover, but we weren’t satisfied with those solutions. Inspired by grid-based products like Pinterest, we settled on presenting our lists as grids on the iPad.

@@ -137,3 +137,14 @@
     -webkit-transform: rotate(135deg) translate(0, -0.2em);
   }
 }
+
+.case-study {
+  display: block;
+  width: 70%;
+  min-width: 320px;
+  max-width: 580px;
+  margin: auto;
+  color: white;
+  font-size: 0.9em;
+  position: relative;
+}

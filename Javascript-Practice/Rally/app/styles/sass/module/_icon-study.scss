@@ -10,13 +10,13 @@
 }
 
 .case-study-icon [stroke] {
-  stroke: black;
+  stroke: transparent;
 }
 .case-study-icon [fill] {
-  fill: black;
+  fill: transparent;
 }
 .case-study-icon [fill=none] {
-  fill: block;
+  fill: transparent;
 }
 
 /* Fill and stroke */
@@ -45,10 +45,10 @@
   stroke: #64c4ec;
 }
 #snowBird .case-study-icon [fill] {
-  fill: #64c4ec;
+  fill: transparent;
 }
 #nationalParks .case-study-icon [fill] {
-    fill: #e45b5b;
+  fill: transparent;
 }
 #nationalParks .case-study-icon [stroke] {
   stroke: #e45b5b;
@@ -78,7 +78,7 @@
 
 /* Stroke */
 .case-study-icon-ready [stroke] {
-  stroke-dasharray: 0 400;
+  stroke-dasharray: 400;
   -webkit-transition: 1.5s linear !important;
   transition: 1.5s linear !important;
 }

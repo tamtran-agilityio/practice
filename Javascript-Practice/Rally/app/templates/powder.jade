@@ -385,12 +385,12 @@
                   .screenshot
                     img.screenImage(src="../images/lodging@2x.jpg")
               .highlight-content
-                .highlight-content-inner
-                  .caption-non-optimal
+                ul.highlight-content-inner
+                  li.caption-optimal
                     h4 Mountain Report
                     p The Mountain Report showcases the hallmarks of the smartphone design – large, tappable interaction points and clean, bold graphic design.
                       span.caption-continue ...continue
-                  .caption-optimal
+                  li.caption-optimal
                     h4 Book a Trip
                     p The “Book a Trip” widget is collapsible to conserve screen real-estate, and utilizes the smartphone’s native date-picker and list-picker tools.
                       span.caption-continue ...continue
@@ -464,13 +464,13 @@
                     img.screenImage(src='../images/video-prototype-menu.jpg')
                   .screenshot
                     img.screenImage(src="../images/video-prototype-cube-flip.jpg")
-              .highlight-content
-                .highlight-content-inner
-                  .caption-non-optimal
+              .highlight-content.highlight-content-slider
+                ul.highlight-content-inner
+                  li.caption-optimal
                     h4 Menu Flip-Down
                     p Hiding the menu is standard on mobile sites, but we wanted a novel way to reveal it, resulting in the flip-down from the top.
                       span.caption-continue ...continue
-                  .caption-optimal
+                  li.caption-optimal
                     h4 Cube-Flip Transition
                     p We wanted to indicate a sense of direction in page transitions, so came up with a cube flip to the left for forward motion, and a cube flip to the right if the user uses the back button.
                       span.caption-continue ...continue
@@ -484,8 +484,6 @@
     p.guides__desc
       | A mobile-first philosophy didn’t mean that we wanted to neglect the desktop site. As we worked on extrapolating the desktop/tablet site from our smartphone designs, we incorporated some elements, like the 3D page transitions, but we wanted the larger version of the site to have some unique charms of its own. We came up with the concept of an abstracted mountain range as part of the main navigation. By using peaks of differing heights, we could indicate the section the current page belongs to as well as providing a rollover effect. The developers got to work on a prototype, eventually using Simplex noise and some simple spring dynamics to bring the generative mountain range to life.
     #graphicMountains.graphic.graphic-mountains
-        //- .device__graphic-highlight
-        //- span.block__device-header
         span.device__graphic-highlight
         span.device__block
           span.device__group-content
@@ -604,8 +602,8 @@
             .device__content
               .device__screen
                 img(src='../images/client-side-detection-iphone%402x.jpg')
-    //- .caption
-    //-   b Custom experience for iPhone, iPad, or desktop
+    p.caption
+      | Custom experience for iPhone, iPad, or desktop
     .graphic-caption-box
       h4 Drawbacks
     p.guides__desc
@@ -702,7 +700,6 @@
               code.code-sample-backgrounds
                 span.syntax-2 .mobile-cta
                 span.syntax-3  {
-                | &nbsp;
                 | background: white url(
                 span.syntax-2 '../img/mobile-cta-arrow.png'
                 | ) no-repeat center center;

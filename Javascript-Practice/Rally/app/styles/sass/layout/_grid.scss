@@ -1,4 +1,8 @@
 .container {
+  img {
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
   min-height: 100%;
   // -webkit-transform: scale(1);
   overflow: hidden;

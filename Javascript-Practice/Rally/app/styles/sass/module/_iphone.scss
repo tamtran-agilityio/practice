@@ -429,6 +429,23 @@
     z-index: 1;
   }
 }
+
+#slideshowHowToGesture {
+  .iphone__screenshots {
+    width: 145%;
+    .screenshot {
+    position: relative;
+    float: left;
+    margin: 0 5% 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 90%;
+    img {
+      width: 100%;
+    }
+  }
+  }
+}
 .iphone__screenshots {
   width: 145%;
   .screenshot {
@@ -491,35 +508,38 @@
     vertical-align: middle;
     display: inline-block;
   }
-  .caption-non-optimal {
-    h4 {
-      text-align: center;
-    }
-    p {
-      height: 1.5em;
-      overflow: hidden;
-      position: relative;
-      max-width: 210px;
-      margin: 0 auto;
-      padding: 0;
-      font: inherit;
-    }
-    .caption-continue {
-      background: -webkit-linear-gradient(left, rgba(62,56,79,0) 0%, rgba(62,56,79,1) 30%);
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding-left: 30px;
-      color: rgba(255,255,255,.6);
-    }
-    @extend .graphic-caption-content;
-    vertical-align: middle;
-    top: 0;
+  // .caption-non-optimal {
+  //   h4 {
+  //     text-align: center;
+  //   }
+  //   p {
+  //     height: 1.5em;
+  //     overflow: hidden;
+  //     position: relative;
+  //     max-width: 210px;
+  //     margin: 0 auto;
+  //     padding: 0;
+  //     font: inherit;
+  //   }
+  //   .caption-continue {
+  //     background: -webkit-linear-gradient(left, rgba(62,56,79,0) 0%, rgba(62,56,79,1) 30%);
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     padding-left: 30px;
+  //     color: rgba(255,255,255,.6);
+  //   }
+  //   @extend .graphic-caption-content;
+  //   vertical-align: middle;
+  //   top: 0;
+  //   display: block;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  // }
+  .caption-optimal.active {
     display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
   }
   .caption-optimal {
     h4 {

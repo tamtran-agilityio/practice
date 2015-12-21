@@ -83,11 +83,6 @@
     }
   }
 
-  .graphic-trials-tribulations-mapkit {
-    .graphic-caption-content {
-      top: 30%;
-    }
-  }
   .reasons__head, .outro__head {
     left: 50%;
     margin-left: -545px;
@@ -343,10 +338,6 @@
       width: 31%;
       left: 1%;
     }
-    .graphic-caption-content {
-      top: 30%;
-      left: 65%;
-    }
   }
 
   .iphone__graphic-deeplink {
@@ -369,9 +360,6 @@
     .iphone__arrow {
       left: 56%;
     }
-    .graphic-caption-content {
-      top: 30%;
-    }
   }
   .iphone__block {
     max-width: 940px;
@@ -383,9 +371,6 @@
     }
     .iphone__video {
       width: 31%;
-    }
-    .graphic-caption-content {
-      top: 35%;
     }
   }
   .a-guide-to-your-travels {
@@ -400,14 +385,6 @@
   .iphone__detail-crop {
     width: 75%;
     left: 133%;
-  }
-  .graphic-caption-content {
-    display: block;
-  }
-  .source__block {
-    .graphic-caption-content {
-      top: 40%;
-    }
   }
 
   .mistakes__block {
@@ -440,9 +417,7 @@
     }
   }
   .graphic-caption-content {
-    display: block;
-    top: 55%;
-    left: 65%;
+    display: none;
     text-align: left;
     h4 {
       font-size: 18px;
@@ -478,13 +453,6 @@
     }
     .iphone__arrow {
       left: 38%;
-    }
-    .graphic-caption-content {
-      h4 {
-        text-align: left;
-      }
-      top: 30%;
-      left: 70%;
     }
   }
   .caption-box__slider {
