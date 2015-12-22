@@ -116,6 +116,7 @@ $(document).ready(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         accessibility: true,
+        draggable: true,
         adaptiveHeight: true
       });
       $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -178,13 +179,16 @@ $(document).ready(function() {
         adaptiveHeight: true,
         arrows: false,
         swipeToSlide: false,
+        onAfterChange: function(){
+          $wrapSlidePage.slickPause();
+        },
         onInit: function() {
           $wrapSlidePage.slick({
             draggable: false,
             swipe: false
           });
         },
-        asNavFor: changeDelay
+        asNavFor: changeDelay,
       });
       $(changeDelay).slick({
         dots: false,
@@ -197,11 +201,9 @@ $(document).ready(function() {
         adaptiveHeight: false,
         arrows: false,
         asNavFor: slide,
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false
-          });
-        }
+        onAfterChange: function(){
+          $wrapSlidePage.slickPause();
+        },
       });
       $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
         var barCount = $contextshow.length;
@@ -242,15 +244,13 @@ $(document).ready(function() {
       });
     }());
 
-
+    // excute change slider
     sliderDelay('#gestureMain', '#gestureMainMore', '#slideshowSmarterRouting');
     sliderDelay('#cardsCity', '#cardsCityEssentials', '#slideshowCustomAnimation');
     sliderDelay('#gestureMapbox', '#gestureSwipe', '#slideshowHowToGesture');
     sliderDelay('#prototype', '#prototypeDelay', '#slideshowPrototyping');
     sliderDelay('#mountainReport', '#mountainReportDelay', '#slideshowMobileFirst');
     sliderDelay('.ipad__screenshots', '.ipad__screenshots-before', '#trialsTribulations');
-    // set color menu
-    // setColor($wrapSlidePage);
 
     // height ribbon block
     sliderHeight();

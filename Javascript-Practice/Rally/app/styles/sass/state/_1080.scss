@@ -532,12 +532,13 @@
     width: 100%;
     position: relative;
   }
-    // part graphic evolving
+
+  // part graphic evolving
   .highlight-content {
     width: 100%;
     left: 65%;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     top: 0;
     height: 100%;
     bottom: 0;
@@ -588,6 +589,9 @@
       max-width: initial;
       min-width: initial;
     }
+  }
+  .highlight-content-slider {
+    left: 110% !important;
   }
   .find-interesting-things-faster {
     .iphone__graphic-highlight {
