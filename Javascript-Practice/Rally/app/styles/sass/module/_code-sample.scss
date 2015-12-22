@@ -139,12 +139,14 @@
 }
 
 .case-study {
-  display: block;
-  width: 70%;
-  min-width: 320px;
-  max-width: 580px;
-  margin: auto;
-  color: white;
-  font-size: 0.9em;
-  position: relative;
+  em {
+    display: block;
+    width: 70%;
+    min-width: 320px;
+    max-width: 580px;
+    margin: auto;
+    color: white;
+    font-size: 0.9em;
+    position: relative;
+  }
 }

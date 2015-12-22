@@ -81,6 +81,7 @@
   stroke-dasharray: 400;
   -webkit-transition: 1.5s linear !important;
   transition: 1.5s linear !important;
+  opacity: 1;
 }
 .case-study-icon-ready [stroke-dasharray] {
   /* Just the map "route"? */
@@ -93,5 +94,5 @@
   stroke-dasharray: 400 0;
 }
 .case-study-icon-anim [fill] {
-  opacity: 1;
+  opacity: 0;
 }

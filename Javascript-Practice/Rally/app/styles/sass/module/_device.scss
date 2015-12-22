@@ -591,3 +591,12 @@
     margin-top: 15px;
   }
 }
+
+.browser__device {
+  .device__shadow {
+    background-image: url(../images/browser-shadow@2x.png);
+    left: -6%;
+    right: -6%;
+    bottom: -6%;
+  }
+}

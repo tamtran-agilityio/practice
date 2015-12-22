@@ -533,66 +533,7 @@
     position: relative;
   }
 
-  // part graphic evolving
-  .highlight-content {
-    width: 100%;
-    left: 65%;
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    height: 100%;
-    bottom: 0;
-    display: inline-block;
-    vertical-align: middle;
-    overflow: visible;
-    max-width: 220px;
-    font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
-    cursor: default;
-    margin-right: -23%;
-    &:before {
-      content: '';
-      display: inline-block;
-      width: 0;
-      height: 100%;
-      vertical-align: middle;
-      margin-left: -0.25em;
-    }
-    .caption-optimal {
-      display: none;
-      vertical-align: middle;
-      top: 40%;
-      left: 0;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      h4 {
-        text-align: left;
-        max-width: 220px;
-        font-size: 18px;
-      }
-      p {
-        max-width: 464px;
-        overflow: visible;
-        height: auto;
-        width: 100%;
-        padding-top: 20px;
-      }
-      .caption-continue {
-        display: none;
-      }
-    }
-    .graphic-caption-content {
-      position: relative;
-      float: left;
-      width: 100%;
-      margin: 0 auto;
-      max-width: initial;
-      min-width: initial;
-    }
-  }
-  .highlight-content-slider {
-    left: 110% !important;
-  }
+
   .find-interesting-things-faster {
     .iphone__graphic-highlight {
       top: 88%;
