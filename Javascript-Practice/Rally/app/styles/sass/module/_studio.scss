@@ -151,9 +151,10 @@
   }
 }
 #person {
-  @include flexbox();
-  flex-flow: row wrap;
-  justify-content: flex-end;
+  // @include flexbox();
+  // flex-flow: row wrap;
+  // justify-content: flex-end;
+  display: block;
   .person {
     @include e(item) {
       position: relative;
@@ -161,6 +162,7 @@
       padding-bottom: 48%;
       margin-right: 4%;
       margin-top: 4%;
+      float: left;
       &:nth-child(2n) {
         margin-right: 0;
       }
@@ -385,8 +387,10 @@
   }
   @include e(wapper) {
     padding: 0 5%;
-    @include flexbox();
-    flex-flow: row wrap;
+    display: block;
+    // @include flexbox();
+    // flex-flow: initial;
+    // flex-flow: row wrap;
   }
   @include e(item) {
     background: rgba(47, 54, 59, 0.1);
@@ -402,6 +406,7 @@
     margin-top: 4%;
     transition: background 500ms;
     -webkit-transition: background 500ms;
+    float: left;
     &:hover {
       background: rgba(47, 54, 59, 1.0);
     }
@@ -475,8 +480,9 @@
   }
   @include e(wapper) {
     padding: 0 5%;
-    @include flexbox();
-    flex-flow: row wrap;
+    display: block;
+    // @include flexbox();
+    // flex-flow: row wrap;
   }
   @include e(item) {
     background: url(../images/award-logos.png) no-repeat;
@@ -487,6 +493,7 @@
     padding-bottom: 48%;
     margin-right: 4%;
     margin-top: 4%;
+    float: left;
     &:nth-child(2n) {
       margin-right: 0;
     }

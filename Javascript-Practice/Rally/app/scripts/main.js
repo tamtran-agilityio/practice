@@ -115,7 +115,7 @@ $(document).ready(function() {
         arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        accessibility: false,
+        accessibility: true,
         adaptiveHeight: true
       });
       $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -180,7 +180,8 @@ $(document).ready(function() {
         swipeToSlide: false,
         onInit: function() {
           $wrapSlidePage.slick({
-            draggable: false
+            draggable: false,
+            swipe: false
           });
         },
         asNavFor: changeDelay
@@ -203,7 +204,6 @@ $(document).ready(function() {
         }
       });
       $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        // console.log(nextSlide);
         var barCount = $contextshow.length;
         var changle = ((100 / barCount) * nextSlide);
         $contextshow.removeClass('active').eq(nextSlide).addClass('active');
@@ -215,7 +215,6 @@ $(document).ready(function() {
     (function () {
       var $wrapSlidePage = $('.slider-item');
       var barCountSlider = $('.simple-slideshow').find('ul.stamp-images-overflow li.image-wrapper').length;
-      // console.log(barCount);
       // set width pagination
       $('.simple-slideshow').find('.pagination-bar-handle').css('width', 100 / barCountSlider + '%');
       $('.stamp-images-overflow').slick({
