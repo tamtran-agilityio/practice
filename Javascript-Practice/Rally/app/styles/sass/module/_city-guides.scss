@@ -493,6 +493,33 @@
   }
 
 }
+.highlight-content-block {
+  li {
+  padding-top: 0;
+  }
+  top: 0 !important;
+  color: white;
+  min-width: 240px;
+  max-width: 360px;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+  left: initial;
+  display: block;
+  .caption-optimal {
+    position: relative !important;
+    h4 {
+      font-size: 16px;
+      max-width: initial;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    p {
+      height: auto !important;
+      font-size: 16px;
+    }
+  }
+}
 .list {
   list-style-type: decimal;
   padding-bottom: 20px;

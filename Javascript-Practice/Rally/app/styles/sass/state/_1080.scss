@@ -13,13 +13,28 @@
     }
   }
   .city__better {
+    font-size: 16px;
     margin-top: 70px;
     letter-spacing: 12px;
+  }
+  .city__arrive, .city__attribution {
+    font-size: 16px;
+  }
+  .guides__title {
+    font-size: 54px;
+    p {
+      font-size: 15px;
+    }
+  }
+  .guides__desc {
+    font-size: 26px;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
   }
   .studio__huge,
   .city__travel,
   .best__title {
-    font-size: 150px;
+    font-size: 160px;
   }
   .first-word {
     border-color: #2f363b !important;
@@ -579,5 +594,21 @@
         left: 71%;
       }
     }
+  }
+  .highlight-content {
+    width: 100%;
+    left: 65%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    height: 100%;
+    bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: visible;
+    max-width: 220px;
+    font: 500 16px/1.5em "ff-meta-serif-web-pro", serif;
+    cursor: default;
+    margin-right: -23%;
   }
 }

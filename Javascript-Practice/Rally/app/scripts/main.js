@@ -120,7 +120,12 @@ $(document).ready(function() {
         adaptiveHeight: true
       });
       $wrapSlidePage.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        if (nextSlide === 1) {
+        console.log('event.currentTarget', event.target);
+        if($(event.target).hasClass("slider-item")){
+
+          console.log('event.currentTarget inner');
+
+          if (nextSlide === 1) {
           $navBar.css('background-color', 'rgb(183, 89, 255)');
           $navContent.css('background-color', 'rgb(183, 89, 255)');
           $baseContent.css('background-color', 'rgb(183, 89, 255)');
@@ -149,6 +154,8 @@ $(document).ready(function() {
             }
           }
         }
+        }
+
       });
       return false;
     }());
@@ -179,15 +186,6 @@ $(document).ready(function() {
         adaptiveHeight: true,
         arrows: false,
         swipeToSlide: false,
-        onAfterChange: function(){
-          $wrapSlidePage.slickPause();
-        },
-        onInit: function() {
-          $wrapSlidePage.slick({
-            draggable: false,
-            swipe: false
-          });
-        },
         asNavFor: changeDelay,
       });
       $(changeDelay).slick({
@@ -206,12 +204,27 @@ $(document).ready(function() {
         },
       });
       $(changeDelay).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $wrapSlidePage.slick('slickPause');
+        console.log("event",event, slick);
         var barCount = $contextshow.length;
         var changle = ((100 / barCount) * nextSlide);
         $contextshow.removeClass('active').eq(nextSlide).addClass('active');
         $(context).find('.pagination-bar-content').css('transform', 'translate3d(' + changle + '%, 0px, 0px)');
         $(context).find('.pagination-bar-content').css('transition', 'transform 0.2s ease-out');
       });
+     /* $(slide).on('mousedown', function(event){
+
+        $wrapSlidePage.slick({
+          swipeToSlide: true
+        });
+
+      });
+      $(slide).on('mouseup', function(event){
+        $('body').on('drag', function(e) {
+          console.log('body e', e);
+          return true;
+        })
+      });*/
     }
 
     (function () {
