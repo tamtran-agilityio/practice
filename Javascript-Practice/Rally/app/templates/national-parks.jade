@@ -316,7 +316,7 @@
     .hex-slideshow.simple-slideshow
       .caption-hex
         span And here's a sample of the finished product.
-      .stamp-images-wrapper
+      .stamp-images-wrapper.caption-box__block
         .stamp-images
           ul.stamp-images-overflow
             li.image-wrapper
@@ -443,8 +443,9 @@
             s2.3,0.5,3,1.6c0.7,1,1.1,2.4,1.1,4.2s-0.4,3.2-1.1,4.2C108.2,96.9,107.2,97.4,105.9,97.4z M103.8,94.8l3.3-7.1\
             c-0.4-0.2-0.8-0.4-1.2-0.4c-1.7,0-2.7,1.7-2.7,4.4C103.2,92.9,103.4,94,103.8,94.8z M108.6,91.7c0-1.3-0.2-2.3-0.6-3l-3.3,7.1\
             c0.4,0.2,0.8,0.4,1.2,0.4C107.6,96.2,108.6,94.5,108.6,91.7z')
+
   section.uikit-with-a-twist.page-section
-    .guides__block-number
+    .guides__block-number#NewTest
       span 06
     h2.guides__title
       | UIKit With a Twist
@@ -677,7 +678,7 @@
               | We were ultimately able to customize the look of pins and callouts on our maps, but at the cost of grey hairs and ugly hacks.
     p.guides__desc
       | The other downside to using MapKit came when Apple announced that they were replacing the Google-sourced map tiles with their own. We were using an undocumented but widely known MapKit property that allowed us to use Google’s terrain tiles, which looked great with the style of the app and helped connote an outdoor focus without the visual clutter of satellite imagery. When users upgraded to iOS 6, however, this terrain option vanished, leaving them with a map style that just didn’t work as nicely with our app design.
-    #trialsTribulations.slideshow-trials-tribulations.slideshow
+    #trialsTribulations.slideshow-trials-tribulations.slideshow.caption-box__block
       .graphic.slideshow-placeholder-tribulations
         span.device__group
           span.device__group-content
