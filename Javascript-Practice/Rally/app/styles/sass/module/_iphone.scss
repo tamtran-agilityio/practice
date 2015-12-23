@@ -446,7 +446,17 @@
     }
   }
 }
+#slideshowMobileFirst{
+  .iphone__screenshots {
+    width: 133%;
+  }
+}
 #slideshowPrototyping {
+  .iphone__screenshots {
+    width: 118%;
+  }
+}
+#mountainReport {
   .iphone__screenshots {
     width: 125%;
     .screenshot {
@@ -456,14 +466,11 @@
       height: 100%;
       overflow: hidden;
       width: 70%;
-      img {
-        width: 100%;
-      }
     }
   }
 }
 .iphone__screenshots {
-  width: 145%;
+  width: 140%;
   .screenshot {
     position: relative;
     float: left;
@@ -483,7 +490,7 @@
 }
 
 .iphone__screenshots-before {
-  width: 100%;
+  width: 95%;
   .slick-list {
     overflow: visible;
     opacity: 0.15;
@@ -710,7 +717,16 @@
   }
   .pagination-bar-handle {
     position: absolute;
-    // width: 50%;
     border-top: 1px solid $white;
+  }
+}
+
+#gestureMain,
+#cardsCity,
+#gestureMapbox,
+#prototype,
+#mountainReport {
+  .slick-track {
+    background: rgb(36, 36, 36)
   }
 }
