@@ -507,10 +507,15 @@
   }
   .slideshow-placeholder {
     .device__group {
-      max-width: 940px;
+      max-width: 670px;
     }
     .iphone__device {
       width: 31%;
+    }
+  }
+  .hex-slideshow {
+    .image-wrapper {
+      width: 4%;
     }
   }
   .graphic-events {

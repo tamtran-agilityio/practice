@@ -1101,16 +1101,39 @@
       h4 CSS Transitions
     p.guides__desc
       | Whenever possible, we knew we’d want to use CSS transitions rather than JavaScript-driven animation, since most modern devices will offload CSS transitions to the GPU. Naturally, canvas animations, such as the Lifts & Trails circle graphs, had to be driven with Javascript, but we’re using CSS transitions wherever we’re animating position or transformation, like the animated transitions between pages.
-    #slideshowTransitions.slideshow-transitions
+    #slideshowTransitions.slideshow-transitions.caption-box__block
       .graphic.slideshow-placeholder
-        .device__graphic-highlight
         .device__group
           .device-group-content
             .browser__device
               span.device__chrome
-              span.device__screen
-              .device-aux-content
-                img(src="../images/video-css-page-transition.jpg")
+              span.device__content
+                span.device__screen
+                  .browser__screenshots
+                    .screenshot
+                      img(src="../images/video-css-page-transition.jpg")
+                    .screenshot
+                      img(src="../images/video-css-report-foldout.jpg")
+              .browser__screenshots-before
+                .screenshot
+                  img(src="../images/video-css-page-transition.jpg")
+                .screenshot
+                  img(src="../images/video-css-report-foldout.jpg")
+            .slideshow-caption-content
+              ul.highlight-content-inner
+                li.caption-optimal
+                  h4 Desktop Page Transition
+                  p The cube-flip was too dramatic a movement for the size of the desktop site, so we instead embraced a more subtle 3D tilt as a page transition.
+                    span.caption-continue ...continue
+                li.caption-optimal
+                  h4 Mountain Report Foldout
+                  p In the interest of keeping the mountain report at the user’s fingertips, we came up with a condensed report that folds out on rollover.
+                   span.caption-continue ...continue
+        span.pagination-bar
+          .pagination-bar-outes
+            .pagination-bar-inner
+              .pagination-bar-content
+                .pagination-bar-handle
   section.rallys-home-slopes.page-section
     .guides__block-number
       span 09

@@ -121,20 +121,20 @@
       }
       @include e(tap) {
         left: 14%;
-        top: 53%;
+        top: 56%;
       }
       @include e(arrow) {
         left: 39%;
-        top: 26%;
+        top: 28%;
         z-index: 1;
       }
        @include e(tap--itinerary) {
         left: 48%;
-        top: 34%;
+        top: 36%;
       }
       @include e(arrow--itinerary) {
         left: 72%;
-        top: 56.5%;
+        top: 58%;
         z-index: 1;
       }
     }
@@ -341,7 +341,7 @@
     position: absolute;
     height: 100%;
     left: 35%;
-    top: -8px;
+    top: 0;
     -webkit-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
     z-index: 2;
@@ -490,7 +490,8 @@
 }
 
 .iphone__screenshots-before {
-  width: 95%;
+  width: 88%;
+  margin: 0 auto;
   .slick-list {
     overflow: visible;
     opacity: 0.15;
@@ -506,7 +507,7 @@
     transform: scale3d(.70,.70,1);
     img {
       width: 100%;
-      margin-top: 30%;
+      margin-top: 40%;
     }
   }
 }
@@ -532,8 +533,52 @@
 }
 .ipad__screenshots-before {
   position: absolute !important;
-  top: 0;
+  top: 10.5%;
+  left: 9.5%;
+  right: 9.5%;
+  bottom: 10.5%;
+  margin: 0 auto;
+  .slick-list {
+    overflow: visible;
+    opacity: 0.15;
+  }
+  .screenshot {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 50%;
+    -webkit-transform: scale3d(.70,.70,1);
+    transform: scale3d(.70,.70,1);
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.browser__screenshots {
   width: 100%;
+  top: 7.5%;
+  .screenshot {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    width: 90%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.browser__screenshots-before {
+  position: absolute !important;
+  top: 10.5%;
+  left: 9.5%;
+  right: 9.5%;
+  bottom: 10.5%;
+  margin: 0 auto;
   .slick-list {
     overflow: visible;
     opacity: 0.15;
@@ -695,12 +740,18 @@
     margin: 0 auto;
   }
 }
+.hex-slideshow {
+  .pagination-bar {
+    top: -60px;
+  }
+}
 .pagination-bar {
   position: relative;
   height: 40px;
   margin: 0 auto;
   max-width: 300px;
   top: 60px;
+  display: block;
   .pagination-bar-outer {
     position: relative;
     height: 100%;

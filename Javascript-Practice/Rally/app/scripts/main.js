@@ -212,13 +212,13 @@ $(document).ready(function() {
         $(context).find('.pagination-bar-content').css('transform', 'translate3d(' + changle + '%, 0px, 0px)');
         $(context).find('.pagination-bar-content').css('transition', 'transform 0.2s ease-out');
       });
-      $('.caption-box__block').on('mousedown',function () {
+      $('.caption-box__block').on('mousedown', function () {
         // console.log('in');
-        $wrapSlidePage.slick("slickSetOption", "draggable", false, false);
+        $wrapSlidePage.slick('slickSetOption', 'draggable', false, false);
       });
-      $('.caption-box__block').on('mouseup',function () {
+      $('.caption-box__block').on('mouseup', function () {
         // console.log('out');
-        $wrapSlidePage.slick("slickSetOption", "draggable", true, false);
+        $wrapSlidePage.slick('slickSetOption', 'draggable', true, false);
       });
     }
 
@@ -253,6 +253,46 @@ $(document).ready(function() {
       });
     }());
 
+    // function drag and drop image
+    function init() {
+      var prevX = Math.floor(window.innerWidth/2);
+      // var prevX = -1
+      $('#itineraryBlock').on('dragstart', function(e, ui) {
+        console.log(e.pageX);
+        if (e.pageX === prevX) {
+          console.log('dragged center', prevX);
+          $('#itineraryBlock').css('transform', 'translate3d(0%, 0px, 0px)');
+          $('#itineraryBlock').css('transition', 'opacity .25s ease-out');
+          prevX = e.pageX;
+          return false;
+        }
+        // dragged left
+        if ((prevX) > (e.pageX)) {
+          console.log('dragged left');
+          $('#itineraryBlock').css('transform', 'translate3d(-25%, 0px, 0px)');
+          $('#itineraryBlock').css('transition', 'opacity .25s ease-out');
+        }
+        // dragged right
+        else if ((prevX) < (e.pageX)) {
+          console.log('dragged right');
+          $('#itineraryBlock').css('transform', 'translate3d(25%, 0px, 0px)');
+          $('#itineraryBlock').css('transition', 'opacity .25s ease-out');
+        }
+        prevX = e.pageX;
+      });
+
+      $('#itineraryBlock').draggable({
+        containment: '#itineraryContainer',
+        cursor: 'move',
+        snap: '#itineraryContainer',
+        revert: 'invalid',
+        axis: 'x'
+      });
+    };
+
+    $(init);
+
+
     // excute change slider
     sliderDelay('#gestureMain', '#gestureMainMore', '#slideshowSmarterRouting');
     sliderDelay('#cardsCity', '#cardsCityEssentials', '#slideshowCustomAnimation');
@@ -260,6 +300,7 @@ $(document).ready(function() {
     sliderDelay('#prototype', '#prototypeDelay', '#slideshowPrototyping');
     sliderDelay('#mountainReport', '#mountainReportDelay', '#slideshowMobileFirst');
     sliderDelay('.ipad__screenshots', '.ipad__screenshots-before', '#trialsTribulations');
+    sliderDelay('.browser__screenshots', '.browser__screenshots-before', '#slideshowTransitions');
 
     // height ribbon block
     sliderHeight();
