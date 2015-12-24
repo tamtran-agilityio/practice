@@ -1,0 +1,78 @@
+/* Styles navigation */
+.nav {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2000;
+  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  ul {
+    position: relative;
+  }
+  li {
+    font-size: 12px;
+    font-family: 'rucreamedium';
+    margin-top: 46px;
+    float: left;
+    letter-spacing: 3px;
+    margin-left: 40px;
+    a {
+      cursor: pointer;
+      height: 13px;
+      overflow: hidden;
+      padding: 0;
+      display: inline-block;
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      transition: transform .3s;
+    }
+  }
+  h1 {
+    width: 75px;
+    float: right;
+    margin-right: 25px;
+    padding-top: 22px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+}
+.loader {
+  @include size(200px, 155px);
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  z-index: 2;
+  bottom: -250px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+  img {
+    width: 40%;
+    height: auto;
+    transform: rotate(0deg);
+    transition: all 6.5s ease;
+    position: relative;
+    margin-left: -20%;
+    left: 50%;
+  }
+  p {
+    position: absolute;
+    left: 20px;
+    color: #000;
+    top: 95px;
+    z-index: 100;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-left: 16px;
+  }
+}
+

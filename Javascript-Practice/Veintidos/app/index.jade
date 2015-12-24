@@ -1,0 +1,27 @@
+extends layouts/default
+block variables
+  - bodyClass = "index"
+block content
+  .awwwards
+    a(href="http://www.awwwards.com" target="_blank") Awwwards
+  main.animsition
+    section.intro
+      .intro__logo
+        .intro__gris
+        .intro__naranja
+        .intro__grado
+      .claim
+        .claim__line
+        .claim__mascara-claim
+          h3 Independent Design Agency
+    .wrapp-cases
+      .til-section
+        h6.animated.flipInY.visible.hidden.fadeInUp  Case
+        .line-scroll
+      section#cases
+        .arrow__pre Black
+        .arrow__next Next
+        #casoUno.mediaslider
+        #casoDos.mediaslider
+        #casoTres.mediaslider
+

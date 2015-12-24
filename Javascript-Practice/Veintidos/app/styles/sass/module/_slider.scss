@@ -1,0 +1,60 @@
+/* style part slider*/
+#cases {
+  @include size(100%, 860px);
+  position: absolute;
+  top: 260px;
+  clear: both;
+  overflow: hidden;
+}
+.mediaslider {
+  @include size(100%);
+  position: absolute;
+  background-size: cover;
+  filter: alpha(opacity=1);
+  opacity: 1;
+  perspective: 1300px;
+  overflow: hidden;
+  max-width: 1600px;
+  left: 50%;
+  margin-left: -800px;
+  background-position: center top;
+}
+#casoUno {
+  background-image: url("../images/small/work-home-henry-saiz.jpg");
+}
+#casoDos {
+  background-image: url("../images/small/work-home-mugako.jpg");
+}
+#casoTres {
+  background-image: url("../images/small/work-home-apersonal.jpg");
+}
+.arrow__next {
+  background-image: url(../images/arrow-next.png);
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  z-index: 100;
+  margin-top: -25px;
+  pointer-events: none;
+  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+.arrow__pre {
+  background-image: url(../images/arrow-next.png);
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  z-index: 100;
+  margin-top: -25px;
+  pointer-events: none;
+  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}

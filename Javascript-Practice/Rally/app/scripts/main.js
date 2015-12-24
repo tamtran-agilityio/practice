@@ -255,9 +255,9 @@ $(document).ready(function() {
 
     // function drag and drop image
     function init() {
-      var prevX = Math.floor(window.innerWidth/2);
+      var prevX = Math.floor(window.innerWidth / 2);
       // var prevX = -1
-      $('#itineraryBlock').on('dragstart', function(e, ui) {
+      $('#itineraryBlock').on('dragstart', function(e) {
         console.log(e.pageX);
         if (e.pageX === prevX) {
           console.log('dragged center', prevX);
@@ -288,7 +288,7 @@ $(document).ready(function() {
         revert: 'invalid',
         axis: 'x'
       });
-    };
+    }
 
     $(init);
 

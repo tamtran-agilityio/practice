@@ -1,0 +1,154 @@
+/* style block intro */
+.intro {
+  background-repeat: repeat;
+  left: 0;
+  margin: 270px auto 0;
+  overflow: hidden;
+  height: 460px;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  text-align: center;
+  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  &__logo {
+    position: relative;
+    width: 280px;
+    height: 260px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50px;
+  }
+  &__gris {
+    background-image: url(../images/2-gris.png);
+    width: 160px;
+    height: 250px;
+    background-size: cover;
+    position: absolute;
+    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  }
+  &__naranja {
+    background-image: url(../images/2-naranja.png);
+    width: 215px;
+    height: 260px;
+    position: absolute;
+    background-size: cover;
+    transform: rotate(-22deg);
+    -webkit-transform: rotate(-22deg);
+    -moz-transform: rotate(-22deg);
+    webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
+    -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+  }
+  &__grado {
+    @include size(60px);
+    background-image: url(../images/grado.png);
+    background-size: cover;
+    position: absolute;
+    left: 210px;
+    top: 10px;
+    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  }
+}
+.claim {
+  @include size(80%, 112px);
+  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  position: relative;
+  top: -40px;
+  padding-top: 50px;
+  z-index: 10;
+  border-top: solid 1px #DEDEDE;
+  border-bottom: solid 1px #DEDEDE;
+  margin: 70px auto 0;
+  overflow: hidden;
+  left: 0;
+  transition-delay: 1s;
+  &__line {
+
+  }
+  &__mascara-claim {
+    width: 100%;
+    transition-delay: 1.2s;
+    position: absolute;
+    height: 100%;
+    background-color: #FFF;
+    z-index: 1;
+    top: 16px;
+    right: 0;
+    -webkit-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
+    -moz-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
+    -o-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
+    transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
+    h3 {
+      font-size: 10px;
+      letter-spacing: 2px;
+      position: relative;
+      top: 0;
+      max-width: 320px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+    }
+  }
+}
+.animsition {
+  opacity: 1;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.wrapp-cases {
+   width: 90%;
+  background-color: #FCFCFC;
+  height: 700px;
+  position: relative;
+  left: 5%;
+  -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1);
+  transition: all 1.3s cubic-bezier(.77,0,.175,1);
+  margin-bottom: 240px;
+  transform: matrix(1,0.00,0.00,1,0,220);
+  -webkit-transform: matrix(1,0.00,0.00,1,0,220);
+  opacity: 1;
+  .til-section {
+    width: 250px;
+    height: 55px;
+    z-index: 1;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    h6 {
+      width: 250px;
+      height: 55px;
+      font-size: 12px;
+      color: #FF6C49;
+      font-family: 'rucreamedium';
+      padding-top: 20px;
+      text-align: center;
+      background-color: #FFF;
+      z-index: 1;
+    }
+  }
+  .line-scroll {
+    height: 100px;
+    background-color: #FF6C49;
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    top: 55px;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+}
