@@ -1,3 +1,4 @@
+/*** style on device small ***/
 @media screen and (max-width: 767px) {
   header {
     height: 100%;
@@ -5,7 +6,7 @@
     top: -100%;
   }
   .intro {
-    margin-top: 100px;
+    margin-top: 99px;
     transition-delay: 3.3s;
     max-width: 100%;
     margin-left: auto;
@@ -42,7 +43,7 @@
         font-size: 10px;
         letter-spacing: 2px;
         position: relative;
-        // top: -16px;
+        top: -16px;
         max-width: 320px;
         margin-right: auto;
         margin-left: auto;
@@ -51,7 +52,7 @@
   }
   .wrapp-cases {
     width: 100%;
-    height: 300px;
+    height: 941px;
     left: 0;
     margin-top: 10px;
     .til-section {
@@ -69,6 +70,7 @@
       }
     }
   }
+  /* style part slider page home*/
   #cases {
     padding-bottom: 30%;
     height: 100%;
@@ -94,5 +96,111 @@
     height: 50px;
     background-size: cover;
     left: 0;
+  }
+
+  // part latest works
+  .latest__works {
+    top: 120px;
+    height: 480px;
+  }
+  .til-section {
+    width: 200px;
+    height: 45px;
+    font-size: 10px;
+    padding-top: 17px;
+    top: -75px;
+    h6 {
+      width: 200px;
+      height: 45px;
+      padding-top: 17px;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+  }
+  .line-scroll {
+    top: 61px;
+    height: 40px;
+    margin-left: -1px;
+    left: 50.1%;
+  }
+  .latest {
+    &__preview {
+      max-width: 100%;
+      margin-right: 10%;
+      margin-left: 10%;
+      top: -180px;
+    }
+    &__item {
+      height: 200px;
+      width: 100%;
+      max-width: 600px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 24px;
+      background-position: center top;
+
+      &--name {
+        font-size: 28px;
+        height: 85px;
+        letter-spacing: 10px;
+        width: 70%;
+        top: 102px;
+        padding: 10px;
+        left: 10px;
+        span {
+          top: 31px;
+        }
+      }
+    }
+    &__img {
+      position: absolute;
+      height: 100%;
+      padding-bottom: 0;
+      overflow: hidden;
+      top: 0;
+      width: 100%;
+      left: 0;
+    }
+    &__nakogu {
+      background-image: url(../images/small/preview-home-mugako-gris.jpg);
+    }
+    &__rubencrea {
+      background-image: url(../images/small/preview-home-rubencrea.jpg);
+    }
+  }
+
+  /** style section services */
+  .services {
+    width: 90%;
+    top: 220px;
+    &__title {
+      font-size: 17px;
+      margin-top: 60px;
+    }
+    &__list {
+      margin-top: 30px;
+    }
+    &__item {
+      width: 100%;
+      height: 273px;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: center;
+      h3 {
+        font-size: 11px;
+        top: 243px;
+      }
+    }
+    &__web {
+      background-image: url(../images/small/service-web.jpg);
+    }
+  }
+  /* footer page **/
+  .footer {
+    &__block {
+      top: -20px;
+      height: 90px;
+      margin-bottom: 10px;
+    }
   }
 }

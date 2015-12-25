@@ -1,6 +1,21 @@
 /*global $ jQuery */
 $(function () {
   'use strict';
+
+  // Use plugin lazyload load image
+  $(window).bind('load', function() {
+    $('img').lazyload({
+      effect: 'fadeIn'
+    });
+  });
+
+  var $listSlide = $('#cases');
+  $listSlide.hide().first().show();
+  // function to handle show slider
+  // function sliderResponse() {
+  //   $listSlide.fadeOut(300).eq(n).fadeIn(300);
+  // }
+  // sliderResponse();
   // $('#cases').pogoSlider({
   //   autoplay: !0,
   //   autoplayTimeout: 8e3,

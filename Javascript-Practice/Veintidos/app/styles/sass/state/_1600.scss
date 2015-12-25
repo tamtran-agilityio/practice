@@ -1,0 +1,88 @@
+@media screen and (max-width: 1599px) and (min-width: 1024px) {
+  header {
+    height: 70px;
+  }
+
+  .intro {
+    max-width: 500px;
+    margin-top: 220px;
+    height: 330px;
+    &__logo {
+      width: 220px;
+      height: 190px;
+    }
+    &__gris {
+      width: 160px;
+      height: 180px;
+    }
+    &__naranja {
+      width: 180px;
+      height: 180px;
+    }
+    &__grado {
+      width: 40px;
+      height: 40px;
+      left: 150px;
+    }
+  }
+  .claim {
+    top: -30px;
+    height: 70px;
+    padding-top: 27px;
+  }
+  .wrapp-cases {
+    width: 100%;
+    height: 490px;
+    left: 0;
+    transform: matrix(1,0.00,0.00,1,0,110);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,110);
+    opacity: 1;
+    .til-section {
+      width: 200px;
+      height: 45px;
+       h6 {
+        width: 200px;
+        height: 45px;
+        padding-top: 17px;
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+    }
+    .line-scroll {
+      top: 44px;
+    }
+  }
+  #cases {
+    height: 600px;
+    max-width: 1280px;
+    margin-left: -630px;
+    left: 50%;
+    top: 60px;
+    padding-top: 30%;
+    .mediaslider {
+      max-width: 1280px;
+      margin-left: -640px;
+    }
+    .arrow__pre {
+      left: 0;
+    }
+    .arrow__next {
+      right: 0;
+    }
+  }
+  .services {
+    max-width: 1180px;
+    top: 310px;
+    &__item {
+      width: 393px;
+      height: 393px;
+      &:nth-child(-n+3) {
+        border-top: solid 1px;
+      }
+      &:nth-child(2n) {
+        border-left: none ;
+        border-right: none;
+      }
+    }
+  }
+}
