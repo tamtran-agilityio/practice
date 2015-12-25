@@ -2,12 +2,73 @@
   header {
     height: 70px;
   }
+  .intro {
+    margin-top: 180px;
+    max-width: 780px;
+    height: 390px;
+  }
   .services {
     max-width: 1310px;
     top: 580px;
     &__item {
       width: 436px;
       height: 436px;
+    }
+  }
+  .claim {
+    top: -30px;
+    height: 80px;
+    padding-top: 35px;
+  }
+  .latest {
+    &__works {
+      position: relative;
+      top: 450px;
+      height: 600px;
+    }
+    &__item {
+      height: 370px;
+      &--name {
+        font-size: 48px;
+        letter-spacing: 16px;
+      }
+      &:nth-child(2) {
+        border-left: none;
+        .latest__item--name {
+          top: 330px;
+          left: 398px;
+          padding-left: 30px;
+        }
+      }
+    }
+    &__preview {
+      max-width: 1310px;
+    }
+  }
+  .wrapp-cases {
+    width: 100%;
+    left: 0;
+    height: 490px;
+    transform: matrix(1,0.00,0.00,1,0,160);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,160);
+    opacity: 1;
+  }
+  #cases {
+    top: 120px;
+    height: 710px;
+    max-width: 1600px;
+    margin-left: -800px;
+    left: 50%;
+    padding-bottom: 30%;
+    .mediaslider {
+      max-width: 1310px;
+      margin-left: -655px;
+    }
+    .arrow__pre {
+      left: 35px;;
+    }
+    .arrow__next {
+      right: 35px;;
     }
   }
 }

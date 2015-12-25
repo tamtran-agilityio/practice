@@ -32,8 +32,8 @@
   }
   &__naranja {
     background-image: url(../images/2-naranja.png);
-    width: 215px;
-    height: 260px;
+    width: 200px;
+    height: 250px;
     position: absolute;
     background-size: cover;
     transform: rotate(-22deg);
@@ -117,6 +117,8 @@
   -webkit-transform: matrix(1,0.00,0.00,1,0,220);
   opacity: 1;
   .til-section {
+    top: -66px;
+    border: none;
     width: 250px;
     height: 55px;
     z-index: 1;
