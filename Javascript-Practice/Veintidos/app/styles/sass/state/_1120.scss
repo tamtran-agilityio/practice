@@ -1,0 +1,12 @@
+@media screen and (max-width: 1190px) and (min-width: 1024px) {
+  //***********************************//
+  //********* style page index ********//
+  .services__item {
+    &:nth-child(3) {
+      border-top: none !important;
+    }
+    &:nth-child(2) {
+      border-top: solid 1px !important;
+    }
+  }
+}

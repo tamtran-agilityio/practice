@@ -1,4 +1,6 @@
 @media screen and (max-width: 1599px) and (min-width: 1024px) {
+  //***********************************//
+  //********* style page index ********//
   header {
     height: 70px;
   }
@@ -91,12 +93,17 @@
     &__item {
       width: 393px;
       height: 393px;
-      &:nth-child(-n+3) {
+      &:nth-child(2) {
         border-top: solid 1px;
-      }
-      &:nth-child(2n) {
-        border-left: none ;
         border-right: none;
+        border-left: none;
+      }
+      &:nth-child(5) {
+        border-left: none;
+        border-right: none;
+      }
+      &:nth-child(3) {
+        border-top: solid 1px;
       }
     }
     &__title {

@@ -1,0 +1,18 @@
+/** Style page works **/
+.intro {
+  &__works {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 410px;
+    height: 220px;
+    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    margin-right: auto;
+  }
+
+}
