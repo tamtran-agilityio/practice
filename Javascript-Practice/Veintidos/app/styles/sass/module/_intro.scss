@@ -1,14 +1,16 @@
 /* style block intro */
 .intro {
-  background-repeat: repeat;
-  left: 0;
-  margin: 270px auto 0;
-  overflow: hidden;
-  height: 460px;
   position: relative;
   width: 100%;
   max-width: 1280px;
   text-align: center;
+  margin-left: auto;
+  margin-top: 410px;
+  margin-right: auto;
+  height: 220px;
+  -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+  -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   &__logo {
     position: relative;
@@ -32,49 +34,81 @@
   }
   &__naranja {
     background-image: url(../images/2-naranja.png);
-    width: 200px;
-    height: 250px;
+    width: 215px;
+    height: 260px;
     position: absolute;
     background-size: cover;
     transform: rotate(-22deg);
     -webkit-transform: rotate(-22deg);
     -moz-transform: rotate(-22deg);
-    webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-    -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-    top: 0;
-    left: 0;
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
+    top: 15px;
+    left: -28px;
   }
   &__grado {
-    @include size(60px);
     background-image: url(../images/grado.png);
     background-size: cover;
+    @include size(60px);
     position: absolute;
     left: 210px;
-    top: 10px;
+    top: -60px;
     -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
     -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
     -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
     transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   }
 }
+.pace-done {
+  .intro {
+    &__naranja {
+      width: 200px;
+      height: 250px;
+      -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
+      -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      top: 0;
+      left: 0;
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+    }
+    &__grado {
+      top: 10px;
+    }
+  }
+  .claim {
+    width: 80%;
+    left: 0;
+    transition-delay: 1s;
+  }
+  .loader {
+    opacity: 0!important;
+    transition: all .3s ease!important;
+  }
+  .wrapp-cases {
+    transform: matrix(1,0.00,0.00,1,0,220);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,220);
+    opacity: 1;
+  }
+}
 .claim {
-  @include size(80%, 112px);
+  @include size(0, 112px);
+  webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+  -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   position: relative;
-  top: -40px;
+  top: 0;
+  height: 112px;
   padding-top: 50px;
   z-index: 10;
   border-top: solid 1px #DEDEDE;
   border-bottom: solid 1px #DEDEDE;
-  margin: 70px auto 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 70px;
   overflow: hidden;
-  left: 0;
-  transition-delay: 1s;
+  left: 200px;
   &__line {
 
   }
@@ -100,22 +134,22 @@
   }
 }
 .animsition {
-  opacity: 1;
+  opacity: 0;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 .wrapp-cases {
-   width: 90%;
+  width: 90%;
   background-color: #FCFCFC;
   height: 700px;
   position: relative;
   left: 5%;
+  transform: matrix(1,0.00,0.00,1,0,620);
+  -webkit-transform: matrix(1,0.00,0.00,1,0,620);
   -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1);
   transition: all 1.3s cubic-bezier(.77,0,.175,1);
   margin-bottom: 240px;
-  transform: matrix(1,0.00,0.00,1,0,220);
-  -webkit-transform: matrix(1,0.00,0.00,1,0,220);
-  opacity: 1;
+  opacity: 0;
   .til-section {
     top: -66px;
     border: none;
@@ -149,4 +183,19 @@
     overflow: hidden;
     text-indent: -9999px;
   }
+}
+.mascara-trama {
+  background-color: #fff;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  -webkit-transition: all .8s cubic-bezier(.77,0,.175,1);
+  -moz-transition: all .8s cubic-bezier(.77,0,.175,1);
+  -o-transition: all .8s cubic-bezier(.77,0,.175,1);
+  transition: all .8s cubic-bezier(.77,0,.175,1);
+  z-index: 1;
+}
+.mascara-trama.contraer {
+  width: 0;
 }

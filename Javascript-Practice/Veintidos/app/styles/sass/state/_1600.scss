@@ -4,7 +4,12 @@
   header {
     height: 70px;
   }
-
+  .loader {
+    width: 180px;
+    height: 150px;
+    margin-left: -75px;
+    margin-bottom: -240px;
+  }
   .intro {
     max-width: 500px;
     margin-top: 220px;
@@ -18,13 +23,27 @@
       height: 180px;
     }
     &__naranja {
-      width: 180px;
-      height: 180px;
+      width: 195px;
+      height: 160px;
+      top: 5px;
+      left: -27px;
     }
     &__grado {
       width: 40px;
       height: 40px;
       left: 150px;
+      top: -50px;
+    }
+  }
+  .pace-done {
+    .intro {
+      &__naranja {
+        width: 180px;
+        height: 180px;
+      }
+      &__grado {
+        top: 10px;
+      }
     }
   }
   .claim {
@@ -104,6 +123,10 @@
       }
       &:nth-child(3) {
         border-top: solid 1px;
+      }
+      h3 {
+        font-size: 11px;
+        top: 350px;
       }
     }
     &__title {

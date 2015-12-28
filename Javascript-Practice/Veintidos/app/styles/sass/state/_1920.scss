@@ -4,6 +4,9 @@
   header {
     height: 70px;
   }
+  .loader {
+    margin-bottom: -160px;
+  }
   .intro {
     margin-top: 180px;
     max-width: 780px;
@@ -27,6 +30,10 @@
       &:nth-child(3) {
         border-top: solid 1px;
       }
+    }
+    h3 {
+      font-size: 11px;
+      top: 390px;
     }
   }
   .claim {

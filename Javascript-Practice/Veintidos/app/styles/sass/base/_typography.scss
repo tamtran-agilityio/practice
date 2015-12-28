@@ -54,6 +54,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+main {
+  opacity: 0;
+  -webkit-transition: all 1s cubic-bezier(0.93,-0.01,0,1.02);
+  -moz-transition: all 1s cubic-bezier(0.26,0,0.09,0.99);
+  -o-transition: all 1s cubic-bezier(0.26,0,0.09,0.99);
+  transition: all 1s cubic-bezier(0.26,0,0.09,0.99);
+}
+
 header {
   border-bottom: 1px solid #ececec;
   height: 100px;
@@ -162,4 +170,11 @@ input[type="submit"] {
     -webkit-box-shadow: #4fb7a6 0 0 7px;
     box-shadow: #4fb7a6 0 0 7px;
   }
+}
+.hidden {
+  opacity: 0
+}
+
+.visible {
+  opacity: 1
 }

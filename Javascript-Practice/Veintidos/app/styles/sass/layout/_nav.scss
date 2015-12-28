@@ -54,10 +54,14 @@
   opacity: 0;
   pointer-events: none;
   transition: all .3s ease;
+    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+  -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   img {
     width: 40%;
     height: auto;
-    transform: rotate(0deg);
+    transform: rotate(360deg);
     transition: all 6.5s ease;
     position: relative;
     margin-left: -20%;
