@@ -28,13 +28,11 @@
 #casoTres {
   background-image: url("../images/small/work-home-apersonal.jpg");
 }
-.arrow__next {
-  background-image: url(../images/arrow-next.png);
+.pogoSlider-dir-btn {
   width: 70px;
   height: 70px;
   position: absolute;
   top: 50%;
-  right: 150px;
   z-index: 100;
   margin-top: -25px;
   pointer-events: none;
@@ -43,18 +41,336 @@
   overflow: hidden;
   text-indent: -9999px;
 }
-.arrow__pre {
+.pogoSlider-dir-btn--prev {
+  background-image: url(../images/arrow-ant.png);
+  left: 150px;
+}
+.pogoSlider-dir-btn--next {
   background-image: url(../images/arrow-next.png);
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  top: 50%;
   right: 150px;
-  z-index: 100;
-  margin-top: -25px;
-  pointer-events: none;
-  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  display: block;
-  overflow: hidden;
-  text-indent: -9999px;
+}
+.pogoSlider-nav {
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: 94px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  width: 115px;
+  height: 32px;
+  bottom: 44px;
+  li {
+    display: inline;
+    display: inline-block;
+    border: solid 1px #818181;
+    margin-left: -1px;
+    width: 30px;
+    position: relative;
+    height: 30px;
+    cursor: pointer;
+    .pogoSlider-nav-btn {
+      background: #818181;
+      border: none;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      cursor: pointer;
+      padding: 0;
+      top: -17px;
+      position: relative;
+      opacity: 0;
+      left: 11px;
+      -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
+      -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+      -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+      transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    }
+    .pogoSlider-nav-btn--selected {
+      background: #FF4503 ;
+      height: 5px;
+      opacity: 1;
+      width: 5px;
+    }
+  }
+}
+.pogoSlider-progressBar {
+  position: absolute;
+  width: 350px;
+  height: 150px;
+  bottom: 351px;
+  left: 50%;
+  background: #fff;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  filter: alpha(opacity=20);
+  background: transparent;
+  z-index: 6;
+  margin-left: -174px;
+  max-width: 1400px;
+  .pogoSlider-progressBar-duration {
+    height: 100%;
+    left: 0;
+    width: 0;
+    background: #fff;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    filter: alpha(opacity=40);
+    background: rgba(255,255,255,0.4);
+    opacity: 0.1;
+  }
+}
+
+.pogoSlider-slide-element {
+  animation-fill-mode: both;
+  color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 360px!important;
+  width: 350px!important;
+  border: solid 1px !important;
+  text-align: center;
+  left: 50%!important;
+  margin-left: -175px!important;
+  height: 150px!important;
+  opacity: 1;
+  .name__title {
+    font-size: 12px;
+    color: #fff;
+    position: relative;
+    top: 20px;
+    left: 4px;
+  }
+  .line__enlarge {
+    position: absolute;
+    height: 20px;
+    width: 1px;
+    background-color: #FF6C49;
+    left: 50%;
+    top: 67px;
+    -webkit-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
+    -moz-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
+    -o-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
+    transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
+    transition-delay: .4s;
+  }
+  a {
+    font-size: 12px;
+    color: #FF6C49;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// pogoSlider-slide mediaslider pogoSlider-animation-upIn
+.pogoSlider-animation-slideUpIn {
+    -webkit-animation-name: slideUpIn;
+    animation-name: slideUpIn;
+    -moz-animation-name: slideUpIn;
+    -ms-animation-name: slideUpIn
+}
+
+@-webkit-keyframes slideUpIn {
+    0% {
+        transform: translateY(50);
+        -webkit-transform: -webkit-translateY(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateY(50px);
+        -webkit-transform: -webkit-translateY(50px);
+        opacity: 0
+    }
+}
+
+@keyframes slideUpIn {
+    0% {
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        opacity: 0
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.pogoSlider-animation-slideUpOut {
+    -webkit-animation-name: slideUpOut;
+    animation-name: slideUpOut
+}
+
+@-webkit-keyframes slideUpOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: -webkit-translateY(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateY(50px);
+        -webkit-transform: -webkit-translateY(50px);
+        opacity: 0
+    }
+}
+
+@keyframes slideUpOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: -webkit-translateY(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateY(50px);
+        -webkit-transform: -webkit-translateY(50px);
+        opacity: 0
+    }
+}
+
+.pogoSlider-animation-upIn {
+    -webkit-animation-name: upIn;
+    animation-name: upIn;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+@-webkit-keyframes upIn {
+    0% {
+        transform: translateY(20%);
+        -webkit-transform: -webkit-translateY(20%);
+        -webkit-filter: brightness(4);
+        filter: brightness(4)
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -webkit-filter: brightness(1);
+        filter: brightness(1)
+    }
+}
+
+@keyframes upIn {
+    0% {
+        transform: translateY(20%);
+        -webkit-transform: translateY(20%);
+        -webkit-filter: brightness(4);
+        filter: brightness(4)
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -webkit-filter: brightness(1);
+        filter: brightness(1)
+    }
+}
+
+.pogoSlider-animation-upOut {
+    -webkit-animation-name: upOut;
+    animation-name: upOut;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+@-webkit-keyframes upOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100%)
+    }
+}
+
+@keyframes upOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100)
+    }
+}
+
+.pogoSlider-animation-downIn {
+    -webkit-animation-name: downIn;
+    animation-name: downIn;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+@-webkit-keyframes downIn {
+    0% {
+        transform: translateY(-20%);
+        -webkit-transform: translateY(-20%);
+        -webkit-filter: brightness(4);
+        filter: brightness(4)
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -webkit-filter: brightness(1);
+        filter: brightness(1)
+    }
+}
+
+@keyframes downIn {
+    0% {
+        transform: translateY(-20%);
+        -webkit-transform: translateY(-20%);
+        -webkit-filter: brightness(4);
+        filter: brightness(4)
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -webkit-filter: brightness(1);
+        filter: brightness(1)
+    }
+}
+
+.pogoSlider-animation-downOut {
+    -webkit-animation-name: downOut;
+    animation-name: downOut;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+@-webkit-keyframes downOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(100%);
+        -webkit-transform: translateY(100%)
+    }
+}
+
+@keyframes downOut {
+    0% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(100%);
+        -webkit-transform: translateY(100%)
+    }
 }

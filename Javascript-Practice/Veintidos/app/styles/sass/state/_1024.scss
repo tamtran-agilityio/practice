@@ -86,11 +86,33 @@
       max-width: 1024px;
       margin-left: -50%;
     }
-    .arrow__pre {
-      left: 0;
+  }
+  .pogoSlider-dir-btn {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+  }
+  .pogoSlider-dir-btn--next {
+    right: 0;
+  }
+  .pogoSlider-dir-btn--prev {
+    left: 0;
+  }
+  .pogoSlider-progressBar {
+    bottom: 0;
+    top: 50%;
+    margin-top: -65px;
+  }
+
+  .pogoSlider-slide-element {
+    border: 1px solid !important;
+    top: 50%!important;
+    margin-top: -65px!important;
+    .name__title {
+      top: 40px;
     }
-    .arrow__next {
-      right: 0;
+    a {
+      top: 100px;
     }
   }
   /*** style part latest work***/

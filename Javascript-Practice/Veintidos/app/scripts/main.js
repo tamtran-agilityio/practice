@@ -59,25 +59,25 @@ $(function () {
       // Define options and extend with user
       var options = {
         classToAdd: 'visible',
-        offset: 100,
-        callbackFunction: function(elem){}
+        offset: 100
+        // callbackFunction: function(elem){}
       };
       $.extend(options, useroptions);
 
       // Cache the given element and height of the browser
       var $elem = this,
-       windowHeight = $(window).height();
+      windowHeight = $(window).height();
 
       this.checkElements = function(){
       // Set some vars to check with
-        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html'),
+        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html'),
         viewportTop = $(scrollElem).scrollTop(),
         viewportBottom = (viewportTop + windowHeight);
 
         $elem.each(function(){
           var $obj = $(this);
           // If class already exists; quit
-          if ($obj.hasClass(options.classToAdd)){
+          if ($obj.hasClass(options.classToAdd)) {
           return;
         }
 
@@ -86,7 +86,7 @@ $(function () {
         elemBottom = elemTop + ($obj.height());
 
         // Add class if in viewport
-        if ((elemTop < viewportBottom) && (elemBottom > viewportTop)){
+        if ((elemTop < viewportBottom) && (elemBottom > viewportTop)) {
           $obj.addClass(options.classToAdd);
 
           // Do the callback function. Callback wil send the jQuery object as parameter
@@ -114,50 +114,93 @@ $(function () {
     $('.services__web').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 350
-    })
+    });
     $('.services__landing').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 400
-    })
+    });
     $('.services__wordspress').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 420
-    })
+    });
     $('.services__branding').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 350
-    })
+    });
     $('.services__corporate').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 400
-    })
+    });
     $('.services__advertising').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInUp',
       offset: 420
-    })
-    $('.services__item').addClass('hidden').viewportChecker({
+    });
+    $('.services__item h3').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInDown',
       offset: 150
-    })
-    // $(".mascara-trama").viewportChecker({
-    //   classToAdd: "contraer",
-    //   offset: "15%"
-    // })
-    // var bodyHeight = $ ('body').height();
-    // console.log('fsfsdfsd', bodyHeight);
-    // var offset = $('.services__web').offset().top;
-    // var b = (offset/bodyHeight);
-    // console.log(b);
-    // // jQuery plug-in
-    // $(window).scroll(function(){
-    //   var scrollWindow = $(window).scrollTop();
-    //   if (scrollWindow > offset) {
-    //     $('.mascara-trama').addClass('contraer');
-    //   }
-    // });
-
+    });
   });
 
+  $('#cases').pogoSlider({
+    autoplay: true,
+    autoplayTimeout: 1500,
+    displayProgess: true,
+    preserveTargetSize: true,
+    targetWidth: 1000,
+    targetHeight: 300,
+    slideTransition: 'slide',
+    responsive: true,
+    slideTransition: 'verticalSlide',
+    generateButton: true
+  }).data('plugin_pogoSlider');
+
+  // var $listSlide = $('li.mediaslider');
+  // var $li = $('ul.cases li.mediaslider');
+  // var $pre = $('.arrow__pre');
+  // var $next = $('.arrow__next');
+  // var lastElem = $li.length - 1;
+  // console.log(lastElem);
+  // var target;
+  // console.log(target);
+  // // $listSlide.hide().first().show();
+
+  // // function to handle show slider
+  // function sliderResponse(target) {
+  //   $listSlide.fadeOut(500).eq(target).fadeIn(1500);
+  //   $li.removeClass('active').eq(target).addClass('active');
+  // }
+  // $pre.click(function() {
+  //   // check condition item current
+  //   target = $(this).index();
+  //   sliderResponse(target - 1);
+  //   resetTiming();
+  //   return false;
+  // });
+  // $next.click(function() {
+  //   // check condition item current
+  //   target = $(this).index();
+  //   sliderResponse(target + 1);
+  //   resetTiming();
+  //   return false;
+  // });
+
+  // function sliderTiming() {
+  //   // set value item current
+  //   target = $('ul.cases li.active').index();
+
+  //   // check condition to determine slide next
+  //   target === lastElem ? target = 0 : target = target + 1;
+  //   sliderResponse(target);
+  // }
+
+  // // get vaeiable time call function show slide
+  // var timingRun = setInterval(function() { sliderTiming(); }, 4000);
+
+  // // function to reset time show
+  // function resetTiming() {
+  //   clearInterval(timingRun);
+  //   timingRun = setInterval(function() { sliderTiming(); }, 4000);
+  // }
 
   // var $listSlide = $('#cases');
   // $listSlide.hide().first().show();
