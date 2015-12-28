@@ -238,4 +238,31 @@
       margin-bottom: 10px;
     }
   }
+
+  /**********************************************/
+  /*************** page works *******************/
+  .intro__works {
+    margin-top: 170px;
+    max-width: 90%;
+    top: 50%;
+    left: 5%;
+    margin-left: 0;
+  }
+  .pace-done {
+    .intro__works {
+      margin-top: 150px;
+    }
+  }
+  .heading {
+    &__works {
+      font-size: 42px;
+      width: 100%;
+      left: 50%;
+      margin-left: -138px;
+      top: -70px;
+      height: 62px;
+      letter-spacing: 1px;
+      max-width: 300px;
+    }
+  }
 }

@@ -192,4 +192,25 @@
   .footer__block {
     top: 490px;
   }
+  /**********************************************/
+  /*************** page works *******************/
+  .intro__works {
+    max-width: 90%;
+    margin-top: 380px;
+  }
+  .pace-done {
+    .intro__works {
+      margin-top: 150px;
+    }
+  }
+  .heading {
+    &__works {
+      font-size: 100px;
+      top: 0;
+      height: 135px;
+      letter-spacing: 0;
+      max-width: 700px;
+      margin-left: -350px;
+    }
+  }
 }
