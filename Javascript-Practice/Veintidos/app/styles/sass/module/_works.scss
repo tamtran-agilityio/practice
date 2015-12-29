@@ -141,10 +141,6 @@
         padding-top: 17px;
         font-size: 10px;
         letter-spacing: 3px;
-        border: solid 1px;
-      }
-      .line-scroll {
-        display: none;
       }
     }
   }
@@ -258,22 +254,22 @@
   }
   &__optimus {
     background-image: url(../images/small/landing-lg.jpg);
-    background-position: center 72px!important;
+    // background-position: center 72px!important;
     .landing__image {
       height: 500px;
     }
   }
   &__sony {
     background-image: url(../images/small/landing-sony.jpg);
-    background-position: center 72px !important;
+    // background-position: center 72px !important;
     .landing__image {
       height: 250px;
     }
   }
   &__mahou {
     background-image: url(../images/small/landing-mahou.jpg);
-    top: 70px;
-    background-position: center 0!important;
+    // top: 70px;
+    // background-position: center 0!important;
     .landing__image {
       height: 280px;
     }

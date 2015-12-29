@@ -202,6 +202,11 @@
     .intro__works {
       margin-top: 150px;
     }
+    .wrapp-works {
+      transform: matrix(1,0.00,0.00,1,0,210);
+      -webkit-transform: matrix(1,0.00,0.00,1,0,210);
+      opacity: 1;
+    }
   }
   .heading {
     &__works {
@@ -211,6 +216,148 @@
       letter-spacing: 0;
       max-width: 700px;
       margin-left: -350px;
+    }
+  }
+  .claim__works {
+    top: 150px;
+    height: 120px;
+    padding-top: 30px;
+    z-index: 10;
+  }
+  .claim__block {
+    top: 0;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  // style block
+  .wrapp-works {
+    max-width: 600px;
+    margin-left: -300px;
+    left: 50%;
+  }
+  .web {
+    &__block {
+      height: 1420px;
+      padding: 60px;
+      padding-top: 0;
+      .til-section {
+        margin-left: -100px;
+        top: -80px;
+        .line-scroll {
+          top: -50px;
+        }
+      }
+    }
+    &__preview {
+      li {
+        width: 100%;
+        height: 277px;
+        position: relative;
+        float: left;
+        margin-top: 60px;
+      }
+    }
+    &__name {
+      height: 180px;
+      opacity: 1;
+      top: 50px;
+      h2 {
+        font-size: 40px;
+        color: #FE5337;
+        font-family: 'rucreabold';
+        left: -10px;
+        position: relative;
+        top: 130px;
+      }
+      &--largue {
+        height: 220px;
+        top: -150px;
+      }
+    }
+  }
+  // part section lading
+  .landing {
+    width: 100%;
+    position: relative;
+    clear: both;
+    max-width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    .til-section {
+      top: 70px;
+    }
+    &__block {
+
+    }
+    li {
+      background-size: 75%;
+      width: 100%;
+      margin-top: 70px;
+    }
+    &__race {
+      .landing__image {
+        height: 1300px;
+      }
+    }
+    &__optimus {
+      .landing__image {
+        height: 910px;
+      }
+    }
+    &__sony {
+      .landing__image {
+        height: 540px;
+      }
+    }
+    &__mahou {
+      .landing__image {
+        height: 600px;
+      }
+    }
+    &__consejero {
+      .landing__image {
+        height: 935px;
+      }
+    }
+    &__teresa {
+      .landing__image {
+        height: 1310px;
+      }
+    }
+  }
+  // section branding
+  .branding {
+    top: 280px;
+    padding: 0;
+    border: none;
+    .til-section {
+      margin-bottom: -46px;
+      top: -150px;
+    }
+  }
+  .carteles {
+    height: 277px;
+  }
+  .cover-slider__slide:nth-child(1) {
+    background-image: url(../images/branding-mugako-cuadro-mu.png);
+  }
+  .cover-slider__slide:nth-child(2) {
+    background-image: url(../images/branding-mugako-cuadro-ga.png);
+  }
+  .cover-slider__slide:nth-child(3) {
+    background-image: url(../images/branding-mugako-cuadro-foto.jpg);
+  }
+  // section pages
+  .pages {
+    top: 320px;
+    .til-section {
+      top: 100px;
+    }
+    li {
+      height: 700px;
+      width: 100%;
+      margin-bottom: 100px;
     }
   }
 }
