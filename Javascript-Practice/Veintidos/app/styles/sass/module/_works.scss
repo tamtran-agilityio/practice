@@ -7,7 +7,7 @@
     text-align: center;
     margin-left: auto;
     margin-top: 410px;
-    height: 220px;
+    height: 270px;
     -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
     -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
     -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
@@ -42,15 +42,405 @@
     transform: translateX(0px) translateY(0px);
   }
   &__rotating {
+    display: none;
+   -webkit-transition: 1.5s ease-in-out;
+    -moz-transition: 1.5s ease-in-out;
+    -o-transition: 1.5s ease-in-out;
+    transition: 1.5s ease-in-out;
+    -moz-transform: translateX(0px) translateY(0px);
+    -webkit-transform: translateX(0px) translateY(0px);
+    -o-transform: translateX(0px) translateY(0px);
+    -ms-transform: translateX(0px) translateY(0px);
+    transform: translateX(0px) translateY(0px);
     span {
-      position: relative;
       display: block;
+      position: relative;
       height: 250px;
       -moz-transform: translateX(0px) translateY(0px);
       -webkit-transform: translateX(0px) translateY(0px);
       -o-transform: translateX(0px) translateY(0px);
       -ms-transform: translateX(0px) translateY(0px);
       transform: translateX(0px) translateY(0px);
+      -webkit-transition: 1.5s ease-in-out;
+      -moz-transition: 1.5s ease-in-out;
+      -o-transition: 1.5s ease-in-out;
+      transition: 1.5s ease-in-out;
     }
+  }
+}
+.active {
+  display: block;
+  animation-duration: 0.1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.wrapp-works {
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  transform: matrix(1,0.00,0.00,1,0,620);
+  -webkit-transform: matrix(1,0.00,0.00,1,0,620);
+  transition: all 1.3s cubic-bezier(.77,0,.175,1);
+  -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1);
+  -webkit-transform-origin: 0 600px;
+  opacity: 0;
+}
+.claim {
+  &__works {
+    position: relative;
+    top: 0;
+    height: 115px;
+    padding-top: 0;
+    z-index: 10;
+    border: none;
+    width: 100%;
+    left: 0;
+
+  }
+  &__block {
+    margin-top: 0;
+    position: absolute;
+    top: 0;
+    font-size: 32px;
+    span {
+      font-family: 'rucreabold';
+      font-weight: bold;
+    }
+  }
+}
+
+.pace-done .wrapp-works {
+  transform: matrix(1,0.00,0.00,1,0,120);
+  -webkit-transform: matrix(1,0.00,0.00,1,0,120);
+  opacity: 1;
+}
+.web {
+  &__block {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    top: 0;
+    height: 1000px;
+    border: solid 1px #FF3D00;
+    padding: 110px;
+    -webkit-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    -moz-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    margin-right: auto;
+    .til-section {
+      top: 32px;
+      position: absolute;
+      left: 50%;
+      margin-left: -125px;
+      z-index: 10;
+      h6 {
+        width: 200px;
+        height: 45px;
+        padding-top: 17px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        border: solid 1px;
+      }
+      .line-scroll {
+        display: none;
+      }
+    }
+  }
+  &__preview {
+    li {
+      @include size(50%, 50%);
+      position: absolute;
+      display: block;
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      -webkit-transition: all .8s cubic-bezier(.77,0,.175,1);
+      transition: all .8s cubic-bezier(.77,0,.175,1);
+      cursor: pointer;
+    }
+  }
+  &__list {
+    &--mugaku {
+      background-image: url("../images/work-thumb-mugako-a.jpg");
+    }
+    &--henry {
+      background-image: url("../images/work-thumb-henry-a.jpg");
+    }
+    &--crea {
+      background-image: url("../images/work-thumb-portfolio-a.jpg");
+    }
+    &--room {
+      background-image: url("../images/work-thumb-apersonal-a.jpg");
+    }
+  }
+  &__name {
+    width: 90%;
+    border-style: none;
+    position: absolute;
+    height: 50px;
+    top: -10%;
+    left: 5%;
+    -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    text-align: center;
+    overflow: hidden;
+    padding-top: 0;
+    h2 {
+      font-size: 40px;
+      color: #FE5337;
+      font-family: 'rucreabold';
+      font-weight: bold;
+      left: -10px;
+      position: relative;
+      top: 50px;
+      -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+      transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    }
+    &--largue {
+      width: 1px!important;
+      background-color: #FE5337;
+      height: 220px;
+      position: relative;
+      top: -300px;
+      -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      left: 49.5%;
+    }
+  }
+}
+
+.landing {
+  width: 100%;
+  position: relative;
+  clear: both;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 250px;
+  &__block {
+    margin-top: 100px;
+  }
+  li {
+    width: 33.3%;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 50px;
+    text-align: center;
+    border: solid 1px #FF6C49;
+    background-repeat: no-repeat;
+    background-position: center 70px;
+    overflow: hidden;
+    background-size: 81.2%;
+    h3 {
+      font-size: 10px;
+      color: #FF6C49;
+      position: relative;
+      display: block;
+      top: -21px;
+      z-index: 1;
+      background-color: #fff;
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 18px;
+    }
+  }
+  &__race {
+    left: 1px;
+    background-image: url(../images/small/landing-race.jpg);
+  }
+  &__optimus {
+    background-image: url(../images/small/landing-lg.jpg);
+    background-position: center 72px!important;
+    .landing__image {
+      height: 500px;
+    }
+  }
+  &__sony {
+    background-image: url(../images/small/landing-sony.jpg);
+    background-position: center 72px !important;
+    .landing__image {
+      height: 250px;
+    }
+  }
+  &__mahou {
+    background-image: url(../images/small/landing-mahou.jpg);
+    top: 70px;
+    background-position: center 0!important;
+    .landing__image {
+      height: 280px;
+    }
+  }
+  &__consejero {
+    background-image: url(../images/small/landing-consejero.jpg);
+    top: 50px;
+    .landing__image {
+      height: 500px;
+    }
+  }
+  &__teresa {
+    background-image: url(../images/small/landing-santa-teresa.jpg);
+    top: 50px;
+    .landing__image {
+      height: 670px;
+    }
+  }
+  &__line {
+    height: 40px;
+    width: 1px;
+    position: absolute;
+    background-color: #FF6C49;
+    top: 55px;
+    z-index: 1;
+    left: 50%;
+    margin-left: -.5px;
+    transform: rotate(22deg);
+    -webkit-transform: rotate(22deg);
+  }
+  &__image {
+    cursor: url(../images/plus_cursor.png) 25 25,pointer;
+    display: inline-block;
+    width: 100%;
+    height: 696px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-left: 0;
+    margin-top: 1px;
+    -webkit-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    -moz-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    -o-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    position: relative;
+  }
+}
+.branding {
+  position: relative;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  top: -430px;
+  padding: 100px;
+  border: solid 1px #4A4A41;
+  padding-top: 0;
+  padding-bottom: 70px;
+  &__mugako {
+    .logos {
+      img {
+        width: 50%;
+        height: auto;
+      }
+    }
+  }
+  .foto-cartel {
+    position: relative;
+    top: -13px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+.pages {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  top: -220px;
+  &__block {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    margin-top: 180px;
+  }
+  li {
+    width: 33.2%;
+    display: block;
+    float: left;
+    height: 699px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-color: #fff;
+    margin-top: -1px;
+    margin-left: -1px;
+    border: solid 1px #FF6C49;
+  }
+  &__wikilson {
+    background-position: center;
+    background-image: url(../images/grafica-wikilson.jpg);
+  }
+  &__idealista {
+    background-image: url(../images/grafica-idealista.jpg);
+  }
+  &__suzuki {
+    background-image: url(../images/grafica-suzuki-dos.jpg);
+  }
+  &__correos {
+    background-image: url(../images/grafica-correos.jpg);
+  }
+  &__la-rioja {
+    background-image: url(../images/grafica-la-rioja.jpg);
+  }
+  &__chupachups {
+    background-image: url(../images/grafica-chupachups.jpg);
+  }
+  &__groove {
+    background-image: url(../images/grafica-groove.jpg);
+  }
+  &__creatividad {
+    background-image: url(../images/grafica-creatividad.jpg);
+  }
+  &__suzuki-uno {
+    background-image: url(../images/grafica-suzuki-uno.jpg);
+  }
+  &__image {
+    cursor: url(../images/plus_cursor.png) 25 25,pointer;
+    display: inline-block;
+    width: 100%;
+    height: 697px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-left: 0;
+    margin-top: 0;
+    -webkit-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    -moz-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    -o-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+  }
+}
+.footer__back {
+  position: relative;
+  width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 330px;
+  clear: both;
+   ul {
+    position: relative;
+    width: 800px;
+    padding-left: 60px;
+    top: 100px;
+  }
+  li {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 40px;
   }
 }

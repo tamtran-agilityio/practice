@@ -71,6 +71,8 @@
     width: 100%;
     left: 0;
     height: 490px;
+  }
+  .pace-done .wrapp-cases {
     transform: matrix(1,0.00,0.00,1,0,160);
     -webkit-transform: matrix(1,0.00,0.00,1,0,160);
     opacity: 1;
@@ -86,12 +88,16 @@
       max-width: 1310px;
       margin-left: -655px;
     }
-    .arrow__pre {
-      left: 35px;;
-    }
-    .arrow__next {
-      right: 35px;;
-    }
+  }
+  .pogoSlider-dir-btn--prev {
+    left: 35px;
+    background-color: #000;
+    border: none;
+  }
+  .pogoSlider-dir-btn--next {
+    right: 35px;
+    background-color: #000;
+    border: none;
   }
   .pogoSlider-progressBar {
     bottom: 279px;

@@ -29,17 +29,19 @@
   background-image: url("../images/small/work-home-apersonal.jpg");
 }
 .pogoSlider-dir-btn {
+  position: absolute;
+  z-index: 10;
+  background: none;
   width: 70px;
   height: 70px;
-  position: absolute;
+  border-style: none;
+  cursor: pointer;
+  -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
+  -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
   top: 50%;
-  z-index: 100;
   margin-top: -25px;
-  pointer-events: none;
-  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  display: block;
-  overflow: hidden;
-  text-indent: -9999px;
 }
 .pogoSlider-dir-btn--prev {
   background-image: url(../images/arrow-ant.png);
@@ -374,3 +376,108 @@
         -webkit-transform: translateY(100%)
     }
 }
+
+.carteles {
+  position: relative;
+  display: block;
+  height: 737px;
+  top: -13px;
+}
+.cover-slider {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+
+.cover-slider__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  list-style: none;
+  z-index: 0;
+  opacity: 1
+}
+
+.cover-slider__slide.actives {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+  -webkit-animation-name: slidein;
+  animation-name: slidein;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards
+}
+
+.cover-slider__slide.inactives {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+  -webkit-animation-name: slideout;
+  animation-name: slideout;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards
+}
+
+@-webkit-keyframes slidein {
+  from {
+    left: 0;
+    right: 100%
+  }
+  to {
+    left: 0;
+    right: 0
+  }
+}
+
+@keyframes slidein {
+  from {
+    left: 0;
+    right: 100%
+  }
+
+  to {
+    left: 0;
+    right: 0
+  }
+}
+
+@-webkit-keyframes slideout {
+  from {
+    left: 0;
+    right: 0
+  }
+
+  to {
+    left: 100%;
+    right: 0
+  }
+}
+
+@keyframes slideout {
+  from {
+    left: 0;
+    right: 0
+  }
+
+  to {
+    left: 100%;
+    right: 0
+  }
+}
+
+.cover-slider__slide:nth-child(1) {
+  background-image: url(../images/branding-mugako-cuadro-mu.png)
+}
+
+.cover-slider__slide:nth-child(2) {
+  background-image: url(../images/branding-mugako-cuadro-ga.png)
+}
+
+.cover-slider__slide:nth-child(3) {
+  background-image: url(../images/branding-mugako-cuadro-foto.jpg)
+}
+
+

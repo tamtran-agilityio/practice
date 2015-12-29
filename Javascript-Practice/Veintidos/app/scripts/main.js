@@ -2,6 +2,7 @@
 $(function () {
   'use strict';
 
+
   $(window).load(function() {
     // Animate loader off screen
     setTimeout(function() {
@@ -24,6 +25,8 @@ $(function () {
       transform: 'rotate(500deg)'
     });
   });
+
+  // set size block when resize
   $(window).bind('resize', function() {
     var t = $(window).height();
     var o = $(window).width();
@@ -46,6 +49,7 @@ $(function () {
   $(window).width() <= 1024 && $(document).ready(function() {
     $('.wrapp-cases').addClass('resize');
   });
+
   // Use plugin lazyload load image
   $(window).bind('load', function() {
     $('img').lazyload({
@@ -53,6 +57,113 @@ $(function () {
     });
   });
 
+  // function set border of element
+  $(function($) {
+    $.fn.extend({
+      repositionBorders: function() {
+        $('body div.animatedBorder').each(function() {
+          var t = $('.animatedBorderSprite-top', $(this)).css('background-color')
+          var o = $('.animatedBorderSprite-top', $(this)).height();
+          $(this).animatedBorder().animatedBorder({
+            size: o,
+            color: t
+          })
+        })
+      },
+      animatedBorder: function(t) {
+        var o, s = {
+          size: 2,
+          color: '#6699CC',
+          hover: !1
+        };
+        return t = $.extend(s, t),
+        this.each(function() {
+          switch (t) {
+            case 'hide':
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
+              break;
+            case 'show':
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
+              break;
+            case 'destroy':
+              $(this).children('.animatedBorderSprite').remove(),
+              $(this).unbind('mouseenter mouseleave');
+              break;
+            default:
+            if ($(this).hasClass('animatedBorder'))
+              return $('.animatedBorderSprite', $(this)).remove(),
+              void $(this).removeClass('animatedBorder');
+            $(this).addClass('animatedBorder'),
+            o = {
+              height: $(this).innerHeight(),
+              width: $(this).innerWidth()
+            },
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-top').css({
+              top: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-bottom').css({
+              bottom: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              left: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              right: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            t.hover && ($(this).hover(function() {
+              $(this).children('.animatedBorderSprite').fadeIn('fast')
+            }, function() {
+              $(this).children('.animatedBorderSprite').fadeOut('slow')
+            }),
+            $(this).children('.animatedBorderSprite').hide())
+          }
+        })
+      }
+    })
+  }(jQuery));
+
+  $(function() {
+    $('li.latest__item').animatedBorder({
+      size: 1,
+      color: '#4a4a4c',
+      hover: !0
+    });
+    $('.pogoSlider-dir-btn--prev').animatedBorder({
+      size: 1,
+      color: '#4a4a4c',
+      hover: !1
+    });
+    $('.pogoSlider-dir-btn--next').animatedBorder({
+      size: 1,
+      color: '#4a4a4c',
+      hover: !1
+    });
+    $('.pogoSlider-nav li').animatedBorder({
+      size: 1,
+      color: '#4a4a4c',
+      hover: !0
+    })
+  }),
   /* VIEWPORT CHECKER */
   (function($){
     $.fn.viewportChecker = function(useroptions){
@@ -90,7 +201,7 @@ $(function () {
           $obj.addClass(options.classToAdd);
 
           // Do the callback function. Callback wil send the jQuery object as parameter
-          options.callbackFunction($obj);
+          // options.callbackFunction($obj);
         }
       });
     };
@@ -141,6 +252,7 @@ $(function () {
     });
   });
 
+  // excute function slider page index
   $('#cases').pogoSlider({
     autoplay: true,
     autoplayTimeout: 1500,
@@ -148,74 +260,41 @@ $(function () {
     preserveTargetSize: true,
     targetWidth: 1000,
     targetHeight: 300,
-    slideTransition: 'slide',
     responsive: true,
     slideTransition: 'verticalSlide',
     generateButton: true
   }).data('plugin_pogoSlider');
 
-  // var $listSlide = $('li.mediaslider');
-  // var $li = $('ul.cases li.mediaslider');
-  // var $pre = $('.arrow__pre');
-  // var $next = $('.arrow__next');
-  // var lastElem = $li.length - 1;
-  // console.log(lastElem);
-  // var target;
-  // console.log(target);
-  // // $listSlide.hide().first().show();
+  setInterval(function() {
+    // Remove .active class from the active li, select next li sibling.
+    var next = $('ul.heading__rotate li.active').removeClass('active').next('li');
+    $('ul.heading__rotate li').css('transform', 'translateX(0px) translateY(0px)');
+    // Did we reach the last element? Of so: select first sibling
+    if (!next.length) {
+      next = next.prevObject.siblings(':first');
+      // Add .active class to the li next in line.
+    }
+    next.addClass('active');
+  }, 3000);
 
-  // // function to handle show slider
-  // function sliderResponse(target) {
-  //   $listSlide.fadeOut(500).eq(target).fadeIn(1500);
-  //   $li.removeClass('active').eq(target).addClass('active');
-  // }
-  // $pre.click(function() {
-  //   // check condition item current
-  //   target = $(this).index();
-  //   sliderResponse(target - 1);
-  //   resetTiming();
-  //   return false;
-  // });
-  // $next.click(function() {
-  //   // check condition item current
-  //   target = $(this).index();
-  //   sliderResponse(target + 1);
-  //   resetTiming();
-  //   return false;
-  // });
+  setInterval(function() {
+    $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)')
+  }, 2000);
 
-  // function sliderTiming() {
-  //   // set value item current
-  //   target = $('ul.cases li.active').index();
-
-  //   // check condition to determine slide next
-  //   target === lastElem ? target = 0 : target = target + 1;
-  //   sliderResponse(target);
-  // }
-
-  // // get vaeiable time call function show slide
-  // var timingRun = setInterval(function() { sliderTiming(); }, 4000);
-
-  // // function to reset time show
-  // function resetTiming() {
-  //   clearInterval(timingRun);
-  //   timingRun = setInterval(function() { sliderTiming(); }, 4000);
-  // }
-
-  // var $listSlide = $('#cases');
-  // $listSlide.hide().first().show();
-  // function to handle show slider
-  // function sliderResponse() {
-  //   $listSlide.fadeOut(300).eq(n).fadeIn(300);
-  // }
-  // sliderResponse();
-  // $('#cases').pogoSlider({
-  //   autoplay: !0,
-  //   autoplayTimeout: 8e3,
-  //   displayProgess: 0,
-  //   preserveTargetSize: 0,
-  //   targetWidth: 1e3,
-  //   targetHeight: 300,
-  //   responsive: !0
-  // }).data('plugin_pogoSlider');
+  function coverSlider() {
+    $('.cover-slider').each(function() {
+      var target = $(this).find('.cover-slider__slide')
+        , sliderLast = target.length - 1
+        , s = 0
+        , sliderActive = function() {
+          target.removeClass('actives inactives'),
+          target.eq(s).addClass('inactives'),
+          s === sliderLast && (s = -1),
+          target.eq(++s).addClass('actives');
+          window.setTimeout(sliderActive, 5000)
+        };
+      sliderActive();
+    })
+  }
+  coverSlider();
 }(jQuery));
