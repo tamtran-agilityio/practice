@@ -359,5 +359,45 @@
       width: 100%;
       margin-bottom: 100px;
     }
+    &__wikilson {
+      background-image: url(../images/small/grafica-wikilson.jpg);
+    }
+    &__idealista {
+      background-image: url(../images/small/grafica-idealista.jpg);
+    }
+    &__suzuki {
+      background-image: url(../images/small/grafica-suzuki-dos.jpg);
+    }
+    &__correos {
+      background-image: url(../images/small/grafica-correos.jpg);
+    }
+    &__la-rioja {
+      background-image: url(../images/small/grafica-la-rioja.jpg);
+    }
+    &__chupachups {
+      background-image: url(../images/small/grafica-chupachups.jpg);
+    }
+    &__groove {
+      background-image: url(../images/small/grafica-groove.jpg);
+    }
+    &__creatividad {
+      background-image: url(../images/small/grafica-creatividad.jpg);
+    }
+    &__suzuki-uno {
+      background-image: url(../images/small/grafica-suzuki-uno.jpg);
+    }
+  }
+  .footer__back {
+    width: 480px;
+    top: 60px;
+    ul {
+      width: 560px;
+      top: 210px;
+      padding-left: 0;
+    }
+    li {
+      font-size: 10px;
+      margin-left: 14px;
+    }
   }
 }
