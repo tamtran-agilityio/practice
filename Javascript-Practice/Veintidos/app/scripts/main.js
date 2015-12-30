@@ -290,10 +290,9 @@ $(function () {
       var sliderActive = function() {
           target.removeClass('actives inactives');
           target.eq(s).addClass('inactives');
-          if ((s === sliderLast) && (s = -1)) {
-            target.eq(++s).addClass('actives');
-            window.setTimeout(sliderActive, 5000);
-          }
+          ((s === sliderLast) && (s = -1))
+          target.eq(++s).addClass('actives');
+          window.setTimeout(sliderActive, 5000);
         };
       sliderActive();
     });
@@ -339,4 +338,183 @@ $(function () {
         'pointer-events': 'auto'
     });
   });
+
+  // set hover image when sreen larger
+  $(window).width() >= 1024 && $(window).scroll(function() {
+    $('li.web__list--mugaku').hover(function() {
+      $('li.web__list--mugaku').css({
+          width: '60.1%',
+          height: '60.1%',
+          'z-index': 1,
+          'background-image': 'url(./images/work-thumb-mugako-b.jpg)'
+      }),
+      $('li.web__list--mugaku .web__name').addClass('show');
+      $('li.web__list--mugaku .web__name h2').addClass('show');
+      $('li.web__list--mugaku .web__name').removeClass('showhide');
+      $('li.web__list--mugaku .web__name h2').removeClass('showhide');
+      $('li.web__list--henry').css({
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%'
+      }),
+      $('li.web__list--crea').css({
+          height: '40.1%',
+          width: '60.1%'
+      }),
+      $('li.web__list--room').css({
+          height: '40.1%',
+          width: '40.1%'
+      })
+    }, function() {
+        $('li.web__list--mugaku').css({
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work-thumb-mugako-a.jpg)'
+        });
+        $('li.web__list--mugaku .web__name').addClass('showhide');
+        $('li.web__list--mugaku .web__name h2').addClass('showhide');
+        $('li.web__list--mugaku .web__name').removeClass('show');
+        $('li.web__list--mugaku .web__name h2').removeClass('show');
+        $('li.web__list--henry').css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+        }),
+        $('li.web__list--crea').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--room').css({
+            width: '50%',
+            height: '50%'
+        })
+      });
+
+    $('li.web__list--henry').hover(function() {
+        $('li.web__list--mugaku').css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%',
+            'z-index': 1
+        }),
+        $('li.web__list--henry').css({
+            width: '60.1%',
+            'z-index': 1,
+            height: '60.1%',
+            'background-image': 'url(../images/work-thumb-henry-b.jpg)'
+        }),
+        $('li.web__list--crea').css({
+            height: '40.1%',
+            width: '40.1%'
+        }),
+        $('li.web__list--room').css({
+            height: '40.1%',
+            width: '60.1%'
+        })
+    }, function() {
+        $('li.web__list--mugaku').css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%',
+            'z-index': 0
+        }),
+        $('li.web__list--henry').css({
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(../images/work-thumb-henry-a.jpg)'
+        }),
+        $('li.web__list--crea').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--room').css({
+            width: '50%',
+            height: '50%'
+        });
+      });
+    $('li.web__list--crea').hover(function() {
+        $('li.web__list--mugaku').css({
+            height: '40.1%',
+            width: '60.1%'
+        }),
+        $('li.web__list--henry').css({
+            height: '40.1%',
+            width: '40.1%'
+        }),
+        $('li.web__list--crea').css({
+            width: '60.1%',
+            'z-index': 1,
+            height: '61%',
+            'background-image': 'url(./images/work-thumb-portfolio-b.jpg)'
+        }),
+        $('li.web__list--room').css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
+        });
+    }, function() {
+        $('li.web__list--mugaku').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--henry').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--crea').css({
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(./images/work-thumb-portfolio-a.jpg)'
+        }),
+        $('li.web__list--room').css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+        });
+    });
+    $('li.web__list--room').hover(function() {
+        $('li.web__list--mugaku').css({
+            height: '40.1%',
+            width: '40.1%'
+        }),
+        $('li.web__list--henry').css({
+            height: '40.1%',
+            width: '60.1%'
+        }),
+        $('li.web__list--room').css({
+            width: '60.1%',
+            height: '60.1%',
+            'z-index': 1,
+            'background-image': 'url(./images/work-thumb-apersonal-b.jpg)'
+        }),
+        $('li.web__list--crea').css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
+        });
+    }, function() {
+        $('li.web__list--mugaku').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--henry').css({
+            width: '50%',
+            height: '50%'
+        }),
+        $('li.web__list--room').css({
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work-thumb-apersonal-a.jpg)'
+        }),
+        $('li.web__list--crea').css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+        });
+      });
+    })
 }(jQuery));

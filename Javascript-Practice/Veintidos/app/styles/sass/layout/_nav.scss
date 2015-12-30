@@ -19,6 +19,7 @@ header {
       float: left;
       letter-spacing: 3px;
       margin-left: 40px;
+      overflow: hidden;
     }
     a.select {
       border-bottom: solid 2px #FF6C49;
@@ -53,6 +54,13 @@ header {
   height: 13px;
   overflow: hidden;
   padding: 0;
+  span {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform .3s;
+    -moz-transition: -moz-transform .3s;
+    transition: transform .3s;
+  }
 }
 .show {
   position: fixed;

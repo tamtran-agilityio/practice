@@ -10,6 +10,7 @@
     }
   }
   header {
+    top: -100%;
     nav {
       height: 100%;
       ul {
@@ -327,6 +328,9 @@
     width: 200px;
     margin-left: -100px;
     height: 1px
+  }
+  .pogoSlider-progressBar .pogoSlider-progressBar-duration {
+      opacity: 1;
   }
   .pogoSlider-slide-element {
     border: none !important;
