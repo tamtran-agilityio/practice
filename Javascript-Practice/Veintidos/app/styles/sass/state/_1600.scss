@@ -1,8 +1,63 @@
 @media screen and (max-width: 1599px) and (min-width: 1024px) {
   //***********************************//
   //********* style page index ********//
+  .pace-done {
+    header {
+      border-bottom: 1px solid #b5b5b3;
+      height: 70px;
+    }
+  }
   header {
     height: 70px;
+    nav {
+      height: 70px;
+      li {
+        font-size: 10px;
+        margin-top: 32px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .nav {
+    a.select {
+      height: 38px;
+    }
+  }
+  .nav.open {
+    margin-top: 420px!important;
+  }
+  // part contact to
+  .contacto.open {
+    height: 420px;
+  }
+  .contacto {
+    h4 {
+      font-size: 64px;
+      line-height: 66px;
+      width: 59%;
+      letter-spacing: -3px;
+    }
+     p {
+      font-size: 12px;
+      width: 40%;
+    }
+    .forms {
+      width: 45%;
+      margin-right: -40px;
+    }
+    h3 {
+      left: 0;
+    }
+  }
+  .clientes {
+    float: left;
+    padding: 30px 0;
+    width: 190px;
+  }
+  .colaboradores {
+    float: right;
+    padding: 30px 12px;
+    width: 224px;
   }
   .loader {
     width: 180px;

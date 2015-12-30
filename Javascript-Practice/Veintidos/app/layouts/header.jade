@@ -2,19 +2,29 @@ header.nav
   nav.cl-effect-5
     ul
       li
-        a.animsition-link(href="index.html")
-          span(data-hover="Agency") Home
+        a(href='index.html').select Home
       li
-        a.animsition-link(href="works.html")
-          span(data-hover="Works") Works
+        a.animsition-link(href='works.html')
+          span(data-hover='works') works
       li
-        a.animsition-link(href="#")
-          span(data-hover="Agency") Agency
+        a.animsition-link(href='agency.html')
+          span(data-hover='Agency') Agency
       li
         a.open-contact
-    //- h1
-    //-   img(src='../images/icon-22-grados.png' alt="grados")
+          span(data-hover='Contact') Contact
+    ul.lenguaje
+      li
+        span.line ES
+      li
+        span.line
+        | EN
+  .show
+  .menu-icon
+    span.line-menu.colocar
+    span.line-menu.colocar
+    span.line-menu.colocar
+// loader page
 .loader
   img(src='../images/loading.png' alt="grados")
   p A moment please..
-
+include ../templates/modules/contact.jade

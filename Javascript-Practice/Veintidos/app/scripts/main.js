@@ -62,13 +62,13 @@ $(function () {
     $.fn.extend({
       repositionBorders: function() {
         $('body div.animatedBorder').each(function() {
-          var t = $('.animatedBorderSprite-top', $(this)).css('background-color')
+          var t = $('.animatedBorderSprite-top', $(this)).css('background-color');
           var o = $('.animatedBorderSprite-top', $(this)).height();
           $(this).animatedBorder().animatedBorder({
             size: o,
             color: t
           })
-        })
+        });
       },
       animatedBorder: function(t) {
         var o, s = {
@@ -131,11 +131,11 @@ $(function () {
               'z-index': 1
             })),
             t.hover && ($(this).hover(function() {
-              $(this).children('.animatedBorderSprite').fadeIn('fast')
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
             }, function() {
-              $(this).children('.animatedBorderSprite').fadeOut('slow')
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
             }),
-            $(this).children('.animatedBorderSprite').hide())
+            $(this).children('.animatedBorderSprite').hide());
           }
         })
       }
@@ -162,8 +162,9 @@ $(function () {
       size: 1,
       color: '#4a4a4c',
       hover: !0
-    })
-  }),
+    });
+  });
+
   /* VIEWPORT CHECKER */
   (function($){
     $.fn.viewportChecker = function(useroptions){
@@ -278,23 +279,64 @@ $(function () {
   }, 3000);
 
   setInterval(function() {
-    $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)')
+    $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)');
   }, 2000);
 
   function coverSlider() {
     $('.cover-slider').each(function() {
-      var target = $(this).find('.cover-slider__slide')
-        , sliderLast = target.length - 1
-        , s = 0
-        , sliderActive = function() {
-          target.removeClass('actives inactives'),
-          target.eq(s).addClass('inactives'),
-          s === sliderLast && (s = -1),
-          target.eq(++s).addClass('actives');
-          window.setTimeout(sliderActive, 5000)
+      var target = $(this).find('.cover-slider__slide');
+      var sliderLast = target.length - 1;
+      var s = 0;
+      var sliderActive = function() {
+          target.removeClass('actives inactives');
+          target.eq(s).addClass('inactives');
+          if ((s === sliderLast) && (s = -1)) {
+            target.eq(++s).addClass('actives');
+            window.setTimeout(sliderActive, 5000);
+          }
         };
       sliderActive();
-    })
+    });
   }
   coverSlider();
+
+  $('.menu-icon').click(function() {
+    $('header').css({
+      top: '0px'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(90deg)'
+    });
+    $('.show').css({
+      display: 'block'
+    });
+  });
+  $('.show').click(function() {
+    $('header').css({
+      top: '-100%'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(0deg)'
+    });
+    $('.show').css({
+      display: 'none'
+    });
+  });
+  $('.open-contact').click(function() {
+    $('.contacto').addClass('open');
+    $('.mascara-contact').addClass('slow');
+    $('.nav').addClass('open');
+    $('main').css({
+      opacity: .1,
+      'pointer-events': 'none'
+    });
+  });
+  $('.cerrar').click(function() {
+    $('.contacto').removeClass('open');
+    $('.nav').removeClass('open');
+    $('main').css({
+        opacity: 1,
+        'pointer-events': 'auto'
+    });
+  });
 }(jQuery));

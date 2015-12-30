@@ -2,6 +2,179 @@
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   //***********************************//
   //********* style page index ********//
+  // part header
+  .pace-done {
+    header {
+      height: 100%;
+      border-bottom: 1px solid #b5b5b3;
+    }
+  }
+  header {
+    nav {
+      height: 100%;
+      ul {
+        top: 70px;
+        position: relative;
+      }
+      li {
+        font-size: 14px;
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+      }
+      a.select {
+        height: 50px;
+        position: relative;
+        border: none;
+        background-color: #FF6C49;
+        color: #fff;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+      }
+    }
+  }
+  .nav {
+    .cl-effect-5 a {
+      display: inline-block;
+      height: 38px;
+      border: solid 1px;
+      width: 75%;
+      padding-bottom: 32px;
+      font-size: 10px;
+      padding-top: 20px;
+      max-width: 450px;
+    }
+  }
+  .nav.open {
+    margin-top: 620px!important;
+  }
+  .show {
+    position: fixed;
+    top: 30px;
+    height: 40px;
+    width: 40px;
+    right: 30px;
+    border-radius: 2px;
+    z-index: 10;
+    display: none;
+  }
+  .menu-icon {
+    position: fixed;
+    top: 30px;
+    border: solid 1px #47474A;
+    height: 40px;
+    width: 40px;
+    right: 30px;
+    border-radius: 2px;
+    -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
+    -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    background-color: #fff;
+    cursor: pointer;
+    .line-menu {
+      height: 1px;
+      background-color: #FE5337;
+      width: 20px;
+      position: absolute;
+      left: 50%;
+      margin-left: -10px;
+      top: 12px;
+      -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
+      -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      &:nth-child(2){
+        top: 18px;
+      }
+      &:nth-child(3){
+        top: 24px;
+      }
+    }
+  }
+  .lenguaje {
+    float: left;
+    margin-right: 0;
+    top: 30px;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    margin-left: -50px;
+  }
+  // contact to
+  .contacto {
+    h4 {
+      font-size: 59px;
+      line-height: 60px;
+      width: 90%;
+      letter-spacing: -3px;
+    }
+    p {
+      font-size: 12px;
+      width: 80%;
+      max-width: 768px;
+    }
+    .forms {
+      width: 560px;
+      position: relative;
+      float: left;
+      margin-top: 0;
+      top: 50px;
+      margin-left: -23px;
+    }
+    h6 {
+      font-size: 11px;
+    }
+  }
+  .contacto.open {
+    height: 680px;
+    top: 10px;
+    padding: 20px;
+    z-index: 2100;
+  }
+  .cerrar {
+    position: relative;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border: solid 1px;
+    cursor: pointer;
+    right: -10px;
+    background-color: #fff;
+    z-index: 1000;
+    display: block;
+    top: -20px;
+    .aspa1 {
+      top: 20px;
+      left: 12px;
+    }
+    .aspa2 {
+      top: 20px;
+      left: 12px;
+    }
+  }
+  .clientes {
+    float: left;
+    margin-bottom: 70px;
+    width: 260px;
+    padding: 30px;
+    height: 140px;
+    display: block;
+    position: relative;
+  }
+  .colaboradores {
+    margin-bottom: 70px;
+    width: 290px;
+    padding: 30px;
+    height: 140px;
+    display: block;
+    position: relative;
+    float: right;
+  }
   .loader {
     width: 180px;
     height: 150px;
