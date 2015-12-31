@@ -50,10 +50,375 @@
     width: 100%;
     opacity: 1;
   }
+  &__animation {
+    max-width: 1600px;
+    margin-left: -800px;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transform-origin: center center;
+    transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
+    -webkit-transform-origin: center center;
+    -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
+    transform: matrix(1,0.00,0.00,1,0,300);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,300);
+    margin-top: -100px;
+  }
+  &__description {
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    line-height: 33px;
+    top: 0!important;
+    position: relative;
+    display: block;
+    width: 100%;
+    letter-spacing: 2px;
+    clear: both;
+    margin-top: 25px;
+    text-align: center;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    span {
+      font-family: 'rucreabold';
+      font-weight: bold;
+    }
+  }
+  article {
+    max-width: 1600px;
+    margin-left: -800px;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    transform-origin: center center;
+    transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
+    -webkit-transform-origin: center center;
+    -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
+    transform: matrix(1,0.00,0.00,1,0,300);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,300);
+    margin-top: -100px;
+  }
+  article {
+    position: absolute;
+    height: 240px;
+    width: 100%;
+    margin-top: -100px;
+    top: 50%;
+    overflow: hidden;
+  }
+  &__razones {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -225px;
+    -webkit-transition: all .8s cubic-bezier(0.165,0.84,0.44,1)1s;
+    transition: all .8s cubic-bezier(0.165,0.84,0.44,1)1s;
+  }
 }
 .pace-done {
   .cab__video {
     transform: matrix(1,0.00,0.00,1,0,-2000);
     -webkit-transform: matrix(1,0.00,0.00,1,0,-2000);
+  }
+  .cab__foto {
+    transform: matrix(1,0.00,0.00,1,0,0);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,0);
+  }
+  .cab__animation {
+    opacity: 1;
+    transform: matrix(1,0.00,0.00,1,0,0);
+    -webkit-transform: matrix(1,0.00,0.00,1,0,0);
+  }
+  .wrapper-about {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #49494B;
+  }
+}
+.img__agencia {
+  height: 1340px;
+  background-image: url(../images/agencia_1.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  background-attachment: scroll;
+}
+.about {
+  &__services {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-top: 180px;
+    height: 100%;
+    position: relative;
+    margin-right: auto;
+    height: 1340px;
+    .bloque {
+      width: 50%;
+      position: absolute;
+      height: 500px;
+      top: 50%;
+      margin-top: -500px;
+    }
+    h2 {
+      font-size: 461px;
+      font-family: 'rucreabold';
+      letter-spacing: 0;
+      color: #FFF;
+      left: 0;
+      position: relative;
+      text-transform: lowercase;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  &__largue {
+    width: 250px;
+    float: right;
+    display: block;
+    position: relative;
+    border-top: solid 3px #F85238;
+    padding-top: 30px;
+    top: -70px;
+    -webkit-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    -moz-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    -o-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    left: -360px;
+    li {
+      font-size: 11px;
+      font-style: italic;
+      margin-top: 9px;
+      display: block;
+      text-align: right;
+      opacity: 0;
+      position: relative;
+      top: 50px;
+      -webkit-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+      -moz-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+      -o-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+      transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+      color: #fff;
+    }
+  }
+}
+.wrapp {
+  position: relative;
+  opacity: 1;
+  top: 100%;
+  width: 100%;
+  &__info {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0;
+    height: 2740px;
+    background-color: #49494b;
+  }
+  &__preguntas {
+    position: relative;
+    width: 100%;
+    margin-bottom: 150px;
+    max-width: 1600px;
+    margin: 0 auto;
+    li {
+      display: inline-block;
+      position: relative;
+      float: left;
+      width: 50%;
+      text-align: left;
+      height: 640px;
+      padding: 60px;
+      padding-left: 100px;
+      border: solid 1px #4A494B;
+    }
+  }
+  .icon-agencia,
+  .icon-mision,
+  .icon-ventajas,
+  .icon-metodo {
+    position: absolute;
+    left: 138%;
+    top: 50%;
+    width: 200px;
+    height: 150px;
+    margin-top: -100px;
+    svg {
+      width: 100%;
+      height: auto;
+        path {
+          fill: #FE6B48 !important;
+      }
+    }
+  }
+  .agencia{
+    &__title {
+      font-size: 170px;
+      letter-spacing: -10px;
+      display: block;
+      margin: 0;
+      font-family: 'rucreabold';
+      position: relative;
+      overflow: hidden;
+      height: 330px;
+      color: #FF6C49;
+      line-height: 150px;
+      text-transform: lowercase;
+      font-weight: bold;
+      span {
+        position: absolute;
+        left: 0;
+        top: 400px;
+        -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+        -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+        -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+        transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      }
+    }
+    &__heading {
+      font-size: 20px;
+      position: relative;
+      top: 30px;
+      display: block;
+      letter-spacing: 2px;
+      width: 90%;
+      color: #fff;
+      font-family: 'rucreabold';
+      -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      opacity: 1;
+    }
+    &__desc {
+      top: 140px;
+      left: 0;
+      width: 100%;
+      line-height: 21px;
+      text-transform: none;
+      letter-spacing: .5px;
+      font-size: 16px;
+      width: 95%;
+      margin-left: 0;
+      color: #fff;
+      opacity: 1;
+      -webkit-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
+      -moz-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
+      -o-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
+      transition: all .6s cubic-bezier(0,-0.18,0,1.02);
+      font-weight: 400;
+      position: relative;
+      display: block;
+      margin-right: auto;
+      margin-top: 10px;
+    }
+  }
+  &__largue {
+    width: 90px;
+    background-color: #fff;
+    height: 5px;
+    position: relative;
+    top: 15px;
+    -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+    -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+    -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+    transition: all .8s cubic-bezier(0,-0.18,0,1.02)
+  }
+}
+.contact-agency {
+  background-color: #fcfcfc;
+  position: relative;
+  padding-top: 190px;
+  padding-bottom: 350px;
+  margin-top: 0;
+  .line-scroll {
+    height: 200px;
+    top: -70px;
+  }
+  h4 {
+    font-size: 160px;
+    font-family: 'rucreabold';
+    text-transform: none;
+    letter-spacing: 0;
+    width: 80%;
+    max-width: 1280px;
+    text-align: center;
+    color: #49494B;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 160px;
+    font-weight: bold;
+  }
+  .forms {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 260px;
+  }
+  .contact-clientes, .contact-colaboradores {
+    float: left;
+    width: 600px;
+    h5 {
+      font-size: 16px;
+      font-family: 'rucreabold';
+      letter-spacing: 2px;
+    }
+    h6 {
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-style: italic;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: solid 1px #535355;
+      border-top: solid 1px #535355;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  .email {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+}
+.cosasquenosinspiran {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF;
+  h4 {
+    text-align: center;
+    position: relative;
+    top: -60px;
+    font-size: 10px;
+  }
+  .instashow-gallery {
+    width: 100%;
+    display: block;
+    .instashow-gallery-item {
+      width: 25%;
+      float: left;
+      img {
+        @include size(100%);
+      }
+    }
   }
 }

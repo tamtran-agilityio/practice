@@ -465,7 +465,6 @@
       top: 70px;
     }
     &__block {
-
     }
     li {
       background-size: 75%;
@@ -538,30 +537,57 @@
     }
     &__wikilson {
       background-image: url(../images/small/grafica-wikilson.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__idealista {
       background-image: url(../images/small/grafica-idealista.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__suzuki {
       background-image: url(../images/small/grafica-suzuki-dos.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__correos {
       background-image: url(../images/small/grafica-correos.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__la-rioja {
       background-image: url(../images/small/grafica-la-rioja.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__chupachups {
       background-image: url(../images/small/grafica-chupachups.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__groove {
       background-image: url(../images/small/grafica-groove.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__creatividad {
       background-image: url(../images/small/grafica-creatividad.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
     &__suzuki-uno {
       background-image: url(../images/small/grafica-suzuki-uno.jpg);
+      .pages__image {
+        background-image: none;
+      }
     }
   }
   .footer__back {
@@ -575,6 +601,167 @@
     li {
       font-size: 10px;
       margin-left: 14px;
+    }
+  }
+  /**********************************************/
+  /*************** page agency *******************/
+  .cab {
+    min-height: 480px;
+    &__agencia {
+      background-image: url(../images/small/agencia-1.jpg);
+    }
+    &__animation {
+      height: 100%;
+      top: 50%;
+      margin-top: -290px;
+      max-width: 80%;
+      margin-left: -40%;
+    }
+    &__description {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &__razones {
+      width: 80%;
+      top: 80px;
+    }
+    article {
+      height: 100%;
+      top: 50%;
+      margin-top: -290px;
+      max-width: 80%;
+      margin-left: -40%;
+    }
+  }
+  .wrapper-about {
+  }
+  .img__agencia {
+    height: 1024px;
+    background-image: url(../images/small/agencia-2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    background-attachment: scroll;
+  }
+  .about {
+    &__services {
+      margin-top: 140px;
+      .til-section {
+        h6 {
+          border: 1px solid;
+          background-color: transparent;
+        }
+      }
+      .line-scroll {
+        top: 24px;
+        margin-top: -368px;
+        height: 345px;
+      }
+      .bloque {
+        height: 310px;
+        margin-top: 0;
+        width: 100%;
+        top: 100px;
+        float: left;
+        clear: both;
+      }
+      h2 {
+        font-size: 180px;
+        letter-spacing: 15px;
+      }
+      .about__off {
+        left: 0;
+        top: 430px;
+      }
+    }
+    &__largue {
+      padding-top: 9px;
+      left: -35%;
+      top: -25px;
+      li {
+        top: 0;
+        opacity: 1;
+        margin-top: 5px;
+      }
+    }
+  }
+  .wrapp {
+    &__info {
+      height: 1705px;
+    }
+    &__preguntas {
+      margin-top: -35px;
+      li {
+        height: 450px;
+        padding: 20px;
+        padding-left: 30px;
+        width: 49.8%;
+      }
+      li.metodo {
+        top: 450px;
+      }
+      li.ventajas {
+        top: 450px;
+      }
+      li.mision {
+        top: 900px;
+      }
+    }
+    .icon-agencia {
+      width: 120px;
+      margin-top: -100px;
+    }
+    .icon-mision {
+      left: -65%;
+      top: 50%;
+      width: 120px;
+      margin-top: -100px;
+
+    }
+    .icon-ventajas {
+      width: 120px;
+      margin-top: -100px;
+    }
+    .icon-metodo  {
+      width: 120px;
+      margin-top: -100px;
+      left: -65%;
+      top: 50%;
+    }
+    .agencia {
+      &__title {
+        font-size: 64px;
+        height: 170px;
+        margin-top: -40px;
+        letter-spacing: -2px;
+        span {
+          top: 55px;
+        }
+      }
+      &__desc {
+        top: 25px;
+        line-height: 18px;
+        font-size: 14px;
+        width: 90%;
+      }
+    }
+  }
+  .contact-agency {
+    h4 {
+      font-size: 54px;
+      line-height: 50px;
+      width: 100%;
+    }
+    .forms {
+      margin-top: 50px;
+    }
+    .clientes {
+      float: left;
+      width: 100%;
+    }
+    .email {
+
     }
   }
 }

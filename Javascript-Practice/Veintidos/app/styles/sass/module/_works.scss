@@ -277,20 +277,25 @@
   }
   &__race {
     left: 1px;
-    background-image: url(../images/small/landing-race.jpg);
+    background-image: url(../images/landing-race.jpg);
+    .landing__image {
+      background-image: url(../images/work-landing-race.jpg);
+    }
   }
   &__optimus {
-    background-image: url(../images/small/landing-lg.jpg);
+    background-image: url(../images/landing-lg.jpg);
     background-position: center 72px!important;
     .landing__image {
       height: 500px;
+      background-image: url(../images/work-landing-lg.jpg);
     }
   }
   &__sony {
-    background-image: url(../images/small/landing-sony.jpg);
     right: 1px;
+    background-image: url(../images/landing-sony.jpg);
     // background-position: center 72px !important;
     .landing__image {
+      background-image: url(../images/work-landing-sony.jpg);
       height: 250px;
     }
   }
@@ -298,25 +303,28 @@
     top: -1px;
     left: 1px;
     clear: left;
-    background-image: url(../images/small/landing-mahou.jpg);
+    background-image: url(../images/landing-mahou.jpg);
     // top: 70px;
     // background-position: center 0!important;
     .landing__image {
+      background-image: url(../images/work-landing-mahou.jpg);
       height: 280px;
     }
   }
   &__consejero {
-    background-image: url(../images/small/landing-consejero.jpg);
+    background-image: url(../images/landing-consejero.jpg);
     top: 50px;
     .landing__image {
+      background-image: url(../images/work-landing-el-consejero.jpg);
       height: 500px;
     }
   }
   &__teresa {
-    background-image: url(../images/small/landing-santa-teresa.jpg);
+    background-image: url(../images/landing-santa-teresa.jpg);
     top: 50px;
     right: 1px;
     .landing__image {
+      background-image: url(../images/work-landing-santa-teresa.jpg);
       height: 670px;
     }
   }
@@ -412,30 +420,57 @@
   &__wikilson {
     background-position: center;
     background-image: url(../images/grafica-wikilson.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-wikilson-thumb.jpg);
+    }
   }
   &__idealista {
     background-image: url(../images/grafica-idealista.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-idealista-thumb.jpg);
+    }
   }
   &__suzuki {
     background-image: url(../images/grafica-suzuki-dos.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-suzuki-dos-thumb.jpg);
+    }
   }
   &__correos {
     background-image: url(../images/grafica-correos.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-correos-thumb.jpg);
+    }
   }
   &__la-rioja {
     background-image: url(../images/grafica-la-rioja.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-la-rioja-thumb.jpg);
+    }
   }
   &__chupachups {
     background-image: url(../images/grafica-chupachups.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-chupachups-thumb.jpg);
+    }
   }
   &__groove {
     background-image: url(../images/grafica-groove.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-groove-thumb.jpg);
+    }
   }
   &__creatividad {
     background-image: url(../images/grafica-creatividad.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-creatividad-thumb.jpg);
+    }
   }
   &__suzuki-uno {
     background-image: url(../images/grafica-suzuki-uno.jpg);
+    .pages__image {
+      background-image: url(../images/grafica-suzuki-uno-thumb.jpg);
+    }
   }
   &__image {
     cursor: url(../images/plus_cursor.png) 25 25,pointer;

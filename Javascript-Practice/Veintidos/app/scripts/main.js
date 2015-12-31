@@ -163,6 +163,11 @@ $(function () {
       color: '#4a4a4c',
       hover: !0
     });
+    $('.wrapp__preguntas li').animatedBorder({
+        size: 1,
+        color: '#4a4a4c',
+        hover: !1
+    })
   });
 
   /* VIEWPORT CHECKER */
@@ -282,6 +287,7 @@ $(function () {
     $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)');
   }, 2000);
 
+  // set slider page works
   function coverSlider() {
     $('.cover-slider').each(function() {
       var target = $(this).find('.cover-slider__slide');
@@ -297,8 +303,23 @@ $(function () {
       sliderActive();
     });
   }
+
+  // check title page active
+  function setPageActive(element, node) {
+    if ($('body').hasClass(element)) {
+      $(node).addClass('select');
+    } else {
+      $(node).removeClass('select');
+    }
+  }
+
   coverSlider();
 
+  setPageActive('index','.link-home');
+  setPageActive('works','.link-work');
+  setPageActive('agency','.link-agency');
+
+  // handle icon menu
   $('.menu-icon').click(function() {
     $('header').css({
       top: '0px'
@@ -517,4 +538,162 @@ $(function () {
         });
       });
     })
+  function parallaxScroll() {
+    var e = $(window).scrollTop();
+    $('.parallax').css('top', 0 - 0.15 * e + 'px');
+  }
+
+  // hover images landing
+  $('li.landing__race').hover(function() {
+    $('li.landing__race .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__race .landing__image').css({
+      opacity: 1
+    })
+  });
+  $('li.landing__optimus').hover(function() {
+    $('li.landing__optimus .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__optimus .landing__image').css({
+      opacity: 1
+    })
+  });
+  $('li.landing__sony').hover(function() {
+    $('li.landing__sony .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__sony .landing__image').css({
+      opacity: 1
+    })
+  });
+  $('li.landing__mahou').hover(function() {
+    $('li.landing__mahou .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__mahou .landing__image').css({
+      opacity: 1
+    })
+  });
+  $('li.landing__consejero').hover(function() {
+    $('li.landing__consejero .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__consejero .landing__image').css({
+      opacity: 1
+    })
+  });
+  $('li.landing__teresa').hover(function() {
+    $('li.landing__teresa .landing__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.landing__teresa .landing__image').css({
+      opacity: 1
+    })
+  });
+
+  // hover images pages
+  $('li.pages__wikilson').hover(function() {
+    $('li.pages__wikilson .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__wikilson .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__idealista').hover(function() {
+    $('li.pages__idealista .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__idealista .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__suzuki').hover(function() {
+    $('li.pages__suzuki .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__suzuki .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__correos').hover(function() {
+    $('li.pages__correos .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__correos .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__la-rioja').hover(function() {
+    $('li.pages__la-rioja .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__la-rioja .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__chupachups').hover(function() {
+    $('li.pages__chupachups .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__chupachups .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__groove').hover(function() {
+    $('li.pages__groove .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__groove .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__creatividad').hover(function() {
+    $('li.pages__creatividad .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__creatividad .pages__image').css({
+      opacity: 1
+    })
+  });
+  $('li.pages__suzuki-uno').hover(function() {
+    $('li.pages__suzuki-uno .pages__image').css({
+      opacity: 0
+    });
+    },
+  function() {
+    $('li.pages__suzuki-uno .pages__image').css({
+      opacity: 1
+    })
+  });
 }(jQuery));

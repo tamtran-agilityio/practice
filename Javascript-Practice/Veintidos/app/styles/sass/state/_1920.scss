@@ -248,6 +248,38 @@
     &__teresa {
       top: -494px;
     }
+    &__race {
+      .landing__image {
+        height: 1031px;
+      }
+    }
+    &__optimus {
+      .landing__image {
+        height: 705px;
+      }
+    }
+    &__sony {
+      .landing__image {
+        height: 425px;
+      }
+    }
+    &__mahou {
+      .landing__image {
+        height: 476px;
+      }
+    }
+    &__consejero {
+      top: -327px;
+      .landing__image {
+        height: 747px;
+      }
+    }
+    &__teresa {
+      top: -607px;
+      .landing__image {
+        height: 1035px;
+      }
+    }
   }
   .branding {
     top: -180px;
@@ -267,6 +299,135 @@
     }
     li {
       height: 605px;
+    }
+    &__image {
+      height: 603px;
+    }
+  }
+  /**********************************************/
+  /*************** page agency *******************/
+  .cab {
+    min-height: 990px;
+    &__description {
+      font-size: 24px;
+      line-height: 28px;
+      margin-top: 11px;
+    }
+    article {
+      max-width: 1080px;
+      margin-left: -540px;
+      height: 300px;
+      margin-top: -70px;
+    }
+    &__razones {
+      opacity: 1;
+      top: 80px;
+    }
+  }
+  .about {
+    &__services {
+      max-width: 1380px;
+      .til-section {
+        top: 50px;
+        h6 {
+          border: 1px solid;
+          background-color: transparent;
+        }
+      }
+      .line-scroll {
+        margin-top: -244px;
+        height: 240px;
+      }
+      .bloque {
+        margin-top: -420px;
+      }
+      .about__off {
+        left: 46%;
+      }
+    }
+    &__largue {
+      top: -30px;
+      li {
+        opacity: 1;
+        top: 0;
+      }
+    }
+  }
+
+  .wrapp {
+    background-size: 453px 453px;
+    margin-top: 160px;
+    &__info {
+      top: -100px;
+      height: 2240px;
+    }
+    &__preguntas {
+      max-width: 1380px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 190px;
+      li {
+        height: 540px;
+        padding: 40px;
+        padding-left: 70px
+      }
+      li.metodo {
+        top: 540px;
+      }
+      li.ventajas {
+        top: 540px;
+      }
+      li.mision {
+        top: 1080px;
+      }
+    }
+    .agencia {
+      &__title {
+        font-size: 140px;
+        height: 270px;
+        span {
+          top: 120px;
+        }
+      }
+      &__heading {
+        font-size: 18px;
+      }
+      &__desc {
+        top: 25px;
+        line-height: 21px;
+        font-size: 16px;
+        width: 90%;
+      }
+    }
+    .icon-mision {
+      left: -65%;
+      top: 50%;
+    }
+    .icon-metodo {
+      left: -65%;
+      top: 50%;
+    }
+  }
+
+  .contact-agency {
+    h4 {
+      font-size: 120px;
+      line-height: 110px;
+    }
+    .forms {
+      margin-top: 120px;
+      width: 90%;
+    }
+    .contact-clientes {
+      float: left;
+      width: 450px;
+    }
+    .contact-colaboradores {
+      float: right;
+      width: 450px;
+    }
+    .email {
+
     }
   }
 }
