@@ -3,6 +3,8 @@ $(function () {
   'use strict';
 
 
+  // call function amination
+  $('.animsition').animsition();
   $(window).load(function() {
     // Animate loader off screen
     setTimeout(function() {
@@ -254,6 +256,30 @@ $(function () {
     });
     $('.services__item h3').addClass('hidden').viewportChecker({
       classToAdd: 'visible animated fadeInDown',
+      offset: 150
+    });
+    $('.til-section h6').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 50
+    });
+    $('.landing li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.branding div').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.pages__block li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.wrapp__preguntas li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('ul.about__largue li').viewportChecker({
+      classToAdd: 'up',
       offset: 150
     });
   });

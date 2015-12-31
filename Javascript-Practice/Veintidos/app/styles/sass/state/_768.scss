@@ -820,8 +820,6 @@
       left: 30px!important;
       top: 0;
       li {
-        top: 0;
-        opacity: 1;
         font-size: 11px;
         margin-top: 9px;
         text-align: left;
@@ -845,6 +843,15 @@
         width: 100%;
         margin-top: 18px;
         border: none;
+      }
+      li.metodo {
+        top: -17px;
+      }
+      li.ventajas {
+        top: -34px;
+      }
+      li.mision {
+        top: -51px;
       }
     }
     .icon-agencia,

@@ -212,6 +212,10 @@
       transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
       color: #fff;
     }
+    li.up {
+      top: 0;
+      opacity: 1;
+    }
   }
 }
 .wrapp {
@@ -247,6 +251,16 @@
       padding: 60px;
       padding-left: 100px;
       border: solid 1px #4A494B;
+    }
+    li.metodo {
+      top: 640px;
+    }
+    li.ventajas {
+      left: 1px;
+      top: 640px;
+    }
+    li.mision {
+        top: 1280px;
     }
   }
   .icon-agencia,
