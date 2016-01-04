@@ -29,6 +29,15 @@ header {
       cursor: default;
     }
   }
+  h1 {
+    width: 75px;
+    float: right;
+    margin-right: 25px;
+    padding-top: 22px;
+    img {
+      width: 100%;
+    }
+  }
 }
 .nav {
   position: fixed;
@@ -73,6 +82,7 @@ header {
 .lenguaje {
   float: right;
   margin-right: 50px;
+  display: none;
    li {
     color: #FF6C45;
     font-size: 10px;

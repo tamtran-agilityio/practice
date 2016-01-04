@@ -613,6 +613,15 @@ $(function () {
     }
   })
 
+  // show icon menu
+  function showIconMenu() {
+    if ($('body').hasClass('index')) {
+      $('header').find('.icon-menu').css('display', 'none');
+      $('header').find('.lenguaje').css('display', 'block');
+    }
+  }
+  showIconMenu();
+
   // hover images landing
   $('li.landing__race').hover(function() {
     $('li.landing__race .landing__image').css({
