@@ -2,6 +2,10 @@
 $(function () {
   'use strict';
 
+  // load data json
+  renderItem('../templates/modules/services.html', '#services');
+  renderItem('../templates/modules/footer.html', '#footerSocial');
+  renderItem('../templates/modules/slider.html', '#cases');
   // call function amination
   $('.animsition').animsition();
   var element = document.querySelector('img');
@@ -29,10 +33,6 @@ $(function () {
     });
   });
 
-  // load data json
-  renderItem('../templates/modules/services.html', '#services');
-  renderItem('../templates/modules/footer.html', '#footerSocial');
-  renderItem('../templates/modules/slider.html', '#cases');
   // function of set height instashow-gallery-item
   galleryHeight();
 
@@ -252,7 +252,7 @@ $(function () {
   }(jQuery));
 
   $(document).ready(function(){
-
+    setTimeout( function() {
     // add border
     $('li.latest__item').animatedBorder({
       size: 1,
@@ -279,6 +279,8 @@ $(function () {
         color: '#4a4a4c',
         hover: !1
     })
+
+    }, 1600);
   });
 
 
