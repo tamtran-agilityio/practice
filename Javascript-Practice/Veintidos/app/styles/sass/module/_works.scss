@@ -1,38 +1,33 @@
 /** Style page works **/
 .intro {
   &__works {
+    @include size(100%, 270px);
     position: relative;
-    width: 100%;
     max-width: 1280px;
     text-align: center;
     margin-left: auto;
     margin-top: 410px;
-    height: 270px;
-    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
     margin-right: auto;
   }
 }
 .heading {
   &__works {
+    @include size(1800px, 250px);
     font-size: 200px;
     text-transform: initial;
     font-family: 'rucreabold';
     position: absolute;
-    width: 1800px;
     color: #FF6C49;
     left: 50%;
     margin-left: -900px;
     top: -260px;
-    height: 250px;
     padding: 0;
     text-align: center;
     overflow: hidden;
   }
   &__rotate {
-        position: relative;
+    position: relative;
     display: block;
     height: 250px;
     -moz-transform: translateX(0px) translateY(0px);
@@ -43,10 +38,7 @@
   }
   &__rotating {
     display: none;
-   -webkit-transition: 1.5s ease-in-out;
-    -moz-transition: 1.5s ease-in-out;
-    -o-transition: 1.5s ease-in-out;
-    transition: 1.5s ease-in-out;
+    @include transition(1.5s ease-in-out);
     -moz-transform: translateX(0px) translateY(0px);
     -webkit-transform: translateX(0px) translateY(0px);
     -o-transform: translateX(0px) translateY(0px);
@@ -61,10 +53,7 @@
       -o-transform: translateX(0px) translateY(0px);
       -ms-transform: translateX(0px) translateY(0px);
       transform: translateX(0px) translateY(0px);
-      -webkit-transition: 1.5s ease-in-out;
-      -moz-transition: 1.5s ease-in-out;
-      -o-transition: 1.5s ease-in-out;
-      transition: 1.5s ease-in-out;
+      @include transition(1.5s ease-in-out);
     }
   }
 }
@@ -124,10 +113,7 @@
     height: 1000px;
     border: solid 1px #FF3D00;
     padding: 110px;
-    -webkit-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
-    -moz-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .6s cubic-bezier(0.26,0,0.09,0.99);
+    @include transition(all .6s cubic-bezier(0.26,0,0.09,0.99));
     margin-right: auto;
     .til-section {
       top: 32px;
@@ -174,6 +160,22 @@
       background-image: url("../images/work-thumb-apersonal-a.jpg");
     }
   }
+  &__name.showhide {
+    opacity: 0;
+    -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    transition-delay: .2s;
+    height: 270px;
+    padding-top: 120px;
+  }
+  &__name.show {
+    height: 270px;
+    padding-top: 220px;
+    top: 15%;
+    opacity: 1;
+    z-index: 9999;
+    display: block;
+  }
   &__name {
     width: 90%;
     border-style: none;
@@ -181,10 +183,9 @@
     height: 50px;
     top: -10%;
     left: 5%;
-    -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
-    transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+    @include transition(all .5s cubic-bezier(0.165,0.84,0.44,1));
     text-align: center;
-    overflow: hidden;
+    // overflow: hidden;
     padding-top: 0;
     h2 {
       font-size: 40px;
@@ -194,13 +195,22 @@
       left: -10px;
       position: relative;
       top: 50px;
-      -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
-      transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+      @include transition(all .5s cubic-bezier(0.165,0.84,0.44,1));
     }
     h2.showhide {
       top: 50px;
       transition-delay: .2s;
       opacity: 0
+    }
+    h2.show {
+      top: 0px;
+      transition-delay: .3s;
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: 1999;
+      display: block;
     }
     &--largue {
       width: 1px!important;
@@ -208,28 +218,10 @@
       height: 220px;
       position: relative;
       top: -300px;
-      -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-      -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-      -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-      transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+      @include transition(all .8s cubic-bezier(0,-0.18,0,1.02));
       left: 49.5%;
     }
 
-  }
-  .web__name.show {
-    height: 270px;
-    padding-top: 220px;
-    top: 15%;
-    opacity: 1
-  }
-
-  .web__name.showhide {
-    opacity: 0;
-    -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
-    transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
-    transition-delay: .2s;
-    height: 270px;
-    padding-top: 120px
   }
 }
 
@@ -260,6 +252,7 @@
     overflow: hidden;
     background-size: 81.2%;
     h3 {
+      @include size(250px, 18px);
       font-size: 10px;
       color: #FF6C49;
       position: relative;
@@ -267,12 +260,10 @@
       top: -21px;
       z-index: 1;
       background-color: #fff;
-      width: 250px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 10px;
       padding-right: 10px;
-      height: 18px;
     }
   }
   &__race {
@@ -293,7 +284,6 @@
   &__sony {
     right: 1px;
     background-image: url(../images/landing-sony.jpg);
-    // background-position: center 72px !important;
     .landing__image {
       background-image: url(../images/work-landing-sony.jpg);
       height: 250px;
@@ -304,8 +294,6 @@
     left: 1px;
     clear: left;
     background-image: url(../images/landing-mahou.jpg);
-    // top: 70px;
-    // background-position: center 0!important;
     .landing__image {
       background-image: url(../images/work-landing-mahou.jpg);
       height: 280px;
@@ -341,10 +329,9 @@
     -webkit-transform: rotate(22deg);
   }
   &__image {
+    @include size(100%, 696px);
     cursor: url(../images/plus_cursor.png) 25 25,pointer;
     display: inline-block;
-    width: 100%;
-    height: 696px;
     background-size: cover;
     background-position: 50% 50%;
     margin-left: 0;
@@ -481,10 +468,7 @@
     background-position: 50% 50%;
     margin-left: 0;
     margin-top: 0;
-    -webkit-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
-    -moz-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
-    -o-transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
-    transition: all 2.2s cubic-bezier(0.48,-0.01,0,1.59);
+    @include transition(all 2.2s cubic-bezier(0.48,-0.01,0,1.59));
   }
 }
 .footer__back {

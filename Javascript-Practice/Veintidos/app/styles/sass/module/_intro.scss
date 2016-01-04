@@ -8,10 +8,7 @@
   margin-top: 410px;
   margin-right: auto;
   height: 220px;
-  -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
   &__logo {
     position: relative;
     width: 280px;
@@ -27,10 +24,7 @@
     height: 250px;
     background-size: cover;
     position: absolute;
-    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
   }
   &__naranja {
     background-image: url(../images/2-naranja.png);
@@ -51,10 +45,7 @@
     position: absolute;
     left: 210px;
     top: -60px;
-    -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-    -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+    @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
   }
 }
 .pace-done {
@@ -62,10 +53,7 @@
     &__naranja {
       width: 200px;
       height: 250px;
-      -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-      -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-      -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-      transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
       top: 0;
       left: 0;
       transform: rotate(0deg);
@@ -93,10 +81,7 @@
 }
 .claim {
   @include size(0, 112px);
-  webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
   position: relative;
   top: 0;
   height: 112px;
@@ -122,10 +107,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    -webkit-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
-    -moz-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
-    -o-transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
-    transition: all 1s cubic-bezier(0.01,0.78,0.54,0.98);
+    @include transition(all 1s cubic-bezier(0.01,0.78,0.54,0.98));
     h3 {
       font-size: 12px;
       position: absolute;
@@ -146,8 +128,7 @@
   left: 5%;
   transform: matrix(1,0.00,0.00,1,0,620);
   -webkit-transform: matrix(1,0.00,0.00,1,0,620);
-  -webkit-transition: all 1.3s cubic-bezier(.77,0,.175,1);
-  transition: all 1.3s cubic-bezier(.77,0,.175,1);
+  @include transition(all 1.3s cubic-bezier(.77,0,.175,1));
   margin-bottom: 240px;
   opacity: 0;
   .til-section {
@@ -190,10 +171,7 @@
   position: absolute;
   width: 100%;
   right: 0;
-  -webkit-transition: all .8s cubic-bezier(.77,0,.175,1);
-  -moz-transition: all .8s cubic-bezier(.77,0,.175,1);
-  -o-transition: all .8s cubic-bezier(.77,0,.175,1);
-  transition: all .8s cubic-bezier(.77,0,.175,1);
+  @include transition(all .8s cubic-bezier(.77,0,.175,1));
   z-index: 1;
 }
 .mascara-trama.contraer {

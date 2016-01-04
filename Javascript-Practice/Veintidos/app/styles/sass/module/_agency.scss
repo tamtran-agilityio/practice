@@ -5,8 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
-  transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
+  @include transition(all .5s cubic-bezier(0.165,0.84,0.44,1));
   overflow: hidden;
   &__about {
     position: absolute;
@@ -323,10 +322,7 @@
       margin-left: 0;
       color: #fff;
       opacity: 1;
-      -webkit-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
-      -moz-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
-      -o-transition: all .6s cubic-bezier(0,-0.18,0,1.02);
-      transition: all .6s cubic-bezier(0,-0.18,0,1.02);
+      @include transition(all .6s cubic-bezier(0,-0.18,0,1.02));
       font-weight: 400;
       position: relative;
       display: block;
@@ -339,10 +335,7 @@
     background-color: #fff;
     position: relative;
     top: 15px;
-    -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-    -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-    -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-    transition: all .8s cubic-bezier(0,-0.18,0,1.02)
+    @include transition(all .8s cubic-bezier(0,-0.18,0,1.02));
   }
 }
 .contact-agency {

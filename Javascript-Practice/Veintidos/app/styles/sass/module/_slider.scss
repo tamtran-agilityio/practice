@@ -36,10 +36,7 @@
   height: 70px;
   border-style: none;
   cursor: pointer;
-  -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
   top: 50%;
   margin-top: -25px;
 }
@@ -84,10 +81,7 @@
       position: relative;
       opacity: 0;
       left: 11px;
-      -webkit-transition: all .8s cubic-bezier(0.93,-0.01,0,1.02);
-      -moz-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-      -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
-      transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
+      @include transition(all .8s cubic-bezier(0.26,0,0.09,0.99));
     }
     .pogoSlider-nav-btn--selected {
       background: #FF4503 ;
@@ -149,10 +143,7 @@
     background-color: #FF6C49;
     left: 50%;
     top: 67px;
-    -webkit-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
-    -moz-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
-    -o-transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
-    transition: all 500ms cubic-bezier(0.645,0.045,0.355,1.000);
+    @include transition(all 500ms cubic-bezier(0.645,0.045,0.355,1.000));
     transition-delay: .4s;
   }
   a {

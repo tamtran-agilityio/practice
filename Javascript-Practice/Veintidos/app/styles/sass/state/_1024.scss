@@ -73,10 +73,7 @@
     width: 40px;
     right: 30px;
     border-radius: 2px;
-    -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-    -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-    -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-    transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+    @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
     background-color: #fff;
     cursor: pointer;
     .line-menu {
@@ -87,10 +84,7 @@
       left: 50%;
       margin-left: -10px;
       top: 12px;
-      -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-      -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-      -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-      transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+      @include transition( all .4s cubic-bezier(0.26,0,0.09,0.99));
       &:nth-child(2){
         top: 18px;
       }

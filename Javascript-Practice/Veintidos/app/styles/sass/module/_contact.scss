@@ -5,10 +5,7 @@
   background-color: #FCFCFC;
   padding: 45px;
   top: -530px;
-  -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
   h4 {
     font-size: 99px;
     width: 45%;
@@ -109,10 +106,7 @@
   transform: rotate(45deg);
   top: 25px;
   left: 18px;
-  -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
 }
 .aspa2 {
   @include size(15px, 1px);
@@ -123,15 +117,11 @@
   transform: rotate(-45deg);
   top: 25px;
   left: 18px;
-  -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
-  -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
-  transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
+  @include transition(all .4s cubic-bezier(0.26,0,0.09,0.99));
 }
 .mascara-contact {
   @include size(50%, 90%);
-  -webkit-transition: all .8s cubic-bezier(0.165,0.84,0.44,1)0.3s;
-  transition: all .8s cubic-bezier(0.165,0.84,0.44,1)0.3s;
+  @include transition(all .8s cubic-bezier(0.165,0.84,0.44,1)0.3s);
   position: absolute;
   background-color: #FCFCFC;
   right: 50%;
@@ -165,8 +155,5 @@
   height: 3px;
   position: relative;
   top: -10px;
-  -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-  -moz-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-  -o-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
-  transition: all .8s cubic-bezier(0,-0.18,0,1.02);
+  @include transition(all .8s cubic-bezier(0,-0.18,0,1.02));
 }

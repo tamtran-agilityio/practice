@@ -484,6 +484,10 @@ $(function () {
             height: '40.1%',
             width: '60.1%'
         })
+        $('li.web__list--henry .web__name').addClass('show');
+        $('li.web__list--henry .web__name h2').addClass('show');
+        $('li.web__list--henry .web__name').removeClass('showhide');
+        $('li.web__list--henry .web__name h2').removeClass('showhide');
     }, function() {
         $('li.web__list--mugaku').css({
             width: '50%',
@@ -505,6 +509,10 @@ $(function () {
             width: '50%',
             height: '50%'
         });
+        $('li.web__list--henry .web__name').addClass('showhide');
+        $('li.web__list--henry .web__name h2').addClass('showhide');
+        $('li.web__list--henry .web__name').removeClass('show');
+        $('li.web__list--henry .web__name h2').removeClass('show');
       });
     $('li.web__list--crea').hover(function() {
         $('li.web__list--mugaku').css({
@@ -526,6 +534,10 @@ $(function () {
             height: '60.1%',
             'background-size': '150%'
         });
+        $('li.web__list--crea .web__name').addClass('show');
+        $('li.web__list--crea .web__name h2').addClass('show');
+        $('li.web__list--crea .web__name').removeClass('showhide');
+        $('li.web__list--crea .web__name h2').removeClass('showhide');
     }, function() {
         $('li.web__list--mugaku').css({
             width: '50%',
@@ -546,6 +558,10 @@ $(function () {
             height: '50%',
             'background-size': '100%'
         });
+        $('li.web__list--crea .web__name').addClass('showhide');
+        $('li.web__list--crea .web__name h2').addClass('showhide');
+        $('li.web__list--crea .web__name').removeClass('show');
+        $('li.web__list--crea .web__name h2').removeClass('show');
     });
     $('li.web__list--room').hover(function() {
         $('li.web__list--mugaku').css({
@@ -567,6 +583,10 @@ $(function () {
             height: '60.1%',
             'background-size': '150%'
         });
+        $('li.web__list--room .web__name').addClass('show');
+        $('li.web__list--room .web__name h2').addClass('show');
+        $('li.web__list--room .web__name').removeClass('showhide');
+        $('li.web__list--room .web__name h2').removeClass('showhide');
     }, function() {
         $('li.web__list--mugaku').css({
             width: '50%',
@@ -587,6 +607,10 @@ $(function () {
             height: '50%',
             'background-size': '100%'
         });
+        $('li.web__list--room .web__name').addClass('showhide');
+        $('li.web__list--room .web__name h2').addClass('showhide');
+        $('li.web__list--room .web__name').removeClass('show');
+        $('li.web__list--room .web__name h2').removeClass('show');
       });
     })
   // set parallax scroll

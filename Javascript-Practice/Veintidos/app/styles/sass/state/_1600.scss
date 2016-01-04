@@ -27,6 +27,16 @@
   .nav {
     a.select {
       height: 38px;
+      &:hover {
+        span {
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          transform: translateY(0);
+          &:before {
+            display: none;
+          }
+        }
+      }
     }
   }
   .cl-effect-5 a {
@@ -71,6 +81,12 @@
     }
     h3 {
       left: 0;
+    }
+    .clientes {
+      float: left;
+    }
+    .colaboradores {
+      float: right;
     }
   }
   .loader {
@@ -291,6 +307,13 @@
         margin-left: -100px;
         top: -24px;
       }
+    }
+    &__name.show {
+      height: 220px;
+      padding-top: 180px;
+      top: 10%;
+      opacity: 1;
+
     }
     &__name {
       h2.showhide {
