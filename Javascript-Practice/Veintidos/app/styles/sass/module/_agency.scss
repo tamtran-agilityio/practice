@@ -1,22 +1,20 @@
 /** style page agency **/
 .cab {
+  @include size(100%, 1365px);
   position: relative;
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   -webkit-transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
   transition: all .5s cubic-bezier(0.165,0.84,0.44,1);
   overflow: hidden;
-  height: 1365px;
   &__about {
     position: absolute;
     height: 100%;
     min-height: 0;
   }
   &__video {
-    width: 100%;
-    height: 100%;
+    @include size(100%);
     z-index: 100;
     background-color: #FFF;
     position: absolute;
@@ -30,9 +28,8 @@
     opacity: 1;
   }
   &__foto {
-    height: 100%;
+    @include size(100%);
     position: fixed!important;
-    width: 100%;
     bottom: 0;
     transition: all 1.3s cubic-bezier(.77,0,.175,1);
     -webkit-transform-origin: center center;
@@ -42,21 +39,19 @@
     opacity: 1;
   }
   &__agencia {
-    height: 100%;
+    @include size(100%);
     background-image: url(../images/agencia_4.png);
     background-size: cover;
     background-position: center;
     position: absolute;
-    width: 100%;
     opacity: 1;
   }
   &__animation {
+    @include size(100%, 300px);
     max-width: 1600px;
     margin-left: -800px;
     left: 50%;
     top: 50%;
-    width: 100%;
-    height: 300px;
     opacity: 0;
     transform-origin: center center;
     transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
@@ -88,12 +83,11 @@
     }
   }
   article {
+    @include size(100%, 300px);
     max-width: 1600px;
     margin-left: -800px;
     left: 50%;
     top: 50%;
-    width: 100%;
-    height: 300px;
     opacity: 0;
     transform-origin: center center;
     transition: all 1.3s cubic-bezier(.77,0,.175,1) .1s;
@@ -104,9 +98,8 @@
     margin-top: -100px;
   }
   article {
+    @include size(100%, 240px);
     position: absolute;
-    height: 240px;
-    width: 100%;
     margin-top: -100px;
     top: 50%;
     overflow: hidden;
@@ -146,28 +139,25 @@
   }
 }
 .img__agencia {
-  height: 1340px;
+  @include size(100%, 1340px);
   background-image: url(../images/agencia_1.png);
   background-size: cover;
   background-position: center;
   position: absolute;
-  width: 100%;
   background-attachment: scroll;
 }
 .about {
   &__services {
-    width: 100%;
+    @include size(100%);
     max-width: 1600px;
     margin-left: auto;
     margin-top: 180px;
-    height: 100%;
     position: relative;
     margin-right: auto;
     height: 1340px;
     .bloque {
-      width: 50%;
+      @include size(50%, 500px);
       position: absolute;
-      height: 500px;
       top: 50%;
       margin-top: -500px;
     }
@@ -267,15 +257,13 @@
   .icon-mision,
   .icon-ventajas,
   .icon-metodo {
+    @include size(200px, 150px);
     position: absolute;
     left: 138%;
     top: 50%;
-    width: 200px;
-    height: 150px;
     margin-top: -100px;
     svg {
-      width: 100%;
-      height: auto;
+      @include size(100%, auto);
         path {
           fill: #FE6B48 !important;
       }
@@ -344,9 +332,8 @@
     }
   }
   &__largue {
-    width: 90px;
+    @include size(90px, 5px);
     background-color: #fff;
-    height: 5px;
     position: relative;
     top: 15px;
     -webkit-transition: all .8s cubic-bezier(0,-0.18,0,1.02);
@@ -427,6 +414,7 @@
   .instashow-gallery {
     width: 100%;
     display: block;
+    overflow: hidden;
     .instashow-gallery-item {
       width: 25%;
       float: left;

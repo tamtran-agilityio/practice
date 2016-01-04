@@ -1,11 +1,10 @@
 .footer {
   &__block {
-    height: 210px;
+    @include size(200px, 210px);
     margin-left: auto;
     margin-right: auto;
     position: relative;
     top: 400px;
-    width: 200px;
     margin-bottom: 160px;
   }
   &__social {

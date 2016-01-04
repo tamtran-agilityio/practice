@@ -774,12 +774,11 @@
     left: 0;
   }
   .img__agencia {
-    height: 1340px;
+    @include size(100%);
     background-image: url(../images/agencia_1.png);
     background-size: cover;
     background-position: center;
     position: absolute;
-    width: 100%;
     background-attachment: scroll;
   }
   .about {
@@ -797,9 +796,8 @@
         display: none;
       }
       .bloque {
-        height: 310px;
+        @include size(100%, 310px);
         margin-top: -320px;
-        width: 100%;
       }
       h2 {
         font-size: 118px;
@@ -837,10 +835,9 @@
     &__preguntas {
       margin-top: -17px;
       li {
-        height: 450px;
+        @include size(100%, 450px);
         padding: 20px;
         padding-left: 30px;
-        width: 100%;
         margin-top: 18px;
         border: none;
       }
@@ -858,10 +855,9 @@
     .icon-mision,
     .icon-ventajas,
     .icon-metodo {
+      @include size(90px, 40px);
       position: absolute;
       top: 50%;
-      width: 90px;
-      height: 40px;
       margin-top: -225px;
       left: 65%;
     }

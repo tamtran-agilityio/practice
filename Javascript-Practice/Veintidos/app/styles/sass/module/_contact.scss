@@ -1,11 +1,10 @@
 .contacto {
+  @include size(100%, 530px);
   position: fixed;
   z-index: 2000;
   background-color: #FCFCFC;
   padding: 45px;
-  height: 530px;
   top: -530px;
-  width: 100%;
   -webkit-transition: all .4s cubic-bezier(0.93,-0.01,0,1.02);
   -moz-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
   -o-transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
@@ -49,16 +48,15 @@
       font-size: 16px;
     }
     h6 {
+      @include size(230px, 100px);
       display: block;
       float: left;
       position: relative;
       border-bottom: none;
       border-top: none;
-      width: 230px;
       padding-left: 20px;
       top: -20px;
       left: -20px;
-      height: 100px;
     }
   }
   h3 {
@@ -83,26 +81,23 @@
   }
 }
 .cerrar {
+  @include size(50px);
   position: relative;
   float: right;
-  width: 50px;
-  height: 50px;
   border: solid 1px;
   cursor: pointer;
 }
 .clientes {
+  @include size(205px, 140px);
   margin-bottom: 70px;
-  width: 205px;
   padding: 30px;
-  height: 140px;
   display: block;
   position: relative;
 }
 .colaboradores {
+  @include size(290px, 140px);
   margin-bottom: 70px;
-  width: 290px;
   padding: 30px;
-  height: 140px;
   display: block;
   position: relative;
 }
@@ -120,6 +115,7 @@
   transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
 }
 .aspa2 {
+  @include size(15px, 1px);
   height: 1px;
   width: 15px;
   background-color: #4A4A4C;
@@ -133,12 +129,11 @@
   transition: all .4s cubic-bezier(0.26,0,0.09,0.99);
 }
 .mascara-contact {
+  @include size(50%, 90%);
   -webkit-transition: all .8s cubic-bezier(0.165,0.84,0.44,1)0.3s;
   transition: all .8s cubic-bezier(0.165,0.84,0.44,1)0.3s;
-  height: 90%;
   position: absolute;
   background-color: #FCFCFC;
-  width: 50%;
   right: 50%;
 }
 .mascara-contact.slow {
@@ -164,6 +159,7 @@
   }
 }
 .raya {
+  @include size(36px, 3px);
   width: 36px;
   background-color: #4A4A4C;
   height: 3px;

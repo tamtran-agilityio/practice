@@ -5,6 +5,8 @@ $(function () {
 
   // call function amination
   $('.animsition').animsition();
+  var element = document.querySelector('img');
+  // Intense(element);
   $(window).load(function() {
     // Animate loader off screen
     setTimeout(function() {
@@ -36,6 +38,7 @@ $(function () {
       width: o,
       height: t
     });
+    galleryHeight();
   });
   $(window).load(function() {
     var e = $(window).height();
@@ -313,6 +316,13 @@ $(function () {
     $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)');
   }, 2000);
 
+  // function of set height instashow-gallery-item
+  function galleryHeight() {
+    var itemHeight = $('.instashow-gallery-item').width();
+    $('.instashow-gallery-item').css('height', itemHeight);
+  }
+
+  galleryHeight();
   // set slider page works
   function coverSlider() {
     $('.cover-slider').each(function() {

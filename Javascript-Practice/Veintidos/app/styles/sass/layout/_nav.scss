@@ -4,8 +4,7 @@
   height: 100px;
 }
 header {
-  height: 100%;
-  width: 100%;
+  @include size(100%);
   position: fixed;
   z-index: 2000;
   nav {
@@ -63,10 +62,9 @@ header {
   }
 }
 .show {
+  @include size(40px);
   position: fixed;
   top: 10px;
-  height: 40px;
-  width: 40px;
   right: 10px;
   border-radius: 2px;
   z-index: 9999;
@@ -103,8 +101,7 @@ header {
   -o-transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   transition: all .8s cubic-bezier(0.26,0,0.09,0.99);
   img {
-    width: 40%;
-    height: auto;
+    @include size(40%, auto);
     transform: rotate(360deg);
     transition: all 6.5s ease;
     position: relative;
