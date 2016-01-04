@@ -49,25 +49,21 @@
   right: 150px;
 }
 .pogoSlider-nav {
+  @include size(94px, 30px);
   left: 50%;
   transform: translateX(-50%);
-  height: 30px;
-  width: 94px;
   position: absolute;
   padding: 0;
   margin: 0;
   z-index: 10;
-  width: 115px;
-  height: 32px;
   bottom: 44px;
   li {
+    @include size(30px);
     display: inline;
     display: inline-block;
     border: solid 1px #818181;
     margin-left: -1px;
-    width: 30px;
     position: relative;
-    height: 30px;
     cursor: pointer;
     .pogoSlider-nav-btn {
       background: #818181;

@@ -17,24 +17,24 @@ block content
     // section slider
     .wrapp-cases
       .til-section
-        h6.animated.flipInY.visible.hidden.fadeInUp  Cases
+        h6 Cases
         .line-scroll
       section#cases
-        .pogoSlider-slide.mediaslider#casoUno
-          .pogoSlider-slide-element
-            h3.name__title HENRY SAIZ
-            .line__enlarge
-            a(href="#") Ver caso
-        .pogoSlider-slide.mediaslider#casoDos
-          .pogoSlider-slide-element
-            h3.name__title MUGAKO FESTIVAL
-            .line__enlarge
-            a(href="#") Ver caso
-        .pogoSlider-slide.mediaslider#casoTres
-          .pogoSlider-slide-element
-            h3.name__title BLUE DOOR
-            .line__enlarge
-            a(href="#") Ver caso
+        //- .pogoSlider-slide.mediaslider#casoUno
+        //-   .pogoSlider-slide-element
+        //-     h3.name__title HENRY SAIZ
+        //-     .line__enlarge
+        //-     a(href="#") Ver caso
+        //- .pogoSlider-slide.mediaslider#casoDos
+        //-   .pogoSlider-slide-element
+        //-     h3.name__title MUGAKO FESTIVAL
+        //-     .line__enlarge
+        //-     a(href="#") Ver caso
+        //- .pogoSlider-slide.mediaslider#casoTres
+        //-   .pogoSlider-slide-element
+        //-     h3.name__title BLUE DOOR
+        //-     .line__enlarge
+        //-     a(href="#") Ver caso
     // section cases
     section.latest__works.clearfix
       .til-section
@@ -48,6 +48,9 @@ block content
           .latest__img
             .tilt
               .tilt__back.tilt__muga
+              .tilt__front
+              .tilt__front
+              .tilt__front
           .animatedBorderSprite.animatedBorderSprite-top
           .animatedBorderSprite.animatedBorderSprite-bottom
           .animatedBorderSprite
@@ -59,6 +62,10 @@ block content
           .latest__img
             .tilt
               .tilt__back.tilt__ruben
+              .tilt__front
+              .tilt__front
+              .tilt__front
+              .tilt__front
     // service
     section.services.clearfix
       .mascara-trama
@@ -70,25 +77,9 @@ block content
       .til-section
         h6.animated.flipInY.visible.hidden.fadeInUp  Services
         .line-scroll
-      ul.services__list
-        li.services__item.services__web
-          h3 Web Sites
-        li.services__item.services__landing
-          h3 Landing Pages
-        li.services__item.services__wordspress
-          h3 Wordpress
-        li.services__item.services__branding
-          h3 Branding
-        li.services__item.services__corporate
-          h3 Corporate Identity
-        li.services__item.services__advertising
-          h3 Advertising
+      // list item services
+      ul#services.services__list
+  // footer page home
   footer.footer__block
-    ul.footer__social
-      li
-        a(herf='https://www.facebook.com/22grad2')
-          img(src='../images/iconon-fb.png' alt='facebook')
-      li
-        a(herf='href="https://twitter.com/22GRA2"')
-          img(src='../images/icon-twitter.png' alt='twitter')
+    ul#footerSocial.footer__social
 

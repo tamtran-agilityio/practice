@@ -1,0 +1,57 @@
+{
+  "services": [
+    {
+      "title": "Web Sites",
+      "image": "../images/home/service-web.jpg"
+    },
+    {
+      "title": "Landing Pages",
+      "image": "../images/home/service-landing.jpg"
+    },
+    {
+      "title": "Wordpress",
+      "image": "../images/home/service-wp.jpg"
+    },
+    {
+      "title": "Branding",
+      "image": "../images/home/service-branding.jpg"
+    },
+    {
+      "title": "Corporate Identity",
+      "image": "../images/home/service-identity.jpg"
+    },
+    {
+      "title": "Advertising",
+      "image": "../images/home/service-pages.jpg"
+    }
+  ],
+  "footer":[
+    {
+      "link":"https://www.facebook.com/22grad2",
+      "image":"../images/iconon-fb.png",
+      "alt":"facebook"
+    },
+    {
+      "link":"https://twitter.com/22GRA2",
+      "image":"../images/icon-twitter.png",
+      "alt":"twitter"
+    }
+  ],
+  "slider":[
+    {
+      "image":"../images/small/work-home-henry-saiz.jpg",
+      "title":"HENRY SAIZ",
+      "nameLink":"Ver caso"
+    },
+    {
+      "image":"../images/small/work-home-mugako.jpg",
+      "title":"MUGAKO FESTIVAL",
+      "nameLink":"Ver caso"
+    },
+    {
+      "image":"../images/small/work-home-apersonal.jpg",
+      "title":"BLUE DOOR",
+      "nameLink":"Ver caso"
+    }
+  ]
+}
