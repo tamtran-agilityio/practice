@@ -766,4 +766,9 @@ $(function () {
       opacity: 1
     })
   });
+
+  var elements = document.querySelectorAll( '.landing__image' );
+  Intense( elements );
+  var elementsPages = document.querySelectorAll( '.pages__image' );
+  Intense( elementsPages );
 }(jQuery));

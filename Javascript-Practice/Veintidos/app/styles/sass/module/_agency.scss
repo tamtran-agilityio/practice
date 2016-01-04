@@ -425,5 +425,86 @@
         @include size(100%);
       }
     }
+    a {
+      display: block;
+      height: 100%;
+      position: relative;
+      &:hover {
+        .instashow-gallery-media-cover {
+          opacity: 1;
+        }
+        .instashow-gallery-media-cover {
+          visibility: visible;
+          opacity: 1;
+        }
+        .instashow-gallery-media-info {
+          visibility: visible;
+          opacity: 1;
+          -webkit-transform: translateX(-50%) translateY(-47%);
+          transform: translateX(-50%) translateY(-47%);
+        }
+      }
+    }
+  }
+  .instashow-gallery-media-cover {
+    background: rgb(250, 84, 58);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  .instashow-gallery-media-info {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    z-index: 3;
+    width: 80%;
+    max-height: 80%;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(-40%);
+    transform: translateX(-50%) translateY(-40%);
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  .instashow-gallery-media-info-counter {
+    color: $white;
+    em {
+      font-style: normal;
+      margin-left: 0.4em;
+      font-size: 16px;
+    }
+  }
+  .instashow-icon {
+    font-family: 'Iconsfont';
+    font-size: 160%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .instashow-icon-like {
+    &:before {
+      content: '\e601';
+    }
+  }
+  .instashow-icon-comment {
+     &:before {
+      content: '\e600';
+    }
+  }
+  .instashow-gallery-media-info-description {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: 12%;
+    text-transform: lowercase;
+    letter-spacing: 1px;
   }
 }

@@ -507,3 +507,14 @@
     margin-left: 40px;
   }
 }
+
+figure {
+  img {
+    width: 60%!important;
+    height: auto;
+    margin-left: auto;
+    position: relative;
+    left: 50%;
+    margin-left: -30%;
+  }
+}
