@@ -2,7 +2,6 @@
 $(function () {
   'use strict';
 
-
   // call function amination
   $('.animsition').animsition();
   var element = document.querySelector('img');
@@ -30,6 +29,22 @@ $(function () {
     });
   });
 
+  // function of set height instashow-gallery-item
+  galleryHeight();
+
+  // excute function slider page index
+  $('#cases').pogoSlider({
+    autoplay: true,
+    autoplayTimeout: 1500,
+    displayProgess: true,
+    preserveTargetSize: true,
+    targetWidth: 1000,
+    targetHeight: 300,
+    responsive: true,
+    slideTransition: 'verticalSlide',
+    generateButton: true
+  }).data('plugin_pogoSlider');
+
   // set size block when resize
   $(window).bind('resize', function() {
     var t = $(window).height();
@@ -39,6 +54,7 @@ $(function () {
       height: t
     });
     galleryHeight();
+    hoverItem();
     $(document).ready(function() {
       if ($(window).width() >= 1024) {
         $( window ).scroll(function() {
@@ -69,6 +85,62 @@ $(function () {
     });
   });
 
+  // excute function slider
+  coverSlider();
+
+  // excute function set title link active
+  setPageActive('index','.link-home');
+  setPageActive('works','.link-work');
+  setPageActive('agency','.link-agency');
+
+  // excute show image when click
+  var elements = document.querySelectorAll( '.landing__image' );
+  Intense( elements );
+  var elementsPages = document.querySelectorAll( '.pages__image' );
+  Intense( elementsPages );
+
+  // handle icon menu
+  $('.menu-icon').click(function() {
+    $('header').css({
+      top: '0px'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(90deg)'
+    });
+    $('.show').css({
+      display: 'block'
+    });
+  });
+  $('.show').click(function() {
+    $('header').css({
+      top: '-100%'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(0deg)'
+    });
+    $('.show').css({
+      display: 'none'
+    });
+  });
+  $('.open-contact').click(function() {
+    $('.contacto').addClass('open');
+    $('.mascara-contact').addClass('slow');
+    $('.nav').addClass('open');
+    $('main').css({
+      opacity: .1,
+      'pointer-events': 'none'
+    });
+  });
+  $('.cerrar').click(function() {
+    $('.contacto').removeClass('open');
+    $('.nav').removeClass('open');
+    $('main').css({
+        opacity: 1,
+        'pointer-events': 'auto'
+    });
+  });
+
+  /************** Function helper *************/
   // function set border of element
   $(function($) {
     $.fn.extend({
@@ -154,7 +226,9 @@ $(function () {
     })
   }(jQuery));
 
-  $(function() {
+  $(document).ready(function(){
+
+    // add border
     $('li.latest__item').animatedBorder({
       size: 1,
       color: '#4a4a4c',
@@ -181,6 +255,7 @@ $(function () {
         hover: !1
     })
   });
+
 
   /* VIEWPORT CHECKER */
   (function($){
@@ -236,6 +311,7 @@ $(function () {
   })(jQuery);
 
   $(document).ready(function(){
+    // show item when scroll next
     $('.mascara-trama').viewportChecker({
       classToAdd: 'contraer',
       offset: 150
@@ -302,19 +378,6 @@ $(function () {
     })
   });
 
-  // excute function slider page index
-  $('#cases').pogoSlider({
-    autoplay: true,
-    autoplayTimeout: 1500,
-    displayProgess: true,
-    preserveTargetSize: true,
-    targetWidth: 1000,
-    targetHeight: 300,
-    responsive: true,
-    slideTransition: 'verticalSlide',
-    generateButton: true
-  }).data('plugin_pogoSlider');
-
   setInterval(function() {
     // Remove .active class from the active li, select next li sibling.
     var next = $('ul.heading__rotate li.active').removeClass('active').next('li');
@@ -337,7 +400,6 @@ $(function () {
     $('.instashow-gallery-item').css('height', itemHeight);
   }
 
-  galleryHeight();
   // set slider page works
   function coverSlider() {
     $('.cover-slider').each(function() {
@@ -364,255 +426,216 @@ $(function () {
     }
   }
 
-  coverSlider();
-
-  setPageActive('index','.link-home');
-  setPageActive('works','.link-work');
-  setPageActive('agency','.link-agency');
-
-  // handle icon menu
-  $('.menu-icon').click(function() {
-    $('header').css({
-      top: '0px'
-    });
-    $('.menu-icon').css({
-      transform: 'rotate(90deg)'
-    });
-    $('.show').css({
-      display: 'block'
-    });
-  });
-  $('.show').click(function() {
-    $('header').css({
-      top: '-100%'
-    });
-    $('.menu-icon').css({
-      transform: 'rotate(0deg)'
-    });
-    $('.show').css({
-      display: 'none'
-    });
-  });
-  $('.open-contact').click(function() {
-    $('.contacto').addClass('open');
-    $('.mascara-contact').addClass('slow');
-    $('.nav').addClass('open');
-    $('main').css({
-      opacity: .1,
-      'pointer-events': 'none'
-    });
-  });
-  $('.cerrar').click(function() {
-    $('.contacto').removeClass('open');
-    $('.nav').removeClass('open');
-    $('main').css({
-        opacity: 1,
-        'pointer-events': 'auto'
-    });
-  });
-
   // set hover image when sreen larger
-  $(window).width() >= 1024 && $(window).scroll(function() {
-    $('li.web__list--mugaku').hover(function() {
-      $('li.web__list--mugaku').css({
-          width: '60.1%',
-          height: '60.1%',
-          'z-index': 1,
-          'background-image': 'url(./images/work-thumb-mugako-b.jpg)'
-      }),
-      $('li.web__list--mugaku .web__name').addClass('show');
-      $('li.web__list--mugaku .web__name h2').addClass('show');
-      $('li.web__list--mugaku .web__name').removeClass('showhide');
-      $('li.web__list--mugaku .web__name h2').removeClass('showhide');
-      $('li.web__list--henry').css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%'
-      }),
-      $('li.web__list--crea').css({
-          height: '40.1%',
-          width: '60.1%'
-      }),
-      $('li.web__list--room').css({
-          height: '40.1%',
-          width: '40.1%'
-      })
-    }, function() {
-        $('li.web__list--mugaku').css({
-            width: '50%',
-            height: '50%',
-            'z-index': 0,
-            'background-image': 'url(./images/work-thumb-mugako-a.jpg)'
-        });
-        $('li.web__list--mugaku .web__name').addClass('showhide');
-        $('li.web__list--mugaku .web__name h2').addClass('showhide');
-        $('li.web__list--mugaku .web__name').removeClass('show');
-        $('li.web__list--mugaku .web__name h2').removeClass('show');
-        $('li.web__list--henry').css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
+  function hoverItem() {
+    var $itemMugaku = $('li.web__list--mugaku');
+    var $itemCrea = $('li.web__list--crea');
+    var $itemHenry = $('li.web__list--henry');
+    var $itemRoom = $('li.web__list--room' );
+    $(window).width() >= 1024 && $(window).scroll(function() {
+      $itemMugaku.hover(function() {
+        $itemMugaku.css({
+            width: '60.1%',
+            height: '60.1%',
+            'z-index': 1,
+            'background-image': 'url(./images/work-thumb-mugako-b.jpg)'
         }),
-        $('li.web__list--crea').css({
-            width: '50%',
-            height: '50%'
+        $('li.web__list--mugaku .web__name').addClass('show');
+        $('li.web__list--mugaku .web__name h2').addClass('show');
+        $('li.web__list--mugaku .web__name').removeClass('showhide');
+        $('li.web__list--mugaku .web__name h2').removeClass('showhide');
+        $itemHenry.css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
         }),
-        $('li.web__list--room').css({
-            width: '50%',
-            height: '50%'
+        $itemCrea.css({
+            height: '40.1%',
+            width: '60.1%'
+        }),
+        $itemRoom.css({
+            height: '40.1%',
+            width: '40.1%'
         })
-      });
+      }, function() {
+          $itemMugaku.css({
+              width: '50%',
+              height: '50%',
+              'z-index': 0,
+              'background-image': 'url(./images/work-thumb-mugako-a.jpg)'
+          });
+          $('li.web__list--mugaku .web__name').addClass('showhide');
+          $('li.web__list--mugaku .web__name h2').addClass('showhide');
+          $('li.web__list--mugaku .web__name').removeClass('show');
+          $('li.web__list--mugaku .web__name h2').removeClass('show');
+          $itemHenry.css({
+              width: '50%',
+              height: '50%',
+              'background-size': '100%'
+          }),
+          $itemCrea.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemRoom.css({
+              width: '50%',
+              height: '50%'
+          })
+        });
 
-    $('li.web__list--henry').hover(function() {
-        $('li.web__list--mugaku').css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%',
-            'z-index': 1
-        }),
-        $('li.web__list--henry').css({
-            width: '60.1%',
-            'z-index': 1,
-            height: '60.1%',
-            'background-image': 'url(../images/work-thumb-henry-b.jpg)'
-        }),
-        $('li.web__list--crea').css({
-            height: '40.1%',
-            width: '40.1%'
-        }),
-        $('li.web__list--room').css({
-            height: '40.1%',
-            width: '60.1%'
-        })
-        $('li.web__list--henry .web__name').addClass('show');
-        $('li.web__list--henry .web__name h2').addClass('show');
-        $('li.web__list--henry .web__name').removeClass('showhide');
-        $('li.web__list--henry .web__name h2').removeClass('showhide');
-    }, function() {
-        $('li.web__list--mugaku').css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%',
-            'z-index': 0
-        }),
-        $('li.web__list--henry').css({
-            width: '50%',
-            'z-index': 0,
-            height: '50%',
-            'background-image': 'url(../images/work-thumb-henry-a.jpg)'
-        }),
-        $('li.web__list--crea').css({
-            width: '50%',
-            height: '50%'
-        }),
-        $('li.web__list--room').css({
-            width: '50%',
-            height: '50%'
+      $itemHenry.hover(function() {
+          $itemMugaku.css({
+              width: '40.1%',
+              height: '60.1%',
+              'background-size': '150%',
+              'z-index': 1
+          }),
+          $itemHenry.css({
+              width: '60.1%',
+              'z-index': 1,
+              height: '60.1%',
+              'background-image': 'url(../images/work-thumb-henry-b.jpg)'
+          }),
+          $itemCrea.css({
+              height: '40.1%',
+              width: '40.1%'
+          }),
+          $itemRoom.css({
+              height: '40.1%',
+              width: '60.1%'
+          })
+          $('li.web__list--henry .web__name').addClass('show');
+          $('li.web__list--henry .web__name h2').addClass('show');
+          $('li.web__list--henry .web__name').removeClass('showhide');
+          $('li.web__list--henry .web__name h2').removeClass('showhide');
+      }, function() {
+          $itemMugaku.css({
+              width: '50%',
+              height: '50%',
+              'background-size': '100%',
+              'z-index': 0
+          }),
+          $itemHenry.css({
+              width: '50%',
+              'z-index': 0,
+              height: '50%',
+              'background-image': 'url(../images/work-thumb-henry-a.jpg)'
+          }),
+          $itemCrea.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemRoom.css({
+              width: '50%',
+              height: '50%'
+          });
+          $('li.web__list--henry .web__name').addClass('showhide');
+          $('li.web__list--henry .web__name h2').addClass('showhide');
+          $('li.web__list--henry .web__name').removeClass('show');
+          $('li.web__list--henry .web__name h2').removeClass('show');
         });
-        $('li.web__list--henry .web__name').addClass('showhide');
-        $('li.web__list--henry .web__name h2').addClass('showhide');
-        $('li.web__list--henry .web__name').removeClass('show');
-        $('li.web__list--henry .web__name h2').removeClass('show');
+      $itemCrea.hover(function() {
+          $itemMugaku.css({
+              height: '40.1%',
+              width: '60.1%'
+          }),
+          $itemHenry.css({
+              height: '40.1%',
+              width: '40.1%'
+          }),
+          $itemCrea.css({
+              width: '60.1%',
+              'z-index': 1,
+              height: '61%',
+              'background-image': 'url(./images/work-thumb-portfolio-b.jpg)'
+          }),
+          $itemRoom.css({
+              width: '40.1%',
+              height: '60.1%',
+              'background-size': '150%'
+          });
+          $('li.web__list--crea .web__name').addClass('show');
+          $('li.web__list--crea .web__name h2').addClass('show');
+          $('li.web__list--crea .web__name').removeClass('showhide');
+          $('li.web__list--crea .web__name h2').removeClass('showhide');
+      }, function() {
+          $itemMugaku.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemHenry.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemCrea.css({
+              width: '50%',
+              'z-index': 0,
+              height: '50%',
+              'background-image': 'url(./images/work-thumb-portfolio-a.jpg)'
+          }),
+          $itemRoom.css({
+              width: '50%',
+              height: '50%',
+              'background-size': '100%'
+          });
+          $('li.web__list--crea .web__name').addClass('showhide');
+          $('li.web__list--crea .web__name h2').addClass('showhide');
+          $('li.web__list--crea .web__name').removeClass('show');
+          $('li.web__list--crea .web__name h2').removeClass('show');
       });
-    $('li.web__list--crea').hover(function() {
-        $('li.web__list--mugaku').css({
-            height: '40.1%',
-            width: '60.1%'
-        }),
-        $('li.web__list--henry').css({
-            height: '40.1%',
-            width: '40.1%'
-        }),
-        $('li.web__list--crea').css({
-            width: '60.1%',
-            'z-index': 1,
-            height: '61%',
-            'background-image': 'url(./images/work-thumb-portfolio-b.jpg)'
-        }),
-        $('li.web__list--room').css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%'
+      $itemRoom.hover(function() {
+          $itemMugaku.css({
+              height: '40.1%',
+              width: '40.1%'
+          }),
+          $itemHenry.css({
+              height: '40.1%',
+              width: '60.1%'
+          }),
+          $itemRoom.css({
+              width: '60.1%',
+              height: '60.1%',
+              'z-index': 1,
+              'background-image': 'url(./images/work-thumb-apersonal-b.jpg)'
+          }),
+          $itemCrea.css({
+              width: '40.1%',
+              height: '60.1%',
+              'background-size': '150%'
+          });
+          $('li.web__list--room .web__name').addClass('show');
+          $('li.web__list--room .web__name h2').addClass('show');
+          $('li.web__list--room .web__name').removeClass('showhide');
+          $('li.web__list--room .web__name h2').removeClass('showhide');
+      }, function() {
+          $itemMugaku.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemHenry.css({
+              width: '50%',
+              height: '50%'
+          }),
+          $itemRoom.css({
+              width: '50%',
+              height: '50%',
+              'z-index': 0,
+              'background-image': 'url(./images/work-thumb-apersonal-a.jpg)'
+          }),
+          $itemCrea.css({
+              width: '50%',
+              height: '50%',
+              'background-size': '100%'
+          });
+          $('li.web__list--room .web__name').addClass('showhide');
+          $('li.web__list--room .web__name h2').addClass('showhide');
+          $('li.web__list--room .web__name').removeClass('show');
+          $('li.web__list--room .web__name h2').removeClass('show');
         });
-        $('li.web__list--crea .web__name').addClass('show');
-        $('li.web__list--crea .web__name h2').addClass('show');
-        $('li.web__list--crea .web__name').removeClass('showhide');
-        $('li.web__list--crea .web__name h2').removeClass('showhide');
-    }, function() {
-        $('li.web__list--mugaku').css({
-            width: '50%',
-            height: '50%'
-        }),
-        $('li.web__list--henry').css({
-            width: '50%',
-            height: '50%'
-        }),
-        $('li.web__list--crea').css({
-            width: '50%',
-            'z-index': 0,
-            height: '50%',
-            'background-image': 'url(./images/work-thumb-portfolio-a.jpg)'
-        }),
-        $('li.web__list--room').css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
-        });
-        $('li.web__list--crea .web__name').addClass('showhide');
-        $('li.web__list--crea .web__name h2').addClass('showhide');
-        $('li.web__list--crea .web__name').removeClass('show');
-        $('li.web__list--crea .web__name h2').removeClass('show');
-    });
-    $('li.web__list--room').hover(function() {
-        $('li.web__list--mugaku').css({
-            height: '40.1%',
-            width: '40.1%'
-        }),
-        $('li.web__list--henry').css({
-            height: '40.1%',
-            width: '60.1%'
-        }),
-        $('li.web__list--room').css({
-            width: '60.1%',
-            height: '60.1%',
-            'z-index': 1,
-            'background-image': 'url(./images/work-thumb-apersonal-b.jpg)'
-        }),
-        $('li.web__list--crea').css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%'
-        });
-        $('li.web__list--room .web__name').addClass('show');
-        $('li.web__list--room .web__name h2').addClass('show');
-        $('li.web__list--room .web__name').removeClass('showhide');
-        $('li.web__list--room .web__name h2').removeClass('showhide');
-    }, function() {
-        $('li.web__list--mugaku').css({
-            width: '50%',
-            height: '50%'
-        }),
-        $('li.web__list--henry').css({
-            width: '50%',
-            height: '50%'
-        }),
-        $('li.web__list--room').css({
-            width: '50%',
-            height: '50%',
-            'z-index': 0,
-            'background-image': 'url(./images/work-thumb-apersonal-a.jpg)'
-        }),
-        $('li.web__list--crea').css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
-        });
-        $('li.web__list--room .web__name').addClass('showhide');
-        $('li.web__list--room .web__name h2').addClass('showhide');
-        $('li.web__list--room .web__name').removeClass('show');
-        $('li.web__list--room .web__name h2').removeClass('show');
-      });
-    })
+      })
+  }
+
+  hoverItem();
   // set parallax scroll
   function parallaxScroll() {
     var e = $(window).scrollTop();
@@ -800,8 +823,4 @@ $(function () {
     })
   });
 
-  var elements = document.querySelectorAll( '.landing__image' );
-  Intense( elements );
-  var elementsPages = document.querySelectorAll( '.pages__image' );
-  Intense( elementsPages );
 }(jQuery));
