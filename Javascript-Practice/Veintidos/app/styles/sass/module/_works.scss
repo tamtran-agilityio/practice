@@ -185,7 +185,7 @@
     left: 5%;
     @include transition(all .5s cubic-bezier(0.165,0.84,0.44,1));
     text-align: center;
-    // overflow: hidden;
+    overflow: hidden;
     padding-top: 0;
     h2 {
       font-size: 40px;
