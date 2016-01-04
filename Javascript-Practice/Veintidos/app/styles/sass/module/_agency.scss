@@ -175,7 +175,7 @@
     }
   }
   &__largue {
-    width: 250px;
+    width: 0;
     float: right;
     display: block;
     position: relative;
@@ -207,6 +207,9 @@
       opacity: 1;
     }
   }
+}
+.largue {
+  width: 250px;
 }
 .wrapp {
   position: relative;

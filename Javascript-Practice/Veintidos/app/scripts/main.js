@@ -39,6 +39,13 @@ $(function () {
       height: t
     });
     galleryHeight();
+    $(document).ready(function() {
+      if ($(window).width() >= 1024) {
+        $( window ).scroll(function() {
+          menuScroll();
+        });
+      }
+    });
   });
   $(window).load(function() {
     var e = $(window).height();
@@ -285,6 +292,14 @@ $(function () {
       classToAdd: 'up',
       offset: 150
     });
+    $('.bloque').addClass('hidden').viewportChecker({
+        classToAdd: 'visible animated fadeInUp',
+        offset: 200
+    });
+    $('.about__largue').viewportChecker({
+        classToAdd: 'largue',
+        offset: 250
+    })
   });
 
   // excute function slider page index
@@ -574,10 +589,29 @@ $(function () {
         });
       });
     })
+  // set parallax scroll
   function parallaxScroll() {
     var e = $(window).scrollTop();
     $('.parallax').css('top', 0 - 0.15 * e + 'px');
   }
+
+  // function of show menu when scroll
+  function menuScroll() {
+    var heightScroll = $(window).scrollTop();
+    var heightMenu = $('header').height();
+    if (heightScroll > heightMenu) {
+      $('header').css('top', '-100px');
+    } else {
+      $('header').css('top', '0');
+    }
+  }
+  $(document).ready(function(){
+    if ($(window).width() >= 1024) {
+      $( window ).scroll(function() {
+        menuScroll();
+      });
+    }
+  })
 
   // hover images landing
   $('li.landing__race').hover(function() {
