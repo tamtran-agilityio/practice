@@ -146,117 +146,7 @@ $(function () {
     });
   });
 
-  /************** Function helper *************/
-
-  // function get data to data.json
-  function getData(source, element) {
-
-    $.get('../data/data.json', function(data) {
-
-      // compile the template
-      var template = Handlebars.compile(source);
-
-      // pass our data to the template
-      var html = template(data);
-      element.prepend(html);
-    });
-  };
-
-  // render article services with handlebarjs
-  function renderItem(pathPage, idLoad ) {
-
-    // DOM HTML prepend id services at home page
-    $.get( pathPage, function(data) {
-
-      var $renderElement = $(idLoad);
-      getData(data, $renderElement);
-    });
-  };
-  // function set border of element
-  $(function($) {
-    $.fn.extend({
-      repositionBorders: function() {
-        $('body div.animatedBorder').each(function() {
-          var t = $('.animatedBorderSprite-top', $(this)).css('background-color');
-          var o = $('.animatedBorderSprite-top', $(this)).height();
-          $(this).animatedBorder().animatedBorder({
-            size: o,
-            color: t
-          })
-        });
-      },
-      animatedBorder: function(t) {
-        var o, s = {
-          size: 2,
-          color: '#6699CC',
-          hover: !1
-        };
-        return t = $.extend(s, t),
-        this.each(function() {
-          switch (t) {
-            case 'hide':
-              $(this).children('.animatedBorderSprite').fadeOut('slow');
-              break;
-            case 'show':
-              $(this).children('.animatedBorderSprite').fadeIn('fast');
-              break;
-            case 'destroy':
-              $(this).children('.animatedBorderSprite').remove(),
-              $(this).unbind('mouseenter mouseleave');
-              break;
-            default:
-            if ($(this).hasClass('animatedBorder'))
-              return $('.animatedBorderSprite', $(this)).remove(),
-              void $(this).removeClass('animatedBorder');
-            $(this).addClass('animatedBorder'),
-            o = {
-              height: $(this).innerHeight(),
-              width: $(this).innerWidth()
-            },
-            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-top').css({
-              top: -t.size,
-              left: -t.size,
-              width: o.width + 2 * t.size,
-              height: t.size,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-bottom').css({
-              bottom: -t.size,
-              left: -t.size,
-              width: o.width + 2 * t.size,
-              height: t.size,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite').css({
-              top: 0,
-              left: -t.size,
-              width: t.size,
-              height: o.height,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite').css({
-              top: 0,
-              right: -t.size,
-              width: t.size,
-              height: o.height,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            t.hover && ($(this).hover(function() {
-              $(this).children('.animatedBorderSprite').fadeIn('fast');
-            }, function() {
-              $(this).children('.animatedBorderSprite').fadeOut('slow');
-            }),
-            $(this).children('.animatedBorderSprite').hide());
-          }
-        })
-      }
-    })
-  }(jQuery));
-
+  // set view and border
   $(document).ready(function(){
     setTimeout( function() {
     // add border
@@ -285,65 +175,8 @@ $(function () {
         color: '#4a4a4c',
         hover: !1
     })
-
     }, 1600);
-  });
 
-
-  /* VIEWPORT CHECKER */
-  (function($){
-    $.fn.viewportChecker = function(useroptions){
-      // Define options and extend with user
-      var options = {
-        classToAdd: 'visible',
-        offset: 100
-        // callbackFunction: function(elem){}
-      };
-      $.extend(options, useroptions);
-
-      // Cache the given element and height of the browser
-      var $elem = this,
-      windowHeight = $(window).height();
-
-      this.checkElements = function(){
-      // Set some vars to check with
-        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html'),
-        viewportTop = $(scrollElem).scrollTop(),
-        viewportBottom = (viewportTop + windowHeight);
-
-        $elem.each(function(){
-          var $obj = $(this);
-          // If class already exists; quit
-          if ($obj.hasClass(options.classToAdd)) {
-          return;
-        }
-
-        // define the top position of the element and include the offset which makes is appear earlier or later
-        var elemTop = Math.round( $obj.offset().top ) + options.offset,
-        elemBottom = elemTop + ($obj.height());
-
-        // Add class if in viewport
-        if ((elemTop < viewportBottom) && (elemBottom > viewportTop)) {
-          $obj.addClass(options.classToAdd);
-
-          // Do the callback function. Callback wil send the jQuery object as parameter
-          // options.callbackFunction($obj);
-        }
-      });
-    };
-
-    // Run checkelements on load and scroll
-    $(window).scroll(this.checkElements);
-    this.checkElements();
-
-    // On resize change the height var
-    $(window).resize(function(e){
-      windowHeight = e.currentTarget.innerHeight;
-    });
-    };
-  })(jQuery);
-
-  $(document).ready(function(){
     // show item when scroll next
     setTimeout(function () {
       $('.mascara-trama').viewportChecker({
@@ -411,7 +244,45 @@ $(function () {
           offset: 250
       })
     }, 1600);
+
+    // excute function
+    $('#heading .rotate').textrotator({
+      animation: 'flip',
+      speed: 3000
+    });
+
+    // set hover image when sreen larger
+    setTimeout(function() {
+      hoverItem();
+    }, 2000);
   });
+
+  /************** Function helper *************/
+
+  // function get data to data.json
+  function getData(source, element) {
+
+    $.get('../data/data.json', function(data) {
+
+      // compile the template
+      var template = Handlebars.compile(source);
+
+      // pass our data to the template
+      var html = template(data);
+      element.prepend(html);
+    });
+  };
+
+  // render article services with handlebarjs
+  function renderItem(pathPage, idLoad ) {
+
+    // DOM HTML prepend id services at home page
+    $.get( pathPage, function(data) {
+
+      var $renderElement = $(idLoad);
+      getData(data, $renderElement);
+    });
+  };
 
   // function off textrotator
   !function($){
@@ -567,13 +438,141 @@ $(function () {
       });
     }
 
-  }(window.jQuery);
+    // checking show item
+    $.fn.viewportChecker = function(useroptions) {
+      // Define options and extend with user
+      var options = {
+        classToAdd: 'visible',
+        offset: 100
+        // callbackFunction: function(elem){}
+      };
+      $.extend(options, useroptions);
 
-  // excute function
-  $('#heading .rotate').textrotator({
-    animation: 'flip',
-    speed: 3000
-  });
+      // Cache the given element and height of the browser
+      var $elem = this,
+      windowHeight = $(window).height();
+
+      this.checkElements = function() {
+        // Set some vars to check with
+        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html'),
+        viewportTop = $(scrollElem).scrollTop(),
+        viewportBottom = (viewportTop + windowHeight);
+
+        $elem.each(function() {
+          var $obj = $(this);
+          // If class already exists; quit
+          if ($obj.hasClass(options.classToAdd)) {
+            return;
+          }
+
+          // define the top position of the element and include the offset which makes is appear earlier or later
+          var elemTop = Math.round( $obj.offset().top ) + options.offset,
+          elemBottom = elemTop + ($obj.height());
+
+          // Add class if in viewport
+          if ((elemTop < viewportBottom) && (elemBottom > viewportTop)) {
+            $obj.addClass(options.classToAdd);
+
+          // Do the callback function. Callback wil send the jQuery object as parameter
+          // options.callbackFunction($obj);
+          }
+        });
+      };
+
+      // Run checkelements on load and scroll
+      $(window).scroll(this.checkElements);
+      this.checkElements();
+
+      // On resize change the height var
+      $(window).resize(function(e){
+        windowHeight = e.currentTarget.innerHeight;
+      });
+    };
+
+    // add border of item
+    $.fn.extend({
+      repositionBorders: function() {
+        $('body div.animatedBorder').each(function() {
+          var t = $('.animatedBorderSprite-top', $(this)).css('background-color');
+          var o = $('.animatedBorderSprite-top', $(this)).height();
+          $(this).animatedBorder().animatedBorder({
+            size: o,
+            color: t
+          })
+        });
+      },
+      animatedBorder: function(t) {
+        var o, s = {
+          size: 2,
+          color: '#6699CC',
+          hover: !1
+        };
+        return t = $.extend(s, t),
+        this.each(function() {
+          switch (t) {
+            case 'hide':
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
+              break;
+            case 'show':
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
+              break;
+            case 'destroy':
+              $(this).children('.animatedBorderSprite').remove(),
+              $(this).unbind('mouseenter mouseleave');
+              break;
+            default:
+            if ($(this).hasClass('animatedBorder'))
+              return $('.animatedBorderSprite', $(this)).remove(),
+              void $(this).removeClass('animatedBorder');
+            $(this).addClass('animatedBorder'),
+            o = {
+              height: $(this).innerHeight(),
+              width: $(this).innerWidth()
+            },
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-top').css({
+              top: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-bottom').css({
+              bottom: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              left: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              right: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            t.hover && ($(this).hover(function() {
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
+            }, function() {
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
+            }),
+            $(this).children('.animatedBorderSprite').hide());
+          }
+        })
+      }
+    });
+
+  }(window.jQuery);
 
   // function of set height instashow-gallery-item
   function galleryHeight() {
@@ -607,10 +606,7 @@ $(function () {
     }
   }
 
-  // set hover image when sreen larger
-  setTimeout(function() {
-    hoverItem();
-  }, 2000);
+  // function of hover
   function hoverItem() {
     var $itemMugaku = $('#webItem a:eq(0)').find('li');
     var $itemCrea = $('#webItem a:eq(2)').find('li');
