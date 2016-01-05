@@ -10,7 +10,7 @@ $(function () {
   renderItem('../templates/modules/landing.html', '#lanDing');
   renderItem('../templates/modules/pages.html', '#pages');
   renderItem('../templates/modules/gallery.html', '#gallery');
-  renderItem('../templates/modules/rotating.html', '#rotating');
+  // renderItem('../templates/modules/rotating.html', '#rotating');
   // renderItem('../templates/modules/preview.html', '#preview');
   // call function amination
   $('.animsition').animsition();
@@ -413,23 +413,167 @@ $(function () {
     }, 1600);
   });
 
-  setInterval(function() {
-    // Remove .active class from the active li, select next li sibling.
-    var next = $('ul.heading__rotate li.active').removeClass('active').next('li');
-    $('ul.heading__rotate li').css('transform', 'translateX(0px) translateY(0px)');
-    // Did we reach the last element? Of so: select first sibling
-    if (!next.length) {
-      next = next.prevObject.siblings(':first');
-      // Add .active class to the li next in line.
+  // function off textrotator
+  !function($){
+
+    var defaults = {
+      animation: "dissolve",
+      separator: ",",
+      speed: 6000
+    };
+
+    $.fx.step.textShadowBlur = function(fx) {
+      $(fx.elem).prop('textShadowBlur', fx.now).css({textShadow: '0 0 ' + Math.floor(fx.now) + 'px black'});
+    };
+
+    $.fn.textrotator = function(options){
+      var settings = $.extend({}, defaults, options);
+
+      return this.each(function(){
+        var el = $(this)
+        var array = [];
+        $.each(el.text().split(settings.separator), function(key, value) {
+          array.push(value);
+        });
+        el.text(array[0]);
+
+        // animation option
+        var rotate = function() {
+          switch (settings.animation) {
+            case 'dissolve':
+              el.animate({
+                textShadowBlur:20,
+                opacity: 0
+              }, 500 , function() {
+                index = $.inArray(el.text(), array)
+                if((index + 1) == array.length) index = -1
+                el.text(array[index + 1]).animate({
+                  textShadowBlur:0,
+                  opacity: 1
+                }, 500 );
+              });
+            break;
+
+            case 'flip':
+              if(el.find(".back").length > 0) {
+                el.html(el.find(".back").html())
+              }
+
+              var initial = el.text()
+              var index = $.inArray(initial, array)
+              if((index + 1) == array.length) index = -1
+
+              el.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(el);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
+              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip").show().css({
+                "-webkit-transform": " translateX(0px) translateY(-250px)",
+                "-moz-transform": " translateX(0px) translateY(-250px)",
+                "-o-transform": " translateX(0px) translateY(-250px)",
+                "transform": " translateX(0px) translateY(-250px)",
+                "display":"block"
+              })
+
+            break;
+
+            case 'flipUp':
+              if(el.find(".back").length > 0) {
+                el.html(el.find(".back").html())
+              }
+
+              var initial = el.text()
+              var index = $.inArray(initial, array)
+              if((index + 1) == array.length) index = -1
+
+              el.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(el);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
+              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip up").show().css({
+                "-webkit-transform": " rotateX(-180deg)",
+                "-moz-transform": " rotateX(-180deg)",
+                "-o-transform": " rotateX(-180deg)",
+                "transform": " rotateX(-180deg)"
+              })
+
+            break;
+
+            case 'flipCube':
+              if(el.find(".back").length > 0) {
+                el.html(el.find(".back").html())
+              }
+
+              var initial = el.text()
+              var index = $.inArray(initial, array)
+              if((index + 1) == array.length) index = -1
+
+              el.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(el);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
+              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube").show().css({
+                "-webkit-transform": " rotateY(180deg)",
+                "-moz-transform": " rotateY(180deg)",
+                "-o-transform": " rotateY(180deg)",
+                "transform": " rotateY(180deg)"
+              })
+
+            break;
+
+            case 'flipCubeUp':
+              if(el.find(".back").length > 0) {
+                el.html(el.find(".back").html())
+              }
+
+              var initial = el.text()
+              var index = $.inArray(initial, array)
+              if((index + 1) == array.length) index = -1
+
+              el.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(el);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
+              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube up").show().css({
+                "-webkit-transform": " rotateX(180deg)",
+                "-moz-transform": " rotateX(180deg)",
+                "-o-transform": " rotateX(180deg)",
+                "transform": " rotateX(180deg)"
+              })
+
+            break;
+
+            case 'spin':
+              if(el.find(".rotating").length > 0) {
+                el.html(el.find(".rotating").html())
+              }
+              index = $.inArray(el.text(), array)
+              if((index + 1) == array.length) index = -1
+
+              el.wrapInner("<span class='rotating spin' />").find(".rotating").hide().text(array[index + 1]).show().css({
+                "-webkit-transform": " rotate(0) scale(1)",
+                "-moz-transform": "rotate(0) scale(1)",
+                "-o-transform": "rotate(0) scale(1)",
+                "transform": "rotate(0) scale(1)"
+              })
+            break;
+
+            case 'fade':
+              el.fadeOut(settings.speed, function() {
+                index = $.inArray(el.text(), array)
+                if((index + 1) == array.length) index = -1
+                el.text(array[index + 1]).fadeIn(settings.speed);
+              });
+            break;
+          }
+        };
+        setInterval(rotate, settings.speed);
+      });
     }
-    next.addClass('active');
-  }, 3000);
-  setInterval(function() {
-    $('#rotating li:eq(0)').addClass('active');
-  },1000);
-  setInterval(function() {
-    $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)');
-  }, 2000);
+
+  }(window.jQuery);
+
+  // excute function
+  $('#heading .rotate').textrotator({
+    animation: 'flip',
+    speed: 3000
+  });
 
   // function of set height instashow-gallery-item
   function galleryHeight() {
