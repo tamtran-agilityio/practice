@@ -39,7 +39,7 @@
   }
   &__agencia {
     @include size(100%);
-    background-image: url(../images/agencia_4.png);
+    background-image: url(../images/agency/agencia_4.png);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -139,7 +139,7 @@
 }
 .img__agencia {
   @include size(100%, 1340px);
-  background-image: url(../images/agencia_1.png);
+  background-image: url(../images/agency/agencia_1.png);
   background-size: cover;
   background-position: center;
   position: absolute;

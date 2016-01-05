@@ -267,24 +267,24 @@
     }
     &:nth-child(1) {
       left: 1px;
-      background-image: url(../images/landing-race.jpg);
+      background-image: url(../images/work/landing-race.jpg);
       .landing__image {
-        background-image: url(../images/work-landing-race.jpg);
+        background-image: url(../images/work/work-landing-race.jpg);
       }
     }
     &:nth-child(2) {
-      background-image: url(../images/landing-lg.jpg);
+      background-image: url(../images/work/landing-lg.jpg);
       background-position: center 72px!important;
       .landing__image {
         height: 500px;
-        background-image: url(../images/work-landing-lg.jpg);
+        background-image: url(../images/work/work-landing-lg.jpg);
       }
     }
     &:nth-child(3) {
       right: 1px;
-      background-image: url(../images/landing-sony.jpg);
+      background-image: url(../images/work/landing-sony.jpg);
       .landing__image {
-        background-image: url(../images/work-landing-sony.jpg);
+        background-image: url(../images/work/work-landing-sony.jpg);
         height: 250px;
       }
     }
@@ -292,42 +292,30 @@
       top: -1px;
       left: 1px;
       clear: left;
-      background-image: url(../images/landing-mahou.jpg);
+      background-image: url(../images/work/landing-mahou.jpg);
       .landing__image {
-        background-image: url(../images/work-landing-mahou.jpg);
+        background-image: url(../images/work/work-landing-mahou.jpg);
         height: 280px;
       }
     }
     &:nth-child(5) {
-      background-image: url(../images/landing-consejero.jpg);
+      background-image: url(../images/work/landing-consejero.jpg);
       top: 50px;
       .landing__image {
-        background-image: url(../images/work-landing-el-consejero.jpg);
+        background-image: url(../images/work/work-landing-el-consejero.jpg);
         height: 500px;
       }
     }
     &:nth-child(6) {
-      background-image: url(../images/landing-santa-teresa.jpg);
+      background-image: url(../images/work/landing-santa-teresa.jpg);
       top: 50px;
       right: 1px;
       .landing__image {
-        background-image: url(../images/work-landing-santa-teresa.jpg);
+        background-image: url(../images/work/work-landing-santa-teresa.jpg);
         height: 670px;
       }
     }
   }
-  // &__race {
-  // }
-  // &__optimus {
-  // }
-  // &__sony {
-  // }
-  // &__mahou {
-  // }
-  // &__consejero {
-  // }
-  // &__teresa {
-  // }
   &__line {
     height: 40px;
     width: 1px;
@@ -417,57 +405,57 @@
     border: solid 1px #FF6C49;
     &:nth-child(1) {
       background-position: center;
-      background-image: url(../images/grafica-wikilson.jpg);
+      background-image: url(../images/work/grafica-wikilson.jpg);
       .pages__image {
-        background-image: url(../images/grafica-wikilson-thumb.jpg);
+        background-image: url(../images/work/grafica-wikilson-thumb.jpg);
       }
     }
     &:nth-child(2) {
-      background-image: url(../images/grafica-idealista.jpg);
+      background-image: url(../images/work/grafica-idealista.jpg);
       .pages__image {
-        background-image: url(../images/grafica-idealista-thumb.jpg);
+        background-image: url(../images/work/grafica-idealista-thumb.jpg);
       }
     }
     &:nth-child(3) {
-      background-image: url(../images/grafica-suzuki-dos.jpg);
+      background-image: url(../images/work/grafica-suzuki-dos.jpg);
       .pages__image {
-        background-image: url(../images/grafica-suzuki-dos-thumb.jpg);
+        background-image: url(../images/work/grafica-suzuki-dos-thumb.jpg);
       }
     }
     &:nth-child(4) {
-      background-image: url(../images/grafica-correos.jpg);
+      background-image: url(../images/work/grafica-correos.jpg);
       .pages__image {
-        background-image: url(../images/grafica-correos-thumb.jpg);
+        background-image: url(../images/work/grafica-correos-thumb.jpg);
       }
     }
     &:nth-child(5) {
-      background-image: url(../images/grafica-la-rioja.jpg);
+      background-image: url(../images/work/grafica-la-rioja.jpg);
       .pages__image {
-        background-image: url(../images/grafica-la-rioja-thumb.jpg);
+        background-image: url(../images/work/grafica-la-rioja-thumb.jpg);
       }
     }
     &:nth-child(6) {
-      background-image: url(../images/grafica-chupachups.jpg);
+      background-image: url(../images/work/grafica-chupachups.jpg);
       .pages__image {
-        background-image: url(../images/grafica-chupachups-thumb.jpg);
+        background-image: url(../images/work/grafica-chupachups-thumb.jpg);
       }
     }
     &:nth-child(7) {
-      background-image: url(../images/grafica-groove.jpg);
+      background-image: url(../images/work/grafica-groove.jpg);
       .pages__image {
-        background-image: url(../images/grafica-groove-thumb.jpg);
+        background-image: url(../images/work/grafica-groove-thumb.jpg);
       }
     }
     &:nth-child(8) {
-      background-image: url(../images/grafica-creatividad.jpg);
+      background-image: url(../images/work/grafica-creatividad.jpg);
       .pages__image {
-        background-image: url(../images/grafica-creatividad-thumb.jpg);
+        background-image: url(../images/work/grafica-creatividad-thumb.jpg);
       }
     }
     &:nth-child(9) {
-      background-image: url(../images/grafica-suzuki-uno.jpg);
+      background-image: url(../images/work/grafica-suzuki-uno.jpg);
       .pages__image {
-        background-image: url(../images/grafica-suzuki-uno-thumb.jpg);
+        background-image: url(../images/work/grafica-suzuki-uno-thumb.jpg);
       }
     }
   }
