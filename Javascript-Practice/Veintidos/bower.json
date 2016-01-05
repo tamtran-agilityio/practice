@@ -26,6 +26,7 @@
     "jquery-ui": "~1.11.4",
     "animsition": "v4.0.1",
     "pogo-slider": "https://github.com/mdgriffin/pogo-slider.git",
-    "intense-images": "https://github.com/tholman/intense-images.git"
+    "intense-images": "https://github.com/tholman/intense-images.git",
+    "ImageTiltEffect": "https://github.com/codrops/ImageTiltEffect.git"
   }
 }

@@ -372,7 +372,7 @@
   .line-scroll {
     top: 61px;
     height: 40px;
-    margin-left: -1px;
+    margin-left: -5px;
     left: 50.1%;
   }
   .latest {
@@ -586,46 +586,46 @@
         letter-spacing: 4px;
         padding: 0;
       }
+      &:nth-child(1) {
+        .landing__image {
+          background-image: none;
+          height: 700px;
+        }
+      }
+      &:nth-child(2) {
+        .landing__image {
+          background-image: none;
+          height: 500px;
+        }
+      }
+      &:nth-child(3) {
+        .landing__image {
+          background-image: none;
+          height: 250px;
+        }
+      }
+      &:nth-child(4) {
+        .landing__image {
+          background-image: none;
+          height: 280px;
+        }
+      }
+      &:nth-child(5) {
+        .landing__image {
+          background-image: none;
+          height: 500px;
+        }
+      }
+      &:nth-child(6) {
+        .landing__image {
+          background-image: none;
+          height: 670px;
+        }
+      }
     }
     &__line {
       height: 51px;
       top: -5px;
-    }
-    &__race {
-      .landing__image {
-        background-image: none;
-        height: 700px;
-      }
-    }
-    &__optimus {
-      .landing__image {
-        background-image: none;
-        height: 500px;
-      }
-    }
-    &__sony {
-      .landing__image {
-        background-image: none;
-        height: 250px;
-      }
-    }
-    &__mahou {
-      .landing__image {
-        background-image: none;
-        height: 280px;
-      }
-    }
-    &__consejero {
-      .landing__image {
-        background-image: none;
-        height: 500px;
-      }
-    }
-    &__teresa {
-      .landing__image {
-        background-image: none;
-        height: 670px;
-      }
     }
   }
   .branding {
@@ -682,33 +682,33 @@
       border: none;
       position: relative;
       background-size: contain;
-    }
-    &__wikilson {
-      background-image: url(../images/small/grafica-wikilson.jpg);
-    }
-    &__idealista {
-      background-image: url(../images/small/grafica-idealista.jpg);
-    }
-    &__suzuki {
-      background-image: url(../images/small/grafica-suzuki-dos.jpg);
-    }
-    &__correos {
-      background-image: url(../images/small/grafica-correos.jpg);
-    }
-    &__la-rioja {
-      background-image: url(../images/small/grafica-la-rioja.jpg);
-    }
-    &__chupachups {
-      background-image: url(../images/small/grafica-chupachups.jpg);
-    }
-    &__groove {
-      background-image: url(../images/small/grafica-groove.jpg);
-    }
-    &__creatividad {
-      background-image: url(../images/small/grafica-creatividad.jpg);
-    }
-    &__suzuki-uno {
-      background-image: url(../images/small/grafica-suzuki-uno.jpg);
+      &:nth-child(1) {
+        background-image: url(../images/small/grafica-wikilson.jpg);
+      }
+      &:nth-child(2) {
+        background-image: url(../images/small/grafica-idealista.jpg);
+      }
+      &:nth-child(3) {
+        background-image: url(../images/small/grafica-suzuki-dos.jpg);
+      }
+      &:nth-child(4) {
+        background-image: url(../images/small/grafica-correos.jpg);
+      }
+      &:nth-child(5) {
+        background-image: url(../images/small/grafica-la-rioja.jpg);
+      }
+      &:nth-child(6) {
+        background-image: url(../images/small/grafica-chupachups.jpg);
+      }
+      &:nth-child(7) {
+        background-image: url(../images/small/grafica-groove.jpg);
+      }
+      &:nth-child(8) {
+        background-image: url(../images/small/grafica-creatividad.jpg);
+      }
+      &:nth-child(9) {
+        background-image: url(../images/small/grafica-suzuki-uno.jpg);
+      }
     }
   }
   .footer__back {

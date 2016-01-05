@@ -1,0 +1,19 @@
+{{#each gallery}}
+<li class="instashow-gallery-item">
+  <a href="javascript:void(0)">
+    <img src="{{image}}" alt="nameImage">
+    <span class="instashow-gallery-media-cover"></span>
+    <span class="instashow-gallery-media-info">
+      <span class="instashow-gallery-media-info-counter">
+        <span class="instashow-icon instashow-icon-like"></span>
+        <em>{{countLike}}</em>
+      </span>
+      <span class="instashow-gallery-media-info-counter">
+        <span class="instashow-icon instashow-icon-comment"></span>
+        <em>{{comment}}</em>
+      </span>
+      <span class="instashow-gallery-media-info-description"> {{description}}</span>
+    </span>
+  </a>
+</li>
+{{/each}}

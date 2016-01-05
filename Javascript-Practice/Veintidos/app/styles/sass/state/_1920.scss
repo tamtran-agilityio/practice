@@ -239,6 +239,29 @@
         right: 0;
       }
     }
+    &__preview {
+      a:nth-child(1) {
+        .web__list {
+          left: 0;
+        }
+      }
+      a:nth-child(2) {
+        .web__list {
+          right: 0;
+        }
+      }
+      a:nth-child(3) {
+        .web__list {
+          bottom: 0;
+        }
+      }
+      a:nth-child(4) {
+        .web__list {
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
   }
   .landing {
     .til-section h6 {
@@ -246,43 +269,37 @@
     }
     li {
       background-size: 78.2%;
-    }
-    &__consejero {
-      top: -228px;
-    }
-    &__teresa {
-      top: -494px;
-    }
-    &__race {
-      .landing__image {
-        height: 1031px;
+      &:nth-child(1) {
+        .landing__image {
+          height: 1031px;
+        }
       }
-    }
-    &__optimus {
-      .landing__image {
-        height: 705px;
+      &:nth-child(2) {
+        .landing__image {
+          height: 705px;
+        }
       }
-    }
-    &__sony {
-      .landing__image {
-        height: 425px;
+      &:nth-child(3) {
+        .landing__image {
+          height: 425px;
+        }
       }
-    }
-    &__mahou {
-      .landing__image {
-        height: 476px;
+      &:nth-child(4) {
+        .landing__image {
+          height: 476px;
+        }
       }
-    }
-    &__consejero {
-      top: -327px;
-      .landing__image {
-        height: 747px;
+      &:nth-child(5) {
+        top: -327px;
+        .landing__image {
+          height: 747px;
+        }
       }
-    }
-    &__teresa {
-      top: -607px;
-      .landing__image {
-        height: 1035px;
+      &:nth-child(6) {
+        top: -607px;
+        .landing__image {
+          height: 1035px;
+        }
       }
     }
   }

@@ -147,18 +147,18 @@
     }
   }
   &__list {
-    &--mugaku {
-      background-image: url("../images/work-thumb-mugako-a.jpg");
-    }
-    &--henry {
-      background-image: url("../images/work-thumb-henry-a.jpg");
-    }
-    &--crea {
-      background-image: url("../images/work-thumb-portfolio-a.jpg");
-    }
-    &--room {
-      background-image: url("../images/work-thumb-apersonal-a.jpg");
-    }
+    // &--mugaku {
+    //   background-image: url("../images/work-thumb-mugako-a.jpg");
+    // }
+    // &--henry {
+    //   background-image: url("../images/work-thumb-henry-a.jpg");
+    // }
+    // &--crea {
+    //   background-image: url("../images/work-thumb-portfolio-a.jpg");
+    // }
+    // &--room {
+    //   background-image: url("../images/work-thumb-apersonal-a.jpg");
+    // }
   }
   &__name.showhide {
     opacity: 0;
@@ -265,57 +265,69 @@
       padding-left: 10px;
       padding-right: 10px;
     }
-  }
-  &__race {
-    left: 1px;
-    background-image: url(../images/landing-race.jpg);
-    .landing__image {
-      background-image: url(../images/work-landing-race.jpg);
+    &:nth-child(1) {
+      left: 1px;
+      background-image: url(../images/landing-race.jpg);
+      .landing__image {
+        background-image: url(../images/work-landing-race.jpg);
+      }
+    }
+    &:nth-child(2) {
+      background-image: url(../images/landing-lg.jpg);
+      background-position: center 72px!important;
+      .landing__image {
+        height: 500px;
+        background-image: url(../images/work-landing-lg.jpg);
+      }
+    }
+    &:nth-child(3) {
+      right: 1px;
+      background-image: url(../images/landing-sony.jpg);
+      .landing__image {
+        background-image: url(../images/work-landing-sony.jpg);
+        height: 250px;
+      }
+    }
+    &:nth-child(4) {
+      top: -1px;
+      left: 1px;
+      clear: left;
+      background-image: url(../images/landing-mahou.jpg);
+      .landing__image {
+        background-image: url(../images/work-landing-mahou.jpg);
+        height: 280px;
+      }
+    }
+    &:nth-child(5) {
+      background-image: url(../images/landing-consejero.jpg);
+      top: 50px;
+      .landing__image {
+        background-image: url(../images/work-landing-el-consejero.jpg);
+        height: 500px;
+      }
+    }
+    &:nth-child(6) {
+      background-image: url(../images/landing-santa-teresa.jpg);
+      top: 50px;
+      right: 1px;
+      .landing__image {
+        background-image: url(../images/work-landing-santa-teresa.jpg);
+        height: 670px;
+      }
     }
   }
-  &__optimus {
-    background-image: url(../images/landing-lg.jpg);
-    background-position: center 72px!important;
-    .landing__image {
-      height: 500px;
-      background-image: url(../images/work-landing-lg.jpg);
-    }
-  }
-  &__sony {
-    right: 1px;
-    background-image: url(../images/landing-sony.jpg);
-    .landing__image {
-      background-image: url(../images/work-landing-sony.jpg);
-      height: 250px;
-    }
-  }
-  &__mahou {
-    top: -1px;
-    left: 1px;
-    clear: left;
-    background-image: url(../images/landing-mahou.jpg);
-    .landing__image {
-      background-image: url(../images/work-landing-mahou.jpg);
-      height: 280px;
-    }
-  }
-  &__consejero {
-    background-image: url(../images/landing-consejero.jpg);
-    top: 50px;
-    .landing__image {
-      background-image: url(../images/work-landing-el-consejero.jpg);
-      height: 500px;
-    }
-  }
-  &__teresa {
-    background-image: url(../images/landing-santa-teresa.jpg);
-    top: 50px;
-    right: 1px;
-    .landing__image {
-      background-image: url(../images/work-landing-santa-teresa.jpg);
-      height: 670px;
-    }
-  }
+  // &__race {
+  // }
+  // &__optimus {
+  // }
+  // &__sony {
+  // }
+  // &__mahou {
+  // }
+  // &__consejero {
+  // }
+  // &__teresa {
+  // }
   &__line {
     height: 40px;
     width: 1px;
@@ -403,60 +415,60 @@
     margin-top: -1px;
     margin-left: -1px;
     border: solid 1px #FF6C49;
-  }
-  &__wikilson {
-    background-position: center;
-    background-image: url(../images/grafica-wikilson.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-wikilson-thumb.jpg);
+    &:nth-child(1) {
+      background-position: center;
+      background-image: url(../images/grafica-wikilson.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-wikilson-thumb.jpg);
+      }
     }
-  }
-  &__idealista {
-    background-image: url(../images/grafica-idealista.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-idealista-thumb.jpg);
+    &:nth-child(2) {
+      background-image: url(../images/grafica-idealista.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-idealista-thumb.jpg);
+      }
     }
-  }
-  &__suzuki {
-    background-image: url(../images/grafica-suzuki-dos.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-suzuki-dos-thumb.jpg);
+    &:nth-child(3) {
+      background-image: url(../images/grafica-suzuki-dos.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-suzuki-dos-thumb.jpg);
+      }
     }
-  }
-  &__correos {
-    background-image: url(../images/grafica-correos.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-correos-thumb.jpg);
+    &:nth-child(4) {
+      background-image: url(../images/grafica-correos.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-correos-thumb.jpg);
+      }
     }
-  }
-  &__la-rioja {
-    background-image: url(../images/grafica-la-rioja.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-la-rioja-thumb.jpg);
+    &:nth-child(5) {
+      background-image: url(../images/grafica-la-rioja.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-la-rioja-thumb.jpg);
+      }
     }
-  }
-  &__chupachups {
-    background-image: url(../images/grafica-chupachups.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-chupachups-thumb.jpg);
+    &:nth-child(6) {
+      background-image: url(../images/grafica-chupachups.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-chupachups-thumb.jpg);
+      }
     }
-  }
-  &__groove {
-    background-image: url(../images/grafica-groove.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-groove-thumb.jpg);
+    &:nth-child(7) {
+      background-image: url(../images/grafica-groove.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-groove-thumb.jpg);
+      }
     }
-  }
-  &__creatividad {
-    background-image: url(../images/grafica-creatividad.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-creatividad-thumb.jpg);
+    &:nth-child(8) {
+      background-image: url(../images/grafica-creatividad.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-creatividad-thumb.jpg);
+      }
     }
-  }
-  &__suzuki-uno {
-    background-image: url(../images/grafica-suzuki-uno.jpg);
-    .pages__image {
-      background-image: url(../images/grafica-suzuki-uno-thumb.jpg);
+    &:nth-child(9) {
+      background-image: url(../images/grafica-suzuki-uno.jpg);
+      .pages__image {
+        background-image: url(../images/grafica-suzuki-uno-thumb.jpg);
+      }
     }
   }
   &__image {
@@ -497,9 +509,9 @@ figure {
   img {
     width: 60%!important;
     height: auto;
-    margin-left: auto;
     position: relative;
     left: 50%;
     margin-left: -30%;
+    margin-top: 10%;
   }
 }

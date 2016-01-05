@@ -467,35 +467,41 @@
       background-size: 75%;
       width: 100%;
       margin-top: 70px;
-    }
-    &__race {
-      .landing__image {
-        height: 1300px;
+      &:nth-child(1) {
+        .landing__image {
+          background-image: none;
+          height: 1300px;
+        }
       }
-    }
-    &__optimus {
-      .landing__image {
-        height: 910px;
+      &:nth-child(2) {
+        .landing__image {
+          background-image: none;
+          height: 910px;
+        }
       }
-    }
-    &__sony {
-      .landing__image {
-        height: 540px;
+      &:nth-child(3) {
+        .landing__image {
+          background-image: none;
+          height: 540px;
+        }
       }
-    }
-    &__mahou {
-      .landing__image {
-        height: 600px;
+      &:nth-child(4) {
+        .landing__image {
+          background-image: none;
+          height: 600px;
+        }
       }
-    }
-    &__consejero {
-      .landing__image {
-        height: 935px;
+      &:nth-child(5) {
+        .landing__image {
+          background-image: none;
+          height: 935px;
+        }
       }
-    }
-    &__teresa {
-      .landing__image {
-        height: 1310px;
+      &:nth-child(6) {
+        .landing__image {
+          background-image: none;
+          height: 1310px;
+        }
       }
     }
   }
@@ -531,59 +537,59 @@
       height: 700px;
       width: 100%;
       margin-bottom: 100px;
-    }
-    &__wikilson {
-      background-image: url(../images/small/grafica-wikilson.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(1) {
+        background-image: url(../images/small/grafica-wikilson.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__idealista {
-      background-image: url(../images/small/grafica-idealista.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(2) {
+        background-image: url(../images/small/grafica-idealista.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__suzuki {
-      background-image: url(../images/small/grafica-suzuki-dos.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(3) {
+        background-image: url(../images/small/grafica-suzuki-dos.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__correos {
-      background-image: url(../images/small/grafica-correos.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(4) {
+        background-image: url(../images/small/grafica-correos.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__la-rioja {
-      background-image: url(../images/small/grafica-la-rioja.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(5) {
+        background-image: url(../images/small/grafica-la-rioja.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__chupachups {
-      background-image: url(../images/small/grafica-chupachups.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(6) {
+        background-image: url(../images/small/grafica-chupachups.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__groove {
-      background-image: url(../images/small/grafica-groove.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(7) {
+        background-image: url(../images/small/grafica-groove.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__creatividad {
-      background-image: url(../images/small/grafica-creatividad.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(8) {
+        background-image: url(../images/small/grafica-creatividad.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
-    }
-    &__suzuki-uno {
-      background-image: url(../images/small/grafica-suzuki-uno.jpg);
-      .pages__image {
-        background-image: none;
+      &:nth-child(9) {
+        background-image: url(../images/small/grafica-suzuki-uno.jpg);
+        .pages__image {
+          background-image: none;
+        }
       }
     }
   }
