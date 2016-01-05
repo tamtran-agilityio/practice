@@ -76,70 +76,70 @@
     {
       "image":"",
       "title":"RACE UNLIMITED",
-      "dataImage":"../images/landing-race.jpg"
+      "dataImage":"../images/work/landing-race.jpg"
     },
     {
       "image":"",
       "title":"LG OPTIMUS",
-      "dataImage":"../images/landing-lg.jpg"
+      "dataImage":"../images/work/landing-lg.jpg"
     },
     {
       "image":"",
       "title":"SONY r-5",
-      "dataImage":"../images/landing-sony.jpg"
+      "dataImage":"../images/work/landing-sony.jpg"
     },
     {
       "image":"",
       "title":"Cañin de Mahou",
-      "dataImage":"../images/landing-mahou.jpg"
+      "dataImage":"../images/work/landing-mahou.jpg"
     },
     {
       "image":"",
       "title":"El Consejero",
-      "dataImage":"../images/landing-consejero.jpg"
+      "dataImage":"../images/work/landing-consejero.jpg"
     },
     {
       "image":"",
       "title":"Santa Teresa",
-      "dataImage":"../images/landing-santa-teresa.jpg"
+      "dataImage":"../images/work/landing-santa-teresa.jpg"
     }
   ],
   "pages":[
     {
       "image":"",
-      "dataImage":"../images/grafica-wikilson.jpg"
+      "dataImage":"../images/work/grafica-wikilson.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-idealista.jpg"
+      "dataImage":"../images/work/grafica-idealista.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-suzuki-dos.jpg"
+      "dataImage":"../images/work/grafica-suzuki-dos.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-correos.jpg"
+      "dataImage":"../images/work/grafica-correos.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-la-rioja.jpg"
+      "dataImage":"../images/work/grafica-la-rioja.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-chupachups.jpg"
+      "dataImage":"../images/work/grafica-chupachups.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-groove.jpg"
+      "dataImage":"../images/work/grafica-groove.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-creatividad.jpg"
+      "dataImage":"../images/work/grafica-creatividad.jpg"
     },
     {
       "image":"",
-      "dataImage":"../images/grafica-suzuki-uno.jpg"
+      "dataImage":"../images/work/grafica-suzuki-uno.jpg"
     }
   ],
   "gallery":[
