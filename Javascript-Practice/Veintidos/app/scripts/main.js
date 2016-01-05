@@ -10,6 +10,8 @@ $(function () {
   renderItem('../templates/modules/landing.html', '#lanDing');
   renderItem('../templates/modules/pages.html', '#pages');
   renderItem('../templates/modules/gallery.html', '#gallery');
+  renderItem('../templates/modules/rotating.html', '#rotating');
+  // renderItem('../templates/modules/preview.html', '#preview');
   // call function amination
   $('.animsition').animsition();
   var element = document.querySelector('img');
@@ -422,7 +424,9 @@ $(function () {
     }
     next.addClass('active');
   }, 3000);
-
+  setInterval(function() {
+    $('#rotating li:eq(0)').addClass('active');
+  },1000);
   setInterval(function() {
     $('li.heading__rotating.active').css('transform', 'translateX(0px) translateY(-250px)');
   }, 2000);

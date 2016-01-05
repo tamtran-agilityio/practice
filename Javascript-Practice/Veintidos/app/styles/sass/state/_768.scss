@@ -736,11 +736,11 @@
     min-height: 480px;
     &__foto {
       position: absolute!important;
-      background-image: url(../images/agencia_1.png);
+      background-image: url(../images/agency/agencia_1.png);
     }
     &__agencia {
       height: 100%;
-      background-image: url(../images/agencia_1.png);
+      background-image: url(../images/agency/agencia_1.png);
       background-size: cover;
       background-position: center;
       position: absolute;
@@ -782,7 +782,7 @@
   }
   .img__agencia {
     @include size(100%);
-    background-image: url(../images/agencia_1.png);
+    background-image: url(../images/agency/agencia_1.png);
     background-size: cover;
     background-position: center;
     position: absolute;

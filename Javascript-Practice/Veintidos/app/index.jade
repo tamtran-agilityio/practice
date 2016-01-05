@@ -25,32 +25,19 @@ block content
       .til-section
         h6.animated.flipInY.visible.hidden.fadeInUp  Last works
         .line-scroll
-      ul.latest__preview
-        li.latest__item.latest__nakogu.animatedBorderSprite
+      ul#preview.latest__preview
+        li.latest__item.latest__nakogu
           h2.latest__item--name
             span MUGA
             span KO
           .latest__img
-            .tilt
-              .tilt__back.tilt__muga
-              .tilt__front
-              .tilt__front
-              .tilt__front
-          .animatedBorderSprite.animatedBorderSprite-top
-          .animatedBorderSprite.animatedBorderSprite-bottom
-          .animatedBorderSprite
-          .animatedBorderSprite
-        li.latest__item.latest__rubencrea.animatedBorderSprite
+            img.tilt-effect(data-tilt-options='{ "opacity" : 0.6, "movement": { "perspective" : 1500, "translateX" : 10, "translateY" : 10, "translateZ" : 2, "rotateX" : 3, "rotateY" : 3 } }' src="../images/small/preview-home-mugako-gris.jpg" alt="mugako")
+        li.latest__item.latest__rubencrea
           h2.latest__item--name
             span RUBEN
             span CREA
           .latest__img
-            .tilt
-              .tilt__back.tilt__ruben
-              .tilt__front
-              .tilt__front
-              .tilt__front
-              .tilt__front
+            img.tilt-effect(data-tilt-options='{ "opacity" : 0.6, "movement": { "perspective" : 1500, "translateX" : 10, "translateY" : 10, "translateZ" : 2, "rotateX" : 3, "rotateY" : 3 } }' src="../images/small/preview-home-rubencrea.jpg" alt="rubencrea")
     // service
     section.services.clearfix
       .mascara-trama
