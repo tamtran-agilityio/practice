@@ -100,10 +100,10 @@ $(function () {
   // excute function slider
   coverSlider();
 
-  // excute function set title link active
-  setPageActive('index','.link-home');
-  setPageActive('works','.link-work');
-  setPageActive('agency','.link-agency');
+  // // excute function set title link active
+  // setPageActive('index','.link-home');
+  // setPageActive('works','.link-work');
+  // setPageActive('agency','.link-agency');
 
   // handle icon menu
   $('.menu-icon').click(function() {
@@ -606,6 +606,17 @@ $(function () {
     }
   }
 
+  function setLink() {
+    var _urlpath = $(location).attr('pathname').split('/').pop();
+
+    $('#menu > li').each(function(){
+        var _this = $(this);
+      var _str = _this.find('a').attr('href');
+      _str !== _urlpath ? _this.find('a').removeClass('select') : _this.find('a').addClass('select');
+    });
+  }
+
+  setLink();
   // function of hover
   function hoverItem() {
     var $itemMugaku = $('#webItem a:eq(0)').find('li');
