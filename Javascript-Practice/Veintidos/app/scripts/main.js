@@ -250,7 +250,7 @@ $(function () {
       animation: 'flip',
       speed: 3000
     });
-
+    $('.parallax').parallaxScroll();
     // set hover image when sreen larger
     setTimeout(function() {
       hoverItem();
@@ -572,6 +572,12 @@ $(function () {
       }
     });
 
+    // set parallax scroll
+    $.fn.parallaxScroll = function(itemPage) {
+      var e = $(window).scrollTop();
+      $(this).css('top', 0 - 0.15 * e + 'px');
+    }
+
   }(window.jQuery);
 
   // function of set height instashow-gallery-item
@@ -828,10 +834,10 @@ $(function () {
 
   hoverItem();
   // set parallax scroll
-  function parallaxScroll() {
-    var e = $(window).scrollTop();
-    $('.parallax').css('top', 0 - 0.15 * e + 'px');
-  }
+  // function parallaxScroll() {
+  //   var e = $(window).scrollTop();
+  //   $('.parallax').css('top', 0 - 0.15 * e + 'px');
+  // }
 
   // function of show menu when scroll
   function menuScroll() {
