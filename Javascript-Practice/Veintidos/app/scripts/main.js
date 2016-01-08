@@ -1,49 +1,32 @@
 /*global $ jQuery */
-$(function () {
+(function($, window, document) {
   'use strict';
 
-  // load data json
-  renderItem('../templates/modules/services.html', '#services');
-  renderItem('../templates/modules/footer.html', '#footerSocial');
-  renderItem('../templates/modules/slider.html', '#cases');
-  renderItem('../templates/modules/web.html', '#webItem');
-  renderItem('../templates/modules/landing.html', '#lanDing');
-  renderItem('../templates/modules/pages.html', '#pages');
-  renderItem('../templates/modules/gallery.html', '#gallery');
-  // renderItem('../templates/modules/rotating.html', '#rotating');
-  // renderItem('../templates/modules/preview.html', '#preview');
-  // call function amination
+  // call function amination use plugin animation
   $('.animsition').animsition();
-  var element = document.querySelector('img');
-  // Intense(element);
+
   $(window).load(function() {
-    // Animate loader off screen
-    setTimeout(function() {
-      $('body').addClass('pace-done');
-    }, 1600);
-    setTimeout(function() {
-      $('main').addClass('animation');
-    }, 1600);
-    $('main').animate({
-      opacity: 1
-    }, 1500);
-    $('.loader').animate({
-      opacity: 1
-    }, 100);
-    $('.loader').css({
-      opacity: 1,
-      bottom: 250
-    });
-    $('.loader img').css({
-      transform: 'rotate(500deg)'
-    });
+
+    // set loader page
+    loaderPage();
+
+    // load data json
+    renderItem('../templates/modules/services.html', '#services');
+    renderItem('../templates/modules/footer.html', '#footerSocial');
+    renderItem('../templates/modules/slider.html', '#cases');
+    renderItem('../templates/modules/web.html', '#webItem');
+    renderItem('../templates/modules/landing.html', '#lanDing');
+    renderItem('../templates/modules/pages.html', '#pages');
+    renderItem('../templates/modules/gallery.html', '#gallery');
   });
 
-  // function of set height instashow-gallery-item
-  galleryHeight();
-
-  // excute function slider page index
+  // set time out active after load data
   setTimeout(function() {
+
+    // set parallax scroll page agency
+    $('.parallax').parallaxScroll();
+
+    // excute function slider page index use plugin pogoSlider
     $('#cases').pogoSlider({
       autoplay: true,
       autoplayTimeout: 1500,
@@ -55,100 +38,7 @@ $(function () {
       slideTransition: 'verticalSlide',
       generateButton: true
     }).data('plugin_pogoSlider');
-  }, 1600);
 
-  // set size block when resize
-  $(window).bind('resize', function() {
-    var t = $(window).height();
-    var o = $(window).width();
-    $('.resize').css({
-      width: o,
-      height: t
-    });
-    galleryHeight();
-    hoverItem();
-    $(document).ready(function() {
-      if ($(window).width() >= 1024) {
-        $( window ).scroll(function() {
-          menuScroll();
-        });
-      }
-    });
-  });
-  $(window).load(function() {
-    var e = $(window).height();
-    var t = $(window).width();
-    $('.resize').css({
-      width: t,
-      height: e
-    });
-  });
-  $(window).width() <= 480 && $(document).ready(function() {
-    $('.wrapp-cases').addClass('resize');
-  });
-  $(window).width() <= 1024 && $(document).ready(function() {
-    $('.wrapp-cases').addClass('resize');
-  });
-
-  // Use plugin lazyload load image
-  $(window).bind('load', function() {
-    $('img').lazyload({
-      effect: 'fadeIn'
-    });
-  });
-
-  // excute function slider
-  coverSlider();
-
-  // // excute function set title link active
-  // setPageActive('index','.link-home');
-  // setPageActive('works','.link-work');
-  // setPageActive('agency','.link-agency');
-
-  // handle icon menu
-  $('.menu-icon').click(function() {
-    $('header').css({
-      top: '0px'
-    });
-    $('.menu-icon').css({
-      transform: 'rotate(90deg)'
-    });
-    $('.show').css({
-      display: 'block'
-    });
-  });
-  $('.show').click(function() {
-    $('header').css({
-      top: '-100%'
-    });
-    $('.menu-icon').css({
-      transform: 'rotate(0deg)'
-    });
-    $('.show').css({
-      display: 'none'
-    });
-  });
-  $('.open-contact').click(function() {
-    $('.contacto').addClass('open');
-    $('.mascara-contact').addClass('slow');
-    $('.nav').addClass('open');
-    $('main').css({
-      opacity: .1,
-      'pointer-events': 'none'
-    });
-  });
-  $('.cerrar').click(function() {
-    $('.contacto').removeClass('open');
-    $('.nav').removeClass('open');
-    $('main').css({
-        opacity: 1,
-        'pointer-events': 'auto'
-    });
-  });
-
-  // set view and border
-  $(document).ready(function(){
-    setTimeout( function() {
     // add border
     $('li.latest__item').animatedBorder({
       size: 1,
@@ -174,119 +64,78 @@ $(function () {
         size: 1,
         color: '#4a4a4c',
         hover: !1
-    })
-    }, 1600);
+    });
 
-    // show item when scroll next
-    setTimeout(function () {
-      $('.mascara-trama').viewportChecker({
+    // set show item when scroll
+    $('.mascara-trama').viewportChecker({
         classToAdd: 'contraer',
         offset: 150
-      });
-      $('.services__web').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 350
-      });
-      $('.services__landing').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 400
-      });
-      $('.services__wordspress').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 420
-      });
-      $('.services__branding').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 350
-      });
-      $('.services__corporate').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 400
-      });
-      $('.services__advertising').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 420
-      });
-      $('.services__item h3').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInDown',
-        offset: 150
-      });
-      $('.til-section h6').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 50
-      });
-      $('.landing li').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 150
-      });
-      $('.branding div').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 150
-      });
-      $('.pages__block li').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 150
-      });
-      $('.wrapp__preguntas li').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInUp',
-        offset: 150
-      });
-      $('ul.about__largue li').viewportChecker({
-        classToAdd: 'up',
-        offset: 150
-      });
-      $('.bloque').addClass('hidden').viewportChecker({
-          classToAdd: 'visible animated fadeInUp',
-          offset: 200
-      });
-      $('.about__largue').viewportChecker({
-          classToAdd: 'largue',
-          offset: 250
-      })
-    }, 1600);
-
-    // excute function
-    $('#heading .rotate').textrotator({
-      animation: 'flip',
-      speed: 3000
     });
-    $('.parallax').parallaxScroll();
-    // set hover image when sreen larger
-    setTimeout(function() {
-      hoverItem();
-    }, 2000);
-  });
-
-  /************** Function helper *************/
-
-  // function get data to data.json
-  function getData(source, element) {
-
-    $.get('../data/data.json', function(data) {
-
-      // compile the template
-      var template = Handlebars.compile(source);
-
-      // pass our data to the template
-      var html = template(data);
-      element.prepend(html);
+    $('.services__web').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 350
     });
-  };
-
-  // render article services with handlebarjs
-  function renderItem(pathPage, idLoad ) {
-
-    // DOM HTML prepend id services at home page
-    $.get( pathPage, function(data) {
-
-      var $renderElement = $(idLoad);
-      getData(data, $renderElement);
+    $('.services__landing').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 400
     });
-  };
+    $('.services__wordspress').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 420
+    });
+    $('.services__branding').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 350
+    });
+    $('.services__corporate').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 400
+    });
+    $('.services__advertising').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 420
+    });
+    $('.services__item h3').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInDown',
+      offset: 150
+    });
+    $('.til-section h6').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 50
+    });
+    $('.landing li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.branding div').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.pages__block li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('.wrapp__preguntas li').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 150
+    });
+    $('ul.about__largue li').viewportChecker({
+      classToAdd: 'up',
+      offset: 150
+    });
+    $('.bloque').addClass('hidden').viewportChecker({
+      classToAdd: 'visible animated fadeInUp',
+      offset: 200
+    });
+    $('.about__largue').viewportChecker({
+      classToAdd: 'largue',
+      offset: 250
+    });
 
-  // function off textrotator
-  !function($){
+  }, 1600);
 
+  $(function() {
+    // Listen for the jQuery ready event on the document
     var defaults = {
       animation: "dissolve",
       separator: ",",
@@ -574,9 +423,201 @@ $(function () {
 
     // set parallax scroll
     $.fn.parallaxScroll = function(itemPage) {
-      var e = $(window).scrollTop();
-      $(this).css('top', 0 - 0.15 * e + 'px');
+    var _scrollTop = $(window).scrollTop();
+      $(this).css('top', 0 - 0.15 * _scrollTop + 'px');
     }
+
+
+
+    // function get data to data.json
+    function getData(source, element) {
+
+      $.get('../data/data.json', function(data) {
+
+        // compile the template
+        var template = Handlebars.compile(source);
+
+        // pass our data to the template
+        var html = template(data);
+        element.prepend(html);
+      });
+    };
+
+    // render article services with handlebarjs
+    function renderItem(pathPage, idLoad ) {
+
+      // DOM HTML prepend id services at home page
+      $.get( pathPage, function(data) {
+
+        var $renderElement = $(idLoad);
+        getData(data, $renderElement);
+      });
+    };
+
+  });
+  // function of loader
+  var $loaderItem = $('.loader');
+  function loaderPage() {
+    $loaderItem.animate({
+      opacity: 1
+    }, 100);
+    $loaderItem.css({
+      opacity: 1,
+      bottom: 250
+    });
+    $loaderItem.find('img').css({
+      transform: 'rotate(500deg)'
+    });
+  }
+  // function get data to data.json
+    function getData(source, element) {
+
+      $.get('../data/data.json', function(data) {
+
+        // compile the template
+        var template = Handlebars.compile(source);
+
+        // pass our data to the template
+        var html = template(data);
+        element.prepend(html);
+      });
+    };
+
+    // render article services with handlebarjs
+    function renderItem(pathPage, idLoad ) {
+
+      // DOM HTML prepend id services at home page
+      $.get( pathPage, function(data) {
+
+        var $renderElement = $(idLoad);
+        getData(data, $renderElement);
+      });
+    };
+
+}(window.jQuery, window, document));
+
+$(function () {
+
+  var element = document.querySelector('img');
+  // Intense(element);
+  $(window).load(function() {
+    // Animate loader off screen
+    setTimeout(function() {
+      $('body').addClass('pace-done');
+      $('main').addClass('animation');
+    }, 1600);
+    // setTimeout(function() {
+    // }, 1600);
+    $('main').animate({
+      opacity: 1
+    }, 1500);
+
+  });
+
+  // function of set height instashow-gallery-item
+  galleryHeight();
+
+  // set size block when resize
+  $(window).bind('resize', function() {
+    var t = $(window).height();
+    var o = $(window).width();
+    $('.resize').css({
+      width: o,
+      height: t
+    });
+    galleryHeight();
+    hoverItem();
+    $(document).ready(function() {
+      if ($(window).width() >= 1024) {
+        $( window ).scroll(function() {
+          menuScroll();
+        });
+      }
+    });
+  });
+  $(window).load(function() {
+    var e = $(window).height();
+    var t = $(window).width();
+    $('.resize').css({
+      width: t,
+      height: e
+    });
+  });
+  $(window).width() <= 480 && $(document).ready(function() {
+    $('.wrapp-cases').addClass('resize');
+  });
+  $(window).width() <= 1024 && $(document).ready(function() {
+    $('.wrapp-cases').addClass('resize');
+  });
+
+  // Use plugin lazyload load image
+  $(window).bind('load', function() {
+    $('img').lazyload({
+      effect: 'fadeIn'
+    });
+  });
+
+  // excute function slider
+  coverSlider();
+
+  // handle icon menu
+  $('.menu-icon').click(function() {
+    $('header').css({
+      top: '0px'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(90deg)'
+    });
+    $('.show').css({
+      display: 'block'
+    });
+  });
+  $('.show').click(function() {
+    $('header').css({
+      top: '-100%'
+    });
+    $('.menu-icon').css({
+      transform: 'rotate(0deg)'
+    });
+    $('.show').css({
+      display: 'none'
+    });
+  });
+  $('.open-contact').click(function() {
+    $('.contacto').addClass('open');
+    $('.mascara-contact').addClass('slow');
+    $('.nav').addClass('open');
+    $('main').css({
+      opacity: .1,
+      'pointer-events': 'none'
+    });
+  });
+  $('.cerrar').click(function() {
+    $('.contacto').removeClass('open');
+    $('.nav').removeClass('open');
+    $('main').css({
+        opacity: 1,
+        'pointer-events': 'auto'
+    });
+  });
+
+  // set view and border
+  $(document).ready(function(){
+    // excute function
+    $('#heading .rotate').textrotator({
+      animation: 'flip',
+      speed: 3000
+    });
+    // $('.parallax').parallaxScroll();
+    // set hover image when sreen larger
+    setTimeout(function() {
+      hoverItem();
+    }, 2000);
+  });
+
+  // function off textrotator
+  !function($){
+
 
   }(window.jQuery);
 
@@ -632,74 +673,74 @@ $(function () {
     $(window).width() >= 1024 && $(window).scroll(function() {
       $itemMugaku.hover(function() {
         $itemMugaku.css({
-            width: '60.1%',
-            height: '60.1%',
-            'z-index': 1,
-            'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
+          width: '60.1%',
+          height: '60.1%',
+          'z-index': 1,
+          'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
         }),
         $itemMugaku.find('.web__name').addClass('show');
         $itemMugaku.find('.web__name h2').addClass('show');
         $itemMugaku.find('.web__name').removeClass('showhide');
         $itemMugaku.find('.web__name h2').removeClass('showhide');
         $itemHenry.css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%'
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%'
         }),
         $itemCrea.css({
-            height: '40.1%',
-            width: '60.1%'
+          height: '40.1%',
+          width: '60.1%'
         }),
         $itemRoom.css({
-            height: '40.1%',
-            width: '40.1%'
+          height: '40.1%',
+          width: '40.1%'
         })
       }, function() {
           $itemMugaku.css({
-              width: '50%',
-              height: '50%',
-              'z-index': 0,
-              'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
-          });
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
+        });
           $itemMugaku.find('.web__name').addClass('showhide');
           $itemMugaku.find('.web__name h2').addClass('showhide');
           $itemMugaku.find('.web__name').removeClass('show');
           $itemMugaku.find('.web__name h2').removeClass('show');
           $itemHenry.css({
-              width: '50%',
-              height: '50%',
-              'background-size': '100%'
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
           }),
           $itemCrea.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemRoom.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           })
         });
 
       $itemHenry.hover(function() {
           $itemMugaku.css({
-              width: '40.1%',
-              height: '60.1%',
-              'background-size': '150%',
-              'z-index': 1
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%',
+            'z-index': 1
           }),
           $itemHenry.css({
-              width: '60.1%',
-              'z-index': 1,
-              height: '60.1%',
-              'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
+            width: '60.1%',
+            'z-index': 1,
+            height: '60.1%',
+            'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
           }),
           $itemCrea.css({
-              height: '40.1%',
-              width: '40.1%'
+            height: '40.1%',
+            width: '40.1%'
           }),
           $itemRoom.css({
-              height: '40.1%',
-              width: '60.1%'
+            height: '40.1%',
+            width: '60.1%'
           })
           $itemHenry.find('.web__name').addClass('show');
           $itemHenry.find('.web__name h2').addClass('show');
@@ -707,24 +748,24 @@ $(function () {
           $itemHenry.find('.web__name h2').removeClass('showhide');
       }, function() {
           $itemMugaku.css({
-              width: '50%',
-              height: '50%',
-              'background-size': '100%',
-              'z-index': 0
+            width: '50%',
+            height: '50%',
+            'background-size': '100%',
+            'z-index': 0
           }),
           $itemHenry.css({
-              width: '50%',
-              'z-index': 0,
-              height: '50%',
-              'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
           }),
           $itemCrea.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemRoom.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           });
           $itemHenry.find('.web__name').addClass('showhide');
           $itemHenry.find('.web__name h2').addClass('showhide');
@@ -733,23 +774,23 @@ $(function () {
         });
       $itemCrea.hover(function() {
           $itemMugaku.css({
-              height: '40.1%',
-              width: '60.1%'
+            height: '40.1%',
+            width: '60.1%'
           }),
           $itemHenry.css({
-              height: '40.1%',
-              width: '40.1%'
+            height: '40.1%',
+            width: '40.1%'
           }),
           $itemCrea.css({
-              width: '60.1%',
-              'z-index': 1,
-              height: '61%',
-              'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
+            width: '60.1%',
+            'z-index': 1,
+            height: '61%',
+            'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
           }),
           $itemRoom.css({
-              width: '40.1%',
-              height: '60.1%',
-              'background-size': '150%'
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
           });
           $itemCrea.find('.web__name').addClass('show');
           $itemCrea.find('.web__name h2').addClass('show');
@@ -757,23 +798,23 @@ $(function () {
           $itemCrea.find('.web__name h2').removeClass('showhide');
       }, function() {
           $itemMugaku.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemHenry.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemCrea.css({
-              width: '50%',
-              'z-index': 0,
-              height: '50%',
-              'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
           }),
           $itemRoom.css({
-              width: '50%',
-              height: '50%',
-              'background-size': '100%'
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
           });
           $itemCrea.find('.web__name').addClass('showhide');
           $itemCrea.find('.web__name h2').addClass('showhide');
@@ -782,23 +823,23 @@ $(function () {
       });
       $itemRoom.hover(function() {
           $itemMugaku.css({
-              height: '40.1%',
-              width: '40.1%'
+            height: '40.1%',
+            width: '40.1%'
           }),
           $itemHenry.css({
-              height: '40.1%',
-              width: '60.1%'
+            height: '40.1%',
+            width: '60.1%'
           }),
           $itemRoom.css({
-              width: '60.1%',
-              height: '60.1%',
-              'z-index': 1,
-              'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
+            width: '60.1%',
+            height: '60.1%',
+            'z-index': 1,
+            'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
           }),
           $itemCrea.css({
-              width: '40.1%',
-              height: '60.1%',
-              'background-size': '150%'
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
           });
           $itemRoom.find('.web__name').addClass('show');
           $itemRoom.find('.web__name h2').addClass('show');
@@ -806,23 +847,23 @@ $(function () {
           $itemRoom.find('.web__name h2').removeClass('showhide');
       }, function() {
           $itemMugaku.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemHenry.css({
-              width: '50%',
-              height: '50%'
+            width: '50%',
+            height: '50%'
           }),
           $itemRoom.css({
-              width: '50%',
-              height: '50%',
-              'z-index': 0,
-              'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
           }),
           $itemCrea.css({
-              width: '50%',
-              height: '50%',
-              'background-size': '100%'
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
           });
           $itemRoom.find('.web__name').addClass('showhide');
           $itemRoom.find('.web__name h2').addClass('showhide');
@@ -833,11 +874,6 @@ $(function () {
   }
 
   hoverItem();
-  // set parallax scroll
-  // function parallaxScroll() {
-  //   var e = $(window).scrollTop();
-  //   $('.parallax').css('top', 0 - 0.15 * e + 'px');
-  // }
 
   // function of show menu when scroll
   function menuScroll() {
