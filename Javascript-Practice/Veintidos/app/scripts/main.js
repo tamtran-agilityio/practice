@@ -10,6 +10,16 @@
     // set loader page
     loaderPage();
 
+    // set load pages
+    setTimeout(function() {
+      $('body').addClass('pace-done');
+      $('main').addClass('animation');
+    }, 1600);
+    $('main').animate({
+      opacity: 1
+    }, 1500);
+
+
     // load data json
     renderItem('../templates/modules/services.html', '#services');
     renderItem('../templates/modules/footer.html', '#footerSocial');
@@ -25,6 +35,9 @@
 
     // set parallax scroll page agency
     $('.parallax').parallaxScroll();
+
+    // function of hover
+    hoverItem();
 
     // excute function slider page index use plugin pogoSlider
     $('#cases').pogoSlider({
@@ -470,30 +483,240 @@
     });
   }
   // function get data to data.json
-    function getData(source, element) {
+  function getData(source, element) {
 
-      $.get('../data/data.json', function(data) {
+    $.get('../data/data.json', function(data) {
 
-        // compile the template
-        var template = Handlebars.compile(source);
+      // compile the template
+      var template = Handlebars.compile(source);
 
-        // pass our data to the template
-        var html = template(data);
-        element.prepend(html);
+      // pass our data to the template
+      var html = template(data);
+      element.prepend(html);
+    });
+  };
+
+  // render article services with handlebarjs
+  function renderItem(pathPage, idLoad ) {
+
+    // DOM HTML prepend id services at home page
+    $.get( pathPage, function(data) {
+
+      var $renderElement = $(idLoad);
+      getData(data, $renderElement);
+    });
+  };
+  function hoverItem() {
+    var $itemMugaku = $('#webItem a:eq(0)').find('li');
+    var $itemCrea = $('#webItem a:eq(2)').find('li');
+    var $itemHenry = $('#webItem a:eq(1)').find('li');
+    var $itemRoom = $('#webItem a:eq(3)').find('li');
+    if ($(window).width() >= 1024) {
+      $itemMugaku.mouseenter(function() {
+        $(this).css({
+          width: '60.1%',
+          height: '60.1%',
+          'z-index': 1,
+          'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
+        }),
+        $(this).find('.web__name').addClass('show');
+        $(this).find('.web__name h2').addClass('show');
+        $(this).find('.web__name').removeClass('showhide');
+        $(this).find('.web__name h2').removeClass('showhide');
+        $itemHenry.css({
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%'
+        }),
+        $itemCrea.css({
+          height: '40.1%',
+          width: '60.1%'
+        }),
+        $itemRoom.css({
+          height: '40.1%',
+          width: '40.1%'
+        })
       });
-    };
-
-    // render article services with handlebarjs
-    function renderItem(pathPage, idLoad ) {
-
-      // DOM HTML prepend id services at home page
-      $.get( pathPage, function(data) {
-
-        var $renderElement = $(idLoad);
-        getData(data, $renderElement);
+      $itemMugaku.mouseleave(function() {
+        $(this).css({
+          width: '50%',
+          height: '50%',
+          'z-index': 0,
+          'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
+        });
+        $(this).find('.web__name').addClass('showhide');
+        $(this).find('.web__name h2').addClass('showhide');
+        $(this).find('.web__name').removeClass('show');
+        $(this).find('.web__name h2').removeClass('show');
+        $itemCrea.css({
+          width: '50%',
+          height: '50%',
+          'background-size': '100%'
+        }),
+        $itemHenry.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemRoom.css({
+          width: '50%',
+          height: '50%'
+        })
       });
-    };
 
+      $itemHenry.mouseenter(function() {
+        $(this).css({
+          width: '60.1%',
+          'z-index': 1,
+          height: '60.1%',
+          'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
+        });
+        $(this).find('.web__name').addClass('show');
+        $(this).find('.web__name h2').addClass('show');
+        $(this).find('.web__name').removeClass('showhide');
+        $(this).find('.web__name h2').removeClass('showhide');
+        $itemMugaku.css({
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%',
+          'z-index': 1
+        }),
+        $itemCrea.css({
+          height: '40.1%',
+          width: '40.1%'
+        }),
+        $itemRoom.css({
+          height: '40.1%',
+          width: '60.1%'
+        })
+      });
+      $itemHenry.mouseleave(function() {
+        $itemMugaku.css({
+          width: '50%',
+          height: '50%',
+          'background-size': '100%',
+          'z-index': 0
+        }),
+        $itemHenry.css({
+          width: '50%',
+          'z-index': 0,
+          height: '50%',
+          'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
+        }),
+        $itemCrea.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemRoom.css({
+          width: '50%',
+          height: '50%'
+        });
+        $itemHenry.find('.web__name').addClass('showhide');
+        $itemHenry.find('.web__name h2').addClass('showhide');
+        $itemHenry.find('.web__name').removeClass('show');
+        $itemHenry.find('.web__name h2').removeClass('show');
+      });
+      $itemCrea.mouseenter(function() {
+        $itemMugaku.css({
+          height: '40.1%',
+          width: '60.1%'
+        }),
+        $itemHenry.css({
+          height: '40.1%',
+          width: '40.1%'
+        }),
+        $itemCrea.css({
+          width: '60.1%',
+          'z-index': 1,
+          height: '61%',
+          'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
+        }),
+        $itemRoom.css({
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%'
+        });
+        $itemCrea.find('.web__name').addClass('show');
+        $itemCrea.find('.web__name h2').addClass('show');
+        $itemCrea.find('.web__name').removeClass('showhide');
+        $itemCrea.find('.web__name h2').removeClass('showhide');
+      })
+      $itemCrea.mouseleave(function() {
+        $itemMugaku.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemHenry.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemCrea.css({
+          width: '50%',
+          'z-index': 0,
+          height: '50%',
+          'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
+        }),
+        $itemRoom.css({
+          width: '50%',
+          height: '50%',
+          'background-size': '100%'
+        });
+        $itemCrea.find('.web__name').addClass('showhide');
+        $itemCrea.find('.web__name h2').addClass('showhide');
+        $itemCrea.find('.web__name').removeClass('show');
+        $itemCrea.find('.web__name h2').removeClass('show');
+      });
+      $itemRoom.mouseenter(function() {
+        $itemMugaku.css({
+          height: '40.1%',
+          width: '40.1%'
+        }),
+        $itemHenry.css({
+          height: '40.1%',
+          width: '60.1%'
+        }),
+        $itemRoom.css({
+          width: '60.1%',
+          height: '60.1%',
+          'z-index': 1,
+          'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
+        }),
+        $itemCrea.css({
+          width: '40.1%',
+          height: '60.1%',
+          'background-size': '150%'
+        });
+        $itemRoom.find('.web__name').addClass('show');
+        $itemRoom.find('.web__name h2').addClass('show');
+        $itemRoom.find('.web__name').removeClass('showhide');
+        $itemRoom.find('.web__name h2').removeClass('showhide');
+      });
+      $itemRoom.mouseleave(function() {
+        $itemMugaku.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemHenry.css({
+          width: '50%',
+          height: '50%'
+        }),
+        $itemRoom.css({
+          width: '50%',
+          height: '50%',
+          'z-index': 0,
+          'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
+        }),
+        $itemCrea.css({
+          width: '50%',
+          height: '50%',
+          'background-size': '100%'
+        });
+        $itemRoom.find('.web__name').addClass('showhide');
+        $itemRoom.find('.web__name h2').addClass('showhide');
+        $itemRoom.find('.web__name').removeClass('show');
+        $itemRoom.find('.web__name h2').removeClass('show');
+      });
+    }
+  }
 }(window.jQuery, window, document));
 
 $(function () {
@@ -611,9 +834,10 @@ $(function () {
     // $('.parallax').parallaxScroll();
     // set hover image when sreen larger
     setTimeout(function() {
-      hoverItem();
+      // hoverItem();
     }, 2000);
   });
+
 
   // function off textrotator
   !function($){
@@ -623,8 +847,9 @@ $(function () {
 
   // function of set height instashow-gallery-item
   function galleryHeight() {
-    var itemHeight = $('.instashow-gallery-item').width();
-    $('.instashow-gallery-item').css('height', itemHeight);
+    var $galleryItem = $('.instashow-gallery-item');
+    var itemHeight = $galleryItem.width();
+    $galleryItem.css('height', itemHeight);
   }
 
   // set slider page works
@@ -664,216 +889,6 @@ $(function () {
   }
 
   setLink();
-  // function of hover
-  function hoverItem() {
-    var $itemMugaku = $('#webItem a:eq(0)').find('li');
-    var $itemCrea = $('#webItem a:eq(2)').find('li');
-    var $itemHenry = $('#webItem a:eq(1)').find('li');
-    var $itemRoom = $('#webItem a:eq(3)').find('li');
-    $(window).width() >= 1024 && $(window).scroll(function() {
-      $itemMugaku.hover(function() {
-        $itemMugaku.css({
-          width: '60.1%',
-          height: '60.1%',
-          'z-index': 1,
-          'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
-        }),
-        $itemMugaku.find('.web__name').addClass('show');
-        $itemMugaku.find('.web__name h2').addClass('show');
-        $itemMugaku.find('.web__name').removeClass('showhide');
-        $itemMugaku.find('.web__name h2').removeClass('showhide');
-        $itemHenry.css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%'
-        }),
-        $itemCrea.css({
-          height: '40.1%',
-          width: '60.1%'
-        }),
-        $itemRoom.css({
-          height: '40.1%',
-          width: '40.1%'
-        })
-      }, function() {
-          $itemMugaku.css({
-            width: '50%',
-            height: '50%',
-            'z-index': 0,
-            'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
-        });
-          $itemMugaku.find('.web__name').addClass('showhide');
-          $itemMugaku.find('.web__name h2').addClass('showhide');
-          $itemMugaku.find('.web__name').removeClass('show');
-          $itemMugaku.find('.web__name h2').removeClass('show');
-          $itemHenry.css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
-          }),
-          $itemCrea.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemRoom.css({
-            width: '50%',
-            height: '50%'
-          })
-        });
-
-      $itemHenry.hover(function() {
-          $itemMugaku.css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%',
-            'z-index': 1
-          }),
-          $itemHenry.css({
-            width: '60.1%',
-            'z-index': 1,
-            height: '60.1%',
-            'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
-          }),
-          $itemCrea.css({
-            height: '40.1%',
-            width: '40.1%'
-          }),
-          $itemRoom.css({
-            height: '40.1%',
-            width: '60.1%'
-          })
-          $itemHenry.find('.web__name').addClass('show');
-          $itemHenry.find('.web__name h2').addClass('show');
-          $itemHenry.find('.web__name').removeClass('showhide');
-          $itemHenry.find('.web__name h2').removeClass('showhide');
-      }, function() {
-          $itemMugaku.css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%',
-            'z-index': 0
-          }),
-          $itemHenry.css({
-            width: '50%',
-            'z-index': 0,
-            height: '50%',
-            'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
-          }),
-          $itemCrea.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemRoom.css({
-            width: '50%',
-            height: '50%'
-          });
-          $itemHenry.find('.web__name').addClass('showhide');
-          $itemHenry.find('.web__name h2').addClass('showhide');
-          $itemHenry.find('.web__name').removeClass('show');
-          $itemHenry.find('.web__name h2').removeClass('show');
-        });
-      $itemCrea.hover(function() {
-          $itemMugaku.css({
-            height: '40.1%',
-            width: '60.1%'
-          }),
-          $itemHenry.css({
-            height: '40.1%',
-            width: '40.1%'
-          }),
-          $itemCrea.css({
-            width: '60.1%',
-            'z-index': 1,
-            height: '61%',
-            'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
-          }),
-          $itemRoom.css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%'
-          });
-          $itemCrea.find('.web__name').addClass('show');
-          $itemCrea.find('.web__name h2').addClass('show');
-          $itemCrea.find('.web__name').removeClass('showhide');
-          $itemCrea.find('.web__name h2').removeClass('showhide');
-      }, function() {
-          $itemMugaku.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemHenry.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemCrea.css({
-            width: '50%',
-            'z-index': 0,
-            height: '50%',
-            'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
-          }),
-          $itemRoom.css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
-          });
-          $itemCrea.find('.web__name').addClass('showhide');
-          $itemCrea.find('.web__name h2').addClass('showhide');
-          $itemCrea.find('.web__name').removeClass('show');
-          $itemCrea.find('.web__name h2').removeClass('show');
-      });
-      $itemRoom.hover(function() {
-          $itemMugaku.css({
-            height: '40.1%',
-            width: '40.1%'
-          }),
-          $itemHenry.css({
-            height: '40.1%',
-            width: '60.1%'
-          }),
-          $itemRoom.css({
-            width: '60.1%',
-            height: '60.1%',
-            'z-index': 1,
-            'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
-          }),
-          $itemCrea.css({
-            width: '40.1%',
-            height: '60.1%',
-            'background-size': '150%'
-          });
-          $itemRoom.find('.web__name').addClass('show');
-          $itemRoom.find('.web__name h2').addClass('show');
-          $itemRoom.find('.web__name').removeClass('showhide');
-          $itemRoom.find('.web__name h2').removeClass('showhide');
-      }, function() {
-          $itemMugaku.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemHenry.css({
-            width: '50%',
-            height: '50%'
-          }),
-          $itemRoom.css({
-            width: '50%',
-            height: '50%',
-            'z-index': 0,
-            'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
-          }),
-          $itemCrea.css({
-            width: '50%',
-            height: '50%',
-            'background-size': '100%'
-          });
-          $itemRoom.find('.web__name').addClass('showhide');
-          $itemRoom.find('.web__name h2').addClass('showhide');
-          $itemRoom.find('.web__name').removeClass('show');
-          $itemRoom.find('.web__name h2').removeClass('show');
-        });
-      })
-  }
-
-  hoverItem();
 
   // function of show menu when scroll
   function menuScroll() {
