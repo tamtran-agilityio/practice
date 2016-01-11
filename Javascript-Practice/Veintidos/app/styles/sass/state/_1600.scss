@@ -365,9 +365,17 @@
     margin-top: 170px;
     li {
       background-size: 74.5%;
+      .landing__image {
+        &:hover {
+          opacity: 0;
+        }
+      }
       &:nth-child(1) {
         .landing__image {
           height: 837px;
+          &:hover {
+            opacity: 0;
+          }
         }
       }
       &:nth-child(2) {
@@ -423,6 +431,9 @@
     }
     &__image {
       height: 506px;
+      &:hover {
+        opacity: 0;
+      }
     }
   }
   /**********************************************/

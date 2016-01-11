@@ -268,6 +268,11 @@
       padding-top: 0;
     }
     li {
+      .landing__image {
+        &:hover {
+          opacity: 0;
+        }
+      }
       background-size: 78.2%;
       &:nth-child(1) {
         .landing__image {
@@ -324,6 +329,9 @@
     }
     &__image {
       height: 603px;
+      &:hover {
+        opacity: 0;
+      }
     }
   }
   /**********************************************/
