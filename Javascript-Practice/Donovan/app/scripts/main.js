@@ -1,12 +1,13 @@
 /* Javascript file */
 !(function ( $ ) {
-  // 'use strict';
+  'use strict';
 
-  var links = $('.navigation').find('li');
-  var linksdrop = $('.navigationdrop').find('li');
+  var links = $('.navigation li');
+  var linksdrop = $('.navigationdrop li');
   var htmlbody = $('html,body');
   var buttonNext = $('.buttonNext');
   var buttonPre = $('.back_top');
+  var $navItem = $('.navigationdrop');
 
   // call function getData to servives
   renderItem('../templates/modules/services.html', '#services');
@@ -17,10 +18,11 @@
     // call function getData to section resume
   renderItem('../templates/modules/resume.html', '#resume');
 
-  // function pop up image portfolio
-  setTimeout(function() {
-    $('a[rel^="prettyPhoto"]').prettyPhoto();
-  }, 2000);
+  // call function update layout section 1
+  mymargtop();
+
+  // set time out active popup image
+  setTimeout( pretty , 2000);
 
   // handle when resize
   $(window).on('resize',function() {
@@ -28,16 +30,14 @@
     sliderHeight();
     mymargtop ();
   });
-  // call function update layout section 1
-  mymargtop();
 
   // handle on button menu
   $('.btn_dropdown').click(function() {
-    $('.navigationdrop').fadeIn();
+    $navItem.fadeIn();
   });
 
   $('.navigationdrop li').click(function() {
-    $('.navigationdrop').fadeOut();
+    $navItem.fadeOut();
   });
 
   // handle when srcoll
@@ -56,7 +56,7 @@
   });
 
   // excute when click section
-  links.click(function (e) {
+  (links).click(function (e) {
     e.preventDefault();
     var datasection = $(this).attr('data-section');
     goToByScroll(datasection);
@@ -109,18 +109,21 @@
   };
 
   // get height window
-  function sliderHeight(){
-    var _windowHeight = $(window).height();
-    $('.photographer').css({height:_windowHeight});
+  function sliderHeight() {
+    var _heightWindow = $(window).height();
+    $('.photographer').css({
+      height:_heightWindow
+    });
   }
 
   // set margin section photographer
   function mymargtop() {
-    var body_h = $(window).height();
-    var container_h = $('.photographer__block').height();
-    var marg_top = Math.abs((body_h - container_h)/2);
-    $('.photographer__block').css('margin-top', marg_top);
-    $('.photographer__block').css('margin-bottom', marg_top);
+    var _heightWindow = $(window).height();
+    var $photoGrapher = $('.photographer__block');
+    var container = $photoGrapher.height();
+    var margTop = Math.abs((_heightWindow - container)/2);
+    $photoGrapher.css('margin-top', margTop);
+    $photoGrapher.css('margin-bottom', margTop);
   }
 
   // function to scroll go to section
@@ -149,7 +152,7 @@
     }
     else {
       $menu.css('position','absolute');
-      $menu.css('top',_heightPhotographer - _heightMenu);
+      $menu.css('top', _heightPhotographer - _heightMenu);
     }
   }
 
@@ -161,6 +164,11 @@
     } else {
       item.removeClass('active');
     }
+  }
+
+  // function pop up image portfolio
+  function pretty() {
+    $('a[rel^="prettyPhoto"]').prettyPhoto();
   }
 
 }( jQuery ));

@@ -1,5 +1,5 @@
 /* Javascript file */
-!(function ( $ ) {
+(function($, window, document) {
   'use strict';
 
   var $li = $('ul.navigation li');
@@ -75,4 +75,4 @@
     });
   }
 
-}( jQuery ));
+}(jQuery));

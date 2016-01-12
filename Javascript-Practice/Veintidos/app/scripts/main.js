@@ -1,6 +1,6 @@
 /*global $ jQuery */
 (function($, window, document) {
-  // 'use strict';
+  'use strict';
 
   var element = document.querySelector('img');
   var heightWindow = $(window).height();
@@ -69,14 +69,13 @@
     $('img').lazyload({
       effect: 'fadeIn'
     });
+
     // set loader page
     loaderPage();
 
-    // set load pages
-    setTimeout(function() {
-      $('body').addClass('pace-done');
-      $('main').addClass('animation');
-    }, 1600);
+    // set time out load page
+    setTimeout(loadDone, 1600);
+
     $('main').animate({
       opacity: 1
     }, 1500);
@@ -127,6 +126,11 @@
 
   }, 1600);
 
+  // set load pages
+  function loadDone() {
+    $('body').addClass('pace-done');
+    $('main').addClass('animation');
+  }
   $(function() {
     'use strict';
 
@@ -145,24 +149,24 @@
       var settings = $.extend({}, defaults, options);
 
       return this.each(function(){
-        var el = $(this)
+        var element = $(this)
         var array = [];
-        $.each(el.text().split(settings.separator), function(key, value) {
+        $.each(element.text().split(settings.separator), function(key, value) {
           array.push(value);
         });
-        el.text(array[0]);
+        element.text(array[0]);
 
         // animation option
         var rotate = function() {
           switch (settings.animation) {
             case 'dissolve':
-              el.animate({
+              element.animate({
                 textShadowBlur:20,
                 opacity: 0
               }, 500 , function() {
-                index = $.inArray(el.text(), array)
+                index = $.inArray(element.text(), array)
                 if((index + 1) == array.length) index = -1
-                el.text(array[index + 1]).animate({
+                element.text(array[index + 1]).animate({
                   textShadowBlur:0,
                   opacity: 1
                 }, 500 );
@@ -170,18 +174,18 @@
             break;
 
             case 'flip':
-              if(el.find(".back").length > 0) {
-                el.html(el.find(".back").html())
+              if(element.find(".back").length > 0) {
+                element.html(element.find(".back").html())
               }
 
-              var initial = el.text()
+              var initial = element.text()
               var index = $.inArray(initial, array)
               if((index + 1) == array.length) index = -1
 
-              el.html("");
-              $("<span class='front'>" + initial + "</span>").appendTo(el);
-              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
-              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip").show().css({
+              element.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(element);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(element);
+              element.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip").show().css({
                 "-webkit-transform": " translateX(0px) translateY(-250px)",
                 "-moz-transform": " translateX(0px) translateY(-250px)",
                 "-o-transform": " translateX(0px) translateY(-250px)",
@@ -192,18 +196,18 @@
             break;
 
             case 'flipUp':
-              if(el.find(".back").length > 0) {
-                el.html(el.find(".back").html())
+              if(element.find(".back").length > 0) {
+                element.html(element.find(".back").html())
               }
 
-              var initial = el.text()
+              var initial = element.text()
               var index = $.inArray(initial, array)
               if((index + 1) == array.length) index = -1
 
-              el.html("");
-              $("<span class='front'>" + initial + "</span>").appendTo(el);
-              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
-              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip up").show().css({
+              element.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(element);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(element);
+              element.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip up").show().css({
                 "-webkit-transform": " rotateX(-180deg)",
                 "-moz-transform": " rotateX(-180deg)",
                 "-o-transform": " rotateX(-180deg)",
@@ -213,18 +217,18 @@
             break;
 
             case 'flipCube':
-              if(el.find(".back").length > 0) {
-                el.html(el.find(".back").html())
+              if(element.find(".back").length > 0) {
+                element.html(element.find(".back").html())
               }
 
-              var initial = el.text()
+              var initial = element.text()
               var index = $.inArray(initial, array)
               if((index + 1) == array.length) index = -1
 
-              el.html("");
-              $("<span class='front'>" + initial + "</span>").appendTo(el);
-              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
-              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube").show().css({
+              element.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(element);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(element);
+              element.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube").show().css({
                 "-webkit-transform": " rotateY(180deg)",
                 "-moz-transform": " rotateY(180deg)",
                 "-o-transform": " rotateY(180deg)",
@@ -234,18 +238,18 @@
             break;
 
             case 'flipCubeUp':
-              if(el.find(".back").length > 0) {
-                el.html(el.find(".back").html())
+              if(element.find(".back").length > 0) {
+                element.html(element.find(".back").html())
               }
 
-              var initial = el.text()
+              var initial = element.text()
               var index = $.inArray(initial, array)
               if((index + 1) == array.length) index = -1
 
-              el.html("");
-              $("<span class='front'>" + initial + "</span>").appendTo(el);
-              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(el);
-              el.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube up").show().css({
+              element.html("");
+              $("<span class='front'>" + initial + "</span>").appendTo(element);
+              $("<span class='back'>" + array[index + 1] + "</span>").appendTo(element);
+              element.wrapInner("<span class='rotating' />").find(".rotating").hide().addClass("flip cube up").show().css({
                 "-webkit-transform": " rotateX(180deg)",
                 "-moz-transform": " rotateX(180deg)",
                 "-o-transform": " rotateX(180deg)",
@@ -255,13 +259,13 @@
             break;
 
             case 'spin':
-              if(el.find(".rotating").length > 0) {
-                el.html(el.find(".rotating").html())
+              if(element.find(".rotating").length > 0) {
+                element.html(element.find(".rotating").html())
               }
-              index = $.inArray(el.text(), array)
+              index = $.inArray(element.text(), array)
               if((index + 1) == array.length) index = -1
 
-              el.wrapInner("<span class='rotating spin' />").find(".rotating").hide().text(array[index + 1]).show().css({
+              element.wrapInner("<span class='rotating spin' />").find(".rotating").hide().text(array[index + 1]).show().css({
                 "-webkit-transform": " rotate(0) scale(1)",
                 "-moz-transform": "rotate(0) scale(1)",
                 "-o-transform": "rotate(0) scale(1)",
@@ -270,10 +274,10 @@
             break;
 
             case 'fade':
-              el.fadeOut(settings.speed, function() {
-                index = $.inArray(el.text(), array)
+              element.fadeOut(settings.speed, function() {
+                index = $.inArray(element.text(), array)
                 if((index + 1) == array.length) index = -1
-                el.text(array[index + 1]).fadeIn(settings.speed);
+                element.text(array[index + 1]).fadeIn(settings.speed);
               });
             break;
           }
@@ -815,17 +819,11 @@ $(function () {
         hover: !1
     });
 
-    // // set show item when scroll
-    // $('data[150]').each(function() {
-    //   var element = $(this);
-    //   element.viewportChecker({
-    //     classToAdd: 'visible animated fadeInUp',
-    //     offset: 150
-    //   });
-    //   // element.css( "backgroundColor", element.data( "color" ) );
-    // });
-    function checkView() {
-
+    function showView() {
+      var obj = {
+        'flammable': 'inflammable',
+        'duh': 'no duh'
+      };
     }
     $('.mascara-trama').viewportChecker({
         classToAdd: 'contraer',
