@@ -29,7 +29,7 @@
   });
 
   // add class actice navigation first child
-  $('ul.navigation li:first-child').addClass('active');
+  $('ul.navigation li').eq(0).addClass('active');
   // add class actice slider first child
   $listSlide.hide().first().show();
 
