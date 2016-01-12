@@ -28,6 +28,8 @@
       width: widthWindow,
       height: heightWindow
     });
+
+    // function of set height instashow-gallery-item
     galleryHeight();
     $(document).ready(function() {
       if (widthWindow >= 1024) {
@@ -510,8 +512,8 @@
           target.removeClass('actives inactives');
           target.eq(s).addClass('inactives');
           ((s === sliderLast) && (s = -1))
-          target.eq(++s).addClass('actives');
-          window.setTimeout(sliderActive, 5000);
+          target.eq( ++s ).addClass('actives');
+          setTimeout(sliderActive, 5000);
         };
       sliderActive();
     });
@@ -526,6 +528,7 @@
     }
   }
   // function hover on item image
+  hoverItem();
   function hoverItem() {
     var $blockWeb = $('.web__name');
     var $itemMugaku = $('#webItem a:eq(0)').find('li');
@@ -785,33 +788,29 @@ $(function () {
 
   //excute function
   $(document).ready(function(){
-    setTimeout(function() {
+    // function execute add border
+    function setBorder() {
       // add border
       $('ul.pogoSlider-nav li').animatedBorder({
         size: 1,
         color: '#4a4a4c',
         hover: !0
       });
-    }, 1600);
-    $('#heading .rotate').textrotator({
-      animation: 'flip',
-      speed: 3000
-    });
-
+      $('.pogoSlider-dir-btn--prev').animatedBorder({
+        size: 1,
+        color: '#4a4a4c',
+        hover: !1
+      });
+      $('.pogoSlider-dir-btn--next').animatedBorder({
+        size: 1,
+        color: '#4a4a4c',
+        hover: !1
+      });
+    }
     $('li.latest__item').animatedBorder({
       size: 1,
       color: '#4a4a4c',
       hover: !0
-    });
-    $('.pogoSlider-dir-btn--prev').animatedBorder({
-      size: 1,
-      color: '#4a4a4c',
-      hover: !1
-    });
-    $('.pogoSlider-dir-btn--next').animatedBorder({
-      size: 1,
-      color: '#4a4a4c',
-      hover: !1
     });
     $('.wrapp__preguntas li').animatedBorder({
         size: 1,
@@ -819,12 +818,14 @@ $(function () {
         hover: !1
     });
 
-    function showView() {
-      var obj = {
-        'flammable': 'inflammable',
-        'duh': 'no duh'
-      };
-    }
+    setTimeout(setBorder, 1600);
+
+    // execute function of translate text
+    $('#heading .rotate').textrotator({
+      animation: 'flip',
+      speed: 3000
+    });
+
     $('.mascara-trama').viewportChecker({
         classToAdd: 'contraer',
         offset: 150
