@@ -740,7 +740,7 @@
     $('header').css({
       top: '0px'
     });
-    $iconMenu.css({
+    $(this).css({
       transform: 'rotate(90deg)'
     });
     $('.show').css({
@@ -763,7 +763,7 @@
     $('.mascara-contact').addClass('slow');
     $('.nav').addClass('open');
     $('main').css({
-      opacity: .1,
+      opacity: 1,
       'pointer-events': 'none'
     });
   });
@@ -781,11 +781,19 @@ $(function () {
 
   //excute function
   $(document).ready(function(){
+    setTimeout(function() {
+      // add border
+      $('ul.pogoSlider-nav li').animatedBorder({
+        size: 1,
+        color: '#4a4a4c',
+        hover: !0
+      });
+    }, 1600);
     $('#heading .rotate').textrotator({
       animation: 'flip',
       speed: 3000
     });
-     // add border
+
     $('li.latest__item').animatedBorder({
       size: 1,
       color: '#4a4a4c',
@@ -801,17 +809,24 @@ $(function () {
       color: '#4a4a4c',
       hover: !1
     });
-    $('.pogoSlider-nav li').animatedBorder({
-      size: 1,
-      color: '#4a4a4c',
-      hover: !0
-    });
     $('.wrapp__preguntas li').animatedBorder({
         size: 1,
         color: '#4a4a4c',
         hover: !1
     });
-    // set show item when scroll
+
+    // // set show item when scroll
+    // $('data[150]').each(function() {
+    //   var element = $(this);
+    //   element.viewportChecker({
+    //     classToAdd: 'visible animated fadeInUp',
+    //     offset: 150
+    //   });
+    //   // element.css( "backgroundColor", element.data( "color" ) );
+    // });
+    function checkView() {
+
+    }
     $('.mascara-trama').viewportChecker({
         classToAdd: 'contraer',
         offset: 150
