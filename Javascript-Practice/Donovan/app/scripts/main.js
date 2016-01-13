@@ -2,8 +2,8 @@
 !(function ( $ ) {
   'use strict';
 
-  var links = $('.navigation li');
-  var linksdrop = $('.navigationdrop li');
+  var links = $('.navigation').find('li');
+  var linksdrop = $('.navigationdrop').find('li');
   var htmlbody = $('html,body');
   var buttonNext = $('.buttonNext');
   var buttonPre = $('.back_top');
@@ -56,30 +56,14 @@
   });
 
   // excute when click section
-  (links).click(function (e) {
-    e.preventDefault();
-    var datasection = $(this).attr('data-section');
-    goToByScroll(datasection);
-  });
+  var elems = [ links, linksdrop, buttonNext, buttonPre];
 
-  linksdrop.click(function (e) {
-    e.preventDefault();
-    var datasection = $(this).attr('data-section');
-    goToByScroll(datasection);
-  });
-
-  // excute when click button next
-  buttonNext.click(function (e) {
-    e.preventDefault();
-    var datasection = $(this).attr('data-section');
-    goToByScroll(datasection);
-  });
-
-  // excute when click button pre
-  buttonPre.click(function (e) {
-    e.preventDefault();
-    var datasection = $(this).attr('data-section');
-    goToByScroll(datasection);
+  $.each(elems, function(i, elem) {
+    elem.click(function (e) {
+      e.preventDefault();
+      var datasection = $(this).attr('data-section');
+      goToByScroll(datasection);
+    });
   });
 
   /* Helper function */
