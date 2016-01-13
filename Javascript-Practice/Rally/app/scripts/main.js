@@ -342,6 +342,7 @@ var Rally = {};
     R.Accordion().init();
   }
 }(window.jQuery, window, Rally, document));
+
 window.jQuery(document).ready(function() {
   new Rally.setting();
 });

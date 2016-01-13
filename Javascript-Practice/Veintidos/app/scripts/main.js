@@ -1,105 +1,248 @@
 /*global $ jQuery */
-(function($, window, document) {
-  'use strict';
+'use strict';
 
-  var element = document.querySelector('img');
-  var heightWindow = $(window).height();
-  var widthWindow = $(window).width();
-  var $containCases = $('.wrapp-cases');
-  // call function amination use plugin animation
-  $('.animsition').animsition();
+// define global variable
+var Veintidos = {};
 
-  // function of set height instashow-gallery-item
-  galleryHeight();
+!(function($, window, V, document) {
 
-  // set link active in pages
-  setLink();
+  V.Temp = function() {
+    'use strict';
+    // function get data to data.json
+    var getData = function(source, element) {
 
-  // show item menu
-  showIconMenu();
+      $.get('../data/data.json', function(data) {
 
-  // excute function slider
-  coverSlider();
+        // compile the template
+        var template = Handlebars.compile(source);
 
+        // pass our data to the template
+        var html = template(data);
+        element.prepend(html);
+      });
+    };
 
-  // set size block when resize
-  $(window).bind('resize', function() {
-    $('.resize').css({
-      width: widthWindow,
-      height: heightWindow
+    // render article services with handlebarjs
+    var renderItem = function(pathPage, idLoad ) {
+
+      // DOM HTML prepend id services at home page
+      $.get( pathPage, function(data) {
+
+        var $renderElement = $(idLoad);
+        getData(data, $renderElement);
+      });
+    };
+    var init = function() {
+      // load data json
+      renderItem('../templates/modules/services.html', '#services');
+      renderItem('../templates/modules/footer.html', '#footerSocial');
+      renderItem('../templates/modules/slider.html', '#cases');
+      renderItem('../templates/modules/web.html', '#webItem');
+      renderItem('../templates/modules/landing.html', '#lanDing');
+      renderItem('../templates/modules/pages.html', '#pages');
+      renderItem('../templates/modules/gallery.html', '#gallery');
+    }
+    return {
+      init : init
+    }
+  }
+
+  $.Load = function() {
+    'use strict';
+    var element = document.querySelector('img');
+    var heightWindow = $(window).height();
+    var widthWindow = $(window).width();
+    var $containCases = $('.wrapp-cases');
+    // set size block when resize
+    $(window).bind('resize', function() {
+      $('.resize').css({
+        width: widthWindow,
+        height: heightWindow
+      });
+
+      // function of set height instashow-gallery-item
+      galleryHeight();
+      $(document).ready(function() {
+        if (widthWindow >= 1024) {
+          $( window ).scroll(function() {
+            menuScroll();
+          });
+        }
+      });
     });
 
-    // function of set height instashow-gallery-item
-    galleryHeight();
-    $(document).ready(function() {
+    // function of show menu when scroll
+    var menuScroll = function() {
+      var heightScroll = $(window).scrollTop();
+      var heightMenu = $('header').height();
+      if (heightScroll > heightMenu) {
+        $('header').css('top', '-100px');
+      } else {
+        $('header').css('top', '0');
+      }
+    }
+    $(document).ready(function(){
       if (widthWindow >= 1024) {
         $( window ).scroll(function() {
           menuScroll();
         });
       }
+    })
+
+    $(window).load(function() {
+
+      // Use plugin lazyload load image
+      $('img').lazyload({
+        effect: 'fadeIn'
+      });
+
+      // set loader page
+      loaderPage();
+
+      // set time out load page
+      setTimeout(loadDone, 1600);
+
+      $('main').animate({
+        opacity: 1
+      }, 1500);
+
+      // set width and height class
+      $('.resize').css({
+        width: widthWindow,
+        height: heightWindow
+      });
     });
-  });
 
-  widthWindow <= 480 && $(document).ready(function() {
-    $containCases.addClass('resize');
-  });
-  widthWindow <= 1024 && $(document).ready(function() {
-    $containCases.addClass('resize');
-  });
-
-  // function of show menu when scroll
-  function menuScroll() {
-    var heightScroll = $(window).scrollTop();
-    var heightMenu = $('header').height();
-    if (heightScroll > heightMenu) {
-      $('header').css('top', '-100px');
-    } else {
-      $('header').css('top', '0');
+    // set load pages
+    var loadDone = function() {
+      $('body').addClass('pace-done');
+      $('main').addClass('animation');
     }
-  }
-  $(document).ready(function(){
-    if (widthWindow >= 1024) {
-      $( window ).scroll(function() {
-        menuScroll();
+
+    // function of set height instashow-gallery-item
+    var galleryHeight = function() {
+      var $galleryItem = $('.instashow-gallery-item');
+      var itemHeight = $galleryItem.width();
+      $galleryItem.css('height', itemHeight);
+    }
+
+    // check title page active
+    var setPageActive = function(element, node) {
+      if ($('body').hasClass(element)) {
+        $(node).addClass('select');
+      } else {
+        $(node).removeClass('select');
+      }
+    }
+
+    var setLink = function() {
+      var _urlpath = $(location).attr('pathname').split('/').pop();
+
+      $('#menu li').each(function(){
+          var _this = $(this);
+        var _str = _this.find('a').attr('href');
+        _str !== _urlpath ? _this.find('a').removeClass('select') : _this.find('a').addClass('select');
       });
     }
-  })
 
-  $(window).load(function() {
+    // set parallax scroll
+    var parallaxScroll = function(argument) {
+      var _scrollTop = $(window).scrollTop();
+      $(this).css('top', 0 - 0.15 * _scrollTop + 'px');
+    }
 
-    // Use plugin lazyload load image
-    $('img').lazyload({
-      effect: 'fadeIn'
-    });
+    // function of loader
+    var loaderPage = function() {
+      var $loaderItem = $('.loader');
+      $loaderItem.animate({
+        opacity: 1
+      }, 100);
+      $loaderItem.css({
+        opacity: 1,
+        bottom: 250
+      });
+      $loaderItem.find('img').css({
+        transform: 'rotate(500deg)'
+      });
+    }
 
-    // set loader page
-    loaderPage();
 
-    // set time out load page
-    setTimeout(loadDone, 1600);
 
-    $('main').animate({
-      opacity: 1
-    }, 1500);
+    // function of set height instashow-gallery-item
+    function galleryHeight() {
+      var $galleryItem = $('.instashow-gallery-item');
+      var itemHeight = $galleryItem.width();
+      $galleryItem.css('height', itemHeight);
+    }
 
-    // set width and height class
-    $('.resize').css({
-      width: widthWindow,
-      height: heightWindow
-    });
+    // set slider page works
+    function coverSlider() {
+      $('.cover-slider').each(function() {
+        var target = $(this).find('.cover-slider__slide');
+        var sliderLast = target.length - 1;
+        var s = 0;
+        var sliderActive = function() {
+            target.removeClass('actives inactives');
+            target.eq(s).addClass('inactives');
+            ((s === sliderLast) && (s = -1))
+            target.eq( ++s ).addClass('actives');
+            setTimeout(sliderActive, 5000);
+          };
+        sliderActive();
+      });
+    }
 
-    // load data json
-    renderItem('../templates/modules/services.html', '#services');
-    renderItem('../templates/modules/footer.html', '#footerSocial');
-    renderItem('../templates/modules/slider.html', '#cases');
-    renderItem('../templates/modules/web.html', '#webItem');
-    renderItem('../templates/modules/landing.html', '#lanDing');
-    renderItem('../templates/modules/pages.html', '#pages');
-    renderItem('../templates/modules/gallery.html', '#gallery');
-  });
+    // show icon menu
+    function showIconMenu() {
+      var $headerItem = $('header');
+      if ($('body').hasClass('index')) {
+        $headerItem.find('.icon-menu').css('display', 'none');
+        $headerItem.find('.lenguaje').css('display', 'block');
+      }
+    }
+    var init = function() {
+      $('.animsition').animsition();
+      widthWindow <= 480 && $(document).ready(function() {
+        $containCases.addClass('resize');
+      });
+      widthWindow <= 1024 && $(document).ready(function() {
+        $containCases.addClass('resize');
+      });
 
-  // set parallax scroll page agency
-  parallaxScroll('.parallax');
+      // set parallax scroll page agency
+      parallaxScroll('.parallax');
+
+      // load finish
+      loadDone();
+
+      // function of set height instashow-gallery-item
+      galleryHeight();
+
+      // set link active in pages
+      setLink();
+
+      // show item menu
+      showIconMenu();
+
+      // excute function slider
+      coverSlider();
+
+    }
+    return {
+      init : init
+    }
+  }
+  V.Setting = function() {
+    V.Temp().init();
+    $.Load().init();
+  }
+}(window.jQuery, window, Veintidos, document));
+
+window.jQuery(document).ready(function() {
+  new Veintidos.Setting();
+});
+
+(function($, window, document) {
 
   // set time out active after load data
   setTimeout(function() {
@@ -130,11 +273,7 @@
 
   // set border
   setTimeout(setBorder, 1600);
-  // set load pages
-  function loadDone() {
-    $('body').addClass('pace-done');
-    $('main').addClass('animation');
-  }
+
 
   $(function() {
     'use strict';
@@ -426,110 +565,7 @@
     });
   });
 
-// function of set height instashow-gallery-item
-  function galleryHeight() {
-    var $galleryItem = $('.instashow-gallery-item');
-    var itemHeight = $galleryItem.width();
-    $galleryItem.css('height', itemHeight);
-  }
 
-  // check title page active
-  function setPageActive(element, node) {
-    if ($('body').hasClass(element)) {
-      $(node).addClass('select');
-    } else {
-      $(node).removeClass('select');
-    }
-  }
-
-  function setLink() {
-    var _urlpath = $(location).attr('pathname').split('/').pop();
-
-    $('#menu li').each(function(){
-        var _this = $(this);
-      var _str = _this.find('a').attr('href');
-      _str !== _urlpath ? _this.find('a').removeClass('select') : _this.find('a').addClass('select');
-    });
-  }
-
-  // set parallax scroll
-  function parallaxScroll(argument) {
-    var _scrollTop = $(window).scrollTop();
-    $(this).css('top', 0 - 0.15 * _scrollTop + 'px');
-  }
-
-  // function of loader
-  function loaderPage() {
-    var $loaderItem = $('.loader');
-    $loaderItem.animate({
-      opacity: 1
-    }, 100);
-    $loaderItem.css({
-      opacity: 1,
-      bottom: 250
-    });
-    $loaderItem.find('img').css({
-      transform: 'rotate(500deg)'
-    });
-  }
-
-  // function get data to data.json
-  function getData(source, element) {
-
-    $.get('../data/data.json', function(data) {
-
-      // compile the template
-      var template = Handlebars.compile(source);
-
-      // pass our data to the template
-      var html = template(data);
-      element.prepend(html);
-    });
-  };
-
-  // render article services with handlebarjs
-  function renderItem(pathPage, idLoad ) {
-
-    // DOM HTML prepend id services at home page
-    $.get( pathPage, function(data) {
-
-      var $renderElement = $(idLoad);
-      getData(data, $renderElement);
-    });
-  };
-
-  // function of set height instashow-gallery-item
-  function galleryHeight() {
-    var $galleryItem = $('.instashow-gallery-item');
-    var itemHeight = $galleryItem.width();
-    $galleryItem.css('height', itemHeight);
-  }
-
-  // set slider page works
-  function coverSlider() {
-    $('.cover-slider').each(function() {
-      var target = $(this).find('.cover-slider__slide');
-      var sliderLast = target.length - 1;
-      var s = 0;
-      var sliderActive = function() {
-          target.removeClass('actives inactives');
-          target.eq(s).addClass('inactives');
-          ((s === sliderLast) && (s = -1))
-          target.eq( ++s ).addClass('actives');
-          setTimeout(sliderActive, 5000);
-        };
-      sliderActive();
-    });
-  }
-
-  // show icon menu
-  function showIconMenu() {
-    var $headerItem = $('header');
-    if ($('body').hasClass('index')) {
-      $headerItem.find('.icon-menu').css('display', 'none');
-      $headerItem.find('.lenguaje').css('display', 'block');
-    }
-  }
   // function hover on item image
   hoverItem();
   function hoverItem() {
@@ -828,10 +864,10 @@ $(function () {
         $('.instashow-gallery-item')
         ];
       $.each( elems, function( i, elem ) {
-        _offSetShow = $(this).data('select');
+        // offSetShow = elem.data('select');
         elem.addClass('hidden').viewportChecker({
           classToAdd: 'visible animated fadeInUp',
-          offset: _offSetShow
+          offset: 300
         });
       });
       $('.mascara-trama').viewportChecker({
@@ -853,5 +889,4 @@ $(function () {
     }
     setTimeout(viewShow, 1600);
   });
-
 }(jQuery));
