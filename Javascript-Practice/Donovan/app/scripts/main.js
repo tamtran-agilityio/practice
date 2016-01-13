@@ -4,9 +4,9 @@
 // define global variable
 var Donovan = {};
 
-(function($, window, D, document) {
+!(function($, window, D, document) {
 
-  D.App = function () {
+  D.App = function() {
     'use strict';
 
     var links = $('.navigation').find('li');
