@@ -4,9 +4,9 @@
 // define global variable
 var Veintidos = {};
 
-!(function($, window, V, document) {
+!(function($, window, document) {
 
-  V.Temp = function() {
+  $.fn.Temp = function() {
     'use strict';
     // function get data to data.json
     var getData = function(source, element) {
@@ -47,7 +47,7 @@ var Veintidos = {};
     }
   }
 
-  $.Load = function() {
+  $.fn.Load = function() {
     'use strict';
     var element = document.querySelector('img');
     var heightWindow = $(window).height();
@@ -169,14 +169,14 @@ var Veintidos = {};
 
 
     // function of set height instashow-gallery-item
-    function galleryHeight() {
+    var galleryHeight = function() {
       var $galleryItem = $('.instashow-gallery-item');
       var itemHeight = $galleryItem.width();
       $galleryItem.css('height', itemHeight);
     }
 
     // set slider page works
-    function coverSlider() {
+    var coverSlider = function() {
       $('.cover-slider').each(function() {
         var target = $(this).find('.cover-slider__slide');
         var sliderLast = target.length - 1;
@@ -193,11 +193,269 @@ var Veintidos = {};
     }
 
     // show icon menu
-    function showIconMenu() {
+    var showIconMenu = function() {
       var $headerItem = $('header');
       if ($('body').hasClass('index')) {
         $headerItem.find('.icon-menu').css('display', 'none');
         $headerItem.find('.lenguaje').css('display', 'block');
+      }
+    }
+
+    var showMenu = function() {
+      // handle icon menu
+      var $iconMenu = $('.menu-icon');
+      $iconMenu.click(function() {
+        $('header').css({
+          top: '0px'
+        });
+        $(this).css({
+          transform: 'rotate(90deg)'
+        });
+        $('.show').css({
+          display: 'block'
+        });
+      });
+      $('.show').click(function() {
+        $('header').css({
+          top: '-100%'
+        });
+        $iconMenu.css({
+          transform: 'rotate(0deg)'
+        });
+        $('.show').css({
+          display: 'none'
+        });
+      });
+      $('.open-contact').click(function() {
+        $('.contacto').addClass('open');
+        $('.mascara-contact').addClass('slow');
+        $('.nav').addClass('open');
+        $('main').css({
+          opacity: 1,
+          'pointer-events': 'none'
+        });
+      });
+      $('.cerrar').click(function() {
+        $('.contacto').removeClass('open');
+        $('.nav').removeClass('open');
+        $('main').css({
+          opacity: 1,
+          'pointer-events': 'auto'
+        });
+      });
+    }
+
+    // function hover
+    var hoverItem = function() {
+      var $blockWeb = $('.web__name');
+      var $itemMugaku = $('#webItem a:eq(0)').find('li');
+      var $itemCrea = $('#webItem a:eq(2)').find('li');
+      var $itemHenry = $('#webItem a:eq(1)').find('li');
+      var $itemRoom = $('#webItem a:eq(3)').find('li');
+      if ($(window).width() >= 1024) {
+        $itemMugaku.mouseenter(function() {
+          $(this).css({
+            width: '60.1%',
+            height: '60.1%',
+            'z-index': 1,
+            'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
+          }),
+          $(this).find('.web__name').addClass('show');
+          $(this).find('.web__name h2').addClass('show');
+          $(this).find('.web__name').removeClass('showhide');
+          $(this).find('.web__name h2').removeClass('showhide');
+          $itemHenry.css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
+          }),
+          $itemCrea.css({
+            height: '40.1%',
+            width: '60.1%'
+          }),
+          $itemRoom.css({
+            height: '40.1%',
+            width: '40.1%'
+          })
+        });
+        $itemMugaku.mouseleave(function() {
+          $(this).css({
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
+          });
+          $(this).find('.web__name').addClass('showhide');
+          $(this).find('.web__name h2').addClass('showhide');
+          $(this).find('.web__name').removeClass('show');
+          $(this).find('.web__name h2').removeClass('show');
+          $itemCrea.css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+          }),
+          $itemHenry.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemRoom.css({
+            width: '50%',
+            height: '50%'
+          })
+        });
+
+        $itemHenry.mouseenter(function() {
+          $(this).css({
+            width: '60.1%',
+            'z-index': 1,
+            height: '60.1%',
+            'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
+          });
+          $(this).find('.web__name').addClass('show');
+          $(this).find('.web__name h2').addClass('show');
+          $(this).find('.web__name').removeClass('showhide');
+          $(this).find('.web__name h2').removeClass('showhide');
+          $itemMugaku.css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%',
+            'z-index': 1
+          }),
+          $itemCrea.css({
+            height: '40.1%',
+            width: '40.1%'
+          }),
+          $itemRoom.css({
+            height: '40.1%',
+            width: '60.1%'
+          })
+        });
+        $itemHenry.mouseleave(function() {
+          $itemMugaku.css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%',
+            'z-index': 0
+          }),
+          $itemHenry.css({
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
+          }),
+          $itemCrea.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemRoom.css({
+            width: '50%',
+            height: '50%'
+          });
+          $itemHenry.find('.web__name').addClass('showhide');
+          $itemHenry.find('.web__name h2').addClass('showhide');
+          $itemHenry.find('.web__name').removeClass('show');
+          $itemHenry.find('.web__name h2').removeClass('show');
+        });
+        $itemCrea.mouseenter(function() {
+          $itemMugaku.css({
+            height: '40.1%',
+            width: '60.1%'
+          }),
+          $itemHenry.css({
+            height: '40.1%',
+            width: '40.1%'
+          }),
+          $itemCrea.css({
+            width: '60.1%',
+            'z-index': 1,
+            height: '61%',
+            'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
+          }),
+          $itemRoom.css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
+          });
+          $itemCrea.find('.web__name').addClass('show');
+          $itemCrea.find('.web__name h2').addClass('show');
+          $itemCrea.find('.web__name').removeClass('showhide');
+          $itemCrea.find('.web__name h2').removeClass('showhide');
+        })
+        $itemCrea.mouseleave(function() {
+          $itemMugaku.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemHenry.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemCrea.css({
+            width: '50%',
+            'z-index': 0,
+            height: '50%',
+            'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
+          }),
+          $itemRoom.css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+          });
+          $itemCrea.find('.web__name').addClass('showhide');
+          $itemCrea.find('.web__name h2').addClass('showhide');
+          $itemCrea.find('.web__name').removeClass('show');
+          $itemCrea.find('.web__name h2').removeClass('show');
+        });
+        $itemRoom.mouseenter(function() {
+          $itemMugaku.css({
+            height: '40.1%',
+            width: '40.1%'
+          }),
+          $itemHenry.css({
+            height: '40.1%',
+            width: '60.1%'
+          }),
+          $itemRoom.css({
+            width: '60.1%',
+            height: '60.1%',
+            'z-index': 1,
+            'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
+          }),
+          $itemCrea.css({
+            width: '40.1%',
+            height: '60.1%',
+            'background-size': '150%'
+          });
+          $itemRoom.find('.web__name').addClass('show');
+          $itemRoom.find('.web__name h2').addClass('show');
+          $itemRoom.find('.web__name').removeClass('showhide');
+          $itemRoom.find('.web__name h2').removeClass('showhide');
+        });
+        $itemRoom.mouseleave(function() {
+          $itemMugaku.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemHenry.css({
+            width: '50%',
+            height: '50%'
+          }),
+          $itemRoom.css({
+            width: '50%',
+            height: '50%',
+            'z-index': 0,
+            'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
+          }),
+          $itemCrea.css({
+            width: '50%',
+            height: '50%',
+            'background-size': '100%'
+          });
+          $itemRoom.find('.web__name').addClass('showhide');
+          $itemRoom.find('.web__name h2').addClass('showhide');
+          $itemRoom.find('.web__name').removeClass('show');
+          $itemRoom.find('.web__name h2').removeClass('show');
+        });
       }
     }
     var init = function() {
@@ -227,55 +485,249 @@ var Veintidos = {};
       // excute function slider
       coverSlider();
 
+      // show menu
+      showMenu();
+
+      // function hover on item image
+      setTimeout( hoverItem(), 1600);
+      // set time out active after load data
+      setTimeout(function() {
+
+        // excute function slider page index use plugin pogoSlider
+        $('#cases').pogoSlider({
+          autoplay: true,
+          autoplayTimeout: 1500,
+          displayProgess: true,
+          preserveTargetSize: true,
+          targetWidth: 1000,
+          targetHeight: 300,
+          responsive: true,
+          slideTransition: 'verticalSlide',
+          generateButton: true
+        }).data('plugin_pogoSlider');
+
+        //set pop up images page works
+        var elements = document.querySelectorAll( '.landing__image' );
+        Intense( elements );
+        var elementsPages = document.querySelectorAll( '.pages__image' );
+        Intense( elementsPages );
+
+      }, 1600);
     }
     return {
       init : init
     }
   }
-  V.Setting = function() {
-    V.Temp().init();
-    $.Load().init();
+
+  // function of set border
+  $.fn.setBorder = function() {
+    // add border of item
+    $.fn.extend({
+      repositionBorders: function() {
+        $('body div.animatedBorder').each(function() {
+          var t = $('.animatedBorderSprite-top', $(this)).css('background-color');
+          var o = $('.animatedBorderSprite-top', $(this)).height();
+          $(this).animatedBorder().animatedBorder({
+            size: o,
+            color: t
+          })
+        });
+      },
+      animatedBorder: function(t) {
+        var o, s = {
+          size: 2,
+          color: '#6699CC',
+          hover: !1
+        };
+        return t = $.extend(s, t),
+        this.each(function() {
+          switch (t) {
+            case 'hide':
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
+              break;
+            case 'show':
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
+              break;
+            case 'destroy':
+              $(this).children('.animatedBorderSprite').remove(),
+              $(this).unbind('mouseenter mouseleave');
+              break;
+            default:
+            if ($(this).hasClass('animatedBorder'))
+              return $('.animatedBorderSprite', $(this)).remove(),
+              void $(this).removeClass('animatedBorder');
+            $(this).addClass('animatedBorder'),
+            o = {
+              height: $(this).innerHeight(),
+              width: $(this).innerWidth()
+            },
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-top').css({
+              top: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-bottom').css({
+              bottom: -t.size,
+              left: -t.size,
+              width: o.width + 2 * t.size,
+              height: t.size,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              left: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            $(this).append($('<div />').addClass('animatedBorderSprite').css({
+              top: 0,
+              right: -t.size,
+              width: t.size,
+              height: o.height,
+              'background-color': t.color,
+              'z-index': 1
+            })),
+            t.hover && ($(this).hover(function() {
+              $(this).children('.animatedBorderSprite').fadeIn('fast');
+            }, function() {
+              $(this).children('.animatedBorderSprite').fadeOut('slow');
+            }),
+            $(this).children('.animatedBorderSprite').hide());
+          }
+        })
+      }
+    });
+
+    // function execute add border
+    var getBorder = function() {
+      // add border
+      var elems = [$('.pogoSlider-nav li'), $('li.latest__item')];
+      $.each( elems, function( i, elem ) {
+        elem.animatedBorder({
+          size: 1,
+          color: '#4a4a4c',
+          hover: !0
+        });
+      })
+      var elems = [$('.pogoSlider-dir-btn--prev'), $('.pogoSlider-dir-btn--next'), $('.wrapp__preguntas li')];
+      $.each( elems, function( i, elem ) {
+        elem.animatedBorder({
+          size: 1,
+          color: '#4a4a4c',
+          hover: !1
+        });
+      })
+    }
+    var init = function() {
+      // set border
+      setTimeout(getBorder, 1600);
+    }
+    return {
+      init : init
+    }
   }
-}(window.jQuery, window, Veintidos, document));
 
-window.jQuery(document).ready(function() {
-  new Veintidos.Setting();
-});
+  // function of set view item
+  $.fn.setViewPort = function() {
+    // checking show item
+    $.fn.viewportChecker = function(useroptions) {
+      // Define options and extend with user
+      var options = {
+        classToAdd: 'visible',
+        offset: 100
+        // callbackFunction: function(elem){}
+      };
+      $.extend(options, useroptions);
 
-(function($, window, document) {
+      // Cache the given element and height of the browser
+      var $elem = this,
+      windowHeight = $(window).height();
 
-  // set time out active after load data
-  setTimeout(function() {
+      this.checkElements = function() {
+        // Set some vars to check with
+        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html'),
+        viewportTop = $(scrollElem).scrollTop(),
+        viewportBottom = (viewportTop + windowHeight);
 
-    // function of hover
-    hoverItem();
+        $elem.each(function() {
+          var $obj = $(this);
+          // If class already exists; quit
+          if ($obj.hasClass(options.classToAdd)) {
+            return;
+          }
 
-    // excute function slider page index use plugin pogoSlider
-    $('#cases').pogoSlider({
-      autoplay: true,
-      autoplayTimeout: 1500,
-      displayProgess: true,
-      preserveTargetSize: true,
-      targetWidth: 1000,
-      targetHeight: 300,
-      responsive: true,
-      slideTransition: 'verticalSlide',
-      generateButton: true
-    }).data('plugin_pogoSlider');
+          // define the top position of the element and include the offset which makes is appear earlier or later
+          var elemTop = Math.round( $obj.offset().top ) + options.offset,
+          elemBottom = elemTop + ($obj.height());
 
-    // set pop up images page works
-    // var elements = document.querySelectorAll( '.landing__image' );
-    // Intense( elements );
-    // var elementsPages = document.querySelectorAll( '.pages__image' );
-    // Intense( elementsPages );
+          // Add class if in viewport
+          if ((elemTop < viewportBottom) && (elemBottom > viewportTop)) {
+            $obj.addClass(options.classToAdd);
 
-  }, 1600);
+          // Do the callback function. Callback wil send the jQuery object as parameter
+          // options.callbackFunction($obj);
+          }
+        });
+      };
 
-  // set border
-  setTimeout(setBorder, 1600);
+      // Run checkelements on load and scroll
+      $(window).scroll(this.checkElements);
+      this.checkElements();
 
+      // On resize change the height var
+      $(window).resize(function(e){
+        windowHeight = e.currentTarget.innerHeight;
+      });
+    };
+    var viewShow = function() {
+      var elems = [
+        $('.services__item'),
+        $('.landing li'),
+        $('.branding div'),
+        $('.pages__block').find('li'),
+        $('.wrapp__preguntas').find('li'),
+        $('.instashow-gallery-item')
+        ];
+      $.each( elems, function( i, elem ) {
+        // offSetShow = elem.data('select');
+        elem.addClass('hidden').viewportChecker({
+          classToAdd: 'visible animated fadeInUp',
+          offset: 300
+        });
+      });
+      $('.mascara-trama').viewportChecker({
+        classToAdd: 'contraer',
+        offset: 150
+      });
+      $('.about__largue li').viewportChecker({
+        classToAdd: 'up',
+        offset: 150
+      });
+      $('.about__largue').viewportChecker({
+        classToAdd: 'largue',
+        offset: 250
+      });
+      $('.services__item h3').addClass('hidden').viewportChecker({
+        classToAdd: 'visible animated fadeInDown',
+        offset: 150
+      });
+    }
+    var init = function() {
+      setTimeout(viewShow, 1600);
+    }
+    return {
+      init : init
+    }
+  }
 
-  $(function() {
+  // functon set animation text
+  $.fn.textRotator = function() {
     'use strict';
 
     // Listen for the jQuery ready event on the document
@@ -430,463 +882,25 @@ window.jQuery(document).ready(function() {
       });
     }
 
-    // checking show item
-    $.fn.viewportChecker = function(useroptions) {
-      // Define options and extend with user
-      var options = {
-        classToAdd: 'visible',
-        offset: 100
-        // callbackFunction: function(elem){}
-      };
-      $.extend(options, useroptions);
-
-      // Cache the given element and height of the browser
-      var $elem = this,
-      windowHeight = $(window).height();
-
-      this.checkElements = function() {
-        // Set some vars to check with
-        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') !== -1) ? 'body' : 'html'),
-        viewportTop = $(scrollElem).scrollTop(),
-        viewportBottom = (viewportTop + windowHeight);
-
-        $elem.each(function() {
-          var $obj = $(this);
-          // If class already exists; quit
-          if ($obj.hasClass(options.classToAdd)) {
-            return;
-          }
-
-          // define the top position of the element and include the offset which makes is appear earlier or later
-          var elemTop = Math.round( $obj.offset().top ) + options.offset,
-          elemBottom = elemTop + ($obj.height());
-
-          // Add class if in viewport
-          if ((elemTop < viewportBottom) && (elemBottom > viewportTop)) {
-            $obj.addClass(options.classToAdd);
-
-          // Do the callback function. Callback wil send the jQuery object as parameter
-          // options.callbackFunction($obj);
-          }
-        });
-      };
-
-      // Run checkelements on load and scroll
-      $(window).scroll(this.checkElements);
-      this.checkElements();
-
-      // On resize change the height var
-      $(window).resize(function(e){
-        windowHeight = e.currentTarget.innerHeight;
-      });
-    };
-
-    // add border of item
-    $.fn.extend({
-      repositionBorders: function() {
-        $('body div.animatedBorder').each(function() {
-          var t = $('.animatedBorderSprite-top', $(this)).css('background-color');
-          var o = $('.animatedBorderSprite-top', $(this)).height();
-          $(this).animatedBorder().animatedBorder({
-            size: o,
-            color: t
-          })
-        });
-      },
-      animatedBorder: function(t) {
-        var o, s = {
-          size: 2,
-          color: '#6699CC',
-          hover: !1
-        };
-        return t = $.extend(s, t),
-        this.each(function() {
-          switch (t) {
-            case 'hide':
-              $(this).children('.animatedBorderSprite').fadeOut('slow');
-              break;
-            case 'show':
-              $(this).children('.animatedBorderSprite').fadeIn('fast');
-              break;
-            case 'destroy':
-              $(this).children('.animatedBorderSprite').remove(),
-              $(this).unbind('mouseenter mouseleave');
-              break;
-            default:
-            if ($(this).hasClass('animatedBorder'))
-              return $('.animatedBorderSprite', $(this)).remove(),
-              void $(this).removeClass('animatedBorder');
-            $(this).addClass('animatedBorder'),
-            o = {
-              height: $(this).innerHeight(),
-              width: $(this).innerWidth()
-            },
-            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-top').css({
-              top: -t.size,
-              left: -t.size,
-              width: o.width + 2 * t.size,
-              height: t.size,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite animatedBorderSprite-bottom').css({
-              bottom: -t.size,
-              left: -t.size,
-              width: o.width + 2 * t.size,
-              height: t.size,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite').css({
-              top: 0,
-              left: -t.size,
-              width: t.size,
-              height: o.height,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            $(this).append($('<div />').addClass('animatedBorderSprite').css({
-              top: 0,
-              right: -t.size,
-              width: t.size,
-              height: o.height,
-              'background-color': t.color,
-              'z-index': 1
-            })),
-            t.hover && ($(this).hover(function() {
-              $(this).children('.animatedBorderSprite').fadeIn('fast');
-            }, function() {
-              $(this).children('.animatedBorderSprite').fadeOut('slow');
-            }),
-            $(this).children('.animatedBorderSprite').hide());
-          }
-        })
-      }
-    });
-  });
-
-
-  // function hover on item image
-  hoverItem();
-  function hoverItem() {
-    var $blockWeb = $('.web__name');
-    var $itemMugaku = $('#webItem a:eq(0)').find('li');
-    var $itemCrea = $('#webItem a:eq(2)').find('li');
-    var $itemHenry = $('#webItem a:eq(1)').find('li');
-    var $itemRoom = $('#webItem a:eq(3)').find('li');
-    if ($(window).width() >= 1024) {
-      $itemMugaku.mouseenter(function() {
-        $(this).css({
-          width: '60.1%',
-          height: '60.1%',
-          'z-index': 1,
-          'background-image': 'url(./images/work/work-thumb-mugako-b.jpg)'
-        }),
-        $(this).find('.web__name').addClass('show');
-        $(this).find('.web__name h2').addClass('show');
-        $(this).find('.web__name').removeClass('showhide');
-        $(this).find('.web__name h2').removeClass('showhide');
-        $itemHenry.css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%'
-        }),
-        $itemCrea.css({
-          height: '40.1%',
-          width: '60.1%'
-        }),
-        $itemRoom.css({
-          height: '40.1%',
-          width: '40.1%'
-        })
-      });
-      $itemMugaku.mouseleave(function() {
-        $(this).css({
-          width: '50%',
-          height: '50%',
-          'z-index': 0,
-          'background-image': 'url(./images/work/work-thumb-mugako-a.jpg)'
-        });
-        $(this).find('.web__name').addClass('showhide');
-        $(this).find('.web__name h2').addClass('showhide');
-        $(this).find('.web__name').removeClass('show');
-        $(this).find('.web__name h2').removeClass('show');
-        $itemCrea.css({
-          width: '50%',
-          height: '50%',
-          'background-size': '100%'
-        }),
-        $itemHenry.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemRoom.css({
-          width: '50%',
-          height: '50%'
-        })
-      });
-
-      $itemHenry.mouseenter(function() {
-        $(this).css({
-          width: '60.1%',
-          'z-index': 1,
-          height: '60.1%',
-          'background-image': 'url(../images/work/work-thumb-henry-b.jpg)'
-        });
-        $(this).find('.web__name').addClass('show');
-        $(this).find('.web__name h2').addClass('show');
-        $(this).find('.web__name').removeClass('showhide');
-        $(this).find('.web__name h2').removeClass('showhide');
-        $itemMugaku.css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%',
-          'z-index': 1
-        }),
-        $itemCrea.css({
-          height: '40.1%',
-          width: '40.1%'
-        }),
-        $itemRoom.css({
-          height: '40.1%',
-          width: '60.1%'
-        })
-      });
-      $itemHenry.mouseleave(function() {
-        $itemMugaku.css({
-          width: '50%',
-          height: '50%',
-          'background-size': '100%',
-          'z-index': 0
-        }),
-        $itemHenry.css({
-          width: '50%',
-          'z-index': 0,
-          height: '50%',
-          'background-image': 'url(../images/work/work-thumb-henry-a.jpg)'
-        }),
-        $itemCrea.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemRoom.css({
-          width: '50%',
-          height: '50%'
-        });
-        $itemHenry.find('.web__name').addClass('showhide');
-        $itemHenry.find('.web__name h2').addClass('showhide');
-        $itemHenry.find('.web__name').removeClass('show');
-        $itemHenry.find('.web__name h2').removeClass('show');
-      });
-      $itemCrea.mouseenter(function() {
-        $itemMugaku.css({
-          height: '40.1%',
-          width: '60.1%'
-        }),
-        $itemHenry.css({
-          height: '40.1%',
-          width: '40.1%'
-        }),
-        $itemCrea.css({
-          width: '60.1%',
-          'z-index': 1,
-          height: '61%',
-          'background-image': 'url(./images/work/work-thumb-portfolio-b.jpg)'
-        }),
-        $itemRoom.css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%'
-        });
-        $itemCrea.find('.web__name').addClass('show');
-        $itemCrea.find('.web__name h2').addClass('show');
-        $itemCrea.find('.web__name').removeClass('showhide');
-        $itemCrea.find('.web__name h2').removeClass('showhide');
-      })
-      $itemCrea.mouseleave(function() {
-        $itemMugaku.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemHenry.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemCrea.css({
-          width: '50%',
-          'z-index': 0,
-          height: '50%',
-          'background-image': 'url(./images/work/work-thumb-portfolio-a.jpg)'
-        }),
-        $itemRoom.css({
-          width: '50%',
-          height: '50%',
-          'background-size': '100%'
-        });
-        $itemCrea.find('.web__name').addClass('showhide');
-        $itemCrea.find('.web__name h2').addClass('showhide');
-        $itemCrea.find('.web__name').removeClass('show');
-        $itemCrea.find('.web__name h2').removeClass('show');
-      });
-      $itemRoom.mouseenter(function() {
-        $itemMugaku.css({
-          height: '40.1%',
-          width: '40.1%'
-        }),
-        $itemHenry.css({
-          height: '40.1%',
-          width: '60.1%'
-        }),
-        $itemRoom.css({
-          width: '60.1%',
-          height: '60.1%',
-          'z-index': 1,
-          'background-image': 'url(./images/work/work-thumb-apersonal-b.jpg)'
-        }),
-        $itemCrea.css({
-          width: '40.1%',
-          height: '60.1%',
-          'background-size': '150%'
-        });
-        $itemRoom.find('.web__name').addClass('show');
-        $itemRoom.find('.web__name h2').addClass('show');
-        $itemRoom.find('.web__name').removeClass('showhide');
-        $itemRoom.find('.web__name h2').removeClass('showhide');
-      });
-      $itemRoom.mouseleave(function() {
-        $itemMugaku.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemHenry.css({
-          width: '50%',
-          height: '50%'
-        }),
-        $itemRoom.css({
-          width: '50%',
-          height: '50%',
-          'z-index': 0,
-          'background-image': 'url(./images/work/work-thumb-apersonal-a.jpg)'
-        }),
-        $itemCrea.css({
-          width: '50%',
-          height: '50%',
-          'background-size': '100%'
-        });
-        $itemRoom.find('.web__name').addClass('showhide');
-        $itemRoom.find('.web__name h2').addClass('showhide');
-        $itemRoom.find('.web__name').removeClass('show');
-        $itemRoom.find('.web__name h2').removeClass('show');
+    var init = function() {
+      $('#heading .rotate').textrotator({
+        animation: 'flip',
+        speed: 3000
       });
     }
+    return {
+      init : init
+    }
   }
-  // handle icon menu
-  var $iconMenu = $('.menu-icon');
-  $iconMenu.click(function() {
-    $('header').css({
-      top: '0px'
-    });
-    $(this).css({
-      transform: 'rotate(90deg)'
-    });
-    $('.show').css({
-      display: 'block'
-    });
-  });
-  $('.show').click(function() {
-    $('header').css({
-      top: '-100%'
-    });
-    $iconMenu.css({
-      transform: 'rotate(0deg)'
-    });
-    $('.show').css({
-      display: 'none'
-    });
-  });
-  $('.open-contact').click(function() {
-    $('.contacto').addClass('open');
-    $('.mascara-contact').addClass('slow');
-    $('.nav').addClass('open');
-    $('main').css({
-      opacity: 1,
-      'pointer-events': 'none'
-    });
-  });
-  $('.cerrar').click(function() {
-    $('.contacto').removeClass('open');
-    $('.nav').removeClass('open');
-    $('main').css({
-      opacity: 1,
-      'pointer-events': 'auto'
-    });
-  });
-  // function execute add border
-  function setBorder() {
-    // add border
-    var elems = [$('.pogoSlider-nav li'), $('li.latest__item')];
-    $.each( elems, function( i, elem ) {
-      elem.animatedBorder({
-        size: 1,
-        color: '#4a4a4c',
-        hover: !0
-      });
-    })
-    var elems = [$('.pogoSlider-dir-btn--prev'), $('.pogoSlider-dir-btn--next'), $('.wrapp__preguntas li')];
-    $.each( elems, function( i, elem ) {
-      elem.animatedBorder({
-        size: 1,
-        color: '#4a4a4c',
-        hover: !1
-      });
-    })
+  $.fn.Setting = function() {
+    $.fn.Temp().init();
+    $.fn.Load().init();
+    $.fn.setBorder().init();
+    $.fn.setViewPort().init();
+    $.fn.textRotator().init();
   }
-
 }(window.jQuery, window, document));
 
-$(function () {
-
-  //excute function
-  $(document).ready(function(){
-    // execute function of translate text
-    $('#heading .rotate').textrotator({
-      animation: 'flip',
-      speed: 3000
-    });
-
-    function viewShow() {
-      var elems = [
-        $('.services__item'),
-        $('.landing li'),
-        $('.branding div'),
-        $('.pages__block').find('li'),
-        $('.wrapp__preguntas').find('li'),
-        $('.instashow-gallery-item')
-        ];
-      $.each( elems, function( i, elem ) {
-        // offSetShow = elem.data('select');
-        elem.addClass('hidden').viewportChecker({
-          classToAdd: 'visible animated fadeInUp',
-          offset: 300
-        });
-      });
-      $('.mascara-trama').viewportChecker({
-        classToAdd: 'contraer',
-        offset: 150
-      });
-      $('.about__largue li').viewportChecker({
-        classToAdd: 'up',
-        offset: 150
-      });
-      $('.about__largue').viewportChecker({
-        classToAdd: 'largue',
-        offset: 250
-      });
-      $('.services__item h3').addClass('hidden').viewportChecker({
-        classToAdd: 'visible animated fadeInDown',
-        offset: 150
-      });
-    }
-    setTimeout(viewShow, 1600);
-  });
-}(jQuery));
+window.jQuery(document).ready(function() {
+  $.fn.Setting();
+});
