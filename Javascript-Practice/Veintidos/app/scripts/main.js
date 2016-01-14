@@ -489,7 +489,7 @@ var Veintidos = {};
       showMenu();
 
       // function hover on item image
-      setTimeout( hoverItem(), 1600);
+      setTimeout( hoverItem, 1600);
       // set time out active after load data
       setTimeout(function() {
 
