@@ -1,11 +1,9 @@
 /*global $ jQuery */
-'use strict';
-
-// define global variable
-var Veintidos = {};
 
 !(function($, window, document) {
+  'use strict';
 
+  // function load data to json file
   $.fn.Temp = function() {
     'use strict';
     // function get data to data.json
@@ -47,6 +45,7 @@ var Veintidos = {};
     }
   }
 
+  // function load all file
   $.fn.Load = function() {
     'use strict';
     var element = document.querySelector('img');
@@ -521,6 +520,8 @@ var Veintidos = {};
 
   // function of set border
   $.fn.setBorder = function() {
+    'use strict';
+
     // add border of item
     $.fn.extend({
       repositionBorders: function() {
@@ -635,6 +636,8 @@ var Veintidos = {};
 
   // function of set view item
   $.fn.setViewPort = function() {
+    'use strict';
+
     // checking show item
     $.fn.viewportChecker = function(useroptions) {
       // Define options and extend with user
@@ -892,6 +895,8 @@ var Veintidos = {};
       init : init
     }
   }
+
+  // execute all function
   $.fn.Setting = function() {
     $.fn.Temp().init();
     $.fn.Load().init();
