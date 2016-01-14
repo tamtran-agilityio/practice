@@ -470,7 +470,7 @@
       parallaxScroll('.parallax');
 
       // load finish
-      loadDone();
+      setTimeout( loadDone, 1600);
 
       // function of set height instashow-gallery-item
       galleryHeight();
