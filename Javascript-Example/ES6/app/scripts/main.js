@@ -453,3 +453,237 @@ console.log(cupGold.getCheck());
 // assign getGreeting to the global function
 // friend.getGreeting = getGlobalGreeting;
 // friend.getGreeting();               // throws error
+
+//Destructuring Assignment
+function f ([ name, val ]) {
+  console.log(name, val)
+}
+function g ({ name: n, val: v }) {
+  console.log(n, v)
+}
+function h ({ name, val }) {
+  console.log(name, val)
+}
+f([ "bar", 42 ])
+g({ name: "foo", val:  7 })
+h({ name: "bar", val: 42 })
+
+// set
+// let set = new Set();
+// set.add(5);
+// set.add(1);
+// set.add("5");
+// set.add(2);
+
+// console.log("size item",set.size);
+
+// let set = new Set([1, 2]);
+
+// set.forEach(function(value, key, ownerSet) {
+//   console.log(key + " " + value);
+//   console.log(ownerSet === set);
+// });
+
+console.log([ 1, 3, 4, 2 ].find(x => x > 3))
+
+let set = new Set([1, 2]),
+  processor = {
+    output(value) {
+      console.log("value set ",value);
+    },
+    process(dataSet) {
+      dataSet.forEach((value) => this.output(value));
+    }
+  };
+
+processor.process(set);
+
+// set map
+function mapObjet() {
+  // body...
+  let map = Object.create(null);
+
+  map.foo = "bar";
+
+  // retrieving a value
+  let value1 = map.foo;
+
+  console.log("set map",value1);
+}
+
+mapObjet();
+
+// convert to array
+let test = new Set([1, 2, 3, 3, 3, 4, 5]),
+  array = [...test];
+
+console.log(array);
+
+function eliminateDuplicates(items) {
+  return [...new Set(items)];
+}
+
+let numbers = [1, 2, 3, 3, 3, 4, 5],
+  noDuplicates = eliminateDuplicates(numbers);
+
+console.log(noDuplicates);
+
+//Number Safety Checking
+let int = Number.isSafeInteger(42) === true
+console.log(int);
+Number.isSafeInteger(9007199254740992) === false
+
+console.log(0.1 + 0.2 === 0.3)
+console.log(Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON) // true
+console.log(Math.trunc(42.7))
+console.log(Math.trunc( 0.1))
+console.log(Math.trunc(-0.1))
+
+// map
+function mapTitle() {
+  // body...
+  let map = new Map();
+  map.set("title", "Understanding ES6");
+  map.set("year", 2016);
+
+  console.log(map.get("title"));
+  console.log(map.get("year"));
+}
+mapTitle();
+
+function mapObjets() {
+  // body...
+  let map = new Map(),
+    key1 = {},
+    key2 = {};
+
+  map.set(key1, 5);
+  map.set(key2, 42);
+
+  console.log(map.get(key1));
+  console.log(map.get(key2));
+}
+mapObjets();
+
+function mapMethods() {
+  // body...
+  let map = new Map();
+  map.set("name", "Nicholas");
+  map.set("age", 25);
+
+  console.log("size map", map.size);
+
+  console.log(map.has("name"));
+  console.log(map.get("name"));
+
+  console.log(map.has("age"));
+  console.log(map.get("age"));
+
+  map.delete("name");
+  console.log(map.has("name"));
+  console.log(map.get("name"));
+  console.log(map.size);
+
+  map.clear();
+  console.log(map.has("name"));
+  console.log(map.get("name"));
+  console.log(map.has("age"));
+  console.log(map.get("age"));
+  console.log(map.size);
+}
+mapMethods();
+
+
+let Person = (function() {
+
+  let privateData = new WeakMap();
+
+  function Person(name) {
+      privateData.set(this, { name: name });
+  }
+
+  Person.prototype.getName = function() {
+      return privateData.get(this).name;
+  };
+
+  return Person;
+}());
+
+function createIterator(items) {
+
+  var i = 0;
+  return {
+    next: function() {
+
+      var done = (i >= items.length);
+      var value = !done ? items[i++] : undefined;
+
+      return {
+        done: done,
+        value: value
+      };
+    }
+  };
+}
+
+var iterator = createIterator([1, 2, 3]);
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// generals
+"use strict";
+function *createIterator(items) {
+  for (let i=0; i < items.length; i++) {
+    yield items[i];
+  }
+}
+
+let iteratork = createIterator([1, 2, 3]);
+console.log(iteratork.next());
+console.log(iteratork.next());
+console.log(iteratork.next());
+console.log(iteratork.next());
+
+// let createIterator = function *(items) {
+//   for (let i=0; i < items.length; i++) {
+//     yield items[i];
+//   }
+// };
+
+// let iterators = createIterator([1, 2, 3]);
+
+// console.log(iterator.next());
+
+// var o = {
+
+//   *createIterator(items) {
+//     for (let i=0; i < items.length; i++) {
+//       yield items[i];
+//     }
+//   }
+// };
+
+// let iteratores = o.createIterator([1, 2, 3]);
+// console.log(iteratores.next());
+
+let valuess = [1, 2, 3];
+let iteratored = valuess[Symbol.iterator]();
+
+console.log(iteratored.next());
+console.log(iteratored.next());
+console.log(iteratored.next());
+console.log(iteratored.next());
+
+function isIterable(object) {
+  return typeof object[Symbol.iterator] === "function";
+}
+
+console.log(isIterable([1, 2, 3]));
+console.log(isIterable("Hello"));
+console.log(isIterable(new Map()));
+console.log(isIterable(new Set()));
+console.log(isIterable(new WeakMap()));
+console.log(isIterable(new WeakSet()));
