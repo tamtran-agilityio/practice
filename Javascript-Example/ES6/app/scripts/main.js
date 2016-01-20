@@ -594,6 +594,7 @@ function mapMethods() {
 mapMethods();
 
 
+//*** generals ***//
 let Person = (function() {
 
   let privateData = new WeakMap();
@@ -634,18 +635,18 @@ console.log(iterator.next());
 console.log(iterator.next());
 
 // generals
-"use strict";
-function *createIterator(items) {
-  for (let i=0; i < items.length; i++) {
-    yield items[i];
-  }
-}
+// "use strict";
+// function *createIterator(items) {
+//   for (let i=0; i < items.length; i++) {
+//     yield items[i];
+//   }
+// }
 
-let iteratork = createIterator([1, 2, 3]);
-console.log(iteratork.next());
-console.log(iteratork.next());
-console.log(iteratork.next());
-console.log(iteratork.next());
+// let iteratork = createIterator([1, 2, 3]);
+// console.log(iteratork.next());
+// console.log(iteratork.next());
+// console.log(iteratork.next());
+// console.log(iteratork.next());
 
 // let createIterator = function *(items) {
 //   for (let i=0; i < items.length; i++) {
@@ -687,3 +688,83 @@ console.log(isIterable(new Map()));
 console.log(isIterable(new Set()));
 console.log(isIterable(new WeakMap()));
 console.log(isIterable(new WeakSet()));
+
+//**** Class ****//
+// class declarations
+class PersonClass {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log(this.name);
+  }
+}
+
+let persons = new PersonClass("Nicholas");
+persons.sayName();
+
+console.log(persons instanceof PersonClass);
+console.log(persons instanceof Object);
+
+console.log(typeof PersonClass);
+console.log(typeof PersonClass.prototype.sayName);
+
+// Accessor Properties
+class CustomHTMLElement {
+
+  constructor(element) {
+    this.element = element;
+  }
+
+  get html() {
+    return this.element.innerHTML;
+  }
+
+  set html(value) {
+    this.element.innerHTML = value;
+  }
+
+  setTag() {
+    console.log(element);
+  }
+}
+
+let descriptor = Object.getOwnPropertyDescriptor(CustomHTMLElement.prototype,
+ "html");
+console.log("get" in descriptor);
+console.log("set" in descriptor);
+console.log(descriptor.enumerable);
+
+
+// Computed member names
+let methodName = "sayNames";
+
+class PersonName {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  [methodName]() {
+    console.log(this.name);
+  }
+};
+
+let me = new PersonName("Nicholas");
+me.sayNames();
+
+// class MyClass {
+
+//   *createIterator() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//   }
+
+// }
+
+// let instance = new MyClass();
+// let iteratorClass = instance.createIterator();
+
