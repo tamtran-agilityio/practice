@@ -1,6 +1,8 @@
 // generated on 2016-01-14 using generator-gulp-webapp 1.1.0
 import gulp from 'gulp';
 const  babel = require('gulp-babel');
+import 'babel-polyfill';
+import 'core-js/shim';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';

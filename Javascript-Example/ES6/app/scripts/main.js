@@ -768,3 +768,53 @@ me.sayNames();
 // let instance = new MyClass();
 // let iteratorClass = instance.createIterator();
 
+function createObject(classDef) {
+  return new classDef();
+}
+
+let obj = createObject(class {
+  sayHi() {
+    console.log('Hi!');
+  }
+});
+
+obj.sayHi();
+
+// class MyClass {
+
+//     *createIterator() {
+//         yield 1;
+//         yield 2;
+//         yield 3;
+//     }
+
+// }
+
+// let instance = new MyClass();
+// let iteratorClass = instance.createIterator();
+
+function recTangle(length, width) {
+  this.length = length;
+  this.width  = width;
+}
+recTangle.prototype.getArea = function() {
+  return this.length * this.width;
+};
+
+function Square(length) {
+  recTangle.call(this,length, length);
+}
+
+Square.prototype = Object.create(recTangle.prototype, {
+  constructor: {
+    value: Square,
+    enumerable: true,
+    writable: true,
+    configuratable: true
+  }
+});
+
+var square = new Square(9);
+console.log(square.getArea());
+console.log(square instanceof Square);
+console.log(square instanceof recTangle);
