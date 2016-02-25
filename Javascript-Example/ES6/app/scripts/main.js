@@ -793,6 +793,7 @@ obj.sayHi();
 // let instance = new MyClass();
 // let iteratorClass = instance.createIterator();
 
+// Inheritance with Derived Classes
 function recTangle(length, width) {
   this.length = length;
   this.width  = width;
@@ -818,3 +819,185 @@ var square = new Square(9);
 console.log(square.getArea());
 console.log(square instanceof Square);
 console.log(square instanceof recTangle);
+
+class rectangleExtend {
+  constructor(length, width) {
+    this.length = length;
+    this.width  = width;
+  }
+  getArea() {
+    return this.length * this.width;
+  }
+}
+class SquareExtend extends rectangleExtend {
+  constructor(lenght) {
+    super(lenght, lenght);
+  }
+}
+
+var squareExtend = new SquareExtend(9);
+console.log(squareExtend.getArea());
+console.log(squareExtend instanceof SquareExtend);
+console.log(squareExtend instanceof rectangleExtend);
+
+class point {
+
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  toString() {
+    return '('+this.x + ' ' + this.y+')';
+  }
+
+  static create(x, y) {
+    return new point(x, y);
+  }
+}
+
+class colorPoint extends point {
+  constructor(x, y, color) {
+    super(x,y);
+    this.color = color;
+  }
+
+  toString() {
+    return super.toString() + 'color point ' + this.color;
+  }
+}
+
+let cp = colorPoint.create(5,6);
+// let cp = new colorPoint(25, 8, 'green');
+console.log(cp.toString());
+
+// Derived Classes from Expressions
+
+let SerializableMixin = {
+  serialize() {
+    return JSON.stringify(this);
+  }
+};
+
+let AreaMixin = {
+  getArea() {
+    return this.length * this.width;
+  }
+};
+
+function mixin(...mixins) {
+  var base = function() {};
+  Object.assign(base.prototype, ...mixins);
+  return base;
+}
+
+class SquareMin extends mixin(AreaMixin, SerializableMixin) {
+  constructor(length) {
+    super();
+    this.length = length;
+    this.width = length;
+  }
+}
+
+var x = new Square(3);
+console.log(x.getArea());
+// console.log(x.serialize());
+
+function MyArray() {
+  Array.apply(this, arguments);
+}
+let items = new MyArray(1, 2, 3, 4);
+  // subitems = items.slice(1, 3);
+console.log(items);
+
+class MyClass {
+  static get [Symbol.species]() {
+    return this;
+  }
+  constructor(value) {
+    this.value = value;
+  }
+  clone() {
+    return new this.constructor[Symbol.species](this.value);
+  }
+}
+
+class MyClass1 extends MyClass {
+
+}
+
+class MyClass2 extends MyClass {
+  static get [Symbol.species]() {
+    return MyClass;
+  }
+}
+
+let instance1 = new MyClass1("foo"),
+    clone1    = instance1.clone(),
+    instance2 = new MyClass2("bar"),
+    clone2    = instance2.clone();
+
+console.log(clone1 instanceof MyClass);
+console.log(clone1 instanceof MyClass1);
+console.log(clone2 instanceof MyClass);
+console.log(clone2 instanceof MyClass2);
+
+/*
+ * Array
+ */
+let itemsArray = Array.of(1, 2);
+console.log(itemsArray.length);
+console.log(itemsArray[0]);
+console.log(itemsArray[1]);
+
+// Array.from call
+var args = Array.from(itemsArray);
+console.log(args);
+
+function translate() {
+  return Array.from(arguments, (value) => value + 1);
+}
+
+let newNumbers = translate(1, 2, 3);
+
+console.log(newNumbers);
+
+// let numbersYield = {
+//   *[Symbol.iterator]() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//   }
+// };
+
+// let numbers2 = Array.from(numbersYield, (value) => value + 1);
+
+// console.log(numbers2);
+
+// new function
+let findNumbers = [25, 30, 35, 40, 45];
+
+console.log(findNumbers.find(n => n > 33));
+console.log(findNumbers.findIndex(n => n > 33));
+
+// fill
+let fillNumbers = [1,2,3,4];
+fillNumbers.fill(0,1,2);
+console.log(fillNumbers.toString());
+
+// array buffer
+let buffer = new ArrayBuffer(10);
+console.log(buffer.byteLength);
+let buffer2 = buffer.slice(4, 6);
+console.log(buffer2.byteLength);
+
+let view = new DataView(buffer);
+view.setInt8(0, 5);
+view.setInt8(1, -1);
+
+console.log(view.getInt16(0));
+console.log(view.getInt8(0));
+console.log(view.getInt8(1));
+
+let ints = new Int8Array(5);
+console.log(ints.BYTES_PER_ELEMENT);
