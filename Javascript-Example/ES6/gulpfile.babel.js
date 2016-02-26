@@ -2,7 +2,7 @@
 import gulp from 'gulp';
 const  babel = require('gulp-babel');
 import 'babel-polyfill';
-import 'core-js/shim';
+// import 'core-js/shim';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
@@ -33,7 +33,6 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
 });
 
 function lint(files, options) {

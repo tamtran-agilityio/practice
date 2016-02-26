@@ -173,14 +173,14 @@ var doAnotherThing = function() {
 console.log(doSomething.name);          // "doSomething"
 console.log(doAnotherThing.name);       // "doAnotherThing"
 
-var sum = (num1, num2) => num1 + num2;
-console.log("arrow function a",sum = (2 , 5));
+// var sum = (num1, num2) => num1 + num2;
+// console.log("arrow function a",sum = (2 , 5));
 // effectively equivalent to:
 
-var sum = function(num1, num2) {
-    return num1 + num2;
-};
-console.log("arrow function",sum = (2 , 5));
+// function sum(num1, num2) {
+//     return num1 + num2;
+// };
+// console.log("arrow function",sum = (2 , 5));
 
 
 let person = function(name) {
@@ -755,19 +755,6 @@ class PersonName {
 let me = new PersonName("Nicholas");
 me.sayNames();
 
-// class MyClass {
-
-//   *createIterator() {
-//     yield 1;
-//     yield 2;
-//     yield 3;
-//   }
-
-// }
-
-// let instance = new MyClass();
-// let iteratorClass = instance.createIterator();
-
 function createObject(classDef) {
   return new classDef();
 }
@@ -780,17 +767,17 @@ let obj = createObject(class {
 
 obj.sayHi();
 
-// class MyClass {
+class MyClass {
 
-//     *createIterator() {
-//         yield 1;
-//         yield 2;
-//         yield 3;
-//     }
+  *createIterator() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
 
-// }
+}
 
-// let instance = new MyClass();
+let instance = new MyClass();
 // let iteratorClass = instance.createIterator();
 
 // Inheritance with Derived Classes
@@ -962,15 +949,15 @@ let newNumbers = translate(1, 2, 3);
 
 console.log(newNumbers);
 
-// let numbersYield = {
-//   *[Symbol.iterator]() {
-//     yield 1;
-//     yield 2;
-//     yield 3;
-//   }
-// };
+let numbersYield = {
+  *[Symbol.iterator]() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+};
 
-// let numbers2 = Array.from(numbersYield, (value) => value + 1);
+let numbers2 = Array.from(numbersYield, (value) => value + 1);
 
 // console.log(numbers2);
 
@@ -1001,3 +988,122 @@ console.log(view.getInt8(1));
 
 let ints = new Int8Array(5);
 console.log(ints.BYTES_PER_ELEMENT);
+
+
+/*
+ * CHAPTER promises
+ */
+// event
+let button =  document.getElementById('btnClick')
+button.onclick = function(event) {
+  console.log("Clicked");
+};
+
+let p1 = new Promise(function(resolve, reject) {
+  resolve(42);
+});
+let p2 = new Promise(function(resolve, reject) {
+  resolve(43);
+});
+
+p1.then(function(value) {
+  console.log(value);
+}).then(function() {
+  console.log("Finished");
+});
+
+let p3 = new Promise(function(resolve, reject) {
+  resolve(44);
+});
+
+let p4 = new Promise(function(resolve, reject) {
+  resolve(45);
+});
+
+p3.then(function(value) {
+  // first fulfillment handler
+  console.log(value);
+  return p4;
+}) .then(function(value) {
+  // second fulfillment handler
+  console.log(value);
+});
+
+p1.then(function(value) {
+  // first fulfillment handler
+  console.log(value);
+  return p2;
+}).catch(function(value) {
+  // rejection handler
+  console.log(value);
+});
+let p5 = Promise.all([p1, p2, p3]);
+
+p5.then(function(value) {
+  console.log(Array.isArray(value));
+  console.log(value[0]);
+  console.log(value[1]);
+  console.log(value[2]);
+});
+
+class MyPromise extends Promise {
+
+  // use default constructor
+
+  success(resolve, reject) {
+    return this.then(resolve, reject);
+  }
+
+  failure(reject) {
+    return this.catch(reject);
+  }
+
+}
+
+let promise = new MyPromise(function(resolve, reject) {
+  resolve(42);
+});
+
+promise.success(function(value) {
+  console.log(value);             // 42
+}).failure(function(value) {
+  console.log(value);
+});
+
+
+/*
+ * Modules
+ */
+// // export data
+export var color = "red";
+export let name = "Nicholas";
+export const magicNumber = 7;
+
+// export function
+function sumTest(num1, num2) {
+  return num1 + num1;
+}
+
+// export class
+export class Rectangle {
+  constructor(length, width) {
+    this.length = length;
+    this.width = width;
+  }
+}
+
+// this function is private to the module
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+// define a function
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+// // // export later
+// // export multiply;
+import { sum } from "example";
+// import {add} from "example";
+// console.log(sum(1, 2));
