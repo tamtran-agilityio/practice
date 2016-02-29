@@ -3,6 +3,16 @@
     "es2015", "stage-0"
   ],
   "plugins": [
-    "transform-es2015-modules-systemjs"
-  ]
+    "transform-es2015-modules-systemjs",
+    "transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }
+  ],
+  'babelPreprocessor': {
+    options: {
+      optional: ['runtime'],
+      sourceMap: 'inline'
+    }
+  }
 }
