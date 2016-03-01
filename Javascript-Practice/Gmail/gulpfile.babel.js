@@ -1,7 +1,5 @@
 // generated on 2016-02-29 using generator-webapp 2.0.0
 import gulp from 'gulp';
-// import * as p from "babel-runtime/regenerator";
-// import 'babel-polyfill';
 var babel = require("gulp-babel");
 var webpack = require('gulp-webpack');
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -30,10 +28,10 @@ gulp.task('scripts', () => {
   return gulp.src('app/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
-    .pipe($.babel({
-        presets: ['es2015']
-      }))
-    .pipe(webpack())
+    // .pipe($.babel({
+    //     presets: ['es2015']
+    //   }))
+    .pipe(webpack(require('./webpack.config.js') ))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({stream: true}));
