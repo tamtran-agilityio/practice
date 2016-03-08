@@ -1,6 +1,7 @@
 {
 	"email": [
 		{
+			"emailId":"1",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
@@ -8,6 +9,7 @@
 			"important":"true"
 		},
 		{
+			"emailId":"2",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
@@ -15,41 +17,7 @@
 			"important":"true"
 		},
 		{
-			"type":"box",
-			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
-		},
-				{
-			"type":"send",
-			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
-		},
-		{
-			"type":"send",
-			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
-		},
-		{
-			"type":"send",
-			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
-		},
-				{
-			"type":"send",
-			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
-		},
-		{
+			"emailId":"3",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
@@ -57,6 +25,47 @@
 			"important":"true"
 		},
 		{
+			"emailId":"4",
+			"type":"send",
+			"title":"Training 2016 #Javascript",
+			"content":"Hi Cong, Duy!",
+			"starred":"true",
+			"important":"true"
+		},
+		{
+			"emailId":"5",
+			"type":"send",
+			"title":"Training 2016 #Javascript",
+			"content":"Hi Cong, Duy!",
+			"starred":"true",
+			"important":"true"
+		},
+		{
+			"emailId":"6",
+			"type":"send",
+			"title":"Training 2016 #Javascript",
+			"content":"Hi Cong, Duy!",
+			"starred":"true",
+			"important":"true"
+		},
+		{
+			"emailId":"7",
+			"type":"send",
+			"title":"Training 2016 #Javascript",
+			"content":"Hi Cong, Duy!",
+			"starred":"true",
+			"important":"true"
+		},
+		{
+			"emailId":"8",
+			"type":"box",
+			"title":"Training 2016 #Javascript",
+			"content":"Hi Cong, Duy!",
+			"starred":"true",
+			"important":"true"
+		},
+		{
+			"emailId":"9",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",

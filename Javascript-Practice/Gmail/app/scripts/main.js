@@ -1,5 +1,8 @@
 /*global */
+"use strict";
+
 let response = {};
+
 function run(taskDef) {
 	let task = taskDef();
 	let result = task.next();
@@ -25,21 +28,39 @@ function run(taskDef) {
 	step();
 }
 
+/*
+ * Class Email show email to DOM
+ * @param emaiId id of email
+ * @param type of email
+ * @param title name title of
+ */
 class Email {
-	constructor(type, title, content, important, starred) {
+	constructor(emailId ,type, title, content, important, starred) {
 		this.type 			= type;
 		this.title 			= title;
 		this.content 		= content;
 		this.important 	= important;
 		this.starred 		= starred;
+		let id = emailId;
+		this.getId = function() {
+			return id;
+		};
 	}
 
-	showEmail() {
-		console.log(type);
-		console.log(title);
-		console.log(content);
-		console.log(important);
-		console.log(starred);
+	getEmail() {
+		console.log("DAAAAAAA", this.type);
+		console.log("AAAAAAAAAA",this.emailId);
+		let viewAll = '#view-all-email';
+		let emailNode = $([
+			'<tr data-id="', this.getId(), '">',
+				'<td class = "email-id">', this.getId(), '</td>',
+				'<td class = "type-name">', this.type, '</td>',
+				'<td class = "email-title">', this.title, '</td>',
+				'<td class = "email-content">', this.content, '</td>',
+			'</tr>'
+		].join(''));
+
+		emailNode.appendTo($(viewAll));
 	}
 }
 
@@ -53,9 +74,10 @@ function getJSON(url) {
 			response = JSON.parse(xmlHttp.responseText);
 			console.log(response);
 			let data = [];
-			let itemEmail = response['email']
+			let itemEmail = response['email'];
 			for (var i = 0; i < itemEmail.length; i++) {
 				data[i] = {
+					id        : itemEmail[i]['emailId'],
 					type 			: itemEmail[i]['type'],
 					title 		: itemEmail[i]['title'],
 					content 	: itemEmail[i]['content'],
@@ -64,6 +86,10 @@ function getJSON(url) {
 				}
 			}
 			console.log(data);
+			for (var i = 0; i < itemEmail.length; i++) {
+				let email = new Email(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+				email.getEmail();
+			}
 		}
 	}
 	xmlHttp.send();
