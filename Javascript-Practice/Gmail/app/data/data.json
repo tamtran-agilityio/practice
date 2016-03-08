@@ -4,7 +4,7 @@
 			"emailId":"1",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
+			"content":"Hi Cong, Duy! sdfffffffffffffffffffffffffffffffffffff",
 			"starred":"true",
 			"important":"true"
 		},
@@ -12,8 +12,8 @@
 			"emailId":"2",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
+			"content":"Hi Cong, Viet!",
+			"starred":"false",
 			"important":"true"
 		},
 		{
@@ -22,22 +22,22 @@
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
 			"starred":"true",
-			"important":"true"
+			"important":"false"
 		},
 		{
 			"emailId":"4",
 			"type":"send",
 			"title":"Training 2016 #Javascript",
-			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
+			"content":"Hi Cong, Viet!",
+			"starred":"false",
+			"important":"false"
 		},
 		{
 			"emailId":"5",
 			"type":"send",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
-			"starred":"true",
+			"starred":"false",
 			"important":"true"
 		},
 		{
@@ -45,7 +45,7 @@
 			"type":"send",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
-			"starred":"true",
+			"starred":"false",
 			"important":"true"
 		},
 		{
@@ -54,7 +54,7 @@
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
 			"starred":"true",
-			"important":"true"
+			"important":"false"
 		},
 		{
 			"emailId":"8",
@@ -62,15 +62,15 @@
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
 			"starred":"true",
-			"important":"true"
+			"important":"false"
 		},
 		{
 			"emailId":"9",
 			"type":"box",
 			"title":"Training 2016 #Javascript",
 			"content":"Hi Cong, Duy!",
-			"starred":"true",
-			"important":"true"
+			"starred":"false",
+			"important":"false"
 		}
 	]
 }

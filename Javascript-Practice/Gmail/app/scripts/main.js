@@ -1,5 +1,13 @@
-/*global */
-"use strict";
+/**
+ * Support to render email to json file
+ * Use class and module of ES6
+ * @author Tam Tran
+ */
+
+'use strict';
+
+import { emailTo } from "./compoment/show-box";
+import { emailSend } from "./compoment/show-send-email";
 
 let response = {};
 
@@ -25,45 +33,14 @@ function run(taskDef) {
 			}
 		}
 	}
+
 	step();
 }
 
 /*
- * Class Email show email to DOM
- * @param emaiId id of email
- * @param type of email
- * @param title name title of
+ * Get file json
+ * @param url link path to file json
  */
-class Email {
-	constructor(emailId ,type, title, content, important, starred) {
-		this.type 			= type;
-		this.title 			= title;
-		this.content 		= content;
-		this.important 	= important;
-		this.starred 		= starred;
-		let id = emailId;
-		this.getId = function() {
-			return id;
-		};
-	}
-
-	getEmail() {
-		console.log("DAAAAAAA", this.type);
-		console.log("AAAAAAAAAA",this.emailId);
-		let viewAll = '#view-all-email';
-		let emailNode = $([
-			'<tr data-id="', this.getId(), '">',
-				'<td class = "email-id">', this.getId(), '</td>',
-				'<td class = "type-name">', this.type, '</td>',
-				'<td class = "email-title">', this.title, '</td>',
-				'<td class = "email-content">', this.content, '</td>',
-			'</tr>'
-		].join(''));
-
-		emailNode.appendTo($(viewAll));
-	}
-}
-
 function getJSON(url) {
 	let xmlHttp = new XMLHttpRequest();
 	xmlHttp.open( "GET", url, true );
@@ -72,10 +49,9 @@ function getJSON(url) {
 	xmlHttp.onreadystatechange = function() {
 		if( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
 			response = JSON.parse(xmlHttp.responseText);
-			console.log(response);
 			let data = [];
 			let itemEmail = response['email'];
-			for (var i = 0; i < itemEmail.length; i++) {
+			for (let i = 0; i < itemEmail.length; i++) {
 				data[i] = {
 					id        : itemEmail[i]['emailId'],
 					type 			: itemEmail[i]['type'],
@@ -85,17 +61,20 @@ function getJSON(url) {
 					starred 	: itemEmail[i]['starred']
 				}
 			}
-			console.log(data);
-			for (var i = 0; i < itemEmail.length; i++) {
-				let email = new Email(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-				email.getEmail();
+
+			for (let i = 0; i < itemEmail.length; i++) {
+				let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+						email.onEmail();
+				let emailSendto = new emailSend(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+						emailSendto.onEmailSend();
 			}
 		}
+
 	}
+
 	xmlHttp.send();
 }
 
 run(function*() {
 	getJSON('/data/data.json');
 });
-
