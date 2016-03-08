@@ -41,40 +41,47 @@ function run(taskDef) {
  * Get file json
  * @param url link path to file json
  */
-function getJSON(url) {
-	let xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", url, true );
-	xmlHttp.setRequestHeader("Content-type", url);
+class callJSON {
 
-	xmlHttp.onreadystatechange = function() {
-		if( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
-			response = JSON.parse(xmlHttp.responseText);
-			let data = [];
-			let itemEmail = response['email'];
-			for (let i = 0; i < itemEmail.length; i++) {
-				data[i] = {
-					id        : itemEmail[i]['emailId'],
-					type 			: itemEmail[i]['type'],
-					title 		: itemEmail[i]['title'],
-					content 	: itemEmail[i]['content'],
-					important : itemEmail[i]['important'],
-					starred 	: itemEmail[i]['starred']
-				}
-			}
-
-			for (let i = 0; i < itemEmail.length; i++) {
-				let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-						email.onEmail();
-				let emailSendto = new emailSend(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-						emailSendto.onEmailSend();
-			}
-		}
-
+	constructor(url) {
+		this.url = url;
 	}
 
-	xmlHttp.send();
+	setJSON() {
+		let xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", this.url, true );
+		xmlHttp.setRequestHeader("Content-type", this.url);
+
+		xmlHttp.onreadystatechange = function() {
+			if( xmlHttp.readyState == 4 && xmlHttp.status == 200 ) {
+				response = JSON.parse(xmlHttp.responseText);
+
+				let data = [];
+				let itemEmail = response['email'];
+
+				for (let i = 0; i < itemEmail.length; i++) {
+					data[i] = {
+						id        : itemEmail[i]['emailId'],
+						type 			: itemEmail[i]['type'],
+						title 		: itemEmail[i]['title'],
+						content 	: itemEmail[i]['content'],
+						important : itemEmail[i]['important'],
+						starred 	: itemEmail[i]['starred']
+					}
+				}
+
+				for (let i = 0; i < itemEmail.length; i++) {
+
+					let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+							email.onEmail();
+				}
+			}
+		}
+		xmlHttp.send();
+	}
 }
 
 run(function*() {
-	getJSON('/data/data.json');
+	let callJson = new callJSON('/data/data.json');
+	callJson.setJSON('/data/data.json');
 });
