@@ -30,7 +30,7 @@ export class viewEmail {
 	getEmail() {
 		let viewAll = '#view-all-email';
 		let emailNode = $([
-			'<tr data-id = "'									, this.getId(), 	'">',
+			'<tr 	 data-id = "'								, this.getId(), 	'">',
 				'<td class = "email-id">'				, this.getId(), 	'</td>',
 				'<td class = "email-important">', this.important, '</td>',
 				'<td class = "email-starred">'	, this.starred, 	'</td>',
