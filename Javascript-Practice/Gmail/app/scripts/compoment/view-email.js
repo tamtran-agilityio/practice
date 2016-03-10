@@ -18,9 +18,9 @@ export class viewEmail {
 		this.content 		= content;
 		this.important 	= important;
 		this.starred 		= starred;
-		let id = emailId;
+		this.emailId		= emailId;
 		this.getId = function() {
-			return id;
+			return emailId;
 		};
 	}
 
@@ -30,7 +30,7 @@ export class viewEmail {
 	getEmail() {
 		let viewAll = '#view-all-email';
 		let emailNode = $([
-			'<tr 	 data-id = "'								, this.getId(), 	'">',
+			'<tr 	 id = '								, this.getId(), 	'>',
 				'<td class = "email-id">'				, this.getId(), 	'</td>',
 				'<td class = "email-important">', this.important, '</td>',
 				'<td class = "email-starred">'	, this.starred, 	'</td>',
@@ -40,5 +40,11 @@ export class viewEmail {
 		].join(''));
 
 		emailNode.appendTo($(viewAll));
+	}
+
+	// Get view table null
+	static getViewNull() {
+		let tableBody = document.getElementById("view-all-email");
+			tableBody.innerHTML = "";
 	}
 }

@@ -9,16 +9,16 @@
 import { viewEmail } from "./compoment/view-email";
 import { emailTo } from "./compoment/show-box";
 import { emailSend } from "./compoment/show-send-email";
-import {CallJson } from "./compoment/call-api";
+import { readEmail } from "./compoment/read-email";
+import { CallJson } from "./compoment/call-api";
 
 let callJson = new CallJson('/data/data.json');
-var dataTest = window.responseTest;
-callJson.getJson().then(function(data) {
-	window.responseTest = data;
-	console.log("Test",data );
-}).catch(function() {
-	window.responseTest = null;
-});
+// callJson.getJson().then(function(data) {
+// 	window.responseTest = data;
+// 	console.log("Test",data );
+// }).catch(function() {
+// 	window.responseTest = null;
+// });
 
 class AppManager extends CallJson {
 	constructor(...args) {
@@ -32,35 +32,35 @@ class AppManager extends CallJson {
 
 		viewBox.addEventListener("click", function()  {
 			event.preventDefault();
-				var tableBody = document.getElementById("view-all-email");
-				tableBody.innerHTML = "";
+				viewEmail.getViewNull();
 				let data = window.responseTest;
 				for (let i = 0; i < data.length; i++) {
 					let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 						email.onEmail();
 				}
+			readEmail.viewRead();
 		})
 
 		viewStarred.addEventListener("click", function()  {
 			event.preventDefault();
-			var tableBody = document.getElementById("view-all-email");
-			tableBody.innerHTML = "";
+			viewEmail.getViewNull();
 			let data = window.responseTest;
 			for (let i = 0; i < data.length; i++) {
 				let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 					email.onEmailStarred();
 			}
+			readEmail.viewRead();
 		})
 
 		viewSend.addEventListener("click", function()  {
 			event.preventDefault();
-			var tableBody = document.getElementById("view-all-email");
-			tableBody.innerHTML = "";
+			viewEmail.getViewNull();
 			let data = window.responseTest;
 			for (let i = 0; i < data.length; i++) {
 				let emailsent = new emailSend(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 					emailsent.onEmailSend();
 			}
+			readEmail.viewRead();
 		})
 	}
 }
