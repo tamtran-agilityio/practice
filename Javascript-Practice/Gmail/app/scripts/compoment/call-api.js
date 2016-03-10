@@ -2,11 +2,9 @@
  * Get file json
  * @param url link path to file json
  */
-import { emailTo } from "./show-box";
-import { viewEmail } from "./view-email";
-import { readEmail } from "./read-email";
+import { EmailTo } from "./show-box";
+import { ReadEmail } from "./read-email";
 
-let setmail = new viewEmail();
 export class CallJson {
 
 	constructor(url) {
@@ -39,11 +37,10 @@ export class CallJson {
 					}
 					resolve(data);
 					for (let i = 0; i < data.length; i++) {
-						console.log(data[0].id);
-						let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+						let email = new EmailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 							email.onEmail();
 					}
-					readEmail.viewRead();
+					ReadEmail.viewRead();
 				}
 			}
 			xmlHttp.send();

@@ -1,5 +1,5 @@
 /*
- * Class Email show email to
+ * Class show email to
  * @param emaiId id of email
  * @param type of email
  * @param title name title of email
@@ -10,7 +10,7 @@
 
 'use strict';
 
-export class viewEmail {
+export class ViewEmail {
 
 	constructor(emailId ,type, title, content, important, starred) {
 		this.type 			= type;
@@ -30,7 +30,7 @@ export class viewEmail {
 	getEmail() {
 		let viewAll = '#view-all-email';
 		let emailNode = $([
-			'<tr 	 id = '								, this.getId(), 	'>',
+			'<tr 	 id = '											, this.getId(), 	'>',
 				'<td class = "email-id">'				, this.getId(), 	'</td>',
 				'<td class = "email-important">', this.important, '</td>',
 				'<td class = "email-starred">'	, this.starred, 	'</td>',

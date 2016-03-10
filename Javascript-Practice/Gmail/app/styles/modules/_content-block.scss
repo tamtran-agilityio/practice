@@ -5,7 +5,33 @@
 	float: left;
 	padding-left: 140px;
 	display: block;
+	width: 100%;
 }
 .email-id {
 	display: none;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+	background-color: #FFF;
+}
+.view-read {
+	display: block;
+	position: relative;
+}
+.email-id-read {
+	display: none;
+}
+.email-title-read {
+	display: inline;
+	float: left;
+}
+
+.email-type-read {
+	display: inline;
+	padding-top: 10px;
+}
+
+.email-content-read {
+	display: block;
+	width: 100%;
+	float: left;
 }

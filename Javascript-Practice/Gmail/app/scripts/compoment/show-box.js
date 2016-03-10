@@ -10,9 +10,9 @@
 
 'use strict';
 
-import { viewEmail } from "./view-email";
+import { ViewEmail } from "./view-email";
 
-export class emailTo extends viewEmail {
+export class EmailTo extends ViewEmail {
 
 	constructor(...args) {
 		super(...args);
@@ -23,7 +23,7 @@ export class emailTo extends viewEmail {
 	 */
 	onEmail() {
 		if (this.type === 'box') {
-			let viewItem = new viewEmail(this.emailId, this.type, this.title, this.content, this.important, this.starred);
+			let viewItem = new ViewEmail(this.emailId, this.type, this.title, this.content, this.important, this.starred);
 			return viewItem.getEmail();
 		}
 	}
@@ -33,7 +33,17 @@ export class emailTo extends viewEmail {
 	 */
 	onEmailStarred() {
 		if (this.type === 'box' && this.important === 'true') {
-			let viewItem = new viewEmail(this.emailId, this.type, this.title, this.content, this.important, this.starred);
+			let viewItem = new ViewEmail(this.emailId, this.type, this.title, this.content, this.important, this.starred);
+			return viewItem.getEmail();
+		}
+	}
+
+	/*
+	 * Get all email on box to email to
+	 */
+	onEmailSend() {
+		if (this.type === 'send') {
+			let viewItem = new ViewEmail(this.emailId, this.type, this.title, this.content, this.important, this.starred);
 			return viewItem.getEmail();
 		}
 	}
