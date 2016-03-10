@@ -26,39 +26,26 @@ class AppManager extends CallJson {
 	}
 
 	handleClick() {
-
 		let viewBox 		= document.getElementById('btnBox');
 		let viewStarred = document.getElementById('btnStarred');
 		let viewSend 		= document.getElementById('btnSend');
-		// let viewItem		= document.getElementById('item');
 
 		viewBox.addEventListener("click", function()  {
 			event.preventDefault();
-			let count = document.getElementById("view-all-email").rows.length;
-			for (var i = 0; i <= count -1; i++) {
-				document.getElementById("table").deleteRow(i);
-				if (count === 0) {
-					return;
+				var tableBody = document.getElementById("view-all-email");
+				tableBody.innerHTML = "";
+				let data = window.responseTest;
+				for (let i = 0; i < data.length; i++) {
+					let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
+						email.onEmail();
 				}
-			}
-			let data = window.responseTest;
-			localStorage.clear();
-			for (let i = 0; i < data.length; i++) {
-				let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-					email.onEmail();
-			}
 		})
 
 		viewStarred.addEventListener("click", function()  {
 			event.preventDefault();
+			var tableBody = document.getElementById("view-all-email");
+			tableBody.innerHTML = "";
 			let data = window.responseTest;
-			let count = document.getElementById("view-all-email").rows.length;
-			while (count > 0) {
-				document.getElementById("table").deleteRow(0);
-				if (count === 0) {
-					return;
-				}
-			}
 			for (let i = 0; i < data.length; i++) {
 				let email = new emailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 					email.onEmailStarred();
@@ -67,14 +54,9 @@ class AppManager extends CallJson {
 
 		viewSend.addEventListener("click", function()  {
 			event.preventDefault();
+			var tableBody = document.getElementById("view-all-email");
+			tableBody.innerHTML = "";
 			let data = window.responseTest;
-			let count = document.getElementById("view-all-email").rows.length;
-			while (count > 0) {
-				document.getElementById("table").deleteRow(0);
-				if (count === 0) {
-					return;
-				}
-			}
 			for (let i = 0; i < data.length; i++) {
 				let emailsent = new emailSend(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
 					emailsent.onEmailSend();

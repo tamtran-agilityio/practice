@@ -26,10 +26,13 @@
   line-height: 40px;
 }
 
-.sidebar-nav li a {
+.sidebar-nav li button {
   display: block;
   text-decoration: none;
   color: #999999;
+	width: 60%;
+	border-right: 1px solid #737070;
+	text-align: left;
 }
 
 .sidebar-nav li a:hover {
