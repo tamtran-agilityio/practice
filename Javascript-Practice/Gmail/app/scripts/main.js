@@ -4,59 +4,25 @@
  * @author Tam Tran support by Viet Phan
  */
 
-'use strict';
+import { InboxEmail } from "./compoment/inbox-email";
+import { ContentHandle } from "./event/content-handle";
+import { SlideBar } from './event/slider-bar';
 
-import { ViewEmail } from "./compoment/view-email";
-import { EmailTo } from "./compoment/show-box";
-import { ReadEmail } from "./compoment/read-email";
-import { CallJson } from "./compoment/call-api";
-import { Manager } from "./compoment/manager-email";
 
-class AppManager extends CallJson {
-	constructor(...args) {
-		super(...args);
+class App {
+	constructor(type) {
+		this.type = type;
 	}
-
-	handleClick() {
-		let viewBox 		= document.getElementById('btnBox');
-		let viewStarred = document.getElementById('btnStarred');
-		let viewSend 		= document.getElementById('btnSend');
-
-		viewBox.addEventListener("click", function()  {
-			event.preventDefault();
-				ViewEmail.getViewNull();
-				let data = window.responseTest;
-				for (let i = 0; i < data.length; i++) {
-					let email = new EmailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-						email.onEmail();
-				}
-			ReadEmail.viewRead();
-		})
-
-		viewStarred.addEventListener("click", function()  {
-			event.preventDefault();
-			ViewEmail.getViewNull();
-			let data = window.responseTest;
-			for (let i = 0; i < data.length; i++) {
-				let email = new EmailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-					email.onEmailStarred();
-			}
-			ReadEmail.viewRead();
-		})
-
-		viewSend.addEventListener("click", function()  {
-			event.preventDefault();
-			ViewEmail.getViewNull();
-			let data = window.responseTest;
-			for (let i = 0; i < data.length; i++) {
-				let emailsent = new EmailTo(data[i].id, data[i].type, data[i].title, data[i].content, data[i].important, data[i].starred);
-					emailsent.onEmailSend();
-			}
-			ReadEmail.viewRead();
-		})
+	emailView() {
+		let inboxEmail = new InboxEmail();
+		let slideBar 	 = new SlideBar();
+		let content 	 = new ContentHandle();
+		inboxEmail.inbox();
+		slideBar.handleClick();
+		content.onClickTitle();
+		content.onClickTitles();
 	}
 }
 
-let app = new AppManager();
-app.handleClick();
-
+let app = new App();
+app.emailView();
