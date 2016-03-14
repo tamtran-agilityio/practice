@@ -21,8 +21,11 @@ class App {
 		slideBar.handleClick();
 		content.onClickTitle();
 		content.onClickTitles();
+		content.onFilter();
 	}
 }
 
-let app = new App();
-app.emailView();
+{
+	let app = new App();
+	app.emailView();
+}

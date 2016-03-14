@@ -55,14 +55,21 @@
 			<!-- End part slider bar -->
 			<!-- Start part content -->
 			<div class="content-block">
-				<input type="text" value="Search find box">
+				<div class="input-group"> <span class="input-group-addon"></span>
+					<input id="filter" type="text" class="form-control" placeholder="Type here...">
+				</div>
 				<table class="table table-striped" id="tableEmail">
+					<div class="wapper-aside">
+						<button id="moveBox" class="btnHandle"> Move</button>
+						<button id="deleteTitle" class="btnHandle"> Delete</button>
+						<button id="sortTitle" class="btnHandle"> Sort </button>
+					</div>
 					<!-- <thead>
 						<tr>
 							<th></th>
 						</tr>
-					</thead> -->
-					<tbody id="view-all-email"></tbody>
+					</thead>-->
+					<tbody id="view-all-email" class="searchable"></tbody>
 				</table>
 
 			</div>

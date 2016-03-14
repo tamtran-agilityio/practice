@@ -35,3 +35,21 @@
 	width: 100%;
 	float: left;
 }
+.wapper-aside {
+  position: absolute;
+  display: none;
+}
+.btnHandle {
+	display: block;
+	width: 100%;
+}
+
+table a { text-decoration: none; }
+table a:hover { text-decoration: underline; }
+tr :last-child { text-align: right; }
+/* hide content from view but not from searching */
+.hidden { display: none; }
+/* filter table specific styling */
+.filter-table .quick { margin-left: 1em; font-size: 0.8em; text-decoration: none; }
+.fitler-table .quick:hover { text-decoration: underline; }
+td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
