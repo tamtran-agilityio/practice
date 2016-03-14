@@ -19,16 +19,19 @@ export class EmailModel {
 	 */
 	getEmail() {
 
-		let tableBody = $("#view-all-email");
+		let $tableBody = $("#view-all-email");
 		let emailNode =
 			`'<tr 	 id  =  ${this.getId()} 	>',
 				'<td class = "email-id">			 ${this.getId()} 	</td>'
-				'<td class = "email-important"> ${this.important} </td>'
+				'<td><input id='check' type='checkbox'></td>'
+				'<td class = "email-important">
+					<button id="btnImportant" class=""> ${this.important} </button>
+				 </td>'
 				'<td class = "email-starred">	 ${this.starred} 	</td>'
 				'<td class = "email-title">		 ${this.title} 		</td>'
 				'<td class = "email-content">  ${this.content} 	</td>',
 			'</tr>'`;
-		tableBody.append(emailNode);
+		$tableBody.append(emailNode);
 	}
 
 	/*

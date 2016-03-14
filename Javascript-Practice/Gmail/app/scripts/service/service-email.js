@@ -16,11 +16,14 @@ export class ServiceEmail extends EmailModel {
 	emailInbox() {
 
 		let json = new CallJson('/data/data.json');
+		const box = '';
+		let map = new Map();
+		map.set(box, 'box');
 
 		json.getJson().then(data => {
 			data.forEach(function(element, index) {
 
-				if (element.type === 'box') {
+				if (element.type === map.get(box)) {
 
 					let emailModel = new EmailModel(element.id ,element.type, element.title, element.content, element.important, element.starred);
 					emailModel.getEmail(element.type);
@@ -56,11 +59,14 @@ export class ServiceEmail extends EmailModel {
 	emailSend() {
 
 		let json = new CallJson('/data/data.json');
+		const send = '';
+		let map = new Map();
+		map.set(send, 'send');
 
 		json.getJson().then(data => {
 			data.forEach(function(element, index) {
 
-				if (element.type === 'send') {
+				if (element.type === map.get(send)) {
 
 					let emailModel = new EmailModel(element.id ,element.type, element.title, element.content, element.important, element.starred);
 					emailModel.getEmail(element.type);

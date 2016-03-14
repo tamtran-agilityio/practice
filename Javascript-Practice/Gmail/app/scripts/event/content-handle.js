@@ -37,27 +37,48 @@ export class ContentHandle {
 		let viewTitle  = new TitleEmail();
 		let $tableBody = $('#view-all-email');
 
-		$('#tableEmail').delegate('tr', 'click', function() {
+		$('#tableEmail').delegate('tr', 'click', function(event) {
 			$tableBody.empty();
 			viewTitle.inboxTitle(this.id);
 		});
 	}
 
   onClickTitles() {
+  	let $aside = $('.wapper-aside');
 		$('#tableEmail').delegate('tr', 'contextmenu', function(event) {
 			let rowDelete = this;
-			$('.wapper-aside').show();
-			$('.wapper-aside').css('top', event.pageY);
-			$('.wapper-aside').css('left', event.pageX)
+			$aside.show();
+			$aside.css('top', event.pageY);
+			$aside.css('left', event.pageX);
+			let checkbox = $(this).find("input[type='checkbox']");
+			checkbox.attr('checked', !checkbox.attr('checked'));
+
 			$('#deleteTitle').click( function() {
 				rowDelete.remove();
-				$('.wapper-aside').hide();
+				$aside.hide();
 			})
+
 			$('#sortTitle').click(function() {
 				let tbody = $('#view-all-email');
 
 				ContentHandle.sortTable( tbody, 3 , 1);
-				$('.wapper-aside').hide();
+				$aside.hide();
+			})
+
+			$('.linkBox').click( function() {
+				rowDelete.remove();
+				if (rowDelete.type === 'box') {
+					rowDelete.type = $('email-type').html('<td class = "email-type"> send	</td>');
+				}
+				$aside.hide();
+			})
+
+			$('.linkSend').click( function() {
+				rowDelete.remove();
+				if (rowDelete.type === 'send') {
+					rowDelete.type = $('email-type').html('<td class = "email-type"> box </td>');
+				}
+				$aside.hide();
 			})
 			return false;
 		});
@@ -70,6 +91,12 @@ export class ContentHandle {
 				$('.searchable tr').filter(function () {
 					return rex.test($(this).text());
 				}).show();
+		});
+	}
+
+	onChangeImportant() {
+		$("#btnImportant").click(function(event) {
+			return false;
 		});
 	}
 }

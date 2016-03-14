@@ -22,6 +22,7 @@ class App {
 		content.onClickTitle();
 		content.onClickTitles();
 		content.onFilter();
+		content.onChangeImportant();
 	}
 }
 
