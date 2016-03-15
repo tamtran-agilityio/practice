@@ -16,21 +16,20 @@ export class ServiceEmail extends EmailModel {
 	emailInbox() {
 
 		let json = new CallJson('/data/data.json');
-		const box = '';
-		let map = new Map();
-		map.set(box, 'box');
 
-		json.getJson().then(data => {
-			data.forEach(function(element, index) {
+		return json.getJson();
 
-				if (element.type === map.get(box)) {
+		// json.getJson().then(data => {
+		// 	data.forEach(function(element, index) {
 
-					let emailModel = new EmailModel(element.id ,element.type, element.title, element.content, element.important, element.starred);
-					emailModel.getEmail(element.type);
+		// 		if (element.type === map.get(box)) {
 
-				}
-			})
-		});
+		// 			let emailModel = new EmailModel(element.id ,element.type, element.title, element.content, element.important, element.starred);
+		// 			emailModel.getEmail(element.type);
+
+		// 		}
+		// 	})
+		// });
 	}
 
 	/*

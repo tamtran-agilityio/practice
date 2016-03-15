@@ -25,3 +25,45 @@ export class InboxEmail {
 		email.emailStar();
 	}
 }
+
+
+class EmailUI {
+	renderTemplate(emails) {
+		return renderList(emails)
+	}
+
+	renderList(emails) {
+		emails.forEach
+			renderRow(email)
+	}
+
+	renderRow(email) {
+		return html
+	}
+}
+
+InboxEmail extends EmailUI {
+	render() {
+		Service.emailInbox(data =>
+			<< array
+
+			this.render(array)
+		)
+	}
+}
+
+SentEmail extends EmailUI {
+	render() {
+		Service.emailInbox(data =>
+			<< array
+
+			this.render(array)
+		)
+	}
+}
+
+button data-box="InboxEmail"
+button data-box="SentEmail"
+
+emailComp = new window[data-box]
+emailComp.render()

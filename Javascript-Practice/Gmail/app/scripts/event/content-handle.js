@@ -9,21 +9,20 @@ export class ContentHandle {
 	}
 
 	static sortTable(tbody, col, asc) {
-
-		let rows  = tbody.length,
-		rowLength = rows.length,
+		let rows  = document.getElementById('view-all-email').rows,
+		cells  = document.getElementById('view-all-email').cells,
+		rowLength = document.getElementById('view-all-email').rows.length,
 		arr 			= new Array(),
-		i, j, cells, clen;
-
+		i, j, cell, clen;
 		for (i = 0; i < rowLength; i++) {
-			cells = rows[i].cells;
-			clen = cells.length;
+			cell = rows[i].cells;
+			clen = cell.length;
 			arr[i] = new Array();
 		for (j = 0; j < clen; j++) {
-			arr[i][j] = cells[j].innerHTML;
+			arr[i][j] = rows[i].cells[j].innerHTML;
 		}
 	}
-
+	console.log(arr);
 		arr.sort(function (a, b) {
 			return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
 		});
@@ -59,10 +58,11 @@ export class ContentHandle {
 			})
 
 			$('#sortTitle').click(function() {
-				let tbody = $('#view-all-email');
 
-				ContentHandle.sortTable( tbody, 3 , 1);
-				$aside.hide();
+					let tbody = $('#view-all-email');
+
+					ContentHandle.sortTable( tbody,  0 , 1);
+					$aside.hide();
 			})
 
 			$('.linkBox').click( function() {

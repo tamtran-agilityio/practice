@@ -23,7 +23,6 @@ export class CallJson {
 					let data = [];
 					let sym = Symbol("email");
 					let obj = {[sym]: 'email'};
-					console.log(obj[sym]);
 					let itemEmail = JSON.parse(xmlHttp.responseText)[obj[sym]];
 					itemEmail.forEach(function(element, index) {
 						data[index] = {
