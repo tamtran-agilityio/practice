@@ -18,10 +18,5 @@ export class GetData {
 		let string = 'https://hacker-news.firebaseio.com/v0/item/'+ id +'.json';
 		let service = new Service();
 		 return service.getJson(string);
-		// .then( function(response) {
-		// 	console.log("Success!", response);
-		// }, function(error) {
-		// 	console.error("Failed!", error);
-		// });
 	}
 }

@@ -21,15 +21,15 @@ export class ModelNew {
 		let $emailNode =
 		`<tr class="athing">
 			<td class="title">
-				<span class="rank">${this['descendants']}</span>
+				<span class="rank">${newwest.descendants}</span>
 			</td>
-			<td class="votelinks">
+			<td class="votelinks"> ${newwest.title}
 			</td>
 			<td class="title">
-				<span class="deadmark"></span>
+				<span class="deadmark"> ${newwest.dead}</span>
 				<a href=""></a>
 				<span class="sitebit comhead">
-					<a href=""></a>
+					<a href="">${newwest.descendants}</a>
 				</span>
 			</td>
 		</tr>
