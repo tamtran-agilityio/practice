@@ -24,6 +24,7 @@ export class SlideBar {
 			event.preventDefault();
 			tableBody.empty();
 			inboxEmail.inbox();
+			$('.wapper-aside').hide();
 		})
 
 		/*
@@ -33,6 +34,7 @@ export class SlideBar {
 			event.preventDefault();
 			tableBody.empty();
 			inboxEmail.starred();
+			$('.wapper-aside').hide();
 		})
 
 		/*
@@ -42,6 +44,7 @@ export class SlideBar {
 			event.preventDefault();
 			tableBody.empty();
 			sendEmail.onSend();
+			$('.wapper-aside').hide();
 		})
 	}
 }
