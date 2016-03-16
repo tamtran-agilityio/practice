@@ -3,7 +3,7 @@
 }
 .content-block {
 	float: left;
-	padding-left: 140px;
+	padding-left: 40px;
 	display: block;
 	width: 100%;
 }
@@ -34,6 +34,14 @@ span.score {
 }
 .table > tbody > tr > td {
 	padding: 0px;
+}
+#tableNews {
+	width: 60%;
+	float: left;
+}
+#tableComment {
+	width: 40%;
+	float: left;
 }
 .view-read {
 	display: block;
