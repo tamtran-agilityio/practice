@@ -10,8 +10,30 @@
 .email-id {
 	display: none;
 }
+.table-striped > tbody > tr {
+	display: block;
+}
+.table-striped > tbody > tr:nth-child(2n) {
+	padding-bottom: 5px;
+}
 .table-striped > tbody > tr:nth-of-type(odd) {
 	background-color: #FFF;
+}
+.table-striped > tbody > tr > td {
+	border-top: none;
+}
+td.votelinks {
+  width: 15px;
+}
+td.subtext {
+  font-size: 12px;
+}
+span.score {
+  display: inline-block;
+  margin-left: 30px;
+}
+.table > tbody > tr > td {
+	padding: 0px;
 }
 .view-read {
 	display: block;
@@ -44,16 +66,6 @@
 	display: block;
 	width: 100%;
 }
-
-table a { text-decoration: none; }
-table a:hover { text-decoration: underline; }
-tr :last-child { text-align: right; }
-/* hide content from view but not from searching */
-.hidden { display: none; }
-/* filter table specific styling */
-.filter-table .quick { margin-left: 1em; font-size: 0.8em; text-decoration: none; }
-.fitler-table .quick:hover { text-decoration: underline; }
-td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
 
 .dropbtn {
 	background-color: #4CAF50;

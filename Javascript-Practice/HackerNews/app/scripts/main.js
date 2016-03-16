@@ -1,14 +1,13 @@
 /**
- * Support to render email to json file
+ * Support to render hackernew to json api
  * Use class and module of ES6
  * @author Tam Tran support by Viet Phan
  */
-import { GetData } from './service/get-data';
 import { NewWest } from './compoment/newest';
 class App {
 	emailView() {
 		let newWest = new NewWest();
-		newWest.newHacker();
+		newWest.newListHacker();
 	}
 }
 

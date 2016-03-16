@@ -1,19 +1,16 @@
 import { Service } from './service';
 
-export class GetData {
+export class ServerNews {
 	constructor(id) {
 		this.id = id;
 	}
-	getData() {
+	getListNews() {
 		let service = new Service();
-		service.getJson('https://hacker-news.firebaseio.com/v0/topstories.json').then( function(response) {
-			console.log("Success!", response);
-		}, function(error) {
-			console.error("Failed!", error);
-		});
+		return service.getJson('https://hacker-news.firebaseio.com/v0/topstories.json');
+
 	}
 
-	getDataItem(id) {
+	getItemNews(id) {
 
 		let string = 'https://hacker-news.firebaseio.com/v0/item/'+ id +'.json';
 		let service = new Service();
