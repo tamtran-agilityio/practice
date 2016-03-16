@@ -1,13 +1,17 @@
 /*
- *
+ * Show list news
  */
 
 import { ServerNews } from '../service/get-data';
 import { ModelNew } from '../model/model-news';
-export class NewWest {
-	constructor() {
+import { Comment } from './comment';
+export class NewWest extends Comment {
 
+	constructor(id, commentItem, newItem) {
+		super(id, commentItem);
+		this.newItem = newItem;
 	}
+
 	static renderItem(newItem) {
 		let time = (((newItem['news'].time)/60)%60).toFixed(0);
 		let html =
@@ -41,55 +45,29 @@ export class NewWest {
 		return html;
 	}
 
-	static renderItemComent(commentItem) {
-		console.log(commentItem);
-		let time = (((commentItem['news'].time)/60)%60).toFixed(0);
-		let htmlComment =
-		`<tr>
-			<td class="ind">
-				<a href="${commentItem['news'].by}"> ${commentItem['news'].by} </a>
-			</td>
-			<td class="votelinks">
-			</td>
-			<td class="default">
-				<div>
-					<span class="comhead">
-						<span class="age"> ${time} hours ago
-						</span>
-					</span>
-				</div>
-				<span class="comment">
-					<span class="c00">${commentItem['news'].text}</span>
-				</span>
-			</td>
-		</tr>`;
-		return htmlComment;
-	}
-
 	static itemNews(id) {
+
 		let collectData = new ServerNews();
+
 			collectData.getItemNews(id).then(function(newItem) {
-			let dataNews = JSON.parse(newItem);
-			let modelNews = new ModelNew(dataNews);
-			let item = NewWest.renderItem(modelNews);
+
+			let dataNews 	 = JSON.parse(newItem);
+			let modelNews  = new ModelNew(dataNews);
+			let item 			 = NewWest.renderItem(modelNews);
 			let $tableBody = $("#view-all-news");
+
 			$tableBody.append(item);
 		});
 	}
 
 	static itemComment(id ) {
-		let collectData = new ServerNews();
-			collectData.getItemComment(id).then(function(dataComment) {
-			let dataNews = JSON.parse(dataComment);
-			let modelNews = new ModelNew(dataNews);
-			let itemtComment = NewWest.renderItemComent(modelNews);
-			let $tableBody = $("#view-all-comment");
-			$tableBody.append(itemtComment);
-		});
+		super.itemComment(id);
 	}
 
 	newListHacker() {
+
 		let collectData = new ServerNews();
+
 		collectData.getListNews().then(function(listItem) {
 
 		let listNews = JSON.parse(listItem);
@@ -101,12 +79,17 @@ export class NewWest {
 
 		$('#tableNews').delegate('tr.itemComment', 'click', function(event) {
 			$("#view-all-comment").empty();
+
 			let idNewItem = (this.id).toString();
+
 			collectData.getItemNews(idNewItem).then(function(data) {
+
 				let dataNews = JSON.parse(data);
+				if (dataNews != '0' || dataNews != 'undefined') {
 					(dataNews.kids).forEach(function(element) {
 						NewWest.itemComment(element);
 					})
+				}
 			});
 		});
 	}
