@@ -5,6 +5,7 @@
 import { ServerNews } from '../service/get-data';
 import { ModelNew } from '../model/model-news';
 import { Comment } from './comment';
+
 export class NewWest extends Comment {
 
 	constructor(id, commentItem, newItem) {

@@ -5,7 +5,7 @@
  */
 import { NewWest } from './compoment/newest';
 class App {
-	emailView() {
+	newHacker() {
 		let newWest = new NewWest();
 		newWest.newListHacker();
 	}
@@ -13,5 +13,5 @@ class App {
 
 {
 	let app = new App();
-		app.emailView();
+		app.newHacker();
 }
