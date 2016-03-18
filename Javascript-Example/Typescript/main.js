@@ -171,3 +171,116 @@ people.fullName = 'SameOne';
 if (people.fullName) {
     console.log(people.fullName);
 }
+// static properties
+var Grid = (function () {
+    function Grid(scale) {
+        this.scale = scale;
+        // code...
+    }
+    Grid.prototype.calculatorGrid = function (point) {
+        var xDist = (point.x - Grid.origin.x);
+        var yDist = (point.y - Grid.origin.y);
+        return Math.sqrt(xDist * xDist + yDist * yDist) / this.scale;
+    };
+    Grid.origin = { x: 0, y: 0 };
+    return Grid;
+}());
+var gridOne = new Grid(1);
+var girdTwo = new Grid(5);
+console.log(gridOne.calculatorGrid({ x: 10, y: 10 }));
+console.log(girdTwo.calculatorGrid({ x: 10, y: 10 }));
+// advance techniquest
+var Greeters = (function () {
+    function Greeters(message) {
+        this.greeting = message;
+    }
+    Greeters.prototype.greet = function () {
+        return "Hello" + this.greeting;
+    };
+    return Greeters;
+}());
+var greeters;
+greeters = new Greeters("Word");
+console.log(greeter.greet());
+var GreeterTeam = (function () {
+    function GreeterTeam(message) {
+        this.greeting = message;
+    }
+    GreeterTeam.prototype.greet = function () {
+        return "Hello, " + this.greeting;
+    };
+    return GreeterTeam;
+})();
+var greetered;
+greetered = new GreeterTeam("worlds");
+console.log(greetered.greet());
+var Greeted = (function () {
+    function Greeted() {
+    }
+    Greeted.prototype.greet = function () {
+        if (this.greeting) {
+            return "Hello, " + this.greeting;
+        }
+        else {
+            return Greeted.standardGreeting;
+        }
+    };
+    Greeted.standardGreeting = "Hello there";
+    return Greeted;
+}());
+var greeter1;
+greeter1 = new Greeted();
+console.log(greeter1.greet());
+var lettersRegexp = /^[A-Za-z]+$/;
+var numberRegexp = /^[0-9]+$/;
+var LettersOnlyValidator = (function () {
+    function LettersOnlyValidator() {
+    }
+    LettersOnlyValidator.prototype.isAcceptable = function (s) {
+        return lettersRegexp.test(s);
+    };
+    return LettersOnlyValidator;
+}());
+var ZipCodeValidator = (function () {
+    function ZipCodeValidator() {
+    }
+    ZipCodeValidator.prototype.isAcceptable = function (s) {
+        return s.length === 5 && numberRegexp.test(s);
+    };
+    return ZipCodeValidator;
+}());
+// Some samples to try
+var strings = ['Hello', '98052', '101'];
+// Validators to use
+var validators = {};
+validators['ZIP code'] = new ZipCodeValidator();
+validators['Letters only'] = new LettersOnlyValidator();
+// Show whether each string passed each validator
+strings.forEach(function (s) {
+    for (var name_1 in validators) {
+        console.log('"' + s + '" ' + (validators[name_1].isAcceptable(s) ? ' matches ' : ' does not match ') + name_1);
+    }
+});
+// function
+var myAdd = function (x, y) { return x + y; };
+console.log(myAdd(1, 8));
+var myAddNews = function (x, y) { return x + y; };
+console.log(myAddNews(1, 6));
+var suits = ["hearts", "spades", "clubs", "diamonds"];
+function pickCard(x) {
+    // Check to see if we're working with an object/array
+    // if so, they gave us the deck and we'll pick the card
+    if (typeof x == "object") {
+        var pickedCard = Math.floor(Math.random() * x.length);
+        return pickedCard;
+    }
+    else if (typeof x == "number") {
+        var pickedSuit = Math.floor(x / 13);
+        return { suit: suits[pickedSuit], card: x % 13 };
+    }
+}
+var myDeck = [{ suit: "diamonds", card: 2 }, { suit: "spades", card: 10 }, { suit: "hearts", card: 4 }];
+var pickedCard1 = myDeck[pickCard(myDeck)];
+console.log("card: " + pickedCard1.card + " of " + pickedCard1.suit);
+var pickedCard2 = pickCard(15);
+console.log("card: " + pickedCard2.card + " of " + pickedCard2.suit);
