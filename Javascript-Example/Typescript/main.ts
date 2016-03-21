@@ -8,7 +8,7 @@ console.log(list[1]);
 
 // void
 function warnUser(): void {
-	alert("This is my warning message");
+	console.log("This is my warning message");
 }
 
 // interface
@@ -124,9 +124,9 @@ console.log(square);
 
 // class
 class Greeter {
-    greeting: string;
-    constructor(message: string) {
-        this.greeting = message;
+	greeting: string;
+	constructor(message: string) {
+	   this.greeting = message;
     }
     greet() {
         return "Hello, " + this.greeting;
@@ -339,3 +339,226 @@ console.log("card: " + pickedCard1.card + " of " + pickedCard1.suit);
 
 let pickedCard2 = pickCard(15);
 console.log("card: " + pickedCard2.card + " of " + pickedCard2.suit);
+
+// generics
+function identity(arg: number) : number {
+	return arg;
+}
+console.log(identity(2));
+
+function loggingIdentity<T>(arg: Array<T>): Array<T> {
+	console.log(arg.length);
+	return arg;
+}
+
+loggingIdentity(['10', '20', '23']);
+
+class GenericNumber<T> {
+	zeroValue: T;
+	add: (X: T, Y: T) =>T;
+}
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 12;
+myGenericNumber.add = function(x, y) { return x + y; };
+console.log(myGenericNumber.add(myGenericNumber.zeroValue, 10));
+
+
+interface Lengthwise {
+	length: number;
+}
+
+function loggingIdentitys<T extends Lengthwise >(arg:T): T {
+	console.log("loggingIdentitys",arg.length);
+	return arg;
+}
+
+loggingIdentitys({length: 10, value: 322});
+/*
+ * Mixin
+ */
+// Disposable Mixin
+// class Disposable {
+// 	isDisposed: boolean;
+// 	dispose() {
+// 		this.isDisposed = true;
+// 	}
+// }
+// // Activatable Mixin
+// class Activatable {
+// 	isActive: boolean;
+// 	activate() {
+// 		this.isActive = true;
+// 	}
+// 	deactivate() {
+// 		this.isActive = false;
+// 	}
+// }
+
+// class SmartObject implements Disposable, Activatable {
+// 	constructor() {
+// 		setInterval(() => console.log(this.isActive + " : " + this.isDisposed), 500);
+// }
+
+// interact() {
+// 	this.activate();
+// }
+
+// // Disposable
+// isDisposed: boolean = false;
+// dispose: () => void;
+// // Activatable
+// isActive: boolean = false;
+// activate: () => void;
+// deactivate: () => void;
+// }
+// applyMixins(SmartObject, [Disposable, Activatable])
+
+// var smartObj = new SmartObject();
+// setTimeout(() => smartObj.interact(), 1000);
+
+// ////////////////////////////////////////
+// // In your runtime library somewhere
+// ////////////////////////////////////////
+
+// function applyMixins(derivedCtor: any, baseCtors: any[]) {
+// 	baseCtors.forEach(baseCtor => {
+// 		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+// 		derivedCtor.prototype[name] = baseCtor.prototype[name];
+// 	})
+// });
+// }
+
+class BeeKeeper {
+	hasMask: boolean;
+}
+
+class ZooKeeper {
+	nametag: string;
+}
+
+class Animals {
+	numLegs: number;
+}
+
+class Bee extends Animals {
+	keeper: BeeKeeper;
+}
+
+class Lion extends Animals {
+	keeper: ZooKeeper;
+}
+
+function findKeeper<A extends Animals, K> (a: {new(): A;
+	prototype: {keeper: K}}): K {
+
+	return a.prototype.keeper;
+}
+
+console.log(findKeeper(Lion));
+
+function applyMixin(derivedCtor: any, baseCtors: any[]) {
+	baseCtors.forEach(baseCtor => {
+		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+			if (name !== 'constructor') {
+				derivedCtor.prototype[name] = baseCtor.prototype[name];
+			}
+		});
+	});
+}
+
+class Flies {
+	fly() {
+		console.log('Is it a bird? Is it a plane?');
+	}
+}
+
+class Climbs {
+	climb() {
+		console.log('My spider-sense is tingling.');
+	}
+}
+
+class Bulletproof {
+	deflect() {
+		console.log('My wings are a shield of steel.');
+	}
+}
+
+class BeetleGuy implements Climbs, Bulletproof {
+	climb: () => void;
+	deflect: () => void;
+}
+applyMixin(BeetleGuy, [Climbs, Bulletproof]);
+
+let beetleGuy = new BeetleGuy();
+beetleGuy.climb();
+beetleGuy.deflect();
+
+class HorseflyWoman implements Climbs, Flies {
+	climb: () => void;
+	fly: () => void;
+}
+applyMixin(HorseflyWoman, [Climbs, Flies]);
+
+let superHero = new HorseflyWoman();
+superHero.climb();
+superHero.fly();
+
+/*
+ * Merging
+ */
+module Animals1 {
+	export interface Legged { numberOfLegs: number; }
+	export class Dog { }
+	export class Zebra { }
+}
+
+function buildLabel(name: string): string {
+	return buildLabel.prefix + name + buildLabel.suffix;
+}
+
+module buildLabel {
+	export let suffix = "";
+	export let prefix = "Hello, ";
+}
+
+console.log(buildLabel("Sam Smith"));
+
+enum Color {
+	red = 1,
+	greend = 2,
+	blue = 4
+}
+module Color {
+	export function mixColor(colorName: string) {
+		if (colorName === 'Yellow') {
+			return Color.red + Color.greend;
+		}
+		else if (colorName === 'white') {
+			return Color.red + Color.greend + Color.blue;
+		}
+		else if (colorName === 'magenta') {
+			return Color.red + Color.blue;
+		}
+		else if (colorName === 'cyan') {
+			return Color.greend + Color.blue;
+		}
+	}
+}
+
+console.log(Color.mixColor('cyan'));
+
+/*
+ * Type compatibility
+ */
+interface Named {
+	name: string;
+}
+let x: Named;
+let y = { name: 'Alice', location: 'Seattle' };
+x = y;
+
+function greet(n: Named) {
+	console.log('Hello, ' + n.name);
+}
+greet(y);

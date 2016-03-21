@@ -11,7 +11,7 @@ list[1] = 100;
 console.log(list[1]);
 // void
 function warnUser() {
-    alert("This is my warning message");
+    console.log("This is my warning message");
 }
 // interface
 function printLabel(labelledObj) {
@@ -270,11 +270,11 @@ var suits = ["hearts", "spades", "clubs", "diamonds"];
 function pickCard(x) {
     // Check to see if we're working with an object/array
     // if so, they gave us the deck and we'll pick the card
-    if (typeof x == "object") {
+    if (typeof x === "object") {
         var pickedCard = Math.floor(Math.random() * x.length);
         return pickedCard;
     }
-    else if (typeof x == "number") {
+    else if (typeof x === "number") {
         var pickedSuit = Math.floor(x / 13);
         return { suit: suits[pickedSuit], card: x % 13 };
     }
@@ -284,3 +284,218 @@ var pickedCard1 = myDeck[pickCard(myDeck)];
 console.log("card: " + pickedCard1.card + " of " + pickedCard1.suit);
 var pickedCard2 = pickCard(15);
 console.log("card: " + pickedCard2.card + " of " + pickedCard2.suit);
+// generics
+function identity(arg) {
+    return arg;
+}
+console.log(identity(2));
+function loggingIdentity(arg) {
+    console.log(arg.length);
+    return arg;
+}
+loggingIdentity(['10', '20', '23']);
+var GenericNumber = (function () {
+    function GenericNumber() {
+    }
+    return GenericNumber;
+}());
+var myGenericNumber = new GenericNumber();
+myGenericNumber.zeroValue = 12;
+myGenericNumber.add = function (x, y) { return x + y; };
+console.log(myGenericNumber.add(myGenericNumber.zeroValue, 10));
+function loggingIdentitys(arg) {
+    console.log("loggingIdentitys", arg.length);
+    return arg;
+}
+loggingIdentitys({ length: 10, value: 322 });
+/*
+ * Mixin
+ */
+// Disposable Mixin
+// class Disposable {
+// 	isDisposed: boolean;
+// 	dispose() {
+// 		this.isDisposed = true;
+// 	}
+// }
+// // Activatable Mixin
+// class Activatable {
+// 	isActive: boolean;
+// 	activate() {
+// 		this.isActive = true;
+// 	}
+// 	deactivate() {
+// 		this.isActive = false;
+// 	}
+// }
+// class SmartObject implements Disposable, Activatable {
+// 	constructor() {
+// 		setInterval(() => console.log(this.isActive + " : " + this.isDisposed), 500);
+// }
+// interact() {
+// 	this.activate();
+// }
+// // Disposable
+// isDisposed: boolean = false;
+// dispose: () => void;
+// // Activatable
+// isActive: boolean = false;
+// activate: () => void;
+// deactivate: () => void;
+// }
+// applyMixins(SmartObject, [Disposable, Activatable])
+// var smartObj = new SmartObject();
+// setTimeout(() => smartObj.interact(), 1000);
+// ////////////////////////////////////////
+// // In your runtime library somewhere
+// ////////////////////////////////////////
+// function applyMixins(derivedCtor: any, baseCtors: any[]) {
+// 	baseCtors.forEach(baseCtor => {
+// 		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
+// 		derivedCtor.prototype[name] = baseCtor.prototype[name];
+// 	})
+// });
+// }
+var BeeKeeper = (function () {
+    function BeeKeeper() {
+    }
+    return BeeKeeper;
+}());
+var ZooKeeper = (function () {
+    function ZooKeeper() {
+    }
+    return ZooKeeper;
+}());
+var Animals = (function () {
+    function Animals() {
+    }
+    return Animals;
+}());
+var Bee = (function (_super) {
+    __extends(Bee, _super);
+    function Bee() {
+        _super.apply(this, arguments);
+    }
+    return Bee;
+}(Animals));
+var Lion = (function (_super) {
+    __extends(Lion, _super);
+    function Lion() {
+        _super.apply(this, arguments);
+    }
+    return Lion;
+}(Animals));
+function findKeeper(a) {
+    return a.prototype.keeper;
+}
+console.log(findKeeper(Lion));
+function applyMixin(derivedCtor, baseCtors) {
+    baseCtors.forEach(function (baseCtor) {
+        Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
+            if (name !== 'constructor') {
+                derivedCtor.prototype[name] = baseCtor.prototype[name];
+            }
+        });
+    });
+}
+var Flies = (function () {
+    function Flies() {
+    }
+    Flies.prototype.fly = function () {
+        console.log('Is it a bird? Is it a plane?');
+    };
+    return Flies;
+}());
+var Climbs = (function () {
+    function Climbs() {
+    }
+    Climbs.prototype.climb = function () {
+        console.log('My spider-sense is tingling.');
+    };
+    return Climbs;
+}());
+var Bulletproof = (function () {
+    function Bulletproof() {
+    }
+    Bulletproof.prototype.deflect = function () {
+        console.log('My wings are a shield of steel.');
+    };
+    return Bulletproof;
+}());
+var BeetleGuy = (function () {
+    function BeetleGuy() {
+    }
+    return BeetleGuy;
+}());
+applyMixin(BeetleGuy, [Climbs, Bulletproof]);
+var beetleGuy = new BeetleGuy();
+beetleGuy.climb();
+beetleGuy.deflect();
+var HorseflyWoman = (function () {
+    function HorseflyWoman() {
+    }
+    return HorseflyWoman;
+}());
+applyMixin(HorseflyWoman, [Climbs, Flies]);
+var superHero = new HorseflyWoman();
+superHero.climb();
+superHero.fly();
+/*
+ * Merging
+ */
+var Animals1;
+(function (Animals1) {
+    var Dog = (function () {
+        function Dog() {
+        }
+        return Dog;
+    }());
+    Animals1.Dog = Dog;
+    var Zebra = (function () {
+        function Zebra() {
+        }
+        return Zebra;
+    }());
+    Animals1.Zebra = Zebra;
+})(Animals1 || (Animals1 = {}));
+function buildLabel(name) {
+    return buildLabel.prefix + name + buildLabel.suffix;
+}
+var buildLabel;
+(function (buildLabel) {
+    buildLabel.suffix = "";
+    buildLabel.prefix = "Hello, ";
+})(buildLabel || (buildLabel = {}));
+console.log(buildLabel("Sam Smith"));
+var Color;
+(function (Color) {
+    Color[Color["red"] = 1] = "red";
+    Color[Color["greend"] = 2] = "greend";
+    Color[Color["blue"] = 4] = "blue";
+})(Color || (Color = {}));
+var Color;
+(function (Color) {
+    function mixColor(colorName) {
+        if (colorName === 'Yellow') {
+            return Color.red + Color.greend;
+        }
+        else if (colorName === 'white') {
+            return Color.red + Color.greend + Color.blue;
+        }
+        else if (colorName === 'magenta') {
+            return Color.red + Color.blue;
+        }
+        else if (colorName === 'cyan') {
+            return Color.greend + Color.blue;
+        }
+    }
+    Color.mixColor = mixColor;
+})(Color || (Color = {}));
+console.log(Color.mixColor('cyan'));
+var x;
+var y = { name: 'Alice', location: 'Seattle' };
+x = y;
+function greet(n) {
+    console.log('Hello, ' + n.name);
+}
+greet(y);
