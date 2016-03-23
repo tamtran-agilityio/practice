@@ -14,8 +14,7 @@ var LettersMinValidator = (function () {
     }
     LettersMinValidator.prototype.isAcceptable = function () {
         var numberRegexp = /^[6]+$/;
-        console.log(this.value.lenght);
-        return numberRegexp.test(this.value.length);
+        return numberRegexp.test((this.value).length);
     };
     return LettersMinValidator;
 }());
@@ -25,7 +24,24 @@ var NumberOnlyValidator = (function () {
     }
     NumberOnlyValidator.prototype.isAcceptable = function () {
         var numberRegexp = /^[0-9]+$/;
-        return numberRegexp.test(this.value.toString());
+        var lettersRegexp = /^[A-Za-z]+$/;
+        var lengthValue = (this.value).length;
+        if (lengthValue === 6) {
+            console.log("Max lenght 6");
+            return;
+        }
+        if (numberRegexp.test(this.value.toString())) {
+            console.log("numberRegexp");
+            console.log(numberRegexp.test(this.value.toString()));
+            return numberRegexp.test(this.value.toString());
+        }
+        else if (lettersRegexp.test(this.value)) {
+            console.log("lettersRegexp");
+            return lettersRegexp.test(this.value);
+        }
+        else {
+            console.log("Not avadtion");
+        }
     };
     return NumberOnlyValidator;
 }());
@@ -38,11 +54,11 @@ var Validators = (function () {
         }
         this.validators.push(validator);
     };
-    Validators.prototype.valid = function () {
+    Validators.prototype.isAcceptable = function () {
         var isValid = true;
         if (this.validators) {
             this.validators.forEach(function (validator) {
-                console.log("AAAAAAAAAAAAA", validator);
+                console.log(validator);
                 if (!validator.isAcceptable()) {
                     isValid = false;
                 }
@@ -53,10 +69,10 @@ var Validators = (function () {
     return Validators;
 }());
 var validators = new Validators();
-var a = new LettersOnlyValidator("abc");
-var b = new NumberOnlyValidator(111);
-var c = new LettersMinValidator("sddd88");
+// let a = new LettersOnlyValidator("abc");
+var b = new NumberOnlyValidator("sfsfsd7888t55");
+// let c = new LettersMinValidator("ssdd88");
 // validators.addValidator(a);
-// validators.addValidator(b);
-validators.addValidator(c);
-console.debug("VALID:", validators.valid());
+validators.addValidator(b);
+// validators.addValidator(c);
+console.debug("VALID:", validators.isAcceptable());

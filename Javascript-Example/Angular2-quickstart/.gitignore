@@ -1,0 +1,17 @@
+# Build gulp
+########################
+out/
+node_modules/
+typings/
+vendor/
+bourbon/
+neat/
+base/
+
+#temp files
+#########################
+*.*~
+*.log
+.vagrant
+.sass-cache
+npm-debug.log

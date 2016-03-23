@@ -21,21 +21,34 @@ class LettersMinValidator implements Validator {
 	}
 	isAcceptable() {
 		let numberRegexp = /^[6]+$/;
-		console.log(this.value.lenght);
-		return numberRegexp.test(this.value);
+		return numberRegexp.test((this.value).length);
 	}
 }
 
-
-
 class NumberOnlyValidator implements Validator {
-	value: number;
-	constructor(value: number) {
+	value: any;
+	constructor(value: any) {
 		this.value = value;
 	}
 	isAcceptable() {
 		let numberRegexp = /^[0-9]+$/;
-		return numberRegexp.test(this.value.toString());
+		let lettersRegexp = /^[A-Za-z]+$/;
+		let lengthValue = (this.value).length;
+		if (lengthValue === 6) {
+			console.log("Max lenght 6");
+			return;
+		}
+		if (numberRegexp.test(this.value.toString())) {
+			console.log("numberRegexp");
+			console.log(numberRegexp.test(this.value.toString()));
+			return numberRegexp.test(this.value.toString());
+		} else
+		if (lettersRegexp.test(this.value)) {
+			console.log("lettersRegexp");
+			return lettersRegexp.test(this.value);
+		} else {
+			console.log("Not avadtion");
+		}
 	}
 }
 
@@ -48,11 +61,11 @@ class Validators {
 		this.validators.push(validator);
 	}
 
-	valid() {
+	isAcceptable() {
 		let isValid = true;
 		if (this.validators){
 			this.validators.forEach((validator: Validator) => {
-				console.log("AAAAAAAAAAAAA",validator);
+				console.log(validator);
 				if (!validator.isAcceptable()){
 					isValid = false;
 				}
@@ -63,11 +76,8 @@ class Validators {
 }
 
 let validators = new Validators();
-let a = new LettersOnlyValidator("abc");
-let b = new NumberOnlyValidator(111);
-let c = new LettersMinValidator("sddd88");
-// validators.addValidator(a);
-// validators.addValidator(b);
-validators.addValidator(c);
+let b = new NumberOnlyValidator("sfsfsd7888t55");
+validators.addValidator(b);
 
-console.debug("VALID:", validators.valid());
+
+console.debug("VALID:", validators.isAcceptable());
