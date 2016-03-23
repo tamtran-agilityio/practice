@@ -1,4 +1,5 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+// import {Component} from 'angular2/core';
+System.register(['angular2/core', './hero-detail.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +11,46 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var AppComponent;
+    var core_1, hero_detail_component_1;
+    var AppComponent, HEROES;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (hero_detail_component_1_1) {
+                hero_detail_component_1 = hero_detail_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = 'Tour of Heroes';
-                    this.heros = 'Windstorm';
-                    this.hero = {
-                        id: 1,
-                        name: 'Windstorm'
-                    };
+                    this.heroes = HEROES;
                 }
+                AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: " <h1>{{title}}</h1>\n\t\t\t\t\t\t\t<h2>{{heros}} details!</h2>\n\t\t\t\t\t\t\t<h2>{{hero.name}} details!</h2>\n\t\t\t\t\t\t\t<div><label>id: </label>{{hero.id}}</div>\n\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t<label>name: </label>\n\t\t\t\t\t\t\t\t<input [(ngModel)]=\"hero.name\" placeholder=\"name\">\n\t\t\t\t\t\t\t</div>"
+                        template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"#hero of heroes\"\n        [class.selected]=\"hero === selectedHero\"\n        (click)=\"onSelect(hero)\">\n        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n      </li>\n    </ul>\n    <my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n  ",
+                        directives: [hero_detail_component_1.HeroDetailComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());
             exports_1("AppComponent", AppComponent);
+            HEROES = [
+                { "id": 11, "name": "Mr. Nice" },
+                { "id": 12, "name": "Narco" },
+                { "id": 13, "name": "Bombasto" },
+                { "id": 14, "name": "Celeritas" },
+                { "id": 15, "name": "Magneta" },
+                { "id": 16, "name": "RubberMan" },
+                { "id": 17, "name": "Dynama" },
+                { "id": 18, "name": "Dr IQ" },
+                { "id": 19, "name": "Magma" },
+                { "id": 20, "name": "Tornado" }
+            ];
         }
     }
 });
