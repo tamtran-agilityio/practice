@@ -12,6 +12,8 @@ base/
 #########################
 *.*~
 *.log
+*.js
+*.map
 .vagrant
 .sass-cache
 npm-debug.log

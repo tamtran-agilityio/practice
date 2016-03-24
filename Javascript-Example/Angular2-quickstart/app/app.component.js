@@ -1,5 +1,4 @@
-// import {Component} from 'angular2/core';
-System.register(['angular2/core', './hero-detail.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './hero-detail.component', './hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,8 +10,8 @@ System.register(['angular2/core', './hero-detail.component'], function(exports_1
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, hero_detail_component_1;
-    var AppComponent, HEROES;
+    var core_1, hero_detail_component_1, hero_service_1;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -20,37 +19,36 @@ System.register(['angular2/core', './hero-detail.component'], function(exports_1
             },
             function (hero_detail_component_1_1) {
                 hero_detail_component_1 = hero_detail_component_1_1;
+            },
+            function (hero_service_1_1) {
+                hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_heroService) {
+                    this._heroService = _heroService;
                     this.title = 'Tour of Heroes';
-                    this.heroes = HEROES;
                 }
+                AppComponent.prototype.getHeroes = function () {
+                    var _this = this;
+                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+                };
+                AppComponent.prototype.ngOnInit = function () {
+                    this.getHeroes();
+                };
                 AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>\n    <ul class=\"heroes\">\n      <li *ngFor=\"#hero of heroes\"\n        [class.selected]=\"hero === selectedHero\"\n        (click)=\"onSelect(hero)\">\n        <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n      </li>\n    </ul>\n    <my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n  ",
-                        directives: [hero_detail_component_1.HeroDetailComponent]
+                        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<h2>My Heroes</h2>\n\t\t<ul class=\"heroes\">\n\t\t\t<li *ngFor=\"#hero of heroes\"\n\t\t\t\t[class.selected]=\"hero === selectedHero\"\n\t\t\t\t(click)=\"onSelect(hero)\">\n\t\t\t\t<span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t\t\t</li>\n\t\t</ul>\n\t\t<my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n\t",
+                        directives: [hero_detail_component_1.HeroDetailComponent],
+                        providers: [hero_service_1.HeroesService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [hero_service_1.HeroesService])
                 ], AppComponent);
                 return AppComponent;
             }());
             exports_1("AppComponent", AppComponent);
-            HEROES = [
-                { "id": 11, "name": "Mr. Nice" },
-                { "id": 12, "name": "Narco" },
-                { "id": 13, "name": "Bombasto" },
-                { "id": 14, "name": "Celeritas" },
-                { "id": 15, "name": "Magneta" },
-                { "id": 16, "name": "RubberMan" },
-                { "id": 17, "name": "Dynama" },
-                { "id": 18, "name": "Dr IQ" },
-                { "id": 19, "name": "Magma" },
-                { "id": 20, "name": "Tornado" }
-            ];
         }
     }
 });
