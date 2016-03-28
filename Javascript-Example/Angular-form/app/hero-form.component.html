@@ -28,6 +28,11 @@
 					Power is required
 				</div>
 			</div>
+
+			<!-- <label *ngFor="#cb of checkboxes">
+				<input type="checkbox" [(ngModel)]="cb.state">{{cb.label}}
+			</label> -->
+
 			<button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
 			<button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
 		</form>

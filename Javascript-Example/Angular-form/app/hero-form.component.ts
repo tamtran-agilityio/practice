@@ -10,8 +10,11 @@ export class HeroFormComponent {
 						'Super Hot', 'Weather Changer'];
 	model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 	submitted = false;
+	checkboxes = [{label: 'one'},{label: 'two'}];
+
 	onSubmit() { 
 		this.submitted = true; 
+		// return !this.checkboxes.some(_ => _.state);
 	}
 	active = true;
 	newHero() {
