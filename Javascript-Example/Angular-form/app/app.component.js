@@ -34,7 +34,7 @@ System.register(['angular2/core', 'angular2/common', './hero-form.component', '.
                     core_1.Component({
                         selector: 'my-app',
                         template: '<hero-form></hero-form>',
-                        directives: [hero_form_component_1.HeroFormComponent, common_1.FORM_DIRECTIVES, form_sku_component_1.SkuForm]
+                        directives: [hero_form_component_1.HeroFormComponent, common_1.FORM_DIRECTIVES, form_sku_component_1.DemoFormSkuBuilder]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
