@@ -1,23 +1,26 @@
-import { Component, OnInit } from 'angular2/core';
-import { RouteParams } from 'angular2/router';
-import { FORM_DIRECTIVES } from 'angular2/common';
-import { Hero } from './hero.form';
-
+import {Component} from 'angular2/core';
+import {NgForm}    from 'angular2/common';
+import { Hero }    from './hero';
 @Component({
 	selector: 'hero-form',
-	template: 'app/hero-form.component.html',
-	directives: [FORM_DIRECTIVES]
+	templateUrl: 'app/hero-form.component.html'
 })
-
 export class HeroFormComponent {
-	powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
+	powers = ['Really Smart', 'Super Flexible',
+						'Super Hot', 'Weather Changer'];
 	model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 	submitted = false;
+	checkboxes = [{label: 'one'},{label: 'two'}];
+
 	onSubmit() {
 		this.submitted = true;
+		// return !this.checkboxes.some(_ => _.state);
 	}
-
-  get diagnostic() {
-  	return JSON.stringify(this.model);
-  }
+	active = true;
+	newHero() {
+		this.model = new Hero(42, '', '');
+		this.active = false;
+		setTimeout(()=> this.active=true, 0);
+	}
 }
+

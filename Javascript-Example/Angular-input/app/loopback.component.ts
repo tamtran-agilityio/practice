@@ -1,4 +1,4 @@
-import { Component } 'angular2/core';
+import { Component } from 'angular2/core';
 
 @Component({
 	selector: 'loop-back',
