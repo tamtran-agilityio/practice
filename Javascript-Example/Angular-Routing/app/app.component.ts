@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroFormComponent } from './hero-form.component';
+import { HighlightDirective } from './highlight.directive';
 
 @Component({
 	selector: 'my-app',
@@ -14,7 +15,8 @@ import { HeroFormComponent } from './hero-form.component';
 		<nav>
 			<a [routerLink]="['Dashboard']">Dashboard</a>
 			<a [routerLink]="['Heroes']">Heroes</a>
-			<a [routerLink]="['Form']">Heroes</a>
+			<a [routerLink]="['Form']">Heroes Form</a>
+			<a [routerLink]="['Directives']">Directive</a>
 		</nav>
 		<router-outlet></router-outlet>
 	`,
@@ -23,7 +25,8 @@ import { HeroFormComponent } from './hero-form.component';
 	providers: [
 		ROUTER_PROVIDERS,
 		HeroService,
-		HeroFormComponent
+		HeroFormComponent,
+		HighlightDirective
 	]
 })
 @RouteConfig([
@@ -48,6 +51,11 @@ import { HeroFormComponent } from './hero-form.component';
 		name: 'Form',
 		component: HeroFormComponent
 	},
+	{
+		path: '/highlight',
+		name: 'Directives',
+		component: HighlightDirective
+	}
 ])
 export class AppComponent {
 	title = 'Tour of Heroes';
