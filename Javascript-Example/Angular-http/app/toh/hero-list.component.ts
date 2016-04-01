@@ -31,16 +31,17 @@ export class HeroListComponent implements OnInit {
 
 	getHeroes() {
 		this._heroService.getHeroes()
-										 .subscribe(
-											 heroes => this.heroes = heroes,
-											 error =>  this.errorMessage = <any>error);
+									.subscribe(
+									heroes => this.heroes = heroes,
+									error =>  this.errorMessage = <any>error);
+									// console.debug(" This hero list ", heroes);
 	}
 
 	addHero (name: string) {
 		if (!name) {return;}
 		this._heroService.addHero(name)
-										 .subscribe(
-											 hero  => this.heroes.push(hero),
-											 error =>  this.errorMessage = <any>error);
+									.subscribe(
+									hero  => this.heroes.push(hero),
+									error =>  this.errorMessage = <any>error);
 	}
 }

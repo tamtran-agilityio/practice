@@ -29,4 +29,17 @@ import {HeroData}          from '../hero-data';
 		provide(SEED_DATA,  { useClass: HeroData }) // in-mem server data
 	]
 })
-export class TohComponent { }
+export class TohComponent { 
+
+	constructor(public heroService: HeroService){
+		console.debug("heroService:", heroService);
+	}
+	
+	
+	// heroService: HeroService;
+	// constructor(heroService: HeroService){
+	// 	this.heroService = heroService;
+	// 	console.debug("heroService:", heroService);
+	// }
+
+}
