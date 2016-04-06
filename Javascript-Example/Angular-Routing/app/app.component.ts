@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, View } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 import { HeroService } from './hero.service';
@@ -7,6 +7,9 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroFormComponent } from './hero-form.component';
 import { HighlightDirective } from './highlight.directive';
+import {FORM_DIRECTIVES} from "angular2/common";
+import {RadioControlValueAccessor} from "./radio_value_accessor";
+import {bootstrap} from "angular2/platform/browser";
 
 @Component({
 	selector: 'my-app',
@@ -21,7 +24,7 @@ import { HighlightDirective } from './highlight.directive';
 		<router-outlet></router-outlet>
 	`,
 	styleUrls: ['app/app.component.css'],
-	directives: [ROUTER_DIRECTIVES],
+	directives: [ROUTER_DIRECTIVES, FORM_DIRECTIVES, RadioControlValueAccessor],
 	providers: [
 		ROUTER_PROVIDERS,
 		HeroService,
@@ -57,6 +60,10 @@ import { HighlightDirective } from './highlight.directive';
 		component: HighlightDirective
 	}
 ])
+// @View({
+// 	directives: [FORM_DIRECTIVES, RadioControlValueAccessor]
+// })
+
 export class AppComponent {
 	title = 'Tour of Heroes';
 }

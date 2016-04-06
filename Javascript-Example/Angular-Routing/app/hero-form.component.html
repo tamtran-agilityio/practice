@@ -29,6 +29,22 @@
 				</div>
 			</div>
 
+			<div>
+				<form action="">
+					<input type="radio" [(ngModel)]="model.sex"  name="sex" value="male">Male<br>
+					<input type="radio" [(ngModel)]="model.sex"  name="sex" value="female">Female
+				</form>
+				<input type="button" value="select male" (click)="model.sex='male'">
+				<input type="button" value="select female" (click)="model.sex='female'">
+				<div>Selected Radio: {{model.sex}}</div>
+			</div>
+			<!-- <div>
+				<form action="">
+					<input type="radio" [(ngModel)]="model.sex"  name="sex" value="male">Male<br>
+					<input type="radio" [(ngModel)]="model.sex"  name="sex" value="female">Female
+				</form>
+
+			</div> -->
 			<!-- <label *ngFor="#cb of checkboxes">
 				<input type="checkbox" [(ngModel)]="cb.state">{{cb.label}}
 			</label> -->
