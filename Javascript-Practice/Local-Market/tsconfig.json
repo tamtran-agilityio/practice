@@ -1,0 +1,38 @@
+{
+  "version": "1.6.2",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "dist/app",
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false
+  },
+
+  "filesGlob": [
+    "src/**/*.ts",
+    "typings/**/*.d.ts",
+    "node_modules/immutable/dist/*.d.ts"
+  ],
+  "files": [
+    "src/app/**/*.ts",
+    "typings/node-uuid/node-uuid-base.d.ts",
+    "typings/node-uuid/node-uuid-global.d.ts",
+    "typings/redux/redux.d.ts",
+    "typings/tsd.d.ts",
+    "node_modules/immutable/dist/immutable.d.ts",
+    "node_modules/angular2/src/facade/promise.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
