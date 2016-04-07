@@ -1,0 +1,65 @@
+.black {
+	background-color: transparent;
+	color: #FFF;
+	.nav-group {
+		position: absolute;
+		top: 0;
+		right: auto;
+		bottom: auto;
+		left: 0;
+		width: auto;
+		height: auto;
+		z-index: 1;
+	}
+	.nav-item {
+		font-size: 18px;
+		line-height: 22px;
+		color: #FFF;
+		display: inline-block;
+		height: 3rem;
+		width: 40px;
+		.icon-menu {
+		    line-height: 40px;
+			vertical-align: middle;
+			font-family: 'market';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			&:before {
+				content: "\e61e";
+			}
+		}
+	}
+	.title-page {
+		opacity: 0;
+		font-size: 11px;
+		line-height: 18px;
+		font-family: 'lorabold', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+		font-style: normal;
+		letter-spacing: .3em;
+		text-indent: .3em;
+		text-transform: uppercase;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		bottom: auto;
+		left: 0;
+		width: auto;
+		height: auto;
+		-webkit-transform: translate3d(0, -40%, 0);
+		-moz-transform: translate3d(0, -40%, 0);
+		-ms-transform: translate3d(0, -40%, 0);
+		-o-transform: translate3d(0, -40%, 0);
+		transform: translate3d(0, -40%, 0);
+		line-height: 1;
+	}
+
+}
