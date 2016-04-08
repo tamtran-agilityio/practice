@@ -5,12 +5,14 @@
   <title>Local Market - Your Neighborhood Grocer</title>
   <meta name="description" content="Get the latest news, checkout hand-picked recipes, and share with other locals.">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" type="image/png" href="/favicon.png" sizes="16x16 32x32 64x64">
+  <link rel="shortcut icon" type="image/png" href="/app/favicon.png" sizes="16x16 32x32 64x64">
   <link rel="stylesheet" href="app/styles/main.css"/>
+
 </head>
 
 <body>
   <my-app>Loading...</my-app>
+  <item-recipes></item-recipes>
 </body>
 
 <script src="lib/angular2-polyfills.js"></script>
@@ -18,7 +20,8 @@
 <script src="lib/Rx.js"></script>
 <script src="lib/angular2.dev.js"></script>
 <script src="lib/uuid.js"></script>
-
+<script src="lib/http.dev.js"></script>
+<script src="https://npmcdn.com/a2-in-memory-web-api/web-api.js"></script>
 <script>
   System.config({
     packages: {
