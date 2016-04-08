@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { RecipesService } from '../service/service.component';
-import { Recipes } from './recipes';
+import { Recipe } from './recipes';
 
 @Component({
 	selector: 'item-recipes',
@@ -14,7 +14,7 @@ import { Recipes } from './recipes';
 export class RecipesList implements OnInit {
 	constructor(private _recipesService: RecipesService ) {}
 	errorMessage: string;
-	recipes: Recipes[];
+	recipes: Recipe[];
 	ngOnInit() {
 		this.getRecipes();
 	}

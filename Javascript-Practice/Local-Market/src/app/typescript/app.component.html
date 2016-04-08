@@ -26,6 +26,15 @@
 				{{news}}
 			</div>
 			<what-see class="item-what-cooking"></what-see>
+			<div class="list-recipes">
+				<a href="" *ngFor="#recipe of recipes" class="item-recipe">
+					<span class="title-recipe">{{recipe['source'].name}}</span>
+					<span class="attribution">
+						<span class="metadata-recipe"></span>
+					</span>
+					<img src="" alt="">
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

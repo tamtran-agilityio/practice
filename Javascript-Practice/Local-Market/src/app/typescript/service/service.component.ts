@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 import { Headers, RequestOptions} from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
-import { Recipes } from '../recipes/recipes';
+import { Recipe } from '../recipes/recipes';
 
 @Injectable()
 export class RecipesService {
@@ -12,7 +12,7 @@ export class RecipesService {
 	private _recipesUrl = 'app/data/recipes.json';
 	getRecipes() {
 		return this.http.get(this._recipesUrl)
-			.map(res => <Recipes[]> res.json())
+			.map(res => <Recipe[]> res.json())
 			.do(data => console.log(data))
 			.catch(this.handleError);
 	}
