@@ -1,26 +1,51 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, Input, OnInit } from 'angular2/core';
 import { HTTP_PROVIDERS }    from 'angular2/http';
-import { WhatCooking } from './what-see/what-see.component';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams } from 'angular2/router';
+import { WhatSee } from './what-see/what-see.component';
 import { RecipesService } from './service/service.component';
 import { Recipe } from './recipes/recipes';
-import { RecipesList } from './recipes/recipes-list.component';
+import { LocalMarKet } from './component/market.component';
+import { RecipesDetails } from './recipes/recipes-details.component';
 import { ConvertObjectToArrayPipe } from './recipes/convert-object-to-array.pipe';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app/typescript/app.component.html',
-  styleUrls: ['app/typescript/app.component.css'],
-  directives: [ WhatCooking ],
-  providers: [ HTTP_PROVIDERS , RecipesService],
-  pipes: [ ConvertObjectToArrayPipe ]
+	selector: 'my-app',
+	template: `
+		<nav>
+			<a [routerLink]="['LocalMarKet']">LocalMarKet</a>
+			<a [routerLink]="['RecipesDetails']">RecipesDetails</a>
+			<a [routerLink]="['WhatSee']">WhatSee</a>
+		</nav>
+		<router-outlet></router-outlet>
+	`,
+	directives: [ ROUTER_DIRECTIVES ],
+	providers: [ HTTP_PROVIDERS, RecipesService],
+	pipes: [ ConvertObjectToArrayPipe ]
 })
-
+@RouteConfig([
+	{
+		path: '/market',
+		name: 'LocalMarKet',
+		component: LocalMarKet,
+		useAsDefault: true
+	},
+	{
+		path: '/recipes-details',
+		name: 'RecipesDetails',
+		component: RecipesDetails
+	},
+	{
+		path: '/what-see',
+		name: 'WhatSee',
+		component: WhatSee
+	}
+])
 export class AppComponent implements OnInit {
 	titleNew = 'News';
 	news = 'First of the season citrus has just arrived. Get succulent oranges and tangerines in our produce aisle!';
 	what = "What's Cooking";
 	whatSee = 'See what the community is cooking';
-	constructor(private _recipesService: RecipesService ) {}
+	constructor(private _recipesService: RecipesService) {}
 	errorMessage: string;
 	recipes: Recipe[];
 	ngOnInit() {
@@ -33,3 +58,4 @@ export class AppComponent implements OnInit {
 			error =>  this.errorMessage = <any>error);
 	}
 }
+

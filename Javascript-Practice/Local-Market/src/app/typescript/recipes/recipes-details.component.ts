@@ -4,17 +4,19 @@ import { RecipesService } from '../service/service.component';
 import { Recipe } from './recipes';
 
 @Component({
-	selector: 'item-recipes',
-	templateUrl: 'app/typescript/recipes/recipes-list.component.html',
-	styleUrls: ['app/typescript/recipes/recipes-list.component.css'],
+	selector: 'recipes-details',
+	templateUrl: 'app/typescript/recipes/recipes-details.component.html',
+	styleUrls: ['app/typescript/recipes/recipes-details.component.css'],
 	directives: [ ],
 	providers: [ HTTP_PROVIDERS , RecipesService],
 	pipes: []
 })
 
 
-export class RecipesList implements OnInit {
-	constructor(private _recipesService: RecipesService ) {}
+export class RecipesDetails implements OnInit {
+	constructor(private _recipesService: RecipesService ) {
+		console.log("first component being called");
+	}
 	errorMessage: string;
 	recipes: Recipe[];
 	ngOnInit() {

@@ -161,6 +161,30 @@ span.arrow {
 	color: #d83e14;
 }
 
+.list-title {
+  font-size: 14px;
+  font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+  background: #eeeeee;
+  color: #333333;
+  line-height: 1rem;
+  text-align: center;
+  padding: 2rem 1.25rem 1.25rem;
+  margin-top: 0;
+}
+.list-subtitle {
+  font-size: 12px;
+  line-height: 18px;
+  background: #eeeeee;
+  color: #555555;
+  text-align: center;
+  margin-top: -2rem;
+  padding-bottom: 1.25rem;
+}
+
 .list-recipes {
 	overflow: hidden;
 }
@@ -200,7 +224,7 @@ span.arrow {
 	position: relative;
 	width: 50%;
 }
-.attribution {
+.attribution-recipes {
 	position: absolute;
     top: auto;
     right: 0;
@@ -266,4 +290,124 @@ span.arrow {
     display: block;
     height: auto;
     width: 100%;
+}
+
+
+.list-activities {
+  background-color: #FFF;
+  min-height: 16em;
+  overflow: auto;
+  position: relative;
+}
+.list-activities a {
+  webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background: white;
+  border-top: 1px solid #eeeeee;
+  display: block;
+  float: left;
+  overflow: hidden;
+  padding: .75em;
+  position: relative;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  color: #d83e14;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.list-title-what {
+  font-size: 14px;
+  font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+  background: #eeeeee;
+  color: #333333;
+  line-height: 1rem;
+  text-align: center;
+  padding: 2rem 1.25rem 1.25rem;
+  margin-top: 0;
+}
+.list-subtitle-what {
+  font-size: 12px;
+  line-height: 18px;
+  background: #eeeeee;
+  color: #555555;
+  text-align: center;
+  margin-top: -2rem;
+  padding-bottom: 1.25rem;
+}
+
+.image-avatar {
+  height: auto;
+  width: 100%;
+}
+.list-activities.wrapper-message {
+  top: 50%;
+}
+.item-activity {
+  display: block;
+  float: left;
+  overflow: hidden;
+  padding: .75em;
+  position: relative;
+  width: 100%;
+}
+.attribution-what {
+	font-size: 12px;
+	display: block;
+	margin-bottom: .5rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+.meta {
+  color: #555555;
+  overflow: hidden;
+  display: block;
+}
+.author {
+  font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+}
+.avatar {
+  float: left;
+  height: 2rem;
+  margin-right: .5rem;
+  width: 2rem;
+}
+.attribution {
+  font-size: 12px;
+  line-height: 18px;
+  display: block;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.recipe {
+  font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #d83e14;
+}
+.meta {
+  overflow: hidden;
+  display: block;
+}
+.bg-image {
+  display: block;
+  height: 16em;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
 }

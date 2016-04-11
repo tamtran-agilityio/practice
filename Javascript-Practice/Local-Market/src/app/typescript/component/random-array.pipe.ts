@@ -1,10 +1,10 @@
 import { Component, OnInit, Pipe, PipeTransform } from 'angular2/core';
 
 @Pipe({
-	name: 'convertObjectToArray'
+	name: 'randDomArray'
 })
 
-export class ConvertObjectToArrayPipe implements PipeTransform {
+export class RandDomArray implements PipeTransform {
 	transform(obj: any, num: any) {
 		if (!obj){
 			return [];	
