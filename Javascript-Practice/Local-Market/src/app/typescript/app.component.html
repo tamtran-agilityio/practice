@@ -26,15 +26,24 @@
 				{{news}}
 			</div>
 			<what-see class="item-what-cooking"></what-see>
+<!-- 			<h2 class="list-title">Our Favorite Recipes</h2>
+			<div class="list-subtitle">Hand-picked by neighborhood chefs</div> -->
 			<div class="list-recipes">
-				<a href="" *ngFor="#recipe of recipes" class="item-recipe">
-					<span class="title-recipe">{{recipe['source'].name}}</span>
+				<a href="" *ngFor="#recipe of recipes | convertObjectToArray:4" class="item-recipe">
 					<span class="attribution">
-						<span class="metadata-recipe"></span>
+						<span class="title-recipe">{{ recipe.object.title }}</span>
+						<span class="metadata-recipe">
+							<span class="author-recipe">{{ recipe.object.source.name }}</span>
+							<span class="bookmarks-recipe">
+								<span class="icon-bookmark"></span>
+								0
+							</span>
+						</span>
 					</span>
-					<img src="" alt="">
+					<img src="app/images/img/recipes/320x350/{{recipe.object.name}}.jpg" alt="">
 				</a>
 			</div>
+			<a href="" (click)="onRecipes()" class="btn-primary">Explore all our recipes</a>
 		</div>
 	</div>
 </div>

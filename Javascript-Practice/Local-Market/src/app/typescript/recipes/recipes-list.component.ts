@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit, Pipe, PipeTransform } from 'angular2/core';
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { RecipesService } from '../service/service.component';
 import { Recipe } from './recipes';
@@ -8,8 +8,10 @@ import { Recipe } from './recipes';
 	templateUrl: 'app/typescript/recipes/recipes-list.component.html',
 	styleUrls: ['app/typescript/recipes/recipes-list.component.css'],
 	directives: [ ],
-	providers: [ HTTP_PROVIDERS , RecipesService]
+	providers: [ HTTP_PROVIDERS , RecipesService],
+	pipes: []
 })
+
 
 export class RecipesList implements OnInit {
 	constructor(private _recipesService: RecipesService ) {}

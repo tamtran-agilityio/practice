@@ -4,14 +4,17 @@ import { WhatCooking } from './what-see/what-see.component';
 import { RecipesService } from './service/service.component';
 import { Recipe } from './recipes/recipes';
 import { RecipesList } from './recipes/recipes-list.component';
+import { ConvertObjectToArrayPipe } from './recipes/convert-object-to-array.pipe';
 
 @Component({
   selector: 'my-app',
   templateUrl: 'app/typescript/app.component.html',
   styleUrls: ['app/typescript/app.component.css'],
   directives: [ WhatCooking ],
-  providers: [ HTTP_PROVIDERS , RecipesService]
+  providers: [ HTTP_PROVIDERS , RecipesService],
+  pipes: [ ConvertObjectToArrayPipe ]
 })
+
 export class AppComponent implements OnInit {
 	titleNew = 'News';
 	news = 'First of the season citrus has just arrived. Get succulent oranges and tangerines in our produce aisle!';
