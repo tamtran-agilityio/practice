@@ -3,10 +3,11 @@ import { AppComponent } from './typescript/app.component';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
-import { RouteConfig, LocationStrategy, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, HashLocationStrategy } from 'angular2/router';
+import { RouteParams, RouteConfig, LocationStrategy, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, HashLocationStrategy } from 'angular2/router';
 import {provide} from 'angular2/core';
 
-bootstrap(AppComponent, [ROUTER_PROVIDERS, 
+
+bootstrap(AppComponent, [ROUTER_PROVIDERS,  
 	  provide(LocationStrategy, {useClass: HashLocationStrategy})]);
 
 

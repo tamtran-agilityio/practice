@@ -4,6 +4,9 @@
   overflow: auto;
   position: relative;
 }
+what-cooking {
+  padding-top: 30px;
+}
 .list-activities a {
   webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -25,65 +28,13 @@
   cursor: pointer;
   text-decoration: none;
 }
-
-.content-scrollable {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  background: white;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.list-title {
-  font-size: 14px;
-  font-family: 'lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: .3em;
-  text-indent: .3em;
-  text-transform: uppercase;
-  background: #eeeeee;
-  color: #333333;
-  line-height: 1rem;
-  text-align: center;
-  padding: 2rem 1.25rem 1.25rem;
-  margin-top: 0;
-}
-.list-subtitle {
-  font-size: 12px;
-  line-height: 18px;
-  background: #eeeeee;
-  color: #555555;
-  text-align: center;
-  margin-top: -2rem;
-  padding-bottom: 1.25rem;
-}
-
-.image-avatar {
-  height: auto;
-  width: 100%;
-}
-.list-activities.wrapper-message {
-  top: 50%;
-}
-.item-activity {
-  display: block;
-  float: left;
-  overflow: hidden;
-  padding: .75em;
-  position: relative;
-  width: 100%;
-}
-.attribution {
-  display: block;
-  margin-bottom: .5rem;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
+.attribution-what {
+    font-size: 12px;
+    display: block;
+    margin-bottom: .5rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 .meta {
   color: #555555;
@@ -99,6 +50,10 @@
   height: 2rem;
   margin-right: .5rem;
   width: 2rem;
+}
+.avatar img {
+  height: auto;
+  width: 100%;
 }
 .attribution {
   font-size: 12px;
