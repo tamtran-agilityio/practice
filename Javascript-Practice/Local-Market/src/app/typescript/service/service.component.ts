@@ -8,7 +8,7 @@ import { Recipe } from '../components/recipes/recipes';
 export class RecipesService {
 
 	constructor(private http: Http) { }
-	
+
 	private _recipesUrl = 'app/data/recipes.json';
 
 	getRecipes() {
@@ -17,21 +17,19 @@ export class RecipesService {
 			.do(data => console.log(data))
 			.catch(this.handleError);
 	}
-	getRecipeItem(id) {
+	getRecipeItem(id ) {
 		console.debug("SSSSSSSSSSSSSSS", id);
 		return this.http.get(this._recipesUrl)
 			.map(res => <Recipe[]> res.json())
-			.map(data => { 
+			.map(data => {
 				let rs = null;
 				for (let key in data) {
 					if( key === id ) {
-						console.log("DSAADDDDDDDD1111", key);
-						console.log("obj.", key, "AAA", data[key]);
 						rs = {
 							key: key,
 							object: data[key]
 						}
-					} 
+					}
 				}
 				return rs;
 			})

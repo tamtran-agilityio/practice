@@ -8,44 +8,44 @@ import { RecipesDetailsComponent } from './recipes-details.component';
 import { LocalMarKetComponent } from '../../components/market/local-market.component';
 
 @Component({
-	selector: 'list-recipes',
-	templateUrl: 'app/typescript/components/recipes/recipes-list.component.html',
-	styleUrls: ['app/typescript/components/recipes/recipes-list.component.css'],
-	providers: [ RecipesService, RecipesDetailsComponent ],
-	directives: [ ROUTER_DIRECTIVES],
-	pipes: [ RandDomArray ]
+  selector: 'list-recipes',
+  templateUrl: 'app/typescript/components/recipes/recipes-list.component.html',
+  styleUrls: ['app/typescript/components/recipes/recipes-list.component.css'],
+  providers: [ RecipesService, RecipesDetailsComponent ],
+  directives: [ ROUTER_DIRECTIVES],
+  pipes: [ RandDomArray ]
 })
 
 @RouteConfig([
-	{
-		path: '/',
-		name: 'LocalMarKet',
-		component: LocalMarKetComponent,
-		useAsDefault: true
-	},
-	{
-		path: '/recipes-details/:id',
-		name: 'RecipesDetails',
-		component: RecipesDetailsComponent
-	}
+  {
+    path: '/',
+    name: 'LocalMarKet',
+    component: LocalMarKetComponent,
+    useAsDefault: true
+  },
+  {
+    path: '/recipes-details/:id',
+    name: 'RecipesDetails',
+    component: RecipesDetailsComponent
+  }
 ])
 export class RecipesListComponent {
-	errorMessage: string;
-	@Input() recipes: Recipe[];
-	selectedRecipe: Recipe;
+  errorMessage: string;
+  @Input() recipes: Recipe[];
+  selectedRecipe: Recipe;
 
-	constructor( private _recipesService: RecipesService ) {
-	}
+  constructor( private _recipesService: RecipesService ) {
+  }
 
-	onSelect( _recipe: Recipe ) { }
+  onSelect( _recipe: Recipe ) { }
 
-	ngOnInit() {
-		this.getRecipes();
-	}
+  ngOnInit() {
+    this.getRecipes();
+  }
 
-	getRecipes() {
-		this._recipesService.getRecipes().subscribe(
-			recipes => this.recipes = recipes,
-			error => this.errorMessage = <any>error);
-	}
+  getRecipes() {
+    this._recipesService.getRecipes().subscribe(
+      recipes => this.recipes = recipes,
+      error => this.errorMessage = <any>error);
+  }
 }

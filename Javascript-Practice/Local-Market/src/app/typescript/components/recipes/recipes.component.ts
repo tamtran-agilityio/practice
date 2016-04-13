@@ -7,31 +7,31 @@ import { ConvertObjectToArrayPipe } from './convert-object-to-array.pipe';
 import { RecipesDetailsComponent } from './recipes-details.component';
 
 @Component({
-	selector: 'recipes',
-	templateUrl: 'app/typescript/components/recipes/recipes.component.html',
-	styleUrls: ['app/typescript/components/recipes/recipes.component.css'],
-	providers: [ RecipesService ],
-	directives: [ ROUTER_DIRECTIVES, RecipesDetailsComponent ],
-	pipes: [ConvertObjectToArrayPipe]
+  selector: 'recipes',
+  templateUrl: 'app/typescript/components/recipes/recipes.component.html',
+  styleUrls: ['app/typescript/components/recipes/recipes.component.css'],
+  providers: [ RecipesService ],
+  directives: [ ROUTER_DIRECTIVES, RecipesDetailsComponent ],
+  pipes: [ConvertObjectToArrayPipe]
 })
 
 export class RecipesComponent {
-	constructor(private _recipesService: RecipesService) { }
-	errorMessage: string;
-	@Input() recipes: Recipe[];
+  constructor(private _recipesService: RecipesService) { }
+  errorMessage: string;
+  @Input() recipes: Recipe[];
 
-	selectedRecipe: Recipe;
+  selectedRecipe: Recipe;
 
-	onSelect(recipe: Recipe) { 
-	}
+  onSelect(recipe: Recipe) {
+  }
 
-	ngOnInit() {
-		this.getRecipes();
-	}
+  ngOnInit() {
+    this.getRecipes();
+  }
 
-	getRecipes() {
-		this._recipesService.getRecipes().subscribe(
-			recipes => this.recipes = recipes,
-			error => this.errorMessage = <any>error);
-	}
+  getRecipes() {
+    this._recipesService.getRecipes().subscribe(
+      recipes => this.recipes = recipes,
+      error => this.errorMessage = <any>error);
+  }
 }

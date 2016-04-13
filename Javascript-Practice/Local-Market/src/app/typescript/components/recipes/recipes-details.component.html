@@ -14,11 +14,11 @@
 	<div *ngIf="recipe">
 		<div class="image-recipe" style="background-image: url('app/images/img/recipes/640x800/{{recipe.object.name}}.jpg');"></div>
 		<div class="attribution-recipe">
-			<h1 class="title-recipe"> {{recipe.object.title}}</h1>
+			<h1 class="title-recipe"> {{recipe.object?.title}}</h1>
 			<div class="metadata-wrapper">
-				<div class="description-recipe">{{recipe.object.excerpt}}</div>
+				<div class="description-recipe">{{recipe.object?.excerpt}}</div>
 				<span class="source">{{recipe.object.source?.name}}</span>
-				<span class="time">{{recipe.object.cookTime}}</span>
+				<span class="time">{{recipe.object?.cookTime}}</span>
 				<div class="btns-group">
 					<a href="#" class="btn-secondary"> Make It</a>
 					<a href="#" class="btn-secondary"> Pictures </a>
@@ -34,11 +34,11 @@
 			<h2 class="list-title">
 			</h2>
 			<ul class="list-ingredients">
-				{{recipe.object.ingredients}}
+				{{recipe.object?.ingredients}}
 			</ul>
 			<h2 class="list-title"></h2>
 			<ol class="list-directions">
-				{{recipe.object.directions}}
+				{{recipe.object?.directions}}
 			</ol>
 			<a href="#" class="btn-primary"> See full recipe on Tartelette </a>
 		</div>
@@ -53,11 +53,11 @@
 					<span class="avatar">
 						<img src="" alt="image-avatar" class="image-avatar">
 					</span>
-					<span class="meta"> 
+					<span class="meta">
 						<span class="author">
 							Matt
-						</span> made 
-						<span class="recipe"> Apricots Honey Panna Cotta 
+						</span> made
+						<span class="recipe"> Apricots Honey Panna Cotta
 						</span>
 							I substituted strawberries for apricots - incredible!
 						<span class="location">SoMA, San Francisco</span>
@@ -65,6 +65,6 @@
 				</span>
 				<div class="bg-image" style="background-image: url('/app/images/img/activity/activity-placeholder-strawberry-640x640.jpg');"></div>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
