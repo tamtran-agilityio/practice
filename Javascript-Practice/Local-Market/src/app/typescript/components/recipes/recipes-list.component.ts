@@ -1,10 +1,11 @@
 import { Component, Inject, Input, OnInit } from 'angular2/core';
 import { HTTP_PROVIDERS }    from 'angular2/http';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router } from 'angular2/router';
-import { RecipesService } from '../service/service.component';
+import { RecipesService } from '../../service/service.component';
 import { Recipe } from './recipes';
 import { RandDomArray } from './random-array.pipe';
 import { RecipesDetailsComponent } from './recipes-details.component';
+import { LocalMarKetComponent } from '../../components/market/local-market.component';
 
 @Component({
 	selector: 'list-recipes',
@@ -15,19 +16,29 @@ import { RecipesDetailsComponent } from './recipes-details.component';
 	pipes: [ RandDomArray ]
 })
 
+@RouteConfig([
+	{
+		path: '/',
+		name: 'LocalMarKet',
+		component: LocalMarKetComponent,
+		useAsDefault: true
+	},
+	{
+		path: '/recipes-details/:id',
+		name: 'RecipesDetails',
+		component: RecipesDetailsComponent
+	}
+])
 export class RecipesListComponent {
 	errorMessage: string;
 	@Input() recipes: Recipe[];
 	selectedRecipe: Recipe;
-	
-	constructor( private _recipesService: RecipesService, private _routeParams: RouteParams ) {	}
-	onSelect( _recipe: Recipe ) { 
-		this.selectedRecipe = _recipe;
-		let id = +this._routeParams.get(_recipe);
-		this._recipesService.getRecipes(id).subscribe(
-			recipes => this.recipes = recipes,
-			error => this.errorMessage = <any>error);
+
+	constructor( private _recipesService: RecipesService ) {
 	}
+
+	onSelect( _recipe: Recipe ) { }
+
 	ngOnInit() {
 		this.getRecipes();
 	}

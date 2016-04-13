@@ -1,0 +1,44 @@
+import { Injectable } from 'angular2/core';
+import { Http, Response } from 'angular2/http';
+import { Headers, RequestOptions} from 'angular2/http';
+import { Observable } from 'rxjs/Observable';
+import { Recipe } from '../components/recipes/recipes';
+
+@Injectable()
+export class RecipesService {
+
+	constructor(private http: Http) { }
+	
+	private _recipesUrl = 'app/data/recipes.json';
+
+	getRecipes() {
+		return this.http.get(this._recipesUrl)
+			.map(res => <Recipe[]> res.json())
+			.do(data => console.log(data))
+			.catch(this.handleError);
+	}
+	getRecipeItem(id) {
+		console.debug("SSSSSSSSSSSSSSS", id);
+		return this.http.get(this._recipesUrl)
+			.map(res => <Recipe[]> res.json())
+			.map(data => { 
+				let rs = null;
+				for (let key in data) {
+					if( key === id ) {
+						console.log("DSAADDDDDDDD1111", key);
+						console.log("obj.", key, "AAA", data[key]);
+						rs = {
+							key: key,
+							object: data[key]
+						}
+					} 
+				}
+				return rs;
+			})
+			.catch(this.handleError);
+	}
+	private handleError (error: Response) {
+		console.error(error);
+		return Observable.throw(error.json().error || 'Server error');
+	}
+}

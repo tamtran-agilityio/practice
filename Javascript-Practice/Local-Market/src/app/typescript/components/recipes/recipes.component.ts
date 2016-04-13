@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from 'angular2/core';
 import { HTTP_PROVIDERS }    from 'angular2/http';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams } from 'angular2/router';
-import { RecipesService } from '../service/service.component';
+import { RecipesService } from '../../service/service.component';
 import { Recipe } from './recipes';
 import { ConvertObjectToArrayPipe } from './convert-object-to-array.pipe';
 import { RecipesDetailsComponent } from './recipes-details.component';
@@ -15,16 +15,14 @@ import { RecipesDetailsComponent } from './recipes-details.component';
 	pipes: [ConvertObjectToArrayPipe]
 })
 
-export class RecipesComponent implements OnInit {
+export class RecipesComponent {
 	constructor(private _recipesService: RecipesService) { }
 	errorMessage: string;
-	recipes: Recipe[];
+	@Input() recipes: Recipe[];
 
 	selectedRecipe: Recipe;
 
 	onSelect(recipe: Recipe) { 
-		this.selectedRecipe = recipe;
-		console.debug("recipe",recipe)
 	}
 
 	ngOnInit() {
