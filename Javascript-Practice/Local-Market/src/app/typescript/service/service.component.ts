@@ -7,9 +7,9 @@ import { Recipe } from '../components/recipes/recipes';
 @Injectable()
 export class RecipesService {
 
-	constructor(private http: Http) { }
-
 	private _recipesUrl = 'app/data/recipes.json';
+
+  constructor(private http: Http) { }
 
 	getRecipes() {
 		return this.http.get(this._recipesUrl)
@@ -17,8 +17,9 @@ export class RecipesService {
 			.do(data => console.log(data))
 			.catch(this.handleError);
 	}
+
 	getRecipeItem(id ) {
-		console.debug("SSSSSSSSSSSSSSS", id);
+    console.debug("SSSSSSSSSSSSSSSSSS", id);
 		return this.http.get(this._recipesUrl)
 			.map(res => <Recipe[]> res.json())
 			.map(data => {
@@ -35,6 +36,7 @@ export class RecipesService {
 			})
 			.catch(this.handleError);
 	}
+
 	private handleError (error: Response) {
 		console.error(error);
 		return Observable.throw(error.json().error || 'Server error');

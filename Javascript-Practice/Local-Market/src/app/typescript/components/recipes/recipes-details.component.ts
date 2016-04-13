@@ -29,7 +29,8 @@ export class RecipesDetailsComponent implements OnInit {
   getRecipeItem() {
     this._recipesService.getRecipeItem(this.id).subscribe(
       recipe => {
-        this.recipe = recipe
+        this.recipe = recipe;
+        console.log("this.recipe", this.recipe);
       },
       error => this.errorMessage = <any>error);
   }

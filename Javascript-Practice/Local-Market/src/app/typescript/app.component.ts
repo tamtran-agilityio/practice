@@ -12,7 +12,16 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
 @Component({
 	selector: 'my-app',
 	template: `
-		<section id="menu">
+
+    <div class="nav-group" [ngClass]="{'nav-open': isClassVisible }">
+      <a class="nav-item js-menu" (click)="isClassVisible = !isClassVisible;"><span class="icon-menu">
+      <button >
+
+      </button>
+      </span></a>
+    </div>
+
+		<section id="menu" [ngClass]="{'menu-open': isClassVisible }">
 			<a [routerLink]="['LocalMarKet']">
 				<span class="wrapper-menu-item">
 					<span class="icon-home"></span>
@@ -43,8 +52,10 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
 					<span class="title"> About </span>
 				</span>
 			</a>
-		</section>
-		<router-outlet></router-outlet>
+    </section>
+    <div id="content-scrollable" [ngClass]="{'content-scrollable-open': isClassVisible }" (click)="onEvent($event)">
+  		<router-outlet></router-outlet>
+    </div>
 	`,
 	directives: [ ROUTER_DIRECTIVES],
 	providers: [ HTTP_PROVIDERS ]
@@ -83,10 +94,15 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
 	}
 ])
 export class AppComponent {
+  isClassVisible = false;
 	@Input()
 	recipe: Recipe;
 	selectedRecipe: Recipe;
-	onSelect(recipe: Recipe) { 
+
+  onEvent(event) {
+    event.stopPropagation();
+  }
+	onSelect(recipe: Recipe) {
 		this.selectedRecipe = recipe;
 		console.log("recipeAAAA", recipe);
 	}

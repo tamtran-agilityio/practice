@@ -16,6 +16,9 @@
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.active {
+  display: block;
+}
 .bg-image.home {
   height: 50%;
 }
