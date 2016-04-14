@@ -9,6 +9,7 @@ import { Recipe } from './recipes';
   templateUrl: 'app/typescript/components/recipes/recipes-details.component.html',
   styleUrls: ['app/typescript/components/recipes/recipes-details.component.css'],
   providers: [ RecipesService ],
+  directives: [ ]
 })
 
 export class RecipesDetailsComponent implements OnInit {
@@ -17,7 +18,8 @@ export class RecipesDetailsComponent implements OnInit {
   errorMessage: string;
 
   id: string;
-
+  condition = 'open';
+  isVisible = 'active';
   constructor( private _recipesService: RecipesService, params: RouteParams ) {
     this.id = params.get('id');
   }
@@ -25,6 +27,8 @@ export class RecipesDetailsComponent implements OnInit {
   ngOnInit() {
     this.getRecipeItem();
   }
+
+
 
   getRecipeItem() {
     this._recipesService.getRecipeItem(this.id).subscribe(

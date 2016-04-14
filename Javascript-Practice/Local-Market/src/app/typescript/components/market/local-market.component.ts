@@ -12,5 +12,4 @@ import { RecipesListComponent } from '../../components/recipes/recipes-list.comp
 	directives: [ROUTER_DIRECTIVES, WhatCookingComponent, RecipesListComponent]
 })
 export class LocalMarKetComponent {
-  isClassVisible: true;
 }

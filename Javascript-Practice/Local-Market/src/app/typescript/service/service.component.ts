@@ -18,7 +18,7 @@ export class RecipesService {
 			.catch(this.handleError);
 	}
 
-	getRecipeItem(id ) {
+	getRecipeItem( id ) {
     console.debug("SSSSSSSSSSSSSSSSSS", id);
 		return this.http.get(this._recipesUrl)
 			.map(res => <Recipe[]> res.json())
@@ -36,6 +36,28 @@ export class RecipesService {
 			})
 			.catch(this.handleError);
 	}
+
+  getRecipeBookMark() {
+    return this.http.get(this._recipesUrl)
+      .map(res => <Recipe[]> res.json())
+      .map(data => {
+        let rs = [];
+        for (let key in data) {
+          let items = ['fall-peanut-butter-cookie', 'spring-ragu-bolognese', 'summer-apricots-honey-panna-cotta'];
+          items.forEach(function(item, index) {
+            if( key === item ) {
+              rs.push({
+                key: key,
+                object: data[key]
+              })
+            }
+          })
+        }
+        return rs;
+      })
+      .catch(this.handleError);
+
+  }
 
 	private handleError (error: Response) {
 		console.error(error);

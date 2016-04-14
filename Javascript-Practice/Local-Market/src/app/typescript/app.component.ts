@@ -53,7 +53,7 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
 				</span>
 			</a>
     </section>
-    <div id="content-scrollable" [ngClass]="{'content-scrollable-open': isClassVisible }" (click)="onEvent($event)">
+    <div id="content-scrollable" [ngClass]="{'content-scrollable-open': isClassVisible }" (click)="onEvent($event)"  (window:scrollY)="onScroll($event)">
   		<router-outlet></router-outlet>
     </div>
 	`,
@@ -106,5 +106,9 @@ export class AppComponent {
 		this.selectedRecipe = recipe;
 		console.log("recipeAAAA", recipe);
 	}
+
+  onScroll(event) {
+    console.debug("event", event);
+  }
 }
 
