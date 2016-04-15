@@ -1,59 +1,40 @@
+interface JQuery {
+    chosen(options?:any):JQuery;
+}
+
+declare module "jquery" {
+    export = JQuery;
+}
+declare var jQuery: JQueryStatic;
+
+import {bootstrap}    from 'angular2/platform/browser';
 import {Component, ElementRef, AfterViewInit} from 'angular2/core';
 
 declare var jQuery:JQueryStatic;
 
 @Component({
-  selector: 'chosen',
-  templateUrl: 'app/typescript/components/market/local-market.component.html'
-export class MenuScrollIntegration implements AfterViewInit {
-  static chosenInitialized = false;
+    selector: 'ng-chosen',
+    template:`<select>
+        <option *ngFor="#item of items" [value]="item" [selected]="item == selectedValue">{{item}} option</option>
+        </select>
+        <h4> {{selectedValue}}</h4>`})
+export class NgChosenComponent implements AfterViewInit {
+    static chosenInitialized = false;
+    items = ['First', 'Second', 'Third'];
+    selectedValue = 'Second';
 
-  constructor(private el:ElementRef) {
-    console.debug("DDDDDDDDDDDDDDDDDDDDDD");
-  }
+    constructor(private el:ElementRef) {
+    }
 
-  ngAfterViewInit() {
-      if(!this.chosenInitialized) {
-        console.debug("DDDDDDDDDDDDDDDDDDDDDD");
-          // jQuery(this.el.nativeElement)
-          //     .find('.title-page')
-          // });
-          this.chosenInitialized = true;
-      }
-  }
-}
-
-// import {Component, ElementRef, Inject, OnInit} from 'angular2/core';
-
-// declare let jQuery:any;
-
-// @Component({
-//   selector: 'jquery-integration',
-//   templateUrl: 'app/typescript/components/market/local-market.component.html'
-// })
-
-// export class MenuScrollIntegration implements OnInit {
-//   elementRef: ElementRef;
-
-//   constructor(elementRef: ElementRef) {
-//     this.elementRef = elementRef;
-//   }
-//   ngOnInit() {
-//     jQuery(this.elementRef.nativeElement).find('.title-page').draggable({containment:'#draggable-parent'});
-//     console.debug("SSSSSS");
-//   }
-  // constructor(@Inject(ElementRef) elementRef: ElementRef) {
-  //   this.elementRef = elementRef;
-  //   console.debug("SSSSSS");
-  // }
-
-  // ngOnInit() {
-  //   jQuery(this.elementRef.nativeElement).find('.title-page').draggable({containment:'#draggable-parent'});
-  //   console.debug("SSSSSS");
-  //   // this.getScroll();
-  // }
-
-  // getScroll() {
-  //   console.debug("DDDDDDDDDDDDDDDD");
-  // }
+    ngAfterViewInit() {
+        if(!NgChosenComponent.chosenInitialized) {
+            jQuery(this.el.nativeElement)
+                .find('select')
+                .chosen()
+                .on('change', (e, args) => {
+                    this.selectedValue = args.selected;
+            });
+            NgChosenComponent.chosenInitialized = true;
+        }
+    }
 }

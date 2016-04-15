@@ -43,10 +43,9 @@ nav {
     border: none;
     .fa-lg {
       color : #FFF;
-      display: block;
       font-size: 18px;
       display: block !important;
-      font-size: 18px !important;
+
     }
   }
 
@@ -55,11 +54,17 @@ nav {
     margin-left: 40px;
   }
 }
-i.fa.fa-lg {
-  display: block;
+.fa-home,
+.fa-rss,
+.fa-credit-card,
+.fa-bookmark-o,
+.fa-question-circle {
+  display: block !important;
+  font-size: 18px !important;
 }
 .fa-bookmark {
   font-size: 10px !important;
+  color: #FFF;
 }
 .nav-item {
   font-size: 18px;

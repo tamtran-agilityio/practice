@@ -57,7 +57,7 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
   		<router-outlet></router-outlet>
     </div>
 	`,
-	directives: [ ROUTER_DIRECTIVES],
+	directives: [ ROUTER_DIRECTIVES ],
 	providers: [ HTTP_PROVIDERS ]
 })
 @RouteConfig([
