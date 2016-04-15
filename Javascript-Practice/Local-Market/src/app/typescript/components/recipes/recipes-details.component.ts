@@ -18,8 +18,7 @@ export class RecipesDetailsComponent implements OnInit {
   errorMessage: string;
 
   id: string;
-  condition = 'open';
-  isVisible = 'active';
+  condition = 'close';
   constructor( private _recipesService: RecipesService, params: RouteParams ) {
     this.id = params.get('id');
   }
@@ -37,5 +36,8 @@ export class RecipesDetailsComponent implements OnInit {
         console.log("this.recipe", this.recipe);
       },
       error => this.errorMessage = <any>error);
+  }
+  goBack() {
+    window.history.back();
   }
 }

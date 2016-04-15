@@ -14,41 +14,41 @@ import { RecipesDetailsComponent } from './components/recipes/recipes-details.co
 	template: `
 
     <div class="nav-group" [ngClass]="{'nav-open': isClassVisible }">
-      <a class="nav-item js-menu" (click)="isClassVisible = !isClassVisible;"><span class="icon-menu">
-      <button >
-
-      </button>
-      </span></a>
+      <a class="nav-item js-menu" (click)="isClassVisible = !isClassVisible;">
+       <button >
+        <i class="fa fa-align-left fa-flip-vertical fa-lg" aria-hidden="true"></i>
+        </button>
+      </a>
     </div>
 
-		<section id="menu" [ngClass]="{'menu-open': isClassVisible }">
-			<a [routerLink]="['LocalMarKet']">
+		<section id="menu" [ngClass]="{'menu-open': isClassVisible }" >
+			<a [routerLink]="['LocalMarKet']" (click)="isClassVisible = !isClassVisible">
 				<span class="wrapper-menu-item">
-					<span class="icon-home"></span>
+					<i class="fa fa-home fa-lg" aria-hidden="true"></i>
 					<span class="title"> Home </span>
 				</span>
 			</a>
-			<a [routerLink]="['WhatCooking']">
+			<a [routerLink]="['WhatCooking']" (click)="isClassVisible = !isClassVisible">
 				<span class="wrapper-menu-item">
-					<span class="icon-rss"></span>
+					<i class="fa fa-rss fa-lg" aria-hidden="true"></i>
 					<span class="title"> What's Cooking </span>
 				</span>
 			</a>
-			<a [routerLink]="['Recipes']">
+			<a [routerLink]="['Recipes']" (click)="isClassVisible = !isClassVisible">
 				<span class="wrapper-menu-item">
-					<span class="icon-category"></span>
+					<i class="fa fa-credit-card fa-lg" aria-hidden="true"></i>
 					<span class="title"> Recipes </span>
 				</span>
 			</a>
-			<a [routerLink]="['BookMarks']">
+			<a [routerLink]="['BookMarks']" (click)="isClassVisible = !isClassVisible">
 				<span class="wrapper-menu-item">
-					<span class="icon-bookmark-hollow"></span>
+					<i class="fa fa-bookmark-o fa-lg" aria-hidden="true"></i>
 					<span class="title"> BookMarks </span>
 				</span>
 			</a>
-			<a [routerLink]="['About']">
+			<a [routerLink]="['About']" (click)="isClassVisible = !isClassVisible">
 				<span class="wrapper-menu-item">
-					<span class="icon-question"></span>
+					<i class="fa fa-question-circle fa-lg" aria-hidden="true"></i>
 					<span class="title"> About </span>
 				</span>
 			</a>

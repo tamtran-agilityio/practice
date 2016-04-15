@@ -27,13 +27,12 @@ nav {
   left: 0;
   width: auto;
   height: auto;
-  -webkit-transition: all 200ms ease-out;
-  -moz-transition: all 200ms ease-out;
-  -o-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
+  -webkit-transition: all 100ms ease-out;
+  -moz-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
   button {
-    background-color: red;
-    // background-color: transparent;
+    background-color: transparent;
     z-index: 20;
     display: block;
     top: 0;
@@ -42,7 +41,25 @@ nav {
     height: 50px;
     outline: none;
     border: none;
+    .fa-lg {
+      color : #FFF;
+      display: block;
+      font-size: 18px;
+      display: block !important;
+      font-size: 18px !important;
+    }
   }
+
+  .back-site {
+    z-index: 999;
+    margin-left: 40px;
+  }
+}
+i.fa.fa-lg {
+  display: block;
+}
+.fa-bookmark {
+  font-size: 10px !important;
 }
 .nav-item {
   font-size: 18px;
