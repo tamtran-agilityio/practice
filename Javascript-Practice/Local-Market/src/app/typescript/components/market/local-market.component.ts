@@ -30,8 +30,6 @@ export class LocalMarKetComponent implements OnInit, AfterViewChecked {
       let contentTop = contentScroll.scrollTop();
       let contentShow = contentScroll.offset().top;
       let imageHeight = jQuery(this.elementRef.nativeElement).find('.bg-image').height();
-      console.log("imageHeight", imageHeight);
-      console.debug("contentTop", contentTop);
       if (contentTop > imageHeight) {
         jQuery(this.elementRef.nativeElement).find('.black').addClass('scrolled');
         jQuery(this.elementRef.nativeElement).find('.fa-align-left').addClass('scrolled');
