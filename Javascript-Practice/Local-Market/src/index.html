@@ -26,6 +26,7 @@
 <script src="lib/http.dev.js"></script>
 <script src="lib/router.dev.js"></script>
 <script src="lib/jquery.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
 <script src="https://npmcdn.com/a2-in-memory-web-api/web-api.js"></script>
 <script>
   System.config({
@@ -35,10 +36,18 @@
         defaultExtension: 'js',
         map: {
           immutable: 'lib/immutable.js',
-          redux: 'lib/redux.js'
+          redux: 'lib/redux.js',
+          jquery: 'lib/jquery.js'
         }
       }
+    },
+    meta: {
+      'jquery': {
+        exports: 'jQuery',
+        format: 'global'
+      }
     }
+
   });
   System.import('app/main')
         .then(null, console.error.bind(console));

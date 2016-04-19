@@ -54,6 +54,9 @@ nav {
     margin-left: 40px;
   }
 }
+.show {
+  color: #FFF !important;
+}
 .fa-home,
 .fa-rss,
 .fa-credit-card,
@@ -88,6 +91,13 @@ nav {
     &:before {
       content: "\e61e";
     }
+  }
+}
+.scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: #333333 !important;
+  .title-page {
+    opacity: 1 !important;
   }
 }
 .black {

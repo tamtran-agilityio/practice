@@ -1,16 +1,16 @@
-<nav class="black">
+<nav class="black" [ngClass]="{'nav-scroll': isClassVisibles }">
 	<div class="title-page"> Local Market
 		<span class="subtext-page"></span>
 	</div>
 	<div class="nav-group right">
 	</div>
 </nav>
-<div class="content-scrollable" [myHighlight]="hidden">
+<div class="content-scrollable">
 	<div class="bg-image home">
 		<h1 class="title-home">
 			<img src="app/images/img/app/logo-local.svg" alt="Local Market"/>
 		</h1>
-		<span class="hour"><span class="title-callout">Hours</span> Mon–Fri 9-6pm, Sat 10-5pm</span>
+		<span class="hour"><span class="title-callout">Hours {{ isClassVisibles }} </span> Mon–Fri 9-6pm, Sat 10-5pm</span>
 		<span class="arrow"></span>
 		</div>
 	<div class="callout-news">
