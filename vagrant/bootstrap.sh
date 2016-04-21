@@ -17,7 +17,7 @@ rvm rubygems current
 echo '### Install Node Version Manager'
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
 source ~/.nvm/nvm.sh
-# nvm install 0.10.22 && nvm alias default 0.10.22
+# nvm install 5.6.0 && nvm alias default 5.6.0
 sudo apt-get install npm
 
 echo '### Install global modules ...'

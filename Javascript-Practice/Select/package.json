@@ -1,0 +1,52 @@
+{
+  "name": "select",
+  "version": "1.0.0",
+  "description": "Angular 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "build": "WEBPACK_ENV=production webpack --progress --hide-modules",
+    "dev": "webpack-dev-server --quiet --history-api-fallback --content-base ./src --port 9000",
+    "e2e": "protractor",
+    "postinstall": "typings install && npm run webdriver-update",
+    "test": "karma start",
+    "webdriver-update": "webdriver-manager update"
+  },
+  "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "angular2": "2.0.0-beta.15",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "^0.6.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.4",
+    "jasmine-core": "^2.4.1",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-mocha-reporter": "^2.0.0",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "protractor": "^3.0.0",
+    "raw-loader": "^0.5.1",
+    "stylus": "^0.54.2",
+    "stylus-loader": "^2.0.0",
+    "ts-loader": "^0.8.0",
+    "typescript": "^1.7.3",
+    "typings": "^0.7.9",
+    "lite-server": "^2.1.0",
+    "webpack": "^2.1.0-beta",
+    "webpack-dev-server": "^2.0.0-beta"
+  }
+}
