@@ -1,33 +1,9 @@
-# Select
-
-Angular 2 select.
-
-## Project scripts
-
-### Install packages
-The only think you need when when you have prerequisites installed is to run:
-```
+Practice select
+# install the repo with npm
 npm install
-```
 
-### Custom scripts 
+# start the server
+npm start
 
-Running in dev mode:
-```
-npm run dev
-```
-
-Running prod build:
-```
-npm run build
-```
-
-Running unit tests:
-```
-npm test
-```
-
-Running e2e tests:
-```
-npm run e2e
-```
+# use Hot Module Replacement
+npm run server:dev:hmr
