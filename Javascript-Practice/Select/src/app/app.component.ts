@@ -10,7 +10,7 @@ interface TestObject {
 
 @Component({
   selector: 'app',
-  template: `<single-demo></single-demo>`,
+  templateUrl: './app/demo.html',
   directives: [FORM_DIRECTIVES, SingleDemo],
 })
 export class AppComponent {

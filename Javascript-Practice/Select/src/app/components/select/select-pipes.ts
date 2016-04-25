@@ -14,13 +14,9 @@ export class HighlightPipe {
 
     if ( query ) {
         let tagRE    = new RegExp('<[^<>]*>', 'ig');
-        // get ist of tags
         let tagList  = value.match( tagRE );
-        // Replace tags with token
         let tmpValue = value.replace( tagRE, '$!$');
-        // Replace search words
         value = tmpValue.replace(new RegExp(escapeRegexp(query), 'gi'), '<strong>$&</strong>');
-        // Reinsert HTML
         for (let i = 0; value.indexOf('$!$') > -1; i++) {
           value = value.replace('$!$', tagList[i]);
         }
