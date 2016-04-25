@@ -1,13 +1,5 @@
 <div style="width: 300px; margin-bottom: 20px;">
-  <h3>Select a single city</h3>
-  <ng2-select [items]="items"
-              [placeholder]="'No city selected'"></ng2-select>
-  <!-- <p><pre>{{value.text}}</pre></p>
-  <div>
-      <button type="button" class="btn btn-primary"
-              [(ng-model)]="disabledV" btn-checkbox
-              btn-checkbox-true="1" btn-checkbox-false="0">
-          {{disabled === '1' ? 'Enable' : 'Disable'}}
-      </button>
-  </div> -->
+  <select [(ngModel)]="selectedCountry.id">
+    <option *ngFor="#country of countries" value= {{country.id}}>{{country.name}}</option>
+  </select>
 </div>

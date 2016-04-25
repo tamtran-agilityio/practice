@@ -152,6 +152,7 @@ export class Select {
   private _disabled:boolean = false;
 
   constructor(public element:ElementRef) {
+
   }
 
   ngOnInit() {
