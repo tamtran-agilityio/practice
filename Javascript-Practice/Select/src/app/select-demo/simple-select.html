@@ -1,5 +1,6 @@
-<div style="width: 300px; margin-bottom: 20px;">
-  <select [(ngModel)]="selectedCountry.id">
-    <option *ngFor="#country of countries" value= {{country.id}}>{{country.name}}</option>
-  </select>
-</div>
+<input type="text" class="form-control ui-select-search" placeholder="Search" #listFilter (keyup)="0">
+<ul (change)="onSelect($event.target.value)" class="select2" >
+  <li *ngFor="#country of countries | movieFilter:listFilter.value" [value]="country"
+    [class.selected]="country === selectedItem"
+    (click)="onSelect(country)">{{country}}</li>
+</ul>

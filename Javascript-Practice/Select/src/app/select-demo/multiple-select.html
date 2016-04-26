@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="#list of lists">{{list}}</li>
+</ul>
+<input type="text" class="form-control ui-select-search" placeholder="Search" #listFilter (keyup)="0" (click)="isVisible ='true'">
+<ul (change)="onSelect($event.target.value)" class="select2" [class.select-open]="isVisible ==='true'">
+  <li *ngFor="#country of countries | movieFilter:listFilter.value" [value]="country"
+    [class.selected]="country === selectedItem"
+    (click)="onSelect(country)"
+    >{{country}}</li>
+</ul>

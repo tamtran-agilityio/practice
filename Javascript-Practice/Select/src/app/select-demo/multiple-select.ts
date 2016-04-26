@@ -1,23 +1,20 @@
-import {Component, OnInit, EventEmitter} from 'angular2/core';
-// import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from 'angular2/common';
+import {Component, OnInit, EventEmitter, Input} from 'angular2/core';
 import {NgFor} from 'angular2/common';
-
-// import {Select} from '../components/select/select';
-//
 import {SELECT_DIRECTIVES} from '../ng2-select';
 import {Country} from './select';
 import {MovieFilterPipe} from './sort-by';
+
 // webpack html imports
-let templated = require('../select-demo/simple-select.html');
+let templated = require('../select-demo/multiple-select.html');
 
 @Component({
-  selector: 'simple-select',
+  selector: 'multiple-select',
   template: templated,
   styleUrls: ['app/select-demo/select.css'],
   pipes: [MovieFilterPipe]
 })
 
-export class SingleDemo {
+export class MultipleDemo {
   private countries: Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
     'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
     'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin',
@@ -28,11 +25,14 @@ export class SingleDemo {
     'Rotterdam', 'Seville', 'Sheffield', 'Sofia', 'Stockholm', 'Stuttgart',
     'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
     'Zagreb', 'Zaragoza', 'Łódź'];
-
+  visible: 'false';
   selectedItem: Country;
-  isVisible = false;
-  onSelect(country: Country) { this.selectedItem = country; }
-  onClick() {
-    let isVisible = true;
+  lists: Array<Country>;
+  constructor() {
+    this.lists = [];
+  }
+  onSelect(country: Country) {
+    this.selectedItem = country;
+    this.lists.push(country);
   }
 }
