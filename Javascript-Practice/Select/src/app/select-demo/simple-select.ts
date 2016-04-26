@@ -31,7 +31,11 @@ export class SingleDemo {
 
   selectedItem: Country;
   isVisible = false;
-  onSelect(country: Country) { this.selectedItem = country; }
+
+  onSelect(country: Country) {
+    this.selectedItem = country;
+  }
+
   onClick() {
     let isVisible = true;
   }
