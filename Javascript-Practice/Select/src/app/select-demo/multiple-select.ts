@@ -1,4 +1,4 @@
-import {Component, OnInit, EventEmitter, Input} from 'angular2/core';
+import {Component, OnInit, EventEmitter, Input, ElementRef} from 'angular2/core';
 import {NgFor} from 'angular2/common';
 import {SELECT_DIRECTIVES} from '../ng2-select';
 import {Country} from './select';
@@ -28,11 +28,21 @@ export class MultipleDemo {
   visible: 'false';
   selectedItem: Country;
   lists: Array<Country>;
-  constructor() {
+  constructor(public element: ElementRef) {
     this.lists = [];
   }
+
+  private focusToInput(value: string = '') {
+    let el = this.element.nativeElement.querySelector('input');
+    if (el) {
+      el.focus();
+      el.value = value;
+    }
+  }
+
   onSelect(country: Country) {
     this.selectedItem = country;
     this.lists.push(country);
+    this.focusToInput();
   }
 }
