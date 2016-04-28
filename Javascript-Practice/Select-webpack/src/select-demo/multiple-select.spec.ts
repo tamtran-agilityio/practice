@@ -16,15 +16,21 @@ import {MultipleDemo} from './multiple-select';
 describe('MultipleDemo', () => {
   // testing dom element
   beforeEachProviders(() => [MultipleDemo]);
+
+
   it('should render list', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb.createAsync(MultipleDemo).then((componentFixture: ComponentFixture) => {
       const element = componentFixture.nativeElement;
       componentFixture.detectChanges();
-      expect(element.querySelectorAll('multiple-select').length).toBe(1);
+      expect(element.querySelectorAll('span').length).toBe(1);
     });
   }));
 
-  it('should have a predefined list of items', inject([MultipleDemo], (dashboard: MultipleDemo) => {
-    expect(dashboard.selectedItems.length).toBe(2);
-    }));
+  it('should have a predefined list of items', inject([MultipleDemo], (multipleselect: MultipleDemo) => {
+    expect(multipleselect.items.length).toBe(4);
+  }));
+
+  it('shoult have length item select', inject([MultipleDemo], (multipleselect: MultipleDemo) => {
+    expect(multipleselect.onSelect.length).toBe(1);
+  }));
 });

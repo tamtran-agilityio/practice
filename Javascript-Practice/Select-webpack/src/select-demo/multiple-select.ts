@@ -66,6 +66,7 @@ export class MultipleDemo {
   ];
 
   constructor(public element: ElementRef) {
+    console.log("items", this.items.length);
   }
 
   // reset value on input
