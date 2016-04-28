@@ -1,26 +1,22 @@
 import {Component, OnInit, EventEmitter, Input, ElementRef} from 'angular2/core';
 import {NgFor} from 'angular2/common';
-import {SELECT_DIRECTIVES} from '../ng2-select';
 import {Item} from './select';
 import {MovieFilterPipe} from './sort-by';
-import {HighlightPipe} from '../components/select/select-pipes';
-import {ConvertObjectToArrayPipe} from './convert-object-to-array';
 
 // webpack html imports
-let templated = require('../select-demo/multiple-select.html');
+let templated = require('./multiple-select.html');
 
 @Component({
   selector: 'multiple-select',
   template: templated,
-  styleUrls: ['app/select-demo/select.css'],
-  pipes: [MovieFilterPipe, HighlightPipe, ConvertObjectToArrayPipe]
+  pipes: [MovieFilterPipe]
 })
 
 export class MultipleDemo {
   openSelect: 'false';
   multipleLevel: boolean = true;
   selectedItems: Array<Item> = new Array<Item>();
-  private items: Array<any> = [
+  public items: Array<any> = [
     {
       id: 1,
       text: 'England',
@@ -83,25 +79,22 @@ export class MultipleDemo {
 
   // remove item duplicate
   private checkItem(items: Array<any>, value: any) {
-    console.log(" items.length", items.length);;
     let count = items.length;
     if ( count === 0) {
       this.selectedItems.push(value);
     }
     if ( count >= 1) {
-    console.log("DSSSSSS", value);
-      for (let i = 0; i <= count; i++) {
-      if (value === items[i].text) {
-        console.log("Item", items[i].text);
-        console.log("value", value);
+      for (let i = 0; i < count; i++) {
+        let item = items[i].text;
+        if (item === value.text) {
           let j = items.indexOf(value);
           if (j != -1) {
             items.splice(j, 1);
+            return;
           }
-        } else {
-          this.selectedItems.push(value);
         }
       }
+    this.selectedItems.push(value);
     }
   }
 

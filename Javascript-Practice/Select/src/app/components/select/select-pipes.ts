@@ -7,6 +7,7 @@ import {escapeRegexp} from './common';
 export class HighlightPipe {
   transform(value:string, args:any[]) {
     if (args.length < 1) {
+      console.log("value", value);
       return value;
     }
 
@@ -23,7 +24,6 @@ export class HighlightPipe {
     }
     return value;
   }
-
 }
 
 export function stripTags(input:string) {

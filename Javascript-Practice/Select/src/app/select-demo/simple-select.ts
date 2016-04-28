@@ -5,7 +5,7 @@ import {NgFor} from 'angular2/common';
 // import {Select} from '../components/select/select';
 //
 import {SELECT_DIRECTIVES} from '../ng2-select';
-import {Country} from './select';
+import {Item} from './select';
 import {MovieFilterPipe} from './sort-by';
 // webpack html imports
 let templated = require('../select-demo/simple-select.html');
@@ -18,7 +18,7 @@ let templated = require('../select-demo/simple-select.html');
 })
 
 export class SingleDemo {
-  private countries: Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
+  private items: Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
     'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
     'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin',
     'Düsseldorf', 'Essen', 'Frankfurt', 'Genoa', 'Glasgow', 'Gothenburg',
@@ -29,10 +29,10 @@ export class SingleDemo {
     'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
     'Zagreb', 'Zaragoza', 'Łódź'];
 
-  selectedItem: Country;
+  selectedItem: Item;
   isVisible = false;
 
-  onSelect(country: Country) {
+  onSelect(country: Item) {
     this.selectedItem = country;
   }
 
