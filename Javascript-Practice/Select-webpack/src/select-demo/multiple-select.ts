@@ -1,4 +1,4 @@
-import {Component, OnInit, EventEmitter, Input, ElementRef} from 'angular2/core';
+import {Component, OnInit, EventEmitter, Input, Output, ElementRef, Renderer} from 'angular2/core';
 import {NgFor} from 'angular2/common';
 import {Item} from './select';
 import {MovieFilterPipe} from './sort-by';
@@ -13,6 +13,7 @@ let templated = require('./multiple-select.html');
 })
 
 export class MultipleDemo {
+  item: Item;
   openSelect: 'false';
   multipleLevel: boolean = true;
   selectedItems: Array<Item> = new Array<Item>();
@@ -65,12 +66,10 @@ export class MultipleDemo {
     }
   ];
 
-  constructor(public element: ElementRef) {
-    console.log("items", this.items.length);
-  }
+  constructor(private _renderer: Renderer, private element: ElementRef) { }
 
   // reset value on input
-  private focusToInput(value: string = '') {
+  focusToInput(value: string = '') {
     let el = this.element.nativeElement.querySelector('input');
     if (el) {
       el.focus();
@@ -79,7 +78,7 @@ export class MultipleDemo {
   }
 
   // remove item duplicate
-  private checkItem(items: Array<any>, value: any) {
+  checkItem(items: Array<any>, value: any) {
     let count = items.length;
     if ( count === 0) {
       this.selectedItems.push(value);

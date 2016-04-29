@@ -7,10 +7,10 @@
       >
     {{item.text}}
     <ul *ngIf="multipleLevel && item.children">
-      <li *ngFor="#child of item.children | movieFilter:listFilter.value" [value]="child"
+      <li *ngFor="#child of item.children | movieFilter:listFilter.value ; #i = index" [value]="child"
         (click)="onSelect(child)"
         >
-        {{child.text}}
+        ({{i +1}}) {{child.text}}
       </li>
     </ul>
   </li>

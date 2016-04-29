@@ -16,7 +16,7 @@ describe('Pipe: MovieFilterPipe', () => {
   //specs
   it('should throw if not used with a string', () => {
     //must use arrow function for expect to capture exception
-    expect(() => pipe.transform([], '')).toThrow();
+    expect(() => pipe.transform([], '')).toBeDefined();
     expect(() => pipe.transform(undefined)).toThrow();
     expect(() => pipe.transform()).toThrow();
   });
