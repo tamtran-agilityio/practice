@@ -6,6 +6,7 @@ import {
   describe,
   expect,
   it,
+  fit,
   setBaseTestProviders,
   fakeAsync,
   inject,
@@ -25,17 +26,15 @@ setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_P
 
 describe('Component: MultipleDemo', () => {
   // testing dom element
-  let tcbs: any;
-
   //setup
   beforeEachProviders(() => [
     TestComponentBuilder,
     MultipleDemo
   ]);
 
-  beforeEach(inject([TestComponentBuilder], (_tcb: any) => {
-    tcbs = _tcb;
-  }));
+  // beforeEach(inject([TestComponentBuilder], (tcb:any) => {
+  //   let tcbs = tcb;
+  // }));
 
   it('true is true', () => {
     expect(true).toEqual(true);
@@ -44,9 +43,8 @@ describe('Component: MultipleDemo', () => {
   it('should count render list', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
-      fixture.componentInstance.Object = ['England'];
       fixture.detectChanges();
-      expect(element.querySelectorAll('England').length).toBe(0);
+      expect(element.innerHTML).toContain('England');
     })
   }));
 
@@ -55,11 +53,7 @@ describe('Component: MultipleDemo', () => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
         fixture.detectChanges();
-
-        // trigger the 'new' click Item Birmingham
-        expect(element.querySelector('li').click().toBe('Birmingham'));
-        // process the click event
-        fixture.detectChanges();
+        expect(element.querySelector('li').innerHTML).toContain('Birmingham');
       })
     }));
 
@@ -90,27 +84,24 @@ describe('Component: MultipleDemo', () => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
     let element = fixture.nativeElement;
 
-      expect(element.getElementsByTagName('input')).toHaveText('');
-      fixture.debugElement.componentInstance.greeting = "England";
+      expect(element.getElementsByTagName('input').length).toBe(1);
       fixture.detectChanges();
     })
   }));
 
   it('should render list work', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
-      fixture.debugElement.nativeElement.querySelector('input')
-        .click();
+      fixture.debugElement.nativeElement.querySelector('input').click();
       fixture.detectChanges();
-      expect(fixture.debugElement.nativeElement.querySelector('li')).toHaveText('');
+      expect(fixture.debugElement.nativeElement.querySelector('li').innerHTML).toContain('');
     });
   }));
 
   it('Check list have tag ul', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
-    _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
+    return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         fixture.detectChanges();
         const element = fixture.nativeElement;
-        expect(element.querySelectorAll('ul' === null)).toBe(true);
-        expect(element.querySelectorAll('ul' === null)).toBe(false);
+        expect(element.querySelectorAll('ul').length == 0).toBe(false);
       });
   }));
 });
