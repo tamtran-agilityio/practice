@@ -14,6 +14,7 @@ import {
   injectAsync
 } from 'angular2/testing';
 
+import {provide} from 'angular2/src/core/di/provider';
 import {Item} from './select';
 
 import {MultipleDemo} from './multiple-select';
@@ -31,10 +32,6 @@ describe('Component: MultipleDemo', () => {
     TestComponentBuilder,
     MultipleDemo
   ]);
-
-  // beforeEach(inject([TestComponentBuilder], (tcb:any) => {
-  //   let tcbs = tcb;
-  // }));
 
   it('true is true', () => {
     expect(true).toEqual(true);
@@ -103,5 +100,17 @@ describe('Component: MultipleDemo', () => {
         const element = fixture.nativeElement;
         expect(element.querySelectorAll('ul').length == 0).toBe(false);
       });
+  }));
+
+  it('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+    return _tcb
+      .overrideProviders(MultipleDemo, [provide(MultipleDemo, { useValue: Item })])
+      .createAsync(MultipleDemo)
+      .then((fixture) => {
+        let nativeElement = fixture.nativeElement;
+        fixture.detectChanges();
+        expect(nativeElement.querySelector('li') === null).toBe(true);
+        expect(nativeElement.querySelector('ul') === null).toBe(false);
+    });
   }));
 });
