@@ -4,11 +4,11 @@ import {AppComponent} from './main';
 describe('AppComponent', () => {
 
   // test string
-  beforeEach(function() {
+  beforeEach(() => {
     this.app = new AppComponent();
   });
 
-  it('should have hello property', function() {
+  it('should have hello property', () => {
     expect(this.app.name).toBe('hello');
   });
 

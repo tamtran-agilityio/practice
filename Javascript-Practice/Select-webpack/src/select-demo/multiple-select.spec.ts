@@ -45,12 +45,12 @@ describe('Component: MultipleDemo', () => {
     })
   }));
 
-  it('should item to list select is clicked have value Birmingham',
+  it('should item to list select is clicked have value England',
     inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
         fixture.detectChanges();
-        expect(element.querySelector('li').innerHTML).toContain('Birmingham');
+        expect(element.querySelector('li').innerHTML).toContain('England');
       })
     }));
 
@@ -73,7 +73,7 @@ describe('Component: MultipleDemo', () => {
     return tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.getElementsByTagName('li').length).toBe(26);
+      expect(element.getElementsByTagName('li').length).toBe(4);
     });
   }));
 
@@ -102,7 +102,7 @@ describe('Component: MultipleDemo', () => {
       });
   }));
 
-  it('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  fit('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb
       .overrideProviders(MultipleDemo, [provide(MultipleDemo, { useValue: Item })])
       .createAsync(MultipleDemo)
@@ -110,7 +110,7 @@ describe('Component: MultipleDemo', () => {
         let nativeElement = fixture.nativeElement;
         fixture.detectChanges();
         expect(nativeElement.querySelector('li') === null).toBe(true);
-        expect(nativeElement.querySelector('ul') === null).toBe(false);
+        expect(nativeElement.querySelector('ul') === null).toBe(true);
     });
   }));
 });
