@@ -1,22 +1,22 @@
-<ul>
-  <li *ngFor="#selected of selectedItems">{{selected.text}}</li>
+<ul class="ui-select-content">
+  <li *ngFor="#selected of selectedItems" class="ui-select-match-item">{{selected.text}}
+    <a href="#" class="close-item"></a>
+  </li>
 </ul>
-<input type="text" class="form-control ui-select-search" placeholder="Search" [(ngModel)]="filterValue" (click)="isVisible ='true'">
-<ul [class.select-open]="openSelect ==='true'">
-  <li (click)="!multipleLevel && onSelect(item)" *ngFor="#item of items | movieFilter:filterValue" [value]="item.text"
+<input type="text" class="form-control ui-select-bootstrap" placeholder="" [(ngModel)]="filterValue"
+(click)="onKey()"
+>
+<ul [class.select-open]="acticeVisible === 'open'" class="dropdown-menu">
+  <li (click)="multipleLevel" *ngFor="#item of items | movieFilter:filterValue" [value]="item.text"
       [class.hidden]="!item.children || item.children.length == 0">
     {{item.text}}
+    {{acticeVisible}}
     <ul *ngIf="item.children">
-      <li *ngFor="#child of item.children; #i = index" [value]="child"
+      <li *ngFor="#child of item.children " [value]="child"
         (click)="onSelect(child)"
         >
-        ({{i +1}}) {{child.text}}
+        {{child.text}}
       </li>
     </ul>
   </li>
 </ul>
-<style>
-  .hidden{
-    display: none;
-  }
-</style>

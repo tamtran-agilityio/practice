@@ -9,93 +9,106 @@ let templated = require('./multiple-select.html');
 @Component({
   selector: 'multiple-select',
   template: templated,
+  styles: [`
+    .hidden {
+      display: none;
+    }
+    .dropdown-menu {
+      position: absolute;
+      left: 10px;
+      z-index: 10;
+      top: 60px;
+      display: none;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      margin: 2px 0 0;
+      font-size: 14px;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,.15);
+      border-radius: 4px;
+      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+      margin-top: -1px;
+    }
+    .ui-select-match-item {
+      outline: 0;
+      position: relative;
+      padding: 1px 5px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      display: inline-block;
+      float: left;
+      z-index: 20;
+    }
+    .ui-select-bootstrap {
+      position: relative;
+      display: block;
+      float: left;
+      top: -60px;
+      width: auto;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      outline: none;
+      background-color: transparent;
+      background-image: none;
+      border: none;
+    }
+    .ui-select-content {
+      position: relative;
+      min-height: 40px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    .close-item {
+
+    }
+    .select-open {
+      display: block;
+    }
+  `],
   pipes: [MovieFilterPipe]
 })
 
-export class MultipleDemo implements OnInit {
+export class MultipleDemo {
   item: Item;
   openSelect: 'false';
   filterValue: string;
-  multipleLevel: boolean = true;
+  acticeVisible = 'close';
   selectedItems: Array<Item> = new Array<Item>();
+
   private _items: Array<any> = [];
   public itemObjects: Array<Item> = [];
   public active: Array<Item> = [];
   public children: Array<Item>;
   @Output() public data: EventEmitter<any> = new EventEmitter();
+  @Input() multipleLevel: boolean = true;
   @Input() public initData: Array<any> = [];
   @Input() public multiple: boolean = false;
-  @Input() public set items(value: Array<any>) {
+  @Input() public items(value: Array<any>) {
     this._items = value;
     this.itemObjects = this._items.map((item: any) => new Item(item));
   }
 
-  public ngOnInit(): any {
-    if (this.initData) {
-      this.active = this.initData.map((data: any) => new Item(data));
-      this.data.emit(this.active);
-    }
+  constructor(private _renderer: Renderer, private element: ElementRef) {
   }
-
-  // public hasChildren(): boolean {
-  //   return this.children && this.children.length > 0;
-  // }
-
-  // public get firstItemHasChildren(): any {
-  //   return this.itemObjects[0];
-  // }
-
-
-  // public items: Array<any> = [
-  //   {
-  //     id: 1,
-  //     text: 'England',
-  //     children: [
-  //       { id: 6, text: 'Birmingham' },
-  //       { id: 7, text: 'Bradford' },
-  //       { id: 26, text: 'Leeds' },
-  //       { id: 30, text: 'London' },
-  //       { id: 34, text: 'Manchester' },
-  //       { id: 47, text: 'Sheffield' }
-  //     ]
-  //   },
-  //   {
-  //     id: 2,
-  //     text: 'Finland',
-  //     children: [
-  //       { id: 25, text: 'Helsinki' }
-  //     ]
-  //   },
-  //   {
-  //     id: 3,
-  //     text: 'France',
-  //     children: [
-  //       { id: 35, text: 'Marseille' },
-  //       { id: 40, text: 'Paris' }
-  //     ]
-  //   },
-  //   {
-  //     id: 4,
-  //     text: 'Germany',
-  //     children: [
-  //       { id: 5, text: 'Berlin' },
-  //       { id: 8, text: 'Bremen' },
-  //       { id: 12, text: 'Cologne' },
-  //       { id: 14, text: 'Dortmund' },
-  //       { id: 15, text: 'Dresden' },
-  //       { id: 17, text: 'Düsseldorf' },
-  //       { id: 18, text: 'Essen' },
-  //       { id: 19, text: 'Frankfurt' },
-  //       { id: 23, text: 'Hamburg' },
-  //       { id: 24, text: 'Hannover' },
-  //       { id: 27, text: 'Leipzig' },
-  //       { id: 37, text: 'Munich' },
-  //       { id: 50, text: 'Stuttgart' }
-  //     ]
-  //   }
-  // ];
-
-  constructor(private _renderer: Renderer, private element: ElementRef) { }
 
   // reset value on input
   focusToInput(value: string = '') {
@@ -112,7 +125,14 @@ export class MultipleDemo implements OnInit {
     if ( count === 0) {
       this.selectedItems.push(value);
     }
-    if ( count >= 1) {
+
+    if (this.multiple && count >= 1) {
+      console.log("multiple true", this.multiple);
+      return;
+    }
+
+    console.log("multiple", this.multiple);
+    if (count >= 1 && !this.multiple) {
       for (let i = 0; i < count; i++) {
         let item = items[i].text;
         if (item === value.text) {
@@ -131,5 +151,10 @@ export class MultipleDemo implements OnInit {
   onSelect(item: Item) {
     this.checkItem( this.selectedItems, item);
     this.focusToInput();
+  }
+
+  onKey() {
+    console.log("DDDD");
+    this.acticeVisible = 'open';
   }
 }

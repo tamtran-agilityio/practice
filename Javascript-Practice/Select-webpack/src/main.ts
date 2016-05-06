@@ -11,9 +11,14 @@ interface TestObject {
   selector: 'app',
   template: `
     <h2>{{items.text}}</h2>
-    <multiple-select [items]="items">
+    <multiple-select
+      [items]="items"
+      [multipleLevel]="false"
+      [multiple]="false"
+    >
     </multiple-select>
   `,
+  styles: [``],
   directives: [FORM_DIRECTIVES, MultipleDemo],
 })
 export class AppComponent {
@@ -66,4 +71,23 @@ export class AppComponent {
       ]
     }
   ];
+  // public items: Array<any> = [
+  //   {
+  //     children: [
+  //       { text: 'Berlin' },
+  //       { text: 'Bremen' },
+  //       { text: 'Cologne' },
+  //       { text: 'Dortmund' },
+  //       { text: 'Dresden' },
+  //       { text: 'Düsseldorf' },
+  //       { text: 'Essen' },
+  //       { text: 'Frankfurt' },
+  //       { text: 'Hamburg' },
+  //       { text: 'Hannover' },
+  //       { text: 'Leipzig' },
+  //       { text: 'Munich' },
+  //       { text: 'Stuttgart' }
+  //     ]
+  //   }
+  // ]
 }
