@@ -1,6 +1,6 @@
 <ul class="ui-select-content">
-  <li *ngFor="#selected of selectedItems" class="ui-select-match-item">{{selected.text}}
-    <a href="#" class="close-item"></a>
+  <li *ngFor="#selected of selectedItems; #i=index" class="ui-select-match-item" >{{selected.text}}
+    <a href="#" class="close-item" (click)="removeItem(i)"  ></a>
   </li>
 </ul>
 <input type="text" class="form-control ui-select-bootstrap" placeholder="" [(ngModel)]="filterValue"

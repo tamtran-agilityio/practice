@@ -15,11 +15,13 @@ let templated = require('./multiple-select.html');
     }
     .dropdown-menu {
       position: absolute;
-      left: 10px;
+      left: 0;
       z-index: 10;
       top: 60px;
       display: none;
+      margin: 0 10px;
       float: left;
+      width: 100%;
       min-width: 160px;
       padding: 5px 0;
       margin: 2px 0 0;
@@ -78,6 +80,10 @@ let templated = require('./multiple-select.html');
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     }
     .close-item {
+      display: block;
+      width: 10px;
+      height: 10px;
+      color: red;
 
     }
     .select-open {
@@ -151,10 +157,15 @@ export class MultipleDemo {
   onSelect(item: Item) {
     this.checkItem( this.selectedItems, item);
     this.focusToInput();
+    this.acticeVisible = 'close';
   }
 
   onKey() {
-    console.log("DDDD");
     this.acticeVisible = 'open';
+  }
+  removeItem(index: number) {
+    if (this.selectedItems.length > 0) {
+      this.selectedItems.splice(index, 1);
+    }
   }
 }
