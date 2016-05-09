@@ -10,7 +10,6 @@
   <li (click)="multipleLevel" *ngFor="#item of items | movieFilter:filterValue" [value]="item.text"
       [class.hidden]="!item.children || item.children.length == 0">
     {{item.text}}
-    {{acticeVisible}}
     <ul *ngIf="item.children">
       <li *ngFor="#child of item.children " [value]="child"
         (click)="onSelect(child)"

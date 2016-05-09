@@ -80,11 +80,20 @@ let templated = require('./multiple-select.html');
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     }
     .close-item {
-      display: block;
       width: 10px;
       height: 10px;
-      color: red;
-
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: 400;
+      z-index: 100000000000000;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #555;
+      background-color: #000;
     }
     .select-open {
       display: block;
