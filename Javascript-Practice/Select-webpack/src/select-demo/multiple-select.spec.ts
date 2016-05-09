@@ -25,7 +25,7 @@ import {
 
 setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_PROVIDERS);
 
-describe('Component: MultipleDemo', () => {
+describe('MultipleDemo', () => {
   // testing dom element
   //setup
   beforeEachProviders(() => [
@@ -33,11 +33,11 @@ describe('Component: MultipleDemo', () => {
     MultipleDemo
   ]);
 
-  it('true is true', () => {
+  fit('true is true', () => {
     expect(true).toEqual(true);
   });
 
-  it('should count render list', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  fit('should count render list', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
@@ -45,7 +45,7 @@ describe('Component: MultipleDemo', () => {
     })
   }));
 
-  it('should item to list select is clicked have value England',
+  fit('should item to list select is clicked have value England',
     inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
@@ -54,7 +54,7 @@ describe('Component: MultipleDemo', () => {
       })
     }));
 
-  it('should item to list select is clicked...',
+  fit('should item to list select is clicked...',
     inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let nativeElement = fixture.nativeElement;
@@ -69,7 +69,7 @@ describe('Component: MultipleDemo', () => {
       })
     }));
 
-  it('check list have count tag li', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  fit('check list have count tag li', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
@@ -77,7 +77,7 @@ describe('Component: MultipleDemo', () => {
     });
   }));
 
-  it('Check value enter input ', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  fit('Check value enter input ', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
     let element = fixture.nativeElement;
 
@@ -86,7 +86,7 @@ describe('Component: MultipleDemo', () => {
     })
   }));
 
-  it('should render list work', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  fit('should render list work', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       fixture.debugElement.nativeElement.querySelector('input').click();
       fixture.detectChanges();
@@ -94,7 +94,7 @@ describe('Component: MultipleDemo', () => {
     });
   }));
 
-  it('Check list have tag ul', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  fit('Check list have tag ul', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         fixture.detectChanges();
         const element = fixture.nativeElement;

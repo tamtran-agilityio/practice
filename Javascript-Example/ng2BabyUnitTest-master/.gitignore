@@ -1,0 +1,16 @@
+# Build webpack
+########################
+out/
+node_modules/
+typings/
+src/
+
+#temp files
+#########################
+*.*~
+*.log
+*.js
+*.map
+.vagrant
+.sass-cache
+npm-debug.log

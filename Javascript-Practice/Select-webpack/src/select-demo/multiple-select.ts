@@ -1,14 +1,17 @@
 import {Component, OnInit, EventEmitter, Input, Output, ElementRef, Renderer} from 'angular2/core';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router } from 'angular2/router';
+import { Http } from 'angular2/http';
 import {NgFor} from 'angular2/common';
 import {Item} from './select';
 import {MovieFilterPipe} from './sort-by';
-
+import {ItemService} from '../service/service'
 // webpack html imports
 let templated = require('./multiple-select.html');
 
 @Component({
   selector: 'multiple-select',
   template: templated,
+  providers: [ItemService, RouteParams, Http],
   styles: [`
     .hidden {
       display: none;
@@ -102,10 +105,11 @@ let templated = require('./multiple-select.html');
   pipes: [MovieFilterPipe]
 })
 
-export class MultipleDemo {
+export class MultipleDemo implements OnInit {
   item: Item;
   openSelect: 'false';
   filterValue: string;
+  errorMessage: string;
   acticeVisible = 'close';
   selectedItems: Array<Item> = new Array<Item>();
 
@@ -122,9 +126,25 @@ export class MultipleDemo {
     this.itemObjects = this._items.map((item: any) => new Item(item));
   }
 
-  constructor(private _renderer: Renderer, private element: ElementRef) {
+  constructor(private _renderer: Renderer, private element: ElementRef
+    , private _itemService: ItemService
+    , private _params: RouteParams
+    ) {
   }
 
+
+  ngOnInit() {
+    this.getItem('data.json');
+  }
+
+  getItem(url: string) {
+    this._itemService.getItem(url).subscribe(
+      item => {
+        this.item = item;
+        console.log("this.recipe", this.item);
+      },
+      error => this.errorMessage = <any>error);
+  }
   // reset value on input
   focusToInput(value: string = '') {
     let el = this.element.nativeElement.querySelector('input');
