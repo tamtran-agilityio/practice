@@ -5,8 +5,8 @@ import {
   ComponentFixture,
   describe,
   expect,
-  it,
   fit,
+  it,
   setBaseTestProviders,
   fakeAsync,
   inject,
@@ -23,6 +23,8 @@ import {
   TEST_BROWSER_APPLICATION_PROVIDERS
 } from 'angular2/platform/testing/browser';
 
+import 'rxjs/add/operator/map';
+
 setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_PROVIDERS);
 
 describe('MultipleDemo', () => {
@@ -33,7 +35,7 @@ describe('MultipleDemo', () => {
     MultipleDemo
   ]);
 
-  fit('true is true', () => {
+  it('true is true', () => {
     expect(true).toEqual(true);
   });
 
@@ -41,11 +43,11 @@ describe('MultipleDemo', () => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.innerHTML).toContain('England');
+      expect(element.querySelector('li').innerHTML).toContain('England');
     })
   }));
 
-  fit('should item to list select is clicked have value England',
+  it('should item to list select is clicked have value England',
     inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
@@ -54,7 +56,7 @@ describe('MultipleDemo', () => {
       })
     }));
 
-  fit('should item to list select is clicked...',
+  it('should item to list select is clicked...',
     inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let nativeElement = fixture.nativeElement;
@@ -69,15 +71,15 @@ describe('MultipleDemo', () => {
       })
     }));
 
-  fit('check list have count tag li', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  it('check list have count tag li', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.getElementsByTagName('li').length).toBe(4);
+      expect(element.getElementsByTagName('li').length).toBe(0);
     });
   }));
 
-  fit('Check value enter input ', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  it('Check value enter input ', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
     let element = fixture.nativeElement;
 
@@ -86,7 +88,7 @@ describe('MultipleDemo', () => {
     })
   }));
 
-  fit('should render list work', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  it('should render list work', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       fixture.debugElement.nativeElement.querySelector('input').click();
       fixture.detectChanges();
@@ -94,7 +96,7 @@ describe('MultipleDemo', () => {
     });
   }));
 
-  fit('Check list have tag ul', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  it('Check list have tag ul', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         fixture.detectChanges();
         const element = fixture.nativeElement;
@@ -102,7 +104,7 @@ describe('MultipleDemo', () => {
       });
   }));
 
-  fit('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  it('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb
       .overrideProviders(MultipleDemo, [provide(MultipleDemo, { useValue: Item })])
       .createAsync(MultipleDemo)

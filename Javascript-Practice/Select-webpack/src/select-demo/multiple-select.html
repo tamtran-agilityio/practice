@@ -9,7 +9,7 @@
 (click)="onKey()"
 >
 <ul [class.select-open]="acticeVisible === 'open'" class="dropdown-menu">
-  <li (click)="multipleLevel" *ngFor="#item of items | movieFilter:filterValue" [value]="item.text"
+  <li (click)="multipleLevel" *ngFor="#item of _items | movieFilter:filterValue" [value]="item.text"
       [class.hidden]="!item.children || item.children.length == 0">
     {{item.text}}
     <ul *ngIf="item.children">

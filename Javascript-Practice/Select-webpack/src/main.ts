@@ -1,7 +1,11 @@
-import {Component, Inject} from 'angular2/core';
+import {Component, Inject, OnInit} from 'angular2/core';
 import {FORM_DIRECTIVES } from 'angular2/common';
 import {RouteParams} from 'angular2/router';
+import { HTTP_PROVIDERS, Http } from 'angular2/http';
 import {MultipleDemo} from './select-demo/multiple-select';
+import {Item} from './select-demo/select';
+import {ItemService} from './service/service';
+
 interface TestObject {
   name: string;
   value: number;
@@ -10,20 +14,23 @@ interface TestObject {
 @Component({
   selector: 'app',
   template: `
-    <h2>{{items.text}}</h2>
     <multiple-select
-      [items]="items"
+      [initData]="itemss"
       [multipleLevel]="false"
       [multiple]="false"
+      [url]="'data.json'"
+      [queryAPI]="true"
     >
     </multiple-select>
   `,
-  styles: [``],
+  styleUrls: ['/src/select-demo/select.css'],
+  providers: [ItemService, Item, RouteParams, HTTP_PROVIDERS],
   directives: [FORM_DIRECTIVES, MultipleDemo],
 })
 export class AppComponent {
   private name: string = 'hello';
-  public items: Array<any> = [
+
+  public itemss: Array<any> = [
     {
       id: 1,
       text: 'England',
@@ -33,6 +40,7 @@ export class AppComponent {
         { id: 26, text: 'Leeds' },
         { id: 30, text: 'London' },
         { id: 34, text: 'Manchester' },
+        { id: 35, text: 'Manchester City' },
         { id: 47, text: 'Sheffield' }
       ]
     },
