@@ -12,7 +12,7 @@ let templated = require('./multiple-select.html');
   selector: 'multiple-select',
   template: templated,
   providers: [ItemService, RouteParams, HTTP_PROVIDERS],
-  styleUrls: ['/src/select-demo/select.css'],
+  styleUrls: ['/src/select/select.css'],
   pipes: [MovieFilterPipe]
 })
 

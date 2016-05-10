@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
 import { Headers, RequestOptions} from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
-import { Item } from '../select-demo/select';
+import { Item } from '../select/select';
 
 @Injectable()
 export class ItemService {

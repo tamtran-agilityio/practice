@@ -2,8 +2,8 @@ import {Component, Inject, OnInit} from 'angular2/core';
 import {FORM_DIRECTIVES } from 'angular2/common';
 import {RouteParams} from 'angular2/router';
 import { HTTP_PROVIDERS, Http } from 'angular2/http';
-import {MultipleDemo} from './select-demo/multiple-select';
-import {Item} from './select-demo/select';
+import {MultipleDemo} from './select/multiple-select';
+import {Item} from './select/select';
 import {ItemService} from './service/service';
 
 interface TestObject {
@@ -19,7 +19,7 @@ interface TestObject {
       [multipleLevel]="false"
       [multiple]="false"
       [url]="'data.json'"
-      [queryAPI]="true"
+      [queryAPI]="false"
     >
     </multiple-select>
   `,

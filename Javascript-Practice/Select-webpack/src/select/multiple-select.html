@@ -6,7 +6,7 @@
   </li>
 </ul>
 <input type="text" class="form-control ui-select-bootstrap" placeholder="" [(ngModel)]="filterValue"
-(click)="onKey()"
+(click)="onKey()" (keyup)="onKey()"
 >
 <ul [class.select-open]="acticeVisible === 'open'" class="dropdown-menu">
   <li (click)="multipleLevel" *ngFor="#item of _items | movieFilter:filterValue" [value]="item.text"

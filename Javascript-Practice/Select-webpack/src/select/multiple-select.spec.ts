@@ -39,11 +39,11 @@ describe('MultipleDemo', () => {
     expect(true).toEqual(true);
   });
 
-  fit('should count render list', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
+  it('should count render list', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.querySelector('li').innerHTML).toContain('England');
+      expect(element.getElementsByTagName('li').toEqual(null));
     })
   }));
 
