@@ -14,12 +14,11 @@ interface TestObject {
 @Component({
   selector: 'app',
   template: `
+    <h2>{{itemsss | json}}</h2>
     <multiple-select
-      [initData]="itemss"
+      [initData]="items"
       [multipleLevel]="false"
       [multiple]="false"
-      [url]="'data.json'"
-      [queryAPI]="false"
     >
     </multiple-select>
   `,
@@ -27,8 +26,26 @@ interface TestObject {
   providers: [ItemService, Item, RouteParams, HTTP_PROVIDERS],
   directives: [FORM_DIRECTIVES, MultipleDemo],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private name: string = 'hello';
+  errorMessage: any;
+  public items: Array<any>;
+  constructor(private _itemService: ItemService, private _params: RouteParams) {
+    console.log("items", this.items);
+  }
+
+  ngOnInit() {
+    this.getItems();
+  }
+
+  getItems() {
+    this._itemService.getItem('http://api.geonames.org/postalCodeSearchJSON?postalcode=9011&maxRows=10&username=demo')
+      // .map(itemsss => itemsss.json())
+      .subscribe(items => {
+        this.items = items;
+        console.log("SSSSSSSSSSSS", items);
+      }, error => this.errorMessage = error);
+  }
 
   public itemss: Array<any> = [
     {

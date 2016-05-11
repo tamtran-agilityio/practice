@@ -37,7 +37,7 @@ export class MultipleDemo implements OnInit {
     if (value === null || value === undefined) {
       return;
     }
-
+    console.log("value", value);
     this._items = value;
   }
 
@@ -47,20 +47,20 @@ export class MultipleDemo implements OnInit {
   }
 
   ngOnInit() {
-    if (this.queryAPI) {
-      this.getItem(this.url);
-    } else {
+    // if (this.queryAPI) {
+    //   this.getItem(this.url);
+    // } else {
       this.items = this.initData;
-    }
+    // }
   }
 
-  getItem(_url: string) {
-    this._itemService.getItem(_url).subscribe(
-      items => {
-        this.items = items;
-      },
-      error => this.errorMessage = error);
-  }
+  // getItem(_url: string) {
+  //   this._itemService.getItem(_url).subscribe(
+  //     items => {
+  //       this.items = items;
+  //     },
+  //     error => this.errorMessage = error);
+  // }
 
   // reset value on input
   focusToInput(value: string = '') {

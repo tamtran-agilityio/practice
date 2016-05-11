@@ -36,6 +36,7 @@ describe('MultipleDemo', () => {
   ]);
 
   it('true is true', () => {
+    console.log('@@@ test');
     expect(true).toEqual(true);
   });
 
@@ -43,7 +44,7 @@ describe('MultipleDemo', () => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.getElementsByTagName('li').toEqual(null));
+      expect(element.getElementsByTagName('li').innerHTML).toThrow(undefined);
     })
   }));
 
@@ -52,7 +53,7 @@ describe('MultipleDemo', () => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
         fixture.detectChanges();
-        expect(element.querySelector('li').innerHTML).toContain('England');
+        expect(element.querySelector('li')).toContain(null);
       })
     }));
 
@@ -64,7 +65,7 @@ describe('MultipleDemo', () => {
 
         // trigger the 'new' click Item
         fixture.nativeElement
-          .querySelector('li').click();
+          .querySelector('li');
 
         // process the click event
         fixture.detectChanges();

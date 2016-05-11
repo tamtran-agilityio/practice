@@ -3,6 +3,7 @@
 out/
 node_modules/
 typings/
+coverage/
 
 #temp files
 #########################
