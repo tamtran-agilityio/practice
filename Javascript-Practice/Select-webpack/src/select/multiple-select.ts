@@ -16,28 +16,29 @@ let templated = require('./multiple-select.html');
   pipes: [MovieFilterPipe]
 })
 
-export class MultipleDemo implements OnInit {
+export class MultipleDemo {
   private item: Item;
   private openSelect: 'false';
   private filterValue: string;
   private errorMessage: any;
-  private acticeVisible = 'close';
+  private activeVisible = 'close';
   private _items: Array<any> = [];
 
   public selectedItems: Array<Item> = new Array<Item>();
   public active: Array<Item> = [];
   public children: Array<Item>;
   @Input() public multipleLevel: boolean = true;
-  @Input() public initData: Array<any> = [];
-  @Input() public multiple: boolean = false;
+  @Input() public multipleChangle: boolean = false;
   @Input() public queryAPI: boolean = false;
   @Input() public url: string;
+  @Input() public title: string;
+  @Input() public childField: string;
   @Input() public set items(value: Array<any>) {
 
     if (value === null || value === undefined) {
       return;
     }
-    console.log("value", value);
+
     this._items = value;
   }
 
@@ -46,21 +47,6 @@ export class MultipleDemo implements OnInit {
   constructor(private _renderer: Renderer, private element: ElementRef, private _itemService: ItemService, private _params: RouteParams) {
   }
 
-  ngOnInit() {
-    // if (this.queryAPI) {
-    //   this.getItem(this.url);
-    // } else {
-      this.items = this.initData;
-    // }
-  }
-
-  // getItem(_url: string) {
-  //   this._itemService.getItem(_url).subscribe(
-  //     items => {
-  //       this.items = items;
-  //     },
-  //     error => this.errorMessage = error);
-  // }
 
   // reset value on input
   focusToInput(value: string = '') {
@@ -78,14 +64,14 @@ export class MultipleDemo implements OnInit {
       this.selectedItems.push(value);
     }
 
-    if (this.multiple && count >= 1) {
+    if (this.multipleChangle && count >= 1) {
       return;
     }
 
-    if (count >= 1 && !this.multiple) {
+    if (count >= 1 && !this.multipleChangle) {
       for (let i = 0; i < count; i++) {
-        let item = items[i].text;
-        if (item === value.text) {
+      let item = items[i][this.childField];
+      if (item === value[this.childField]) {
           let j = items.indexOf(value);
           if (j != -1) {
             items.splice(j, 1);
@@ -101,11 +87,11 @@ export class MultipleDemo implements OnInit {
   onSelect(item: Item) {
     this.checkItem( this.selectedItems, item);
     this.focusToInput();
-    this.acticeVisible = 'close';
+    this.activeVisible = 'close';
   }
 
   onKey() {
-    this.acticeVisible = 'open';
+    this.activeVisible = 'open';
   }
 
   removeItem(index: number) {

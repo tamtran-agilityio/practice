@@ -14,24 +14,26 @@ interface TestObject {
 @Component({
   selector: 'app',
   template: `
-    <h2>{{itemsss | json}}</h2>
     <multiple-select
-      [initData]="items"
+      [items]="items | async"
       [multipleLevel]="false"
-      [multiple]="false"
+      [multipleChangle]="true"
+      title="name"
+      childField="name"
     >
     </multiple-select>
   `,
+  // [items]="items | async"
   styleUrls: ['/src/select-demo/select.css'],
   providers: [ItemService, Item, RouteParams, HTTP_PROVIDERS],
-  directives: [FORM_DIRECTIVES, MultipleDemo],
+  directives: [FORM_DIRECTIVES, MultipleDemo]
 })
 export class AppComponent implements OnInit {
+
   private name: string = 'hello';
   errorMessage: any;
-  public items: Array<any>;
+  public items: any;
   constructor(private _itemService: ItemService, private _params: RouteParams) {
-    console.log("items", this.items);
   }
 
   ngOnInit() {
@@ -39,12 +41,8 @@ export class AppComponent implements OnInit {
   }
 
   getItems() {
-    this._itemService.getItem('http://api.geonames.org/postalCodeSearchJSON?postalcode=9011&maxRows=10&username=demo')
-      // .map(itemsss => itemsss.json())
-      .subscribe(items => {
-        this.items = items;
-        console.log("SSSSSSSSSSSS", items);
-      }, error => this.errorMessage = error);
+    this.items = this._itemService.getItem('http://api.hungama.com/metroapp/categories.php?format=json')
+    .map(items => items.category);
   }
 
   public itemss: Array<any> = [
@@ -96,23 +94,4 @@ export class AppComponent implements OnInit {
       ]
     }
   ];
-  // public items: Array<any> = [
-  //   {
-  //     children: [
-  //       { text: 'Berlin' },
-  //       { text: 'Bremen' },
-  //       { text: 'Cologne' },
-  //       { text: 'Dortmund' },
-  //       { text: 'Dresden' },
-  //       { text: 'Düsseldorf' },
-  //       { text: 'Essen' },
-  //       { text: 'Frankfurt' },
-  //       { text: 'Hamburg' },
-  //       { text: 'Hannover' },
-  //       { text: 'Leipzig' },
-  //       { text: 'Munich' },
-  //       { text: 'Stuttgart' }
-  //     ]
-  //   }
-  // ]
 }

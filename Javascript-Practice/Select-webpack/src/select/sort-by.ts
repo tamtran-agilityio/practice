@@ -7,7 +7,6 @@ import {Item} from './select';
 export class MovieFilterPipe implements PipeTransform {
   transform(arr: any , filters: string = ''): any {
     let arss = JSON.parse(JSON.stringify(arr));
-
     if (filters.length < 1) {
       return arss;
     }

@@ -36,7 +36,6 @@ describe('MultipleDemo', () => {
   ]);
 
   it('true is true', () => {
-    console.log('@@@ test');
     expect(true).toEqual(true);
   });
 
@@ -44,7 +43,7 @@ describe('MultipleDemo', () => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       fixture.detectChanges();
-      expect(element.getElementsByTagName('li').innerHTML).toThrow(undefined);
+      expect(element.getElementsByTagName('li').innerHTML).toBeUndefined;
     })
   }));
 
@@ -53,7 +52,7 @@ describe('MultipleDemo', () => {
       return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let element = fixture.nativeElement;
         fixture.detectChanges();
-        expect(element.querySelector('li')).toContain(null);
+        expect(element.querySelector('li')).not.toContain(null);
       })
     }));
 
@@ -93,7 +92,7 @@ describe('MultipleDemo', () => {
     return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
       fixture.debugElement.nativeElement.querySelector('input').click();
       fixture.detectChanges();
-      expect(fixture.debugElement.nativeElement.querySelector('li').innerHTML).toContain('');
+      expect(fixture.debugElement.nativeElement.querySelector('li')).not.toContain('');
     });
   }));
 

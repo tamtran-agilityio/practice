@@ -1,6 +1,6 @@
 <ul class="ui-select-content">
   <li *ngFor="#selected of selectedItems; #i=index" class="ui-select-match-item" >
-    <button> {{selected.text}}
+    <button> {{selected[title]}}
       <a href="#" class="close-item" (click)="removeItem(i)"  ></a>
     </button>
   </li>
@@ -8,15 +8,15 @@
 <input type="text" class="form-control ui-select-bootstrap" placeholder="" [(ngModel)]="filterValue"
 (click)="onKey()" (keyup)="onKey()"
 >
-<ul [class.select-open]="acticeVisible === 'open'" class="dropdown-menu">
-  <li (click)="multipleLevel" *ngFor="#item of _items | movieFilter:filterValue" [value]="item.text"
-      [class.hidden]="!item.children || item.children.length == 0">
-    {{item.text}}
-    <ul *ngIf="item.children">
-      <li *ngFor="#child of item.children " [value]="child"
+<ul [class.select-open]="activeVisible === 'open'" class="dropdown-menu">
+  <li (click)="multipleLevel" *ngFor="#item of _items | movieFilter:filterValue" [value]="item[title]"
+      [class.hidden]="multipleLevel && (!item[childField] || item[childField].length == 0)">
+    {{item[title]}}
+    <ul *ngIf="item[childField]">
+      <li *ngFor="#child of item[childField] " [value]="child"
         (click)="onSelect(child)"
         >
-        {{child.text}}
+        {{child[title]}}
       </li>
     </ul>
   </li>
