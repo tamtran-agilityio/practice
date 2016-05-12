@@ -5,7 +5,7 @@ import { HTTP_PROVIDERS, Http } from 'angular2/http';
 import {MultipleDemo} from './select/multiple-select';
 import {Item} from './select/select';
 import {ItemService} from './service/service';
-
+import {ConvertObjectToArrayPipe} from './select/convert-object';
 interface TestObject {
   name: string;
   value: number;
@@ -18,14 +18,15 @@ interface TestObject {
       [items]="items | async"
       [multipleLevel]="false"
       [multipleChangle]="true"
-      title="name"
-      childField="name"
+      title ="placeName"
+      childField=""
     >
     </multiple-select>
   `,
-  // [items]="items | async"
+  // [items]="items | async" placeName
   styleUrls: ['/src/select-demo/select.css'],
   providers: [ItemService, Item, RouteParams, HTTP_PROVIDERS],
+  pipes: [ConvertObjectToArrayPipe],
   directives: [FORM_DIRECTIVES, MultipleDemo]
 })
 export class AppComponent implements OnInit {
@@ -41,8 +42,8 @@ export class AppComponent implements OnInit {
   }
 
   getItems() {
-    this.items = this._itemService.getItem('http://api.hungama.com/metroapp/categories.php?format=json')
-    .map(items => items.category);
+    this.items = this._itemService.getItem('http://api.geonames.org/postalCodeSearchJSON?postalcode=9011&maxRows=10&username=demo')
+    .map(items => items.postalCodes);
   }
 
   public itemss: Array<any> = [

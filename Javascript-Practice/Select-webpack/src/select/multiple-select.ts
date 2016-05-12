@@ -21,7 +21,7 @@ export class MultipleDemo {
   private openSelect: 'false';
   private filterValue: string;
   private errorMessage: any;
-  private activeVisible = 'close';
+  private activeVisible = 'open';
   private _items: Array<any> = [];
 
   public selectedItems: Array<Item> = new Array<Item>();

@@ -105,10 +105,7 @@ describe('MultipleDemo', () => {
   }));
 
   it('shows list of items by default', inject([TestComponentBuilder], (_tcb: TestComponentBuilder) => {
-    return _tcb
-      .overrideProviders(MultipleDemo, [provide(MultipleDemo, { useValue: Item })])
-      .createAsync(MultipleDemo)
-      .then((fixture) => {
+    return _tcb.createAsync(MultipleDemo).then((fixture: ComponentFixture) => {
         let nativeElement = fixture.nativeElement;
         fixture.detectChanges();
         expect(nativeElement.querySelector('li') === null).toBe(true);

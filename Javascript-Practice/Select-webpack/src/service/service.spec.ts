@@ -16,7 +16,7 @@ import {
 
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {ItemService} from './service';
-import 'rxjs/operator/map';
+import 'rxjs/Rx';
 
 describe('Service: ItemService', () => {
   let itemservice: any;
@@ -31,8 +31,10 @@ describe('Service: ItemService', () => {
     itemservice = s;
   }));
 
-  it('should return available items',() => {
-    let items = itemservice.getItem('data.json');
-    expect(items).toContain('');
+  it('should return available items',(done:any) => {
+    this.itemservice.getItem('http://api.geonames.org/postalCodeSearchJSON?postalcode=9011&maxRows=10&username=demo').map((x: any) => {
+      expect(x).toContain('');
+      done();
+    });
   });
 });
