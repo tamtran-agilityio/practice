@@ -7,5 +7,7 @@ import {Component} from 'angular2/core';
 })
 
 export class CreateBoardComponent {
-
+  onSubmit(value: any){
+    console.log("ADASSAS", value);
+  }
 }

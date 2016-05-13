@@ -200,5 +200,11 @@ header {
 }
 
 .title-header-name {
-
+  display: inline-block;
+  line-height: 24px;
+  margin: 3px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #4d4d4d;
 }
+

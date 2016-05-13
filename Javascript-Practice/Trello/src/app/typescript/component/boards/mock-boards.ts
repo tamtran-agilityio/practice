@@ -1,5 +1,5 @@
 import {Board} from './board';
-export var BOARDS: Board[] = [
+export let BOARDS: Board[] = [
   { "name": "Gmail" },
   { "name": "Report" },
   { "name": "Saffron" },
