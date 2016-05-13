@@ -1,0 +1,10 @@
+# new folder 
+node_modules
+dist
+typings
+# new files
+npm-debug.log
+*.*~
+*.log
+*.js
+*.map
