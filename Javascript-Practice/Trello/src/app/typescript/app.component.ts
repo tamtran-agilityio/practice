@@ -3,9 +3,9 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
 import {Board} from './component/boards/board';
 import {DashBoardComponent} from './component/dashboard/dashboard.component';
-import {BoardListComponent} from './component/boards/board-list.component';
-import {CreateBoardComponent} from './component/create-board/board-create.component'
-
+import {BoardListComponent} from './component/boards/board-list-details.component';
+import {CreateBoardComponent} from './component/create-board/board-create.component';
+import {BoardDetailComponent} from './component/boards/board-details.component';
 
 @Component({
   selector: 'my-app',
@@ -46,7 +46,7 @@ import {CreateBoardComponent} from './component/create-board/board-create.compon
 
 @RouteConfig([
   {
-    path: '',
+    path: '/',
     name: 'BoardContent',
     component: DashBoardComponent,
     useAsDefault: true
@@ -57,9 +57,9 @@ import {CreateBoardComponent} from './component/create-board/board-create.compon
     component: BoardListComponent
   },
   {
-    path: '/create-board',
-    name: 'CreateBoards',
-    component: CreateBoardComponent
+    path: '/board-detail/:id',
+    name: 'BoardsDetail',
+    component: BoardDetailComponent
   }
 ])
 

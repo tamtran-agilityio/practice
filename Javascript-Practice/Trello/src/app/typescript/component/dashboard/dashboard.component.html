@@ -7,13 +7,13 @@
     </div>
     <ul class="board-list">
       <li  *ngFor="#selected of selectedItems;" class="board-list-item">
-        <a href="#" (click)="onSelect(selected)" class="board-item board-tile">
+        <a href="#" (click)="onSelect(selected)" [routerLink]="['BoardsDetail', { id: selected.name }]" class="board-item board-tile">
           <span class="board-tile-fade"></span>
           <span class="board-tile-details">{{selected.name}}</span>
-          <span class="board-tile-options" (click)="onSelectStart(selected)">
-            <span class="board-tile-options-star-icon"></span>
-          </span>
         </a>
+        <span class="board-tile-options" (click)="onSelectStart(selected)">
+          <span class="board-tile-options-star-icon"></span>
+        </span>
       </li>
     </ul>
   </div>
@@ -24,13 +24,13 @@
     </div>
     <ul class="board-list">
       <li  *ngFor="#board of boards" [value]="board" class="board-list-item">
-        <a href="#" (click)="onSelect(board)" class="board-item board-tile">
+        <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.name }]" class="board-item board-tile">
           <span class="board-tile-fade"></span>
           <span class="board-tile-details">{{board.name}}</span>
-          <span class="board-tile-options" (click)="onSelectStart(board)">
-            <span class="board-tile-options-star-icon"></span>
-          </span>
         </a>
+        <span class="board-tile-options" (click)="onSelectStart(board)">
+          <span class="board-tile-options-star-icon"></span>
+        </span>
       </li>
       <li class="board-list-item">
         <a href="#" (click)="createBoard()" data-toggle="modal" data-target="#creatModal" class="board-item board-create">

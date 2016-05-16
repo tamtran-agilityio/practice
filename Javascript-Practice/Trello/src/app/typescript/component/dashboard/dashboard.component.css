@@ -6,6 +6,7 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .board-list-item {
@@ -73,7 +74,7 @@
 .board-tile-options {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 16px;
   z-index: 3;
 }
 
