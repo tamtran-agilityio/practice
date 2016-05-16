@@ -28,6 +28,7 @@
   padding: 8px 9pt;
   position: relative;
   text-decoration: none;
+  outline: none;
 }
 
 .board-tile {
@@ -78,8 +79,24 @@
   z-index: 3;
 }
 
-
 .board-tile-options-star-icon {
+  color: #fff;
+  bottom: 0;
+  font-size: 14px;
+  width: 0;
+  height: 18px;
+  opacity: 0;
+  padding: 9px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  -webkit-transition-duration: .15s;
+  transition-duration: .15s;
+  -webkit-transition-property: color,background,opacity,-webkit-transform,width;
+  transition-property: color,background,opacity,transform,width;
+}
+
+.fa-star-o {
   color: #fff;
   bottom: 0;
   font-size: 14px;
@@ -95,7 +112,20 @@
   transition-property: color,background,opacity,transform,width;
 }
 
-.board-tile-options-star-icon:before {
-  content: '*';
+.fa-star-o:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
 }
 
+.active .fa-star-o {
+  color: #e6c60d;
+  width: 18px;
+  opacity: 1;
+  text-align: center;
+}
+
+.board-list-item:hover .fa-star-o {
+  width: 18px;
+  opacity: 0.8;
+}

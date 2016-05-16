@@ -17,9 +17,12 @@ import {BoardDetailComponent} from '../boards/board-details.component';
 
 export class DashBoardComponent implements OnInit {
 
+  isActive: string = 'close';
+  isActiveSelect: string = 'open';
+  nameActive: string;
   boards: Board[] = [];
   public selectedItems: Array<Board> = new Array<Board>();
-  constructor(private _boardService: BoardService, private _router: Router) { }
+  constructor(private _boardService: BoardService, private _router: Router) {}
 
   ngOnInit() {
     this._boardService.getBoards().then(boards => this.boards = boards);
@@ -46,9 +49,12 @@ export class DashBoardComponent implements OnInit {
     }
   }
 
+  onCheckActive(boards: Array<any>, value: any) {
+
+  }
+
   onSelect(board: Board) {
-    console.log("board", board.name);
-        }
+  }
 
   onSelectStart(board: Board) {
     this.onCheckSelectStart(this.selectedItems, board);

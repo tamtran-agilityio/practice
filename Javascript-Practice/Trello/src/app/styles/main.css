@@ -80,6 +80,7 @@ header {
 
 .header-btn {
   position: relative;
+  text-align: center;
   height: 30px;
   background: -webkit-linear-gradient(top,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
   background: linear-gradient(to bottom,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
@@ -168,7 +169,7 @@ header {
 }
 
 .header-boards {
-  padding-left: 26px;
+  padding-left: 8px;
 }
 
 /*content page  */
@@ -208,3 +209,8 @@ header {
   color: #4d4d4d;
 }
 
+.fa-plus-square {
+  background-color: rgba(255,255,255,.3);
+  color: #FFF;
+  font-size: 32px !important;
+}

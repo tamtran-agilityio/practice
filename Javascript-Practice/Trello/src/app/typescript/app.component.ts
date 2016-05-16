@@ -17,13 +17,13 @@ import {BoardDetailComponent} from './component/boards/board-details.component';
     </a>
     <div class="header-boards-button">
       <a [routerLink]="['BoarList']" class="header-btn header-boards">
-        <span class="header-btn-icon"></span>
+        <i class="fa fa-clipboard" aria-hidden="true"></i>
         <span class="header-btn-text"> Boards </span>
       </a>
     </div>
     <div class="header-user">
       <a class="header-btn" data-toggle="modal" data-target="#myModal">
-        <span class="header-btn-icon"></span>
+        <i class="fa fa-plus" aria-hidden="true"></i>
       </a>
 
       <a href="#" class="header-btn header-member">
@@ -32,8 +32,12 @@ import {BoardDetailComponent} from './component/boards/board-details.component';
         </span>
         <span class="header-btn-text"> Tamtamxuan</span>
       </a>
-      <a href="#" class="header-btn "></a>
-      <a href="#" class="header-btn "></a>
+      <a href="#" class="header-btn ">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+      </a>
+      <a href="#" class="header-btn ">
+        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
+      </a>
     </div>
   </header>
   <div class="content">
