@@ -2,12 +2,15 @@ import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Board} from '../boards/board';
 import {BoardService} from '../service/board-service';
+import {CreateBoardComponent} from '../create-board/board-create.component';
+import {CreatAction} from '../create-board/create-action.component';
 
 @Component({
   selector: 'content-wapper',
   templateUrl:'app/typescript/component/dashboard/dashboard.component.html',
   styleUrls: ['app/typescript/component/dashboard/dashboard.component.css'],
-  providers: [BoardService]
+  providers: [BoardService],
+  directives: [CreatAction, CreateBoardComponent]
 })
 
 export class DashBoardComponent implements OnInit {

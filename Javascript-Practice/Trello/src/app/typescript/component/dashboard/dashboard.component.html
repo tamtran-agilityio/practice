@@ -1,4 +1,5 @@
 <section class="boards-content">
+  <create-action></create-action>
   <div class="boards-page-board-section">
     <div class="board-section-header">
       <div class="title-header-icon"></div>
@@ -32,11 +33,12 @@
         </a>
       </li>
       <li class="board-list-item">
-        <a href="#" (click)="createBoard()" class="board-item board-create">
+        <a href="#" (click)="createBoard()" data-toggle="modal" data-target="#creatModal" class="board-item board-create">
           <span class="board-tile-fade"></span>
           <span class="board-create-details"> Create new board… </span>
         </a>
       </li>
+      <pop-over></pop-over>
     </ul>
   </div>
 </section>

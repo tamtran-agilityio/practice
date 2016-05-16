@@ -22,9 +22,10 @@ import {CreateBoardComponent} from './component/create-board/board-create.compon
       </a>
     </div>
     <div class="header-user">
-      <a [routerLink]="['CreateBoards']" class="header-btn">
+      <a class="header-btn" data-toggle="modal" data-target="#myModal">
         <span class="header-btn-icon"></span>
       </a>
+
       <a href="#" class="header-btn header-member">
         <span class="member">
           <span class="member-initials"></span>
