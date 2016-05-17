@@ -1,17 +1,18 @@
 import { Injectable } from 'angular2/core';
 
-import { BOARDS }     from '../boards/mock-boards';
-
 @Injectable()
 
 export class BoardService {
   getBoards() {
-    return Promise.resolve(BOARDS);
+    let board = localStorage.getItem("board-item");
+    let temp = JSON.parse(board);
+
+    return Promise.resolve(temp);
   }
 
   getBoard(name: string) {
-    return Promise.resolve(BOARDS).then(
-      boards => boards.filter(board => board.name === name)[0]
-    );
+    // return Promise.resolve(BOARDS).then(
+    //   boards => boards.filter(board => board.name === name)[0]
+    // );
   }
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
 import {Board} from '../boards/board';
@@ -9,6 +9,7 @@ import {BoardDetailComponent} from '../boards/board-details.component';
 
 @Component({
   selector: 'content-wapper',
+  properties: ['isStart', 'isDisabled'],
   templateUrl:'app/typescript/component/dashboard/dashboard.component.html',
   styleUrls: ['app/typescript/component/dashboard/dashboard.component.css'],
   providers: [BoardService, HTTP_PROVIDERS],
@@ -17,15 +18,35 @@ import {BoardDetailComponent} from '../boards/board-details.component';
 
 export class DashBoardComponent implements OnInit {
 
-  isActive: string = 'close';
-  isActiveSelect: string = 'open';
-  nameActive: string;
-  boards: Board[] = [];
+  private isActive: string = 'close';
+  private isActiveSelect: string = 'Start';
+  private nameActive: string;
+  private boards: Board[] = [];
+  private isDisabled: boolean = false;
+  private _isStart: boolean = false;
   public selectedItems: Array<Board> = new Array<Board>();
+
   constructor(private _boardService: BoardService, private _router: Router) {}
+
+  public get isStart(): boolean {
+    return this._isStart;
+  }
+
+  public set isStart(value: boolean) {
+    this._isStart = value;
+  }
 
   ngOnInit() {
     this._boardService.getBoards().then(boards => this.boards = boards);
+  }
+
+  toggleStart(event) {
+    console.log("SDDDDDDDDDDDDDDD");
+    event.preventDefault();
+    // if (!this.isDisabled) {
+      // console.log("SDDDDDDDDDDDDDDDAAAA", this.isDisabled);
+      this.isStart = !this.isStart;
+    // }
   }
 
   onCheckSelectStart(boards: Array<any>, value: any) {
@@ -49,17 +70,15 @@ export class DashBoardComponent implements OnInit {
     }
   }
 
-  onCheckActive(boards: Array<any>, value: any) {
-
-  }
-
-  onSelect(board: Board) {
-  }
-
   onSelectStart(board: Board) {
     this.onCheckSelectStart(this.selectedItems, board);
   }
 
+  onSelect() {
+
+  }
+
   createBoard() {
   }
+
 }

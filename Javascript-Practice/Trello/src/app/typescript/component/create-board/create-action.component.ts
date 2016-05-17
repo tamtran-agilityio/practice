@@ -7,9 +7,9 @@ import {Component} from 'angular2/core';
 })
 
 export class CreatAction {
-  isActive: boolean = true;
+  isActive: boolean = false;
   onCreateBoard() {
-    console.log("SSSSSSSSSSSSSSSS");
-    this.isActive = false;
+    this.isActive = true;
+    console.log("DDDDDDDDDDD", this.isActive);
   }
 }

@@ -11,14 +11,11 @@ import {BoardListComponent} from './board-list-details.component';
 })
 
 export class BoardDetailComponent {
-  @Input()
-    board: string;
+  board: string;
 
-    // id: string;
-    constructor(params: RouteParams) {
-      this.board = params.get('id');
-      // this.board = this.id;
-      console.log("id", this.board);
-    }
+  constructor(params: RouteParams) {
+    this.board = params.get('id');
+    console.log("id", this.board);
+  }
 
 }

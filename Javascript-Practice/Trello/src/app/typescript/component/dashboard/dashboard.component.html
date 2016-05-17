@@ -9,7 +9,7 @@
       <li  *ngFor="#selected of selectedItems;" class="board-list-item">
         <a href="#" (click)="onSelect(selected)" [routerLink]="['BoardsDetail', { id: selected.name }]" class="board-item board-tile">
           <span class="board-tile-fade"></span>
-          <span class="board-tile-details">{{selected.name}} {{isActive}}</span>
+          <span class="board-tile-details">{{selected.name}}</span>
         </a>
         <span class="board-tile-options active"(click)="onSelectStart(selected)">
           <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -26,10 +26,10 @@
       <li  *ngFor="#board of boards #i=index" [value]="board" class="board-list-item">
         <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.name }]" class="board-item board-tile">
           <span class="board-tile-fade"></span>
-          <span class="board-tile-details">{{board.name}} {{i}} {{isActive}}</span>
+          <span class="board-tile-details">{{board.name}} {{board.start}}</span>
         </a>
-        <span class="board-tile-options" [ngClass]="{active: isActive==='open'}" (click)="isActive ='open'; onSelectStart(board)">
-          <i class="fa fa-star-o" aria-hidden="true"></i>
+        <span class="board-tile-options" [class.active]="board.start != _isStart" (click)="onSelectStart(board)">
+          <i class="fa fa-star-o" (click)="toggleStart($event)" ></i>
         </span>
       </li>
       <li class="board-list-item">
