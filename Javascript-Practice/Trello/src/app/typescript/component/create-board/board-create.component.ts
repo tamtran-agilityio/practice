@@ -2,7 +2,7 @@ import {Component, Input} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
-import {Board} from '../boards/board';
+import {Board} from '../../model/board';
 
 
 @Component({

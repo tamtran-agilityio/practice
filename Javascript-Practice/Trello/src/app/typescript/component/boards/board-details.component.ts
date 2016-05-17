@@ -1,6 +1,6 @@
 import {Component, Input} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
-import {Board} from './board';
+import {Board} from '../../model/board';
 import {BoardListComponent} from './board-list-details.component';
 
 @Component({

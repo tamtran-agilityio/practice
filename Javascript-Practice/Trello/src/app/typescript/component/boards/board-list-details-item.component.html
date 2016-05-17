@@ -1,9 +1,9 @@
-<div class="list-work-wrapper">
+<div class="list-work-wrapper" *ngFor="#card of cards #i=index">
   <div class="list-work-content">
     <div class="list-header">
       <div class="list-header-target"></div>
       <h2 class="list-name-assist"></h2>
-      <textarea class="list-header-name" >{{value}}</textarea>
+      <textarea class="list-header-name" >{{card.name}}</textarea>
     </div>
     <div class="list-cards">
       <div class="list-card-item">
@@ -14,6 +14,26 @@
           </a>
         </div>
       </div>
+      <div class="card-composer">
+        <div class="list-card js-composer">
+          <div class="list-card-details u-clearfix">
+            <div class="list-card-labels u-clearfix js-list-card-composer-labels"></div>
+            <textarea class="list-card-composer-textarea js-card-title" dir="auto" style="overflow: hidden; word-wrap: break-word; resize: none; height: 54px;"></textarea>
+            <div class="list-card-members js-list-card-composer-members">
+            </div>
+          </div>
+        </div>
+        <div class="cc-controls u-clearfix">
+          <div class="cc-controls-section">
+            <input class="primary confirm mod-compact js-add-card" type="submit" value="Add">
+              <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+          </div>
+          <div class="cc-controls-section mod-right">
+            <a class="icon-lg icon-overflow-menu-horizontal dark-background-hover js-cc-menu" href="#"></a>
+          </div>
+        </div>
+      </div>
     </div>
+    <a class="open-card-composer" href="#">Add a card…</a>
   </div>
 </div>

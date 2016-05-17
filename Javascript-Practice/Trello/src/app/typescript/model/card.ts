@@ -1,11 +1,12 @@
-export class Board {
-  private name: string;
+export class Card {
   private id: number;
-  start: boolean;
+  private name: string;
+  private board_id: number;
 
   get _id() {
     return this.name;
   }
+
   set _id(value: string) {
     this.name = value;
   }
@@ -13,13 +14,14 @@ export class Board {
   get title() {
     return this.name;
   }
+
   set title(value: string) {
     this.name = value;
   }
 
-  constructor(title: string, _id: number) {
-    this.title = title;
+  constructor(title: string, _id: number, _board_id: number) {
     this.id = _id;
-    this.start = false;
+    this.title = title;
+    this.board_id = _board_id;
   }
 }

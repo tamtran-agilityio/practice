@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
-import {Board} from '../boards/board';
+import {Board} from '../../model/board';
 import {BoardService} from '../service/board-service';
 import {CreateBoardComponent} from '../create-board/board-create.component';
 import {CreatAction} from '../create-board/create-action.component';
