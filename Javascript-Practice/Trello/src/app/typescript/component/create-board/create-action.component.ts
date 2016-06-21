@@ -10,6 +10,5 @@ export class CreatAction {
   isActive: boolean = false;
   onCreateBoard() {
     this.isActive = true;
-    console.log("DDDDDDDDDDD", this.isActive);
   }
 }

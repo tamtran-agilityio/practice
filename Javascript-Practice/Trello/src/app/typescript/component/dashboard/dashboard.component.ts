@@ -40,13 +40,13 @@ export class DashBoardComponent implements OnInit {
     this._boardService.getBoards().then(boards => this.boards = boards);
   }
 
-  toggleStart(event) {
-    console.log("SDDDDDDDDDDDDDDD");
-    event.preventDefault();
-    // if (!this.isDisabled) {
-      // console.log("SDDDDDDDDDDDDDDDAAAA", this.isDisabled);
-      this.isStart = !this.isStart;
-    // }
+  private updateStore() {
+    localStorage.setItem('board-item', JSON.stringify(this.boards));
+  }
+
+  toggleStart(board: Board) {
+    board.start = !board.start;
+    this.updateStore();
   }
 
   onCheckSelectStart(boards: Array<any>, value: any) {
@@ -72,6 +72,7 @@ export class DashBoardComponent implements OnInit {
 
   onSelectStart(board: Board) {
     this.onCheckSelectStart(this.selectedItems, board);
+    this.toggleStart(board);
   }
 
   onSelect() {

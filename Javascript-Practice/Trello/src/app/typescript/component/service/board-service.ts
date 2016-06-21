@@ -6,7 +6,6 @@ export class BoardService {
   getBoards() {
     let board = localStorage.getItem("board-item");
     let temp = JSON.parse(board);
-
     return Promise.resolve(temp);
   }
 
