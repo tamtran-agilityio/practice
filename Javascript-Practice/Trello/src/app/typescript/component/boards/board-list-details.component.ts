@@ -15,16 +15,16 @@ import {Card} from '../../model/card';
 export class BoardListComponent {
   isActive: boolean = false;
 
-  cards: Array<Card>;
-  board_id_load: string;
+  private cards: Array<Card>;
+  private board_id_load: Number;
 
-  constructor(_params: RouteParams) {
+  constructor(private _params: RouteParams) {
     this.board_id_load = _params.get('id');
-    console.log("id", this.board_id_load);
+    console.log("id zAAAAAAAAAA", this.board_id_load);
 
     let persistedBoads = JSON.parse(localStorage.getItem('card-item') || '[]');
-    this.cards = persistedBoads.map((card: { _title: string, _id: number, card_id: number }) => {
-    let ret = new Card(card._title, card._id, card.card_id);
+    this.cards = persistedBoads.map((card: { name: String, id: Number, board_id: Number }) => {
+    let ret = new Card(card.name, card.id, card.board_id);
       return ret;
     });
   }

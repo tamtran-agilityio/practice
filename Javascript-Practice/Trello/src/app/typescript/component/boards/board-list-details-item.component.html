@@ -1,5 +1,5 @@
-<div class="list-work-wrapper" *ngFor="#card of cards #i=index">
-  <div class="list-work-content">
+<div *ngFor="#card of cards" [class.hidden]="card.board_id != boardId" class="list-work-wrapper">
+  <div *ngIf="card.board_id == boardId" class="list-work-content">
     <div class="list-header">
       <div class="list-header-target"></div>
       <h2 class="list-name-assist"></h2>

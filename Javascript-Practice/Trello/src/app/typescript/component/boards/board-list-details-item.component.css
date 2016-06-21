@@ -175,3 +175,7 @@
   text-decoration: none;
   user-select: none;
 }
+
+.hidden {
+  display: none;
+}
