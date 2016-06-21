@@ -23,11 +23,10 @@ import {BoardDetailComponent} from '../boards/board-details.component';
 
 export class CreateBoardComponent {
   boards: Array<Board>;
-  isActive: boolean = true;
+  private isActive: boolean = true;
 
   constructor(public _router: Router) {
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
-    console.log("persistedBoads", persistedBoads);
     this.boards = persistedBoads.map( (board: { name: String, id: Number, start: Boolean }) => {
     let ret = new Board(board.name, board.id);
       ret.start = board.start;
@@ -43,5 +42,6 @@ export class CreateBoardComponent {
     id = parseInt(this.boards.length.toString()) + 1;
     this.boards.push(new Board(value['name'], id));
     this.updateStore();
+    this._router.parent.navigate(['BoardsDetail', {id: id}]);
   }
 }

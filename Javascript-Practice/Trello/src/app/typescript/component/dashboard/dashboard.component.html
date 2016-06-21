@@ -7,7 +7,7 @@
     </div>
     <ul class="board-list">
       <!-- <li  *ngFor="#selected of selectedItems;" class="board-list-item"> -->
-      <li  *ngFor="#board of boards #i=index" [value]="board" class="board-list-item">
+      <li  *ngFor="#board of boards #i=index" [value]="board" [hidden]="board.start === false" class="board-list-item">
         <div *ngIf="board.start === true">
         <!-- <a href="#" (click)="onSelect(selected)" [routerLink]="['BoardsDetail', { id: selected.name }]" class="board-item board-tile"> -->
         <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.id }]" class="board-item board-tile">
@@ -30,7 +30,7 @@
       <li  *ngFor="#board of boards #i=index" [value]="board" class="board-list-item">
         <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.id }]" class="board-item board-tile">
           <span class="board-tile-fade"></span>
-          <span class="board-tile-details">{{board.name}} {{board.start}}</span>
+          <span class="board-tile-details">{{board.name}}</span>
         </a>
         <span class="board-tile-options" [class.active]="board.start != _isStart" (click)="onSelectStart(board)">
           <i class="fa fa-star-o" (click)="toggleStart($event)" ></i>
