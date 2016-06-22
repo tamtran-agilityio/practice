@@ -14,12 +14,13 @@ import {BoardService} from '../service/board-service';
 })
 
 export class BoardListComponent implements OnInit{
-  isActive: boolean = false;
-
+  private isActive: boolean = false;
+  private openActive: boolean = false;
   private cards: Card[] = [];
   private cardsInit: Card[];
-  private boardId: Number;
+  private boardId: number;
   private count: number;
+  private nameCard: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.boardId = parseInt(_params.get('id'));
@@ -40,7 +41,7 @@ export class BoardListComponent implements OnInit{
     localStorage.setItem('card-item', JSON.stringify(this.cards));
   }
 
-  onTagget(value: string, card_id: number, board_id: number) {
+  onTagget(value: string, card_id: number, board_id: number, id: number) {
     board_id = parseInt(this.boardId.toString());
     card_id = parseInt(this.cards.length.toString()) + 1;
     this.cards.push(new Card(value['name'], card_id, board_id));

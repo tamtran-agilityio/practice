@@ -65,7 +65,7 @@
   font-weight: 700;
   margin: -3px -5px;
   min-height: 18px;
-  padding: 3px 5px;
+  padding: 0px 8px;
   resize: none;
   outline: none;
 }
@@ -105,6 +105,13 @@
 
 .list-work-wrapper:first-child {
   margin-left: 10px;
+}
+
+.list-card-details {
+  overflow: hidden;
+  padding: 6px 6px 2px 8px;
+  position: relative;
+  z-index: 10;
 }
 
 .mod-add.is-idle .placeholder {
@@ -218,7 +225,6 @@ input {
   text-align: center;
 }
 
-
 .icon-lg {
   height: 30px;
   font-size: 20px !important;
@@ -234,4 +240,18 @@ input {
 
 .hidden {
   display: none;
+}
+
+.open-card-composer {
+  border-radius: 0 0 3px 3px;
+  color: #8c8c8c;
+  display: block;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
 }

@@ -16,6 +16,13 @@ export class BoardService {
     return Promise.resolve(temp);
   }
 
+  getMemberCards() {
+    let cardMember = localStorage.getItem("card-member");
+    let temp = JSON.parse(cardMember);
+
+    return Promise.resolve(temp);
+  }
+
   getBoard(name: string) {
     // return Promise.resolve(BOARDS).then(
     //   boards => boards.filter(board => board.name === name)[0]

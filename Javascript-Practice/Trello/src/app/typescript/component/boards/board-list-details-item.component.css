@@ -26,7 +26,6 @@
 
 .list-card {
   overflow-y: overlay;
-  margin-right: 2px;
   padding: 0 9px 0 5px;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
@@ -34,13 +33,12 @@
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 0 4px;
   padding: 0 4px;
   z-index: 1;
   min-height: 0;
 }
 
-.list-header-name {
+/*.list-header-name {
   overflow: hidden;
   word-wrap: break-word;
   height: 24px;
@@ -52,17 +50,17 @@
   font-weight: 700;
   margin: -3px -5px;
   min-height: 18px;
-  padding: 3px 5px;
+  padding: 0px 7px;
   resize: none;
   outline: none;
 }
-
+*/
 .list-card-item {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   border-radius: 3px;
   cursor: pointer;
-  margin-bottom: 6px;
+  margin: 4px 5px 6px 6px;
   max-width: 300px;
   min-height: 20px;
   position: relative;
@@ -87,11 +85,9 @@
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
-  margin: 0 4px;
   z-index: 1;
   min-height: 0;
   overflow-y: overlay;
-  margin-right: 2px;
   padding: 0 9px 10px 5px;
 }
 
@@ -124,9 +120,16 @@
 
 .list-name-assist {
   font-size: 18px;
-  margin: 0 0 9px;
+  margin: 0;
   line-height: 22px;
   display: none;
+}
+
+.list-card-detail {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .list-card-details {
@@ -173,7 +176,7 @@
   float: left;
   min-height: 30px;
   height: 30px;
-  margin-top: 0;
+  margin-left: 4px;
   padding-top: 4px;
   padding-bottom: 4px;
   background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
@@ -189,4 +192,33 @@
   padding: 7px 20px;
   text-align: center;
   border-radius: 5px;
+}
+
+.list-card-composer-textarea {
+  resize: vertical;
+  -webkit-transition: background 85ms ease-in,border-color 85ms ease-in;
+  transition: background 85ms ease-in,border-color 85ms ease-in;
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 70px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 4px;
+  max-height: 162px;
+  min-height: 54px;
+  overflow-y: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 1px solid #cdd2d4;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 9pt;
+  min-height: 34px;
+  padding: 7px;
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+  line-height: 18px;
 }
