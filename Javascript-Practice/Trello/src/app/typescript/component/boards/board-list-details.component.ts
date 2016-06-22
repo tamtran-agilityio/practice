@@ -1,8 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
-import {RouteParams} from 'angular2/router';
+import {RouteParams, Router} from 'angular2/router';
 import {BoardListItemComponent} from './board-list-details-item.component';
 import {Card} from '../../model/card';
+import {BoardService} from '../service/board-service';
 
 @Component({
   selector: 'board-list',
@@ -12,21 +13,27 @@ import {Card} from '../../model/card';
   directives: [BoardListItemComponent]
 })
 
-export class BoardListComponent {
+export class BoardListComponent implements OnInit{
   isActive: boolean = false;
 
-  private cards: Array<Card>;
-  private board_id_load: Number;
+  private cards: Card[] = [];
+  private cardsInit: Card[];
+  private boardId: Number;
+  private count: number;
 
-  constructor(private _params: RouteParams) {
-    this.board_id_load = _params.get('id');
-    console.log("id zAAAAAAAAAA", this.board_id_load);
+  constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
+    this.boardId = parseInt(_params.get('id'));
 
     let persistedBoads = JSON.parse(localStorage.getItem('card-item') || '[]');
-    this.cards = persistedBoads.map((card: { name: String, id: Number, board_id: Number }) => {
+    
+    this.cards = persistedBoads.map((card: { name: string, id: number, board_id: number }) => {
     let ret = new Card(card.name, card.id, card.board_id);
       return ret;
     });
+  }
+
+  ngOnInit() {
+    this._boardService.getCards().then(cardsInit => this.cardsInit = cardsInit);
   }
 
   private updateStore() {
@@ -34,8 +41,9 @@ export class BoardListComponent {
   }
 
   onTagget(value: string, card_id: number, board_id: number) {
-    board_id = parseInt(this.board_id_load.toString());
+    board_id = parseInt(this.boardId.toString());
     card_id = parseInt(this.cards.length.toString()) + 1;
+    console.log("value", value, "card_id", card_id, " board_id", board_id);
     this.cards.push(new Card(value['name'], card_id, board_id));
     this.updateStore();
   }

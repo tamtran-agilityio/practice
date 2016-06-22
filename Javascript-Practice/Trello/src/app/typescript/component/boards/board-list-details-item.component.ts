@@ -1,7 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS}    from 'angular2/http';
-import {RouteParams} from 'angular2/router';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
 import {Card} from '../../model/card';
 import {BoardService} from '../service/board-service';
@@ -19,8 +18,7 @@ export class BoardListItemComponent implements OnInit {
   private boardId: Number;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
-    this.boardId = _params.get('id');
-    console.log("id AAAAAAAAAAAAAA", this.boardId);
+    this.boardId = parseInt(_params.get('id'));
   }
 
   ngOnInit() {

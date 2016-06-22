@@ -27,14 +27,14 @@ export class CreateBoardComponent {
 
   constructor(public _router: Router) {
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
-    this.boards = persistedBoads.map( (board: { name: String, id: Number, start: Boolean }) => {
+    this.boards = persistedBoads.map( (board: { name: string, id: number, start: boolean }) => {
     let ret = new Board(board.name, board.id);
       ret.start = board.start;
       return ret;
     });
   }
 
-  private updateStore(data:any) { 
+  private updateStore() { 
     localStorage.setItem('board-item', JSON.stringify(this.boards));
   }
 

@@ -37,7 +37,7 @@
 
 .board-header-btn {
   cursor: default;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 30px;
   padding-left: 4px;
@@ -61,7 +61,7 @@
 
 .board-header-btn-text {
   padding-right: 8px;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .board-canvas {

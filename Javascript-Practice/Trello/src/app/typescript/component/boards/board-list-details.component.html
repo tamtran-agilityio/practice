@@ -1,5 +1,14 @@
 <div class="board-list-container">
-  <list-work-item></list-work-item>
+  <div *ngFor="#card of cards" [class.hidden]="card.board_id != boardId" class="list-work-wrapper">
+    <div *ngIf="card.board_id == boardId" class="list-work-content">
+      <div class="list-header">
+        <div class="list-header-target"></div>
+        <h2 class="list-name-assist"></h2>
+        <textarea class="list-header-name" >{{card.name}}</textarea>
+      </div>
+      <list-work-item></list-work-item>
+    </div>
+  </div>
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
     <form (ngSubmit)="onTagget(createForm.value)" #createForm="ngForm">
       <span class="placeholder" (click)="isActive = !isActive" > Add a list ...</span>
