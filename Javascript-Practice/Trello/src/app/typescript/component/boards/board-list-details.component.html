@@ -3,10 +3,10 @@
     <div *ngIf="card.board_id == boardId" class="list-work-content">
       <div class="list-header">
         <div class="list-header-target"></div>
-        <h2 class="list-name-assist"></h2>
+        <h2 class="list-name-assist hidden"></h2>
         <textarea class="list-header-name" >{{card.name}}</textarea>
       </div>
-      <list-work-item></list-work-item>
+      <list-work-item [cardId]="card.id"></list-work-item>
     </div>
   </div>
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
@@ -14,11 +14,11 @@
       <span class="placeholder" (click)="isActive = !isActive" > Add a list ...</span>
       <input type="text" class="list-name-input" required ngControl="name" [(ngModel)]="nameCard"  #name="ngForm"
                 placeholder="Add a list…">
-      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      <div [hidden]="name || name.pristine" class="alert alert-danger">
         title is required
       </div>
       <div class="list-add-controls u-clearfix">
-        <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save" [disabled]="!createForm.form.valid">
+        <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save" [disabled]="!createForm.form">
         <a class="icon-lg icon-close dark-hover js-cancel-edit" href="#">
           <i class="fa fa-times" aria-hidden="true"></i>
         </a>
