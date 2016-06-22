@@ -14,6 +14,7 @@ import {BoardService} from '../service/board-service';
 })
 
 export class BoardListItemComponent implements OnInit {
+  private openActive: Boolean = false;
   private cards: Card[];
   private boardId: Number;
 

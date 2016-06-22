@@ -12,7 +12,7 @@
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
     <form (ngSubmit)="onTagget(createForm.value)" #createForm="ngForm">
       <span class="placeholder" (click)="isActive = !isActive" > Add a list ...</span>
-      <input type="text" class="list-name-input" required ngControl="name"  #name="ngForm"
+      <input type="text" class="list-name-input" required ngControl="name" [(ngModel)]="nameCard"  #name="ngForm"
                 placeholder="Add a list…">
       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
         title is required

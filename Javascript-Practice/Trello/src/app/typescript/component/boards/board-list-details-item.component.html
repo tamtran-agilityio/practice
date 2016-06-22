@@ -2,16 +2,16 @@
   <div class="list-card-item">
     <span class="icon-edit"></span>
     <div class="list-card-details">
-      <a href="#" class="list-card-title">
-        Welcome to Trello!
+      <a href="javascript:void(0)" class="list-card-title">
+        New member
       </a>
     </div>
   </div>
-  <div class="card-composer">
+  <div class="card-composer" [hidden]="openActive === false">
     <div class="list-card js-composer">
       <div class="list-card-details u-clearfix">
         <div class="list-card-labels u-clearfix js-list-card-composer-labels"></div>
-        <textarea class="list-card-composer-textarea js-card-title" dir="auto" style="overflow: hidden; word-wrap: break-word; resize: none; height: 54px;"></textarea>
+        <textarea class="list-card-composer-textarea js-card-title" dir="auto"></textarea>
         <div class="list-card-members js-list-card-composer-members">
         </div>
       </div>
@@ -27,4 +27,4 @@
     </div>
   </div>
 </div>
-<a class="open-card-composer" href="#">Add a card…</a>
+<a class="open-card-composer" href="javascript:void(0)" (click)="openActive = !openActive"[class.hide]="openActive === true" >Add a card…</a>

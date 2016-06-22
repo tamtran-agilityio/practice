@@ -43,8 +43,8 @@ export class BoardListComponent implements OnInit{
   onTagget(value: string, card_id: number, board_id: number) {
     board_id = parseInt(this.boardId.toString());
     card_id = parseInt(this.cards.length.toString()) + 1;
-    console.log("value", value, "card_id", card_id, " board_id", board_id);
     this.cards.push(new Card(value['name'], card_id, board_id));
     this.updateStore();
+    this.nameCard = '';
   }
 }
