@@ -21,6 +21,7 @@ export class BoardListItemComponent implements OnInit {
   private cardMemberItems: CardMember[];
   private boardId: number;
   private cardId: string;
+  private cardMember: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -45,9 +46,13 @@ export class BoardListItemComponent implements OnInit {
   onSave(value: string, memberId: number, card_id: number) {
     card_id = parseInt(this.cardId.toString());
     memberId = parseInt(this.cardMembers.length.toString()) + 1;
-    this.cardMembers.push(new CardMember(value['name'], memberId, card_id));
-    this.updateStore();
-    this.cardMember= '';
+    if ((value['name'] != "") && (value['name'] != undefined)) {
+      this.cardMembers.push(new CardMember(value['name'], memberId, card_id));
+      this.updateStore();
+      this.cardMember= '';
+    } else {
+      return;
+    }
   }
 
   onAdd() {
