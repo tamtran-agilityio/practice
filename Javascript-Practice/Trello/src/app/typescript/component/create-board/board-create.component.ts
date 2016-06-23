@@ -23,7 +23,7 @@ import {BoardDetailComponent} from '../boards/board-details.component';
 
 export class CreateBoardComponent {
   boards: Array<Board>;
-  private isActive: boolean = true;
+  private isActivePop: boolean = false;
 
   constructor(public _router: Router) {
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
@@ -39,6 +39,8 @@ export class CreateBoardComponent {
   }
 
   onSubmit(value: string, id: number){
+    this.isActivePop = true;
+    console.log("SSSS:", this.isActivePop);
     id = parseInt(this.boards.length.toString()) + 1;
     this.boards.push(new Board(value['name'], id));
     this.updateStore();
