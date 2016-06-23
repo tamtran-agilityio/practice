@@ -38,23 +38,6 @@
   min-height: 0;
 }
 
-/*.list-header-name {
-  overflow: hidden;
-  word-wrap: break-word;
-  height: 24px;
-  background: 0 0;
-  border: none;
-  line-height: 30px;
-  border-radius: 3px;
-  box-shadow: none;
-  font-weight: 700;
-  margin: -3px -5px;
-  min-height: 18px;
-  padding: 0px 7px;
-  resize: none;
-  outline: none;
-}
-*/
 .list-card-item {
   background-color: #fff;
   border-bottom: 1px solid #ccc;

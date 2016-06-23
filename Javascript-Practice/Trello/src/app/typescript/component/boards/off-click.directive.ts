@@ -8,7 +8,7 @@ import {Directive, Host, Dependency, Input} from 'angular2/core';
   }
 })
 
-export default class OffClickDirective {
+export class OffClickDirective {
   @Input('offClick') offClickHandler;
 
   constructor() {

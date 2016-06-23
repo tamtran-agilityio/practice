@@ -4,7 +4,7 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
-import OffClickDirective from './off-click.directive';
+import {OffClickDirective} from './off-click.directive';
 
 @Component({
   selector: 'list-work-item',

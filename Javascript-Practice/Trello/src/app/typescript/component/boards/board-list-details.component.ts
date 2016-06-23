@@ -4,14 +4,15 @@ import {RouteParams, Router} from 'angular2/router';
 import {BoardListItemComponent} from './board-list-details-item.component';
 import {Card} from '../../model/card';
 import {BoardService} from '../service/board-service';
-import OffClickDirective from './off-click.directive';
+import {OffClickDirective} from './off-click.directive';
+import {ComponentComment} from './comment.component';
 
 @Component({
   selector: 'board-list',
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES],
-  directives: [BoardListItemComponent, OffClickDirective],
+  directives: [BoardListItemComponent, OffClickDirective, ComponentComment],
   inputs: ['nameEdit']
 })
 
