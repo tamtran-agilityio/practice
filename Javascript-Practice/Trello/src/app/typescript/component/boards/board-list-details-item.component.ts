@@ -54,8 +54,7 @@ export class BoardListItemComponent implements OnInit {
     this.openActive = true;
   }
 
-  clickedOutside(){
-    console.log("clicked outside AAAAAAA");
+  clickedOutside() {
     this.openActive = false;
   }
 }

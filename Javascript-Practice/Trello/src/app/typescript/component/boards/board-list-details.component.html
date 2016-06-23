@@ -4,7 +4,7 @@
       <div class="list-header">
         <div class="list-header-target"></div>
         <h2 class="list-name-assist hidden"></h2>
-        <textarea class="list-header-name" >{{card.name}}</textarea>
+        <textarea class="list-header-name" #nameEdit (keypress)="changeName(card, nameEdit.value)" (click)="onSelecName(card, nameEdit.value)">{{card.name}}</textarea>
       </div>
       <list-work-item [cardId]="card.id"></list-work-item>
     </div>

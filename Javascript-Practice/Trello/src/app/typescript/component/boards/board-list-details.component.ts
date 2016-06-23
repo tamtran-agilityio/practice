@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
 import {BoardListItemComponent} from './board-list-details-item.component';
@@ -11,7 +11,8 @@ import OffClickDirective from './off-click.directive';
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES],
-  directives: [BoardListItemComponent, OffClickDirective]
+  directives: [BoardListItemComponent, OffClickDirective],
+  inputs: ['nameEdit']
 })
 
 export class BoardListComponent implements OnInit{
@@ -22,6 +23,7 @@ export class BoardListComponent implements OnInit{
   private boardId: number;
   private count: number;
   private nameCard: string;
+  private nameEdit: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -52,7 +54,16 @@ export class BoardListComponent implements OnInit{
     this.isActive = false;
   }
 
-  clickedOutside(){
+  changeName(card:Card, value) {
+    card.name = value;
+    this.updateStore();
+  }
+
+  onSelecName(card:Card, value) {
+    this.changeName(card, value);
+  }
+
+  clickedOutside() {
     this.isActive = false;
   }
 }
