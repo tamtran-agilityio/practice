@@ -4,13 +4,14 @@ import {RouteParams, Router} from 'angular2/router';
 import {BoardListItemComponent} from './board-list-details-item.component';
 import {Card} from '../../model/card';
 import {BoardService} from '../service/board-service';
+import OffClickDirective from './off-click.directive';
 
 @Component({
   selector: 'board-list',
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES],
-  directives: [BoardListItemComponent]
+  directives: [BoardListItemComponent, OffClickDirective]
 })
 
 export class BoardListComponent implements OnInit{
@@ -23,6 +24,7 @@ export class BoardListComponent implements OnInit{
   private nameCard: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
+    this.clickedOutside = this.clickedOutside.bind(this);
     this.boardId = parseInt(_params.get('id'));
 
     let persistedBoads = JSON.parse(localStorage.getItem('card-item') || '[]');
@@ -47,5 +49,10 @@ export class BoardListComponent implements OnInit{
     this.cards.push(new Card(value['name'], card_id, board_id));
     this.updateStore();
     this.nameCard = '';
+    this.isActive = false;
+  }
+
+  clickedOutside(){
+    this.isActive = false;
   }
 }

@@ -1,9 +1,7 @@
 .board-list-container {
   white-space: nowrap;
-  margin-bottom: 10px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 10px;
   position: absolute;
   top: 0;
   right: 0;

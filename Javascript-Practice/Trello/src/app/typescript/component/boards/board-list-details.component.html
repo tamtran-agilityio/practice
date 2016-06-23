@@ -11,15 +11,14 @@
   </div>
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
     <form (ngSubmit)="onTagget(createForm.value)" #createForm="ngForm">
-      <span class="placeholder" (click)="isActive = !isActive" > Add a list ...</span>
-      <input type="text" class="list-name-input" required ngControl="name" [(ngModel)]="nameCard"  #name="ngForm"
-                placeholder="Add a list…">
+      <span class="placeholder" (click)="isActive = !isActive" [offClick]="clickedOutside"> Add a list ...</span>
+      <input type="text" class="list-name-input" required ngControl="name" placeholder="Add a list…" [(ngModel)]="nameCard"  #name="ngForm" [offClick]="clickedOutside">
       <div [hidden]="name || name.pristine" class="alert alert-danger">
         title is required
       </div>
       <div class="list-add-controls u-clearfix">
-        <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save" [disabled]="!createForm.form">
-        <a class="icon-lg icon-close dark-hover js-cancel-edit" href="#">
+        <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save" [disabled]="!createForm.form" [offClick]="clickedOutside">
+        <a class="icon-lg icon-close dark-hover js-cancel-edit" href="javascript:void(0)">
           <i class="fa fa-times" aria-hidden="true"></i>
         </a>
       </div>
