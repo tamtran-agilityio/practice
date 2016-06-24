@@ -5,13 +5,14 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} f
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
+import {ComponentComment} from './comment.component';
 
 @Component({
   selector: 'list-work-item',
   templateUrl: 'app/typescript/component/boards/board-list-details-item.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details-item.component.css'],
   providers: [FORM_DIRECTIVES, BoardService],
-  directives: [ROUTER_DIRECTIVES, OffClickDirective],
+  directives: [ROUTER_DIRECTIVES, OffClickDirective, ComponentComment],
   inputs: ['cardId']
 })
 
@@ -61,5 +62,9 @@ export class BoardListItemComponent implements OnInit {
 
   clickedOutside() {
     this.openActive = false;
+  }
+
+  createComment() {
+    console.log("SSSSSSSSSSSSSSS11");
   }
 }

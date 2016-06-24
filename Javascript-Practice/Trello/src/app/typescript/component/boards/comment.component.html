@@ -1,7 +1,8 @@
-<div class="window-overlay">
+<div class="window-overlay window-disblock" id="myModal_{{memberID}}" role="dialog">
   <div class="window">
+    <h2>{{memberID}}</h2>
     <div class="window-wrapper">
-      <a class="dialog-close-button" href="javascript:void(0)">
+      <a class="dialog-close-button" href="javascript:void(0)" (click)="closePopup()">
         <i class="fa fa-times" aria-hidden="true"></i>
       </a>
       <div class="card-detail-window u-clearfix">
@@ -44,11 +45,11 @@
               <form (ngSubmit)="saveComment(commentForm.value)" #commentForm="ngForm">
                 <div class="comment-frame">
                   <div class="comment-box">
-                    <textarea class="comment-box-input js-new-comment-input" placeholder="Write a comment…" tabindex="1" ngControl="name" #name="ngForm" >
+                    <textarea class="comment-box-input js-new-comment-input" placeholder="Write a comment…" tabindex="1" ngControl="name" #name="ngForm" [(ngModel)]="memberComment" >
                     </textarea>
                   </div>
                 </div>
-                <input class="primary confirm mod-no-top-bottom-margin button-add-comment" disabled="" type="submit" value="Send" tabindex="3">
+                <button class="primary confirm mod-no-top-bottom-margin button-add-comment"  [disabled]="!commentForm.form.valid" type="submit" value="Send" tabindex="3"> Send </button>
               </form>
             </div>
           </div>

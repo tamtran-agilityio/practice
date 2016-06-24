@@ -11,15 +11,20 @@
   justify-content: center;
   left: 0;
   overflow-y: auto;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 20;
+  display: none;
+}
+
+.window-disblock {
+  position: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
+
 .window {
   background-color: #edeff0;
   border-radius: 3px;
@@ -247,9 +252,10 @@
 
 .button-add-comment {
   margin-top: 8px;
-  background: #e2e4e6;
-  box-shadow: none;
-  color: #8c8c8c;
+  background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+  background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+  box-shadow: 0 1px 0 #3f6f21;
+  color: #fff;
   cursor: default;
   font-weight: 400;
   border: none;
@@ -262,6 +268,13 @@
   text-align: center;
   margin-bottom: 0;
   border-radius: 3px;
+  outline: none;
+}
+
+.button-add-comment[disabled] {
+  background: #e2e4e6;
+  box-shadow: none;
+  color: #8c8c8c;
 }
 
 .phenom {

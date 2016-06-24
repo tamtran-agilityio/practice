@@ -23,6 +23,13 @@ export class BoardService {
     return Promise.resolve(temp);
   }
 
+  getComment() {
+    let memberComment = localStorage.getItem("member-comment");
+    let temp = JSON.parse(memberComment);
+
+    return Promise.resolve(temp);
+  }
+
   getBoard(name: string) {
     // return Promise.resolve(BOARDS).then(
     //   boards => boards.filter(board => board.name === name)[0]

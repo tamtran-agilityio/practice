@@ -9,7 +9,6 @@
       <list-work-item [cardId]="card.id"></list-work-item>
     </div>
   </div>
-  <modal-comment></modal-comment>
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
     <form (ngSubmit)="onTagget(createForm.value)" #createForm="ngForm">
       <span class="placeholder" (click)="isActive = !isActive" [offClick]="clickedOutside"> Add a list ...</span>
