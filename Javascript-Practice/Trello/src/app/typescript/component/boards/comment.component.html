@@ -1,6 +1,5 @@
 <div class="window-overlay window-disblock" id="myModal_{{memberID}}" role="dialog">
   <div class="window">
-    <h2>{{memberID}}</h2>
     <div class="window-wrapper">
       <a class="dialog-close-button" href="javascript:void(0)" (click)="closePopup()">
         <i class="fa fa-times" aria-hidden="true"></i>
@@ -60,7 +59,7 @@
               </span>
               <h3>Activity</h3>
             </div>
-            <div class="list-actions">
+            <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberID" class="list-actions">
               <div class="phenom">
                 <div class="phenom-creator">
                   <div class="member">
@@ -72,7 +71,7 @@
                     <div class="comment-container">
                       <div class="action-comment">
                         <div class="current-comment">
-                          <p> Content comment current</p>
+                          <p>{{comment.name}}</p>
                         </div>
                       </div>
                     <div class="comment-box">

@@ -3,10 +3,12 @@
     <div *ngFor="#cardMember of cardMembers" class="list-card-item" [hidden]="cardMember.card_id != cardId">
       <span class="icon-edit"></span>
       <div *ngIf="cardMember.card_id == cardId" class="list-card-details">
-        <a href="#" class="list-card-title" data-toggle="modal" data-target="#creatModal_{{cardMember.memberId}}" (click)="createComment()">
+        <a href="#" class="list-card-title " data-toggle="modal" data-target="#creatModal_{{cardMember.memberId}}" (click)="createComment()">
           {{cardMember.name}} {{cardMember.memberId}}
         </a>
-        <modal-comment [memberID]= "cardMember.memberId" ></modal-comment>
+        <div class="modal-popup" id="creatModal_{{cardMember.memberId}}" class="modal fade" role="dialog">
+          <modal-comment [memberID]= "cardMember.memberId" class="modal-dialog"></modal-comment>
+        </div>
       </div>
     </div>
     <div class="card-composer" [hidden]="openActive === false">

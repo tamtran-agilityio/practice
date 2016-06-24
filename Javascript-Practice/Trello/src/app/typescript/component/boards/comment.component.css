@@ -18,6 +18,7 @@
 }
 
 .window-disblock {
+  display: none;
   position: fixed;
   display: -webkit-box;
   display: -webkit-flex;

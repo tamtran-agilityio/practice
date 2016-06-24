@@ -21,7 +21,6 @@ export class BoardListComponent implements OnInit{
   private cards: Card[] = [];
   private cardsInit: Card[];
   private boardId: number;
-  private count: number;
   private nameCard: string;
   private nameEdit: string;
 
