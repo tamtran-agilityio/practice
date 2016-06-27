@@ -1,14 +1,17 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {NgForm} from 'angular2/common';
-import {Comment} from '../../model/comment';
+import {LabelCommentActive} from '../../model/comment';
+import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {ReversePipe} from './revise.pipe';
+import {LabelCommentComponent} from './label-comment.component';
 
 @Component({
   selector:'modal-comment',
-  templateUrl: 'app/typescript/component/boards/comment.component.html',
-  styleUrls: ['app/typescript/component/boards/comment.component.css'],
+  templateUrl: 'app/typescript/component/boards/modal-comment.component.html',
+  styleUrls: ['app/typescript/component/boards/modal-comment.component.css'],
   providers: [BoardService],
+  directives: [LabelCommentComponent],
   pipes: [ReversePipe]
 })
 
@@ -18,6 +21,7 @@ export class ComponentComment implements OnInit {
   private memberComment: any;
   private comments: Comment[];
   private commentInits: Comment[];
+  private cardMemberItems: CardMember[];
 
   @Input() private memberAddComment: string;
 
@@ -32,6 +36,7 @@ export class ComponentComment implements OnInit {
 
   ngOnInit() {
     this._memberService.getComment().then(commentInits => this.commentInits = commentInits);
+    this._memberService.getMemberCards().then(cardMemberItems => this.cardMemberItems = cardMemberItems);
   }
 
   private updateStore() {
