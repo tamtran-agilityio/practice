@@ -9,17 +9,17 @@ import {ReversePipe} from './revise.pipe';
   templateUrl: 'app/typescript/component/boards/comment.component.html',
   styleUrls: ['app/typescript/component/boards/comment.component.css'],
   providers: [BoardService],
-  pipes: [ReversePipe],
-  inputs: ['memberID']
+  pipes: [ReversePipe]
 })
 
 export class ComponentComment implements OnInit {
   private showPop: boolean = false;
   private condition: string = 'close';
-  private memberID: string;
-  private memberComment: string;
+  private memberComment: any;
   private comments: Comment[];
   private commentInits: Comment[];
+
+  @Input() private memberAddComment: string;
 
   constructor(private _memberService: BoardService) {
     let persistedComment = JSON.parse(localStorage.getItem('member-comment') || '[]');
@@ -40,7 +40,7 @@ export class ComponentComment implements OnInit {
 
   saveComment(value: string, commentId: number, memberId: number) {
     commentId = parseInt(this.comments.length.toString()) + 1;
-    memberId = parseInt(this.memberID.toString());
+    memberId = parseInt(this.memberAddComment.toString());
     if ((value['name'] != "") && (value['name'] != undefined)) {
       this.comments.push(new Comment(value['name'], commentId , memberId));
       this.updateStore();

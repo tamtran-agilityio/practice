@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output} from 'angular2/core';
+import {Component, OnInit, Input, Output, EventEmitter} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
@@ -23,6 +23,7 @@ export class BoardListItemComponent implements OnInit {
   private boardId: number;
   private cardId: string;
   private cardMember: string;
+  private cardMemberIdPopup: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -64,7 +65,7 @@ export class BoardListItemComponent implements OnInit {
     this.openActive = false;
   }
 
-  createComment() {
-    console.log("SSSSSSSSSSSSSSS11");
+  createComment(cardMemberId: string) {
+    this.cardMemberIdPopup = cardMemberId;
   }
 }

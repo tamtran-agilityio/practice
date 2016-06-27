@@ -111,6 +111,9 @@
   position: relative;
   z-index: 10;
 }
+.list-card-details a {
+  outline: none;
+}
 
 .mod-add.is-idle .placeholder {
   display: block !important;

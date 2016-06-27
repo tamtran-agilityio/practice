@@ -18,12 +18,11 @@
 }
 
 .window-disblock {
-  display: none;
   position: fixed;
-  display: -webkit-box;
+  /*display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
+  display: flex;*/
 }
 
 .window {
@@ -34,6 +33,7 @@
   position: relative;
   width: 730px;
   z-index: 25;
+  left: 10%;
 }
 
 .window-header {

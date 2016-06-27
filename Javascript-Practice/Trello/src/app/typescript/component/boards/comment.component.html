@@ -1,7 +1,7 @@
-<div class="window-overlay window-disblock" id="myModal_{{memberID}}" role="dialog">
+<div class="window-overlay window-disblock" id="creatModalComment" role="dialog">
   <div class="window">
     <div class="window-wrapper">
-      <a class="dialog-close-button" href="javascript:void(0)" (click)="closePopup()">
+      <a class="dialog-close-button" href="javascript:void(0)" data-dismiss="modal" (click)="closePopup()">
         <i class="fa fa-times" aria-hidden="true"></i>
       </a>
       <div class="card-detail-window u-clearfix">
@@ -59,8 +59,8 @@
               </span>
               <h3>Activity</h3>
             </div>
-            <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberID" class="list-actions">
-              <div class="phenom">
+            <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberAddComment" class="list-actions">
+              <div class="phenom" *ngIf="comment.memberId == memberAddComment">
                 <div class="phenom-creator">
                   <div class="member">
                     <div class="member-initials">T</div>

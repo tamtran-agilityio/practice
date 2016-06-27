@@ -3,15 +3,13 @@
     <div *ngFor="#cardMember of cardMembers" class="list-card-item" [hidden]="cardMember.card_id != cardId">
       <span class="icon-edit"></span>
       <div *ngIf="cardMember.card_id == cardId" class="list-card-details">
-        <a href="#" class="list-card-title " data-toggle="modal" data-target="#creatModal_{{cardMember.memberId}}" (click)="createComment()">
-          {{cardMember.name}} {{cardMember.memberId}}
+        <a href="#" class="list-card-title " data-toggle="modal" data-target="#creatModalComment" (click)="createComment(cardMember.memberId)" >
+          {{cardMember.name}}
         </a>
-        <div class="modal-popup" id="creatModal_{{cardMember.memberId}}" class="modal fade" role="dialog">
-          <modal-comment [memberID]= "cardMember.memberId" class="modal-dialog"></modal-comment>
-        </div>
       </div>
     </div>
-    <div class="card-composer" [hidden]="openActive === false">
+    <modal-comment class="modal-dialog" [memberAddComment]="cardMemberIdPopup"></modal-comment>
+    <div class="card-composer" [class.hidden]="openActive === false">
       <div class="list-card js-composer">
         <div class="list-card-detail u-clearfix">
           <div class="list-card-labels u-clearfix js-list-card-composer-labels"></div>
@@ -31,5 +29,5 @@
       </div>
     </div>
   </div>
-  <a class="open-card-composer" href="javascript:void(0)" [offClick]="clickedOutside" (click)="onAdd()" [class.hide]="openActive === true" >Add a card…</a>
+  <a class="open-card-composer" href="javascript:void(0)" [offClick]="clickedOutside" (click)="onAdd()" [class.hidden]="openActive === true" >Add a card…</a>
 </form>
