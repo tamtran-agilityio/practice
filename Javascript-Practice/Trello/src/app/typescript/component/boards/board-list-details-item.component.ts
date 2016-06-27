@@ -5,7 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} f
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
-import {ComponentComment} from './comment.component';
+import {ComponentComment} from './modal-comment.component';
 
 @Component({
   selector: 'list-work-item',

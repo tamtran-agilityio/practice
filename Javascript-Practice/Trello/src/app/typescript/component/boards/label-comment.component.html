@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div id="addLabel" class="modal-label fade add-label" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="javascript:void(0)" class="close" data-dismiss="modal-label">&times;</a>
+        <h4 class="modal-title"> Labels</h4>
+          <div class="pop-over-container">
+            <div class="pop-over-content">
+              <input class="js-autofocus js-label-search" type="text" placeholder="Search labels…" value="" autocomplete="off">
+              <ul class="edit-labels-pop-over">
+                <li *ngFor="#labelItem of labelItems">
+                  <a href="javascript:void(0)" class="card-label-edit-button" (click)="addLabel(labelItem)">
+                    <span class="card-label" [style.background] ="labelItem.color">
+                      <span class="icon-check"></span>
+                    </span>
+                  </a>
+                </li>
+                <!-- <li>
+                  <a href="" class="card-label-edit-button"></a>
+                  <span class="card-label card-label-yellow">
+                    <span class="icon-check"></span>
+                  </span>
+                </li>
+                <li>
+                  <a href="" class="card-label-edit-button"></a>
+                  <span class="card-label card-label-orange">
+                    <span class="icon-check"></span>
+                  </span>
+                </li>
+                <li>
+                  <a href="" class="card-label-edit-button"></a>
+                  <span class="card-label card-label-red">
+                    <span class="icon-check"></span>
+                  </span>
+                </li>
+                <li>
+                  <a href="" class="card-label-edit-button"></a>
+                  <span class="card-label card-label-purple">
+                    <span class="icon-check"></span>
+                  </span>
+                </li>
+                <li>
+                  <a href="" class="card-label-edit-button"></a>
+                  <span class="card-label card-label-blue">
+                    <span class="icon-check"></span>
+                  </span>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
