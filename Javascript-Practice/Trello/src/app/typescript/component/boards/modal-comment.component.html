@@ -57,7 +57,7 @@
               <span class="window-header-icon-module">
                 <i class="fa fa-list-ul" aria-hidden="true"></i>
               </span>
-              <h3>Activity {{memberCommentCard}}</h3>
+              <h3>Activity</h3>
             </div>
             <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberCommentCard" class="list-actions">
               <div class="phenom" *ngIf="comment.memberId == memberCommentCard">
@@ -67,7 +67,7 @@
                   </div>
                 </div>
                 <div class="phenom-desc">
-                    <div class="inline-member">Tamtamxuan {{memberCommentCard}}</div>
+                    <div class="inline-member">Tamtamxuan</div>
                     <div class="comment-container">
                       <div class="action-comment">
                         <div class="current-comment">

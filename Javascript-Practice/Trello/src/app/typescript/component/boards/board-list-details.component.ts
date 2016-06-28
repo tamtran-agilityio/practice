@@ -24,7 +24,7 @@ export class BoardListComponent implements OnInit{
   private boardId: number;
   private nameCard: string;
   private nameEdit: string;
-  @Input private membercardId: string;
+  @Input() private membercardId: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -68,7 +68,6 @@ export class BoardListComponent implements OnInit{
   }
 
   cardMemberIdPopup($event) {
-    console.log("AAAAAAAAAAAA", $event);
     this.membercardId = $event.value;
   }
 }
