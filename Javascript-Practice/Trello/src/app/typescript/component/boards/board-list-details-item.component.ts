@@ -5,14 +5,14 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} f
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
-import {ComponentComment} from './modal-comment.component';
+
 
 @Component({
   selector: 'list-work-item',
   templateUrl: 'app/typescript/component/boards/board-list-details-item.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details-item.component.css'],
   providers: [FORM_DIRECTIVES, BoardService],
-  directives: [ROUTER_DIRECTIVES, OffClickDirective, ComponentComment],
+  directives: [ROUTER_DIRECTIVES, OffClickDirective],
   inputs: ['cardId']
 })
 
@@ -23,7 +23,7 @@ export class BoardListItemComponent implements OnInit {
   private boardId: number;
   private cardId: string;
   private cardMember: string;
-  private cardMemberIdPopup: string;
+  @Output cardMemberIdPopup = new EventEmitter();
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -66,6 +66,9 @@ export class BoardListItemComponent implements OnInit {
   }
 
   createComment(cardMemberId: string) {
-    this.cardMemberIdPopup = cardMemberId;
+    console.log("AAAA------", cardMemberId);
+    this.cardMemberIdPopup.emit({
+      value: cardMemberId
+    })
   }
 }

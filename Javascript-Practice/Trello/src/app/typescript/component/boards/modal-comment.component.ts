@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {NgForm} from 'angular2/common';
-import {LabelCommentActive} from '../../model/comment';
+import {Comment} from '../../model/comment';
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {ReversePipe} from './revise.pipe';
@@ -23,7 +23,7 @@ export class ComponentComment implements OnInit {
   private commentInits: Comment[];
   private cardMemberItems: CardMember[];
 
-  @Input() private memberAddComment: string;
+  @Input() private memberCommentCard: string;
 
   constructor(private _memberService: BoardService) {
     let persistedComment = JSON.parse(localStorage.getItem('member-comment') || '[]');
@@ -45,7 +45,8 @@ export class ComponentComment implements OnInit {
 
   saveComment(value: string, commentId: number, memberId: number) {
     commentId = parseInt(this.comments.length.toString()) + 1;
-    memberId = parseInt(this.memberAddComment.toString());
+    console.log("SSSSSSS-----AAAA", this.memberCommentCard);
+    memberId = parseInt(this.memberCommentCard.toString());
     if ((value['name'] != "") && (value['name'] != undefined)) {
       this.comments.push(new Comment(value['name'], commentId , memberId));
       this.updateStore();

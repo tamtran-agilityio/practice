@@ -5,13 +5,14 @@ import {BoardListItemComponent} from './board-list-details-item.component';
 import {Card} from '../../model/card';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
+import {ComponentComment} from './modal-comment.component';
 
 @Component({
   selector: 'board-list',
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES, BoardService],
-  directives: [BoardListItemComponent, OffClickDirective],
+  directives: [BoardListItemComponent, OffClickDirective, ComponentComment],
   inputs: ['nameEdit']
 })
 
@@ -23,6 +24,7 @@ export class BoardListComponent implements OnInit{
   private boardId: number;
   private nameCard: string;
   private nameEdit: string;
+  @Input private membercardId: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -63,5 +65,10 @@ export class BoardListComponent implements OnInit{
 
   clickedOutside() {
     this.isActive = false;
+  }
+
+  cardMemberIdPopup(cardMemberId) {
+    console.log("AAAAAAAAAAAA", cardMemberId);
+    this.membercardId = cardMemberId;
   }
 }

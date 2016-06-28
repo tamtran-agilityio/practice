@@ -11,7 +11,7 @@
           </span>
           <div class="window-title" *ngFor="#cardMemberItem of cardMemberItems">
             <h2 class="card-detail-title-assist js-title-helper" dir="auto"></h2>
-            <textarea class="mod-card-back-title js-card-detail-title-input" *ngIf="cardMemberItem.memberId == memberAddComment">{{cardMemberItem.name}} </textarea>
+            <textarea class="mod-card-back-title js-card-detail-title-input" *ngIf="cardMemberItem.memberId == memberAddComment">{{cardMemberItem.name}}</textarea>
           </div>
           <div class="window-header-inline-content"> 
             <p class="window-header-card"> in list
@@ -57,7 +57,7 @@
               <span class="window-header-icon-module">
                 <i class="fa fa-list-ul" aria-hidden="true"></i>
               </span>
-              <h3>Activity</h3>
+              <h3>Activity {{memberAddComment}}</h3>
             </div>
             <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberAddComment" class="list-actions">
               <div class="phenom" *ngIf="comment.memberId == memberAddComment">
@@ -67,7 +67,7 @@
                   </div>
                 </div>
                 <div class="phenom-desc">
-                    <div class="inline-member">Tamtamxuan</div>
+                    <div class="inline-member">Tamtamxuan {{memberAddComment}}</div>
                     <div class="comment-container">
                       <div class="action-comment">
                         <div class="current-comment">
@@ -110,7 +110,7 @@
               </a>  
             </div>
           </div>
-          <label-comment [memberAddCommentLabel]= "memberAddComment"></label-comment>
+          <label-comment></label-comment>
           <div class="window-module">
             <h3>Actions</h3>
             <div class="module-wapper">
