@@ -23,7 +23,8 @@ export class BoardListItemComponent implements OnInit {
   private boardId: number;
   private cardId: string;
   private cardMember: string;
-  @Output cardMemberIdPopup = new EventEmitter();
+  private cardMembersId: string;
+  @Output cardMemberIdPopups = new EventEmitter();
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -67,8 +68,9 @@ export class BoardListItemComponent implements OnInit {
 
   createComment(cardMemberId: string) {
     console.log("AAAA------", cardMemberId);
-    this.cardMemberIdPopup.emit({
-      value: cardMemberId
+    this.cardMembersId = cardMemberId
+    this.cardMemberIdPopups.emit({
+      value: this.cardMembersId
     })
   }
 }

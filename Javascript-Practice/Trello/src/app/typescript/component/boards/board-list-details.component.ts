@@ -67,8 +67,8 @@ export class BoardListComponent implements OnInit{
     this.isActive = false;
   }
 
-  cardMemberIdPopup(cardMemberId) {
-    console.log("AAAAAAAAAAAA", cardMemberId);
-    this.membercardId = cardMemberId;
+  cardMemberIdPopup($event) {
+    console.log("AAAAAAAAAAAA", $event);
+    this.membercardId = $event.value;
   }
 }
