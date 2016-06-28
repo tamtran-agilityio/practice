@@ -30,8 +30,8 @@ export class BoardListItemComponent implements OnInit {
     this.clickedOutside = this.clickedOutside.bind(this);
     this.boardId = parseInt(_params.get('id'));
 
-    let persistedCardMember = JSON.parse(localStorage.getItem('card-member') || '[]');
-    
+    let persistedCardMember = JSON.parse(localStorage.getItem('list-work') || '[]');
+    console.log("persistedCardMember", persistedCardMember);
     this.cardMembers = persistedCardMember.map((cardMember: { name: string, memberId: number, card_id: number }) => {
     let ret = new CardMember(cardMember.name, cardMember.memberId, cardMember.card_id);
       return ret;
@@ -43,7 +43,7 @@ export class BoardListItemComponent implements OnInit {
   }
 
   private updateStore() {
-    localStorage.setItem('card-member', JSON.stringify(this.cardMembers));
+    localStorage.setItem('list-work', JSON.stringify(this.cardMembers));
   }
 
   onSave(value: string, memberId: number, card_id: number) {

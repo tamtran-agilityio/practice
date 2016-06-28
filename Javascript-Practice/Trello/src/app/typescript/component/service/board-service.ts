@@ -36,12 +36,12 @@ export class BoardService {
 
   getLabes() {
     let labelItems = [
-      {colorId:1, color:'#61bd4f', active:false},
-      {colorId:2, color:'#f2d600', active:false},
-      {colorId:3, color:'#ffab4a', active:false},
-      {colorId:4, color:'#eb5a46', active:false},
-      {colorId:5, color:'#c377e0', active:false},
-      {colorId:6, color:'#0079bf', active:false}
+      {'id':1, 'color':'#61bd4f', 'active':false},
+      {'id':2, 'color':'#f2d600', 'active':false},
+      {'id':3, 'color':'#ffab4a', 'active':false},
+      {'id':4, 'color':'#eb5a46', 'active':false},
+      {'id':5, 'color':'#c377e0', 'active':false},
+      {'id':6, 'color':'#0079bf', 'active':false}
     ];
 
     let labelComment = localStorage.getItem("label-comment");

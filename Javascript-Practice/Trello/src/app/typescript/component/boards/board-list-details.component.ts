@@ -3,6 +3,7 @@ import {FORM_DIRECTIVES} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
 import {BoardListItemComponent} from './board-list-details-item.component';
 import {Card} from '../../model/card';
+import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
 import {ComponentComment} from './modal-comment.component';
@@ -24,15 +25,17 @@ export class BoardListComponent implements OnInit{
   private boardId: number;
   private nameCard: string;
   private nameEdit: string;
+  cardMembers: CardMember[];
+
   @Input() private membercardId: string;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
     this.boardId = parseInt(_params.get('id'));
-    let persistedBoads = JSON.parse(localStorage.getItem('card-item') || '[]');
+    let persistedBoads = JSON.parse(localStorage.getItem('list-work') || '[]');
     
-    this.cards = persistedBoads.map((card: { name: string, id: number, board_id: number }) => {
-    let ret = new Card(card.name, card.id, card.board_id);
+    this.cards = persistedBoads.map((card: { card_title: string, card_id: number, board_id: number }) => {
+    let ret = new Card(card.card_title, card.card_id, card.board_id);
       return ret;
     });
   }
@@ -42,13 +45,13 @@ export class BoardListComponent implements OnInit{
   }
 
   private updateStore() {
-    localStorage.setItem('card-item', JSON.stringify(this.cards));
+    localStorage.setItem('list-work', JSON.stringify(this.cards));
   }
 
   onTagget(value: string, card_id: number, board_id: number, id: number) {
     board_id = parseInt(this.boardId.toString());
     card_id = parseInt(this.cards.length.toString()) + 1;
-    this.cards.push(new Card(value['name'], card_id, board_id));
+    this.cards.push(new Card(value['name'], card_id, board_id, CardMember));
     this.updateStore();
     this.nameCard = '';
     this.isActive = false;
