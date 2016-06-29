@@ -6,8 +6,8 @@
         <h2 class="list-name-assist hidden"></h2>
         <textarea class="list-header-name" #nameEdit (keypress)="changeName(card, nameEdit.value)" (click)="onSelecName(card, nameEdit.value)"> {{card.cardTitle}}</textarea>
       </div>
-      <list-work-item [cardSelect]="card" (memberSelect)="cardMemberIdPopup($event)"></list-work-item>
-      <modal-comment class="modal-dialog" [memberCardComment]="memberComment"></modal-comment>
+      <list-work-item [cardSelect]="card" (memberSelect)="cardMemberIdPopup($event)" (cardSelectPopup)="cardSelectPopup($event)"></list-work-item>
+      <modal-comment class="modal-dialog" [memberCardComment]="memberComment" [cardSelectIdPopup]="memberCardPopup"></modal-comment>
     </div>
   </div>
   <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">

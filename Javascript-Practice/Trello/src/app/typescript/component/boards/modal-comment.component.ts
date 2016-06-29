@@ -19,23 +19,35 @@ import {LabelCommentComponent} from './label-comment.component';
 export class ModalCommentComponent implements OnInit {
   private showPop: boolean = false;
   private memberComment: string;
+  private cardSelectItem: number;
 
   @Input() private memberCardComment: CardMember;
+  @Input() private cardSelectIdPopup: CardMember;
 
   constructor(private _boardService: BoardService,  private _params: RouteParams) {
   }
 
   ngOnInit() {
-    console.log("memberCardComment" , this.memberCardComment);
   }
 
   private updateStore() {
+    this._boardService.updateBoard(this.board).then(boards => {
+      console.warn("Update store boards 222222:", boards); 
+    });
   }
 
   saveComment() {
-    var commentId = parseInt(this.memberCardComment.comments.length.toString()) + 1;
-    this.memberCardComment.comments.push(new Comment(this.memberComment, commentId));
-    this.memberComment = '';
+    let boardIdParam = parseInt(this._params.get('id'));
+    let memberAddComment = parseInt(this.memberCardComment.memberId) - 1;
+    let commentId = parseInt(this.memberCardComment.comments.length.toString()) + 1;
+    this.cardSelectItem = parseInt(this.cardSelectIdPopup.cardId) - 1;
+    this._boardService.getBoard(boardIdParam).then(board => {
+      this.board = board;
+      this.board.cards.cardMembers = this.board.cards[this.cardSelectItem].cardMembers || [];
+      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].comments.push(new Comment(this.memberComment, commentId));
+      this.updateStore();
+      this.memberComment = '';
+    });
   }
 
   closePopup() {

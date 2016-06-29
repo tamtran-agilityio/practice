@@ -26,6 +26,7 @@ export class BoardListItemComponent implements OnInit {
   private cardMember: string;
   private cardMembersId: string;
   @Output() memberSelect = new EventEmitter();
+  @Output() cardSelectPopup = new EventEmitter();
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
@@ -37,7 +38,6 @@ export class BoardListItemComponent implements OnInit {
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;
       this.board.cards.cardMembers = this.board.cards[this.cardSelectItem].cardMembers || [];
-      console.log("this.board.cards.cardMembers " this.board.cards[0].cardMembers;
     });
   }
 
@@ -69,5 +69,6 @@ export class BoardListItemComponent implements OnInit {
 
   createComment(cardMember: CardMember) {
     this.memberSelect.emit(cardMember);
+    this.cardSelectPopup.emit(this.cardSelect);
   }
 }
