@@ -9,10 +9,10 @@
           <span class="window-header-icon">
             <i class="fa fa-credit-card" aria-hidden="true"></i>
           </span>
-          <div class="window-title" *ngFor="#cardMemberItem of cardMemberItems">
+         <!--  <div class="window-title" *ngFor="#cardMemberItem of cardMemberItems">
             <h2 class="card-detail-title-assist js-title-helper" dir="auto"></h2>
             <textarea class="mod-card-back-title js-card-detail-title-input" *ngIf="cardMemberItem.memberId == memberAddComment">{{cardMemberItem.name}}</textarea>
-          </div>
+          </div> -->
           <div class="window-header-inline-content"> 
             <p class="window-header-card"> in list
               <a href="javascript:void(0)">Name Card</a>
@@ -59,8 +59,8 @@
               </span>
               <h3>Activity</h3>
             </div>
-            <div *ngFor="#comment of comments" [class.hidden]="comment.memberId != memberCommentCard" class="list-actions">
-              <div class="phenom" *ngIf="comment.memberId == memberCommentCard">
+            <div *ngFor="#comment of memberCardComment?.comments" class="list-actions">
+              <div class="phenom" >
                 <div class="phenom-creator">
                   <div class="member">
                     <div class="member-initials">T</div>
@@ -71,7 +71,7 @@
                     <div class="comment-container">
                       <div class="action-comment">
                         <div class="current-comment">
-                          <p>{{comment.name}}</p>
+                          <p>{{comment.commentTitle}}</p>
                         </div>
                       </div>
                     <div class="comment-box">

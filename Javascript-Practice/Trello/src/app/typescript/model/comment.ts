@@ -1,7 +1,6 @@
 export class Comment {
-  private id: number;
-  private name: string;
-  private memberId: number;
+  private commentId: number;
+  private commentTitle: string;
 
   get _id() {
     return this.name;
@@ -19,9 +18,8 @@ export class Comment {
     this.name = value;
   }
 
-  constructor(title: string, _id: number, _member_id: number) {
-    this.id = _id;
-    this.title = title;
-    this.memberId = _member_id;
+  constructor(title: string, _id: number) {
+    this.commentId = _id;
+    this.commentTitle = title;
   }
 }

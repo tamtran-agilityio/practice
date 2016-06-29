@@ -12,7 +12,7 @@
               <ul class="edit-labels-pop-over">
                 <li *ngFor="#labelItem of labelItems">
                   <a href="javascript:void(0)" class="card-label-edit-button" (click)="addLabel(labelItem)">
-                    <span class="card-label" [style.background] ="labelItem.color">
+                    <span class="card-label" [style.background] ="labelItem.labelColor">
                       <span class="icon-check"></span>
                     </span>
                   </a>

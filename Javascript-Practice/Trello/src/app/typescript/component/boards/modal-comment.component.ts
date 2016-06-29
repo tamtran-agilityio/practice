@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {NgForm} from 'angular2/common';
+import {RouteParams, Router} from 'angular2/router';
 import {Comment} from '../../model/comment';
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
@@ -15,45 +16,26 @@ import {LabelCommentComponent} from './label-comment.component';
   pipes: [ReversePipe]
 })
 
-export class ComponentComment implements OnInit {
+export class ModalCommentComponent implements OnInit {
   private showPop: boolean = false;
-  private condition: string = 'close';
-  private memberComment: any;
-  private comments: Comment[];
-  private commentInits: Comment[];
-  private cardMemberItems: CardMember[];
+  private memberComment: string;
 
-  @Input() private memberCommentCard: string;
+  @Input() private memberCardComment: CardMember;
 
-  constructor(private _memberService: BoardService) {
-    let persistedComment = JSON.parse(localStorage.getItem('member-comment') || '[]');
-    
-    this.comments = persistedComment.map((commentInit: { name: string, id: number, memberId: number }) => {
-    let ret = new Comment(commentInit.name, commentInit.id, commentInit.memberId);
-      return ret;
-    });
+  constructor(private _boardService: BoardService,  private _params: RouteParams) {
   }
 
   ngOnInit() {
-    this._memberService.getComment().then(commentInits => this.commentInits = commentInits);
-    this._memberService.getMemberCards().then(cardMemberItems => this.cardMemberItems = cardMemberItems);
+    console.log("memberCardComment" , this.memberCardComment);
   }
 
   private updateStore() {
-    localStorage.setItem('member-comment', JSON.stringify(this.comments));
   }
 
-  saveComment(value: string, commentId: number, memberId: number) {
-    commentId = parseInt(this.comments.length.toString()) + 1;
-    console.log("SSSSSSS-----AAAA", this.memberCommentCard);
-    memberId = parseInt(this.memberCommentCard.toString());
-    if ((value['name'] != "") && (value['name'] != undefined)) {
-      this.comments.push(new Comment(value['name'], commentId , memberId));
-      this.updateStore();
-      this.memberComment= '';
-    } else {
-      return;
-    }
+  saveComment() {
+    var commentId = parseInt(this.memberCardComment.comments.length.toString()) + 1;
+    this.memberCardComment.comments.push(new Comment(this.memberComment, commentId));
+    this.memberComment = '';
   }
 
   closePopup() {

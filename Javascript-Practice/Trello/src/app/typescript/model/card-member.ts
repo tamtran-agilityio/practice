@@ -3,10 +3,9 @@ import {LabelComment} from './label-comment';
 
 export class CardMember {
   private memberId: number;
-  private name: string;
-  private card_id: number;
-  comments: Comment[];
-  labelComments: LabelComment[];
+  private memberTitle: string;
+  public comments: Comment[];
+  public labelComments: LabelComment[];
 
   get _id() {
     return this.name;
@@ -24,9 +23,10 @@ export class CardMember {
     this.name = value;
   }
 
-  constructor(title: string, _id: number, _card_id: number) {
+  constructor(title: string, _id: number, _comments: Comment[] = [] , _labelComments: LabelComment[]= []) {
     this.memberId = _id;
-    this.title = title;
-    this.card_id = _card_id;
+    this.memberTitle = title;
+    this.comments = _comments || [];
+    this.labelComments = _labelComments;
   }
 }

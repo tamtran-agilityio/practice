@@ -1,57 +1,54 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
-import {BoardListItemComponent} from './board-list-details-item.component';
+import {BoardListItemComponent} from './list-work-item.component';
 import {Card} from '../../model/card';
+import {Board} from '../../model/board';
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {OffClickDirective} from './off-click.directive';
-import {ComponentComment} from './modal-comment.component';
+import {ModalCommentComponent} from './modal-comment.component';
 
 @Component({
   selector: 'board-list',
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES, BoardService],
-  directives: [BoardListItemComponent, OffClickDirective, ComponentComment],
+  directives: [BoardListItemComponent, OffClickDirective, ModalCommentComponent],
   inputs: ['nameEdit']
 })
 
 export class BoardListComponent implements OnInit{
   private isActive: boolean = false;
   private openActive: boolean = false;
-  private cards: Card[] = [];
-  private cardsInit: Card[];
-  private boardId: number;
+  private board: Board;
+  private card: Card;
   private nameCard: string;
   private nameEdit: string;
-  cardMembers: CardMember[];
-
-  @Input() private membercardId: string;
+  private memberComment: CardMember;
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
     this.clickedOutside = this.clickedOutside.bind(this);
-    this.boardId = parseInt(_params.get('id'));
-    let persistedBoads = JSON.parse(localStorage.getItem('list-work') || '[]');
     
-    this.cards = persistedBoads.map((card: { card_title: string, card_id: number, board_id: number }) => {
-    let ret = new Card(card.card_title, card.card_id, card.board_id);
-      return ret;
-    });
   }
 
   ngOnInit() {
-    this._boardService.getCards().then(cardsInit => this.cardsInit = cardsInit);
+    let boardIdParam = parseInt(this._params.get('id'));
+    this._boardService.getBoard(boardIdParam).then(board => {
+      this.board = board;
+      this.board.cards = this.board.cards || [];
+    });
   }
 
   private updateStore() {
-    localStorage.setItem('list-work', JSON.stringify(this.cards));
+    this._boardService.updateBoard(this.board).then(boards => {
+      console.warn("Update store boards:", boards);  
+    });
   }
 
-  onTagget(value: string, card_id: number, board_id: number, id: number) {
-    board_id = parseInt(this.boardId.toString());
-    card_id = parseInt(this.cards.length.toString()) + 1;
-    this.cards.push(new Card(value['name'], card_id, board_id, CardMember));
+  onTagget() {
+    let nextCardId = this.board.cards.length + 1;
+    this.board.cards.push(new Card(this.nameCard, nextCardId));
     this.updateStore();
     this.nameCard = '';
     this.isActive = false;
@@ -59,7 +56,6 @@ export class BoardListComponent implements OnInit{
 
   changeName(card:Card, value) {
     card.name = value;
-    this.updateStore();
   }
 
   onSelecName(card:Card, value) {
@@ -71,6 +67,7 @@ export class BoardListComponent implements OnInit{
   }
 
   cardMemberIdPopup($event) {
-    this.membercardId = $event.value;
+    console.log("SAAAAAAAAAAAAAAAA", $event);
+    this.memberComment = $event;
   }
 }

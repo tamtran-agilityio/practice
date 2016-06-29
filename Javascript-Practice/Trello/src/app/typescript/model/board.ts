@@ -1,10 +1,10 @@
 import {Card} from './card';
 
 export class Board {
-  private board_title: string;
-  private board_id: number;
+  private boardTitle: string;
+  private boardId: number;
   start: boolean;
-  card: Card[];
+  public cards: Card[];
 
   get _board_id() {
     return this.board_title;
@@ -20,9 +20,11 @@ export class Board {
     this.board_title = value;
   }
 
-  constructor(title: string, _board_id: number) {
-    this.board_title = title;
-    this.board_id = _board_id;
+  constructor(title: string, _board_id: number, _cards: Card[]) {
+    this.boardTitle = title;
+    this.boardId = _board_id;
     this.start = false;
+    _cards = _cards
+    this.cards = _cards;
   }
 }

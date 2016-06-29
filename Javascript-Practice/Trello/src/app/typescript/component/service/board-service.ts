@@ -1,6 +1,8 @@
 import { Injectable } from 'angular2/core';
 import {LabelComment} from '../../model/label-comment';
 import {Board} from '../../model/board';
+import {CardMember} from '../../model/card-member';
+
 @Injectable()
 
 export class BoardService {
@@ -28,36 +30,20 @@ export class BoardService {
 
   updateBoard(boardParam: Board){
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
+    let found = false;
     persistedBoads.forEach( (board: any, idx: number) => {
       if (board.boardId === boardParam.boardId){
         persistedBoads[idx] = boardParam;
+        found = true;
       }
     });
-    console.log("SSSSSSSSS persistedBoads", persistedBoads);
+    if (!found){
+      persistedBoads.push(boardParam);
+    }
+
     // save to localstorage
     localStorage.setItem('board-item', JSON.stringify(persistedBoads));
     return Promise.resolve(persistedBoads);
-  }
-
-  getCards() {
-    let card = localStorage.getItem("card-item");
-    let temp = JSON.parse(card);
-
-    return Promise.resolve(temp);
-  }
-
-  getMemberCards() {
-    let cardMember = localStorage.getItem("card-member");
-    let temp = JSON.parse(cardMember);
-
-    return Promise.resolve(temp);
-  }
-
-  getComment() {
-    let memberComment = localStorage.getItem("member-comment");
-    let temp = JSON.parse(memberComment);
-
-    return Promise.resolve(temp);
   }
 
   getLabes() {

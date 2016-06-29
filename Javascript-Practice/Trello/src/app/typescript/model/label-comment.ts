@@ -1,27 +1,27 @@
 export class LabelComment {
-  private id: number;
-  private color: string;
+  private labelId: number;
+  private labelColor: string;
   active: boolean;
 
   get _id() {
-    return this.color;
+    return this.name;
   }
 
   set _id(value: string) {
-    this.color = value;
+    this.name = value;
   }
 
   get title() {
-    return this.color;
+    return this.name;
   }
 
   set title(value: string) {
-    this.color = value;
+    this.name = value;
   }
 
   constructor(title: string, _id: number) {
-    this.id = _id;
-    this.title = title;
+    this.labelId = _id;
+    this.labelColor = title;
     this.active = false;
   }
 }

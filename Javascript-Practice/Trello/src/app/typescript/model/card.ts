@@ -1,31 +1,29 @@
 import {CardMember} from './card-member';
 
 export class Card {
-  private card_id: number;
-  private card_title: string;
-  private board_id: number;
-  cardMembers: CardMember[];
+  private cardId: number;
+  private cardTitle: string;
+  public cardMembers: CardMember[];
 
   get _id() {
-    return this.card_id;
+    return this.cardId;
   }
 
   set _id(value: string) {
-    this.card_id = value;
+    this.cardId = value;
   }
 
   get title() {
-    return this.card_title;
+    return this.cardTitle;
   }
 
   set title(value: string) {
-    this.card_title = value;
+    this.cardTitle = value;
   }
 
-  constructor(title: string, _id: number, _board_id: number, _cardMembers: [any]) {
-    this.card_id = _id;
-    this.card_title = title;
-    this.board_id = _board_id;
-    this.cardMembers = _cardMembers;
+  constructor(title: string, _id: number, _cardMembers: CardMember[] = []) {
+    this.cardId = _id;
+    this.cardTitle = title;
+    this.cardMembers = _cardMembers || [];
   }
 }
