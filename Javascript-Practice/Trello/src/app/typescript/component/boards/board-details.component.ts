@@ -13,11 +13,11 @@ import {BoardService} from '../service/board-service';
 })
 
 export class BoardDetailComponent implements OnInit {
-  private board_id: String;
+  private boardId: String;
   private boards: Board[] = [];
 
   constructor(private _boardService: BoardService, private _router: Router, private _params: RouteParams) {
-    this.board_id = _params.get('id');    
+    this.boardId = _params.get('id');    
   }
 
   ngOnInit() {
