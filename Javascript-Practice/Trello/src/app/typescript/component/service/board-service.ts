@@ -18,6 +18,7 @@ export class BoardService {
   getBoard(boardIdParam) {
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
     let boardRs = null;
+    let boardId: number;
     persistedBoads.forEach( (board: any) => {
       if (board.boardId === boardIdParam){
         let ret = new Board(board.boardTitle, board.boardId, board.cards);
@@ -29,6 +30,7 @@ export class BoardService {
   }
 
   updateBoard(boardParam: Board){
+    let boardId: number;
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
     let found = false;
     persistedBoads.forEach( (board: any, idx: number) => {
@@ -47,17 +49,21 @@ export class BoardService {
   }
 
   getLabes() {
-    let labelItems = [
-      {'id':1, 'color':'#61bd4f', 'active':false},
-      {'id':2, 'color':'#f2d600', 'active':false},
-    {'id':3, 'color':'#ffab4a', 'active':false},
-     {'id':4, 'color':'#eb5a46', 'active':false},
-      {'id':5, 'color':'#c377e0', 'active':false},
-      {'id':6, 'color':'#0079bf', 'active':false}
-    ];
-
     let labelComment = localStorage.getItem("label-comment");
-    return Promise.resolve(labelItems);
+    let labelItems = [
+      {'labelId':1, 'labelColor':'#61bd4f', 'active':false},
+      {'labelId':2, 'labelColor':'#f2d600', 'active':false},
+      {'labelId':3, 'labelColor':'#ffab4a', 'active':false},
+      {'labelId':4, 'labelColor':'#eb5a46', 'active':false},
+      {'labelId':5, 'labelColor':'#c377e0', 'active':false},
+      {'labelId':6, 'labelColor':'#0079bf', 'active':false}
+    ];
+    if (labelComment == null) {
+      localStorage.setItem('label-comment', JSON.stringify(labelItems));
+    }
+    
+    let temp = JSON.parse(labelComment);
+    return Promise.resolve(temp);
   }
 
 }

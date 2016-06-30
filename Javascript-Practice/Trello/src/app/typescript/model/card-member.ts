@@ -2,25 +2,25 @@ import {Comment} from './comment';
 import {LabelComment} from './label-comment';
 
 export class CardMember {
-  private memberId: number;
-  private memberTitle: string;
+  public memberId: number;
+  public memberTitle: string;
   public comments: Comment[];
   public labelComments: LabelComment[];
 
   get _id() {
-    return this.name;
+    return this.memberId;
   }
 
-  set _id(value: string) {
-    this.name = value;
+  set _id(value: number) {
+    this.memberId = value;
   }
 
   get title() {
-    return this.name;
+    return this.memberTitle;
   }
 
   set title(value: string) {
-    this.name = value;
+    this.memberTitle = value;
   }
 
   constructor(title: string, _id: number, _comments: Comment[] = [] , _labelComments: LabelComment[]= []) {

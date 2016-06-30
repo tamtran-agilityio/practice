@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
-import {BoardListItemComponent} from './list-work-item.component';
+import {ListWorkItemComponent} from './list-work-item.component';
 import {Card} from '../../model/card';
 import {Board} from '../../model/board';
 import {CardMember} from '../../model/card-member';
@@ -14,7 +14,7 @@ import {ModalCommentComponent} from './modal-comment.component';
   templateUrl: 'app/typescript/component/boards/board-list-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-list-details.component.css'],
   providers: [FORM_DIRECTIVES, BoardService],
-  directives: [BoardListItemComponent, OffClickDirective, ModalCommentComponent],
+  directives: [ListWorkItemComponent, OffClickDirective, ModalCommentComponent],
   inputs: ['nameEdit']
 })
 
@@ -56,7 +56,7 @@ export class BoardListComponent implements OnInit{
   }
 
   changeName(card:Card, value) {
-    card.name = value;
+    card.cardTitle = value;
   }
 
   onSelecName(card:Card, value) {

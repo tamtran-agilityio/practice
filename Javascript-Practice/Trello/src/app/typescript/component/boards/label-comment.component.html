@@ -13,7 +13,7 @@
                 <li *ngFor="#labelItem of labelItems">
                   <a href="javascript:void(0)" class="card-label-edit-button" (click)="addLabel(labelItem)">
                     <span class="card-label" [style.background] ="labelItem.labelColor">
-                      <span class="icon-check"></span>
+                      <i class="fa fa-check" aria-hidden="true" [class.hidden]="labelItem.active == false"></i>
                     </span>
                   </a>
                 </li>

@@ -156,3 +156,12 @@
 .card-label-blue {
   background-color: #0079bf;
 }
+
+.hidden {
+  display: none;
+}
+
+.fa-check {
+  position: absolute;
+  right: 8px;
+}

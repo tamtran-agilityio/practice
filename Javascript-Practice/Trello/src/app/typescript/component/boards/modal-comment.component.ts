@@ -1,7 +1,8 @@
-import {Component, OnInit, Input} from 'angular2/core';
+import {Component, OnInit, Input, DoCheck} from 'angular2/core';
 import {NgForm} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
 import {Comment} from '../../model/comment';
+import {Board} from '../../model/board';
 import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {ReversePipe} from './revise.pipe';
@@ -16,18 +17,25 @@ import {LabelCommentComponent} from './label-comment.component';
   pipes: [ReversePipe]
 })
 
-export class ModalCommentComponent implements OnInit {
+export class ModalCommentComponent implements OnInit, DoCheck {
+  public  cardMembers:CardMember[];
   private showPop: boolean = false;
   private memberComment: string;
   private cardSelectItem: number;
+  private board: Board;
+  private memberCardCommentId: number;
 
-  @Input() private memberCardComment: CardMember;
-  @Input() private cardSelectIdPopup: CardMember;
+  @Input() public memberCardComment: CardMember;
+  @Input() public cardSelectIdPopup: CardMember;
 
   constructor(private _boardService: BoardService,  private _params: RouteParams) {
   }
 
   ngOnInit() {
+    let boardIdParam = parseInt(this._params.get('id'));
+    this._boardService.getBoard(boardIdParam).then(board => {
+      this.board = board;
+    });
   }
 
   private updateStore() {
@@ -38,8 +46,8 @@ export class ModalCommentComponent implements OnInit {
 
   saveComment() {
     let boardIdParam = parseInt(this._params.get('id'));
-    let memberAddComment = parseInt(this.memberCardComment.memberId) - 1;
-    let commentId = parseInt(this.memberCardComment.comments.length.toString()) + 1;
+    let memberAddComment = this.memberCardComment.memberId - 1;
+    let commentId = this.memberCardComment.comments.length + 1;
     this.cardSelectItem = parseInt(this.cardSelectIdPopup.cardId) - 1;
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;

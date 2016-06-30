@@ -1,15 +1,15 @@
 import {CardMember} from './card-member';
 
 export class Card {
-  private cardId: number;
-  private cardTitle: string;
+  public cardId: number;
+  public cardTitle: string;
   public cardMembers: CardMember[];
 
   get _id() {
     return this.cardId;
   }
 
-  set _id(value: string) {
+  set _id(value: number) {
     this.cardId = value;
   }
 

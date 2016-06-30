@@ -2,29 +2,28 @@ import {Card} from './card';
 
 export class Board {
   private boardTitle: string;
-  private boardId: number;
+  public boardId: number;
   start: boolean;
   public cards: Card[];
 
   get _board_id() {
-    return this.board_title;
+    return this.boardId;
   }
-  set _board_id(value: string) {
-    this.board_title = value;
+  set _board_id(value: number) {
+    this.boardId = value;
   }
 
   get title() {
-    return this.board_title;
+    return this.boardTitle;
   }
   set title(value: string) {
-    this.board_title = value;
+    this.boardTitle = value;
   }
 
   constructor(title: string, _board_id: number, _cards: Card[]) {
     this.boardTitle = title;
     this.boardId = _board_id;
     this.start = false;
-    _cards = _cards
     this.cards = _cards;
   }
 }

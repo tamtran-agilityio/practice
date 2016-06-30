@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from 'angular2/core';
+import {RouteParams, Router} from 'angular2/router';
 import {BoardService} from '../service/board-service';
 import {LabelComment} from '../../model/label-comment';
-import {LabelCommentActive} from '../../model/label-active';
 
 @Component({
   selector:'label-comment',
@@ -11,32 +11,20 @@ import {LabelCommentActive} from '../../model/label-active';
 })
 
 export class LabelCommentComponent implements OnInit {
-  private labelItems: Array<any>;
-  private labelCommentActives: LabelCommentActive[];
-  @Input() private memberAddCommentLabel: string;
+  private labelItems: LabelComment; 
 
-  constructor(private _labelService: BoardService) {
-    let persistedLabel = JSON.parse(localStorage.getItem('label-comment') || '[]');
-    
-    this.labelCommentActives = persistedLabel.map((labelCommentActive: {id: number, memberId: number, active: boolean}) => {
-    let ret = new LabelCommentActive(labelCommentActive.id, labelCommentActive.memberId, labelCommentActive.active);
-      return ret;
-    });
+  @Input() private memberCardComment: CardMember;
+  @Input() private cardSelectIdPopup: CardMember;
+
+  constructor(private _labelService: BoardService, private _params: RouteParams) {
   }
 
   ngOnInit() {
     this._labelService.getLabes().then(labelItems => this.labelItems = labelItems);
   }
-
-  private updateStore() {
-    localStorage.setItem('label-comment', JSON.stringify(this.labelCommentActives));
-  }
-
+  
   addLabel(labelItem: LabelComment) {
-    let active: boolean;
-    let itemActive = !labelItem.active;
-    console.log("SSSSSS", itemActive, "labelItem.active", labelItem.active);
-    this.labelCommentActives.push(new LabelCommentActive(labelItem.id, this.memberAddCommentLabel , itemActive));
-    this.updateStore();
+    labelItem.active = !labelItem.active;
+
   }
 }
