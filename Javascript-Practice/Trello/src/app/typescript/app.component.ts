@@ -3,8 +3,8 @@ import {HTTP_PROVIDERS}    from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router} from 'angular2/router';
 import {Board} from './model/board';
 import {DashBoardComponent} from './component/dashboard/dashboard.component';
-import {BoardListComponent} from './component/boards/board-list-details.component';
-import {CreateBoardComponent} from './component/create-board/board-create.component';
+import {BoardListDetailsComponent} from './component/boards/board-list-details.component';
+import {BoardCreateComponent} from './component/create-board/board-create.component';
 import {BoardDetailComponent} from './component/boards/board-details.component';
 
 @Component({
@@ -58,7 +58,7 @@ import {BoardDetailComponent} from './component/boards/board-details.component';
   {
     path: '/boards',
     name: 'BoarList',
-    component: BoardListComponent
+    component: BoardListDetailsComponent
   },
   {
     path: '/board-detail/:id',

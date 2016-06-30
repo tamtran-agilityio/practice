@@ -51,8 +51,11 @@ export class ModalCommentComponent implements OnInit, DoCheck {
     this.cardSelectItem = parseInt(this.cardSelectIdPopup.cardId) - 1;
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;
-      this.board.cards.cardMembers = this.board.cards[this.cardSelectItem].cardMembers || [];
+      this.board.cards[this.cardSelectItem].cardMembers = this.board.cards[this.cardSelectItem].cardMembers || [];
+      this.memberCardComment.comments.push(new Comment(this.memberComment, commentId));
+      console.log("this.board1:", this.board);
       this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].comments.push(new Comment(this.memberComment, commentId));
+      console.log("this.board2:", this.board);
       this.updateStore();
       this.memberComment = '';
     });

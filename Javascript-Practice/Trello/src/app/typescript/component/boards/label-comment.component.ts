@@ -1,7 +1,8 @@
-import {Component, OnInit, Input} from 'angular2/core';
+import {Component, OnInit, Input, ElementRef} from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {BoardService} from '../service/board-service';
 import {LabelComment} from '../../model/label-comment';
+declare let $:JQueryStatic;
 
 @Component({
   selector:'label-comment',
@@ -11,20 +12,31 @@ import {LabelComment} from '../../model/label-comment';
 })
 
 export class LabelCommentComponent implements OnInit {
-  private labelItems: LabelComment; 
+  private labelItems: LabelComment;
+  private activePopup = true;
+  private el: HTMLElement;
 
-  @Input() private memberCardComment: CardMember;
-  @Input() private cardSelectIdPopup: CardMember;
+  @Input() public memberCardLabelComments: CardMember;
+  @Input() public cardSelectIdPopup: CardMember;
 
-  constructor(private _labelService: BoardService, private _params: RouteParams) {
+  constructor(private _labelService: BoardService, private _params: RouteParams, private element: ElementRef) {
+    this.element = element;
   }
 
   ngOnInit() {
-    this._labelService.getLabes().then(labelItems => this.labelItems = labelItems);
+    this.container = $(this.element.nativeElement).find('.close');
+    this.container.on( "click", function() {
+      console.log("SSSSSSSSSSS---->>");
+    }
   }
   
-  addLabel(labelItem: LabelComment) {
-    labelItem.active = !labelItem.active;
+  addLabel(labelComment: LabelComment) {
+    labelComment.active = !labelComment.active;
+  }
 
+  getPopup() {
+    if(!this.activePopup){
+      return "none";
+    }
   }
 }

@@ -22,7 +22,7 @@ import {BoardService} from '../service/board-service';
   }
 ])
 
-export class CreateBoardComponent {
+export class BoardCreateComponent {
   private board: Board;
   private isActivePop: boolean = false;
 

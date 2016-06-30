@@ -1,14 +1,14 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {Board} from '../../model/board';
-import {BoardListComponent} from './board-list-details.component';
+import {BoardListDetailsComponent} from './board-list-details.component';
 import {BoardService} from '../service/board-service';
 
 @Component({
-  selector: 'content-wapper',
+  selector: 'dashboard',
   templateUrl: 'app/typescript/component/boards/board-details.component.html',
   styleUrls: ['app/typescript/component/boards/board-details.component.css'],
-  directives: [BoardListComponent],
+  directives: [BoardListDetailsComponent],
   providers: [BoardService]
 })
 

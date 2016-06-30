@@ -18,7 +18,7 @@ import {ModalCommentComponent} from './modal-comment.component';
   inputs: ['nameEdit']
 })
 
-export class BoardListComponent implements OnInit{
+export class BoardListDetailsComponent implements OnInit{
   private isActive: boolean = false;
   private openActive: boolean = false;
   private board: Board;
