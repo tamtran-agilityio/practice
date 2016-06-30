@@ -17,9 +17,9 @@ export class LabelCommentComponent implements OnInit {
   private el: HTMLElement;
 
   @Input() public memberCardLabelComments: CardMember;
-  @Input() public cardSelectIdPopup: CardMember;
+  @Input() public memberSelectLabel: CardMember;
 
-  constructor(private _labelService: BoardService, private _params: RouteParams, private element: ElementRef) {
+  constructor(private _boardService: BoardService, private _params: RouteParams, private element: ElementRef) {
     this.element = element;
   }
 
@@ -29,9 +29,23 @@ export class LabelCommentComponent implements OnInit {
       console.log("SSSSSSSSSSS---->>");
     }
   }
+
+   private updateStore() {
+    this._boardService.updateBoard(this.board).then(boards => {
+    });
+  }
   
-  addLabel(labelComment: LabelComment) {
+  selecLabel(labelComment: LabelComment) {
     labelComment.active = !labelComment.active;
+    let boardIdParam = parseInt(this._params.get('id'));
+    let memberAddComment = this.memberCardLabelComments.memberId - 1;
+    this.cardSelectItem = parseInt(this.memberSelectLabel.cardId) - 1;
+    console.log("SSSSSSS", this.memberCardLabelComments);
+    console.log("SSSSSSSSSSSSS3333", this.memberSelectLabel);
+    this._boardService.getBoard(boardIdParam).then(board => {
+      this.board = board;
+      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments.push( );
+    });
   }
 
   getPopup() {
