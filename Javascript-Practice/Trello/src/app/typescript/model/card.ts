@@ -1,3 +1,10 @@
+/**
+ * Create Model Card 
+ * @cardId: [Infor init Card]
+ * @cardTitle: [Title of Card]
+ * @cardMembers: [Array card member]
+ * @return [Array Card]
+ */
 import {CardMember} from './card-member';
 
 export class Card {

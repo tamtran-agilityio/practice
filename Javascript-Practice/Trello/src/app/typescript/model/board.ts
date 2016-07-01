@@ -1,3 +1,9 @@
+/**
+ * Create model Board
+ * @boardId: [Infor init Board]
+ * @boardTitle:[Title of Board]
+ * @return [Array Board]
+ */
 import {Card} from './card';
 
 export class Board {

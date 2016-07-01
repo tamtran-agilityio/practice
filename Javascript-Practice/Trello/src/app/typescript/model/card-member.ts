@@ -1,3 +1,11 @@
+/**
+ * Create model CardMember
+ * @memberId: [Infor init Board]
+ * @memberTitle:[Title of Board]
+ * @comments [Array comments of card meember]
+ * @labelComments [Array labelComments of card meember]
+ * @return [Array CardMember]
+ */
 import {Comment} from './comment';
 import {LabelComment} from './label-comment';
 

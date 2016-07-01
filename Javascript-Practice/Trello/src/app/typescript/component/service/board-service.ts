@@ -1,3 +1,7 @@
+/*
+ *  Create handle service
+ *  Get data to local storage 
+ */
 import { Injectable } from 'angular2/core';
 import {LabelComment} from '../../model/label-comment';
 import {Board} from '../../model/board';
@@ -15,6 +19,10 @@ export class BoardService {
     return Promise.resolve(temp);
   }
 
+  /*
+   * Get data part board
+   * @param  boardIdParam infor dashboard init
+  */
   getBoard(boardIdParam) {
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
     let boardRs = null;
@@ -29,6 +37,10 @@ export class BoardService {
     return Promise.resolve(boardRs);
   }
 
+   /*
+   * Set data part board
+   * @param  boardIdParam infor dashboard init
+  */
   updateBoard(boardParam: Board){
     let boardId: number;
     let persistedBoads = JSON.parse(localStorage.getItem('board-item') || '[]');
@@ -48,6 +60,9 @@ export class BoardService {
     return Promise.resolve(persistedBoads);
   }
 
+  /*
+   * Get data part labels
+  */
   getLabes() {
     let labelComment = localStorage.getItem("label-comment");
     let labelItems = [
