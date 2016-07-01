@@ -4,7 +4,19 @@
       <span class="icon-edit"></span>
       <div class="list-card-details">
         <a href="#" class="list-card-title " data-toggle="modal" data-target="#creatModalComment" (click)="createComment(cardMember);" >
+          <div class="list-card-labels">
+            <li *ngFor="#labelComment of cardMember?.labelComments" [hidden]="labelComment.active == false" class="card-detail-labels-list">
+              <a href="javascript:void(0)" class="mod-card-front" >
+                <span class="card-label" [style.background] ="labelComment.labelColor">
+                </span>
+              </a>
+            </li>
+          </div>
           {{cardMember.memberTitle}}
+          <div class="badges">
+            <i class="fa fa-comment-o icon-sm" aria-hidden="true"></i>
+            <div class="badge-text">{{cardMember.comments.length}}</div>
+          </div>
         </a>
       </div>
     </div>

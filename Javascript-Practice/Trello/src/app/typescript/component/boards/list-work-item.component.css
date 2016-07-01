@@ -250,3 +250,57 @@
   width: auto;
   margin: 10px;
 }
+
+.badges {
+  color: #8c8c8c;
+  margin: 0 4px 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1px 2px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+
+.icon-sm {
+  font-size: 9pt !important;
+}
+
+.badge-text {
+  font-size: 9pt;
+  padding: 0 2px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.list-card-labels {
+  margin: 2px 0;
+  overflow: auto;
+}
+
+.mod-card-front {
+  float: left;
+  height: 8px;
+  margin: 0 3px 3px 0;
+  padding: 0;
+  width: 42px;
+  line-height: 75pt;
+}
+
+li.card-detail-labels-list {
+  list-style: none;
+}
+
+.card-label {
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 3px;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  padding: 3px 6px;
+  position: relative;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 5px rgba(0,0,0,.2),0 0 2px #000;
+  white-space: nowrap;
+}

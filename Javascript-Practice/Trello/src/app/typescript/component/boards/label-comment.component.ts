@@ -2,7 +2,7 @@ import {Component, OnInit, Input, ElementRef} from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {BoardService} from '../service/board-service';
 import {LabelComment} from '../../model/label-comment';
-declare let $:JQueryStatic;
+declare let $:any;
 
 @Component({
   selector:'label-comment',
@@ -25,6 +25,7 @@ export class LabelCommentComponent implements OnInit {
 
   ngOnInit() {
     this.container = $(this.element.nativeElement).find('.close');
+    this.containerPopup = $(this.element.nativeElement).find('.modal-label');
     this.container.on('click', function() {
       console.log("SSSSSSSSSSS---->>");
     }
@@ -40,11 +41,10 @@ export class LabelCommentComponent implements OnInit {
     let boardIdParam = parseInt(this._params.get('id'));
     let memberAddComment = this.memberCardLabelComments.memberId - 1;
     this.cardSelectItem = parseInt(this.memberSelectLabel.cardId) - 1;
-    console.log("SSSSSSS", this.memberCardLabelComments);
-    console.log("SSSSSSSSSSSSS3333", this.memberSelectLabel);
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;
-      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments.push( );
+      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments.active = !labelComment.active;;
+      this.updateStore();
     });
   }
 

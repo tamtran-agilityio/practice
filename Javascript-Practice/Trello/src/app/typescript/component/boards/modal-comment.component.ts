@@ -7,13 +7,14 @@ import {CardMember} from '../../model/card-member';
 import {BoardService} from '../service/board-service';
 import {ReversePipe} from './revise.pipe';
 import {LabelCommentComponent} from './label-comment.component';
+import {LabelActionComponent} from './label-action.component';
 
 @Component({
   selector:'modal-comment',
   templateUrl: 'app/typescript/component/boards/modal-comment.component.html',
   styleUrls: ['app/typescript/component/boards/modal-comment.component.css'],
   providers: [BoardService],
-  directives: [LabelCommentComponent],
+  directives: [LabelCommentComponent, LabelActionComponent],
   pipes: [ReversePipe]
 })
 
@@ -53,9 +54,7 @@ export class ModalCommentComponent implements OnInit {
       this.board = board;
       this.board.cards[this.cardSelectItem].cardMembers = this.board.cards[this.cardSelectItem].cardMembers || [];
       this.memberCardComment.comments.push(new Comment(this.memberComment, commentId));
-      console.log("this.board1:", this.board);
       this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].comments.push(new Comment(this.memberComment, commentId));
-      console.log("this.board2:", this.board);
       this.updateStore();
       this.memberComment = '';
     });
