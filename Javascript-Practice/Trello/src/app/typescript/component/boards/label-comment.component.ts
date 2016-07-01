@@ -48,14 +48,13 @@ export class LabelCommentComponent implements OnInit {
   selecLabel(labelComment: LabelComment) {
     labelComment.active = !labelComment.active;
     let boardIdParam = parseInt(this._params.get('id'));
+    let labelCommentsId = labelComment.labelId - 1;
     let memberAddComment = this.memberCardLabelComments.memberId - 1;
     this.cardSelectItem = parseInt(this.memberSelectLabel.cardId) - 1;
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;
-      console.log("this.board1111122", this.board);
-      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments;
+      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments[labelCommentsId].active = labelComment.active;
       this.updateStore();
-      console.log("this.board1111122223444444", this.board);
     });
   }
 
