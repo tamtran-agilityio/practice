@@ -41,7 +41,7 @@ export class ModalCommentComponent implements OnInit {
 
   private updateStore() {
     this._boardService.updateBoard(this.board).then(boards => {
-      console.warn("Update store boards 222222:", boards); 
+      console.log("Update store boards 222222:", boards); 
     });
   }
 

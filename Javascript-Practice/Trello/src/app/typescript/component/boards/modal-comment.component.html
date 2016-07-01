@@ -71,7 +71,7 @@
               </span>
               <h3>Activity</h3>
             </div>
-            <div *ngFor="#comment of memberCardComment?.comments" class="list-actions">
+            <div *ngFor="#comment of memberCardComment?.comments | reverse" class="list-actions">
               <div class="phenom" >
                 <div class="phenom-creator">
                   <div class="member">

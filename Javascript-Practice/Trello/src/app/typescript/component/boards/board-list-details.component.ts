@@ -43,7 +43,7 @@ export class BoardListDetailsComponent implements OnInit{
 
   private updateStore() {
     this._boardService.updateBoard(this.board).then(boards => {
-      console.warn("Update store boards:", boards);  
+      console.log("Update store boards:", boards);  
     });
   }
 
