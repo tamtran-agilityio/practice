@@ -27,8 +27,8 @@
   display: block;
   overflow: hidden;
   position: absolute;
-  right: 300px;
-  top: 200px;
+  right: 40%;
+  top: 10%;
   width: 300px;
   z-index: 99;
   height: 450px;

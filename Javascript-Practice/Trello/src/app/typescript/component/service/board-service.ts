@@ -64,7 +64,6 @@ export class BoardService {
    * Get data part labels
   */
   getLabes() {
-    let labelComment = localStorage.getItem("label-comment");
     let labelItems = [
       {'labelId':1, 'labelColor':'#61bd4f', 'active':false},
       {'labelId':2, 'labelColor':'#f2d600', 'active':false},
@@ -77,6 +76,7 @@ export class BoardService {
       localStorage.setItem('label-comment', JSON.stringify(labelItems));
     }
     
+    let labelComment = localStorage.getItem("label-comment");
     let temp = JSON.parse(labelComment);
     return Promise.resolve(temp);
   }

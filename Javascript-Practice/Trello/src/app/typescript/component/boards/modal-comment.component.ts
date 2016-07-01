@@ -1,3 +1,8 @@
+/*
+ *  Component popup comment
+ *  Add comment
+ *  Add label 
+ */
 import {Component, OnInit, Input} from 'angular2/core';
 import {NgForm} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
@@ -26,6 +31,10 @@ export class ModalCommentComponent implements OnInit {
   private board: Board;
   private memberCardCommentId: number;
 
+  /**
+   * @memberCardComment [input to input board list details of each card member]
+   * @cardSelectIdPopup [input to input board list details of each card member]
+   */
   @Input() public memberCardComment: CardMember;
   @Input() public cardSelectIdPopup: CardMember;
 

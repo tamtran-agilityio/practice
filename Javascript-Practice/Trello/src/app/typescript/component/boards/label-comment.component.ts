@@ -16,6 +16,11 @@ export class LabelCommentComponent implements OnInit {
   private activePopup = true;
   private el: HTMLElement;
 
+  /**
+   * @memberCardComment [input to input board list details of each card member]
+   * @cardSelectIdPopup [input to input board list details of each card member]
+   */
+
   @Input() public memberCardLabelComments: CardMember;
   @Input() public memberSelectLabel: CardMember;
 
@@ -36,6 +41,10 @@ export class LabelCommentComponent implements OnInit {
     });
   }
   
+  /**
+   * @selecLabel [selet label of member]
+   * @labelComment [input before select item]
+   */
   selecLabel(labelComment: LabelComment) {
     labelComment.active = !labelComment.active;
     let boardIdParam = parseInt(this._params.get('id'));
@@ -43,8 +52,10 @@ export class LabelCommentComponent implements OnInit {
     this.cardSelectItem = parseInt(this.memberSelectLabel.cardId) - 1;
     this._boardService.getBoard(boardIdParam).then(board => {
       this.board = board;
-      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments.active = !labelComment.active;;
+      console.log("this.board1111122", this.board);
+      this.board.cards[this.cardSelectItem].cardMembers[memberAddComment].labelComments;
       this.updateStore();
+      console.log("this.board1111122223444444", this.board);
     });
   }
 

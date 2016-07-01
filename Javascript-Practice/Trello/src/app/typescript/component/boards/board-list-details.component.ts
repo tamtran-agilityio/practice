@@ -17,7 +17,11 @@ import {ModalCommentComponent} from './modal-comment.component';
   directives: [ListWorkItemComponent, OffClickDirective, ModalCommentComponent],
   inputs: ['nameEdit']
 })
-
+/**
+ * BoardListDetailsComponent
+ * @details [List detail of card]
+ * 
+ */
 export class BoardListDetailsComponent implements OnInit{
   private isActive: boolean = false;
   private openActive: boolean = false;
@@ -46,7 +50,10 @@ export class BoardListDetailsComponent implements OnInit{
       console.log("Update store boards:", boards);  
     });
   }
-
+  /**
+   * @onTagget [Add list card of board]
+   * @details []
+   */
   onTagget() {
     let nextCardId = this.board.cards.length + 1;
     this.board.cards.push(new Card(this.nameCard, nextCardId));
@@ -55,22 +62,42 @@ export class BoardListDetailsComponent implements OnInit{
     this.isActive = false;
   }
 
+  /**
+   * @changeName [Change name]
+   * @param card [card need change name]
+   * @param value [value will change]
+   */
   changeName(card:Card, value) {
     card.cardTitle = value;
   }
 
+   /**
+   * @onSelecName [Change name]
+   * @param card [card need change name]
+   * @param value [value will change]
+   */
   onSelecName(card:Card, value) {
     this.changeName(card, value);
   }
 
+  /**
+   * @clickedOutside
+   * @details [if not click item will remove texteare add]
+   */
   clickedOutside() {
     this.isActive = false;
   }
 
+  /**
+   * cardMemberIdPopup [assign value of out when click item]
+   */
   cardMemberIdPopup($event) {
     this.memberComment = $event;
   }
 
+  /**
+   * cardSelectPopup [assign value of out when click item]
+   */
   cardSelectPopup($event) {
     this.memberCardPopup = $event
   }

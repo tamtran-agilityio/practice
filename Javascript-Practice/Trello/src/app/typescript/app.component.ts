@@ -5,6 +5,7 @@ import {Board} from './model/board';
 import {DashBoardComponent} from './component/dashboard/dashboard.component';
 import {BoardListDetailsComponent} from './component/boards/board-list-details.component';
 import {BoardCreateComponent} from './component/create-board/board-create.component';
+import {BoardDrawerComponent} from './component/create-board/board-drawer.component';
 import {BoardDetailComponent} from './component/boards/board-details.component';
 
 @Component({
@@ -16,7 +17,7 @@ import {BoardDetailComponent} from './component/boards/board-details.component';
       <span class="header-logo-defaulf"></span>
     </a>
     <div class="header-boards-button">
-      <a [routerLink]="['BoarList']" class="header-btn header-boards">
+      <a [routerLink]="['BoarDrawer']" class="header-btn header-boards">
         <i class="fa fa-clipboard" aria-hidden="true"></i>
         <span class="header-btn-text"> Boards </span>
       </a>
@@ -59,6 +60,11 @@ import {BoardDetailComponent} from './component/boards/board-details.component';
     path: '/boards',
     name: 'BoarList',
     component: BoardListDetailsComponent
+  },
+  {
+    path: '/boards-drawer',
+    name: 'BoarDrawer',
+    component: BoardDrawerComponent
   },
   {
     path: '/board-detail/:id',
