@@ -11,15 +11,27 @@
           </span>
          <div class="window-title">
             <h2 class="card-detail-title-assist js-title-helper" dir="auto"></h2>
-            <textarea class="mod-card-back-title js-card-detail-title-input"></textarea>
+            <textarea class="mod-card-back-title js-card-detail-title-input">{{memberCardComment?.memberTitle}}</textarea>
           </div> 
           <div class="window-header-inline-content"> 
             <p class="window-header-card"> in list
-              <a href="javascript:void(0)">Name Card</a>
+              <a href="javascript:void(0)">{{cardSelectIdPopup?.cardTitle}}</a>
             </p>
           </div>
         </div>
         <div class="window-main-col">
+          <div class="card-detail-data">
+            <div class="card-detail-item">
+              <ul>
+                <li *ngFor="#labelComment of memberCardComment?.labelComments" [hidden]="labelComment.active == false" class="card-detail-labels-list">
+                  <a href="javascript:void(0)" class="card-label" >
+                    <span class="card-label" [style.background] ="labelComment.labelColor">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="card-detail-data">
             <div class="card-detail-item">
               <div class="u-bottom">

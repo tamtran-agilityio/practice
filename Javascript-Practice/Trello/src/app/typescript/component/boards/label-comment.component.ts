@@ -25,7 +25,7 @@ export class LabelCommentComponent implements OnInit {
 
   ngOnInit() {
     this.container = $(this.element.nativeElement).find('.close');
-    this.container.on( "click", function() {
+    this.container.on('click', function() {
       console.log("SSSSSSSSSSS---->>");
     }
   }

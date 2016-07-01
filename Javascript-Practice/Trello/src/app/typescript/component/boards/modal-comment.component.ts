@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, DoCheck} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 import {NgForm} from 'angular2/common';
 import {RouteParams, Router} from 'angular2/router';
 import {Comment} from '../../model/comment';
@@ -17,7 +17,7 @@ import {LabelCommentComponent} from './label-comment.component';
   pipes: [ReversePipe]
 })
 
-export class ModalCommentComponent implements OnInit, DoCheck {
+export class ModalCommentComponent implements OnInit {
   public  cardMembers:CardMember[];
   private showPop: boolean = false;
   private memberComment: string;
