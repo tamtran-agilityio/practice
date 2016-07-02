@@ -1,7 +1,0 @@
-/* include font face */
-@include font-face("helveticaneue", "/fonts/helveticaneue", $file-formats: eot svg ttf woff);
-@include font-face("helveticaneue", "/fonts/helveticaneue-light-webfont", $file-formats: eot svg ttf woff);
-@include font-face("helveticaneue", "/fonts/helveticaneue-medium-webfont", $file-formats: eot svg ttf woff);
-@include font-face("helveticaneue", "/fonts/ubuntu-b-webfont", $file-formats: eot svg ttf woff);
-
-$font-helveticaneue: "helveticaneue", sans serif;

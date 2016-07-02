@@ -1,55 +1,27 @@
-#Overview
-1. [Javascript]
-2. [Docpad and Gulp]
-3. [Vagrant]
+== ShopIsle ==
 
-#Structure Folder
-1. /javascript-training:
-  * Animation example:
-      * [Example-Bitters] Do example use Bitters
-      * [Example-Bourbon] Do example use Bourbon
-      * [Example-Foundation] Do example use Foundation
-      * [Example-MUI] Do example use MUI
-      * [Example-Materializecss] Do example use Materializecss
-  * Animation practice:
-      * [Soanecapital] Do practice use Materializecss
-  * Javascript Example:
-      * [Parallax-Scrolling] Do example parallax scrolling
-      * [Example-Lodash] Do example use Plugin Lodash
-  * Javascript Practice:
-      * [Todo-list] Do practice use javascript
-      * [User-Manager] Do practice use jquery
-      * [Sparks-Scroll] Do practice about parallax scrolling
-  * Responsive Advance practice:
-      * [Foodsense-Gulp_Slush] Do practice Foodsense use Gulp Slush  
-      * [Foodsense-Gulp_Yeoman] Do practice Foodsense use Gulp Yeoman
-2. /vagrant:
- * Vagrantfile
-        - Use box hashicorp/precise32
-        - Synced folders to /javascript
-        - Network of docpad is 9000
-        - Provision shell script bootstrap.sh
-    * bootstrap.sh
-        * Install Node Version Manager
-        * Install global modules: docpad, gulp, bower
-  
-#Run practice on vagrant
-  - cd /vagrant
-  - vagrant up
-  - vagrant ssh
-  - cd / folder container practice
+Images sources:
 
-#Run practice on machine
-  - cd / folder container practice
-**Folder /javascript contain all practice.**
+ * slide1.jpg: https://download.unsplash.com/uploads/141172692104151d94dd4/4f900e54
+ * slide2.jpg: https://download.unsplash.com/photo-1434056886845-dac89ffe9b56
+ * slide3.jpg: https://download.unsplash.com/reserve/RONyPwknRQOO3ag4xf3R_Kinsey.jpg
 
-###If practice run with docpad use command line:
-  - npm install
-  - bower install
-  - docpad run
-  - Run on browser with address : localhost:9778
-###If practice run with gulp use command line:
-  - npm install
-  - bower install
-  - gulp
-  - Run on browser with address : localhost:9000
+
+ * banner1.jpg: https://download.unsplash.com/photo-1433826672293-6fdc46138e66
+ * banner2.jpg: https://download.unsplash.com/photo-1433643667043-663b34a5c052
+ * banner3.jpg: https://download.unsplash.com/photo-1435070872030-a8113da23691
+ 
+ * 404.jpg: https://download.unsplash.com/photo-1428895009712-de9e58a18409
+ 
+ * team1.jpg: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
+ * team2.jpg: https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6
+ * team3.jpg: https://download.unsplash.com/photo-1427096105551-15e2512fd2dc
+ * team4.jpg: https://download.unsplash.com/photo-1434123715472-19686d6cc442
+ 
+ * background-video.jpg https://download.unsplash.com/photo-1436190807865-2e156d40f1a2
+ 
+ * header.jpg: https://download.unsplash.com/photo-1434592370571-b4bacd3377b3
+
+License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	
+
+ElegantIcons License: GPL 2.0 and MIT http://www.gnu.org/licenses/gpl-2.0.html, http://opensource.org/licenses/MIT

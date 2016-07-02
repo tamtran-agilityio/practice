@@ -1,9 +1,0 @@
-/* grid more site*/
-.container {
-  @include outer-container(100%);
-  background-color: $bg-container-full;
-}
-
-.container-content {
-  @include outer-container(75%);
-}

@@ -1,8 +1,0 @@
-{
-  "name": "new-gmail",
-  "version": "0.1.0",
-  "dependencies": {
-    "web-animations-js": "~1.0.7",
-    "lesshat": "~3.0.2"
-  }
-}
