@@ -38,7 +38,7 @@ export class ModalCommentComponent implements OnInit {
   @Input() public memberCardComment: CardMember;
   @Input() public cardSelectIdPopup: CardMember;
 
-  constructor(private _boardService: BoardService,  private _params: RouteParams) {
+  constructor(private _boardService: BoardService, private _params: RouteParams) {
   }
 
   ngOnInit() {

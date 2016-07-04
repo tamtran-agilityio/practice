@@ -1,6 +1,8 @@
 import {Component, OnInit, Input, ElementRef} from 'angular2/core';
 import {RouteParams, Router} from 'angular2/router';
 import {BoardService} from '../service/board-service';
+import {Board} from '../../model/board';
+import {CardMember} from '../../model/card-member';
 import {LabelComment} from '../../model/label-comment';
 declare let $:any;
 
@@ -14,6 +16,7 @@ declare let $:any;
 export class LabelCommentComponent implements OnInit {
   private labelItems: LabelComment;
   private activePopup = true;
+  private board: Board;
   private el: HTMLElement;
 
   /**
@@ -29,11 +32,12 @@ export class LabelCommentComponent implements OnInit {
   }
 
   ngOnInit() {
+    let container, containerPopup;
     this.container = $(this.element.nativeElement).find('.close');
     this.containerPopup = $(this.element.nativeElement).find('.modal-label');
-    this.container.on('click', function() {
-      console.log("SSSSSSSSSSS---->>");
-    }
+    //this.container.on('click', function() {
+      //console.log("SSSSSSSSSSS---->>");
+    //}
   }
 
    private updateStore() {

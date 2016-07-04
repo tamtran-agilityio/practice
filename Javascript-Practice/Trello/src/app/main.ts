@@ -1,3 +1,5 @@
+//<reference path="node_modules/angular2/platform/browser.d.ts"/>
+//<reference path="node_modules/angular2/src/facade/promise.d.ts"/>
 import { bootstrap } from 'angular2/platform/browser';
 import { AppComponent } from './typescript/app.component';
 import 'rxjs/add/operator/map';

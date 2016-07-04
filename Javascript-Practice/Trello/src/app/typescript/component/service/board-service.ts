@@ -72,11 +72,11 @@ export class BoardService {
       {'labelId':5, 'labelColor':'#c377e0', 'active':false},
       {'labelId':6, 'labelColor':'#0079bf', 'active':false}
     ];
+    let labelComment = localStorage.getItem("label-comment");
     if (labelComment == null) {
       localStorage.setItem('label-comment', JSON.stringify(labelItems));
     }
     
-    let labelComment = localStorage.getItem("label-comment");
     let temp = JSON.parse(labelComment);
     return Promise.resolve(temp);
   }
