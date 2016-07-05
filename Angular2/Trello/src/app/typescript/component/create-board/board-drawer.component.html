@@ -1,0 +1,46 @@
+<section class="boards-content">
+  <create-action></create-action>
+  <div class="boards-page-board-section">
+    <div class="board-section-header">
+      <div class="title-header-icon"></div>
+      <h3 class="title-header-name"> Starred Boards</h3>
+    </div>
+    <ul class="board-list">
+      <li  *ngFor="#board of boards #i=index" [value]="board" [hidden]="board.start === false" class="board-list-item">
+        <div *ngIf="board.start === true">
+        <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.boardId}]" class="board-item board-tile">
+          <span class="board-tile-fade"></span>
+          <span class="board-tile-details">{{board.boardTitle}}</span>
+        </a>
+        <span class="board-tile-options active"(click)="onSelectStart(board)">
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="boards-page-board-section">
+    <div class="board-section-header">
+      <div class="title-header-icon"></div>
+      <h3 class="title-header-name"> My Boards</h3>
+    </div>
+    <ul class="board-list">
+      <li  *ngFor="#board of boards #i=index" [value]="board" class="board-list-item">
+        <a (click)="onSelect(board)" [routerLink]="['BoardsDetail', { id: board.boardId }]" class="board-item board-tile">
+          <span class="board-tile-fade"></span>
+          <span class="board-tile-details">{{board.boardTitle}}</span>
+        </a>
+        <span class="board-tile-options" [class.active]="board.start != _isStart" (click)="onSelectStart(board)">
+          <i class="fa fa-star-o" (click)="toggleStart($event)" ></i>
+        </span>
+      </li>
+      <li class="board-list-item">
+        <a href="#" (click)="createBoard()" data-toggle="modal" data-target="#creatModal" class="board-item board-create">
+          <span class="board-tile-fade"></span>
+          <span class="board-create-details"> Create new board… </span>
+        </a>
+      </li>
+      <board-create></board-create>
+    </ul>
+  </div>
+</section>

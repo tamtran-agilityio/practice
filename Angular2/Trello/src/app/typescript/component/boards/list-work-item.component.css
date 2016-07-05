@@ -1,0 +1,306 @@
+.list-work-content {
+  background: #e2e4e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+}
+
+.list-work-header {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  min-height: 18px;
+}
+
+.list-card {
+  overflow-y: overlay;
+  padding: 0 9px 0 5px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
+}
+
+.list-card-item {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 4px 5px 6px 6px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  z-index: 0;
+  outline: none;
+}
+
+.list-header {
+  padding-right: 60px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  min-height: 18px;
+}
+
+.list-cards {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  min-height: 0;
+  overflow-y: overlay;
+  padding: 0 9px 10px 5px;
+}
+
+.icon-edit {
+  background-color: #edeff0;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  border-radius: 3px;
+  opacity: .8;
+  padding: 4px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  visibility: hidden;
+  z-index: 40;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  width: 18px;
+  display: inline-block;
+  font-family: trellicons;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: #999;
+}
+
+.list-name-assist {
+  font-size: 18px;
+  margin: 0;
+  line-height: 22px;
+  display: none;
+}
+
+.list-card-detail {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.list-card-details {
+  overflow: hidden;
+  padding: 6px 6px 2px 8px;
+  position: relative;
+  z-index: 10;
+}
+
+.list-card-title {
+  clear: both;
+  display: block;
+  font-weight: 400;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-decoration: none;
+  word-wrap: break-word;
+  color: #4d4d4d;
+  outline: none;
+}
+
+.open-card-composer {
+  border-radius: 0 0 3px 3px;
+  color: #8c8c8c;
+  display: block;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.js-add-card {
+  float: left;
+  min-height: 30px;
+  height: 30px;
+  margin-left: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+  background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+  box-shadow: 0 1px 0 #3f6f21;
+  color: #fff;
+  border: none;
+  box-shadow: 0 1px 0 #959da1;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 7px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.list-card-composer-textarea {
+  resize: vertical;
+  -webkit-transition: background 85ms ease-in,border-color 85ms ease-in;
+  transition: background 85ms ease-in,border-color 85ms ease-in;
+  width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 70px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 4px;
+  max-height: 162px;
+  min-height: 54px;
+  overflow-y: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 1px solid #cdd2d4;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 9pt;
+  min-height: 34px;
+  padding: 7px;
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+  line-height: 18px;
+}
+
+.modal-popup {
+  display: none;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    .translate(0, -25%);
+    .transition-transform(~"0.3s ease-out");
+  }
+  &.in .modal-dialog { .translate(0, 0) }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.badges {
+  color: #8c8c8c;
+  margin: 0 4px 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1px 2px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+
+.icon-sm {
+  font-size: 9pt !important;
+}
+
+.badge-text {
+  font-size: 9pt;
+  padding: 0 2px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.list-card-labels {
+  margin: 2px 0;
+  overflow: auto;
+}
+
+.mod-card-front {
+  float: left;
+  height: 8px;
+  margin: 0 3px 3px 0;
+  padding: 0;
+  width: 42px;
+  line-height: 75pt;
+}
+
+li.card-detail-labels-list {
+  list-style: none;
+}
+
+.card-label {
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 3px;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  padding: 3px 6px;
+  position: relative;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 5px rgba(0,0,0,.2),0 0 2px #000;
+  white-space: nowrap;
+}

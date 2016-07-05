@@ -1,0 +1,44 @@
+<form (ngSubmit)="onSave()" #createForm="ngForm">
+  <div class="list-cards">
+    <div *ngFor="#cardMember of board?.cards?.cardMembers" class="list-card-item" [hidden]="">
+      <span class="icon-edit"></span>
+      <div class="list-card-details">
+        <a href="#" class="list-card-title " data-toggle="modal" data-target="#creatModalComment" (click)="createComment(cardMember);" >
+          <div class="list-card-labels">
+            <li *ngFor="#labelComment of cardMember?.labelComments" [hidden]="labelComment.active == false" class="card-detail-labels-list">
+              <a href="javascript:void(0)" class="mod-card-front" >
+                <span class="card-label" [style.background] ="labelComment.labelColor">
+                </span>
+              </a>
+            </li>
+          </div>
+          {{cardMember.memberTitle}}
+          <div class="badges">
+            <i class="fa fa-comment-o icon-sm" aria-hidden="true"></i>
+            <div class="badge-text">{{cardMember.comments.length}}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="card-composer" [class.hidden]="openActive === false">
+      <div class="list-card js-composer">
+        <div class="list-card-detail u-clearfix">
+          <div class="list-card-labels u-clearfix js-list-card-composer-labels"></div>
+          <textarea class="list-card-composer-textarea js-card-title" dir="auto" ngControl="name" #name="ngForm" [(ngModel)]="cardMember" [offClick]="clickedOutside"></textarea>
+          <div class="list-card-members js-list-card-composer-members">
+          </div>
+        </div>
+      </div>
+      <div class="cc-controls u-clearfix">
+        <div class="cc-controls-section">
+          <input class="primary confirm mod-compact js-add-card" type="submit" value="Add" [offClick]="clickedOutside">
+            <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+        </div>
+        <div class="cc-controls-section mod-right">
+          <a class="icon-lg icon-overflow-menu-horizontal dark-background-hover js-cc-menu" href="#"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="open-card-composer" href="javascript:void(0)" [offClick]="clickedOutside" (click)="onAdd()" [class.hidden]="openActive === true" >Add a card…</a>
+</form>

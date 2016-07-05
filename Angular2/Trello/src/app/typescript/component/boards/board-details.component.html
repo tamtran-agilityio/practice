@@ -1,0 +1,20 @@
+<div class="board-wrapper">
+  <div class="board-main-content">
+    <div *ngFor="#board of boards" [hidden]="board.boardId != boardId" class="board-header">
+      <a href="javascript:void(0)" *ngIf="board.boardId == boardId" class="board-header-btn">
+        <span  class="board-header-btn-text"> {{board.boardTitle}}</span>
+        <span  class="board-header-btn-text" [class.active]="board.start == true">
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </span>
+      </a>
+      <a href="#" class="board-header-btn"></a>
+      <a href="#" class="permission-level board-header-btn">
+        <span class="icon-private"></span>
+        <span class="board-header-btn-text"> Private </span>
+      </a>
+    </div>
+    <div class="board-canvas">
+      <board-list></board-list>
+    </div>
+  </div>
+</div>

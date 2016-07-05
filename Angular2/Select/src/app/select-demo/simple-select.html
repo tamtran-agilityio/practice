@@ -1,0 +1,6 @@
+<input type="text" class="form-control ui-select-search" placeholder="Search" #listFilter (keyup)="0">
+<ul (change)="onSelect($event.target.value)" class="select2" >
+  <li *ngFor="#item of items | movieFilter:listFilter.value" [value]="item"
+    [class.selected]="item === selectedItem"
+    (click)="onSelect(item)">{{item}}</li>
+</ul>

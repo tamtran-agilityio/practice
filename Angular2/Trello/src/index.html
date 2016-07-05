@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <title> Local news | Trello </title>
+  <meta name="description" content="Organize anything, together. Trello is a collaboration tool that organizes your projects into boards. In one glance, know what's being worked on, who's working on what, and where something is in a process.">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" type="image/png" href="/images/icon.png" sizes="16x16 32x32 64x64">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="app/styles/main.css"/>
+  <link rel="stylesheet" href="app/styles/font-awesome.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <my-app>Loading...</my-app>
+    <dashboard></dashboard>
+    <boards-drawer></boards-drawer>
+    <pop-over></pop-over>
+  </div>
+</body>
+
+<script src="lib/angular2-polyfills.js"></script>
+<script src="lib/system.src.js"></script>
+<script src="lib/Rx.js"></script>
+<script src="lib/angular2.dev.js"></script>
+<script src="lib/http.dev.js"></script>
+<script src="lib/Reflect.js"></script>
+<script src="lib/router.dev.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/lodash.js"></script>
+<script src="https://npmcdn.com/a2-in-memory-web-api/web-api.js"></script>
+<script>
+  System.config({
+    packages: {
+      app: {
+        format: 'register',
+        defaultExtension: 'js',
+        map: {
+          immutable: 'lib/immutable.js',
+          redux: 'lib/redux.js',
+          jquery: 'lib/jquery.js'
+        }
+      }
+    },
+    meta: {
+      'jquery': {
+        exports: 'jQuery',
+        format: 'global'
+      }
+    }
+
+  });
+  System.import('app/main')
+        .then(null, console.error.bind(console));
+</script>
+
+</html>

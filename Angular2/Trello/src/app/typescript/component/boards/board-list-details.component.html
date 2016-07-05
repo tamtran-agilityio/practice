@@ -1,0 +1,28 @@
+<div class="board-list-container">
+  <div *ngFor="#card of board?.cards" class="list-work-wrapper">
+    <div class="list-work-content">
+      <div class="list-header">
+        <div class="list-header-target"></div>
+        <h2 class="list-name-assist hidden"></h2>
+        <textarea class="list-header-name" #nameEdit (keypress)="changeName(card, nameEdit.value)" (click)="onSelecName(card, nameEdit.value)"> {{card.cardTitle}}</textarea>
+      </div>
+      <list-work-item [cardSelect]="card" (memberSelect)="cardMemberIdPopup($event)" (cardSelectPopup)="cardSelectPopup($event)"></list-work-item>
+      <modal-comment class="modal-dialog" [memberCardComment]="memberComment" [cardSelectIdPopup]="memberCardPopup"></modal-comment>
+    </div>
+  </div>
+  <div class="list-work-wrapper mod-add" [class.is-idle]="!isActive">
+    <form (ngSubmit)="onTagget(createForm.value)" #createForm="ngForm">
+      <span class="placeholder" (click)="isActive = !isActive" [offClick]="clickedOutside"> Add a list ...</span>
+      <input type="text" class="list-name-input" required ngControl="name" placeholder="Add a list…" [(ngModel)]="nameCard"  #name="ngForm" [offClick]="clickedOutside">
+      <div [hidden]="name || name.pristine" class="alert alert-danger">
+        title is required
+      </div>
+      <div class="list-add-controls u-clearfix">
+        <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save" [disabled]="!createForm.form" [offClick]="clickedOutside">
+        <a class="icon-lg icon-close dark-hover js-cancel-edit" href="javascript:void(0)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

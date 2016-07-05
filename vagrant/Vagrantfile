@@ -13,6 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.synced_folder "../Javascript-Practice/", "/Javascript-Practice"
   config.vm.synced_folder "../Javascript-Example/", "/Javascript-Example"
+  config.vm.synced_folder "../Angular2/", "/Angular2"
+  config.vm.synced_folder "../React-Example/", "/React-Example"
   config.vm.network :forwarded_port, guest:9000, host: 9000
   config.vm.network :forwarded_port, guest:3000, host: 3000
   config.vm.network :forwarded_port, guest:4444, host: 4444

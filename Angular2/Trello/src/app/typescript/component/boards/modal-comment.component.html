@@ -1,0 +1,109 @@
+<div class="window-overlay window-disblock" id="creatModalComment" role="dialog">
+  <div class="window">
+    <div class="window-wrapper">
+      <a class="dialog-close-button" href="javascript:void(0)" data-dismiss="modal" (click)="closePopup()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </a>
+      <div class="card-detail-window u-clearfix">
+        <div class="window-header">
+          <span class="window-header-icon">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+          </span>
+         <div class="window-title">
+            <h2 class="card-detail-title-assist js-title-helper" dir="auto"></h2>
+            <textarea class="mod-card-back-title js-card-detail-title-input">{{memberCardComment?.memberTitle}}</textarea>
+          </div> 
+          <div class="window-header-inline-content"> 
+            <p class="window-header-card"> in list
+              <a href="javascript:void(0)">{{cardSelectIdPopup?.cardTitle}}</a>
+            </p>
+          </div>
+        </div>
+        <div class="window-main-col">
+          <div class="card-detail-data">
+            <div class="card-detail-item">
+              <ul>
+                <li *ngFor="#labelComment of memberCardComment?.labelComments" [hidden]="labelComment.active == false" class="card-detail-labels-list">
+                  <a href="javascript:void(0)" class="card-label" >
+                    <span class="card-label" [style.background] ="labelComment.labelColor">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-detail-data">
+            <div class="card-detail-item">
+              <div class="u-bottom">
+                <div class="quiet-button">
+                  <i class="fa fa-align-right" aria-hidden="true"></i>
+                  <a href="javascript:void(0)">Edit the description…</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="window-module">
+            <div class="window-module-title">
+              <span class="window-header-icon-module">
+                <i class="fa fa-comment-o" aria-hidden="true"></i>
+              </span>
+              <h3>Add comment</h3>
+            </div>
+            <div class="new-comment">
+              <div class="member"> 
+                <div class="member-initials">T</div>
+              </div>
+              <form (ngSubmit)="saveComment(commentForm.value)" #commentForm="ngForm">
+                <div class="comment-frame">
+                  <div class="comment-box">
+                    <textarea class="comment-box-input js-new-comment-input" placeholder="Write a comment…" tabindex="1" ngControl="name" #name="ngForm" [(ngModel)]="memberComment" >
+                    </textarea>
+                  </div>
+                </div>
+                <button class="primary confirm mod-no-top-bottom-margin button-add-comment"  [disabled]="!commentForm.form.valid" type="submit" value="Send" tabindex="3"> Send </button>
+              </form>
+            </div>
+          </div>
+          <div class="window-module">
+            <div class="window-module-title">
+              <span class="window-header-icon-module">
+                <i class="fa fa-list-ul" aria-hidden="true"></i>
+              </span>
+              <h3>Activity</h3>
+            </div>
+            <div *ngFor="#comment of memberCardComment?.comments | reverse" class="list-actions">
+              <div class="phenom" >
+                <div class="phenom-creator">
+                  <div class="member">
+                    <div class="member-initials">T</div>
+                  </div>
+                </div>
+                <div class="phenom-desc">
+                    <div class="inline-member">Tamtamxuan</div>
+                    <div class="comment-container">
+                      <div class="action-comment">
+                        <div class="current-comment">
+                          <p>{{comment.commentTitle}}</p>
+                        </div>
+                      </div>
+                    <div class="comment-box">
+                      <textarea class="comment-box-input js-new-comment-input" placeholder="Write a comment…" tabindex="1" > Content comment edit
+                            </textarea>
+                    </div>
+                    </div>
+                    <div class="phenom-meta">
+                      <a href="javascript:void(0)" class="date-title"> Date time</a>
+                      <a href="javascript:void(0)" class="edit-action"> Edit</a>
+                      <a href="javascript:void(0)" class="delete-action">Delete</a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label-action></label-action>
+      </div>
+    </div>
+  </div>  
+</div>
+<label-comment [memberCardLabelComments]="memberCardComment" [memberSelectLabel]="cardSelectIdPopup"></label-comment>
