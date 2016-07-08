@@ -2,7 +2,8 @@
 var MyComponent = React.createClass({
   handleClick: function() {
     if (this.myTextInput !== null) {
-      this.myTextInput.focus();
+      //this.myTextInput.focus();
+      console.log("SSSS");
     }
   },
   render: function() {
