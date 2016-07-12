@@ -1,0 +1,17 @@
+/js/bundle.js
+/js/bundle.min.js
+
+npm-debug.log
+
+node_modules
+bower_components
+dist
+
+typings
+
+.vscode
+.idea
+*.*~
+*.log
+*.map
+
