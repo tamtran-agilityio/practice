@@ -1,3 +1,5 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
 module.exports = [
   {
     test: /\.jsx?$/,
@@ -7,7 +9,18 @@ module.exports = [
 
   {
     test: /\.jade$/,
-    loader: 'raw!jade-html'
+    loader: 'jade-html'
+  },
+
+  { 
+    test: /\.jade$/, 
+    loader: 'jade' 
+  },
+
+  {
+    test: /\.html$/,
+    exclude: /index\.html$/,
+    loader: 'html'
   },
 
   { 
@@ -27,6 +40,10 @@ module.exports = [
   {
     test: /\.scss$/,
     loader: "style!css!sass?"
+  },
+  {
+    test: /\.scss$/i,
+    loader: extractCSS.extract(['css','sass'])
   },
 
   // Load fonts

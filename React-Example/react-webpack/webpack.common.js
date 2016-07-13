@@ -2,7 +2,9 @@ var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var html = require("jade-html!./src/index.jade");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
 
 module.exports = {
   entry: [
@@ -10,7 +12,8 @@ module.exports = {
   ],
   output: {
     path: path.join( __dirname , 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -19,9 +22,9 @@ module.exports = {
     loaders: loaders
   },
   plugins: [
+      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
-      new CopyWebpackPlugin([
-        {from: html}
-      ]),
+      new HtmlWebpackPlugin({}),
+      new ExtractTextPlugin('[name].css')
     ]
 };

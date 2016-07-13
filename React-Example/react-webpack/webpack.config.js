@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -34,7 +35,7 @@ module.exports = {
   plugins: [
     new webpack.NoErrorsPlugin(),
     new CopyWebpackPlugin([
-      {from: './src/index.html'}
+      {from: './src/index.jade'}
     ]),
   ]
 };
