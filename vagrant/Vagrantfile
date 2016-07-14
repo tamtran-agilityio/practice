@@ -15,10 +15,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "../Javascript-Example/", "/Javascript-Example"
   config.vm.synced_folder "../Angular2/", "/Angular2"
   config.vm.synced_folder "../React-Example/", "/React-Example"
+  config.vm.synced_folder "../React-Practice/", "/React-Practice"
   config.vm.network :forwarded_port, guest:9000, host: 9000
   config.vm.network :forwarded_port, guest:3000, host: 3000
   config.vm.network :forwarded_port, guest:4444, host: 4444
   config.vm.network :forwarded_port, guest:8000, host: 8000
+  config.vm.network "private_network", ip: "127.0.0.0"
   #config.vm.provision :shell, path: "bootstrap.sh",:privileged => false
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
