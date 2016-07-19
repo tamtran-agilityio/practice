@@ -3,48 +3,23 @@ import {connect} from 'react-redux';
 import {addBoard} from '../actions/BoardAction';
 import Modal, {closeStyle} from './Popup';
 
-// let AddBoard = ({dispatch}) => {
-//   let input
-//   return (
-//     <div>
-//       <form onSubmit={ e => {
-//         e.preventDefault()
-//         if (!input.value.trim()) {
-//           return 
-//         }
-//         dispatch(addBoard(input.value))
-//           input.value =''
-//         }}>
-//         <input ref={ node => {
-//           input = node
-//         }}/>
-//         <button type="submit">Add Board </button>
-//       </form>
-//     </div>
-//   )
-// }
-
-// AddBoard = connect()(AddBoard)
-
-// export default AddBoard
-
-export default class AddBoard extends React.Component{
+class AddBoard extends React.Component{
   constructor(){
     super()
     this.state = {};
   }
 
-  show(){
+  show() {
     this.setState({show: true})
   }
 
-  close(){
+  close() {
     this.setState({show: false})
   }
 
-
   render(){
-    let input
+    let input;
+    let { dispatch } = this.props;
     return (
       <div>
       <a onClick={this.show.bind(this)}>Open Modal</a>
@@ -80,6 +55,10 @@ export default class AddBoard extends React.Component{
         </div>
         </Modal>
       </div>
-    )    
+    ) 
   }
 }
+
+AddBoard = connect()(AddBoard)
+
+export default AddBoard
