@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 
 const Board = ({ onClick, start, text }) => (
   <li onClick={onClick} className="section-list-item">
-    <a href="#">
+    <a href="javascript:void(0)">
       <div className="board-tile-details">
         <div className="board-tile-details-name">
           {text}

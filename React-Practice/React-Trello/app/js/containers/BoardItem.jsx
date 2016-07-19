@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { startBoard } from '../actions/BoardAction'
+import { startBoard, showPopup } from '../actions/BoardAction'
 import BoardList from '../components/BoardList'
 
 const getBoad = (boards) => {
@@ -7,6 +7,7 @@ const getBoad = (boards) => {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     boards: getBoad(state.boards)
   }
@@ -16,12 +17,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onBoardClick: (id) => {
       dispatch(startBoard(id))
+    },
+    onClickShowPopup: () => {
+      dispatch(showPopup())
     }
   }
 }
 
 const BoardItem = connect(
-  getBoad,
+  mapStateToProps,
   mapDispatchToProps
 )(BoardList)
 

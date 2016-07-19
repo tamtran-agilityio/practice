@@ -6,6 +6,7 @@ const board = (state, action) => {
         text: action.text,
         start: false
       }
+
     case 'START_BOARD':
       if (state.id !== action.id) {
         return state
@@ -20,6 +21,14 @@ const board = (state, action) => {
   }
 }
 
+const popup = (state, action) => {
+  case 'SHOW_POPUP':
+    return { showPopup: true, state }
+
+  case 'CLOSE_POPUP':
+    return { showPopup: false, state }
+}
+
 const boards = (state = [], action) => {
   switch (action.type) {
     case 'ADD_BOARD':
@@ -27,6 +36,7 @@ const boards = (state = [], action) => {
         ...state,
         board(undefined, action)
       ]
+
     case 'START_BOARD':
       return state.map(t =>
         board(t, action)
