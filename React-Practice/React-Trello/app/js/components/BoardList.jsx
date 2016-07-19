@@ -11,6 +11,13 @@ const BoardList = ({ boards, onBoardClick}) => (
         onClick={() => onBoardClick(board.id)}
       />
     )}
+    <li className="section-list-item">
+      <a href="#" className="board-add">
+        <span className="board-tile-details-add">
+          Create new board...
+        </span>
+      </a>
+    </li>
   </ul>
 )
 
