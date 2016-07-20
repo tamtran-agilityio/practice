@@ -1,12 +1,16 @@
-import React from 'react';
-import AddBoard from '../containers/AddBoard';
-import BoardItem from '../containers/BoardItem'
+import HeaderPage from './HeaderPage';
+import BoardItem from '../containers/BoardItem';
+import React, {PropTypes, Component} from 'react';
 
-const App = () => (
-  <div>
-    <AddBoard/>
-    <BoardItem/>
-  </div>
-)
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <HeaderPage />
+        {this.props.children}
+     </div>
+    );
+  }
+}
 
 export default App

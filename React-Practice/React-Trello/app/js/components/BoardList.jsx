@@ -2,26 +2,31 @@ import 'babel-polyfill'
 import React, {PropTypes} from 'react';
 import Board from './Board';
 import AddBoard from '../containers/AddBoard';
+import BoardItem from '../containers/BoardItem';
 
-const BoardList = ({ boards, onBoardClick, onClickShowPopup}) => (
-  <ul>
-    { 
-      boards.map(board =>
-      <Board
-        key = {board.id}
-        {...board}
-        onClick={() => onBoardClick(board.id)}
-      />
-    )}
-    <li className="section-list-item" onClick={() => onClickShowPopup()}>
-      <a href="#" className="board-add">
-        <span className="board-tile-details-add">
-          Create new board...
-        </span>
-      </a>
-    </li>
-  </ul>
-)
+const BoardList = ({ boards, onBoardClick, onClickShowPopup}) => {
+  return (
+    <div>
+      <ul>
+        { 
+          boards.map(board =>
+          <Board
+            key = {board.id}
+            {...board}
+            onClick={() => onBoardClick(board.id)}
+          />
+        )}
+        <li className="section-list-item" onClick={() => onClickShowPopup()}>
+          <a href="#" className="board-add">
+            <span className="board-tile-details-add">
+              Create new board...
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 BoardList.propTypes = {
   boards: PropTypes.arrayOf(PropTypes.shape({

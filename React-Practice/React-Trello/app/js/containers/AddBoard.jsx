@@ -22,7 +22,7 @@ class AddBoard extends React.Component{
     let { dispatch } = this.props;
     return (
       <div>
-      <a onClick={this.show.bind(this)}>Open Modal</a>
+      <a onClick={this.show.bind(this)}>Create Board</a>
         <Modal className="modal-content"
         closeOnOuterClick={true}
         show={this.state.show}

@@ -22,11 +22,15 @@ const board = (state, action) => {
 }
 
 const popup = (state, action) => {
-  case 'SHOW_POPUP':
-    return { showPopup: true, state }
+  switch (action.type) {
+    case 'SHOW_POPUP':
+      return { showPopup: true, state }
 
-  case 'CLOSE_POPUP':
-    return { showPopup: false, state }
+    case 'CLOSE_POPUP':
+      return { showPopup: false, state }
+    default:
+      return state
+  }
 }
 
 const boards = (state = [], action) => {

@@ -1,3 +1,15 @@
+.content-board {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  .member-boards-view {
+    margin: 1pc auto;
+    padding: 1pc;
+    max-width: 1250px;
+  }
+}
 .section-list-item {
   box-sizing: border-box;
   padding: 0 1pc 8px 0;
