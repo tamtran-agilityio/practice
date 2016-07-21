@@ -13,7 +13,7 @@ export const addBoard = (text) => {
 export const editBoard = (boardId, text) => {
   console.log("addBoard==>", text);
   return {
-    type: actionTypes.ADD_BOARD,
+    type: actionTypes.EDIT_BOARD,
     boardId,
     text
   }
