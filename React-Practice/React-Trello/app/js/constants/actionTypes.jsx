@@ -1,0 +1,15 @@
+export const ADD_BOARD = 'ADD_BOARD';
+export const EDIT_BOARD = 'EDIT_BOARD';
+export const SELECT_START = 'SELECT_START';
+export const SELECT_BOARD = 'SELECT_BOARD';
+export const SHOW_CREATE_BOARD = 'SHOW_CREATE_BOARD';
+export const HIDE_CREATE_BOARD = 'HIDE_CREATE_BOARD';
+export const ADD_CARD = 'ADD_CARD';
+export const EDIT_CARD = 'EDIT_CARD';
+export const ADDMEMBER = 'ADDMEMBER';
+export const SELECT_MEMBER = 'SELECT_MEMBER';
+export const SHOW_CREATE_COMMENT = 'SHOW_CREATE_COMMENT';
+export const HIDE_CREATE_COMMENT = 'HIDE_CREATE_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_LABEL = 'ADD_LABEL';
+export const SELECT_LABEL = 'SELECT_LABEL';
