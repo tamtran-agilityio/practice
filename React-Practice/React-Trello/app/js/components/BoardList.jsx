@@ -1,21 +1,21 @@
 import 'babel-polyfill'
 import React, {PropTypes} from 'react';
 import Board from './Board';
-import AddBoard from '../containers/AddBoard';
-import BoardItem from '../containers/BoardItem';
 
-const BoardList = ({ boards, onBoardClick, onClickShowPopup}) => {
+const BoardList = ({ onBoardClick, onClickShowPopup}) => {
   return (
     <div>
       <ul>
-        { 
-          boards.map(board =>
-          <Board
-            key = {board.id}
-            {...board}
-            onClick={() => onBoardClick(board.id)}
-          />
-        )}
+      {/*
+        // { 
+        //   boards.map(board =>
+        //   <Board
+        //     key = {board.id}
+        //     {...board}
+        //     onClick={() => onBoardClick(board.id)}
+        //   />
+        // )}
+      */}
         <li className="section-list-item" onClick={() => onClickShowPopup()}>
           <a href="#" className="board-add">
             <span className="board-tile-details-add">
@@ -29,12 +29,12 @@ const BoardList = ({ boards, onBoardClick, onClickShowPopup}) => {
 }
 
 BoardList.propTypes = {
-  boards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    start: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  onBoardClick: PropTypes.func.isRequired
+  // boards: PropTypes.arrayOf(PropTypes.shape({
+  //   id: PropTypes.number.isRequired,
+  //   start: PropTypes.bool.isRequired,
+  //   text: PropTypes.string.isRequired
+  // }).isRequired).isRequired,
+  // onBoardClick: PropTypes.func.isRequired
 }
 
 export default BoardList

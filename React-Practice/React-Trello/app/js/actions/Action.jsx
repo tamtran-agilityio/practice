@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/Action';
+import * as actionTypes from '../constants/actionTypes';
 
 export const addBoard = (text) => {
   console.log("addBoard==>", text);
@@ -37,7 +37,7 @@ export const selectBoard = (boardId) => {
 }
 
 export const showCreateBoard = () => {
-  console.log("showCreateBoard");
+  console.log("showCreateBoard", actionTypes);
   return {
     type: actionTypes.SHOW_CREATE_BOARD
   }

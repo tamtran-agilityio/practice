@@ -4,7 +4,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import boardApp from './js/reducers/boardApp'
+import LoadApp from './js/reducers/LoadApp'
 import App from './js/components/App'
 import HomePage from './js/components/HomePage'
 import BoardList from './js/components/BoardList'
@@ -15,7 +15,7 @@ import { localState, saveState } from './js/service/localStorage';
 
 const persistedState = localState();
 const store = createStore(
-  boardApp,
+  LoadApp,
   persistedState  
 );
 

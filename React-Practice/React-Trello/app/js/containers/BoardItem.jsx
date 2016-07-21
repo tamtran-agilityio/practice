@@ -3,20 +3,20 @@ import { startBoard, showPopup } from '../actions/BoardAction'
 import BoardList from '../components/BoardList'
 
 const getBoad = (boards) => {
-  return boards
+  //return boards
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  //console.log(state)
   return {
-    boards: getBoad(state.boards)
+    //boards: getBoad(state.boards)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onBoardClick: (id) => {
-      dispatch(startBoard(id))
+    onBoardClick: () => {
+      dispatch(startBoard())
     },
     onClickShowPopup: () => {
       dispatch(showPopup())
