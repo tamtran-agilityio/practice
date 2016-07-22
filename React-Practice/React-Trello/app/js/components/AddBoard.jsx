@@ -4,27 +4,33 @@ import Modal, {closeStyle} from '../containers/Popup';
 class AddBoard extends Component{
   constructor(props){
     super(props);
+    this.addBoardItem = this.addBoardItem.bind(this);
   }
 
-  handleSubmit(event) {
+  addBoardItem(event) {
     event.preventDefault();
     const keyword = this.refs.keyword.value;
+    if (!keyword.trim()) {
+      return 
+    }
     this.props.addBoardItem(keyword);
+    this.refs.keyword.value ='';
+  }
+
+  handleClosePopup(direction) {
+    this.props.handleClosePopup(direction);
   }
 
   render() {
     return (
       <div >
-        <div className={this.props.state.boards.board.showCreateBoard ? 'modal-content' : 'modal-content-hide' }
-        onClose={this.props.hideCreateBoard}
-        transitionSpeed={1000}>
-
-        <a key="close" className="close" onClick={this.props.hideCreateBoard}>X</a>
+        <div className={this.props.state.boards.board.showCreateBoard ? 'modal-content' : 'modal-content-hide' } >
+        <a key="close" className="close" onClick={this.handleClosePopup.bind(this, false)}>X</a>
         <div className="pop-over-header">
           <div className="pop-over-header-title">Create Board</div>
         </div>
         <div className="pop-over-content">
-          <form >
+          <form onSubmit={this.addBoardItem}>
             <label>Title</label>
             <input
               type="text"
@@ -37,28 +43,7 @@ class AddBoard extends Component{
               Teams make sharing and working within a group even easier. It doesn’t look like you are a member of any teams.
             </p>
             <button className="create-board" type="submit">Add Board </button>
-          </form>
-        {/*
-          <form onSubmit={ e => {
-            e.preventDefault()
-            if (!input.value.trim()) {
-              return 
-            }
-            dispatch(addBoard(input.value))
-              input.value =''
-            }}>
-            <label>Title</label>
-            <input ref={ node => {
-              input = node
-            }}/>
-            <label>Team</label>
-            <p className= "content-title">
-              Teams make sharing and working within a group even easier. It doesn’t look like you are a member of any teams.
-            </p>
-            <button className="create-board" type="submit">Add Board </button>
-          </form>
-        */}
-          
+          </form>          
         </div>
         </div>
       </div>
@@ -67,12 +52,8 @@ class AddBoard extends Component{
 }
 
 AddBoard.propTypes = {
-  // onClick: PropTypes.func.isRequired,
-  // addBoardItem: PropTypes.func
-  // ,
-  // start: PropTypes.bool.isRequired,
-  // text: PropTypes.string.isRequired,
-  // boardId: PropTypes.number.isRequired
+  handleClosePopup: PropTypes.func.isRequired,
+  addBoardItem: PropTypes.func.isRequired
 }
 
 export default AddBoard

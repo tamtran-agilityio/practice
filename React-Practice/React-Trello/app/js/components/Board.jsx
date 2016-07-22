@@ -1,9 +1,10 @@
 import React, {PropTypes} from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
 
-const Board = ({ onClick, start, text, id }) => (
-  <li className="section-list-item" key={id}>
-    <Link to={`/board/${id}`}>
+const Board = ({ onClick, start, text, boardId }) => (
+  
+  <li className="section-list-item" key={boardId}>
+    <Link to={`/board/${boardId}`}>
         <div className="board-tile-details">
           <div className="board-tile-details-name">
             {text}
@@ -22,7 +23,7 @@ Board.propTypes = {
   onClick: PropTypes.func.isRequired,
   start: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  boardId: PropTypes.number.isRequired
 }
 
 export default Board

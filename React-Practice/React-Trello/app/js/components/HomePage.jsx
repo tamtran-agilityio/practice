@@ -1,12 +1,12 @@
 import React, {PropTypes, Component } from 'react';
-import BoardItem from '../containers/BoardItem';
+import BoardList from '../containers/BoardList';
 
 class HomePage extends Component {
   render() {
     return (
       <div className="content">
         <div className="member-boards-view">
-          <BoardItem />
+          <BoardList showCreateBoard={this.props.showCreateBoard}/>
         </div>
       </div>
     )

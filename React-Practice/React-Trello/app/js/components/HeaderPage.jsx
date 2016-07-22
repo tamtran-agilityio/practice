@@ -7,7 +7,7 @@ class HeaderPage extends Component {
     super(props);
   }
 
-  handlePopup(direction) {
+  handleShowPopup(direction) {
     this.props.onClickShowPopup(direction);
   }
   render() {
@@ -17,7 +17,7 @@ class HeaderPage extends Component {
           <Link to={`/`}> Trello </Link>
         </div>
         <div className="header-user">
-          <a href="#"  onClick={this.handlePopup.bind(this, true)} >
+          <a href="#"  onClick={this.handleShowPopup.bind(this, true)} >
             open modal
           </a>
           <AddBoard  showCreateBoard={this.props.showCreateBoard}/>

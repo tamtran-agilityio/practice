@@ -10,15 +10,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: (direction) => {
-      console.log("direction", direction);
-      if (direction === true) {
-        dispatch(showCreateBoard());
-      }
-    },
-
     onClickShowPopup: (direction) => {
-      console.log("AAAAAAAAA", direction);
       dispatch(showCreateBoard());
     }
   };

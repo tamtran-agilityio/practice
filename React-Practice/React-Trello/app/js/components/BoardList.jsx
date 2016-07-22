@@ -1,40 +1,47 @@
-import 'babel-polyfill'
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component } from 'react';
 import Board from './Board';
 
-const BoardList = ({ onBoardClick, onClickShowPopup}) => {
-  return (
-    <div>
-      <ul>
-      {/*
-        // { 
-        //   boards.map(board =>
-        //   <Board
-        //     key = {board.id}
-        //     {...board}
-        //     onClick={() => onBoardClick(board.id)}
-        //   />
-        // )}
-      */}
-        <li className="section-list-item" onClick={() => onClickShowPopup()}>
-          <a href="#" className="board-add">
-            <span className="board-tile-details-add">
-              Create new board...
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  )
+class BoardList extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  onClickShowPopup(direction) {
+    this.props.onClickShowPopup(direction);
+  }
+
+  render() {
+    return (
+      <div>
+        <ul>
+          { 
+            this.props.boards.map(board =>
+            <Board
+              key = {board.boardId}
+              {...board}
+              onClick={() => onBoardClick(board.boardId)}
+            />)
+          }
+          <li className="section-list-item" onClick={this.onClickShowPopup.bind(this, false)}>
+            <a href="#" className="board-add">
+              <span className="board-tile-details-add">
+                Create new board...
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    )
+  }
 }
 
 BoardList.propTypes = {
-  // boards: PropTypes.arrayOf(PropTypes.shape({
-  //   id: PropTypes.number.isRequired,
-  //   start: PropTypes.bool.isRequired,
-  //   text: PropTypes.string.isRequired
-  // }).isRequired).isRequired,
-  // onBoardClick: PropTypes.func.isRequired
+  boards: PropTypes.arrayOf(PropTypes.shape({
+    boardId: PropTypes.number.isRequired,
+    start: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  onClickShowPopup: PropTypes.func.isRequired
 }
 
 export default BoardList

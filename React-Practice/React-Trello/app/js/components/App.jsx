@@ -1,5 +1,4 @@
 import HeaderPage from '../containers/HeaderPage';
-import BoardItem from '../containers/BoardItem';
 import React, {PropTypes, Component} from 'react';
 
 class App extends Component {

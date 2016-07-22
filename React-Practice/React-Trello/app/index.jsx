@@ -11,16 +11,16 @@ import BoardList from './js/components/BoardList'
 import Board from './js/components/Board'
 import BoardListDetails from './js/components/BoardListDetails'
 import { Router, IndexRoute,  Route, Link, browserHistory, hashHistory } from 'react-router';
-import { localState, saveState } from './js/service/localStorage';
+//import { localState, saveState } from './js/service/localStorage';
 
-const persistedState = localState();
+// const persistedState = localState();
 const store = createStore(
-  LoadApp,
-  persistedState  
+  LoadApp
+  // persistedState  
 );
 
 store.subscribe(() => {
-  saveState(store.getState());
+  // saveState(store.getState());
 });
 
 render(

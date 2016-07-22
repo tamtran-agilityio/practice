@@ -6,14 +6,54 @@
  * @return [ board item]
  */
 import { combineReducers } from 'redux';
+import { Map, List} from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
 
-const reducers = {
-  board
-};
+function getBoards() {
+  let board = localStorage.getItem("board");
+  let temp = JSON.parse(board);
+  return Promise.resolve(temp);
+}
+
+  /*
+   * Get data part board
+   * @param  boardIdParam infor dashboard init
+  */
+function getBoard(boardIdParam) {
+  let persistedBoads = JSON.parse(localStorage.getItem('board') || '[]');
+  let boardRs = null;
+  let boardId: number;
+  persistedBoads.forEach( (board: any) => {
+    if (board.boardId === boardIdParam){
+      let ret = new Board(board.boardTitle, board.boardId, board.cards);
+      ret.start = board.start;
+      boardRs = ret;
+    }
+  });
+  return Promise.resolve(boardRs);
+}
+
+function updateBoard(boardParam: Board){
+    let boardId: number;
+    let persistedBoads = JSON.parse(localStorage.getItem('board') || '[]');
+    let found = false;
+    persistedBoads.forEach( (board: any, idx: number) => {
+      if (board.boardId === boardParam.boardId){
+        persistedBoads[idx] = boardParam;
+        found = true;
+      }
+    });
+    if (!found){
+      persistedBoads.push(boardParam);
+    }
+
+    // save to localstorage
+    localStorage.setItem('board', JSON.stringify(persistedBoads));
+    return Promise.resolve(persistedBoads);
+  }
 
 function board(state = {
-  id: '',
+  boardId: '',
   text: '',
   start: false,
   isProcessing: false,
@@ -24,11 +64,23 @@ function board(state = {
   console.info('action', action);
   switch (action.type) {
     case 'ADD_BOARD':
-      return {
-        id: action.id,
-        text: action.text,
-        start: false
+      let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
+      // Get id by value max
+      let id = getListBoard.length + 1;
+      console.log("getListBoard", getListBoard);
+
+      let newData = {
+        boardId: id,
+        start: false,
+        text: action.text
       }
+      updateBoard(newData);
+      return {
+        boardId: id,
+        start: false,
+        text: action.text
+      }
+      break;
 
     case 'EDIT_BOARD':
       return {
@@ -36,7 +88,7 @@ function board(state = {
       }
 
     case 'SELECT_START':
-      if (state.id !== action.id) {
+      if (state.boardId !== action.boardId) {
         return state
       }
 
@@ -58,29 +110,6 @@ function board(state = {
   }
 }
 
-// function showpopup(state = {
-//   showCreateBoard: false
-// } , action) {
-//   console.log('state1111', state);
-//   console.log('action1111', action);
-//   switch (action.type) {
-//     case 'SHOW_CREATE_BOARD':
-//       console.log('11111111111111111111');
-//       return { 
-//         showCreateBoard: true
-//       }
-
-//     case 'HIDE_CREATE_BOARD':
-//       console.log('HIDE_CREATE_BOARD`1111');
-//       return {
-//         showCreateBoard: false
-//       }
-
-//     default:
-//       return state
-//   }
-// }
-
 // const boards = (state = [], action) => {
 //   switch (action.type) {
 //     case 'ADD_BOARD':
@@ -97,6 +126,10 @@ function board(state = {
 //       return state
 //   }
 // }
+
+const reducers = {
+  board
+};
 
 export default combineReducers(reducers);
 

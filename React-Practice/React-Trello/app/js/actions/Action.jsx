@@ -1,12 +1,12 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export const addBoard = (text) => {
+export const addBoard = (text, start, boardId) => {
   console.log("addBoard==>", text);
   return {
     type: actionTypes.ADD_BOARD,
-    boardId,
+    text,
     start,
-    text
+    boardId
   }
 }
 
