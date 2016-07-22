@@ -1,0 +1,27 @@
+.board-header {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  height: auto;
+  overflow: hidden;
+  padding: 8px 4px 8px 8px;
+  position: relative;
+  -webkit-transition: padding .1s ease-in;
+  transition: padding .1s ease-in;
+  .board-title {
+    cursor: default;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 4px;
+  }
+}
+
+.card-content {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
