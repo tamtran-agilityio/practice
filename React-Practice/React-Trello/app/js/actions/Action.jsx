@@ -50,12 +50,13 @@ export const hideCreateBoard = () => {
   }
 }
 
-export const addCard = (text) => {
+export const addCard = (text, boardId, cardId) => {
   console.log("addCard", text);
   return {
     type: actionTypes.ADD_CARD,
-    cardId,
-    text
+    text,
+    boardId,
+    cardId
   }
 }
 
