@@ -2,7 +2,7 @@ import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import Board from './Board';
 import {addBoard, startBoard} from '../actions/Action';
-import AddCard from '../containers/AddCard';
+import CardList from '../containers/CardList';
 
 class BoardListDetails extends Component {
   constructor(props) {
@@ -11,9 +11,8 @@ class BoardListDetails extends Component {
 
   render() {
     const props = this.props;
-    console.log("SSSSSSS11", props);
     return (
-      <div className="content-board">
+      <div className="card-content">
         <div className="board-wrapper">
           <div className="board-main-content">
             <div className="board-header">
@@ -22,13 +21,17 @@ class BoardListDetails extends Component {
               </h2>
             </div>
             <div className="card-content">
-              <AddCard/>
+              <CardList boardId = {props.params.id}/>
             </div>
           </div>
         </div>
       </div>
     )
   }
+}
+
+BoardListDetails.propTypes = {
+  // boardId: PropTypes.number.isRequired
 }
 
 export default connect()(BoardListDetails);

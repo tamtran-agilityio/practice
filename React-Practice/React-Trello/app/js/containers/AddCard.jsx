@@ -1,27 +1,16 @@
 import {connect} from 'react-redux';
-import {showCreateBoard, hideCreateBoard, addCard} from '../actions/Action';
+import {addCard} from '../actions/Action';
 import AddCard from '../components/AddCard';
 
 const mapStateToProps = (state) => {
+  console.log("state", state);
   return { state };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addBoardItem: (keyword) => {
-      dispatch(addCard(keyword));
-    },
-
-    handleClosePopup: (direction) => {
-      dispatch(hideCreateBoard());
-    },
-
-    onClickShowPopup: (direction) => {
-      if (direction === true) {
-        dispatch(showCreateBoard());
-      } else {
-        dispatch(hideCreateBoard());
-      }
+    addCardItem: (keywords, boardId) => {
+      dispatch(addCard(keywords, boardId));
     }
   }
 }

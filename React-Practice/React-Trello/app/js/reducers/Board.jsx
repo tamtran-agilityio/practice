@@ -19,38 +19,89 @@ function getBoards() {
    * Get data part board
    * @param  boardIdParam infor dashboard init
   */
-function getBoard(boardIdParam) {
+function getBoardItem(boardIdParam) {
   let persistedBoads = JSON.parse(localStorage.getItem('board') || '[]');
   let boardRs = null;
+  let board = null;
   let boardId: number;
-  persistedBoads.forEach( (board: any) => {
-    if (board.boardId === boardIdParam){
-      let ret = new Board(board.boardTitle, board.boardId, board.cards);
+  persistedBoads.map( function(board) {
+    if (board.boardId === parseInt(boardIdParam)){
+      let ret = {
+        boardId: board.boardId,
+        start: board.start,
+        text: board.text,
+        cards: board.cards
+      }
       ret.start = board.start;
       boardRs = ret;
     }
-  });
-  return Promise.resolve(boardRs);
+  })
+  return boardRs;
 }
 
 function updateBoard(boardParam: Board){
-    let boardId: number;
-    let persistedBoads = JSON.parse(localStorage.getItem('board') || '[]');
-    let found = false;
-    persistedBoads.forEach( (board: any, idx: number) => {
-      if (board.boardId === boardParam.boardId){
-        persistedBoads[idx] = boardParam;
-        found = true;
-      }
-    });
-    if (!found){
-      persistedBoads.push(boardParam);
+  let boardId;
+  let persistedBoads = JSON.parse(localStorage.getItem('board') || '[]');
+  let found = false;
+  persistedBoads.forEach( (board: any, idx: number) => {
+    if (board.boardId === boardParam.boardId){
+      persistedBoads[idx] = boardParam;
+      found = true;
     }
-
-    // save to localstorage
-    localStorage.setItem('board', JSON.stringify(persistedBoads));
-    return Promise.resolve(persistedBoads);
+  });
+  if (!found){
+    persistedBoads.push(boardParam);
   }
+
+  // save to localstorage
+  localStorage.setItem('board', JSON.stringify(persistedBoads));
+  return Promise.resolve(persistedBoads);
+}
+
+function getCards() {
+  let card = localStorage.getItem("card");
+  let temp = JSON.parse(card);
+  return Promise.resolve(temp);
+}
+
+function getCardItem(boardIdParam) {
+  let persistedCards = JSON.parse(localStorage.getItem('card') || '[]');
+  let cardRs = null;
+  let card = null;
+  let cardId: number;
+  persistedCards.map( function(card) {
+    if (card.cardId === parseInt(cardIdParam)){
+      let ret = {
+        cardId: card.cardId,
+        start: card.start,
+        text: card.text,
+        cards: card.cards
+      }
+      ret.start = card.start;
+      cardRs = ret;
+    }
+  })
+  return cardRs;
+}
+
+function updateCard(cardParam: Card){
+  let cardId;
+  let persistedCards = JSON.parse(localStorage.getItem('card') || '[]');
+  let found = false;
+  persistedCards.forEach( (card: any, idx: number) => {
+    if (card.cardId === cardParam.cardId){
+      persistedCards[idx] = cardParam;
+      found = true;
+    }
+  });
+  if (!found){
+    persistedCards.push(cardParam);
+  }
+
+  // save to localstorage
+  localStorage.setItem('card', JSON.stringify(persistedCards));
+  return Promise.resolve(persistedCards);
+}
 
 function board(state = {
   boardId: '',
@@ -69,12 +120,12 @@ function board(state = {
       let id = getListBoard.length + 1;
       console.log("getListBoard", getListBoard);
 
-      let newData = {
+      let newBoard = {
         boardId: id,
         start: false,
         text: action.text
       }
-      updateBoard(newData);
+      updateBoard(newBoard);
       return {
         boardId: id,
         start: false,
@@ -105,27 +156,29 @@ function board(state = {
         showCreateBoard: false
       }
 
+    case 'ADD_CARD':
+      let getListCards = JSON.parse(localStorage.getItem("card") || '[]');
+      // Get id by value max
+      let cardId = getListCards.length + 1;
+
+      let newCard = {
+        boardId: action.boardId,
+        cardId: cardId,
+        text: action.text
+      }
+      updateCard(newCard);
+
+      return {
+        boardId: action.boardId,
+        cardId: cardId,
+        text: action.text
+      }
+      break;
+
     default:
       return state
   }
 }
-
-// const boards = (state = [], action) => {
-//   switch (action.type) {
-//     case 'ADD_BOARD':
-//       return [
-//         ...state,
-//         board(undefined, action)
-//       ]
-
-//     case 'SELECT_START':
-//       return state.map(start =>
-//         board(start, action)
-//       )
-//     default:
-//       return state
-//   }
-// }
 
 const reducers = {
   board
