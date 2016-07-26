@@ -60,7 +60,7 @@ export const addCard = (text, boardId, cardId) => {
   }
 }
 
-export const editCard = (cardId, text) => {
+export const editCard = (text, cardId) => {
   console.log("editCard", text);
   return {
     type: actionTypes.EDIT_CARD,
@@ -69,12 +69,13 @@ export const editCard = (cardId, text) => {
   }
 }
 
-export const addMember = (text) => {
-  console.log("addMember", text);
+export const addMember = (text, cardId, memberId) => {
+  console.log("addMember", text, cardId, memberId);
   return {
     type: actionTypes.ADD_MEMBER,
+    text,
     memberId,
-    text
+    cardId
   }
 }
 
