@@ -4,7 +4,6 @@ class AddComment extends Component{
   constructor(props){
     super(props);
     this.addCommentItem = this.addCommentItem.bind(this);
-    console.log("props", this.props);
   }
 
   addCommentItem(event) {

@@ -124,6 +124,7 @@ function updateMember(memberParam: Member){
 
 function board(state = {
   boardId: '',
+  commentId: '',
   text: '',
   start: false,
   isProcessing: false,

@@ -3,16 +3,16 @@ import { showCreateComment } from '../actions/Action';
 import Member from '../components/Member';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("SSSSSSSSSSSSSSSSSSSSS=+++++111", state);
+  console.log("SSSSSSSSSSSSSSSSSSSSS=+++++11122", ownProps);
   return {
-    state
+    ownProps
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("direction dispatch Member", dispatch);
   return {
     onClickMember: (direction) => {
-      console.log("direction", direction);
       dispatch(showCreateComment())
     }
   };

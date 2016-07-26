@@ -8,11 +8,11 @@ import AddComment from '../containers/AddComment';
 class BoardListDetails extends Component {
   constructor(props) {
     super(props);
-    console.log("add cooment", props);
   }
 
   render() {
     const props = this.props;
+    console.log("this.props AAA", this.props);
     return (
       <div className="card-content">
         <div className="board-wrapper">
@@ -24,7 +24,7 @@ class BoardListDetails extends Component {
             </div>
             <div className="card-content">
               <CardList boardId = {props.params.id}/>
-              <AddComment/>
+              <AddComment memberId= {this.props.memberId}/>
             </div>
           </div>
         </div>
