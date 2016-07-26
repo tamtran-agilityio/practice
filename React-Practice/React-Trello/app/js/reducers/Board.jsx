@@ -103,6 +103,25 @@ function updateCard(cardParam: Card){
   return Promise.resolve(persistedCards);
 }
 
+function updateMember(memberParam: Member){
+  let memberId;
+  let persistedMember = JSON.parse(localStorage.getItem('member') || '[]');
+  let found = false;
+  persistedMember.forEach( (member: any, idx: number) => {
+    if (board.memberId === memberParam.memberId){
+      persistedMember[idx] = memberParam;
+      found = true;
+    }
+  });
+  if (!found){
+    persistedMember.push(memberParam);
+  }
+
+  // save to localstorage
+  localStorage.setItem('member', JSON.stringify(persistedMember));
+  return Promise.resolve(persistedMember);
+}
+
 function board(state = {
   boardId: '',
   text: '',
@@ -171,6 +190,25 @@ function board(state = {
       return {
         boardId: action.boardId,
         cardId: cardId,
+        text: action.text
+      }
+      break;
+
+    case 'ADD_MEMBER':
+      let getListMember = JSON.parse(localStorage.getItem("member") || '[]');
+      // Get id by value max
+      let memberId = getListMember.length + 1;
+
+      let newMember = {
+        cardId: action.cardId,
+        memberId: memberId,
+        text: action.text
+      }
+      updateMember(newMember);
+
+      return {
+        cardId: action.cardId,
+        memberId: memberId,
         text: action.text
       }
       break;
