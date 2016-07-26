@@ -96,12 +96,13 @@ export const selectMember = (memberId) => {
   }
 }
 
-export const addComment = (text) => {
+export const addComment = (text, commentId, memberId) => {
   console.log("addComment", text);
   return {
     type: actionTypes.ADD_COMMENT,
+    text,
     commentId,
-    text
+    memberId
   }
 }
 

@@ -213,6 +213,16 @@ function board(state = {
       }
       break;
 
+    case 'SHOW_CREATE_COMMENT':
+      return { 
+        showCreateComment: true
+      }
+
+    case 'HIDE_CREATE_COMMENT':     
+      return {
+        showCreateComment: false
+      }
+
     default:
       return state
   }
