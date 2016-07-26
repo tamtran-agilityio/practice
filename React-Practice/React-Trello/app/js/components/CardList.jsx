@@ -9,7 +9,7 @@ class CardList extends Component {
 
   render() {
     return (
-      <ul className="list-content">
+      <ul className="list-content" boardIdDetails = {this.props.boardId}>
         { 
           this.props.cards.map(card =>
           <Card

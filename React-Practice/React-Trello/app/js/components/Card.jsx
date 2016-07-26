@@ -1,14 +1,17 @@
 import React, {PropTypes} from 'react';
+import AddMember from '../containers/AddMember';
+import MemberList from '../containers/MemberList';
 
 const Card = ({text, cardId}) => (
   
   <li className="list-wrapper" key={cardId}>
     <div className="list">
       <div className="list-header">
-        {text}
+        {text} {cardId}
       </div>
       <div className="">
-        Content
+        <MemberList cardId = {cardId}/>
+        <AddMember cardId = {cardId}/>
       </div>
     </div>
   </li>

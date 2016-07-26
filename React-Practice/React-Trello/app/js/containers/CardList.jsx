@@ -13,10 +13,9 @@ const getCard = (cards, boardParamId) => {
   return arr;
 }
 
-const mapStateToProps = (state) => {
-  console.log("StateAAAAA", state);
+const mapStateToProps = (state, ownProps) => {
   return {
-    cards: getCard(state.cards, 1)
+    cards: getCard(state.cards, ownProps.boardId)
   }
 }
 
