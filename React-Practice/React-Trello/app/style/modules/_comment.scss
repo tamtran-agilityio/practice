@@ -1,0 +1,96 @@
+.window-overlay-hide {
+  display: none;
+}
+.window-overlay {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: rgba(0,0,0,.6);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.window-comment-hide {
+  display: none;
+}
+.window-comment {
+  background-color: #edeff0;
+  border-radius: 3px;
+  display: block;
+  margin: 3pc 0 5pc;
+  overflow: hidden;
+  position: relative;
+  width: 730px;
+  z-index: 25;
+  .close {
+    color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    overflow: hidden;
+    padding: 4px;
+    width: 30px;
+    display: block;
+    z-index: 2;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    -webkit-transition: background-color 350ms,color 150ms;
+    transition: background-color 350ms,color 150ms;
+  }
+  .comment-detail-window {
+    min-height: 600px;
+    display: block;
+  }
+  .window-header {
+    margin: 4px 40px 4px 38px;
+    padding: 9pt 9pt 0;
+    position: relative;
+    z-index: 1;
+    .card-detail-title {
+      font-size: 18px;
+      margin: 0 4px 9px;
+    }
+  }
+
+}
+.window-main {
+  float: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  min-height: 20px;
+  padding: 8px 9pt 9pt;
+  position: relative;
+  width: 546px;
+  z-index: 0;
+  .window-module {
+    clear: both;
+    margin-bottom: 20px;
+    position: relative;
+    .window-module-title {
+      padding: 8px 0;
+      position: relative;
+      margin: 0 0 4px 38px;
+    }
+    .new-comment {
+      position: relative;
+      margin: 0 0 20px 38px;
+    }
+  }
+}
