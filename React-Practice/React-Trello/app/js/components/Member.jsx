@@ -1,15 +1,28 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router';
 
-const Member = ({ onClickMember, text, memberId }) => (
-  <li className="card-member-item" key={memberId}>
-    <a href="javascript:void(0)" className="link-item" onClickMember={onClickMember}>
-        <div className="card-member-title">
-          {text}
-      </div>
-    </a>
-  </li>
-)
+class Member extends Component {
+  constructor(props) {
+    super(props);
+  }
+  onClickMember(event) {
+    console.log("event", event);
+    event.preventDefault();
+  }
+
+  render() {
+    console.log("SSS", this.props);
+    return (
+      <li className="card-member-item" key={this.props.memberId}>
+        <a href="javascript:void(0)" className="link-item" onClick={this.onClickMember}>
+            <div className="card-member-title">
+              {this.props.text}
+          </div>
+        </a>
+      </li>
+    )
+  }
+}
 
 Member.propTypes = {
   text: PropTypes.string.isRequired,
