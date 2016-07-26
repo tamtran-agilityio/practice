@@ -22,7 +22,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onClickMember: (direction) => {
-      console.log("direction members", direction);
     }
   };
 }

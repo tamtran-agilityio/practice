@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
 import {showCreateBoard, hideCreateBoard, addBoard} from '../actions/Action';
-import Modal, {closeStyle} from './Popup';
 import HeaderPage from '../components/HeaderPage';
 
 function mapStateToProps(state) {

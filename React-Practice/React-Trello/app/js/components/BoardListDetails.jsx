@@ -3,10 +3,12 @@ import {connect} from 'react-redux';
 import Board from './Board';
 import {addBoard, startBoard} from '../actions/Action';
 import CardList from '../containers/CardList';
+import AddComment from '../containers/AddComment';
 
 class BoardListDetails extends Component {
   constructor(props) {
     super(props);
+    console.log("add cooment", props);
   }
 
   render() {
@@ -22,6 +24,7 @@ class BoardListDetails extends Component {
             </div>
             <div className="card-content">
               <CardList boardId = {props.params.id}/>
+              <AddComment/>
             </div>
           </div>
         </div>

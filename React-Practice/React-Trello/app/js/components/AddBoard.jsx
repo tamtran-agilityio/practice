@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import Modal, {closeStyle} from '../containers/Popup';
 
 class AddBoard extends Component{
   constructor(props){

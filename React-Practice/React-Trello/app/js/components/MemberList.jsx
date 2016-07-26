@@ -1,5 +1,5 @@
 import React, {PropTypes, Component } from 'react';
-import Member from './Member';
+import Member from '../containers/Member';
 
 class MemberList extends Component {
   constructor(props){
@@ -7,7 +7,6 @@ class MemberList extends Component {
   }
 
   onClickMember(direction) {
-    console.log("SSSSS", direction);
   }
 
   render() {
