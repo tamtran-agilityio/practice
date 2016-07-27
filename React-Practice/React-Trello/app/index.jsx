@@ -7,20 +7,16 @@ import { createStore } from 'redux'
 import LoadApp from './js/reducers/LoadApp'
 import App from './js/components/App'
 import HomePage from './js/components/HomePage'
-import BoardList from './js/components/BoardList'
+import ListBoard from './js/components/ListBoard'
 import Board from './js/components/Board'
-import BoardListDetails from './js/components/BoardListDetails'
+import ListBoardDetails from './js/components/ListBoardDetails'
 import { Router, IndexRoute,  Route, Link, browserHistory, hashHistory } from 'react-router';
-//import { localState, saveState } from './js/service/localStorage';
 
-// const persistedState = localState();
 const store = createStore(
   LoadApp
-  // persistedState  
 );
 
 store.subscribe(() => {
-  // saveState(store.getState());
 });
 
 render(
@@ -28,7 +24,7 @@ render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
-        <Route path="board/:id" component={BoardListDetails} />
+        <Route path="board/:id" component={ListBoardDetails} />
       </Route>
     </Router>
   </Provider>,

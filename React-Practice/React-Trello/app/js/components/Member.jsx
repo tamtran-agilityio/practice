@@ -7,7 +7,6 @@ class Member extends Component {
   }
 
   onClickMember(direction) {
-    console.log("direction member AAAAAA", direction);
     this.props.onClickMember(direction);
   }
 

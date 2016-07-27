@@ -122,17 +122,38 @@ function updateMember(memberParam: Member){
   return Promise.resolve(persistedMember);
 }
 
+function updateComment(commentParam: Member){
+  let commentId;
+  let persistedComment = JSON.parse(localStorage.getItem('comment') || '[]');
+  let found = false;
+  persistedComment.forEach( (comment: any, idx: number) => {
+    if (board.commentId ===commentParam.commentId){
+      persistedComment[idx] =commentParam;
+      found = true;
+    }
+  });
+  if (!found){
+    persistedComment.push(commentParam);
+  }
+
+  // save to localstorage
+  localStorage.setItem('comment', JSON.stringify(persistedComment));
+  return Promise.resolve(persistedComment);
+}
+
 function board(state = {
   boardId: '',
   commentId: '',
+  memberId: '',
   text: '',
   start: false,
   isProcessing: false,
   keyword:'',
-  showCreateBoard: false
+  showCreateBoard: false,
+  showCreateComment: false
 } , action) {
-  console.info('state', state);
-  console.info('action', action);
+  console.info('state aaa', state);
+  console.info('action aaa', action);
   switch (action.type) {
     case 'ADD_BOARD':
       let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
@@ -216,12 +237,32 @@ function board(state = {
 
     case 'SHOW_CREATE_COMMENT':
       return { 
-        showCreateComment: true
+        showCreateComment: true,
+        memberId: action.memberId
       }
 
     case 'HIDE_CREATE_COMMENT':     
       return {
         showCreateComment: false
+      }
+
+    case 'ADD_COMMENT':
+      let getListComment = JSON.parse(localStorage.getItem("comment") || '[]');
+      // Get id by value max
+      let commentId = getListComment.length + 1;
+
+      let newComment = {
+        memberId: action.memberId,
+        commentId: commentId,
+        text: action.text
+      }
+      updateComment(newComment);
+
+      return {
+        showCreateComment: true,
+        memberId: action.memberId,
+        commentId: action.commentId,
+        text: action.text
       }
 
     default:

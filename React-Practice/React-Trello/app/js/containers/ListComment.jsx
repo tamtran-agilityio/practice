@@ -4,10 +4,8 @@ import ListComment from '../components/ListComment';
 
 const getMember = (comments, memberParamId) => {
   comments = JSON.parse(localStorage.getItem("comment") || '[]');
-  console.log("SSSSS", comments);
   let arr: Array<any> = [];
   comments.map( (comment) => {
-    console.log("comment", comment);
     if (parseInt(comment.memberId) === parseInt(memberParamId)) {
       arr.push(comment);
     }
@@ -16,15 +14,15 @@ const getMember = (comments, memberParamId) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("state list" , state,"state list 111",  ownProps);
+
   return {
-    // comments: getMember(state.comments, 1)
+    comments: getMember(state.comments, ownProps.memberId)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickMember: (direction) => {
+    onClickComment: (direction) => {
     }
   };
 }

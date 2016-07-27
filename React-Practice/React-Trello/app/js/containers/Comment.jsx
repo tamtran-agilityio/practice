@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { showCreateComment, addComment} from '../actions/Action';
-import Member from '../components/Member';
+import { } from '../actions/Action';
+import Comment from '../components/Comment';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,8 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickMember: (direction) => {
-      dispatch(showCreateComment(direction))
+    onClickComment: (direction) => {
     }
   };
 }
@@ -19,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Member)
+)(Comment)

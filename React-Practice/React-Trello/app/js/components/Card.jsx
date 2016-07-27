@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import AddMember from '../containers/AddMember';
-import MemberList from '../containers/MemberList';
+import ListMember from '../containers/ListMember';
 
 const Card = ({text, cardId}) => (
   
@@ -10,7 +10,7 @@ const Card = ({text, cardId}) => (
         {text} {cardId}
       </div>
       <div className="">
-        <MemberList cardId = {cardId}/>
+        <ListMember cardId = {cardId}/>
         <AddMember cardId = {cardId}/>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import React, { PropTypes, Component } from 'react';
+import ListComment from '../containers/ListComment';
 
 class AddComment extends Component{
   constructor(props){
     super(props);
     this.addCommentItem = this.addCommentItem.bind(this);
+    this.props.state.boards.board.showCreateComment = false;
   }
 
   addCommentItem(event) {
@@ -12,7 +14,7 @@ class AddComment extends Component{
     if (!keyword.trim()) {
       return 
     }
-    this.props.addCommentItem(keyword);
+    this.props.addCommentItem(this.props.state.boards.board.memberId, keyword);
     this.refs.keyword.value ='';
   }
 
@@ -50,6 +52,9 @@ class AddComment extends Component{
                   </form>          
                 </div>
               </div>
+              <div className="window-module">
+                <ListComment memberId = {this.props.state.boards.board.memberId}/>
+              </div>
             </div>
           </div>
         </div>
@@ -58,6 +63,7 @@ class AddComment extends Component{
     );
   }
 }
+
 
 AddComment.propTypes = {
   handleClosePopupComment: PropTypes.func.isRequired,

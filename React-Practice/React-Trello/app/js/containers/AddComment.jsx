@@ -8,8 +8,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addCommentItem: (keyword) => {
-      dispatch(addComment(keyword));
+    addCommentItem: (memberId, keyword) => {
+      dispatch(addComment(memberId, keyword));
     },
 
     handleClosePopupComment: (direction) => {

@@ -96,21 +96,21 @@ export const selectMember = (memberId) => {
   }
 }
 
-export const addComment = (text, commentId, memberId) => {
-  console.log("addComment", text);
+export const addComment = (memberId, text, commentId ) => {
+  console.log("addComment", text , "memberId", memberId, "commentId", commentId);
   return {
     type: actionTypes.ADD_COMMENT,
+    memberId,
     text,
-    commentId,
-    memberId
+    commentId
   }
 }
 
-export const showCreateComment = (commentId) => {
-  console.log("showCreateComment", commentId);
+export const showCreateComment = (memberId) => {
+  console.log("showCreateComment", memberId);
   return {
     type: actionTypes.SHOW_CREATE_COMMENT,
-    commentId
+    memberId
   }
 }
 

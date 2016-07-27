@@ -15,6 +15,7 @@ const getMember = (members, cardParamId) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    state,
     members: getMember(state.members, ownProps.cardId)
   }
 }

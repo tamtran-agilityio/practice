@@ -7,12 +7,19 @@ const getBoad = (boards) => {
   return boards
 }
 
+const mapStateToProps = (state) => {
+  return {
+    state,
+    boards
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   
 }
 
 const ListBoardDetaisl = connect(
-  getBoad,
+  mapStateToProps,
   mapDispatchToProps
 )(ListBoardDetails)
 

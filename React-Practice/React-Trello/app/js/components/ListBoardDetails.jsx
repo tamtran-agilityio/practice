@@ -8,6 +8,14 @@ import AddComment from '../containers/AddComment';
 class ListBoardDetails extends Component {
   constructor(props) {
     super(props);
+    let boards = JSON.parse(localStorage.getItem("board") || '[]');
+    let boardTitle, start;
+    boards.map( (board) => {
+      if (parseInt(board.boardId) === parseInt(props.params.id)) {
+        this.boardTitle = board.text;
+        this.start = board.start;
+      }
+    })
   }
 
   render() {
@@ -17,8 +25,12 @@ class ListBoardDetails extends Component {
           <div className="board-main-content">
             <div className="board-header">
               <h2 className="board-title">
-                {this.props.params.id}
+                {this.boardTitle}
               </h2>
+              <div className={this.start ? 'active' : 'none' }>
+                {this.start}
+                <h2> Start </h2>
+              </div>
             </div>
             <div className="card-content">
               <ListCard boardId = {this.props.params.id}/>
@@ -29,9 +41,6 @@ class ListBoardDetails extends Component {
       </div>
     )
   }
-}
-ListBoardDetails.propTypes = {
-  // boardId: PropTypes.number.isRequired
 }
 
 export default connect()(ListBoardDetails);
