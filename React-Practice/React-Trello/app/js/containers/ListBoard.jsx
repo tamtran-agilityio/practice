@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { startBoard, showCreateBoard } from '../actions/Action';
-import BoardList from '../components/BoardList';
+import ListBoard from '../components/ListBoard';
 
 const getBoad = (boards) => {
   boards = JSON.parse(localStorage.getItem("board") || '[]');
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BoardList)
+)(ListBoard)

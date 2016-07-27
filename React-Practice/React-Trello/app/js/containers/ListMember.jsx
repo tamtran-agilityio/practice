@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { } from '../actions/Action';
-import MemberList from '../components/MemberList';
+import ListMember from '../components/ListMember';
 
 const getMember = (members, cardParamId) => {
   members = JSON.parse(localStorage.getItem("member") || '[]');
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MemberList)
+)(ListMember)

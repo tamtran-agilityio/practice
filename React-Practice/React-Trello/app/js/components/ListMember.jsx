@@ -1,7 +1,7 @@
 import React, {PropTypes, Component } from 'react';
 import Member from '../containers/Member';
 
-class MemberList extends Component {
+class ListMember extends Component {
   constructor(props){
     super(props);
   }
@@ -18,14 +18,15 @@ class MemberList extends Component {
             key = {member.memberId}
             {...member}
             onClick={() => onClickMember(member.memberId)}
-          />)
+          />
+          )
         }
       </ul>
     )
   }
 }
 
-MemberList.propTypes = {
+ListMember.propTypes = {
   members: PropTypes.arrayOf(PropTypes.shape({
     memberId: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired
@@ -33,4 +34,4 @@ MemberList.propTypes = {
   onClickMember: PropTypes.func.isRequired
 }
 
-export default MemberList
+export default ListMember

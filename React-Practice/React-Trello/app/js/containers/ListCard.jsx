@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { } from '../actions/Action';
-import CardList from '../components/CardList';
+import ListCard from '../components/ListCard';
 
 const getCard = (cards, boardParamId) => {
   cards = JSON.parse(localStorage.getItem("card") || '[]');
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CardList)
+)(ListCard)

@@ -1,7 +1,7 @@
 import React, {PropTypes, Component } from 'react';
 import Board from './Board';
 
-class BoardList extends Component {
+class ListBoard extends Component {
   constructor(props){
     super(props);
   }
@@ -35,7 +35,7 @@ class BoardList extends Component {
   }
 }
 
-BoardList.propTypes = {
+ListBoard.propTypes = {
   boards: PropTypes.arrayOf(PropTypes.shape({
     boardId: PropTypes.number.isRequired,
     start: PropTypes.bool.isRequired,
@@ -44,4 +44,4 @@ BoardList.propTypes = {
   onClickShowPopup: PropTypes.func.isRequired
 }
 
-export default BoardList
+export default ListBoard
