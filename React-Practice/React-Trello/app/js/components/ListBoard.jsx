@@ -1,5 +1,5 @@
 import React, {PropTypes, Component } from 'react';
-import Board from './Board';
+import Board from '../containers/Board';
 
 class ListBoard extends Component {
   constructor(props){
@@ -11,9 +11,30 @@ class ListBoard extends Component {
   }
 
   render() {
+    let rows = [];
     return (
       <div>
-        <ul>
+        <ul className="boards-page-board-section">
+          <div className="board-section-header">
+            <h3 className="section-header-name">Start Board</h3>
+          </div>
+          { 
+            this.props.boards.map((board) => {
+              if (board.start === true ) {
+                rows.push(<Board
+                  key = {board.boardId}
+                  {...board}
+                  onClick={() => onBoardClick(board.boardId)}
+                />)
+                }
+              })
+            }
+            {rows}
+        </ul>
+        <ul className="boards-page-board-section">
+          <div className="board-section-header">
+            <h3 className="section-header-name">My Board</h3>
+          </div>
           { 
             this.props.boards.map(board =>
             <Board

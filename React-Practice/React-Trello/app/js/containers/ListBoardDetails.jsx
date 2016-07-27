@@ -10,7 +10,7 @@ const getBoad = (boards) => {
 const mapStateToProps = (state) => {
   return {
     state,
-    boards
+    boards: getBoad()
   }
 }
 
