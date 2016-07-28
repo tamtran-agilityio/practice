@@ -29,6 +29,7 @@
     "es6-promise": "^3.1.2",
     "expect": "^1.16.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.15.0",
     "image-webpack-loader": "^1.6.3",
     "immutable": "^3.7.6",
@@ -53,7 +54,9 @@
     "redux-thunk": "^2.0.1",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
+    "webpack-core": "^0.6.8",
     "webpack-dev-server": "^1.14.1"
   },
   "jest": {

@@ -4,14 +4,15 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 class Board extends Component {
   constructor(props) {
     super(props);
-    this.onSelectStart = this.onSelectStart.bind(this);
   }
 
   onSelectStart(event) {
     event.preventDefault();
-    console.log("Event", event);
+    this.props.onSelectStart(this.props.boardId);
   }
   render() {
+    let active = !this.props.start ? '' : 'active';
+    let css = `${active} fa fa-star-o icon-start`;
     return (
       <li className="section-list-item" key={this.props.boardId}>
         <Link to={`/board/${this.props.boardId}`}>
@@ -20,8 +21,9 @@ class Board extends Component {
                 {this.props.text}
               </div>
             </div>
-            <span className="board-tile-options" onClick={this.onSelectStart.bind(this)}>
-              <i className="fa fa-star-o icon-start"></i>
+            <span className="board-tile-options"
+              onClick={this.onSelectStart.bind(this)}>
+              <i className={css}></i>
             </span>
         </Link>
       </li>
@@ -30,7 +32,7 @@ class Board extends Component {
 }
 
 Board.propTypes = {
-  onSelectStart: PropTypes.func,
+  onSelectStart: PropTypes.func.isRequired,
   start: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   boardId: PropTypes.number.isRequired

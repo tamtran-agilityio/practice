@@ -1,7 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
 export const addBoard = (text, start, boardId) => {
-  console.log("addBoard==>", text);
   return {
     type: actionTypes.ADD_BOARD,
     text,
@@ -11,7 +10,6 @@ export const addBoard = (text, start, boardId) => {
 }
 
 export const editBoard = (boardId, text) => {
-  console.log("addBoard==>", text);
   return {
     type: actionTypes.EDIT_BOARD,
     boardId,
@@ -19,8 +17,7 @@ export const editBoard = (boardId, text) => {
   }
 }
 
-export const startBoard = (boardId) => {
-  console.log("startBoard", boardId);
+export const startBoard = (boardId, start) => {
   return {
     type: actionTypes.SELECT_START,
     boardId,
@@ -29,7 +26,6 @@ export const startBoard = (boardId) => {
 }
 
 export const selectBoard = (boardId) => {
-  console.log("selectBoard", boardId);
   return {
     type: actionTypes.SELECT_BOARD,
     boardId
@@ -37,21 +33,18 @@ export const selectBoard = (boardId) => {
 }
 
 export const showCreateBoard = () => {
-  console.log("showCreateBoard", actionTypes);
   return {
     type: actionTypes.SHOW_CREATE_BOARD
   }
 }
 
 export const hideCreateBoard = () => {
-  console.log("hideCreateBoard");
   return {
     type: actionTypes.HIDE_CREATE_BOARD
   }
 }
 
 export const addCard = (text, boardId, cardId) => {
-  console.log("addCard", text);
   return {
     type: actionTypes.ADD_CARD,
     text,
@@ -61,7 +54,6 @@ export const addCard = (text, boardId, cardId) => {
 }
 
 export const editCard = (text, cardId) => {
-  console.log("editCard", text);
   return {
     type: actionTypes.EDIT_CARD,
     cardId,
@@ -70,7 +62,6 @@ export const editCard = (text, cardId) => {
 }
 
 export const addMember = (text, cardId, memberId) => {
-  console.log("addMember", text, cardId, memberId);
   return {
     type: actionTypes.ADD_MEMBER,
     text,
@@ -80,7 +71,6 @@ export const addMember = (text, cardId, memberId) => {
 }
 
 export const editMember = (text) => {
-  console.log("editMember", text);
   return {
     type: actionTypes.EDIT_MEMBER,
     memberId,
@@ -89,7 +79,6 @@ export const editMember = (text) => {
 }
 
 export const selectMember = (memberId) => {
-  console.log("selectMember", memberId);
   return {
     type: actionTypes.SELECT_MEMBER,
     memberId
@@ -97,7 +86,6 @@ export const selectMember = (memberId) => {
 }
 
 export const addComment = (memberId, text, commentId ) => {
-  console.log("addComment", text , "memberId", memberId, "commentId", commentId);
   return {
     type: actionTypes.ADD_COMMENT,
     memberId,
@@ -107,7 +95,6 @@ export const addComment = (memberId, text, commentId ) => {
 }
 
 export const showCreateComment = (memberId) => {
-  console.log("showCreateComment", memberId);
   return {
     type: actionTypes.SHOW_CREATE_COMMENT,
     memberId
@@ -115,14 +102,12 @@ export const showCreateComment = (memberId) => {
 }
 
 export const hideCreateComment = () => {
-  console.log("hideCreateComment");
   return {
     type: actionTypes.HIDE_CREATE_COMMENT
   }
 }
 
 export const addLabel = (color) => {
-  console.log("addLabel", color);
   return {
     type: actionTypes.ADD_LABEL,
     labelId,
@@ -131,7 +116,6 @@ export const addLabel = (color) => {
 }
 
 export const selectLabel = (labelId) => {
-  console.log("selectLabel", labelId);
   return {
     type: actionTypes.ADD_LABEL,
     labelId

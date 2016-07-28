@@ -16,6 +16,9 @@ class ListBoard extends Component {
       <div>
         <ul className="boards-page-board-section">
           <div className="board-section-header">
+            <span className="section-header-icon">
+              <i className="fa fa-star-o icon-start-board" aria-hidden="true"></i>
+            </span>
             <h3 className="section-header-name">Start Board</h3>
           </div>
           { 
@@ -33,6 +36,9 @@ class ListBoard extends Component {
         </ul>
         <ul className="boards-page-board-section">
           <div className="board-section-header">
+            <span className="section-header-icon">
+              <i className="fa fa-credit-card icon-start-board" aria-hidden="true"></i>
+            </span>
             <h3 className="section-header-name">My Board</h3>
           </div>
           { 
@@ -44,7 +50,7 @@ class ListBoard extends Component {
             />)
           }
           <li className="section-list-item" onClick={this.onClickShowPopup.bind(this, false)}>
-            <a href="#" className="board-add">
+            <a href="javascript:void(0)" className="board-add">
               <span className="board-tile-details-add">
                 Create new board...
               </span>

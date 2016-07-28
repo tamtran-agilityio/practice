@@ -16,20 +16,28 @@ class Card extends Component {
     this.refs.keywords.value ='';
   }
 
+  onSelectAddCard(event) {
+    event.preventDefault();
+    console.log("event add list", event);
+  }
+
   render() {
+    let enableClass = this.isSelect ? '' : 'show-add-list';
+    let disable =`${enableClass} add-list-card`;
     return (
-      <div className="add-list-card">
+      <div className={disable}>
         <form onSubmit={this.addCardItem}>
           <span className="placeholder"> Add a list… </span>
             <input
+              onClick={this.onSelectAddCard}
               type="text"
               className="form-input input-lg"
-              placeholder="What are you organzing?"
+              placeholder="Add a list"
               ref="keywords"
               />
             <div className="list-add-controls">
               <button className="create-card" type="submit"> Save </button>
-              <a href="#" className="icon-close">X</a>
+              <a href="javascript:void(0)" className="icon-close">X</a>
             </div>
           </form>
       </div>
@@ -38,7 +46,8 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  addCardItem: PropTypes.func.isRequired
+  addCardItem: PropTypes.func.isRequired,
+  onSelectAddCard: PropTypes.func.isRequired
 }
 
 export default Card

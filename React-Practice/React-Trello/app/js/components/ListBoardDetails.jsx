@@ -19,17 +19,22 @@ class ListBoardDetails extends Component {
   }
 
   render() {
+    let active = !this.start ? '' : 'active';
+    let css = `${active} fa fa-star-o board-header-btn-icon`;
     return (
       <div className="card-content">
         <div className="board-wrapper">
           <div className="board-main-content">
             <div className="board-header">
-              <h2 className="board-title">
-                {this.boardTitle}
-              </h2>
-              <div className={this.start ? 'active' : 'none' }>
-                {this.start}
-                <h2> Start </h2>
+              <div className="board-header-btn">
+                <a href="javascript:void(0)">
+                  {this.boardTitle}
+                </a>
+              </div>
+              <div className="board-header-btns">
+                <a href="javascript:void(0)" className="board-header-btn board-header-start">
+                  <i className={css}></i>
+                </a>
               </div>
             </div>
             <div className="card-content">

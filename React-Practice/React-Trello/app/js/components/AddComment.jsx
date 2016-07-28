@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import ListComment from '../containers/ListComment';
+import Sidebar from '../containers/Sidebar';
 
 class AddComment extends Component{
   constructor(props){
@@ -56,6 +57,7 @@ class AddComment extends Component{
                 <ListComment memberId = {this.props.state.boards.board.memberId}/>
               </div>
             </div>
+            <Sidebar/>
           </div>
         </div>
         </div>

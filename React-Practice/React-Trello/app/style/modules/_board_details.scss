@@ -25,4 +25,51 @@
     -webkit-transition: margin .1s ease-in;
     transition: margin .1s ease-in;
   }
+  .board-header-btn {
+    cursor: default;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 4px;
+    text-decoration: none;
+    border-radius: 3px;
+    color: #f6f6f6;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 4px 0 0;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    a {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 30px;
+      padding-left: 8px;
+      padding-right: 6px;
+      color: #FFF;
+    }
+  }
+  .board-header-btns {
+    float: left;
+    position: relative;
+    display: block;
+  }
+  .board-header-start {
+    background-color: rgba(0,0,0,.1);
+  }
+  .board-header-btn-icon {
+    background-clip: content-box;
+    background-origin: content-box;
+    color: #f6f6f6;
+    padding: 6px;
+    top: 0;
+    left: 0;
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+  }
+  .active {
+    color: #f2d600;
+  }
 }
