@@ -1,4 +1,5 @@
 import './style/style.scss';
+import'./style/awesome/font-awesome.scss';
 import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'

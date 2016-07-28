@@ -10,16 +10,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  	onClick: (direction) => {
-  	  console.log("direction",direction);
+    onSelectStart: (direction) => {
       dispatch(startBoard(direction));
     }
   }
 }
 
-const ListBoardDetaisl = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Board)
-
-export default Board

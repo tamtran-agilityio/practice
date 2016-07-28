@@ -29,8 +29,7 @@ function getBoardItem(boardIdParam) {
       let ret = {
         boardId: board.boardId,
         start: board.start,
-        text: board.text,
-        cards: board.cards
+        text: board.text
       }
       ret.start = board.start;
       boardRs = ret;
@@ -159,8 +158,6 @@ function board(state = {
       let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
       // Get id by value max
       let id = getListBoard.length + 1;
-      console.log("getListBoard", getListBoard);
-
       let newBoard = {
         boardId: id,
         start: false,
@@ -180,13 +177,18 @@ function board(state = {
       }
 
     case 'SELECT_START':
-      if (state.boardId !== action.boardId) {
-        return state
+      let item = getBoardItem(action.boardId);
+      let changeStart = {
+        boardId: item.boardId,
+        text: item.text,
+        start: !item.start
       }
-
-      return Object.assign({}, state, {
-        start: !state.start
-      })
+      updateBoard(changeStart);
+      return {
+        boardId: item.boardId,
+        text: item.text,
+        start: !item.start
+      }
     case 'SHOW_CREATE_BOARD':
       return { 
         showCreateBoard: true

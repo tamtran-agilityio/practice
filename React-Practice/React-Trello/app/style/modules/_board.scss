@@ -33,6 +33,18 @@
       font-size: 1pc;
       font-weight: 700;
     }
+    .icon-start-board {
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      width: 30px;
+    }
+    .section-header-icon {
+      left: -38px;
+      position: absolute;
+      top: 0;
+      text-align: center;
+    }
   } 
 }
 .section-list-item {
@@ -54,6 +66,12 @@
     padding: 8px 9pt;
     position: relative;
     text-decoration: none;
+    &:hover {
+      .icon-start {
+        opacity: .75;
+        width: 18px;
+      }
+    }
   }
   .board-tile-details {
     display: block;
@@ -75,9 +93,6 @@
     top: 0;
     z-index: 3;
     .icon-start {
-      color: #e6c60d;
-      opacity: 1;
-      width: 18px;
       color: #fff;
       bottom: 0;
       font-size: 14px;
@@ -91,6 +106,11 @@
       transition-duration: .15s;
       -webkit-transition-property: color,background,opacity,-webkit-transform,width;
       transition-property: color,background,opacity,transform,width;
+    }
+    .active {
+      color: #e6c60d;
+      width: 18px;
+      opacity: 0.75;
     }
   }
   .board-add {
