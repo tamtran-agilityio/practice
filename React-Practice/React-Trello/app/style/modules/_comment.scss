@@ -66,8 +66,16 @@
       font-size: 18px;
       margin: 0 4px 9px;
     }
+    .window-module-title-icon {
+      left: -15px;
+      position: absolute;
+      top: 10px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      width: 30px;
+    }
   }
-
 }
 .window-main {
   float: left;
@@ -91,6 +99,109 @@
     .new-comment {
       position: relative;
       margin: 0 0 20px 38px;
+    }
+    .window-module-title-icon {
+      left: 10px;
+      position: absolute;
+      top: 8px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      width: 30px;
+    }
+  }
+  .input-comment {
+    height: 75px;
+    margin: 0;
+    color: #8c8c8c;
+    min-height: 75px;
+    padding: 9px 11px 0;
+    width: 100%;
+    resize: none;
+    border: 0;
+    border-radius: 3px;
+    display: block;
+    box-sizing: border-box;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: 75px;
+    border-bottom: solid 30px transparent;
+  }
+  .create-comment {
+    background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+    background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+    box-shadow: 0 1px 0 #3f6f21;
+    color: #fff;
+    border: none;
+    box-shadow: 0 1px 0 #959da1;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 8px 4px 0 0;
+    padding: 7px 20px;
+    text-align: center;
+    border-radius: 3px;
+  }
+}
+.card-comment-item {
+  border-bottom: 1px solid #e2e4e6;
+  margin-left: 38px;
+  min-height: 30px;
+  padding: 10px 0;
+  position: relative;
+  .phenom-creator {
+    height: 30px;
+    left: -32px;
+    position: absolute;
+    top: 8px;
+    width: 30px;
+    text-align: center;
+    background-color: #d6dadc;
+    border-radius: 3px;
+    color: #4d4d4d;
+    display: block;
+    float: left;
+    height: 30px;
+    margin: 0 4px 4px 0;
+    overflow: hidden;
+    width: 30px;
+    user-select: none;
+    z-index: 0;
+  }
+  .phenom-desc {
+    margin: 0 6px 0 0;
+    word-wrap: break-word;
+    margin-right: 0;
+    display: block;
+    margin-left: 5px;
+  }
+  .inline-member {
+    cursor: pointer;
+    color: #4d4d4d;
+    font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    line-height: 18px;
+  }
+  .card-comment-title {
+    padding: 9px 11px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.23);
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: inline-block;
+    margin: 6px 2px 6px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    cursor: auto;
+    p {
+      margin: 0;
+      color: #4d4d4d;
+      font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+      line-height: 18px;
     }
   }
 }

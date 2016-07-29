@@ -1,12 +1,14 @@
 import React, {PropTypes, Component} from 'react';
-
+import AddLabel from '../components/AddLabel';
 class Siderbar extends Component {
   constructor(props) {
     super(props);
   }
 
-  onClickPopupLabel(direction) {
-    this.props.onClickPopupLabel(direction);
+  onClickPopupLabel(event) {
+    event.preventDefault();
+    console.log("direction AAAAAAAA", event);
+    this.props.onClickPopupLabel(event);
   }
 
   render() {
@@ -19,10 +21,13 @@ class Siderbar extends Component {
               <i className="fa fa-user" aria-hidden="true"></i>
               Member
             </a>
-            <a href="javascript:void(0)" className="button-link">
+            <a href="javascript:void(0)"
+              onClick={this.onClickPopupLabel.bind(this)}
+              className="button-link">
               <i className="fa fa-user" aria-hidden="true"></i>
               Labels
             </a>
+            <AddLabel/>
             <a href="javascript:void(0)" className="button-link">
               <i className="fa fa-user" aria-hidden="true"></i>
               Checklist
@@ -64,7 +69,7 @@ class Siderbar extends Component {
 }
 
 Siderbar.propTypes = {
-  onClickPopupLabel: PropTypes.func
+  onClickPopupLabel: PropTypes.func.isRequired
 }
 
 export default Siderbar

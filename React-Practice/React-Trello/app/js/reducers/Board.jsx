@@ -149,7 +149,9 @@ function board(state = {
   isProcessing: false,
   keyword:'',
   showCreateBoard: false,
-  showCreateComment: false
+  showCreateComment: false,
+  showForm: false,
+  showAddMember: false
 } , action) {
   console.info('state aaa', state);
   console.info('action aaa', action);
@@ -198,6 +200,17 @@ function board(state = {
       return {
         showCreateBoard: false
       }
+    case 'LISTS_SHOW_FORM':
+      console.log("aaaaa", action);
+      return { 
+        showFrom: true
+      }
+
+    case 'LISTS_HIDE_FORM':
+      console.log("aaaaa", action);
+      return { 
+        showFrom: false
+      }
 
     case 'ADD_CARD':
       let getListCards = JSON.parse(localStorage.getItem("card") || '[]');
@@ -236,7 +249,15 @@ function board(state = {
         text: action.text
       }
       break;
-
+    case 'LISTS_SHOW_FORM_MEMBER':
+      return {
+        showAddMember: true,
+        showFrom: false
+      }
+    case 'LISTS_HIDE_FORM_MEMBER':
+      return {
+        showAddMember: false
+      }
     case 'SHOW_CREATE_COMMENT':
       return { 
         showCreateComment: true,
@@ -265,6 +286,19 @@ function board(state = {
         memberId: action.memberId,
         commentId: action.commentId,
         text: action.text
+      }
+    
+    case 'SHOW_CREATE_LABEL':
+      return {
+        showCreateComment: true,
+        memberId: action.memberId,
+        showAddLabel: true
+      }
+
+    case 'HIDE_CREATE_LABEL':
+      return {
+        showCreateComment: true,
+        showAddLabel: false
       }
 
     default:
