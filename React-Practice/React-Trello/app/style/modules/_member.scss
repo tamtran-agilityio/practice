@@ -27,13 +27,58 @@
     display: block;
   }
   .create-member {
+    background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+    background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+    box-shadow: 0 1px 0 #3f6f21;
+    color: #fff;
+    float: left;
+    min-height: 30px;
+    height: 30px;
+    margin: 5px 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: none;
     cursor: pointer;
     display: inline-block;
     font-weight: 700;
-    line-height: 22px;
-    margin: 8px 4px 0 0;
+    line-height: 17px;
     border-radius: 3px;
+    font-size: 17px;
+    padding: 7px 20px;
     text-align: center;
+  }
+  .icon-close {
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-family: trellicons;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: #999;
+  }
+  a {
+    border-radius: 0 0 3px 3px;
+    color: #8c8c8c;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    padding: 4px;
+    &:hover {
+      background-color: #cdd2d4;
+      color: #4d4d4d;
+      text-decoration: underline;
+    }
   }
 }
 .list-member {
@@ -67,4 +112,7 @@
     position: relative;
     z-index: 10;
   }
+}
+.hide {
+  display: none;
 }

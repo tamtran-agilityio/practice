@@ -7,6 +7,7 @@ class AddComment extends Component{
     super(props);
     this.addCommentItem = this.addCommentItem.bind(this);
     this.props.state.boards.board.showCreateComment = false;
+    this.memberId = this.props.state.boards.board.memberId;
   }
 
   addCommentItem(event) {
@@ -31,6 +32,9 @@ class AddComment extends Component{
           <a key="close" className="close" onClick={this.handleClosePopupComment.bind(this, false)}>X</a>
           <div className="comment-detail-window">
             <div className="window-header">
+              <span className="window-module-title-icon">
+                <i className="fa fa-credit-card" aria-hidden="true"></i>
+              </span>
               <div className="window-title">
                 <h2 className="card-detail-title">Create Board </h2>
               </div>
@@ -39,22 +43,30 @@ class AddComment extends Component{
               <div className="window-module">
               </div>
               <div className="window-module">
+                <span className="window-module-title-icon">
+                  <i className="fa fa-comment-o" aria-hidden="true"></i>
+                </span>
                 <div className="window-module-title">Add Comment</div>
                 <div className="new-comment">
                   <form onSubmit={this.addCommentItem}>
-                    <label>Title</label>
-                    <input
+                    <textarea
                       type="text"
-                      className="form-input input-lg"
-                      placeholder="What are you organzing?"
+                      className="input-comment"
+                      placeholder="Write a comment…"
                       ref="keyword"
                       />
-                    <button className="create-board" type="submit">Send</button>
+                    <button className="create-comment" type="submit">Send</button>
                   </form>          
                 </div>
               </div>
               <div className="window-module">
-                <ListComment memberId = {this.props.state.boards.board.memberId}/>
+                <span className="window-module-title-icon">
+                  <i className="fa fa-list" aria-hidden="true"></i>
+                </span>
+                <div className="window-module-title">Activity</div>         
+                <div className="list-actions">
+                  <ListComment memberId = {this.props.state.boards.board.memberId}/>
+                </div>
               </div>
             </div>
             <Sidebar/>

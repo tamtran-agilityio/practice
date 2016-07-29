@@ -4,6 +4,7 @@ class AddMember extends Component {
   constructor(props){
     super(props);
     this.addMemberItem = this.addMemberItem.bind(this);
+    // this.props.state.boards.board.showAddMember = false;
   }
 
   addMemberItem(event) {
@@ -16,29 +17,42 @@ class AddMember extends Component {
     this.refs.keywords.value ='';
   }
 
+  showFormMember(direction) {
+    this.props.showFormMember(direction);
+  }
+
+  hideFormMember(direction) {
+    this.props.hideFormMember(direction);
+  }
+
   render() {
     return (
-      <div className="add-list-member">
-        <form className="form-add-member" onSubmit={this.addMemberItem}>
-          <span className="placeholder"> Add a card… </span>
+      <div className="add-list-member show-form">
+        <a href="javascript:void(0)" 
+          onClick={this.showFormMember.bind(this)}
+          className={!this.props.state.boards.board.showAddMember ? '' : 'hide'}> Add a card… 
+        </a>
+        <div className={this.props.state.boards.board.showAddMember ? '' : 'hide'}>
+          <form className="form-add-member" onSubmit={this.addMemberItem}>
             <textarea
               type="text"
               className="form-input input-lg"
-              placeholder="What are you organzing?"
               ref="keywords"
               />
-            <div className="list-add-controls">
               <button className="create-member" type="submit"> Add </button>
-              <a href="#" className="icon-close">X</a>
-            </div>
+              <a href="javascript:void(0)"
+                onClick={this.hideFormMember.bind(this)}
+                className="icon-close">X</a>
           </form>
+        </div>
       </div>
     )
   }
 }
 
 AddMember.propTypes = {
-  addMemberItem: PropTypes.func.isRequired
+  addMemberItem: PropTypes.func.isRequired,
+  showFormMember: PropTypes.func.isRequired
 }
 
 export default AddMember

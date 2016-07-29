@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {addMember} from '../actions/Action';
+import {addMember, showAddMember, hideAddMember} from '../actions/Action';
 import AddMember from '../components/AddMember';
 
 const mapStateToProps = (state) => {
@@ -10,6 +10,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addMemberItem: (keywords, cardId) => {
       dispatch(addMember(keywords, cardId));
+    },
+    showFormMember: (direction) => {
+      dispatch(showAddMember(true));
+    },
+    hideFormMember: (direction) => {
+      dispatch(hideAddMember(false));
     }
   }
 }

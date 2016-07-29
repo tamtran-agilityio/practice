@@ -13,12 +13,14 @@ class Comment extends Component {
   render() {
     return (
       <li className="card-comment-item" key={this.props.commentId} >
-        <a href="javascript:void(0)" className="link-item" 
+        <div className="phenom-creator">T</div>
+        <a href="javascript:void(0)" className="phenom-desc" 
           onClick={this.onClickComment.bind(this, this.props.commentId)}
           commentId = {this.props.commentId}
-        >
-            <div className="card-comment-title">
-              {this.props.text} { this.props.commentId }
+        >   
+          <div className="inline-member"> Tamtamxuan</div>
+          <div className="card-comment-title">
+            <p> {this.props.text} </p>
           </div>
         </a>
       </li>
