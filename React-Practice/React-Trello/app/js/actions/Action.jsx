@@ -78,6 +78,20 @@ export const editMember = (text) => {
   }
 }
 
+export const showForm  = (show) => {
+  return {
+    type: actionTypes.LISTS_SHOW_FORM,
+    show: show
+  };
+}
+
+export const hideForm  = (hide) => {
+  return {
+    type: actionTypes.LISTS_HIDE_FORM,
+    hide: hide
+  };
+}
+
 export const selectMember = (memberId) => {
   return {
     type: actionTypes.SELECT_MEMBER,
@@ -94,6 +108,20 @@ export const addComment = (memberId, text, commentId ) => {
   }
 }
 
+export const showAddMember  = (show) => {
+  return {
+    type: actionTypes.LISTS_SHOW_FORM_MEMBER,
+    show: show
+  };
+}
+
+export const hideAddMember  = (hide) => {
+  return {
+    type: actionTypes.LISTS_HIDE_FORM_MEMBER,
+    hide: hide
+  };
+}
+
 export const showCreateComment = (memberId) => {
   return {
     type: actionTypes.SHOW_CREATE_COMMENT,
@@ -107,9 +135,23 @@ export const hideCreateComment = () => {
   }
 }
 
+export const showAddLabel  = (show) => {
+  return {
+    type: actionTypes.SHOW_CREATE_LABEL,
+    show: show
+  };
+}
+
+export const hideAddLabel  = (hide) => {
+  return {
+    type: actionTypes.SHOW_CREATE_LABEL,
+    hide: hide
+  };
+}
+
 export const addLabel = (color) => {
   return {
-    type: actionTypes.ADD_LABEL,
+    type: actionTypes.HIDE_CREATE_LABEL,
     labelId,
     color
   }

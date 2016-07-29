@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {showCreateBoard, hideCreateBoard, addBoard} from '../actions/Action';
+import {showAddLabel, hideAddLabel, addBoard} from '../actions/Action';
 import Sidebar from '../components/Sidebar';
 
 const mapStateToProps = (state) => {
@@ -8,6 +8,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    onClickPopupLabel: (direction) => {
+      dispatch(showAddLabel(true))
+    }
   }
 }
 
