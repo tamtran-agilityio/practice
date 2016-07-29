@@ -1,6 +1,6 @@
-import React, {PropTypes, Component } from 'react';
+import React, {PropTypes, Component} from 'react';
 
-class Card extends Component {
+class AddCard extends Component {
   constructor(props){
     super(props);
     this.addCardItem = this.addCardItem.bind(this);
@@ -16,20 +16,23 @@ class Card extends Component {
     this.refs.keywords.value ='';
   }
 
-  onSelectAddCard(event) {
-    event.preventDefault();
-    console.log("event add list", event);
+  onSelectAddCard(direction) {
+    this.props.onSelectAddCard(direction);
+  }
+
+  outSideAddCard(direction) {
+    this.props.outSideAddCard(direction);
   }
 
   render() {
-    let enableClass = this.isSelect ? '' : 'show-add-list';
+    let enableClass = !this.props.state.boards.board.showFrom ? '' : 'show-add-list';
     let disable =`${enableClass} add-list-card`;
     return (
       <div className={disable}>
         <form onSubmit={this.addCardItem}>
           <span className="placeholder"> Add a list… </span>
             <input
-              onClick={this.onSelectAddCard}
+              onClick={this.onSelectAddCard.bind(this)}
               type="text"
               className="form-input input-lg"
               placeholder="Add a list"
@@ -37,7 +40,9 @@ class Card extends Component {
               />
             <div className="list-add-controls">
               <button className="create-card" type="submit"> Save </button>
-              <a href="javascript:void(0)" className="icon-close">X</a>
+              <a href="javascript:void(0)" 
+                onClick={this.outSideAddCard.bind(this, false)}
+                className="icon-close">X</a>
             </div>
           </form>
       </div>
@@ -45,9 +50,10 @@ class Card extends Component {
   }
 }
 
-Card.propTypes = {
+AddCard.propTypes = {
   addCardItem: PropTypes.func.isRequired,
-  onSelectAddCard: PropTypes.func.isRequired
+  onSelectAddCard: PropTypes.func.isRequired,
+  outSideAddCard: PropTypes.func.isRequired
 }
 
-export default Card
+export default AddCard

@@ -7,9 +7,14 @@ class ListCard extends Component {
     super(props);
   }
 
+  onSelectAddCard(event) {
+  }
+
   render() {
     return (
-      <ul className="list-content" boardIdDetails = {this.props.boardId}>
+      <ul className="list-content" 
+        onClick= {this.onSelectAddCard.bind(this)} 
+        boardIdDetails = {this.props.boardId}>
         { 
           this.props.cards.map(card =>
           <Card
