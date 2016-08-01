@@ -155,19 +155,19 @@ function board(state = {
 } , action) {
   console.info('state aaa', state);
   console.info('action aaa', action);
+  let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
+  // Get id by value max
+  let boardId = getListBoard.length + 1;
   switch (action.type) {
     case 'ADD_BOARD':
-      let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
-      // Get id by value max
-      let id = getListBoard.length + 1;
       let newBoard = {
-        boardId: id,
+        boardId: boardId,
         start: false,
         text: action.text
       }
       updateBoard(newBoard);
       return {
-        boardId: id,
+        boardId: boardId,
         start: false,
         text: action.text
       }
@@ -193,7 +193,8 @@ function board(state = {
       }
     case 'SHOW_CREATE_BOARD':
       return { 
-        showCreateBoard: true
+        showCreateBoard: true,
+        boardId: boardId
       }
 
     case 'HIDE_CREATE_BOARD':     

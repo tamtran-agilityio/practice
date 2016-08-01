@@ -14,6 +14,7 @@ class AddBoard extends Component{
     }
     this.props.addBoardItem(keyword);
     this.refs.keyword.value ='';
+    document.location.pathname = `board/${this.props.state.boards.board.boardId}`;
   }
 
   handleClosePopup(direction) {
