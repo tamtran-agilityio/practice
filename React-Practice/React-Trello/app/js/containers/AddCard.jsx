@@ -3,7 +3,6 @@ import {addCard, showForm, hideForm} from '../actions/Action';
 import AddCard from '../components/AddCard';
 
 const mapStateToProps = (state) => {
-  console.log("DDDD state", state);
   return { state };
 }
 

@@ -144,7 +144,7 @@ export const showAddLabel  = (show) => {
 
 export const hideAddLabel  = (hide) => {
   return {
-    type: actionTypes.SHOW_CREATE_LABEL,
+    type: actionTypes.HIDE_CREATE_LABEL,
     hide: hide
   };
 }

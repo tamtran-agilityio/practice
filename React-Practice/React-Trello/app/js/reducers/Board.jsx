@@ -151,7 +151,8 @@ function board(state = {
   showCreateBoard: false,
   showCreateComment: false,
   showForm: false,
-  showAddMember: false
+  showAddMember: false,
+  showAddLabel: false
 } , action) {
   console.info('state aaa', state);
   console.info('action aaa', action);
@@ -208,7 +209,6 @@ function board(state = {
       }
 
     case 'LISTS_HIDE_FORM':
-      console.log("aaaaa", action);
       return { 
         showFrom: false
       }
@@ -262,7 +262,8 @@ function board(state = {
     case 'SHOW_CREATE_COMMENT':
       return { 
         showCreateComment: true,
-        memberId: action.memberId
+        memberId: action.memberId,
+        showAddLabel: false
       }
 
     case 'HIDE_CREATE_COMMENT':     
@@ -286,19 +287,21 @@ function board(state = {
         showCreateComment: true,
         memberId: action.memberId,
         commentId: action.commentId,
-        text: action.text
+        text: action.text,
+        showAddLabel: false
       }
     
     case 'SHOW_CREATE_LABEL':
       return {
         showCreateComment: true,
-        memberId: action.memberId,
+        memberId: state.memberId,
         showAddLabel: true
       }
 
     case 'HIDE_CREATE_LABEL':
       return {
         showCreateComment: true,
+        memberId: state.memberId,
         showAddLabel: false
       }
 

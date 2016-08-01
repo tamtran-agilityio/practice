@@ -5,12 +5,20 @@ class AddLabel extends Component{
     super(props);
   }
 
+  hidePopupLabel(direction) {
+    this.props.hidePopupLabel(direction);
+  }
+
   render() {
+    let labelShow = !this.props.state.boards.board.showAddLabel ? '': 'show-pop-over';
+    let css = `${labelShow} pop-over`;
     return (
-      <div className="pop-over">
+      <div className={css}>
         <div className="pop-over-header">
           <div className="pop-over-header-title">Labels</div>
-          <a href="javascript:void(0)" className="close">X</a>
+          <a href="javascript:void(0)"
+            onClick={this.hidePopupLabel.bind(this, false)}
+            className="close">X</a>
         </div>
         <div className="pop-over-content">
           <input className="label-search"
@@ -38,7 +46,7 @@ class AddLabel extends Component{
 
 
 AddLabel.propTypes = {
-
+  hidePopupLabel: PropTypes.func.isRequired
 }
 
 export default AddLabel

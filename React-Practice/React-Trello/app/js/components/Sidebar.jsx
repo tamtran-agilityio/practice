@@ -1,5 +1,5 @@
 import React, {PropTypes, Component} from 'react';
-import AddLabel from '../components/AddLabel';
+import AddLabel from '../containers/AddLabel';
 class Siderbar extends Component {
   constructor(props) {
     super(props);
@@ -7,7 +7,6 @@ class Siderbar extends Component {
 
   onClickPopupLabel(event) {
     event.preventDefault();
-    console.log("direction AAAAAAAA", event);
     this.props.onClickPopupLabel(event);
   }
 
@@ -27,7 +26,7 @@ class Siderbar extends Component {
               <i className="fa fa-user" aria-hidden="true"></i>
               Labels
             </a>
-            <AddLabel/>
+            <AddLabel state={this.props.state}/>
             <a href="javascript:void(0)" className="button-link">
               <i className="fa fa-user" aria-hidden="true"></i>
               Checklist
