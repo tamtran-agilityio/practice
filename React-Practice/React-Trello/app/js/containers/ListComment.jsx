@@ -14,9 +14,8 @@ const getMember = (comments, memberParamId) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
-    comments: getMember(state.comments, ownProps.memberId)
+    comments: getMember(state.comments, state.rootReducer.comment.memberId)
   }
 }
 

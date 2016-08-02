@@ -10,7 +10,7 @@ class AddLabel extends Component{
   }
 
   render() {
-    let labelShow = !this.props.state.boards.board.showAddLabel ? '': 'show-pop-over';
+    let labelShow = !this.props.state.rootReducer.label.showAddLabel ? '': 'show-pop-over';
     let css = `${labelShow} pop-over`;
     return (
       <div className={css}>

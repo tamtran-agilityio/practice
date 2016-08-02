@@ -4,7 +4,6 @@ class AddMember extends Component {
   constructor(props){
     super(props);
     this.addMemberItem = this.addMemberItem.bind(this);
-    // this.props.state.boards.board.showAddMember = false;
   }
 
   addMemberItem(event) {
@@ -18,21 +17,21 @@ class AddMember extends Component {
   }
 
   showFormMember(direction) {
-    this.props.showFormMember(direction);
+    this.props.showFormMember(direction, this.props.cardId);
   }
 
   hideFormMember(direction) {
-    this.props.hideFormMember(direction);
+    this.props.hideFormMember(direction, this.props.cardId);
   }
 
   render() {
     return (
       <div className="add-list-member show-form">
         <a href="javascript:void(0)" 
-          onClick={this.showFormMember.bind(this)}
-          className={!this.props.state.boards.board.showAddMember ? '' : 'hide'}> Add a card… 
+          onClick={this.showFormMember.bind(this, this.props.cardId)}
+          className={!this.props.state.rootReducer.member.showAddMember ? '' : 'hide'}> Add a card… 
         </a>
-        <div className={this.props.state.boards.board.showAddMember ? '' : 'hide'}>
+        <div className={this.props.state.rootReducer.member.showAddMember ? '' : 'hide'}>
           <form className="form-add-member" onSubmit={this.addMemberItem}>
             <textarea
               type="text"

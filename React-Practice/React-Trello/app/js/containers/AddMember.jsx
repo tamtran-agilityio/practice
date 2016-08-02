@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(addMember(keywords, cardId));
     },
     showFormMember: (direction) => {
-      dispatch(showAddMember(true));
+      dispatch(showAddMember(true, direction));
     },
     hideFormMember: (direction) => {
       dispatch(hideAddMember(false));

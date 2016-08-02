@@ -1,9 +1,9 @@
 import { routerReducer } from 'react-router-redux';
 import {combineReducers} from 'redux';
-import boards from './Board';
+import rootReducer from './Index';
 
 const boardApp = combineReducers({
-  boards,
+  rootReducer,
   routing: routerReducer
 })
 

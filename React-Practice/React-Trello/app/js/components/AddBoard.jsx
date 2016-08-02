@@ -3,6 +3,7 @@ import React, { PropTypes, Component } from 'react';
 class AddBoard extends Component{
   constructor(props){
     super(props);
+    console.log("SSSSSSS", props);
     this.addBoardItem = this.addBoardItem.bind(this);
   }
 
@@ -14,7 +15,7 @@ class AddBoard extends Component{
     }
     this.props.addBoardItem(keyword);
     this.refs.keyword.value ='';
-    document.location.pathname = `board/${this.props.state.boards.board.boardId}`;
+    document.location.pathname = `board/${this.props.state.rootReducer.board.boardId}`;
   }
 
   handleClosePopup(direction) {
@@ -24,7 +25,7 @@ class AddBoard extends Component{
   render() {
     return (
       <div >
-        <div className={this.props.state.boards.board.showCreateBoard ? 'modal-content' : 'modal-content-hide' } >
+        <div className={this.props.state.rootReducer.board.showCreateBoard ? 'modal-content' : 'modal-content-hide' } >
         <a key="close" className="close" onClick={this.handleClosePopup.bind(this, false)}>X</a>
         <div className="pop-over-header">
           <div className="pop-over-header-title">Create Board</div>

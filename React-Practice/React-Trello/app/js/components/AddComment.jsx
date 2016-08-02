@@ -6,8 +6,7 @@ class AddComment extends Component{
   constructor(props){
     super(props);
     this.addCommentItem = this.addCommentItem.bind(this);
-    this.props.state.boards.board.showCreateComment = false;
-    this.memberId = this.props.state.boards.board.memberId;
+    // this.props.state.rootReducer.comment.showCreateComment = false;
   }
 
   addCommentItem(event) {
@@ -16,7 +15,7 @@ class AddComment extends Component{
     if (!keyword.trim()) {
       return 
     }
-    this.props.addCommentItem(this.props.state.boards.board.memberId, keyword);
+    this.props.addCommentItem(this.props.state.rootReducer.member.memberId, keyword);
     this.refs.keyword.value ='';
   }
 
@@ -27,7 +26,7 @@ class AddComment extends Component{
   render() {
     return (
       <div>
-        <div className={this.props.state.boards.board.showCreateComment ? 'window-overlay' : 'window-overlay-hide' }>
+        <div className={this.props.state.rootReducer.comment.showCreateComment ? 'window-overlay' : 'window-overlay-hide' }>
         <div className="window-comment">
           <a key="close" className="close" onClick={this.handleClosePopupComment.bind(this, false)}>X</a>
           <div className="comment-detail-window">
@@ -65,7 +64,7 @@ class AddComment extends Component{
                 </span>
                 <div className="window-module-title">Activity</div>         
                 <div className="list-actions">
-                  <ListComment memberId = {this.props.state.boards.board.memberId}/>
+                  <ListComment memberId = {this.props.state.rootReducer.member.memberId}/>
                 </div>
               </div>
             </div>

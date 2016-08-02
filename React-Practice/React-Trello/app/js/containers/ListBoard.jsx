@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     },
 
     onClickShowPopup: (direction) => {
-      dispatch(showCreateBoard());
+      dispatch(showCreateBoard(true));
     }
   };
 }

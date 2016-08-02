@@ -25,7 +25,7 @@ class AddCard extends Component {
   }
 
   render() {
-    let enableClass = !this.props.state.boards.board.showFrom ? '' : 'show-add-list';
+    let enableClass = !this.props.state.rootReducer.card.showFrom ? '' : 'show-add-list';
     let disable =`${enableClass} add-list-card`;
     return (
       <div className={disable}>

@@ -1,21 +1,28 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import AddMember from '../containers/AddMember';
 import ListMember from '../containers/ListMember';
 
-const Card = ({text, cardId}) => (
-  
-  <li className="list-wrapper" key={cardId}>
-    <div className="list">
-      <div className="list-header">
-        {text} {cardId}
-      </div>
-      <div className="">
-        <ListMember cardId = {cardId}/>
-        <AddMember cardId = {cardId}/>
-      </div>
-    </div>
-  </li>
-)
+class Card extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <li className="list-wrapper" key={this.props.cardId}>
+        <div className="list">
+          <div className="list-header">
+            {this.props.text}
+          </div>
+          <div className="">
+            <ListMember cardId = {this.props.cardId}/>
+            <AddMember cardId = {this.props.cardId}/>
+          </div>
+        </div>
+      </li>
+    );
+  }
+}
 
 Card.propTypes = {
   onClick: PropTypes.func.isRequired,
