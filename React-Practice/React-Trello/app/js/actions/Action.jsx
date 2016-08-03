@@ -135,21 +135,19 @@ export const hideCreateComment = () => {
   }
 }
 
-export const showAddLabel  = (show) => {
+export const showAddLabel  = () => {
   return {
-    type: actionTypes.SHOW_CREATE_LABEL,
-    show: show
+    type: actionTypes.SHOW_CREATE_LABEL
   };
 }
 
-export const hideAddLabel  = (hide) => {
+export const hideAddLabel  = () => {
   return {
-    type: actionTypes.HIDE_CREATE_LABEL,
-    hide: hide
+    type: actionTypes.HIDE_CREATE_LABEL
   };
 }
 
-export const addLabel = (color) => {
+export const addLabel = (color, labelId) => {
   return {
     type: actionTypes.HIDE_CREATE_LABEL,
     labelId,

@@ -25,7 +25,6 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   cardId: PropTypes.number.isRequired
 }

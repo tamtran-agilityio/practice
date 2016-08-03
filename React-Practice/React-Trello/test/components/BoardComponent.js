@@ -1,41 +1,81 @@
-import expect from 'expect'
-import React from 'react'
-import { shallow } from 'enzyme'
-import AddBoard from '../../app/js/containers/AddBoard'
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import sinon from 'sinon';
+import { expect } from 'chai';
+import ReactAddOn, {addon} from 'react/addons';
+import createComponent from '../helpers/shallowRenderHelper';
+import Board from '../../app/js/components/Board';
+import AddBoard from '../../app/js/components/AddBoard';
 
-function setup() {
-  const props = {
-    addBoard: expect.createSpy()
-  }
-  const enzymeWrapper = shallow(<AddBoard {...props} />)
+describe('Board component', () => {
+  it('should have className \'section-list-item\'', () => {
+    const BoardComponent = createComponent(Board, {
+      start: false,
+      onSelectStart: () => {},
+      boardId: 1,
+      text: 'test redux'
+    });
 
-  return {
-    props,
-    enzymeWrapper
-  }
-}
+    expect(BoardComponent.props.className).to.contain('section-list-item');
+  });
 
-describe('components', () => {
-  describe('AddBoard', () => {
-    it('should render self and subcomponents', () => {
-      const { enzymeWrapper } = setup()
+  it('should be active on container', () => {
+    const BoardComponent = createComponent(Board, {
+      start: true,
+      onSelectStart: () => {},
+      boardId: 1,
+      text: 'test redux'
+    });
 
-      expect(enzymeWrapper.find('AddBoard').hasClass('modal-content')).toBe(true)
+    expect(BoardComponent.props.className).to.contain('section-list-item');;
+  });
 
-      expect(enzymeWrapper.find('label').text()).toBe('Title')
+  it('should handle change value', () => {
+    let start,
+      selectValue;
+    const callback = function(target, value) {
+      start = target;
+      selectValue = value;
 
-      const boardInputProps = enzymeWrapper.find('Text').props()
-      expect(boardInputProps.newBoard).toBe(true)
-      expect(boardInputProps.placeholder).toEqual('What are you organzing?')
-    })
+      return;
+    };
 
-    it('should call addBoard if length of text is greater than 0', () => {
-      const { enzymeWrapper, props } = setup()
-      const input = enzymeWrapper.find('Text')
-      input.props().onSave('')
-      expect(props.addBoard.calls.length).toBe(0)
-      input.props().onSave('Use Redux')
-      expect(props.addBoard.calls.length).toBe(1)
-    })
-  })
-})
+    const options = {
+      start: true,
+      start: false
+    };
+    const component = TestUtils.renderIntoDocument(
+     <Board
+      start = {false}
+      values={ options }
+      text= 'test redux'
+      boardId = {1}
+      onSelectStart={ callback } />
+    );
+    const select = TestUtils
+      .findRenderedDOMComponentWithTag(component, 'board-tile-options');
+
+    TestUtils.Simulate.change(select, {
+      target: {
+        value: true
+      }
+    });
+
+    expect(start).to.equal(false);
+    expect(selectValue).to.equal('true');
+  });
+
+  it('should add board ', () => {
+    let rootReducers ={
+        board: {
+          showCreateBoard: true
+        }
+      }
+    const AddBoardComponent = createComponent(AddBoard, {
+      rootReducer: rootReducers,
+      handleClosePopup: () => {},
+      addBoardItem: () => {}
+    });
+    expect(AddBoardComponent.props.className).to.contain('modal-content');
+  });
+});

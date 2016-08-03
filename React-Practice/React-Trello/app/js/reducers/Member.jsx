@@ -5,7 +5,7 @@ function updateMember(memberParam: Member){
   let persistedMember = JSON.parse(localStorage.getItem('member') || '[]');
   let found = false;
   persistedMember.forEach( (member: any, idx: number) => {
-    if (board.memberId === memberParam.memberId){
+    if (member.memberId === memberParam.memberId){
       persistedMember[idx] = memberParam;
       found = true;
     }

@@ -7,7 +7,6 @@ class ListBoard extends Component {
   }
 
   onClickShowPopup(direction) {
-    console.log("direction 111", direction);
     this.props.onClickShowPopup(direction);
   }
 

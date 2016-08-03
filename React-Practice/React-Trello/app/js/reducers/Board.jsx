@@ -53,6 +53,7 @@ export default function board(state = {
 } , action) {
   console.info('state aaa111', state);
   console.info('action aaa1111', action);
+  let localStorage = window.localStorage;
   let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
   // Get id by value max
   let boardId = getListBoard.length + 1;

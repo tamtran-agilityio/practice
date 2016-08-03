@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^0.14.8",
+    "react-addons": "^0.9.1-deprecated",
     "react-dom": "^0.14.8"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "jshint-loader": "^0.8.3",
     "jsx-loader": "^0.13.2",
     "mocha": "^2.5.3",
+    "mocha-jsdom": "^1.1.0",
     "nock": "^7.7.2",
     "node-bourbon": "^4.2.8",
     "node-sass": "^3.8.0",
@@ -51,6 +53,7 @@
     "redux-react-router": "^1.0.0-beta3",
     "redux-thunk": "^2.0.1",
     "sass-loader": "^3.2.3",
+    "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",

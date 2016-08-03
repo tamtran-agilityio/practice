@@ -6,7 +6,6 @@ class AddComment extends Component{
   constructor(props){
     super(props);
     this.addCommentItem = this.addCommentItem.bind(this);
-    // this.props.state.rootReducer.comment.showCreateComment = false;
   }
 
   addCommentItem(event) {

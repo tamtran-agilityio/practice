@@ -5,7 +5,7 @@ function updateComment(commentParam: Member){
   let persistedComment = JSON.parse(localStorage.getItem('comment') || '[]');
   let found = false;
   persistedComment.forEach( (comment: any, idx: number) => {
-    if (board.commentId ===commentParam.commentId){
+    if (comment.commentId ===commentParam.commentId){
       persistedComment[idx] =commentParam;
       found = true;
     }
@@ -28,8 +28,11 @@ export default function comment(state = {
   showCreateComment: false,
   showAddLabel: false
 }, action) {
-  console.info('card state', state);
-  console.info('card action', action);
+  console.info('card state 1111222 ', state);
+  console.info('card action11111 22222', action);
+  let getListComment = JSON.parse(localStorage.getItem("comment") || '[]');
+  let commentId = getListComment.length + 1;
+  
   switch (action.type) {
     case 'SHOW_CREATE_COMMENT':
       return { 
@@ -44,20 +47,17 @@ export default function comment(state = {
       }
 
     case 'ADD_COMMENT':
-      let getListComment = JSON.parse(localStorage.getItem("comment") || '[]');
-      // Get id by value max
-      let commentId = getListComment.length + 1;
-
       let newComment = {
-        memberId: action.memberId,
+        memberId: state.memberId,
         commentId: commentId,
         text: action.text
       }
+
       updateComment(newComment);
 
       return {
         showCreateComment: true,
-        memberId: action.memberId,
+        memberId: state.memberId,
         commentId: action.commentId,
         text: action.text,
         showAddLabel: false
