@@ -30,8 +30,6 @@ export default function comment(state = {
 }, action) {
   console.info('card state 1111222 ', state);
   console.info('card action11111 22222', action);
-  let getListComment = JSON.parse(localStorage.getItem("comment") || '[]');
-  let commentId = getListComment.length + 1;
   
   switch (action.type) {
     case 'SHOW_CREATE_COMMENT':
@@ -47,6 +45,8 @@ export default function comment(state = {
       }
 
     case 'ADD_COMMENT':
+      let getListComment = JSON.parse(localStorage.getItem("comment") || '[]');
+      let commentId = getListComment.length + 1;
       let newComment = {
         memberId: state.memberId,
         commentId: commentId,

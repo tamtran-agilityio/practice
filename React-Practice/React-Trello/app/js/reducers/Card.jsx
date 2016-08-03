@@ -33,10 +33,10 @@ export default function card(state = {
   showAddLabel: false}, action) {
   console.info('card state', state);
   console.info('card action', action);
-  let getListCards = JSON.parse(localStorage.getItem("card") || '[]');
-  let cardId = getListCards.length + 1;
   switch (action.type) {
     case 'ADD_CARD':
+      let getListCards = JSON.parse(localStorage.getItem("card") || '[]');
+      let cardId = getListCards.length + 1;
       let newCard = {
         boardId: action.boardId,
         cardId: cardId,
