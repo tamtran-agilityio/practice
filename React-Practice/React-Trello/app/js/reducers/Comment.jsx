@@ -23,13 +23,10 @@ export default function comment(state = {
   commentId: '',
   memberId: '',
   text: '',
-  isProcessing: false,
   keyword:'',
   showCreateComment: false,
   showAddLabel: false
 }, action) {
-  console.info('card state 1111222 ', state);
-  console.info('card action11111 22222', action);
   
   switch (action.type) {
     case 'SHOW_CREATE_COMMENT':

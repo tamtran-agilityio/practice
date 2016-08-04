@@ -1,5 +1,5 @@
 import React, {PropTypes, Component } from 'react';
-import Comment from '../components/Comment';
+import Comment from '../containers/Comment';
 
 class ListComment extends Component {
   constructor(props){

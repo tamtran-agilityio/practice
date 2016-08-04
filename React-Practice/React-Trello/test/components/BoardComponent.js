@@ -67,15 +67,19 @@ describe('Board component', () => {
 
   it('should add board ', () => {
     let rootReducers ={
-        board: {
-          showCreateBoard: true
-        }
+      board: {
+        showCreateBoard: true
       }
+    };
+
     const AddBoardComponent = createComponent(AddBoard, {
-      rootReducer: rootReducers,
+      state: {
+        rootReducer: rootReducers
+      },
       handleClosePopup: () => {},
       addBoardItem: () => {}
     });
-    expect(AddBoardComponent.props.className).to.contain('modal-content');
+
+    expect(AddBoardComponent.props.className).to.contain('popup-add-board');
   });
 });

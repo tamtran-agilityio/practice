@@ -22,12 +22,9 @@ function updateMember(memberParam: Member){
 export default function member(state = {
   memberId: '',
   text: '',
-  isProcessing: false,
   keyword:'',
   showAddMember: false
 }, action) {
-  console.info('card state', state);
-  console.info('card action', action);
   switch (action.type) {
     case 'ADD_MEMBER':
       let getListMember = JSON.parse(localStorage.getItem("member") || '[]');

@@ -4,7 +4,6 @@ export default function label(state = {
   memberId: '',
   text: '',
   start: false,
-  isProcessing: false,
   keyword:'',
   showCreateComment: false,
   showAddLabel: false

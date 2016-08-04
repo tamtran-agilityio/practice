@@ -108,10 +108,11 @@ export const addComment = (memberId, text, commentId ) => {
   }
 }
 
-export const showAddMember  = (show) => {
+export const showAddMember  = (show, cardId) => {
   return {
     type: actionTypes.LISTS_SHOW_FORM_MEMBER,
-    show: show
+    show,
+    cardId
   };
 }
 

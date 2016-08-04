@@ -94,6 +94,7 @@
   padding: 0 9px 0 5px;
   a {
     display: block;
+    overflow: hidden;
   }
   .card-member-item {
     background-color: #fff;
@@ -111,6 +112,46 @@
     padding: 6px 6px 2px 8px;
     position: relative;
     z-index: 10;
+    .member-title-decs {
+      clear: both;
+      display: block;
+      font-weight: 400;
+      margin: 0 0 4px;
+      overflow: hidden;
+      text-decoration: none;
+      word-wrap: break-word;
+      color: #4d4d4d;
+    }
+  }
+  .badges {
+    float: left;
+    max-width: 100%;
+    padding: 0 6px 0 8px;
+    .comments {
+      color: #8c8c8c;
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      position: relative;
+    }
+    .icon-comment {
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      width: 18px;
+    }
+    .badge-text {
+      font-size: 13px;
+      padding: 2px 3px;
+      white-space: nowrap;
+    }
+  }
+
+  .badges-hide {
+    display: none;
   }
 }
 .hide {

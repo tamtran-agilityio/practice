@@ -47,17 +47,14 @@ export default function board(state = {
   boardId: '',
   text: '',
   start: false,
-  isProcessing: false,
   keyword:'',
   showCreateBoard: false
 } , action) {
-  console.info('state aaa111', state);
-  console.info('action aaa1111', action);
+  let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
+  // Get id by value max
+  let boardId = getListBoard.length + 1;
   switch (action.type) {
     case 'ADD_BOARD':
-      let getListBoard = JSON.parse(localStorage.getItem("board") || '[]');
-      // Get id by value max
-      let boardId = getListBoard.length + 1;
       let newBoard = {
         boardId: boardId,
         start: false,

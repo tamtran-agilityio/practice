@@ -1,4 +1,5 @@
 import {expect} from 'chai';
+import sinon from 'sinon';
 import reducer from '../../app/js/reducers/Index';
 import board from '../../app/js/reducers/Board';
 import * as actionTypes from '../../app/js/constants/actionTypes';
@@ -11,7 +12,6 @@ describe('Board reducer', () => {
       {
         board: {
           boardId: '' ,
-          isProcessing: false,
           keyword: '' ,
           showCreateBoard: false,
           start: false,
@@ -20,7 +20,6 @@ describe('Board reducer', () => {
         card: {
           boardId: '' ,
           commentId: '',
-          isProcessing: false,
           keyword: '' ,
           memberId: '' ,
           showAddLabel: false,
@@ -32,7 +31,6 @@ describe('Board reducer', () => {
         },
         comment: {
           commentId: '',
-          isProcessing: false,
           keyword: '' ,
           memberId: '' ,
           showAddLabel: false,
@@ -40,7 +38,6 @@ describe('Board reducer', () => {
           text: '' 
         },
         label: {
-          isProcessing: false,
           keyword: '' ,
           memberId: '' ,
           showAddLabel: false,
@@ -49,7 +46,6 @@ describe('Board reducer', () => {
           text: '' 
         },
         member: {
-          isProcessing: false,
           keyword: '' ,
           memberId: '' ,
           showAddMember: false,
@@ -64,7 +60,6 @@ describe('Board reducer', () => {
       board(undefined, {})
     ).to.deep.equal({
       boardId: '' ,
-      isProcessing: false,
       keyword: '' ,
       showCreateBoard: false,
       start: false,
@@ -73,12 +68,21 @@ describe('Board reducer', () => {
   });
 
   it('should edit board', () => {
-    expect(
-      board(undefined, {
-        type: actionTypes.SELECT_START,
-        boardId: '',
-        start: false
-      })
-    ).to.be.empty;
+    // let mockLocalStorage = {
+    //   getItem(key) {
+    //     return '[]';
+    //   }
+    // };
+
+    // sinon.mock(localStorage).expects('getItem').once();
+    // localStorage.getItem.verify();
+
+    // expect(
+    //   board(undefined, {
+    //     type: actionTypes.SELECT_START,
+    //     boardId: '',
+    //     start: false
+    //   })
+    // ).to.be.empty;
   });
 })

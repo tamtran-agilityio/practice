@@ -24,7 +24,6 @@ export default function card(state = {
   commentId: '',
   memberId: '',
   text: '',
-  isProcessing: false,
   keyword:'',
   showCreateBoard: false,
   showCreateComment: false,

@@ -24,7 +24,7 @@ class AddComment extends Component{
 
   render() {
     return (
-      <div>
+      <selection>
         <div className={this.props.state.rootReducer.comment.showCreateComment ? 'window-overlay' : 'window-overlay-hide' }>
         <div className="window-comment">
           <a key="close" className="close" onClick={this.handleClosePopupComment.bind(this, false)}>X</a>
@@ -71,7 +71,7 @@ class AddComment extends Component{
           </div>
         </div>
         </div>
-      </div>
+      </selection>
     );
   }
 }

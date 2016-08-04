@@ -1,4 +1,6 @@
 import React, { PropTypes, Component } from 'react';
+import { Router, IndexRoute,  Route, Link, browserHistory, hashHistory } from 'react-router';
+import { routeActions, push, router} from 'react-router-redux';
 
 class AddBoard extends Component{
   constructor(props){
@@ -7,6 +9,7 @@ class AddBoard extends Component{
   }
 
   addBoardItem(event) {
+    const {dispatch} = this.props;
     event.preventDefault();
     const keyword = this.refs.keyword.value;
     if (!keyword.trim()) {
@@ -14,6 +17,7 @@ class AddBoard extends Component{
     }
     this.props.addBoardItem(keyword);
     this.refs.keyword.value ='';
+    // this.props.router.replace('/board');
     document.location.pathname = `board/${this.props.state.rootReducer.board.boardId}`;
   }
 
@@ -23,7 +27,7 @@ class AddBoard extends Component{
 
   render() {
     return (
-      <div >
+      <div className = "popup-add-board">
         <div className={this.props.state.rootReducer.board.showCreateBoard ? 'modal-content' : 'modal-content-hide' } >
         <a key="close" className="close" onClick={this.handleClosePopup.bind(this, false)}>X</a>
         <div className="pop-over-header">
@@ -53,7 +57,8 @@ class AddBoard extends Component{
 
 AddBoard.propTypes = {
   handleClosePopup: PropTypes.func.isRequired,
-  addBoardItem: PropTypes.func.isRequired
+  addBoardItem: PropTypes.func.isRequired,
+  router: React.PropTypes.object
 }
 
 export default AddBoard
