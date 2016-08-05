@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import ListLabel from '../containers/ListLabel';
 
 class AddLabel extends Component{
   constructor(props){
@@ -24,20 +25,7 @@ class AddLabel extends Component{
           <input className="label-search"
             placeholder="Search label"
           />
-          <ul className="list-labels">
-            <li>
-              <a href="javascript:void(0)" className="edit-label"></a>
-              <div className="card-label card-label-green"></div>
-            </li>
-            <li>
-              <a href="javascript:void(0)" className="edit-label"></a>
-              <div className="card-label card-label-yellow"></div>
-            </li>
-            <li>
-              <a href="javascript:void(0)" className="edit-label"></a>
-              <div className="card-label card-label-yellow"></div>
-            </li>
-          </ul>
+          <ListLabel />
         </div>
       </div>
     );
