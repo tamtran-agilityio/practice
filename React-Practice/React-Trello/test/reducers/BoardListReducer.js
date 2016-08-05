@@ -1,13 +1,13 @@
 import {expect, assert } from 'chai';
 import sinon from 'sinon';
-import reducer from '../../app/js/reducers/Index';
+import rootReducer from '../../app/js/reducers/Index';
 import board from '../../app/js/reducers/Board';
 import * as actionTypes from '../../app/js/constants/actionTypes';
 
 describe('Board reducer', () => {
   it('should return the initial state all app', () => {
     expect(
-      reducer(undefined, {})
+      rootReducer(undefined, {})
     ).to.deep.equal(
       {
         board: {
@@ -68,44 +68,63 @@ describe('Board reducer', () => {
   });
 
   it('should edit board', () => {
-    // let mockLocalStorage = {
-    //   getItem(key) {
-    //     return '[]';
-    //   }
-    // };
-
-    // sinon.mock(localStorage).expects('getItem').once();
-    // localStorage.getItem.verify();
-    function once(fn) {
-      let returnValue, called = false;
-      return function () {
-        if (!called) {
-          called = true;
-          returnValue = fn.apply(this, arguments);
-        }
-        return returnValue;
-      };
-    }
-
-    let mockLocalStorage = { 
-      getItem(key) {
-        return '[]';
-      }
-    };
-    let mock = sinon.mock(localStorage);
-    mock.expects("getItem").once().returns(42);
-
-    let proxy = once(mockLocalStorage.method);
-
-    assert.equals(proxy(), 42);
-    mock.verify();
-
     expect(
       board(undefined, {
         type: actionTypes.SELECT_START,
-        boardId: '',
+        boardId: 1,
         start: false
       })
     ).to.be.empty;
   });
-})
+  it('should handle ADD_BOARD', () => {
+    expect(
+      board([], {
+        type: actionTypes.ADD_BOARD,
+        text: 'Run the tests'
+      })
+    ).to.deep.equal(
+      {
+        boardId: 1,
+        start: false,
+        text: 'Run the tests'
+      }
+    )
+  });
+
+  it('should handle EDIT_BOARD', () => {
+    expect(
+      board([], {
+        type: actionTypes.EDIT_BOARD,
+        text: 'Run the tests'
+      })
+    ).to.deep.equal(
+      {
+        text: 'Run the tests'
+      }
+    )
+  });
+  it('should handle SHOW_CREATE_BOARD', () => {
+    expect(
+      board([], {
+        type: actionTypes.SHOW_CREATE_BOARD,
+        boardId: 1
+      })
+    ).to.deep.equal(
+      {
+        showCreateBoard: true,
+        boardId: 2
+      }
+    )
+  });
+  it('should handle HIDE_CREATE_BOARD', () => {
+    expect(
+      board([], {
+        type: actionTypes.HIDE_CREATE_BOARD,
+      })
+    ).to.deep.equal(
+      {
+        showCreateBoard: false
+      }
+    )
+  });
+});

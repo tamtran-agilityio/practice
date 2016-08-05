@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "start": "webpack-dev-server --watch-poll --config webpack.config.js --host 0.0.0.0 --progress --port 8000 --module-bind --no-info --inline --history-api-fallback --output-public-path /",
-    "test-mocha": "mocha --compilers js:babel-register --recursive",
+    "test-mocha": "mocha --compilers js:babel-register --recursive -r mock-local-storage",
     "test-mocha:watch": "npm run test-mocha --watch"
   },
   "author": "",

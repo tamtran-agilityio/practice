@@ -9,25 +9,6 @@ describe('AddBoard', () => {
   let Component;
   let BoardComponent;
 
-  let mock = (function() {
-    let store = {};
-    return {
-      getItem: function(key) {
-        return store[key];
-      },
-      setItem: function(key, value) {
-        store[key] = value.toString();
-      },
-      clear: function() {
-        store = {};
-      }
-    };
-  })();
-
-  Object.defineProperty(typeof window !== 'undefined' ? window : global, 'localStorage', { 
-    value: mock,
-  });
-
   afterEach(() => {
     localStorage.clear();
   // remove callback
