@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { } from '../actions/Action';
+import { selectLabel } from '../actions/Action';
 import Label from '../components/Label';
 
 const mapStateToProps = (state) => {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     selectLabel: (direction) => {
+      dispatch(selectLabel(direction));
     }
   };
 }

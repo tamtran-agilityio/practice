@@ -5,12 +5,17 @@ class Label extends Component {
     super(props);
   }
 
+  selectLabel(event) {
+    event.preventDefault();
+    this.props.selectLabel(this.props.labelId);
+  }
+
   render() {
     let colorStyle = {background: `${this.props.labelColor}`};
     return (
-      <li>
+      <li key={this.props.labelId}>
         <a href="javascript:void(0)"
-          onClick={this.selectLabel}
+          onClick={this.selectLabel.bind(this)}
           className="edit-label">
           <div className="card-label"
             style={colorStyle}

@@ -6,7 +6,9 @@ class ListLabel extends Component {
     super(props);
   }
 
-  onClickLabel(direction) {
+  onSelecteLabel(direction) {
+    console.log("AAAA", direction);
+    this.onSelecteLabel(dirction);
   }
 
   render() {
@@ -17,7 +19,7 @@ class ListLabel extends Component {
           <Label
             key = {label.labelId}
             {...label}
-            onClick={() => selectLabel(label.labelId)}
+            onClick={() => onSelecteLabel(label.labelId)}
           />)
         }
       </ul>
@@ -30,7 +32,7 @@ ListLabel.propTypes = {
     labelId: PropTypes.number.isRequired,
     labelColor: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  selectLabel: PropTypes.func.isRequired
+  onSelecteLabel: PropTypes.func.isRequired
 }
 
 export default ListLabel

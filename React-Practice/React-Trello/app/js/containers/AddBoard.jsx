@@ -3,7 +3,6 @@ import {showCreateBoard, hideCreateBoard, addBoard} from '../actions/Action';
 import AddBoard from '../components/AddBoard';
 
 const mapStateToProps = (state) => {
-  console.log("SSSSSSSSSSSSSSSSS", state);
   return { state };
 }
 

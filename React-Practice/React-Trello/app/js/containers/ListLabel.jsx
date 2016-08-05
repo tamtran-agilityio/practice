@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectLabel: (direction) => {
+    onSelecteLabel: (direction) => {
+      console.log("SASSSSS", direction);
     }
   };
 }

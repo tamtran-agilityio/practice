@@ -157,8 +157,9 @@ export const addLabel = (color, labelId) => {
 }
 
 export const selectLabel = (labelId) => {
+  console.log("SSSSSSSSS111111 action labelId", labelId);
   return {
-    type: actionTypes.ADD_LABEL,
+    type: actionTypes.SELECT_LABEL,
     labelId
   }
 }
