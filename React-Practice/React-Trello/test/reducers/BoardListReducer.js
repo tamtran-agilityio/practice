@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import {expect, assert } from 'chai';
 import sinon from 'sinon';
 import reducer from '../../app/js/reducers/Index';
 import board from '../../app/js/reducers/Board';
@@ -76,13 +76,36 @@ describe('Board reducer', () => {
 
     // sinon.mock(localStorage).expects('getItem').once();
     // localStorage.getItem.verify();
+    function once(fn) {
+      let returnValue, called = false;
+      return function () {
+        if (!called) {
+          called = true;
+          returnValue = fn.apply(this, arguments);
+        }
+        return returnValue;
+      };
+    }
 
-    // expect(
-    //   board(undefined, {
-    //     type: actionTypes.SELECT_START,
-    //     boardId: '',
-    //     start: false
-    //   })
-    // ).to.be.empty;
+    let mockLocalStorage = { 
+      getItem(key) {
+        return '[]';
+      }
+    };
+    let mock = sinon.mock(localStorage);
+    mock.expects("getItem").once().returns(42);
+
+    let proxy = once(mockLocalStorage.method);
+
+    assert.equals(proxy(), 42);
+    mock.verify();
+
+    expect(
+      board(undefined, {
+        type: actionTypes.SELECT_START,
+        boardId: '',
+        start: false
+      })
+    ).to.be.empty;
   });
 })

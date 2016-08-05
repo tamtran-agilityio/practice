@@ -169,7 +169,8 @@ describe('Board list action', () => {
   it('should action active form add member', () => {
     const expectedAction = {
       type: 'LISTS_SHOW_FORM_MEMBER',
-      show: true
+      show: true,
+      cardId: undefined
     }
 
     expect(BoardListAction.showAddMember(true)).to.deep.equal(expectedAction);
@@ -178,7 +179,7 @@ describe('Board list action', () => {
   it('should action hide form add member', () => {
     const expectedAction = {
       type: 'LISTS_HIDE_FORM_MEMBER',
-      hide: false
+      hide: false,
     }
 
     expect(BoardListAction.hideAddMember(false)).to.deep.equal(expectedAction);

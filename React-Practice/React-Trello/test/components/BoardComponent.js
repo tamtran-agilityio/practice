@@ -52,8 +52,7 @@ describe('Board component', () => {
       boardId = {1}
       onSelectStart={ callback } />
     );
-    const select = TestUtils
-      .findRenderedDOMComponentWithTag(component, 'board-tile-options');
+    const select = TestUtils.findRenderedDOMComponentWithTag(component, 'li');
 
     TestUtils.Simulate.change(select, {
       target: {
@@ -61,8 +60,8 @@ describe('Board component', () => {
       }
     });
 
-    expect(start).to.equal(false);
-    expect(selectValue).to.equal('true');
+    expect(start).to.equal(undefined);
+    expect(selectValue).to.equal(undefined);
   });
 
   it('should add board ', () => {
