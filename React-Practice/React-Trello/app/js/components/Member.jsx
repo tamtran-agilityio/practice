@@ -4,6 +4,12 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 class Member extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      active: props.active ? props.active : false
+    }
+
+    // Assign all the correct event handlers.
+    this.onEditMember = this.onEditMember.bind(this);
   }
 
   totalComment(commentParamId){
@@ -21,15 +27,38 @@ class Member extends Component {
     this.props.onClickMember(direction);
   }
 
+  onEditMember(event) {
+    event.preventDefault();
+    this.setState({
+      active: true
+    });
+    console.log("event", event);
+  }
+
+  editMember() {
+    this.setState({
+      active: false
+    });
+  }
+
   render() {
-    let showcomment = '';
-    if (this.totalComment(this.props.memberId) == 0) {
-      showcomment = 'badges-hide';
-    } else {
-      showcomment = 'badges';
-    }
     return (
       <li className="card-member-item" key={this.props.memberId} >
+        <i className="fa fa-pencil list-card-operation" aria-hidden="true"
+          onClick={this.onEditMember}
+        ></i>
+        <div className={this.state.active ? 'quick-card-editor' : 'hide'}>
+          {/*<div className="quick-card-editor-card">
+            <form className="form-edit-member" onSubmit={this.editMember}>
+              <textarea
+                type="text"
+                className="form-input input-lg list-card"
+                ref="keywords"
+                />
+              <button className="edit-member" type="submit"> Save </button>
+            </form>
+          </div>*/}
+        </div>
         <a href="javascript:void(0)" className="link-item" 
           onClick={this.onClickMember.bind(this, this.props.memberId)}
           memberId = {this.props.memberId}
@@ -37,7 +66,7 @@ class Member extends Component {
           <div className="card-member-title">
             <h3 className="member-title-decs">{this.props.text}</h3>
           </div>
-          <div className={showcomment}>
+          <div className={this.totalComment(this.props.memberId) == 0 ? 'badges-hide' : 'badges'}>
             <div className="comments">
               <span className="icon-comment">
                 <i className="fa fa-comment-o" aria-hidden="true"></i>

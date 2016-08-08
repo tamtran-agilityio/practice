@@ -4,6 +4,13 @@ class AddMember extends Component {
   constructor(props){
     super(props);
     this.addMemberItem = this.addMemberItem.bind(this);
+
+    this.state = {
+      active: props.active ? props.active : false
+    }
+
+    // Assign all the correct event handlers.
+    this.setActive = this.setActive.bind(this);
   }
 
   addMemberItem(event) {
@@ -14,24 +21,35 @@ class AddMember extends Component {
     }
     this.props.addMemberItem(keywords, this.props.cardId);
     this.refs.keywords.value ='';
-  }
-
-  showFormMember(direction) {
-    this.props.showFormMember(direction, this.props.cardId);
+    this.setState(
+      {
+        active: false
+      });
   }
 
   hideFormMember(direction) {
-    this.props.hideFormMember(direction, this.props.cardId);
+    this.setState(
+      {
+        active: false
+      });
+  }
+
+  setActive() {
+    this.setState(
+      {
+        active: true
+      });
   }
 
   render() {
     return (
       <div className="add-list-member show-form">
         <a href="javascript:void(0)" 
-          onClick={this.showFormMember.bind(this, this.props.cardId)}
-          className={!this.props.state.rootReducer.member.showAddMember ? '' : 'hide'}> Add a card… 
+          onClick={this.setActive}
+          className={!this.state.active ? '' : 'hide'}
+        > Add a card… 
         </a>
-        <div className={this.props.state.rootReducer.member.showAddMember ? '' : 'hide'}>
+        <div className={this.state.active ? '' : 'hide'}>
           <form className="form-add-member" onSubmit={this.addMemberItem}>
             <textarea
               type="text"
@@ -50,8 +68,7 @@ class AddMember extends Component {
 }
 
 AddMember.propTypes = {
-  addMemberItem: PropTypes.func.isRequired,
-  showFormMember: PropTypes.func.isRequired
+  addMemberItem: PropTypes.func.isRequired
 }
 
 export default AddMember
