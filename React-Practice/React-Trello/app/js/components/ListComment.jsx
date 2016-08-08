@@ -13,7 +13,7 @@ class ListComment extends Component {
     return (
       <ul className="list-comment">
         { 
-          this.props.comments.map(comment =>
+          this.props.comments.reverse().map(comment =>
           <Comment
             key = {comment.commentId}
             {...comment}
