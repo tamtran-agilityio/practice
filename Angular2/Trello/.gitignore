@@ -8,5 +8,5 @@ npm-debug.log
 *.*~
 *.log
 *.js
-!gulp.js
+!gulpfile.js
 *.map
