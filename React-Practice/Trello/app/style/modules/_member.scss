@@ -1,0 +1,235 @@
+.add-list-member {
+  padding-bottom: 8px;
+ .form-add-member {
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    z-index: 0;
+    margin: 0 9px 0 5px;
+  }
+  textarea {
+    border: none;
+    box-shadow: none;
+    height: auto;
+    margin-bottom: 4px;
+    max-height: 162px;
+    min-height: 54px;
+    overflow-y: auto;
+    padding: 0;
+    resize: vertical;
+    -webkit-transition: background 85ms ease-in,border-color 85ms ease-in;
+    transition: background 85ms ease-in,border-color 85ms ease-in;
+    width: 100%;
+    border-radius: 3px;
+    display: block;
+  }
+  .create-member {
+    background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+    background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+    box-shadow: 0 1px 0 #3f6f21;
+    color: #fff;
+    float: left;
+    min-height: 30px;
+    height: 30px;
+    margin: 5px 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 17px;
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 7px 20px;
+    text-align: center;
+  }
+  .icon-close {
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-family: trellicons;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: #999;
+  }
+  a {
+    border-radius: 0 0 3px 3px;
+    color: #8c8c8c;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    padding: 4px;
+    &:hover {
+      background-color: #cdd2d4;
+      color: #4d4d4d;
+      text-decoration: underline;
+    }
+  }
+}
+.list-member {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  z-index: 1;
+  min-height: 0;
+  overflow-y: overlay;
+  margin-right: 2px;
+  padding: 0 9px 0 5px;
+  a {
+    display: block;
+    overflow: hidden;
+  }
+  .card-member-item {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 6px;
+    max-width: 300px;
+    min-height: 20px;
+    position: relative;
+    // z-index: 0;
+    .list-card-operation {
+      background-color: #edeff0;
+      background-clip: padding-box;
+      background-origin: padding-box;
+      border-radius: 3px;
+      opacity: .8;
+      padding: 4px;
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      visibility: hidden;
+      z-index: 40;
+      height: 18px;
+      line-height: 18px;
+      width: 18px;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      text-decoration: none;
+      color: #999;
+    }
+    &:hover {
+      .list-card-operation {
+        visibility: visible;
+      }
+    }
+  }
+
+  .quick-card-editor {
+    background: rgba(0,0,0,.6);
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    .quick-card-editor-card {
+      position: absolute;
+      width: 250px;
+      top: 120px;
+      left: 19px;
+    }
+    .list-card {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      max-width: 300px;
+      min-height: 20px;
+      position: relative;
+      z-index: 999;
+      width: 100%;
+    }
+    .edit-member {
+      background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+      background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+      box-shadow: 0 1px 0 #3f6f21;
+      color: #fff;
+      float: left;
+      min-height: 30px;
+      height: 30px;
+      margin: 5px 0;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      line-height: 17px;
+      border-radius: 3px;
+      font-size: 17px;
+      padding: 7px 20px;
+      text-align: center;
+    }
+  }
+  .card-member-title {
+    overflow: hidden;
+    padding: 6px 6px 2px 8px;
+    position: relative;
+    z-index: 10;
+    .member-title-decs {
+      clear: both;
+      display: block;
+      font-weight: 400;
+      margin: 0 0 4px;
+      overflow: hidden;
+      text-decoration: none;
+      word-wrap: break-word;
+      color: #4d4d4d;
+    }
+  }
+  .badges {
+    float: left;
+    max-width: 100%;
+    padding: 0 6px 0 8px;
+    .comments {
+      color: #8c8c8c;
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      position: relative;
+    }
+    .icon-comment {
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      width: 18px;
+    }
+    .badge-text {
+      font-size: 13px;
+      padding: 2px 3px;
+      white-space: nowrap;
+    }
+  }
+
+  .badges-hide {
+    display: none;
+  }
+}
+.hide {
+  display: none;
+}

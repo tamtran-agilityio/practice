@@ -1,0 +1,180 @@
+.board-header {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  height: auto;
+  overflow: hidden;
+  padding: 8px 4px 8px 8px;
+  position: relative;
+  -webkit-transition: padding .1s ease-in;
+  transition: padding .1s ease-in;
+  background: #0079BF;
+  .board-title {
+    cursor: default;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 30px;
+    padding-left: 4px;
+  }
+}
+
+.card-content {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  height: 95.9%;
+  background: #0079BF;
+}
+.show-add-list {
+  background-color: #e2e4e6 !important;
+  .list-add-controls {
+    display: block !important;
+  }
+  .input-lg {
+    background-color: #e2e4e6;
+    border: 1px solid #cdd2d4;
+    border-radius: 3px;
+    border-color: #aaa !important;
+    box-shadow: inset 0 1px 8px rgba(0,0,0,.15);
+  }
+}
+.add-list-card {
+  background: rgba(0,0,0,.12);
+  cursor: pointer;
+  color: #fff;
+  height: auto;
+  min-height: 30px;
+  padding: 4px;
+  border-radius: 3px;
+  -webkit-transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+  transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+  width: 270px;
+  margin: 0 5px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  margin-right: 10px;
+  .placeholder {
+     display: none;
+    padding: 7px;
+    color: rgba(255,255,255,.7);
+    -webkit-transition: color 85ms ease-in;
+    transition: color 85ms ease-in;
+  }
+  .input-lg {
+    background: 0 0;
+    border-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+    display: block;
+    margin: 0;
+    -webkit-transition: margin 85ms ease-in,background 85ms ease-in;
+    transition: margin 85ms ease-in,background 85ms ease-in;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    display: block;
+    margin-bottom: 5px;
+    min-height: 34px;
+    padding: 7px;
+  }
+  .list-add-controls {
+    display: none;
+    height: 2pc;
+    -webkit-transition: margin 85ms ease-in,height 85ms ease-in;
+    transition: margin 85ms ease-in,height 85ms ease-in;
+    overflow: hidden;
+    margin: 4px 0 0;
+    .create-card{
+      background: -webkit-linear-gradient(top,#61bd4f 0,#5aac44 100%);
+      background: linear-gradient(to bottom,#61bd4f 0,#5aac44 100%);
+      box-shadow: 0 1px 0 #3f6f21;
+      color: #fff;
+      float: left;
+      min-height: 30px;
+      height: 30px;
+      margin-top: 0;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      line-height: 17px;
+      border-radius: 3px;
+      font-size: 17px;
+      padding: 7px 20px;
+      text-align: center;
+    }
+    .icon-close {
+      height: 30px;
+      font-size: 20px;
+      line-height: 30px;
+      width: 30px;
+      display: inline-block;
+      font-family: trellicons;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      text-decoration: none;
+      color: #999;
+      margin-left: 10px;
+    }
+  }
+}
+.list-wrapper {
+  width: 270px;
+  margin: 0 5px;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  .list {
+    background: #e2e4e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+  }
+}
+
+.list-content {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .list-card {
+
+  }
+  .list-header {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    position: relative;
+    min-height: 18px;
+  }
+}
