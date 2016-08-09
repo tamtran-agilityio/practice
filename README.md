@@ -1,7 +1,8 @@
 #Overview
-1. [Javascript]
-2. [Docpad and Gulp]
-3. [Vagrant]
+1. [javascript]
+2. [angular2]
+3. [react]
+4. [vagrant]
 
 #Structure Folder
 1. /javascript-training:
@@ -23,15 +24,16 @@
   * Responsive Advance practice:
       * [Foodsense-Gulp_Slush] Do practice Foodsense use Gulp Slush  
       * [Foodsense-Gulp_Yeoman] Do practice Foodsense use Gulp Yeoman
-  * Angular2
+2. /angular2
       * [Local-Market] Do example use angular 2
       * [New Gmail] Do practice use typescript
       * [Select] Do example use angular 2
       * [Select] Do example use angular 2 and webpack
+3. /react
   * React Example
   * React Practice
       * [Trello] Do practice use react redux
-3. /vagrant:
+4. /vagrant:
  * Vagrantfile
         - Use box hashicorp/precise32
         - Synced folders to /javascript
