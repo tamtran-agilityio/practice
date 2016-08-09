@@ -24,13 +24,13 @@
       * [Foodsense-Gulp_Slush] Do practice Foodsense use Gulp Slush  
       * [Foodsense-Gulp_Yeoman] Do practice Foodsense use Gulp Yeoman
   * Angular2
-    * [Local-Market] Do example use angular 2
-    * [New Gmail] Do practice use typescript
-    * [Select] Do example use angular 2
-    * [Select] Do example use angular 2 and webpack
+      * [Local-Market] Do example use angular 2
+      * [New Gmail] Do practice use typescript
+      * [Select] Do example use angular 2
+      * [Select] Do example use angular 2 and webpack
   * React Example
   * React Practice
-    * [Trello] Do practice use react redux
+      * [Trello] Do practice use react redux
 3. /vagrant:
  * Vagrantfile
         - Use box hashicorp/precise32
