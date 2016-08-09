@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { showCreateComment, addComment} from '../actions/Action';
+import { showCreateComment, addComment, editMember} from '../actions/Action';
 import Member from '../components/Member';
 
 const mapStateToProps = (state) => {
@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onClickMember: (direction) => {
       dispatch(showCreateComment(direction))
+    },
+    editMember: (ownProps, direction) => {
+      dispatch(editMember(ownProps, direction))
     }
   };
 }

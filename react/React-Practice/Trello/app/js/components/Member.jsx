@@ -6,11 +6,12 @@ class Member extends Component {
     super(props);
     this.state = {
       active: props.active ? props.active : false,
-      value: ''
+      text: ''
     }
 
     // Assign all the correct event handlers.
     this.onEditMember = this.onEditMember.bind(this);
+    this.editMember = this.editMember.bind(this);
   }
 
   totalComment(commentParamId){
@@ -36,11 +37,16 @@ class Member extends Component {
     console.log("event", event);
   }
 
-  editMember() {
-
+  editMember(event) {
+    event.preventDefault();
     this.setState({
       active: false
     });
+    const keyword = this.refs.keywords.value;
+    if (!keyword.trim()) {
+      return 
+    }
+    this.props.editMember(keyword, this.props.memberId);
   }
 
   render() {
@@ -51,13 +57,13 @@ class Member extends Component {
         ></i>
         <div className={this.state.active ? 'quick-card-editor' : 'hide'}>
           <div className="quick-card-editor-card">
-            <form className="form-edit-member" onSubmit={this.editMember}>
+            <form className="form-edit-member" onSubmit={this.editMember.bind(this)}>
               <textarea
                 type="text"
                 className="form-input input-lg list-card"
                 ref="keywords"
                 placeholder=""
-                // value=`{${this.props.text}}`
+                defaultValue={this.props.text}
                 />
               <button className="edit-member" type="submit"> Save </button>
             </form>

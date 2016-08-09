@@ -70,7 +70,7 @@ export const addMember = (text, cardId, memberId) => {
   }
 }
 
-export const editMember = (text) => {
+export const editMember = (text, memberId) => {
   return {
     type: actionTypes.EDIT_MEMBER,
     memberId,

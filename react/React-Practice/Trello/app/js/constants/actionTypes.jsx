@@ -7,6 +7,7 @@ export const HIDE_CREATE_BOARD = 'HIDE_CREATE_BOARD';
 export const ADD_CARD = 'ADD_CARD';
 export const EDIT_CARD = 'EDIT_CARD';
 export const ADD_MEMBER = 'ADD_MEMBER';
+export const EDIT_MEMBER = 'EDIT_MEMBER';
 export const SELECT_MEMBER = 'SELECT_MEMBER';
 export const LISTS_SHOW_FORM = 'LISTS_SHOW_FORM';
 export const LISTS_HIDE_FORM = 'LISTS_HIDE_FORM';

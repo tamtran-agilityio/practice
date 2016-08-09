@@ -8,14 +8,14 @@ function getMember(memberIdParam) {
   persistedBoads.map( function(member) {
     if (member.memberId === parseInt(memberIdParam)){
       let ret = {
+        cardId: member.cardId,
         memberId: member.memberId,
         text: member.text
       }
-      ret.start = member.start;
       memberRs = ret;
     }
   })
-  return boardRs;
+  return memberRs;
 }
 
 function updateMember(memberParam: Member){
@@ -63,14 +63,15 @@ export default function member(state = {
       }
       break;
     case 'EDIT_MEMBER':
-      let item = getMember(action.boardId);
+      let item = getMember(action.memberId);
       let changeMember = {
-        boardId: item.boardId,
-        text: item.text,
+        cardId: item.cardId,
+        memberId: item.memberId,
+        text: action.text
       }
       updateMember(changeMember);
       return {
-        boardId: item.boardId,
+        cardId: item.cardId,
         text: item.text,
         start: !item.start
       }
