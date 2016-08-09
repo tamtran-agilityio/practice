@@ -17,8 +17,7 @@ class AddBoard extends Component{
     }
     this.props.addBoardItem(keyword);
     this.refs.keyword.value ='';
-    // this.props.router.replace('/board');
-    document.location.pathname = `board/${this.props.state.rootReducer.board.boardId}`;
+    browserHistory.push(`board/${this.props.state.rootReducer.board.boardId}`);
   }
 
   handleClosePopup(direction) {

@@ -23,7 +23,7 @@ class AddCard extends Component {
   outSideAddCard(direction) {
     this.props.outSideAddCard(direction);
   }
-
+  
   render() {
     let enableClass = !this.props.state.rootReducer.card.showFrom ? '' : 'show-add-list';
     let disable =`${enableClass} add-list-card`;

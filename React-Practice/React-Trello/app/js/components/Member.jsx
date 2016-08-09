@@ -5,7 +5,8 @@ class Member extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: props.active ? props.active : false
+      active: props.active ? props.active : false,
+      value: ''
     }
 
     // Assign all the correct event handlers.
@@ -36,6 +37,7 @@ class Member extends Component {
   }
 
   editMember() {
+
     this.setState({
       active: false
     });
@@ -48,16 +50,18 @@ class Member extends Component {
           onClick={this.onEditMember}
         ></i>
         <div className={this.state.active ? 'quick-card-editor' : 'hide'}>
-          {/*<div className="quick-card-editor-card">
+          <div className="quick-card-editor-card">
             <form className="form-edit-member" onSubmit={this.editMember}>
               <textarea
                 type="text"
                 className="form-input input-lg list-card"
                 ref="keywords"
+                placeholder=""
+                // value=`{${this.props.text}}`
                 />
               <button className="edit-member" type="submit"> Save </button>
             </form>
-          </div>*/}
+          </div>
         </div>
         <a href="javascript:void(0)" className="link-item" 
           onClick={this.onClickMember.bind(this, this.props.memberId)}

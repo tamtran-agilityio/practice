@@ -1,5 +1,23 @@
 import * as actionTypes from '../constants/actionTypes';
 
+function getMember(memberIdParam) {
+  let persistedBoads = JSON.parse(localStorage.getItem('member') || '[]');
+  let memberRs = null;
+  let member = null;
+  let memberId: number;
+  persistedBoads.map( function(member) {
+    if (member.memberId === parseInt(memberIdParam)){
+      let ret = {
+        memberId: member.memberId,
+        text: member.text
+      }
+      ret.start = member.start;
+      memberRs = ret;
+    }
+  })
+  return boardRs;
+}
+
 function updateMember(memberParam: Member){
   let memberId;
   let persistedMember = JSON.parse(localStorage.getItem('member') || '[]');
@@ -44,6 +62,18 @@ export default function member(state = {
         text: action.text
       }
       break;
+    case 'EDIT_MEMBER':
+      let item = getMember(action.boardId);
+      let changeMember = {
+        boardId: item.boardId,
+        text: item.text,
+      }
+      updateMember(changeMember);
+      return {
+        boardId: item.boardId,
+        text: item.text,
+        start: !item.start
+      }
     case 'LISTS_SHOW_FORM_MEMBER':
       return {
         showAddMember: true,
