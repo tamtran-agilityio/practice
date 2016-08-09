@@ -4,6 +4,7 @@ out/
 node_modules/
 typings/
 coverage/
+dist/
 
 #temp files
 #########################
