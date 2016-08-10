@@ -47,8 +47,7 @@ export default function member(state = {
     case 'ADD_MEMBER':
       let getListMember = JSON.parse(localStorage.getItem("member") || '[]');
       // Get id by value max
-      let memberId = getListMember.length + 1;
-
+      let memberId = getListMember.length + 2;
       let newMember = {
         cardId: action.cardId,
         memberId: memberId,
