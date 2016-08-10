@@ -1,5 +1,5 @@
 import React, {PropTypes, Component } from 'react';
-import Card from './Card';
+import Card from '../containers/Card';
 import AddCard from '../containers/AddCard';
 
 class ListCard extends Component {

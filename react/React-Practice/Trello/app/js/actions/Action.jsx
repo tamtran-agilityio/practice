@@ -1,5 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
-
+/*
+ * All action  active 
+ */
 export const addBoard = (text, start, boardId) => {
   return {
     type: actionTypes.ADD_BOARD,

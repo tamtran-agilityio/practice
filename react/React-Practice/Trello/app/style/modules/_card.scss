@@ -177,4 +177,24 @@
     position: relative;
     min-height: 18px;
   }
+  .input-edit-cart {
+    background: 0 0;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-weight: 700;
+    margin: -3px -5px;
+    height: 18px;
+    min-height: 18px;
+    padding: 3px 5px;
+    resize: none;
+    outline: none;
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    height: 24px;
+    &:focus {
+      background-color: rgba(255,255,255,.85);
+    }
+  }
 }

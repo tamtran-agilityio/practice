@@ -69,7 +69,7 @@ export default function card(state = {
       }
       break;
     case 'EDIT_CARD':
-    let item = getCardtem(action.cardId);
+      let item = getCardtem(action.cardId);
       let changeCard = {
         boardId: item.boardId,
         cardId: action.cardId,

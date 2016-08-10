@@ -34,7 +34,6 @@ class Member extends Component {
     this.setState({
       active: true
     });
-    console.log("event", event);
   }
 
   editMember(event) {
