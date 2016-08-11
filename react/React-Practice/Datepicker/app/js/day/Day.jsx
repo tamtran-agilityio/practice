@@ -10,7 +10,6 @@ export default class Day extends Component {
       <div className="date-item">
         <span
           className="date-picker-trigger"
-          onClick={this.show}
         >
           {this.props.dayCurrent}
         </span>
