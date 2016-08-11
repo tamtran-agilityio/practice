@@ -29,7 +29,6 @@ export default class Month extends Component {
       arr.push(newdate);
       current.setDate(current.getDate()+7);
     }
-    console.log("SSSSS AAAAA", arr);
     return arr;
   }
 

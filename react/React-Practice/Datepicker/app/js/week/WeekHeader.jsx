@@ -30,8 +30,7 @@ export default class Week extends Component {
   nextMonth(event) {
     event.preventDefault();
     let view = clone(this.state.view);
-      view.setMonth(view.getMonth() + 1);
-      console.log("S view", view);
+    view.setMonth(view.getMonth() + 1);
     this.move(view, true);
   }
 
@@ -43,7 +42,6 @@ export default class Week extends Component {
   }
 
   render() {
-    console.log("SSSSSSSS @@$$$$$", this.state.view);
     return (
       <div>
         <div className="date-picker">
