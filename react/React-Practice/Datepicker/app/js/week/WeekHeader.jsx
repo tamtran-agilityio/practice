@@ -1,6 +1,6 @@
 import React, {Component, PropTypes}from 'react';
 import ReactDOM from 'react-dom';
-import {clone, toStringDay, toDayOfMonthString, toMonthAndYearString} from '../helpers/DateUtilities';
+import {clone, toMonthAndYearString} from '../helpers/DateUtilities';
 import WeekContent from './WeekContent';
 import Month from '../month/Month';
 
@@ -43,7 +43,7 @@ export default class Week extends Component {
 
   render() {
     return (
-      <div>
+      <div className="modal-picker">
         <div className="date-picker">
           <div className="month-of-year">
             <div className="pre-month"
@@ -56,13 +56,13 @@ export default class Week extends Component {
           </div>
         </div>
         <div className='week-header'>
-          <span className="week-title">Sun</span>
           <span className="week-title">Mon</span>
           <span className="week-title">Tue</span>
           <span className="week-title">Wed</span>
           <span className="week-title">Thu</span>
           <span className="week-title">Fri</span>
           <span className="week-title">Sat</span>
+          <span className="week-title">Sun</span>
         </div>
         <Month dayCurrent ={this.state.view}/>
       </div>
