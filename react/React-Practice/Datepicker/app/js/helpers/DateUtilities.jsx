@@ -28,13 +28,23 @@ export const moveToDayOfWeek = (date, dayOfWeek) => {
 }
 
 export const isSameDay = (first, second) => {
-  return first.getFullYear() === second.getFullYear() && first.getMonth() === second.getMonth() && first.getDate() === second.getDate();
+  return first.year === second.getFullYear() &&  first.monthCurrent === second.getMonth() && first.dayCurrent === second.getDate()
 }
 
 export const isBefore = (first, second) => {
-  return first.getTime() < second.getTime();
+  let getDay = (first.dayCurrent +'/'+ first.monthCurrent +'/'+first.year);
+  let firstDay = new Date(getDay);
+  let secondDay = new Date(second);
+  if (first.monthCurrent < secondDay.getMonth() || first.dayCurrent < secondDay.getDate()) {
+    return true;
+  }
 }
 
 export const isAfter = (first, second) => {
-  return first.getTime() > second.getTime();
+  let getDay = (first.dayCurrent +'/'+ first.monthCurrent +'/'+first.year);
+  let firstDay = new Date(getDay);
+  let secondDay = new Date(second);
+  if (first.monthCurrent >= (secondDay.getMonth() + 1) || first.dayCurrent > secondDay.getDate()) {
+    return true;
+  }
 }

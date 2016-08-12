@@ -46,6 +46,8 @@ export default class Month extends Component {
               key= {i}
               {...start}
               onSelect={this.onSelect.bind(this)}
+              minDate={this.props.minDate}
+              maxDate={this.props.maxDate}
             />
           )
         }

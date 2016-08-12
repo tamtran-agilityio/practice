@@ -39,6 +39,8 @@ export default class WeekContent extends Component {
               key= {i}
               {...day}
               onSelect={this.onSelect.bind(this)}
+              minDate={this.props.minDate}
+              maxDate={this.props.maxDate}
             />
           )
         }

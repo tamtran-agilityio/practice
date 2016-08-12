@@ -93,10 +93,14 @@
       background-color: #f0f0f0;
     }
   }
-  .current {
+  .today {
     border-radius: 4px;
     background-color: #216ba5;
     color: #fff;
+  }
+  .disabled {
+    cursor: default;
+    color: #ccc;
   }
 }
 .week-title {

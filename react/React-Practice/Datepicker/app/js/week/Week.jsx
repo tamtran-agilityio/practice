@@ -69,6 +69,8 @@ export default class Week extends Component {
         <Month
           dayCurrent ={this.state.view}
           onSelect={this.onSelect.bind(this)}
+          minDate={this.props.minDate}
+          maxDate={this.props.maxDate}
         />
       </div>
     ) 

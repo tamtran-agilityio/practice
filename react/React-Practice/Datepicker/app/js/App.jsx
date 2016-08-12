@@ -12,7 +12,9 @@ export default class App extends Component {
       active: props.active ? props.active : false,
       day: clone(this.props).getDate(),
       monthIndex: clone(this.props).getMonth() + 1,
-      year: clone(this.props).getFullYear()
+      year: clone(this.props).getFullYear(),
+      minDate: null,
+      maxDate: null
     }
   }
 
@@ -25,8 +27,19 @@ export default class App extends Component {
     });
   }
 
+  setMinDate(date) {
+    this.setState({
+      minDate: date
+    });
+  }
+
+  setMaxDate(date) {
+    this.setState({
+      maxDate: date
+    });
+  }
+
   render() {
-    console.log("SAA111", this.state );
     return (
       <div className="datepicker__input-container">
         <input
@@ -36,6 +49,8 @@ export default class App extends Component {
         <Week
           dayCurrent ={this.state.view}
           onSelect={this.onSelect.bind(this)}
+          minDate={this.state.minDate}
+          maxDate={this.state.maxDate}
         />
       </div>
     )

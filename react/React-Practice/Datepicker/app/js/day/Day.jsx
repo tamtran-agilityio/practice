@@ -1,26 +1,48 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {clone} from '../helpers/DateUtilities';
+import {clone, isBefore, isAfter, isSameDay} from '../helpers/DateUtilities';
 
 class Day extends Component {
   constructor(props) {
     super(props);
   }
 
-  getDayCurrent() {
+  getDayClassName(day) {
     let dayCurrented = new Date();
-    return dayCurrented.getDate();
+    let className = "date-item ";
+    if (isSameDay(day, dayCurrented)) {
+      className += "today ";
+    }
+    if (this.isDisabled(day)){
+      className += "disabled";
+    }
+    return className;
   }
 
   onSelect(event) {
     event.preventDefault();
-    this.props.onSelect(this.props);
+    if (!this.isDisabled(this.props)) {
+      this.props.onSelect(this.props);
+    }
+  }
+
+  isDisabled(day) {
+    let minDate = this.props.minDate;
+    let maxDate = this.props.maxDate;
+    if (minDate === null && maxDate === null) {
+      return false;
+    } else if (minDate === null) {
+      return isAfter(day, maxDate);
+    } else if (maxDate === null) {
+      return isBefore(day, minDate);
+    } else {
+      return (isBefore(day, minDate)) || (isAfter(day, maxDate));
+    }
   }
 
   render() {
-    let currentTime = this.getDayCurrent();
     return (
-      <div className={(currentTime === this.props.dayCurrent) ? "date-item current": "date-item"}
+      <div className={this.getDayClassName(this.props)}
         onClick={this.onSelect.bind(this)}
       >
         <span className="date-picker-trigger">
