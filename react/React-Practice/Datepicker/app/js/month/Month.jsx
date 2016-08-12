@@ -4,7 +4,7 @@ import {clone, toStringDay, toDayOfMonthString, toMonthAndYearString, moveToDayO
 import WeekContent from '../week/WeekContent';
 
 export default class Month extends Component {
-  constructor(props, def) {
+  constructor(props) {
     super(props);
   }
 
@@ -31,6 +31,10 @@ export default class Month extends Component {
     }
     return arr;
   }
+  
+  onSelect(day) {
+    this.props.onSelect(day);
+  }
 
   render() {
     let starts = this.getWeekStartDates(this.props.dayCurrent);
@@ -41,6 +45,7 @@ export default class Month extends Component {
             <WeekContent
               key= {i}
               {...start}
+              onSelect={this.onSelect.bind(this)}
             />
           )
         }

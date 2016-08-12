@@ -25,6 +25,10 @@ export default class WeekContent extends Component {
     return days; 
   }
 
+  onSelect(day) {
+    this.props.onSelect(day)
+  }
+
   render() {
     let days = this.buildDays(this.props.day);
     return (
@@ -34,6 +38,7 @@ export default class WeekContent extends Component {
             <Day
               key= {i}
               {...day}
+              onSelect={this.onSelect.bind(this)}
             />
           )
         }
