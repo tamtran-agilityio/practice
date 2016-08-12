@@ -1,16 +1,14 @@
 import React, {Component, PropTypes}from 'react';
 import ReactDOM from 'react-dom';
-import {clone, toMonthAndYearString} from '../helpers/DateUtilities';
+import {toMonthAndYearString} from '../helpers/DateUtilities';
 import WeekContent from './WeekContent';
 import Month from '../month/Month';
 
 export default class Week extends Component {
-  constructor(props, def) {
+  constructor(props) {
     super(props);
-    this.def = this.props.selected || new Date();
     this.state = {
-      view: clone(this.def),
-      selected: clone(this.def)
+      view: this.props.dayCurrent
     }
   }
   
@@ -29,16 +27,20 @@ export default class Week extends Component {
 
   nextMonth(event) {
     event.preventDefault();
-    let view = clone(this.state.view);
+    let view = this.state.view;
     view.setMonth(view.getMonth() + 1);
     this.move(view, true);
   }
 
   preMonth(event) {
     event.preventDefault();
-    let view = clone(this.state.view);
+    let view = this.state.view;
       view.setMonth(view.getMonth() - 1);
     this.move(view, false);
+  }
+
+  onSelect(day) {
+    this.props.onSelect(day)
   }
 
   render() {
@@ -64,7 +66,10 @@ export default class Week extends Component {
           <span className="week-title">Sat</span>
           <span className="week-title">Sun</span>
         </div>
-        <Month dayCurrent ={this.state.view}/>
+        <Month
+          dayCurrent ={this.state.view}
+          onSelect={this.onSelect.bind(this)}
+        />
       </div>
     ) 
   }
