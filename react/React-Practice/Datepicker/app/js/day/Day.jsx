@@ -34,13 +34,17 @@ class Day extends Component {
     } else if (minDate === null) {
       return isAfter(day, maxDate);
     } else if (maxDate === null) {
+      console.log("SSSAAAAA", isBefore(day, minDate));
       return isBefore(day, minDate);
     } else {
+      console.log("SSSAAAAA", isBefore(day, minDate));
+      console.log("SSSAAAAA", isAfter(day, minDate));
       return (isBefore(day, minDate)) || (isAfter(day, maxDate));
     }
   }
 
   render() {
+    console.log("AAAAAAAA", this.props);
     return (
       <div className={this.getDayClassName(this.props)}
         onClick={this.onSelect.bind(this)}

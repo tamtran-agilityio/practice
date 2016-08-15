@@ -14,7 +14,7 @@ export default class App extends Component {
       monthIndex: clone(this.props).getMonth() + 1,
       year: clone(this.props).getFullYear(),
       minDate: null,
-      maxDate: null
+      maxDate: '07/08/2016'
     }
   }
 
