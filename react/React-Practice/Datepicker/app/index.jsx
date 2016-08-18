@@ -1,18 +1,25 @@
 import './styles/styles.scss';
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import App from './js/App';
+import Datepicker from './js/Datepicker';
 
-let Datepicker = React.createClass({
-  render: function() {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
     return (
       <div>
-        <App/>
+        <Datepicker
+          minDay = {'08/15/2016'}
+          maxDay = {'08/24/2016'}
+        />
       </div>
     )
   }
-});
+}
+
 ReactDOM.render(
-  <Datepicker />,
-  document.getElementById('header')
+  <App />,
+  document.getElementById('app')
 );

@@ -7,7 +7,6 @@ class ListLabel extends Component {
   }
 
   onSelecteLabel(direction) {
-    console.log("AAAA", direction);
     this.onSelecteLabel(dirction);
   }
 

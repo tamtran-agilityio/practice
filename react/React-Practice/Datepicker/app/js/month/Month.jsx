@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import {clone, toStringDay, toDayOfMonthString, toMonthAndYearString, moveToDayOfWeek, getFullYear} from '../helpers/DateUtilities';
 import WeekContent from '../week/WeekContent';
 
-export default class Month extends Component {
+class Month extends Component {
   constructor(props) {
     super(props);
   }
 
-  getWeekStartDates(view) {
+  /**
+   * @details [get day begin of week]
+   * 
+   * @param  [confirm day start of week]
+   */
+  _getWeekStartDates(view) {
     view.setDate(1);
     view = moveToDayOfWeek(clone(view), 0);
 
@@ -32,12 +37,15 @@ export default class Month extends Component {
     return arr;
   }
   
+  /**
+   * @details [handle when click day of select]
+   */
   onSelect(day) {
     this.props.onSelect(day);
   }
 
   render() {
-    let starts = this.getWeekStartDates(this.props.dayCurrent);
+    let starts = this._getWeekStartDates(this.props.dayCurrent);
     return (
       <div className="month-picker">
         {
@@ -55,3 +63,9 @@ export default class Month extends Component {
     )
   }
 }
+
+Month.propTypes = {
+  onSelect: PropTypes.func.isRequired
+}
+
+export default Month

@@ -35,7 +35,40 @@ class Datepicker extends Component {
    * 
    * @param  [listen event when click input]
    */
-  _onClickOutSide(event) {
+  _onClickOutSide(e) {
+    const components = ReactDOM.findDOMNode(this.refs.component);
+    if (e.target === components ) {
+      this.setState({
+        showModel: true
+      });
+    } else {
+      this.setState({
+        showModel: false
+      });
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this._onClickOutSide.bind(this), true);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this._onClickOutSide.bind(this), true);
+  }
+
+  /**
+   * @param  [handle show model when click pre button]
+   */
+  preMonth(e) {
+    this.setState({
+      showModel: true
+    });
+  }
+
+  /**
+   * @param  [handle show model when click next button]
+   */
+  nextMonth(e) {
     this.setState({
       showModel: true
     });
@@ -45,6 +78,7 @@ class Datepicker extends Component {
     return (
       <div className="datepicker__input-container">
         <input
+          ref='component'
           className="input-datepicker"
           placeholder={this.state.day +'/'+ this.state.monthIndex +'/'+ this.state.year}
           onClick={this._onClickOutSide.bind(this)}
@@ -55,6 +89,8 @@ class Datepicker extends Component {
             onSelect={this.onSelect.bind(this)}
             minDate={this.props.minDay}
             maxDate={this.props.maxDay}
+            preMonth={this.preMonth.bind(this)}
+            nextMonth={this.nextMonth.bind(this)}
           />
         </div>
       </div>

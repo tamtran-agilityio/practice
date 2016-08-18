@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import {clone, toStringDay, toDayOfMonthString, toMonthAndYearString, moveToDayOfWeek} from '../helpers/DateUtilities';
 import Day from '../day/Day';
 
-export default class WeekContent extends Component {
+class WeekContent extends Component {
   constructor(props) {
     super(props);
   }
 
-  buildDays(start) {
+  /*
+   * @brief [Render day]
+   * @details [Render day to list day of week]
+   * 
+   * @param  [start day being of week]
+   */
+  _buildDays(start) {
     let days = [];
     let cloneDay = clone(start);
     for (var i = 1; i <= 7; i++) {
@@ -25,12 +31,15 @@ export default class WeekContent extends Component {
     return days; 
   }
 
+  /**
+   * @details [select day of month when click]
+   */
   onSelect(day) {
     this.props.onSelect(day)
   }
 
   render() {
-    let days = this.buildDays(this.props.day);
+    let days = this._buildDays(this.props.day);
     return (
       <div className="week-picker">
         {
@@ -48,3 +57,9 @@ export default class WeekContent extends Component {
     )
   }
 }
+
+WeekContent.propTypes = {
+  onSelect: PropTypes.func.isRequired
+}
+
+export default WeekContent

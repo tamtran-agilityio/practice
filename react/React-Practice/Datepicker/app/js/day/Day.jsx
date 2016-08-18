@@ -1,32 +1,54 @@
 import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import {clone, isBefore, isAfter, isSameDay} from '../helpers/DateUtilities';
+import {clone, isBefore, isAfter, isSameDay, isSameDays, convertDay} from '../helpers/DateUtilities';
 
 class Day extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selected: props.selected ? props.selected : false
+    }
   }
 
-  getDayClassName(day) {
+  /**
+   * @details [handle add class render model]
+   * @param  [description]
+   */
+  _getDayClassName(day) {
     let dayCurrented = new Date();
     let className = "date-item ";
     if (isSameDay(day, dayCurrented)) {
       className += "today ";
     }
-    if (this.isDisabled(day)){
+    if (this._isDisabled(day)){
       className += "disabled";
     }
+    if (this.state.selected && isSameDays(convertDay(day), convertDay(this.props))) {
+      className += " selected";
+    } else {
+      className += "";
+    }
+
     return className;
   }
 
-  onSelect(event) {
-    event.preventDefault();
-    if (!this.isDisabled(this.props)) {
+  /**
+   * @details [handle when click day of select]
+   */
+  _onSelect(event) {
+    if (!this._isDisabled(this.props)) {
       this.props.onSelect(this.props);
+      this.setState({
+        selected: true
+      });
     }
   }
 
-  isDisabled(day) {
+  /**
+   * @details [handle when add min day and max day select]
+   * @param  [day input current]
+   */
+  _isDisabled(day) {
     let minDate = this.props.minDate;
     let maxDate = this.props.maxDate;
     if (minDate === null && maxDate === null) {
@@ -34,20 +56,16 @@ class Day extends Component {
     } else if (minDate === null) {
       return isAfter(day, maxDate);
     } else if (maxDate === null) {
-      console.log("SSSAAAAA", isBefore(day, minDate));
       return isBefore(day, minDate);
     } else {
-      console.log("SSSAAAAA", isBefore(day, minDate));
-      console.log("SSSAAAAA", isAfter(day, minDate));
       return (isBefore(day, minDate)) || (isAfter(day, maxDate));
     }
   }
 
   render() {
-    console.log("AAAAAAAA", this.props);
     return (
-      <div className={this.getDayClassName(this.props)}
-        onClick={this.onSelect.bind(this)}
+      <div className={this._getDayClassName(this.props)}
+        onClick={this._onSelect.bind(this)}
       >
         <span className="date-picker-trigger">
           {this.props.dayCurrent}
@@ -55,6 +73,10 @@ class Day extends Component {
       </div>
     ) 
   }
+}
+
+Day.propTypes = {
+  dayCurrent: PropTypes.number.isRequired
 }
 
 export default Day

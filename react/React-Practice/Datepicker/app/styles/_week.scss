@@ -1,3 +1,12 @@
+.modal-picker-active {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  transform: translateX(0px) translateY(40px) translateZ(0px);
+}
+.hide-model {
+  display: none;
+}
 .modal-picker {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
@@ -96,6 +105,11 @@
   .today {
     border-radius: 4px;
     background-color: #216ba5;
+    color: #fff;
+  }
+  .selected {
+    border-radius: 4px;
+    background-color: #5E6A75;
     color: #fff;
   }
   .disabled {

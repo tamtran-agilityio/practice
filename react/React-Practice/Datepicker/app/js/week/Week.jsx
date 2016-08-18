@@ -4,7 +4,7 @@ import {toMonthAndYearString} from '../helpers/DateUtilities';
 import WeekContent from './WeekContent';
 import Month from '../month/Month';
 
-export default class Week extends Component {
+class Week extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,33 +12,55 @@ export default class Week extends Component {
     }
   }
   
-  move(view, isForward) {
+  /**
+   * @details [change state when click next and pre month]
+   * 
+   * @param w [set back value day]
+   * @param d [set value active]
+   */
+  _move(view, isForward) {
     this.setState({
       view: view,
       enabled: false
     });
   }
 
-  enable() {
+  _enable() {
     this.setState({ 
       enabled: true 
     });
   }
 
+  /**
+   * @details [handle when click button next]
+   * 
+   * @param  [listen event when click next button]
+   */
   nextMonth(event) {
+    this.props.nextMonth(event);
     event.preventDefault();
     let view = this.state.view;
     view.setMonth(view.getMonth() + 1);
-    this.move(view, true);
+    this._move(view, true);
   }
 
+  /**
+   * @details [handle when click button pre]
+   * 
+   * @param  [listen event when click pre button]
+   */
+
   preMonth(event) {
+    this.props.preMonth(event);
     event.preventDefault();
     let view = this.state.view;
       view.setMonth(view.getMonth() - 1);
-    this.move(view, false);
+    this._move(view, false);
   }
 
+  /**
+   * @details [handle when click day of select]
+   */
   onSelect(day) {
     this.props.onSelect(day)
   }
@@ -76,3 +98,9 @@ export default class Week extends Component {
     ) 
   }
 }
+
+Week.propTypes = {
+  onSelect: PropTypes.func.isRequired
+}
+
+export default  Week

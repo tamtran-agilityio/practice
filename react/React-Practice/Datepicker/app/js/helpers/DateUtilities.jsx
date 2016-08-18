@@ -31,26 +31,28 @@ export const isSameDay = (first, second) => {
   return first.year === second.getFullYear() &&  first.monthCurrent === second.getMonth() && first.dayCurrent === second.getDate()
 }
 
+export const isSameDays = (first, second) => {
+  return first.getFullYear() === second.getFullYear() &&  first.getMonth() === second.getMonth() && first.getDate() === second.getDate()
+}
+
+export const setDateToString = (day) => {
+  let getDay = ((day.monthCurrent -1) +'/'+ day.dayCurrent  +'/'+day.year);
+  return new Date(getDay);
+}
+
+export const setMonthToString = (day) => {
+  let secondDay = new Date(day);
+  return new Date((secondDay.getMonth() - 1) +'/'+ secondDay.getDate() +'/'+ secondDay.getFullYear()); 
+}
+
 export const isBefore = (first, second) => {
-  let getDay = (first.monthCurrent +'/'+ first.dayCurrent  +'/'+first.year);
-  let firstDay = new Date(getDay);
-  let secondDay = new Date(second);
-  console.log("A AAAAA add1",firstDay.getTime());
-  console.log("A AAAAA add2",secondDay.getTime());
-  return firstDay.getTime() < secondDay.getTime();
-  // if (first.monthCurrent < secondDay.getMonth() || first.dayCurrent < secondDay.getDate()) {
-  //   return true;
-  // }
+  return setDateToString(first).getTime() < setMonthToString(second).getTime();
 }
 
 export const isAfter = (first, second) => {
-  let getDay = ((first.monthCurrent ) +'/'+ first.dayCurrent  +'/'+first.year);
-  let firstDay = new Date(getDay);
-  let secondDay = new Date(second);
-  console.log("A AAAAA add122333",firstDay.getTime());
-  console.log("A AAAAA add2232333",secondDay.getTime());
-  return firstDay.getTime() > secondDay.getTime();
-  // if (first.monthCurrent >= (secondDay.getMonth() + 1) || first.dayCurrent > secondDay.getDate()) {
-  //   return true;
-  // }
+  return setDateToString(first).getTime() > setMonthToString(second).getTime();
+}
+
+export const convertDay = (day) => {
+  return new Date(((day.monthCurrent) +'/'+ day.dayCurrent  +'/'+day.year));
 }
