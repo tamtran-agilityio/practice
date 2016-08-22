@@ -1,5 +1,5 @@
 #Overview
-  * Practice about react
+  * Practice about virtual DOM
 # Get started
     1.Install dependencies
         $ npm install

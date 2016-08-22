@@ -89,7 +89,7 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
       new ExtractTextPlugin('css/style.css'),
       new HtmlwebpackPlugin({
-        title: 'Trello',
+        title: 'Virtual DOM',
         template: './app/template/template.html'
       })
   ]
