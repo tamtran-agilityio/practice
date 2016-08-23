@@ -1,49 +1,75 @@
 import './styles/styles.scss';
-
-import svd from'./js/virtual-dom';
+import { Element, diff, patch } from './js/virtual-dom';
 
 export class App {
-  constructor(count) {
-
+  constructor(count, tagName, props, children) {
+    this.count = 0;
   }
   
   renderTree () {
+    let el = (tagName, props, children) => {
+      return new Element(tagName, props, children);
+    }
+    
     this.count++;
-
     let items = [];
-    let color = (this.count % 2 === 0)
-      ? 'blue'
-      : 'red';
     for (let i = 0; i < this.count; i++) {
-      items.push(Element('li', ['Item #' + i]))
+      items.push(el('li', ['item ' + i]))
     }
 
-    let el = svd.el;
-    console.log(el);
-    let diff = svd.diff;
-    let patch = svd.patch;
-    let tree: any;
+    return el('div', {'id': 'container'}, [
+      el('h1', {style: 'color: #000'}, ['Virtual DOM']),
+      el('p', ['the count is :' + this.count]),
+      el('ul', items)
+    ])
+  }
 
-    return tree = el('div', {'id': 'container'}, [
-      el('h1', {style: 'color: blue'}, ['virtual-dom']),
-      el('p', ['Name, virtual-dom']),
-      el('ul', [el('li')])
+  newsTree(count) {
+    let el = (tagName, props, children) => {
+      return new Element(tagName, props, children);
+    }
+    
+    this.count++;
+    let items = [];
+    for (let i = 0; i < this.count; i++) {
+      items.push(el('li', ['item ' + i]));
+    }
+
+    return el('div', {'id': 'container'}, [
+      el('h1', {style: 'color: #000'}, ['Virtual DOM']),
+      el('p', ['the count is :' + this.count]),
+      el('ul', items)
     ])
   }
 
   buildRender() {
     let tree = this.renderTree();
-    let root = tree.render()
-    document.body.appendChild(root)
+    let root = tree.render();
+    let formText = 
+    `<span> 
+      <label> Input text:</label>
+      <input id='inputText' type="text" value='0' ref='text'>
+      <button id="btnsave" type="submit"> Submit </button>
+    </span>`;
+    document.getElementById('app').innerHTML += formText;
+    let button = document.querySelector("button");
+    button.addEventListener("click", function() {
+      this.count = document.getElementById('inputText').value;
+      console.log("this.count", this.count);
+    });
 
-    setInterval(function () {
-      let newTree = this.renderTree()
-      let patches = diff(tree, newTree)
-      console.log(patches)
-      patch(root, patches)
-      tree = newTree
-    }, 1000);
+    // document.getElementById("btnsave").addEventListener("click", function() {
+    //   console.log(this.count);
+    // }); 
+    document.body.appendChild(root);
+    console.log("this.count", this.count);
+    let newTree = this.newsTree(this.count);
+    let patches = diff(tree, newTree);
+    console.log("SSSSS", patches);
+    patch(root, patches);
+    tree = newTree;
   }
+
 }
 
 let inst = new App();
