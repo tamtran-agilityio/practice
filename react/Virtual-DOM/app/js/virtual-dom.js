@@ -1,3 +1,9 @@
-exports.el = require('./lib/element')
-exports.diff = require('./lib/diff')
-exports.patch = require('./lib/patch')
+import Element from './lib/element'
+import diff from './lib/diff'
+import patch from './lib/patch'
+
+export {
+  Element,
+  diff,
+  patch
+}
