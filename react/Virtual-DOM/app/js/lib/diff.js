@@ -60,12 +60,10 @@ function diffChildren(oldChildren, newChildren, index, patches, currentPatch) {
   let leftNode = null;
   let currentNodeIndex = index;
   util.each(oldChildren, (child, i) => {
-    let newChild = newChildren[i]
-    currentNodeIndex = (leftNode && leftNode.count)
-      ? currentNodeIndex + leftNode.count + 1
-      : currentNodeIndex + 1
-    diffWalk(child, newChild, currentNodeIndex, patches)
-    leftNode = child
+    let newChild = newChildren[i];
+    currentNodeIndex = (leftNode && leftNode.count) ? currentNodeIndex + leftNode.count + 1 : currentNodeIndex + 1;
+    diffWalk(child, newChild, currentNodeIndex, patches);
+    leftNode = child;
   })
 }
 

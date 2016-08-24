@@ -1,4 +1,4 @@
-import * as until from './util' ;
+import * as util from './util' ;
 
 class Element {
   constructor(tagName, props, children) {
@@ -14,13 +14,13 @@ class Element {
    */
   createElementItem(tagName, props, children) {
     if (!(this instanceof Element)) {
-      if (!until.isArray(this.children) && this.children !== null) {
-        this.children = until.slice(arguments, 2).filter(until.truthy)
+      if (!util.isArray(this.children) && this.children !== null) {
+        this.children = util.slice(arguments, 2).filter(util.truthy);
       }
-      return new Element(this.tagName, this.props, this.children)
+      return new Element(this.tagName, this.props, this.children);
     }
 
-    if (until.isArray(props)) {
+    if (util.isArray(props)) {
       children = props;
       props = {};
     }
@@ -32,7 +32,7 @@ class Element {
 
     let count = 0;
 
-    until.each(this.children, (child, i) => {
+    util.each(this.children, (child, i) => {
       if (child instanceof Element) {
         count += child.count;
       } else {
@@ -53,15 +53,15 @@ class Element {
 
     for (const propName in props) {
       const propValue = props[propName];
-      until.setAttr(element, propName, propValue)
+      util.setAttr(element, propName, propValue)
     }
 
-    until.each(this.children, child => {
+    util.each(this.children, child => {
       const childEl = (child instanceof Element) ? child.render() : document.createTextNode(child);
       element.appendChild(childEl);
     })
 
-    return element
+    return element;
   }
 }
 
