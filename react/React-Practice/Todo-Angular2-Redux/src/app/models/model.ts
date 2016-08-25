@@ -4,7 +4,7 @@ export interface TodoAction {
   name?: string;
 }
 
-export class Todo {
+class Todo {
   private _name: string;
   completed: boolean;
   editing: boolean;
@@ -23,3 +23,5 @@ export class Todo {
     this.name = name.trim();
   }
 }
+
+export default Todo;
