@@ -1,0 +1,12 @@
+<div class="main">
+  <input class="toggle-all" type="checkbox" (click)="completeAll()">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul class="todo-list">
+    <todo
+      *ngFor="#todo of todos | visibleTodos:currentFilter"
+      [completed]="todo.completed"
+      [id]="todo.id"
+      [text]="todo.text"
+    >{{todo.text}}</todo>
+  </ul>
+</div>
