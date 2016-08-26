@@ -4,8 +4,9 @@ export interface TodoAction {
   name?: string;
 }
 
-class Todo {
+export class Todo {
   private _name: string;
+  private _id: number;
   completed: boolean;
   editing: boolean;
 
@@ -17,11 +18,18 @@ class Todo {
     this._name = value.trim() || '';
   }
 
-  constructor(name: string) {
+  get id() {
+    return this._id;
+  }
+
+  set id(value: string) {
+    this._id = value;
+  }
+
+  constructor(name: string, id: number) {
     this.completed = false;
     this.editing = false;
+    this.id = id;
     this.name = name.trim();
   }
 }
-
-export default Todo;

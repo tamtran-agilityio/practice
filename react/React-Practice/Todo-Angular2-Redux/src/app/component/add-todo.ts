@@ -1,30 +1,26 @@
-import {Component, ContentChildren, Inject, ChangeDetectionStrategy} from '@angular/core';
-import {AppStore} from '../reducer/appStore';
-import {TodoActions} from '../actions/action';
-
-let templateHtml = require('./add-todo.html');
+import {Component, Inject} from '@angular/core';
+import {TodoActions} from '../actions/todoAction';
+import {TodoCollection} from '../services/collection';
 
 @Component({
   selector: 'add-todo',
-  inputs: ['completed', 'id'],
-  template: templateHtml,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  providers: [TodoCollection], 
+  template: 
+    `<div class="header">
+      <h1>todos</h1>
+      <input #todo (keyup.enter)="addTodo(todo)" class="new-todo" placeholder="What needs to be done?">
+    </div>`
 })
-export class AddTodo {
-  todoActions: TodoActions;
-  appStore: AppStore;
-  constructor(appStore, todoActions) {
-    this.appStore = appStore;
-    this.todoActions = todoActions;
-  }
 
-  addTodo(input) {
-    const text = input.value.trim();
-    if (text.length !== 0) {
-      this.appStore.dispatch(this.todoActions.addTodo(input.value));
-      input.value = '';
-    }
+export class AddTodo {
+  constructor( @Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions, private todoCollection: TodoCollection) {
+    this.todoCollection = todoCollection;
+  }
+  
+  private addTodo(input) {
+    let id = Math.random() * 100 + 1;
+    this.appStore.dispatch(this.todoActions.addTodo(input.value, id));
+    this.todoCollection.add(input.value, id);
+    input.value = '';
   }
 }
-
-AddTodo.parameters = [AppStore, TodoActions];

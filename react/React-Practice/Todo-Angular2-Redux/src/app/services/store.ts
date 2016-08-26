@@ -1,4 +1,4 @@
-export default class Store {
+export class Store {
   static getItemFromStore(name: string) {
     return JSON.parse(localStorage.getItem(name) || '[]');
   }

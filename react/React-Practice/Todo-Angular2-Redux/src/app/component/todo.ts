@@ -1,55 +1,31 @@
 import {Component, ContentChildren, Inject, ChangeDetectionStrategy} from '@angular/core';
-import {AppStore} from '../reducer/appStore';
-import {TodoActions} from '../actions/action';
+import {TodoActions} from '../actions/todoAction';
+import {TodoCollection} from '../services/collection'
 
 @Component({
   selector: 'todo',
-  inputs: ['completed', 'id', 'text'],
+  inputs: ['completed', 'id'],
+  providers: [TodoCollection],
   template: `
-    <li
-      [class]="completed?'completed':''"
+    <li (click)="onTodoClick(id)"
       [style.textDecoration]="completed?'line-through':'none'">
-      <div class="view" *ngIf="!editing">
-        <input class="toggle" type="checkbox" (click)="onTodoClick(id)" [checked]="completed">
-        <label (dblclick)="editing = true"><ng-content></ng-content></label>
-        <button class="destroy" (click)="removeTodo(id)"></button>
-      </div>
-      <input class="edit" #editedtodo
-        [style.display]="editing?'block':'none'"
-        [value]="text"
-        (blur)="stopEditing(id, editedtodo.value)"
-        (keyup.enter)="stopEditing(todo, editedtodo.value)"
-        (keyup.escape)="cancelEditingTodo(editedtodo)">
-    </li>`
+      <ng-content></ng-content>
+      <button class="destroy" (click)="removeTodo(id)"></button>
+    </li> 
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Todo {
-  constructor(appStore, todoActions) {
-    this.appStore = appStore;
-    this.todoActions = todoActions;
-    this.editing = false;
+export class Todo { 
+  constructor(@Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions, private todoCollection: TodoCollection ){
+    this.todoCollection = todoCollection;
   }
-
-  onTodoClick(id) {
+  
+  private onTodoClick(id){
     this.appStore.dispatch(this.todoActions.toggleTodo(id));
   }
-
-  removeTodo(id) {
+  
+  private removeTodo(id){
     this.appStore.dispatch(this.todoActions.removeTodo(id));
-  }
-
-  stopEditing(id, text) {
-    this.editing = false;
-    text = text.trim();
-    if (text.length === 0) {
-      return this.appStore.dispatch(this.todoActions.removeTodo(id));
-    }
-    this.appStore.dispatch(this.todoActions.editTodo(id, text));
-  }
-
-  cancelEditingTodo(editedtodo) {
-    editedtodo.value = this.text;
-    this.editing = false;
+    this.todoCollection.remove(id);
   }
 }
-
-Todo.parameters = [AppStore, TodoActions];
