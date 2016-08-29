@@ -1,35 +1,35 @@
 export interface TodoAction {
   type: string;
   id: number;
-  name?: string;
+  text?: string;
 }
 
 export class Todo {
-  private _name: string;
-  private _id: number;
+  private text: string;
+  private id: number;
   completed: boolean;
   editing: boolean;
 
-  get name() {
-    return this._name;
+  get _text() {
+    return this.text;
   }
 
-  set name(value: string) {
-    this._name = value.trim() || '';
+  set _text(value: string) {
+    this.text = value || '';
   }
 
-  get id() {
-    return this._id;
+  get _id() {
+    return this.id;
   }
 
-  set id(value: string) {
-    this._id = value;
+  set _id(value: number) {
+    this.id = value;
   }
 
-  constructor(name: string, id: number) {
+  constructor(_text: string, _id: number) {
     this.completed = false;
     this.editing = false;
-    this.id = id;
-    this.name = name.trim();
+    this._id = _id;
+    this._text = _text;
   }
 }

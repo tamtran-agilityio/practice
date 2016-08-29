@@ -1,25 +1,30 @@
 import {TodoActions} from '../actions/todoAction';
+import {TodoCollection} from '../services/collection';
 
+const todoCollection = new TodoCollection();
 const initialState = {
-  todos: [],
-  currentFilter: 'SHOW_ALL'
+  todos: todoCollection.getTodos(),
+  currentFilter: 'SHOW_ALL',
+  count: todoCollection.countTodo()
 }
 
-export function todoReducer(state = initialState, action){
+export function todoReducer(state = initialState, action) {
   switch (action.type) {
-    case 'ADD_TODO': 
+    case 'ADD_TODO':
       return {
         todos: state.todos.concat({
           id: action.id,
           text: action.text,
           completed: action.completed
         }),
-        currentFilter: state.currentFilter
+        currentFilter: state.currentFilter,
+        count: todoCollection.countTodo()
       };
     case 'TOGGLE_TODO':
       return {
         todos: toggleTodo(state.todos, action),
-        currentFilter: state.currentFilter
+        currentFilter: state.currentFilter,
+        count: todoCollection.countTodo()
       };
     case 'REMOVE_TODO':
       return {
