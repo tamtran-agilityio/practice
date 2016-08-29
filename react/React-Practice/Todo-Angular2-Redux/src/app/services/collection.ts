@@ -12,8 +12,8 @@ export class TodoCollection {
     let currentTodos = Store.getItemFromStore('todos');
     if (currentTodos) {
       this.todos = currentTodos.map(
-        (todo: {_name: string, _id: number , completed: boolean}) => {
-          let _todo = new Todo(todo._name, todo._id);
+        (todo: {text: string, id: number , completed: boolean}) => {
+          let _todo = new Todo(todo.text, todo.id);
            _todo.completed = todo.completed;
           return _todo;
         });
@@ -22,26 +22,73 @@ export class TodoCollection {
     }
   }
 
-  private updateStore() {
-    Store.updateItemToStore('todos', JSON.stringify(this.todos));
+  updateToogle(idParam: number) {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let itemToogle: any;
+    persistedTodo.forEach( (todo: any, idx: number) => {
+      if (todo.id === idParam){
+        itemToogle = {
+          completed:!todo.completed,
+          editing:todo.editing,
+          id:todo.id,
+          text:todo.text
+        }
+      }
+    });
+    return itemToogle;
   }
 
-  add(name: string, id: number) {
-    this.todos.push(new Todo(name, id));
-    this.updateStore();
+  private updateStore(todoParam: Todo) {
+    let found = false;
+    let persistedTodo = Store.getItemFromStore('todos');
+    persistedTodo.forEach( (todo: any, idx: number, private id: any) => {
+      if (todo.id === todoParam.id){
+        persistedTodo[idx] = todoParam;
+        found = true;
+      }
+    });
+
+    if (!found) {
+      persistedTodo.push(todoParam);
+    }
+
+    Store.updateItemToStore('todos', JSON.stringify(persistedTodo));
   }
 
-  remove(todo: Todo) {
-    let index = this.indexOf(todo);
-    this.removeAt(index);
-    this.updateStore();
+  getTodos() {
+    return Store.getItemFromStore('todos');
   }
 
-  removeAt(index: number) {
-    this.todos.splice(index, 1);
+  add(text: string, idParam: number) {
+    let item = new Todo(text, idParam);
+    this.updateStore(item);
   }
 
-  indexOf(todo: Todo) {
-    return this.todos.indexOf(todo);
+  checkToogle(idParam: number) {
+    let item = this.updateToogle(idParam);
+    this.updateStore(item);
+  }
+
+  remove(idParam: number) {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let todos = [];
+    persistedTodo.forEach( (todo: any, idx: number) => {
+      if (todo.id !== idParam){
+        todos.push(todo);
+      }
+    });
+
+    Store.updateItemToStore('todos', JSON.stringify(todos));
+  }
+
+  countTodo() {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let count = 0;
+    persistedTodo.forEach( (todo: any) => {
+      if (!todo.completed){
+        count++;
+      }
+    });
+    return count;
   }
 }
