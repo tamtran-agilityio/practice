@@ -9,7 +9,8 @@ import {TodoCollection} from '../services/collection'
   template: `
     <li (click)="onTodoClick(id)"
       [style.textDecoration]="completed?'line-through':'none'">
-      <ng-content></ng-content>
+      <input class="toggle" type="checkbox" [checked]="completed" [class.checked]="completed">
+      <label><ng-content></ng-content></label>
       <button class="destroy" (click)="removeTodo(id)"></button>
     </li> 
   `,
@@ -22,6 +23,7 @@ export class Todo {
   
   private onTodoClick(id){
     this.appStore.dispatch(this.todoActions.toggleTodo(id));
+    this.todoCollection.checkToogle(id);
   }
   
   private removeTodo(id){

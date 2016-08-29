@@ -1,31 +1,30 @@
-import {Component, ContentChildren, Inject, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ContentChildren, Inject, ChangeDetectionStrategy, OnInit, OnDestroy} from '@angular/core';
 import {TodoActions} from '../actions/todoAction';
 
 @Component({
   selector: 'filter-link',
   inputs: ['filter'],
   template: 
-    `<a href="#" (click)="applyFilter(filter);"
+    `<a href="javascript:void(0)" (click)="applyFilter(filter);"
         [ngClass]="{'active': active, 'inactive': !active}">` +
       `<ng-content></ng-content>` +  
     `</a>`
 })
 export class FilterLink implements OnInit, OnDestroy {
-  constructor(
-    @Inject('AppStore') private appStore: AppStore, 
-    private todoActions: TodoActions
-  ){
-    this.unsubscribe = this.appStore
-      .subscribe(() => this.updateActive());
+  active: false;
+  filter: any;
+  unsubscribe: any;
+  constructor(@Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions) {
+    this.unsubscribe = this.appStore.subscribe(() => this.updateActive());
   }
   
-  private ngOnInit(){
-    //set initial state
+  //set initial state
+  ngOnInit(){
     this.updateActive();
   }
   
-  private ngOnDestroy(){
-    //remove change listener
+  //remove change listener
+  ngOnDestroy(){
     this.unsubscribe();
   }
   

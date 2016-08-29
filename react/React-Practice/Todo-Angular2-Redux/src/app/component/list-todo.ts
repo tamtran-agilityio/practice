@@ -1,22 +1,30 @@
 import {Component, Inject, OnDestroy} from '@angular/core';
-import {TodoCollection} from '../services/collection'
+import {TodoActions} from '../actions/todoAction';
+import {TodoCollection} from '../services/collection';
+import {Todo} from '../models/model';
 
 @Component({
   selector: 'todo-list',
-  providers: [TodoCollection]
+  providers: [TodoCollection],
   template: `
-    <ul>
-      <todo 
+    <ul class='todo-list'>
+      <todo
         *ngFor="let todo of todos | visibleTodos:currentFilter"
         [completed]="todo.completed"
         [id]="todo.id"
-      >{{todo.text}}</todo>
+        class='view'
+      >{{todo?.text}}</todo>
     </ul>
   `
 })
 export class TodoList implements OnDestroy {
+  todos: Todo[] = [];
+  currentFilter: string;
+  unsubscribe: any;
   constructor( @Inject('AppStore') private appStore: AppStore, private todoCollection: TodoCollection) {
-    this.todoCollection = todoCollection;
+    let state = this.appStore.getState();
+    this.currentFilter = state.currentFilter;
+    this.todos = state.todos;
     this.unsubscribe = this.appStore.subscribe(()=> {
       let state = this.appStore.getState();
       this.currentFilter = state.currentFilter;
@@ -24,8 +32,8 @@ export class TodoList implements OnDestroy {
     });
   }
   
-  private ngOnDestroy(){
-    //remove listener
+  //remove listener
+  ngOnDestroy(){
     this.unsubscribe();
   }
 }

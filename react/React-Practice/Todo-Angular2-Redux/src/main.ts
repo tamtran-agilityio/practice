@@ -1,7 +1,7 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import './static/css/main.css';
 import {App} from './app/app';
 import {createStore} from 'redux';
 import {todoReducer} from './app/reducer/todoReducer';
