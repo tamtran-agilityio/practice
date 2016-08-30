@@ -1,0 +1,6 @@
+<li (click)="onTodoClick(id)"
+  [style.textDecoration]="completed?'line-through':'none'">
+  <input class="toggle" type="checkbox" [checked]="completed" [class.checked]="completed">
+  <label><ng-content></ng-content></label>
+  <button class="destroy" (click)="removeTodo(id)"></button>
+</li> 

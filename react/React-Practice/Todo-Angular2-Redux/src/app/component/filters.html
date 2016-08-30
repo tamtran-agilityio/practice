@@ -1,0 +1,8 @@
+<p class='list-filters'>
+  <span class="todo-count">{{count}} item left </span>
+  <li><filter-link filter="SHOW_ALL">All</filter-link></li>
+  <li><filter-link filter="SHOW_ACTIVE">Active</filter-link></li>
+  <li><filter-link filter="SHOW_COMPLETED">Completed</filter-link></li>
+  <button [ngClass]="{'clear-completed': !completedActive, 'clear-completed-hide': completedActive}"
+  (click)="onClearCompleted()">Clear completed</button>
+</p>

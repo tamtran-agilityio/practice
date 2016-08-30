@@ -1,0 +1,9 @@
+<ul class='todo-list'>
+  <input type="checkbox" class='toggle-all'(click)="onClickAllComplete($event)"/>
+  <todo
+    *ngFor="let todo of todos | visibleTodos:currentFilter"
+    [completed]="todo.completed"
+    [id]="todo.id"
+    class='view'
+  >{{todo?.text}}</todo>
+</ul>
