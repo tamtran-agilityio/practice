@@ -479,6 +479,7 @@ html .clear-completed:active {
   line-height: 20px;
   text-decoration: none;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .clear-completed:hover {

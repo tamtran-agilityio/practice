@@ -6,12 +6,12 @@ import {TodoActions} from '../actions/todoAction';
   inputs: ['filter'],
   template: 
     `<a href="javascript:void(0)" (click)="applyFilter(filter);"
-        [ngClass]="{'active': active, 'inactive': !active}">` +
-      `<ng-content></ng-content>` +  
-    `</a>`
+        [ngClass]="{'selected': active, 'inactive': !active}">
+      <ng-content></ng-content> 
+    </a>`
 })
 export class FilterLink implements OnInit, OnDestroy {
-  active: false;
+  active: boolean;
   filter: any;
   unsubscribe: any;
   constructor(@Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions) {

@@ -8,6 +8,7 @@ import {Todo} from '../models/model';
   providers: [TodoCollection],
   template: `
     <ul class='todo-list'>
+      <input type="checkbox" class='toggle-all'(click)="onClickAllComplete($event)"/>
       <todo
         *ngFor="let todo of todos | visibleTodos:currentFilter"
         [completed]="todo.completed"
@@ -21,7 +22,8 @@ export class TodoList implements OnDestroy {
   todos: Todo[] = [];
   currentFilter: string;
   unsubscribe: any;
-  constructor( @Inject('AppStore') private appStore: AppStore, private todoCollection: TodoCollection) {
+  constructor( @Inject('AppStore') private appStore: AppStore, private todoCollection: TodoCollection, private todoActions: TodoActions) {
+    this.todoCollection = todoCollection;
     let state = this.appStore.getState();
     this.currentFilter = state.currentFilter;
     this.todos = state.todos;
@@ -35,5 +37,12 @@ export class TodoList implements OnDestroy {
   //remove listener
   ngOnDestroy(){
     this.unsubscribe();
+  }
+
+  onClickAllComplete(event) {
+    var target : any = event.target;
+    var checked = target.checked;
+    this.appStore.dispatch(this.todoActions.completeAll(checked));
+    this.todoCollection.completeAllTodo(checked);
   }
 }
