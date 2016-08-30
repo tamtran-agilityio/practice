@@ -1,4 +1,5 @@
 <li
+  [@todoState]="state"
   (dblclick)="onTodoClickEdit($event, text)"
   [ngClass]="{'editing': editing, '': !editing}"
   [style.textDecoration]="completed?'line-through':'none'">

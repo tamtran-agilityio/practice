@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy} from '@angular/core';
+import {Component, Inject, OnDestroy, trigger, state, style, animate, transition} from '@angular/core';
 import {TodoActions} from '../actions/todoAction';
 import {TodoCollection} from '../services/collection';
 import {Todo} from '../models/model';
@@ -7,7 +7,19 @@ let templateTodoList = require('./list-todo.html');
 @Component({
   selector: 'todo-list',
   providers: [TodoCollection],
-  template: templateTodoList
+  template: templateTodoList ,
+  animations: [
+    trigger('flyInAdd', [
+      state('in', style({transform: 'rotate(0deg)'})),
+      transition('void => *', [
+        style({transform: 'rotateZ(2deg)'}),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({transform: 'rotateZ(-2deg)'}))
+      ])
+    ])
+  ]
 })
 export class TodoList implements OnDestroy {
   todos: Todo[] = [];

@@ -1,4 +1,4 @@
-import {Component, ContentChildren, Inject, ChangeDetectionStrategy} from '@angular/core';
+import {Component, ContentChildren, Inject, ChangeDetectionStrategy, trigger, state, style, animate, transition} from '@angular/core';
 import {TodoActions} from '../actions/todoAction';
 import {TodoCollection} from '../services/collection'
 let templateTodo = require('./todo.html'); 
@@ -8,11 +8,26 @@ let templateTodo = require('./todo.html');
   inputs: ['completed', 'text', 'id'],
   providers: [TodoCollection],
   template: templateTodo,
+  animations: [
+    trigger('todoState', [
+      state('incompleted', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('completed',   style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      })),
+      transition('incompleted => completed', animate('100ms ease-in')),
+      transition('completed => incompleted', animate('100ms ease-out'))
+    ])
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class Todo {
   editing: boolean;
+  state: string;
   constructor(@Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions, private todoCollection: TodoCollection ){
     this.todoCollection = todoCollection;
   }
