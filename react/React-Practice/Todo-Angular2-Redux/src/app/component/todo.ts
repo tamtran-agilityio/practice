@@ -5,13 +5,14 @@ let templateTodo = require('./todo.html');
 
 @Component({
   selector: 'todo',
-  inputs: ['completed', 'id'],
+  inputs: ['completed', 'text', 'id'],
   providers: [TodoCollection],
   template: templateTodo,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class Todo { 
+export class Todo {
+  editing: boolean;
   constructor(@Inject('AppStore') private appStore: AppStore, private todoActions: TodoActions, private todoCollection: TodoCollection ){
     this.todoCollection = todoCollection;
   }
@@ -34,5 +35,22 @@ export class Todo {
   private removeTodo(id){
     this.appStore.dispatch(this.todoActions.removeTodo(id));
     this.todoCollection.remove(id);
+  }
+
+  /**
+   * @details [show input edit item todo]
+   * 
+   * @param  [event double click edit]
+   * @return [value change]
+   */
+  private onTodoClickEdit(event, value) {
+    event.preventDefault();
+    this.editing = true;
+  }
+
+  private editTodo(input, id) {
+    this.appStore.dispatch(this.todoActions.editTodo(input.value, id));
+    this.todoCollection.getEdit(input.value, id);
+    this.editing = false;
   }
 }

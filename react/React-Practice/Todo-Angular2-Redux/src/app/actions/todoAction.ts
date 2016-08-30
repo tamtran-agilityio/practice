@@ -16,7 +16,7 @@ export class TodoActions {
     };
   }
   
-  editTodo(id, text) {
+  editTodo(text, id) {
     return {
       type: actionTypes.EDIT_TODO,
       id: id,

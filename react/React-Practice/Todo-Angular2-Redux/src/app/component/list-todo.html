@@ -3,7 +3,8 @@
   <todo
     *ngFor="let todo of todos | visibleTodos:currentFilter"
     [completed]="todo.completed"
-    [id]="todo.id"
+    [id]="todo?.id"
+    [text]="todo?.text"
     class='view'
   >{{todo?.text}}</todo>
 </ul>

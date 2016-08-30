@@ -22,6 +22,12 @@ export function todoReducer(state = initialState, action) {
         currentFilter: state.currentFilter,
         count: countTodo(state.todos, action) + 1
       };
+    case 'EDIT_TODO':
+      return {
+        todos: editTodo(state.todos, action),
+        currentFilter: state.currentFilter,
+        count: countTodo(state.todos, action)
+      };
     case 'TOGGLE_TODO':
       return {
         todos: toggleTodo(state.todos, action),
@@ -71,6 +77,21 @@ function countTodo(todos, action) {
     }
   });
   return countItem;
+}
+
+function editTodo(todos, action) {
+  //map returns new array
+  return todos.map(todo => {
+    //skip other items
+    if (todo.id !== action.id)
+      return todo;
+    //toggle
+    return {
+      id: todo.id,
+      text: action.text,
+      completed: todo.completed
+    };
+  });
 }
 
 function toggleTodo(todos, action){

@@ -1,6 +1,11 @@
-<li (click)="onTodoClick(id)"
+<li
+  (dblclick)="onTodoClickEdit($event, text)"
+  [ngClass]="{'editing': editing, '': !editing}"
   [style.textDecoration]="completed?'line-through':'none'">
-  <input class="toggle" type="checkbox" [checked]="completed" [class.checked]="completed">
-  <label><ng-content></ng-content></label>
-  <button class="destroy" (click)="removeTodo(id)"></button>
+  <input #edittodo (keyup.enter)="editTodo(edittodo, id)"  class="edit" type="text" value="{{text}}">
+  <div [ngClass]="{'view': editing, '': !editing}">
+    <input class="toggle" type="checkbox" (click)="onTodoClick(id)" [checked]="completed" [class.checked]="completed">
+    <label><ng-content></ng-content></label>
+    <button class="destroy" (click)="removeTodo(id)"></button>
+  </div>
 </li> 

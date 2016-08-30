@@ -85,6 +85,33 @@ export class TodoCollection {
   }
 
   /**
+   * @details [handle edit item on list todos]
+   * 
+   * @param  [text: value need add on item]
+   * @param  [idParam: value need add on item]
+   */
+  editTodo(text: string, idParam: number) {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let itemToggle: any;
+    persistedTodo.forEach( (todo: any, idx: number) => {
+      if (todo.id === idParam){
+        itemToggle = {
+          completed:todo.completed,
+          editing:todo.editing,
+          id:todo.id,
+          text:text
+        }
+      }
+    });
+    return itemToggle;
+  }
+
+  getEdit(text: string, idParam: number) {
+    let item = this.editTodo(text, idParam);
+    this.updateStore(item);
+  }
+
+  /**
    * @details [handle checked toogle]
    * 
    * @param  [id: Let's need remove]
