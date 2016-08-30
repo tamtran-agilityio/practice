@@ -41,7 +41,7 @@ export class TodoCollection {
   private updateStore(todoParam: Todo) {
     let found = false;
     let persistedTodo = Store.getItemFromStore('todos');
-    persistedTodo.forEach( (todo: any, idx: number, private id: any) => {
+    persistedTodo.forEach( (todo: any, idx: number) => {
       if (todo.id === todoParam.id){
         persistedTodo[idx] = todoParam;
         found = true;
@@ -71,22 +71,50 @@ export class TodoCollection {
 
   remove(idParam: number) {
     let persistedTodo = Store.getItemFromStore('todos');
-    let todos = [];
+    let arrRemove = [];
     persistedTodo.forEach( (todo: any, idx: number) => {
       if (todo.id !== idParam){
-        todos.push(todo);
+        arrRemove.push(todo);
       }
     });
 
-    Store.updateItemToStore('todos', JSON.stringify(todos));
+    Store.updateItemToStore('todos', JSON.stringify(arrRemove));
+  }
+
+  removeComplete() {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let arr = [];
+    persistedTodo.forEach( (todo: any, idx: number) => {
+      if (todo.completed === false){
+        arr.push(todo);
+      }
+    });
+
+    Store.updateItemToStore('todos', JSON.stringify(arr));
+  }
+
+  completeAllTodo(checked) {
+    let persistedTodo = Store.getItemFromStore('todos');
+    let arrComplete = [];
+    let itemToogles: any;
+    persistedTodo.forEach( (todo: any, idx: number) => {
+      itemToogles = {
+        completed: checked,
+        editing:todo.editing,
+        id:todo.id,
+        text:todo.text
+      };
+      arrComplete.push(itemToogles);
+    });
+    Store.updateItemToStore('todos', JSON.stringify(arrComplete));
   }
 
   countTodo() {
     let persistedTodo = Store.getItemFromStore('todos');
     let count = 0;
     persistedTodo.forEach( (todo: any) => {
-      if (!todo.completed){
-        count++;
+      if (todo.completed === false){
+        ++count;
       }
     });
     return count;
