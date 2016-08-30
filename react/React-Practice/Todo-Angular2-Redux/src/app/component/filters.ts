@@ -2,18 +2,12 @@ import {Component, Inject} from '@angular/core'
 import {TodoCollection} from '../services/collection'
 import {TodoActions} from '../actions/todoAction';
 
+let templateFilter = require('./filters.html'); 
+
 @Component({
   selector: 'filters',
   providers: [TodoCollection],
-  template: 
-    `<p class='list-filters'>
-      <span class="todo-count">{{count}} item left </span>
-      <li><filter-link filter="SHOW_ALL">All</filter-link></li>
-      <li><filter-link filter="SHOW_ACTIVE">Active</filter-link></li>
-      <li><filter-link filter="SHOW_COMPLETED">Completed</filter-link></li>
-      <button [ngClass]="{'clear-completed': completedActive, 'clear-completed-hide': !completedActive}"
-      (click)="onClearCompleted()">Clear completed</button>
-    </p>`
+  template: templateFilter
 })
 
 export class Filters {
@@ -32,10 +26,19 @@ export class Filters {
     });
   }
 
+  /**
+   * @details [checked condition show button clear completed]
+   * 
+   * @param t [sum value on list completed]
+   * @param l [sum value on list todos]
+   */
   completeAllActive(count, countAll) {
     return (count === countAll) ? true : false; 
   }
 
+  /**
+   * @details [handle button clear completed]
+   */
   onClearCompleted() {
     this.appStore.dispatch(this.todoActions.clearComplete());
     this.todoCollection.removeComplete();

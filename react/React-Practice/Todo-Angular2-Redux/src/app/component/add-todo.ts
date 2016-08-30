@@ -17,8 +17,16 @@ export class AddTodo {
     this.todoCollection = todoCollection;
   }
   
+  /**
+   * @details [handle add todo]
+   * 
+   * @param  [value add todo]
+   */
   private addTodo(input) {
     let id = Math.random() * 100 + 1;
+    if (input.value === '') {
+      return;
+    }
     this.appStore.dispatch(this.todoActions.addTodo(input.value, id));
     this.todoCollection.add(input.value, id);
     input.value = '';

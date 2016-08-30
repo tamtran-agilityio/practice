@@ -2,21 +2,12 @@ import {Component, Inject, OnDestroy} from '@angular/core';
 import {TodoActions} from '../actions/todoAction';
 import {TodoCollection} from '../services/collection';
 import {Todo} from '../models/model';
+let templateTodoList = require('./list-todo.html');
 
 @Component({
   selector: 'todo-list',
   providers: [TodoCollection],
-  template: `
-    <ul class='todo-list'>
-      <input type="checkbox" class='toggle-all'(click)="onClickAllComplete($event)"/>
-      <todo
-        *ngFor="let todo of todos | visibleTodos:currentFilter"
-        [completed]="todo.completed"
-        [id]="todo.id"
-        class='view'
-      >{{todo?.text}}</todo>
-    </ul>
-  `
+  template: templateTodoList
 })
 export class TodoList implements OnDestroy {
   todos: Todo[] = [];
@@ -34,11 +25,18 @@ export class TodoList implements OnDestroy {
     });
   }
   
-  //remove listener
+  /**
+   * @details [remove listener]
+   */
   ngOnDestroy(){
     this.unsubscribe();
   }
 
+  /**
+   * @details [check all completed]
+   * 
+   * @param  [event: event when checked]
+   */
   onClickAllComplete(event) {
     var target : any = event.target;
     var checked = target.checked;

@@ -1,15 +1,7 @@
-//import {actionTypes} from '../constants/actionTypes';
+import {actionTypes} from '../constants/actionTypes';
 import {TodoCollection} from '../services/collection'; 
 
-const actionTypes = {
-  ADD_TODO: 'ADD_TODO',
-  EDIT_TODO: 'EDIT_TODO',
-  TOGGLE_TODO: 'TOGGLE_TODO',
-  REMOVE_TODO: 'REMOVE_TODO',
-  SET_CURRENT_FILTER: 'SET_CURRENT_FILTER',
-  COMPLETE_ALL: 'COMPLETE_ALL',
-  CLEAR_COMPLETED: 'CLEAR_COMPLETED'
-}
+
 
 export class TodoActions {
   constructor() {

@@ -486,6 +486,10 @@ html .clear-completed:active {
   text-decoration: underline;
 }
 
+.clear-completed-hide {
+  display: none;
+}
+
 .info {
   margin: 65px auto 0;
   color: #bfbfbf;

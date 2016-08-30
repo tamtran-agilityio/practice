@@ -17,6 +17,14 @@ export class VisibleTodosPipe implements PipeTransform {
     return this.getVisibleTodos(todos, filter);
   }
   
+  /**
+   * @details [get item need filter to action]
+   * 
+   * @param s [list todos]
+   * @param r [values filter]
+   * 
+   * @return [list todos]
+   */
   private getVisibleTodos(todos, filter){
     switch (filter) {
       case 'SHOW_ACTIVE':
