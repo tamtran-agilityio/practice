@@ -53,9 +53,10 @@ export class TodoActions {
     };
   }
   
-  completeAll() {
+  completeAll(checked) {
     return {
-      type: actionTypes.COMPLETE_ALL
+      type: actionTypes.COMPLETE_ALL,
+      checked: checked
     };
   }
 
