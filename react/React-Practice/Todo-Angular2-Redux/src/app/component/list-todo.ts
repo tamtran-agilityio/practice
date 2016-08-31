@@ -10,13 +10,13 @@ let templateTodoList = require('./list-todo.html');
   template: templateTodoList ,
   animations: [
     trigger('flyInAdd', [
-      state('in', style({transform: 'rotate(0deg)'})),
+      state('in', style({transform: 'scale(1)'})),
       transition('void => *', [
-        style({transform: 'rotateZ(2deg)'}),
+        style({transform: 'scale(1.1)'}),
         animate(100)
       ]),
       transition('* => void', [
-        animate(100, style({transform: 'rotateZ(-2deg)'}))
+        animate(100, style({transform: 'scale(1)'}))
       ])
     ])
   ]

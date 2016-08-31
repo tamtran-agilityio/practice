@@ -6,12 +6,13 @@ import {App} from './app/app';
 import {createStore} from 'redux';
 import {todoReducer} from './app/reducer/todoReducer';
 import {TodoActions} from './app/actions/todoAction';
+import { SharedModule }   from './app/shared/shared.module';
 import {APP_DECLARATIONS} from './app/component/app-declarations';
 
 const appStore = createStore(todoReducer);
 
 @NgModule({
-  imports: [ BrowserModule ],
+  imports: [ BrowserModule, SharedModule],
   declarations: [
     App,
     ...APP_DECLARATIONS
