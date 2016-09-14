@@ -3,7 +3,10 @@
     <title>PHP Test</title>
   </head>
   <body>
-    <?php echo '<p>Examole PHP 5</p>'; ?>
+    <?php echo '<p>Examole PHP 5</p>';
+      // include('dog/lab.php');
+      echo php_uname();
+    ?>
     <?php 
       /* class constants */
       class MyClass {
@@ -86,9 +89,24 @@
         print "<li>#$key = $val\n</li>";
       }
     ?>
+    <?php 
+      $arr = array(1,2,3,4,5,6,7,8,9); 
+
+      foreach($arr as $key=>$value) { 
+        unset($arr[$key + 1]); 
+        echo $value . PHP_EOL; 
+      }
+
+      $arrs = array(1,2,3,4,5,6,7,8,9);
+
+      while (list($key, $value) = each($arrs)) { 
+        unset($arrs[$key + 1]); 
+        echo $value . PHP_EOL; 
+      }
+    ?>
     
     <?php
-      $breed_file = simplexml:load_file("breeds.xml");
+      // $breed_file = simplexml:load_file("breeds.xml");
       // $xmlText = $breed_file->asXML();
       // print "<select name='dog_breed' id='dog_breed'>";
       // print "<option>Select a dog breed</option>";
