@@ -19,7 +19,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Default box IP address
   # This is the IP address that your host will communicate to the guest
   # through. Change if you're already on the `192.168.33.x` subnet.
-
+  config.vm.network :forwarded_port, guest: 80, host: 8000
+  config.vm.network :forwarded_port, guest: 30, host: 3000
+  config.vm.network :forwarded_port, guest: 90, host: 9000
+  config.vm.network :forwarded_port, guest: 40, host: 4000
   private_ip = "192.168.32.99"
 
   # Enable agent forwarding on vagrant ssh commands. This allows you to use

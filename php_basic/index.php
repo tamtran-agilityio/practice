@@ -1,121 +1,34 @@
-<html>
-  <head>
-    <title>PHP Test</title>
-  </head>
-  <body>
-    <?php echo '<p>Examole PHP 5</p>';
-      // include('dog/lab.php');
-      echo php_uname();
-    ?>
-    <?php 
-      /* class constants */
-      class MyClass {
-        const SUCCESS = "Success \n";
-        const FAILURE = "Failure";
-      }
-      echo MyClass::SUCCESS;
-    ?>
-    <?php
-      /* static members */
-      class Singleton {
-        static private $instance = NULL;
-        
-        private function _construct() {
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connect data</title>
+</head>
+<body>
 
-        static public function getInstance() {
-          if (self::$instance === NULL) {
-            self::$instance = new Singleton();
-          }
-          return self::$instance;
-        }
-      }
-      Singleton::getInstance();
-    ?>
-    <?php
-      /* abstract class */
-      abstract class MyBaseClass {
-        function display() {
-          $name = 'Tran';
-          echo "Default display routime being called \n";
-          if (isset($name)) {
-            print "$name is set \n";
-          }
-          $arr1 = array(1, 2, 3);
-          $arr2[] = 1;
-          $arr2[] = 2;
-          $arr2[] = 3;
-          print_r($arr1);
-          print_r($arr2);
-          $arr3 = array("name" => "John", "age" => 28);
-          $arr4["name"] = "John";
-          $arr4["age"] = 28;
-          if ($arr3 === $arr4) {
-            print '$arr1 and $arr2 are the same' . "\n";
-          }
-          print $arr3["name"];
-          $arr = array(1 => array("name" => "John", "age" => 28), array("name" => "Barbara", "age" => 67));
-          print $arr[1]["age"];
-          unset($name);
-          if (isset($name)) {
-            print "\n $name is set";
-          }
-        }
-      }
-      MyBaseClass::display();
-    ?>
-    <?php
-      /* travelsing arrays using foreach */
-      $players = array("John", "Barbara", "Bill", "Nancy");
-      print "The players are:\n";
-      foreach ($players as $key => $value) {
-        print "<li>$value </li>";
-      }
+  <?php
 
-      $people = array(1 => array("name" => "John", "age" => 28), array("name" => "Barbara", "age" => 67));
-      foreach ($people as &$person) {
-        if ($person["age"] >= 35) {
-          $person["age group"] = "Old";
-        } else {
-          $person["age group"] = "Young";
-        }
-      }
-      print_r($people);
+    $link = mysqli_connect("127.0.0.1", "root", "root", "example");
 
-      /* travelsing arrays using list and each */
-      $players = array("John", "Barbara", "Bill", "Nancy");
-      reset($players);
-      while (list($key, $val) = each($players)) {
-        print "<li>#$key = $val\n</li>";
-      }
-    ?>
-    <?php 
-      $arr = array(1,2,3,4,5,6,7,8,9); 
+    if (mysqli_connect_errno()) {
+      throw new Exception("MySQL connection error: " . mysqli_connect_error());
+    }
 
-      foreach($arr as $key=>$value) { 
-        unset($arr[$key + 1]); 
-        echo $value . PHP_EOL; 
-      }
+    echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
+    echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
 
-      $arrs = array(1,2,3,4,5,6,7,8,9);
 
-      while (list($key, $value) = each($arrs)) { 
-        unset($arrs[$key + 1]); 
-        echo $value . PHP_EOL; 
-      }
-    ?>
+    $sql="SELECT * FROM dogs";
+    $result=mysqli_query($con,$sql);
+    echo "SDDDD" .$result;
+    if ($result === null) {
+      throw new Exception("No records retrieved from database");
+    }
     
-    <?php
-      // $breed_file = simplexml:load_file("breeds.xml");
-      // $xmlText = $breed_file->asXML();
-      // print "<select name='dog_breed' id='dog_breed'>";
-      // print "<option>Select a dog breed</option>";
-      // foreach ($breed_file->children() as $name => $value) {
-      //   print "<option value='$value'>$value</option>";
-      // }
-      // print "</select>";
-    ?>
+    $this ->dogs_array = mysqli_fetch_assoc($result);
+    msql_free_result(result);
+    mysqli_close($link);
+  ?>
 
-
-  </body>
+</body>
 </html>
