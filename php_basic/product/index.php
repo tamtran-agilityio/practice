@@ -1,7 +1,6 @@
 <?php 
   define('ROOT', dirname(realpath(__FILE__)).'/');
   $thisDir = explode('/', ROOT); // 0
-  var_dump($thisDir);
   $conStrLen = strlen(array_pop($thisDir));
   $strPos = substr(__FILE__, 0,strrpos( __FILE__, '/')); //javascript-training/php_basic/shopcart"
   $docRoot = substr($SERVER['DOCUMENT_ROOT'], strrpos($SERVER['DOCUMENT_ROOT'], $SERVER['PHP_SELF'])); // ""
@@ -10,7 +9,7 @@
   $posConf = strlen($conbineString) - $conStrLen; // 39
   $conLink = substr($conbineString, $posConf); // ""
   $host = 'http://' . $SERVER['SERVER_NAME'] . '/' .$conLink; // http://
-
+  var_dump($host);
   define('ROOT_URL', $host);
 
   include(ROOT . 'config/config.php');
@@ -22,17 +21,17 @@
 
 function setErrorLogging() {
 
-    if ( DEVELOPMENT_ENVIRONMENT == true ) {
-        error_reporting(E_ALL);
-        ini_set('display_errors', "1");
+  if ( DEVELOPMENT_ENVIRONMENT == true ) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', "1");
 
-    } else {
-        error_reporting(E_ALL);
-        ini_set('display_errors', "0");
-    }
+  } else {
+    error_reporting(E_ALL);
+    ini_set('display_errors', "0");
+  }
 
-    ini_set('log_errors', "1");
-    ini_set('error_log',ROOT . 'system/log/error_log.php');
+  ini_set('log_errors', "1");
+  ini_set('error_log',ROOT . 'system/log/error_log.php');
 }
 
 

@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 90, host: 9000
   config.vm.network :forwarded_port, guest: 40, host: 4000
   private_ip = "192.168.32.99"
+  config.vm.hostname = "shopping.com.vn"
 
   # Enable agent forwarding on vagrant ssh commands. This allows you to use
   # identities established on the host machine inside the guest. See the manual
